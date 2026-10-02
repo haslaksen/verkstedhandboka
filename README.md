@@ -2,7 +2,7 @@
 
 Nettbasert verkstedhåndbok for verksted og undervisning (VG2 Industriteknologi).
 
-**Kapitler:** toleranser (ISO 286), passninger, generelle toleranser (ISO 2768), form- og beliggenhetstoleranser (ISO 1101), metriske gjenger, tommegjenger (UNC, UNF og UN 8) og rørgjenger, overflateruhet, skjæredata, materialer og vekt, sveisesymboler (ISO 2553), pneumatikk, hydraulikk, elektro med motorstyring, måling med multimeter, fysikk og matematikk.
+**Emner (som i verkstedhåndboka):** 1 SI-enheter, 2 Toleranser, 3 Maskinering, 4 Sammenføyning, 5 Maskinelement, 6 Gjenger, 7 Materialer, 8 Hydraulikk og pneumatikk, 9 Elektro, 10 Matematikk, 11 Fysikk, 12 Mekanikk. Hvert emne har innholdsliste med delemner; delemner merket «kommer» fylles inn fortløpende.
 
 Hele appen er én statisk side, `index.html`, uten byggesteg eller avhengigheter.
 
