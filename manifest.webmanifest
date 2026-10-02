@@ -1,0 +1,25 @@
+{
+  "name": "Verkstedhåndboka",
+  "short_name": "Håndboka",
+  "description": "Oppslagsbok for verkstedet: toleranser, passninger, gjenger, GD&T, skjæredata, pneumatikk, hydraulikk, elektro, fysikk og matematikk.",
+  "lang": "no",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#eef0ec",
+  "theme_color": "#1f4f8f",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Toleranser", "url": "/#toleranser", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Gjenger", "url": "/#gjenger", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Skjæredata", "url": "/#skjaredata", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Elektro", "url": "/#elektro", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
