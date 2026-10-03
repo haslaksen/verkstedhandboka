@@ -3316,7 +3316,46 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .el9a-nu{text-transform:none!important;letter-spacing:.02em!important;font-size:13px!important}
 .el9a-dec{font-family:var(--mono);font-size:22px;font-weight:500}
 </style>
-<p class="lead">Nesten alle kretser er bygd av motstander i serie, i parallell eller en blanding. Med to enkle regler, Kirchhoffs lover, kan du finne strøm og spenning overalt i kretsen.</p>
+  <p class="lead">Ohms lov og effektformelen dekker de fleste beregningene i verkstedet: U = R · I og P = U · I. For trefase og motorer kommer √3 og effektfaktoren cos φ inn.</p>
+  <div class="note"><p>Arbeid på elektriske anlegg krever riktig kompetanse og må følge FSE og NEK 400. Kapitlet er for forståelse og kontrollregning, ikke for installasjonsarbeid.</p></div>
+  <h3>Strøm, spenning og motstand</h3>
+  <p>Prikkene er strømmen. Øker du spenningen, går de fortere. Øker du motstanden, går de saktere. Motstanden gløder sterkere jo mer effekt den avgir. I grafen er hver motstand en rett linje, og jo brattere linjen er, jo lavere er motstanden.</p>
+  <figure class="fig">
+    <svg id="fig-ohm" viewBox="0 0 600 220" role="img" aria-label="Strømkrets med spenningskilde, motstand og amperemeter der strømmen følger Ohms lov"></svg>
+    <div class="ctrl"><label for="ohm-u" class="small muted" style="min-width:90px">Spenning U</label><input type="range" id="ohm-u" min="0" max="24" step="0.5" value="12" style="flex:1;min-width:140px"><span id="ohm-uo" class="mono" style="min-width:64px;text-align:right"></span></div>
+    <div class="ctrl"><label for="ohm-r" class="small muted" style="min-width:90px">Motstand R</label><input type="range" id="ohm-r" min="1" max="100" step="1" value="20" style="flex:1;min-width:140px"><span id="ohm-ro" class="mono" style="min-width:64px;text-align:right"></span></div>
+    <div class="ctrl"><button class="chip play" id="ohm-play" type="button"></button><button class="chip" id="ohm-demo-u" type="button">Demo: øk U</button><button class="chip" id="ohm-demo-r" type="button">Demo: øk R</button></div>
+    <dl class="kv"><div><dt>Strøm I = U / R</dt><dd id="ohm-i"></dd></div><div><dt>Effekt P = U · I</dt><dd id="ohm-p"></dd></div></dl>
+    <svg id="fig-ohm-graph" viewBox="0 0 600 240" role="img" aria-label="Graf over strøm mot spenning for ulike motstander"></svg>
+    <figcaption>«Demo: øk U» holder R fast, så strømmen øker i takt med spenningen. «Demo: øk R» holder U fast, så strømmen faller.</figcaption>
+  </figure>
+  <h3>Formler: Ohms lov og effekt</h3>
+  <p>Fire størrelser går igjen: spenning <b>U</b> i volt (V), strøm <b>I</b> i ampere (A), motstand <b>R</b> i ohm (Ω) og effekt <b>P</b> i watt (W). Kjenner du to av dem, kan du regne ut de to andre.</p>
+  <div class="two">
+    <figure class="fig"><svg id="tri-ohm" viewBox="0 0 280 236" role="img" aria-label="Ohms trekant med U øverst og R og I nederst"></svg><figcaption>Ohms trekant. Trykk på størrelsen du vil finne, og dekk den til. Det som står igjen er formelen: over hverandre betyr del, ved siden av hverandre betyr gang.</figcaption></figure>
+    <figure class="fig"><svg id="tri-p" viewBox="0 0 280 236" role="img" aria-label="Effekttrekant med P øverst og U og I nederst"></svg><figcaption>Effekttrekanten virker på samme måte, med P øverst og U og I nederst.</figcaption></figure>
+  </div>
+  <h4 style="margin-top:8px">Alle tolv formler, ordnet etter det du skal finne</h4>
+  <div class="tbl" id="el-f12"></div>
+  <h4 style="margin-top:8px">Andre formler i elektro</h4>
+  <div class="tbl" id="el-fmore"></div>
+  <h3>Ohms lov og effekt</h3>
+  <p class="small muted">Fyll inn to verdier. De andre regnes ut.</p>
+  <div class="calc">
+    <div class="fields">
+      <div class="row2">
+        <div class="field"><label for="e-u">Spenning U (V)</label><input id="e-u" inputmode="decimal" value="230"></div>
+        <div class="field"><label for="e-i">Strøm I (A)</label><input id="e-i" inputmode="decimal" value="10"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="e-r">Motstand R (Ω)</label><input id="e-r" inputmode="decimal"></div>
+        <div class="field"><label for="e-p">Effekt P (W)</label><input id="e-p" inputmode="decimal"></div>
+      </div>
+      <button class="chip" id="e-clear" type="button">Tøm feltene</button>
+    </div>
+    <div class="out" id="e-out" aria-live="polite"></div>
+  </div>
+<p>Nesten alle kretser er bygd av motstander i serie, i parallell eller en blanding. Med to enkle regler, Kirchhoffs lover, kan du finne strøm og spenning overalt i kretsen.</p>
 
 <h3>Seriekopling</h3>
 <p>I en seriekopling går den samme strømmen gjennom alle motstandene, fordi den bare har én vei. Spenningen fordeles, og den største motstanden får det største spenningsfallet. Brytes kretsen ett sted, stopper strømmen overalt.</p>
@@ -3389,45 +3428,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>ΣU = 0</b><span>rundt hver lukket sløyfe. U = U₁ + U₂ + U₃</span></div>
 </div>
 <p>Formlene for serie- og parallellkopling kommer direkte fra disse to lovene. I feilsøking betyr spenningsloven at hele kildespenningen ligger over et brudd i en seriekrets: måler du 24 V over en åpen bryter eller en brent sikring, er det der feilen er.</p>
-  <p class="lead">Ohms lov og effektformelen dekker de fleste beregningene i verkstedet: U = R · I og P = U · I. For trefase og motorer kommer √3 og effektfaktoren cos φ inn.</p>
-  <div class="note"><p>Arbeid på elektriske anlegg krever riktig kompetanse og må følge FSE og NEK 400. Kapitlet er for forståelse og kontrollregning, ikke for installasjonsarbeid.</p></div>
-  <h3>Formler: Ohms lov og effekt</h3>
-  <p>Fire størrelser går igjen: spenning <b>U</b> i volt (V), strøm <b>I</b> i ampere (A), motstand <b>R</b> i ohm (Ω) og effekt <b>P</b> i watt (W). Kjenner du to av dem, kan du regne ut de to andre.</p>
-  <div class="two">
-    <figure class="fig"><svg id="tri-ohm" viewBox="0 0 280 236" role="img" aria-label="Ohms trekant med U øverst og R og I nederst"></svg><figcaption>Ohms trekant. Trykk på størrelsen du vil finne, og dekk den til. Det som står igjen er formelen: over hverandre betyr del, ved siden av hverandre betyr gang.</figcaption></figure>
-    <figure class="fig"><svg id="tri-p" viewBox="0 0 280 236" role="img" aria-label="Effekttrekant med P øverst og U og I nederst"></svg><figcaption>Effekttrekanten virker på samme måte, med P øverst og U og I nederst.</figcaption></figure>
-  </div>
-  <h4 style="margin-top:8px">Alle tolv formler, ordnet etter det du skal finne</h4>
-  <div class="tbl" id="el-f12"></div>
-  <h4 style="margin-top:8px">Andre formler i elektro</h4>
-  <div class="tbl" id="el-fmore"></div>
-  <h3>Ohms lov og effekt</h3>
-  <p class="small muted">Fyll inn to verdier. De andre regnes ut.</p>
-  <div class="calc">
-    <div class="fields">
-      <div class="row2">
-        <div class="field"><label for="e-u">Spenning U (V)</label><input id="e-u" inputmode="decimal" value="230"></div>
-        <div class="field"><label for="e-i">Strøm I (A)</label><input id="e-i" inputmode="decimal" value="10"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="e-r">Motstand R (Ω)</label><input id="e-r" inputmode="decimal"></div>
-        <div class="field"><label for="e-p">Effekt P (W)</label><input id="e-p" inputmode="decimal"></div>
-      </div>
-      <button class="chip" id="e-clear" type="button">Tøm feltene</button>
-    </div>
-    <div class="out" id="e-out" aria-live="polite"></div>
-  </div>
-  <h3>Strøm, spenning og motstand</h3>
-  <p>Prikkene er strømmen. Øker du spenningen, går de fortere. Øker du motstanden, går de saktere. Motstanden gløder sterkere jo mer effekt den avgir. I grafen er hver motstand en rett linje, og jo brattere linjen er, jo lavere er motstanden.</p>
-  <figure class="fig">
-    <svg id="fig-ohm" viewBox="0 0 600 220" role="img" aria-label="Strømkrets med spenningskilde, motstand og amperemeter der strømmen følger Ohms lov"></svg>
-    <div class="ctrl"><label for="ohm-u" class="small muted" style="min-width:90px">Spenning U</label><input type="range" id="ohm-u" min="0" max="24" step="0.5" value="12" style="flex:1;min-width:140px"><span id="ohm-uo" class="mono" style="min-width:64px;text-align:right"></span></div>
-    <div class="ctrl"><label for="ohm-r" class="small muted" style="min-width:90px">Motstand R</label><input type="range" id="ohm-r" min="1" max="100" step="1" value="20" style="flex:1;min-width:140px"><span id="ohm-ro" class="mono" style="min-width:64px;text-align:right"></span></div>
-    <div class="ctrl"><button class="chip play" id="ohm-play" type="button"></button><button class="chip" id="ohm-demo-u" type="button">Demo: øk U</button><button class="chip" id="ohm-demo-r" type="button">Demo: øk R</button></div>
-    <dl class="kv"><div><dt>Strøm I = U / R</dt><dd id="ohm-i"></dd></div><div><dt>Effekt P = U · I</dt><dd id="ohm-p"></dd></div></dl>
-    <svg id="fig-ohm-graph" viewBox="0 0 600 240" role="img" aria-label="Graf over strøm mot spenning for ulike motstander"></svg>
-    <figcaption>«Demo: øk U» holder R fast, så strømmen øker i takt med spenningen. «Demo: øk R» holder U fast, så strømmen faller.</figcaption>
-  </figure>
 </div>
 <div class="topic" id="el9-batteri">
   <div class="topic-h"><span class="tno">9.2</span><h3>Elektriske batterier</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
