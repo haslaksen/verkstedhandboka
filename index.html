@@ -252,6 +252,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .topic-h h3,h3{overflow-wrap:break-word;hyphens:auto}
 .soon{font-family:var(--mono);font-size:13px;color:var(--ink-2);border:1px dashed var(--line);padding:10px 14px;margin:8px 0 4px;max-width:60ch}
 @media (max-width:820px){.topic-h .up{display:none}}
+.mmac-sw{display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:8px;vertical-align:-2px;border:1px solid var(--ink-2)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -4312,7 +4313,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="topic-h"><span class="tno">9.15</span><h3>Måling med multimeter</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
   <p class="lead">Et multimeter måler spenning, strøm og motstand, og har ofte summer for kontinuitet. Det viktigste å huske er hvordan instrumentet kobles: spenning måles <b>parallelt</b>, strøm måles <b>i serie</b>, og motstand måles <b>spenningsløst</b>.</p>
   <div class="note"><p><b>Sikkerhet:</b> Bruk et instrument med riktig målekategori (CAT) for stedet du måler. Sjekk ledninger og prober før bruk. Arbeid på anlegg over 50 V AC krever kompetanse etter FSE. Figurene viser prinsippet på en enkel 12 V-krets.</p></div>
-  <h3>Slik måler du</h3>
+  <h3>Likestrøm (1-fas): slik måler du</h3>
   <p>Velg måletype. Se hvordan bryteren dreies, hvilken kontakt den røde ledningen skal i, og hvor probene skal holdes. «Vis vanlig feil» viser hva som skjer når det gjøres galt.</p>
   <figure class="fig">
     <svg id="mm-svg" viewBox="0 0 640 360" role="img" aria-label="Multimeter koblet til en krets med batteri, sikring, bryter og lampe"></svg>
@@ -4321,6 +4322,81 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </figure>
   <h4>Fremgangsmåte</h4>
   <ol id="mm-how" style="margin:0 0 12px;padding-left:22px;font-size:14px;max-width:68ch"></ol>
+  <h3>Vekselstrøm: 2-fas og 3-fas nett</h3>
+  <p>I verkstedet møter du fire vanlige nett. Hvilket nett du står i, avgjør hvilke spenninger du skal lese. I Norge er IT-nett med 230 V mellom fasene vanlig i eldre anlegg, mens nyere anlegg ofte er TN med 230/400 V. «2-fas» er en 230 V-kurs i IT-nett: stikkontakten har to faser og jord, ingen nøytralleder.</p>
+  <figure class="fig">
+    <svg id="mmac-net" viewBox="0 0 640 250" role="img" aria-label="Transformatorens sekundærside i TN-nett og IT-nett, med faser, nøytral og jord"></svg>
+    <figcaption>Venstre: TN-nett. Stjernepunktet er jordet og ført ut som N, så fase–N og fase–jord er 230 V og fase–fase er 400 V. Høyre: IT-nett. Ingen del er jordet, og det er 230 V mellom fasene. En 2-fas kurs tar ut to av fasene.</figcaption>
+  </figure>
+  <div class="tbl"><table><thead><tr><th style="text-align:left">Leder</th><th style="text-align:left">Farge (NEK 400 / IEC 60445)</th><th style="text-align:left">Merknad</th></tr></thead><tbody>
+    <tr><td class="txt"><span class="mmac-sw" style="background:#8b4a1c"></span>L1</td><td class="txt">Brun</td><td class="txt">Fase</td></tr>
+    <tr><td class="txt"><span class="mmac-sw" style="background:#1a1a1a"></span>L2</td><td class="txt">Svart</td><td class="txt">Fase</td></tr>
+    <tr><td class="txt"><span class="mmac-sw" style="background:#8c8c8c"></span>L3</td><td class="txt">Grå</td><td class="txt">Fase</td></tr>
+    <tr><td class="txt"><span class="mmac-sw" style="background:#1e6fd9"></span>N</td><td class="txt">Blå</td><td class="txt">Nøytralleder. Finnes bare i TN-nett. I en IT-kurs kan blå leder være brukt som fase.</td></tr>
+    <tr><td class="txt"><span class="mmac-sw" style="background:repeating-linear-gradient(90deg,#3a9a3a 0 6px,#e8c51a 6px 12px)"></span>PE</td><td class="txt">Gul/grønn</td><td class="txt">Beskyttelsesjord. Skal aldri føre strøm i normal drift.</td></tr>
+  </tbody></table></div>
+  <p class="small muted">Fargene er ikke en garanti. Eldre anlegg og IT-kurser kan ha andre farger. Mål alltid, og stol ikke på fargen alene.</p>
+
+  <h3>Spenningsmåling i 2-fas og 3-fas</h3>
+  <p>Bryteren står på <b>V~</b>, rød ledning i <b>VΩ</b> og svart i <b>COM</b>. Velg nett og hvilke to punkter du måler mellom. Viserne viser spenningene som piler som roterer 50 ganger i sekundet; her i sakte film. Instrumentet viser lengden av pilen mellom de to punktene, altså forskjellen mellom dem, som effektivverdi (RMS).</p>
+  <figure class="fig">
+    <svg id="mmac-v" viewBox="0 0 640 420" role="img" aria-label="Multimeter som måler vekselspenning mellom to ledere, med viserdiagram og spenningskurver"></svg>
+    <div class="ctrl"><span class="chips" id="mmac-vsys" style="margin:0"></span></div>
+    <div class="ctrl"><span class="small muted" style="min-width:70px">Mål mellom</span><span class="chips" id="mmac-vpair" style="margin:0"></span><button class="chip play" type="button" id="mmac-vplay"></button></div>
+    <p id="mmac-vmsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
+  </figure>
+  <div class="note"><p><b>Hvorfor 400 V og ikke 460 V?</b> To faser på 230 V er forskjøvet 120°. Forskjellen mellom dem er √3 · 230 ≈ 400 V, ikke 230 + 230. Toppverdien er √2 større enn effektivverdien: 400 V RMS har toppverdi ≈ 566 V. Derfor må instrument og prober tåle minst 600 V CAT III i en fordeling.</p></div>
+
+  <h3>Forventede verdier</h3>
+  <div class="tbl"><table><thead><tr><th style="text-align:left">Måling</th><th>3-fas TN 230/400 V</th><th>3-fas IT 230 V</th><th>2-fas IT 230 V</th><th>1-fas TN 230 V</th></tr></thead><tbody>
+    <tr><td class="txt">Fase–fase</td><td>400 V</td><td>230 V</td><td>230 V</td><td>–</td></tr>
+    <tr><td class="txt">Fase–N</td><td>230 V</td><td>– (ingen N)</td><td>– (ingen N)</td><td>230 V</td></tr>
+    <tr><td class="txt">Fase–PE</td><td>230 V</td><td>ca. 133 V*</td><td>ca. 133 V*</td><td>230 V</td></tr>
+    <tr><td class="txt">N–PE</td><td>0–2 V</td><td>–</td><td>–</td><td>0–2 V</td></tr>
+  </tbody></table></div>
+  <p class="small muted">* I IT-nett er ingen del av nettet jordet. Spenningen fase–jord bestemmes av kapasitansen mellom ledere og jord og kan variere mye. Ved jordfeil på én fase blir den 0 V mot jord på den fasen og 230 V på de andre. Et høyohmig multimeter kan vise rare, flytende verdier. Flere volt mellom N og PE i TN-nett tyder på stor last eller dårlig N-forbindelse.</p>
+
+  <h3>Strømmåling med tang i 2-fas og 3-fas</h3>
+  <p>På 230/400 V måles strøm <b>alltid med strømtang</b>, ikke ved å bryte kretsen og koble multimeteret i serie. Tanga måler magnetfeltet rundt lederne den omslutter, og viser <b>summen</b> av strømmene som går gjennom kjeften. Prikkene viser strømmen: i vekselstrøm går den fram og tilbake 50 ganger i sekundet.</p>
+  <figure class="fig">
+    <svg id="mmac-i" viewBox="0 0 640 370" role="img" aria-label="Strømtang rundt én eller flere ledere i en kabel til en last, med strømprikker som går fram og tilbake"></svg>
+    <div class="ctrl"><span class="chips" id="mmac-isys" style="margin:0"></span></div>
+    <div class="ctrl"><span class="small muted" style="min-width:70px">Tang rundt</span><span class="chips" id="mmac-iclamp" style="margin:0"></span></div>
+    <div class="ctrl"><label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="mmac-ifault"> Jordfeil: 0,5 A lekker fra L1 til PE</label><button class="chip play" type="button" id="mmac-iplay"></button></div>
+    <p id="mmac-imsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
+  </figure>
+  <div class="two">
+    <div><h4>Dette viser tanga</h4><ul style="margin:0;padding-left:20px;font-size:14px">
+      <li>Rundt <b>én fase</b>: strømmen i den fasen.</li>
+      <li>Rundt <b>alle faser</b> i en symmetrisk 3-fas last: 0 A. Strømmene er forskjøvet 120° og opphever hverandre.</li>
+      <li>Rundt <b>alle faser + N</b>: lekkasjestrømmen. Det er slik en jordfeilbryter måler.</li>
+      <li>Rundt <b>hele kabelen med PE</b>: alltid 0 A, fordi lekkasjen går tilbake i PE inne i samme kabel.</li>
+    </ul></div>
+    <div><h4>Praktiske råd</h4><ul style="margin:0;padding-left:20px;font-size:14px">
+      <li>Velg A~ for vekselstrøm. DC-strøm krever en tang med Hall-sensor (AC/DC).</li>
+      <li>Legg lederen midt i kjeften og lukk den helt.</li>
+      <li>Små strømmer: legg lederen flere ganger gjennom kjeften og del avlesningen på antall vindinger.</li>
+      <li>Ved frekvensomformer: bruk True RMS-tang.</li>
+    </ul></div>
+  </div>
+
+  <h3>Motstand i motorviklinger (spenningsløst)</h3>
+  <p>En trefasemotor har tre like viklinger. Med laskene fjernet og motoren spenningsløs og frakoblet kan hver vikling måles for seg. Viklingene skal ha <b>lik motstand</b>, og det skal ikke være forbindelse mellom viklingene eller mot jord.</p>
+  <figure class="fig">
+    <svg id="mmac-r" viewBox="0 0 640 300" role="img" aria-label="Klemmebrett på trefasemotor med laskene fjernet og multimeter som måler viklingsmotstand"></svg>
+    <div class="ctrl"><span class="chips" id="mmac-rpair" style="margin:0"></span><button class="chip" type="button" id="mmac-rfault">Vis motor med viklingsfeil</button></div>
+    <p id="mmac-rmsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
+  </figure>
+  <p class="small muted">Viklingsmotstanden er lav (fra noen tidels ohm på store motorer til noen titalls ohm på små), så kortslutt probene først og trekk fra ledningsmotstanden. «0L» mot jord på et multimeter betyr bare at det ikke er kortslutning. Isolasjonen skal kontrolleres med isolasjonsmåler (typisk 500 V DC), og resultatet skal være godt over 1 MΩ. Det er arbeid for elektrofagperson.</p>
+
+  <div class="note"><p><b>Typiske feil ved måling i 2-fas og 3-fas</b></p>
+  <ul style="margin:4px 0 0;padding-left:20px;font-size:14px">
+    <li>Rød ledning står i A-kontakten fra en strømmåling. Det gir kortslutning mellom fasene når du måler spenning, og lysbue.</li>
+    <li>Instrumentet er for lav CAT eller for lav spenning, for eksempel CAT II 300 V i en fordeling.</li>
+    <li>Måling på V⎓ (likespenning) på et vekselspenningsnett viser rundt 0 V eller hoppende tall.</li>
+    <li>Måler bare fase–jord i IT-nett og tror fasen er død. Mål alltid mellom alle faser også.</li>
+    <li>Strømmåling med multimeteret i serie på 230/400 V. Bruk tang.</li>
+  </ul></div>
   <h3>Oversikt over metodene</h3>
   <div class="tbl"><table><thead><tr><th>Måling</th><th style="text-align:left">Kobling</th><th style="text-align:left">Rød ledning</th><th style="text-align:left">Kretsen</th><th style="text-align:left">Typisk feil</th></tr></thead><tbody>
     <tr><td>Spenning V</td><td class="txt">Parallelt over komponenten</td><td class="txt">VΩ</td><td class="txt">Med spenning</td><td class="txt">Rød ledning glemt i A-kontakten gir kortslutning</td></tr>
@@ -16435,6 +16511,244 @@ $("#fy11b-ppe").innerHTML=tblHTML(["Utstyr","Standard","Når og hvordan"],[
  ["Åndedrettsvern","NS-EN 14387 (filter)","Når databladet krever det eller avtrekket ikke er nok. Filterfarge: A brun (organiske løsemidler), B grå (uorganiske gasser), E gul (sure gasser), K grønn (ammoniakk)."],
  ["Avtrekk og ventilasjon","–","Tiltak som fjerner damp ved kilden går foran åndedrettsvern. Beising og avfetting skal gjøres med punktavsug eller i avtrekksskap."]],[1,2]);
 }
+/* ---- 9.15 tillegg: måling i 2-fas og 3-fas vekselstrømnett ---- */
+(function(){
+  if(!document.getElementById("mmac-v"))return;
+  const S="var(--ink)",M="var(--ink-2)",A="var(--accent)",RED="#c62828",BLK="#222",YEL="#f0c419";
+  const COL={L1:"#8b4a1c",L:"#8b4a1c",L2:"#1a1a1a",L3:"#8c8c8c",N:"#1e6fd9",PE:"#3a9a3a"};
+  const C=(re,im)=>({re,im}),pol=(m,deg)=>C(m*Math.cos(deg*D2R),m*Math.sin(deg*D2R));
+  const sub=(a,b)=>C(a.re-b.re,a.im-b.im),add=(a,b)=>C(a.re+b.re,a.im+b.im),abs=a=>Math.hypot(a.re,a.im),arg=a=>Math.atan2(a.im,a.re);
+  const ln=(x1,y1,x2,y2,c,w=2,d="")=>`<line x1="${x1.toFixed?x1.toFixed(1):x1}" y1="${y1.toFixed?y1.toFixed(1):y1}" x2="${x2.toFixed?x2.toFixed(1):x2}" y2="${y2.toFixed?y2.toFixed(1):y2}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"${d?` stroke-dasharray="${d}"`:""}/>`;
+  const cond=(x1,y1,x2,y2,k,w=5)=>ln(x1,y1,x2,y2,"var(--ink-2)",w+2.5)+(k==="PE"?ln(x1,y1,x2,y2,"#3a9a3a",w)+ln(x1,y1,x2,y2,"#e8c51a",w,"7 7"):ln(x1,y1,x2,y2,COL[k],w));
+  const f1d=(x,d=1)=>fmt(x,d);
+  const SLOW=0.5;       // vist frekvens i Hz
+  // kompakt multimeter med kontaktene øverst
+  function meter(x,y,disp,unit,dial,w=180,h=150,side=false){
+    let s=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="${YEL}" stroke="${S}" stroke-width="2"/><rect x="${x+10}" y="${y+10}" width="${w-20}" height="${h-20}" rx="9" fill="#2b2b2b"/>`;
+    const vo=side?[x+4,y+44]:[x+w*0.36,y+28],com=side?[x+4,y+84]:[x+w*0.68,y+28];
+    s+=`<circle cx="${com[0]+(side?20:0)}" cy="${com[1]}" r="7" fill="#111" stroke="#888" stroke-width="2"/><circle cx="${vo[0]+(side?20:0)}" cy="${vo[1]}" r="7" fill="#111" stroke="#d33" stroke-width="2"/>`;
+    if(side){s+=TX(com[0]+34,com[1]+4,"COM",{mono:1,size:9,fill:"#ddd"})+TX(vo[0]+34,vo[1]+4,"VΩ",{mono:1,size:9,fill:"#ddd"})}
+    else s+=TX(com[0],com[1]+20,"COM",{mono:1,size:9,anchor:"middle",fill:"#ddd"})+TX(vo[0],vo[1]+20,"VΩ",{mono:1,size:9,anchor:"middle",fill:"#ddd"});
+    const dx=side?70:22,dy=side?28:58;
+    s+=`<rect x="${x+dx}" y="${y+dy}" width="${w-dx-22}" height="46" rx="4" fill="#c9d6b8"/>`;
+    s+=TX(x+w-30,y+dy+34,disp,{mono:1,size:26,anchor:"end",weight:600,fill:"#111"})+TX(x+w-30,y+dy+44,unit,{mono:1,size:9,anchor:"end",fill:"#333"});
+    s+=TX(x+w/2+(side?12:0),y+h-18,"Bryter: "+dial,{mono:1,size:11,anchor:"middle",fill:YEL});
+    return {s,com,vo,side};
+  }
+  // probe som peker opp mot et punkt (spissen i tip), ledning ned til kontakt
+  function probe(tip,jack,col,side){
+    const [tx,ty]=tip,[jx,jy]=jack;
+    const path=side?`M${tx} ${ty+30}C${tx} ${ty+110} ${jx-90} ${jy} ${jx+14} ${jy}`:`M${tx} ${ty+30}C${tx} ${ty+90} ${jx} ${jy-70} ${jx} ${jy}`;
+    return `<path d="${path}" fill="none" stroke="${col}" stroke-width="3.2"/>`+
+      `<rect x="${tx-3.5}" y="${ty+8}" width="7" height="24" rx="2" fill="${col}" stroke="${col===BLK?"#888":"none"}" stroke-width="1"/>`+ln(tx,ty,tx,ty+8,"#999",2);
+  }
+  function probe2(tip,jack,col){
+    const [tx,ty]=tip,[jx,jy]=jack,L=Math.hypot(jx-tx,jy-ty),ux=(jx-tx)/L,uy=(jy-ty)/L;
+    const b1=[tx+ux*7,ty+uy*7],b2=[tx+ux*34,ty+uy*34];
+    return `<path d="M${b2[0].toFixed(1)} ${b2[1].toFixed(1)}C${(tx+ux*110).toFixed(1)} ${(ty+uy*110+40).toFixed(1)} ${jx-90} ${jy} ${jx+14} ${jy}" fill="none" stroke="${col}" stroke-width="3.2"/>`+
+      ln(b1[0],b1[1],b2[0],b2[1],col,7)+ln(tx,ty,b1[0],b1[1],"#999",2);
+  }
+  /* ========== figur: TN- og IT-nett ========== */
+  (function(){
+    let s="";
+    const coil=(x,y1,y2)=>{const n=5,dy=(y2-y1)/n;let d=`M${x} ${y1}`;for(let i=0;i<n;i++)d+=`q9 ${(dy/2).toFixed(1)} 0 ${dy.toFixed(1)}`;return `<path d="${d}" fill="none" stroke="${S}" stroke-width="2"/>`};
+    const earth=(x,y)=>ln(x,y,x,y+10,S,2)+ln(x-12,y+10,x+12,y+10,S,2)+ln(x-8,y+15,x+8,y+15,S,2)+ln(x-4,y+20,x+4,y+20,S,2);
+    const bus=[48,70,92];
+    function side(ox,tn){
+      const xs=[ox+30,ox+70,ox+110],yT=110,yB=170,bx=ox+250;
+      s+=`<rect x="${ox+12}" y="${yT-8}" width="116" height="${yB-yT+16}" rx="6" fill="none" stroke="var(--line)" stroke-dasharray="4 3"/>`+TX(ox+70,yT-14,"transformator",{size:9,fill:M,anchor:"middle"});
+      xs.forEach((x,i)=>{const k=["L1","L2","L3"][i];s+=coil(x,yT,yB)+cond(x,yT,x,bus[i],k,3)+cond(x,bus[i],bx,bus[i],k,3)+TX(bx+6,bus[i]+4,k,{mono:1,size:11,weight:600})});
+      s+=ln(xs[0],yB,xs[2],yB,S,2)+`<circle cx="${xs[1]}" cy="${yB}" r="4" fill="${S}"/>`;
+      if(tn){s+=cond(xs[2],yB,xs[2]+30,yB,"N",3)+cond(xs[2]+30,yB,xs[2]+30,130,"N",3)+cond(xs[2]+30,130,bx,130,"N",3)+TX(bx+6,134,"N",{mono:1,size:11,weight:600});
+        s+=ln(xs[1],yB,xs[1],yB+14,S,2)+earth(xs[1],yB+14)+TX(xs[1]+16,yB+26,"jordet",{size:10,fill:M});
+        s+=cond(xs[1],yB+8,ox+150,yB+8,"PE",3)+cond(ox+150,yB+8,ox+150,212,"PE",3)+cond(ox+150,212,bx,212,"PE",3)+TX(bx+6,216,"PE",{mono:1,size:11,weight:600});
+        s+=TX(bx-50,170,"L–L 400 V",{mono:1,size:10,fill:M,anchor:"middle"})+TX(bx-50,184,"L–N 230 V",{mono:1,size:10,fill:M,anchor:"middle"});
+      }else{s+=TX(xs[1],yB+18,"ikke jordet",{size:10,fill:M,anchor:"middle"});
+        s+=cond(ox+150,212,bx,212,"PE",3)+earth(ox+150,212)+TX(bx+6,216,"PE",{mono:1,size:11,weight:600})+TX(ox+150,244,"jordelektrode, ikke koblet til nettet",{size:9,fill:M,anchor:"start"});
+        s+=`<rect x="${bx-70}" y="${bus[0]-12}" width="102" height="${bus[1]-bus[0]+24}" fill="none" stroke="${A}" stroke-width="1.6" stroke-dasharray="4 3" rx="4"/>`+TX(bx-20,bus[0]-17,"2-fas kurs",{size:10,fill:A,anchor:"middle"});
+        s+=TX(bx-50,170,"L–L 230 V",{mono:1,size:10,fill:M,anchor:"middle"})+TX(bx-50,184,"L–PE ca. 133 V",{mono:1,size:10,fill:M,anchor:"middle"});
+      }
+    }
+    s+=TX(150,24,"TN-nett 230/400 V",{size:13,weight:600,anchor:"middle"})+TX(480,24,"IT-nett 230 V",{size:13,weight:600,anchor:"middle"});
+    side(10,true);side(330,false);
+    $("#mmac-net").innerHTML=s;
+  })();
+
+  /* ========== spenningsmåling ========== */
+  const VSYS={
+    tn3:{n:"3-fas TN 400 V",pts:["L1","L2","L3","N","PE"],V:{L1:pol(231,90),L2:pol(231,-30),L3:pol(231,210),N:C(0,0),PE:C(0,0)},it:false},
+    it3:{n:"3-fas IT 230 V",pts:["L1","L2","L3","PE"],V:{L1:pol(133,90),L2:pol(133,-30),L3:pol(133,210),PE:C(0,0)},it:true},
+    it2:{n:"2-fas IT 230 V",pts:["L1","L2","PE"],V:{L1:pol(133,90),L2:pol(133,-30),PE:C(0,0)},it:true},
+    tn1:{n:"1-fas TN 230 V",pts:["L","N","PE"],V:{L:pol(231,90),N:C(0,0),PE:C(0,0)},it:false}};
+  let vs="tn3",pa=["L1","L2"],vt=0,vtip={a:null,b:null},vstop=()=>{};
+  const TX0=60,TDX=52,TY=112; // rekkeklemmer
+  const termX=(k)=>TX0+VSYS[vs].pts.indexOf(k)*TDX;
+  const tipOf=k=>[termX(k),TY+30];
+  function vexplain(){
+    const sy=VSYS[vs],[a,b]=pa,isL=k=>k[0]==="L",U=abs(sub(sy.V[a],sy.V[b]));
+    if(isL(a)&&isL(b))return sy.it?`To faser i IT-nett: linjespenningen er ${Math.round(U)} V. Det er den eneste spenningen som ligger fast i IT-nett.`:`To faser i TN-nett: linjespenning √3 · 231 V ≈ ${Math.round(U)} V. Pilene står 120° fra hverandre, så forskjellen er lengre enn hver av dem.`;
+    if(isL(a)&&b==="N")return `Fase mot N: fasespenning ${Math.round(U)} V. N er koblet til det jordede stjernepunktet, så den står i sentrum av viserdiagrammet.`;
+    if(isL(a)&&b==="PE")return sy.it?`Fase mot jord i IT-nett: ca. ${Math.round(U)} V, men verdien er flytende. Den avhenger av kapasitansen mot jord og kan variere mye. Ved jordfeil på en fase blir den 0 V for den fasen og 230 V for de andre. Mål derfor alltid mellom fasene også.`:`Fase mot PE i TN-nett: ${Math.round(U)} V, siden PE og N er koblet sammen i stjernepunktet.`;
+    if(a==="N"&&b==="PE")return `N mot PE: nær 0 V. N og PE er koblet sammen ved inntaket. Flere volt her tyder på stor last på kursen eller en dårlig N-forbindelse.`;
+    return "";
+  }
+  function vdraw(){
+    const sy=VSYS[vs],[a,b]=pa,Va=sy.V[a],Vb=sy.V[b],D=sub(Va,Vb),U=abs(D);
+    const ph=2*Math.PI*SLOW*vt; // vinkel
+    let s=TX(150,22,"Rekkeklemmer i fordeling / koblingsboks",{size:11,fill:M,anchor:"middle"});
+    // ledere ovenfra til klemmene
+    sy.pts.forEach(k=>{const x=termX(k);s+=cond(x,34,x,TY,k,5)+`<rect x="${x-17}" y="${TY}" width="34" height="24" rx="3" fill="var(--sheet)" stroke="${S}" stroke-width="1.6"/><circle cx="${x}" cy="${TY+12}" r="5" fill="none" stroke="${S}" stroke-width="1.4"/>`+ln(x-3,TY+9,x+3,TY+15,S,1.4)+TX(x,TY-8+0,"",{})+TX(x,TY+46+30,"",{});
+      s+=`<rect x="${x-15}" y="${TY-26}" width="30" height="16" rx="3" fill="var(--paper)"/>`+TX(x,TY-14,k,{mono:1,size:11,weight:600,anchor:"middle"})});
+    // multimeter
+    const disp=U<0.5?"0,0":(sy.it&&(a==="PE"||b==="PE")?"≈"+Math.round(U):String(Math.round(U)));
+    const m=meter(70,250,disp,"V ~","V~");
+    s+=probe(vtip.b,m.com,BLK)+probe(vtip.a,m.vo,RED)+m.s;
+    // viserdiagram
+    const cx=385,cy=128,sc=70/231;s+=`<circle cx="${cx}" cy="${cy}" r="72" fill="none" stroke="var(--line)" stroke-dasharray="3 4"/>`;
+    s+=TX(300,24,"Viserdiagram",{size:11,weight:600});
+    const rot=z=>{const c=Math.cos(ph),si=Math.sin(ph);return C(z.re*c-z.im*si,z.re*si+z.im*c)};
+    const P=z=>{const r=rot(z);return [cx+r.re*sc,cy-r.im*sc]};
+    sy.pts.forEach(k=>{if(abs(sy.V[k])<1)return;const [x,y]=P(sy.V[k]);s+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${COL[k]}" stroke-width="3" marker-end="url(#mmac-ah-${k})"/>`;
+      s+=`<defs><marker id="mmac-ah-${k}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="${COL[k]}"/></marker></defs>`;
+      const lx=cx+(x-cx)*1.24,ly=cy+(y-cy)*1.24;s+=TX(lx,ly+4,k,{mono:1,size:11,weight:600,anchor:"middle"})});
+    s+=`<circle cx="${cx}" cy="${cy}" r="4" fill="${S}"/>`+TX(cx+8,cy+16,sy.it?"(PE ≈ her)":"N, PE",{mono:1,size:9,fill:M});
+    if(U>0.5){const [x1,y1]=P(Vb),[x2,y2]=P(Va);s+=`<defs><marker id="mmac-ahm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="${A}"/></marker></defs><line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${A}" stroke-width="4" stroke-dasharray="7 4" marker-end="url(#mmac-ahm)"/>`}
+    // avlesning
+    s+=`<rect x="482" y="40" width="148" height="118" rx="6" fill="var(--paper)" stroke="var(--line)"/>`;
+    s+=TX(492,60,`Mellom ${a} og ${b}`,{size:11,weight:600})+TX(492,84,`U = ${disp.replace("≈","≈ ")} V`,{mono:1,size:14,weight:600,fill:A});
+    s+=TX(492,104,`Û = ${U<0.5?"0":Math.round(U*Math.SQRT2)} V (topp)`,{mono:1,size:11,fill:M})+TX(492,122,"50 Hz, vist i",{size:10,fill:M})+TX(492,136,"sakte film",{size:10,fill:M});
+    // kurver
+    const gx=300,gw=330,gy=320,ga=78/(400*Math.SQRT2);s+=ln(gx,gy,gx+gw,gy,"var(--line)",1)+ln(gx,gy-84,gx,gy+84,"var(--line)",1)+TX(gx+gw,gy+16,"tid",{size:9,fill:M,anchor:"end"})+TX(gx+4,gy-86,"u (V)",{size:9,fill:M});
+    const wave=(z,col,w,dash)=>{let d="";for(let i=0;i<=110;i++){const x=gx+i*gw/110,th=ph-(i/110)*4*Math.PI,v=Math.SQRT2*abs(z)*Math.sin(th+arg(z));d+=(i?"L":"M")+x.toFixed(1)+" "+(gy-v*ga).toFixed(1)}return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${w}"${dash?` stroke-dasharray="${dash}"`:""}/>`};
+    if(abs(Va)>1)s+=wave(Va,COL[a],1.6,"5 4");if(abs(Vb)>1)s+=wave(Vb,COL[b],1.6,"5 4");
+    if(U>0.5)s+=wave(D,A,3);
+    s+=TX(gx+gw,gy-90,`— ${a}–${b} (det instrumentet ser)`,{size:10,fill:A,anchor:"end"});
+    $("#mmac-v").innerHTML=s;
+    $("#mmac-vmsg").textContent=vexplain();
+  }
+  function vpairs(){const p=VSYS[vs].pts,o=[];for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++)o.push([p[i],p[j]]);return o}
+  function vchips(){
+    $("#mmac-vsys").innerHTML=Object.entries(VSYS).map(([k,v])=>`<button class="chip" type="button" data-s="${k}" aria-pressed="${k===vs}">${v.n}</button>`).join("");
+    $("#mmac-vpair").innerHTML=vpairs().map(([a,b])=>`<button class="chip" type="button" data-p="${a}|${b}" aria-pressed="${a===pa[0]&&b===pa[1]}">${a}–${b}</button>`).join("");
+  }
+  function vgo(instant){
+    const to={a:tipOf(pa[0]),b:tipOf(pa[1])};
+    if(instant||!vtip.a){vtip={a:to.a,b:to.b};vdraw();return}
+    const fr={a:[...vtip.a],b:[...vtip.b]};vstop();
+    vstop=tween(700,q=>{vtip={a:[lerp(fr.a[0],to.a[0],q),lerp(fr.a[1],to.a[1],q)-Math.sin(q*Math.PI)*24],b:[lerp(fr.b[0],to.b[0],q),lerp(fr.b[1],to.b[1],q)-Math.sin(q*Math.PI)*24]};vdraw()});
+  }
+  $("#mmac-vsys").onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;vs=b.dataset.s;pa=vpairs()[0];vchips();vgo(true)};
+  $("#mmac-vpair").onclick=e=>{const b=e.target.closest("[data-p]");if(!b)return;pa=b.dataset.p.split("|");vchips();vgo()};
+  vchips();vgo(true);
+  addLoop("el9-maling",dt=>{vt+=dt;vdraw()},"#mmac-vplay");
+
+  /* ========== strømtang ========== */
+  const ISYS={
+    sym:{n:"3-fas motor, symmetrisk",rows:["L1","L2","L3","PE"],I:{L1:pol(10,60),L2:pol(10,-60),L3:pol(10,180)},load:"3-fas motor\n3 × 10 A",tn:false},
+    usym:{n:"3-fas usymmetrisk (TN)",rows:["L1","L2","L3","N","PE"],I:{L1:pol(10,90),L2:pol(6,-30),L3:pol(2,210)},load:"1-fas laster\nfordelt på fasene",tn:true},
+    it2:{n:"2-fas last 230 V (IT)",rows:["L1","L2","PE"],I:{L1:pol(10,90),L2:pol(10,-90)},load:"Varmeovn\n2,3 kW",tn:false},
+    tn1:{n:"1-fas last 230 V (TN)",rows:["L","N","PE"],I:{L:pol(10,90),N:pol(10,-90)},load:"Varmeovn\n2,3 kW",tn:true}};
+  let is="sym",clamp=["L1"],fault=false,it=0,ipos={};
+  function currents(){
+    const sy=ISYS[is],I={};sy.rows.forEach(k=>I[k]=sy.I[k]||C(0,0));
+    if(sy.rows.includes("N")&&!sy.I.N){let sum=C(0,0);sy.rows.forEach(k=>{if(k!=="N"&&k!=="PE")sum=add(sum,I[k])});I.N=C(-sum.re,-sum.im)}
+    if(fault){const ph=sy.rows[0],leak=pol(0.5,arg(I[ph])*180/Math.PI);I[ph]=add(I[ph],leak);I.PE=C(-leak.re,-leak.im)}
+    return I;
+  }
+  function clampSets(){
+    const r=ISYS[is].rows,ph=r.filter(k=>k[0]==="L"),o=r.map(k=>[k]);
+    if(ph.length>1)o.push(ph);
+    if(r.includes("N"))o.push([...ph,"N"]);
+    o.push([...r]);
+    return o;
+  }
+  const setLabel=set=>{const r=ISYS[is].rows;if(set.length===1)return set[0];if(set.length===r.length)return "Hele kabelen med PE";if(set.includes("N"))return set.filter(k=>k[0]==="L").length>1?"Alle faser + N":"L + N";return "Alle faser"};
+  function iexplain(I,sum){
+    const sy=ISYS[is],set=clamp,mag=abs(sum),r=sy.rows,ph=r.filter(k=>k[0]==="L");
+    const v=fmt(mag,2)+" A";
+    if(set.length===1){const k=set[0];if(k==="PE")return fault?`PE fører lekkasjestrømmen ${v} tilbake. I normal drift skal PE være strømløs.`:`PE fører ingen strøm i normal drift: ${v}.`;
+      if(k==="N")return sy.I.N?`N fører hele returstrømmen i en 1-fas krets: ${v}.`:`N fører bare ubalansen mellom fasene: ${v}. Strømmene i fasene er forskjøvet 120°, så N blir mindre enn summen av dem.`;
+      return `Strømmen i ${k}: ${v}. Tanga rundt én leder gir strømmen i den lederen.`}
+    if(set.length===r.length)return `Hele kabelen med PE: ${v}. Alt som går ut, kommer tilbake i samme kabel, også en lekkasje til PE. Derfor viser tanga 0.`;
+    if(set.includes("N"))return fault?`Faser + N: ${v}. Det er lekkasjestrømmen til jord. Slik måler en jordfeilbryter. Over 30 mA ville en personvern-jordfeilbryter løst ut.`:`Faser + N: ${v}. All strøm som går ut i fasene kommer tilbake i N. Det som mangler, er lekkasje til jord.`;
+    if(ph.length>1&&set.every(k=>k[0]==="L")){
+      if(is==="it2")return fault?`Begge faser: ${v}. Lekkasjen fra L1 går ikke tilbake i L2, så den blir synlig.`:`Begge faser i en 2-fas kurs: ${v}. Strømmen går ut i den ene fasen og tilbake i den andre, så de opphever hverandre.`;
+      if(is==="sym")return fault?`Alle faser: ${v}. Det er lekkasjestrømmen; uten feil ville det vært 0.`:`Alle faser rundt en symmetrisk motor: ${v}. Tre like strømmer forskjøvet 120° har summen 0 i hvert øyeblikk.`;
+      return `Alle faser: ${v}. Med ulik last i fasene blir summen ikke 0. Det som mangler, går tilbake i N.`}
+    return v;
+  }
+  function idraw(dt){
+    const sy=ISYS[is],I=currents(),rows=sy.rows,rowY=k=>60+rows.indexOf(k)*44,ph=2*Math.PI*SLOW*it;
+    let sum=C(0,0);clamp.forEach(k=>sum=add(sum,I[k]||C(0,0)));
+    let s=TX(40,28,"Fordeling",{size:11,fill:M})+`<rect x="22" y="38" width="10" height="${rows.length*44-8}" fill="var(--line)"/>`;
+    const lx1=32,lx2=516;
+    s+=`<rect x="${lx2}" y="40" width="112" height="${rows.length*44-12}" rx="6" fill="var(--paper)" stroke="${S}" stroke-width="1.6"/>`;
+    sy.load.split("\n").forEach((t,i)=>s+=TX(lx2+56,62+i*14,t,{size:10,anchor:"middle",weight:i?400:600}));
+    rows.forEach(k=>{const y=rowY(k);s+=cond(lx1,y,lx2,y,k,5)+TX(lx1+4,y-9,k,{mono:1,size:10,weight:600});
+      // prikker: hastighet ∝ momentanstrøm (positiv = mot lasten)
+      const z=I[k]||C(0,0),inst=Math.SQRT2*abs(z)*Math.sin(ph+arg(z));
+      ipos[k]=(ipos[k]||0)+inst*4.2*(dt||0)*(RM?0:1);
+      if(abs(z)>0.05){for(let x=lx1+8+((ipos[k]%22)+22)%22;x<lx2-4;x+=22)s+=`<circle cx="${x.toFixed(1)}" cy="${y}" r="3" fill="${A}"/>`}
+      const v=fmt(abs(z),1);s+=TX(lx2-8,y-9,abs(z)>0.05?v+" A":"0 A",{mono:1,size:9,anchor:"end",fill:M});
+    });
+    // tang
+    const ys=clamp.map(rowY),y1=Math.min(...ys)-18,y2=Math.max(...ys)+18,cxp=300;
+    s+=`<rect x="${cxp-24}" y="${y1}" width="48" height="${y2-y1}" rx="22" fill="none" stroke="${YEL}" stroke-width="9"/><rect x="${cxp-24}" y="${y1}" width="48" height="${y2-y1}" rx="22" fill="none" stroke="${S}" stroke-width="1"/>`;
+    const by=Math.max(y2,rows.length*44+36);
+    s+=ln(cxp,y2+4,cxp,by,YEL,10)+`<rect x="${cxp-46}" y="${by}" width="92" height="64" rx="8" fill="${YEL}" stroke="${S}" stroke-width="1.6"/><rect x="${cxp-36}" y="${by+8}" width="72" height="28" rx="3" fill="#c9d6b8"/>`;
+    s+=TX(cxp+30,by+28,fmt(abs(sum),2),{mono:1,size:16,weight:600,anchor:"end",fill:"#111"})+TX(cxp,by+54,"A~",{mono:1,size:11,anchor:"middle",fill:"#111"});
+    // kurve: summen tanga ser
+    const gx=380,gw=240,gy=by+34,ga=24/(10*Math.SQRT2);
+    s+=ln(gx,gy,gx+gw,gy,"var(--line)",1)+TX(gx,by-4,"Momentanstrøm gjennom kjeften",{size:10,fill:M});
+    const wave=(z,col,w,dash)=>{let d="";for(let i=0;i<=90;i++){const x=gx+i*gw/90,th=ph-(i/90)*4*Math.PI,v=Math.SQRT2*abs(z)*Math.sin(th+arg(z));d+=(i?"L":"M")+x.toFixed(1)+" "+(gy-v*ga).toFixed(1)}return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${w}"${dash?` stroke-dasharray="${dash}"`:""}/>`};
+    if(clamp.length>1)clamp.forEach(k=>{if(abs(I[k]||C(0,0))>0.05)s+=wave(I[k],COL[k],1.3,"4 3")});
+    s+=wave(sum,A,3);
+    $("#mmac-i").innerHTML=s;
+    $("#mmac-imsg").textContent=iexplain(I,sum);
+  }
+  function ichips(){
+    $("#mmac-isys").innerHTML=Object.entries(ISYS).map(([k,v])=>`<button class="chip" type="button" data-s="${k}" aria-pressed="${k===is}">${v.n}</button>`).join("");
+    $("#mmac-iclamp").innerHTML=clampSets().map(set=>`<button class="chip" type="button" data-c="${set.join("|")}" aria-pressed="${set.join("|")===clamp.join("|")}">${setLabel(set)}</button>`).join("");
+  }
+  $("#mmac-isys").onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;is=b.dataset.s;clamp=[ISYS[is].rows[0]];ipos={};ichips();idraw(0)};
+  $("#mmac-iclamp").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;clamp=b.dataset.c.split("|");ichips();idraw(0)};
+  $("#mmac-ifault").onchange=e=>{fault=e.target.checked;idraw(0)};
+  ichips();idraw(0);
+  addLoop("el9-maling",dt=>{it+=dt;idraw(dt)},"#mmac-iplay");
+
+  /* ========== viklingsmotstand ========== */
+  const TB={U1:[130,96],V1:[200,96],W1:[270,96],W2:[130,170],U2:[200,170],V2:[270,170],PE:[350,133]};
+  const RP=[["U1","U2"],["V1","V2"],["W1","W2"],["U1","V1"],["U1","PE"]];
+  let rp=0,rfault=false,rtip=null,rstop=()=>{};
+  const rTip=k=>[TB[k][0]+6,TB[k][1]+6];
+  function rval(){const [a,b]=RP[rp];const ok={U1U2:2.40,V1V2:2.41,W1W2:2.39};const f={U1U2:2.40,V1V2:1.62,W1W2:2.39};
+    const key=a+b;if(ok[key]!==undefined)return (rfault?f:ok)[key];if(b==="PE")return rfault?NaN:Infinity;return Infinity}
+  function rmsg(){const [a,b]=RP[rp],v=rval();
+    if(a+b==="U1V1")return `Mellom to ulike viklinger med laskene fjernet: 0L (ingen forbindelse). Viser instrumentet en verdi her, er det kontakt mellom viklingene.`;
+    if(b==="PE")return rfault?`Mot jord: instrumentet viser 0L, men det betyr ikke at isolasjonen er god. En fuktig eller skadet vikling kan ha lav isolasjonsmotstand som bare viser seg med isolasjonsmåler på 500 V. Det må måles av elektrofagperson.`:`Vikling mot motorhus (PE): 0L på multimeteret. Isolasjonen skal likevel kontrolleres med isolasjonsmåler (500 V DC, godt over 1 MΩ).`;
+    if(rfault&&a==="V1")return `V-viklingen viser ${fmt(v,2)} Ω, mens de andre viser ca. 2,40 Ω. Det er ${Math.round((1-v/2.4)*100)} % lavere, noe som tyder på kortslutning mellom vindinger. Motoren må til vikleverksted.`;
+    return `Vikling ${a}–${b}: ${fmt(v,2)} Ω. ${rfault?"":"Alle tre viklingene skal vise nesten samme verdi (her 2,39–2,41 Ω)."}`}
+  function rdraw(){
+    let s=`<rect x="90" y="60" width="300" height="146" rx="10" fill="var(--paper)" stroke="${S}" stroke-width="1.6"/>`+TX(240,48,"Klemmebrett, lasker fjernet",{size:11,fill:M,anchor:"middle"});
+    // viklinger (bak klemmebrettet, stiplet)
+    const coilP=(a,b)=>{const [x1,y1]=TB[a],[x2,y2]=TB[b];return `<path d="M${x1} ${y1}C${x1+20} ${y1+30} ${x2-20} ${y2-30} ${x2} ${y2}" fill="none" stroke="${A}" stroke-width="2" stroke-dasharray="3 3" opacity=".7"/>`};
+    s+=coilP("U1","U2")+coilP("V1","V2")+`<path d="M270 96C300 140 160 130 130 170" fill="none" stroke="${A}" stroke-width="2" stroke-dasharray="3 3" opacity=".7"/>`;
+    Object.entries(TB).forEach(([k,[x,y]])=>{s+=`<circle cx="${x}" cy="${y}" r="13" fill="#c9a74a" stroke="${S}" stroke-width="1.6"/><circle cx="${x}" cy="${y}" r="5" fill="#8a6e22"/>`+TX(x,y+(y<120?-18:30),k,{mono:1,size:11,weight:600,anchor:"middle"})});
+    s+=TX(350,112,"⏚",{size:14,anchor:"middle"});
+    const v=rval(),disp=isNaN(v)||!isFinite(v)?"0L":fmt(v,2);
+    const m=meter(450,70,disp,disp==="0L"?"":"Ω","Ω",180,150,true);
+    if(rtip)s+=probe2(rtip.b,m.com,BLK)+probe2(rtip.a,m.vo,RED);
+    s+=m.s;
+    $("#mmac-r").innerHTML=s;$("#mmac-rmsg").textContent=rmsg();
+  }
+  function rchips(){$("#mmac-rpair").innerHTML=RP.map(([a,b],i)=>`<button class="chip" type="button" data-i="${i}" aria-pressed="${i===rp}">${a}–${b}</button>`).join("");$("#mmac-rfault").textContent=rfault?"Vis frisk motor":"Vis motor med viklingsfeil"}
+  function rgo(instant){const [a,b]=RP[rp],to={a:rTip(a),b:rTip(b)};if(instant||!rtip){rtip=to;rdraw();return}
+    const fr={a:[...rtip.a],b:[...rtip.b]};rstop();rstop=tween(600,q=>{rtip={a:[lerp(fr.a[0],to.a[0],q),lerp(fr.a[1],to.a[1],q)-Math.sin(q*Math.PI)*18],b:[lerp(fr.b[0],to.b[0],q),lerp(fr.b[1],to.b[1],q)-Math.sin(q*Math.PI)*18]};rdraw()})}
+  $("#mmac-rpair").onclick=e=>{const b=e.target.closest("[data-i]");if(!b)return;rp=+b.dataset.i;rchips();rgo()};
+  $("#mmac-rfault").onclick=()=>{rfault=!rfault;rchips();rdraw()};
+  rchips();rgo(true);
+})();
+
 const chaps=[...document.querySelectorAll("[data-chap]")];
 const ALIAS={passninger:"t2-aksel",generelle:"t2-gen",beliggenhet:"t2-geo",overflate:"t2-ruhet",skjaredata:"m3-valg",sveis:"s4-symboler",pneumatikk:"h8-enheter",hydraulikk:"h8-enheter",maling:"el9-maling",tommegjenger:"tomme"};
 function show(){
