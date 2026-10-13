@@ -1549,7 +1549,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p>Tåen er der spenningene samles. En jevn, slak overgang ved tåen gir mye bedre utmattingsfasthet enn en høy, bratt overhøyde. Derfor er stor overhøyde en feil, ikke ekstra sikkerhet.</p>
 
 <h3>Fugeareal og tilsatsmengde, V-fuge</h3>
-<p>Arealet av fugen: A = (t − c)² · tan(α/2) + b · t. I tillegg kommer overhøyden og rotvulsten, regnet som parabelsegmenter (⅔ · bredde · høyde). Masse per meter: m = A · ρ / 1000 (kg/m, A i mm², ρ i g/cm³).</p>
+<p>Arealet av fugen: A = (t − c)² · tan(α/2) + b · t. I tillegg kommer overhøyden og rotvulsten, regnet som parabelsegmenter (⅔ · bredde · høyde). Masse per meter: m = A · ρ / 10⁶ (kg/m, A i mm², ρ i kg/m³).</p>
 <div class="calc" id="s4x-v-calc">
   <div class="fields">
     <div class="row2">
@@ -2932,10 +2932,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="topic" id="m7-vekt">
   <div class="topic-h"><span class="tno">7.3</span><h3>Vekttabeller – stålprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Vekt per meter er tverrsnittsareal ganger densitet. Med areal i mm² og densitet i g/cm³ får man kg/m direkte ved å dele på 1000.</p>
+  <p class="lead">Vekt per meter er tverrsnittsareal ganger densitet. Med areal i mm² og densitet i kg/m³ får man kg/m direkte ved å dele på 10⁶ (1 000 000).</p>
 <figure class="fig">
   <svg id="m7x-shp" viewBox="0 0 600 220" role="img" aria-label="Tverrsnitt av rund, firkant, sekskant og flat med arealformler"></svg>
-  <figcaption>m′ = A · ρ / 1000 &nbsp;(m′ i kg/m, A i mm², ρ i g/cm³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
+  <figcaption>m′ = A · ρ / 10⁶ &nbsp;(m′ i kg/m, A i mm², ρ i kg/m³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
 </figure>
 <div class="field" style="max-width:340px"><label for="m7x-vmat">Materiale (skalerer alle tabellene)</label><select id="m7x-vmat"></select></div>
 <p class="small" id="m7x-vinfo" style="margin-top:10px"></p>
@@ -2985,7 +2985,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="m7x-dn"></div>
 <p class="small muted">DN og ytterdiameter etter EN 10220 serie 1. NPS, ytterdiameter og Sch 40 etter ASME B36.10M. kg/m er regnet med Sch 40-veggen og ASME-diameteren. Rørgjengen R/G har samme tommebetegnelse som NPS for DN 6–150.</p>
 <h3>Emnerør og presisjonsrør: utvalg</h3>
-<p>Masse etter EN 10220: <span class="mono">m′ = (D − T) · T · 0,0246615</span> kg/m, med D og T i mm. Konstanten er π · 7,85 / 1000, altså stål med densitet 7,85 g/cm³. Formelen er eksakt for et rør uten toleranser.</p>
+<p>Masse etter EN 10220: <span class="mono">m′ = (D − T) · T · 0,0246615</span> kg/m, med D og T i mm. Konstanten er π · 7850 / 10⁶, altså stål med densitet 7850 kg/m³. Formelen er eksakt for et rør uten toleranser.</p>
 <div class="filter">
   <span class="chips" id="m7x-rstd" style="margin:0"><button class="chip" type="button" data-k="" aria-pressed="true">Alle</button><button class="chip" type="button" data-k="P" aria-pressed="false">EN 10305-1</button><button class="chip" type="button" data-k="S" aria-pressed="false">EN 10297-1</button><button class="chip" type="button" data-k="R" aria-pressed="false">EN 10220 rør</button></span>
   <label for="m7x-rq" class="small muted">Ytter-Ø eller innv. Ø</label><input id="m7x-rq" inputmode="decimal" placeholder="f.eks. 60">
@@ -3067,7 +3067,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <span class="chips" id="m7x-hstd" style="margin:0"><button class="chip" type="button" data-k="c" aria-pressed="true">EN 10219</button><button class="chip" type="button" data-k="h" aria-pressed="false">EN 10210</button></span>
 </div>
 <div class="tbl m7x-tbox" id="m7x-htab"></div>
-<p class="small muted" id="m7x-hnote">Verdiene er regnet med hjørneradiene som standardene foreskriver til beregning: EN 10219-2: r<sub>o</sub> = 2t / 2,5t / 3t og r<sub>i</sub> = t / 1,5t / 2t for t ≤ 6 / ≤ 10 / &gt; 10 mm. EN 10210-2: r<sub>o</sub> = 1,5t, r<sub>i</sub> = t. Kontrollert mot publiserte tabeller (avvik under 0,5 %). Masse med 7,85 g/cm³. Utvalg av vanlige mål. Trykk på en rad for å tegne den.</p>
+<p class="small muted" id="m7x-hnote">Verdiene er regnet med hjørneradiene som standardene foreskriver til beregning: EN 10219-2: r<sub>o</sub> = 2t / 2,5t / 3t og r<sub>i</sub> = t / 1,5t / 2t for t ≤ 6 / ≤ 10 / &gt; 10 mm. EN 10210-2: r<sub>o</sub> = 1,5t, r<sub>i</sub> = t. Kontrollert mot publiserte tabeller (avvik under 0,5 %). Masse med 7850 kg/m³. Utvalg av vanlige mål. Trykk på en rad for å tegne den.</p>
 <figure class="fig">
   <svg id="m7x-hfig" viewBox="0 0 600 300" role="img" aria-label="Valgt hulprofil i skala med akser og mål"></svg>
   <figcaption id="m7x-hcap">Profilen i riktig forhold. y–y er sterk akse (bøying i høyderetningen H).</figcaption>
@@ -5046,7 +5046,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <div class="diagram"><svg id="ma10x-vo-svg" viewBox="0 0 420 300" role="img" aria-label="Valgt legeme tegnet med mål"></svg></div>
   </div>
 </div>
-<p class="small muted">Alle mål i mm. Densiteter fra kapittelet Materialer og vekt. 1 dm³ = 10⁶ mm³, og masse (kg) = V (dm³) · ρ (g/cm³), fordi 1 g/cm³ = 1 kg/dm³.</p>
+<p class="small muted">Alle mål i mm. Densiteter fra kapittelet Materialer og vekt. Gjør om mål fra mm til m (÷ 1000), så blir volumet i m³, og masse (kg) = V (m³) · ρ (kg/m³).</p>
 </div>
 <div class="topic" id="ma10-trig">
   <div class="topic-h"><span class="tno">10.8</span><h3>Trigonometri</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
@@ -5833,7 +5833,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="topic-h"><span class="tno">11.7</span><h3>Fysiske og varmetekniske tabeller</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
   <p class="lead">Stoffverdier for metaller, andre materialer, væsker og gasser som brukes i verkstedet. Trykk på en kolonneoverskrift for å sortere, og bruk søkefeltet for å finne et stoff. Alle verdier gjelder ved ca. 20 °C og normalt lufttrykk der ikke annet står.</p>
 <dl class="kv">
-  <div><dt>ρ – densitet</dt><dd>kg/dm³ = g/cm³</dd></div>
+  <div><dt>ρ – densitet</dt><dd>kg/m³ (stål 7850 kg/m³)</dd></div>
   <div><dt>c – spes. varmekapasitet</dt><dd>J/(kg·K)</dd></div>
   <div><dt>λ – varmeledningsevne</dt><dd>W/(m·K)</dd></div>
   <div><dt>α – lengdeutvidelse</dt><dd>10⁻⁶/K (20–100 °C)</dd></div>
@@ -5976,7 +5976,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="fy11b-warn"><p><b>Aldri nøytraliser på kroppen.</b> Ved sprut på hud eller i øyne skal du <b>bare skylle med rikelig vann</b>. Et «motmiddel» gir varme og tar tid du ikke har, og du risikerer å skade øyet med to kjemikalier i stedet for ett.</p></div>
 
 <h3>Fortynning: alltid syre i vann</h3>
-<p>Når konsentrert syre (særlig svovelsyre) blandes med vann, utvikles mye varme. Heller du <b>vann i syren</b>, legger vannet seg på toppen fordi det er lettere (svovelsyre har densitet ca. 1,84 kg/dm³). All varmen utvikles i det tynne vannlaget, vannet koker momentant, og syre spruter ut. Heller du <b>syren sakte i vannet</b> under omrøring, synker den og blandes inn, og varmen fordeles i en stor vannmengde. Det samme gjelder når du løser lut (NaOH) i vann: litt om gangen i kaldt vann.</p>
+<p>Når konsentrert syre (særlig svovelsyre) blandes med vann, utvikles mye varme. Heller du <b>vann i syren</b>, legger vannet seg på toppen fordi det er lettere (svovelsyre har densitet ca. 1840 kg/m³). All varmen utvikles i det tynne vannlaget, vannet koker momentant, og syre spruter ut. Heller du <b>syren sakte i vannet</b> under omrøring, synker den og blandes inn, og varmen fordeles i en stor vannmengde. Det samme gjelder når du løser lut (NaOH) i vann: litt om gangen i kaldt vann.</p>
 <figure class="fig">
   <svg id="fy11b-dil" viewBox="0 0 600 270" role="img" aria-label="Riktig og feil fortynning av syre"></svg>
   <div class="ctrl"><button class="chip play" id="fy11b-dil-play" type="button">▶ Spill av</button></div>
@@ -6639,6 +6639,8 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 const $=s=>document.querySelector(s);
 const num=v=>{const x=parseFloat(String(v).trim().replace(",","."));return isFinite(x)?x:NaN};
 const fmt=(x,d=3)=>x.toFixed(d).replace(".",",").replace("-","−");
+/* densitet lagres i g/cm³, vises i kg/m³ (×1000); tåler både tall og tekst som "7,9–8,0" */
+const rho=v=>String(v).replace(/\d+([.,]\d+)?/g,t=>String(Math.round(parseFloat(t.replace(",","."))*1000)));
 const sgn=(x,d=3)=>x===0?"0":(x>0?"+":"")+fmt(x,d);
 const um=x=>{const r=Math.round(x*10)/10;return (r>0?"+":"")+String(r).replace(".",",").replace("-","−")};
 const el=(t,a={},h="")=>{const e=document.createElement(t);for(const k in a)e.setAttribute(k,a[k]);e.innerHTML=h;return e};
@@ -7062,10 +7064,10 @@ const MATS=[
 ["PA6","–","Plast (polyamid)",1.14,"≈ 75","–","–","Hjul, glideskinner, bøssinger"],
 ["PE-HD / PE 1000","–","Plast (polyetylen)",0.95,"≈ 25","–","–","Slitelister, renner, skjærebrett"]];
 (function(){
-  let h=`<table><thead><tr><th>Betegnelse</th><th>Nr.</th><th style="text-align:left">Type</th><th>ρ g/cm³</th><th>R<sub>m</sub> MPa</th><th>R<sub>e</sub> MPa</th><th style="text-align:left">Sveisbarhet</th><th style="text-align:left">Typisk bruk</th></tr></thead><tbody>`;
-  MATS.forEach(m=>h+=`<tr><td>${m[0]}</td><td>${m[1]}</td><td class="txt" style="min-width:150px">${m[2]}</td><td>${fmt(m[3],2)}</td><td>${m[4]}</td><td>${m[5]}</td><td class="txt" style="min-width:150px">${m[6]}</td><td class="txt">${m[7]}</td></tr>`);
+  let h=`<table><thead><tr><th>Betegnelse</th><th>Nr.</th><th style="text-align:left">Type</th><th>ρ kg/m³</th><th>R<sub>m</sub> MPa</th><th>R<sub>e</sub> MPa</th><th style="text-align:left">Sveisbarhet</th><th style="text-align:left">Typisk bruk</th></tr></thead><tbody>`;
+  MATS.forEach(m=>h+=`<tr><td>${m[0]}</td><td>${m[1]}</td><td class="txt" style="min-width:150px">${m[2]}</td><td>${rho(m[3])}</td><td>${m[4]}</td><td>${m[5]}</td><td class="txt" style="min-width:150px">${m[6]}</td><td class="txt">${m[7]}</td></tr>`);
   $("#mat-table").innerHTML=h+"</tbody></table>";
-  const wm=$("#w-mat");MATS.forEach((m,i)=>wm.add(new Option(`${m[0]} (${fmt(m[3],2)})`,i)));
+  const wm=$("#w-mat");MATS.forEach((m,i)=>wm.add(new Option(`${m[0]} (${rho(m[3])} kg/m³)`,i)));
   const CODES=[["S355","S = konstruksjonsstål. Tallet er minste flytegrense i MPa for tynne dimensjoner."],
   ["J2","Slagseighet: JR = 27 J ved +20 °C, J0 ved 0 °C, J2 ved −20 °C. K2 = 40 J ved −20 °C."],
   ["C45","C = ulegert stål for varmebehandling. 45 = 0,45 % karbon."],
@@ -7090,7 +7092,7 @@ function renderW(){
   else{if(2*v("t")>=v("a")){out.innerHTML=`<p class="err">Veggtykkelsen må være mindre enn halve siden.</p>`;return}A=v("a")**2-(v("a")-2*v("t"))**2}
   if(!(A>0)||!(L>0)){out.innerHTML=`<p class="err">Fyll inn alle mål med positive tall.</p>`;return}
   const kgm=A*m[3]/1000,kg=kgm*L/1000*n;
-  out.innerHTML=`<div class="callout">${fmt(kg,kg<10?2:1)} kg<small>${n>1?n+" stk · ":""}${m[0]} · ρ ${fmt(m[3],2)} g/cm³</small></div>
+  out.innerHTML=`<div class="callout">${fmt(kg,kg<10?2:1)} kg<small>${n>1?n+" stk · ":""}${m[0]} · ρ ${rho(m[3])} kg/m³</small></div>
   <dl class="kv"><div><dt>Vekt per meter</dt><dd>${fmt(kgm,2)} kg/m</dd></div><div><dt>Tverrsnitt</dt><dd>${fmt(A,0)} mm²</dd></div><div><dt>Vekt per stk</dt><dd>${fmt(kg/n,2)} kg</dd></div></dl>
   ${s==="rhs"?'<p class="small muted" style="margin:0">Hjørneradier er ikke tatt med. Reell vekt er litt lavere.</p>':""}`;
 }
@@ -10294,7 +10296,7 @@ const fyLIQ=[["Ferskvann",1000],["Sjøvann (ca.)",1025],["Hydraulikkolje (ca.)",
 // Arkimedes
 (function(){
   const ms=fyE("fy11a-ar-mat"),lq=fyE("fy11a-ar-liq"),mE=fyE("fy11a-ar-m"),out=fyE("fy11a-ar-out");
-  MATS.forEach((m,i)=>ms.add(new Option(`${m[2]} ${m[0]} (${fmt(m[3],2)} kg/dm³)`,i)));
+  MATS.forEach((m,i)=>ms.add(new Option(`${m[2]} ${m[0]} (${rho(m[3])} kg/m³)`,i)));
   fyLIQ.forEach((l,i)=>lq.add(new Option(l[0],i)));lq.value="1";
   function run(){
     const m=num(mE.value),rs=MATS[+ms.value][3]*1000,rl=fyLIQ[+lq.value][1];
@@ -12497,7 +12499,7 @@ const DASH=`fill="none" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray=
        dimA(T.P(-R,0),T.P(R,0),0,"Ø "+L(v.Dm)+" (Dₘ)",MK,{side:1,gap:12})+dimA(T.P(0,R-r),T.P(0,R+r),0,"d = "+L(v.d),MK,{side:-1,gap:12,t:.5})}}
   ];
   const mats=(typeof MATS!=="undefined"?MATS.map(m=>[m[0]+" ("+m[2].toLowerCase()+")",m[3]]):[["Stål",7.85],["Aluminium",2.70]]);
-  $("#ma10x-vo-mat").innerHTML=mats.map((m,i)=>`<option value="${i}">${m[0]} · ${fmt(m[1],2)} g/cm³</option>`).join("");
+  $("#ma10x-vo-mat").innerHTML=mats.map((m,i)=>`<option value="${i}">${m[0]} · ${rho(m[1])} kg/m³</option>`).join("");
   const sel=$("#ma10x-vo-sel"),cards=$("#ma10x-vo-cards");let cur=0;
   sel.innerHTML=FIG.map((f,i)=>`<option value="${i}">${f.n}</option>`).join("");
   cards.innerHTML=FIG.map((f,i)=>`<button class="gd-card" type="button" data-i="${i}" aria-pressed="${i===0}"><span class="gd-ic">${IC(f.ic)}</span><span><b>${f.n}</b><span class="gd-one">${f.f.split("&nbsp;")[0]}</span></span></button>`).join("");
@@ -12514,7 +12516,7 @@ const DASH=`fill="none" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray=
     if(F.p.some(p=>!(v[p[0]]>0))){out.innerHTML=errP("Fyll inn alle målene som positive tall.");svg.innerHTML="";return}
     const r=F.c(v);if(r.err){out.innerHTML=errP(r.err);svg.innerHTML="";return}
     const m=mats[+$("#ma10x-vo-mat").value]||mats[0],n=Math.max(1,Math.round(N($("#ma10x-vo-n").value)||1)),kg=r.V/1e6*m[1]*n;
-    out.innerHTML=`<div class="callout">${kg<10?nb(kg,3):nb(kg,2)} kg<small>${n>1?n+" stk · ":""}V = ${sig(r.V/1e6,5)} dm³ · ρ = ${fmt(m[1],2)} g/cm³</small></div>
+    out.innerHTML=`<div class="callout">${kg<10?nb(kg,3):nb(kg,2)} kg<small>${n>1?n+" stk · ":""}V = ${sig(r.V/1e9,5)} m³ · ρ = ${rho(m[1])} kg/m³</small></div>
     ${kv([["Volum",g3(r.V)+" mm³"],["Volum",sig(r.V/1000,5)+" cm³"],["Overflate",g3(r.O)+" mm²"],["Overflate",sig(r.O/1e4,5)+" dm²"]].concat(r.x||[]))}`;
     svg.innerHTML=ARR(MK)+F.d(v);
   }
@@ -14845,7 +14847,7 @@ const cm=(x,d)=>fmt(x,d);
 const sig=x=>{if(!isFinite(x))return "–";const a=Math.abs(x);return a>=1000?fmt(x,0):a>=100?fmt(x,1):a>=10?fmt(x,2):fmt(x,3)};
 const LN='stroke="var(--ink)" stroke-width="1.2" fill="none"';
 const DENS=[["Stål (ulegert/lavlegert)",7.85],["Rustfritt 1.4301 (304)",7.90],["Rustfritt 1.4404 (316L)",8.00],["Aluminium",2.70],["Messing CuZn39Pb3",8.47],["Kobber Cu-ETP",8.93],["Gråjern EN-GJL",7.20],["Titan grad 2",4.51],["POM",1.41],["PA6",1.14],["PE-HD",0.95]];
-const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[1],2)} g/cm³`,i)));
+const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${rho(m[1])} kg/m³`,i)));
 
 /* ---------- 7.1 oversikt ---------- */
 {
@@ -14863,7 +14865,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
   ["ms","Messing (Cu-Zn)","8,4–8,5","95–110","19–21","100–125","880–940","Nei","CuZn39Pb3, CuZn37"],
   ["br","Bronse (Cu-Sn, Cu-Al)","7,6–8,9","100–125","16–19","40–70","950–1060","Nei","CuSn8, CuAl10Ni5Fe4"],
   ["zn","Sink","7,1","≈ 100","≈ 30","≈ 110","419","Nei","Galvanisering, trykkstøp (Zamak)"]];
-  X$("m7x-grp").innerHTML=`<table><thead><tr><th>Gruppe</th><th>ρ g/cm³</th><th>E GPa</th><th>α 10⁻⁶/K</th><th>λ W/(m·K)</th><th>Smelte °C</th><th>Magnetisk</th><th style="text-align:left">Eksempler</th></tr></thead><tbody>${GRP.map(g=>`<tr data-g="${g[0]}">${g.slice(1).map((c,i)=>`<td${i===7?' class="txt" style="min-width:180px"':""}>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+  X$("m7x-grp").innerHTML=`<table><thead><tr><th>Gruppe</th><th>ρ kg/m³</th><th>E GPa</th><th>α 10⁻⁶/K</th><th>λ W/(m·K)</th><th>Smelte °C</th><th>Magnetisk</th><th style="text-align:left">Eksempler</th></tr></thead><tbody>${GRP.map(g=>`<tr data-g="${g[0]}">${g.slice(1).map((c,i)=>`<td${i===7?' class="txt" style="min-width:180px"':""}>${i===1?rho(c):c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
   X$("m7x-grp").insertAdjacentHTML("afterend",`<p class="small muted" style="margin-top:-8px">* Austenittisk rustfritt kan bli svakt magnetisk etter kaldforming og ved sveis.</p>`);
   /* tre */
   const L1=[{t:"Jernholdige",k:["Stål","Støpejern"]},{t:"Ikke-jern",k:["Lettmetaller","Tungmetaller","Edelmetaller"]}];
@@ -14872,7 +14874,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
     "Lettmetaller":[["Aluminium","6082, 5083","al"],["Magnesium","AZ91","mg"],["Titan","grad 2, grad 5","ti"]],
     "Tungmetaller":[["Kobber","Cu-ETP","cu"],["Messing","Cu + Zn","ms"],["Bronse","Cu + Sn / Al","br"],["Sink","Zamak, belegg","zn"]],
     "Edelmetaller":[["Sølv, gull","lodd, kontakter",""]]};
-  const sub={"Stål":"C < ca. 2 %","Støpejern":"C > ca. 2 %","Lettmetaller":"ρ < 5 g/cm³","Tungmetaller":"ρ > 5 g/cm³","Edelmetaller":""};
+  const sub={"Stål":"C < ca. 2 %","Støpejern":"C > ca. 2 %","Lettmetaller":"ρ < 5000 kg/m³","Tungmetaller":"ρ > 5000 kg/m³","Edelmetaller":""};
   const RH=27,Y0=24;let row=0,s="",l1y=[];
   const box=(x,y,w,txt,o={})=>`<g class="${o.cls||""}"${o.g!==undefined?` data-g="${o.g}"`:""}><rect x="${x}" y="${y-11}" width="${w}" height="22" fill="${o.fill||"var(--sheet)"}" stroke="${o.st||"var(--line)"}" stroke-width="1.2"/>${TX(x+7,y+4.5,txt,{size:o.size||13,weight:o.w})}${o.ex?TX(x+w-7,y+4.5,o.ex,{size:12,fill:"var(--ink-2)",anchor:"end"}):""}</g>`;
   const l2pos=[];
@@ -15030,7 +15032,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
   const PT=[0.5,0.6,0.7,0.8,1,1.2,1.5,2,2.5,3,4,5,6,8,10,12,15,20,25,30,35,40,45,50,60,70,80,90,100];
   const k2=x=>x<1?fmt(x,3):x<100?fmt(x,2):fmt(x,1);
   const draw=()=>{const r=DENS[+sel.value][1],q=num(X$("m7x-vq").value);
-    X$("m7x-vinfo").innerHTML=`ρ = ${fmt(r,2)} g/cm³. Faktor mot stål: ${fmt(r/7.85,3)}. Rundstål Ø 50: ${k2(Math.PI/4*2500*r/1000)} kg/m.`;
+    X$("m7x-vinfo").innerHTML=`ρ = ${rho(r)} kg/m³. Faktor mot stål: ${fmt(r/7.85,3)}. Rundstål Ø 50: ${k2(Math.PI/4*2500*r/1000)} kg/m.`;
     const rows=SZ.filter(d=>!isFinite(q)||Math.abs(d-q)<=Math.max(2,q*.1)).map(d=>`<tr><td>${d}</td><td>${k2(Math.PI/4*d*d*r/1000)}</td><td>${k2(d*d*r/1000)}</td><td>${k2(Math.sqrt(3)/2*d*d*r/1000)}</td><td>${fmt(Math.PI/4*d*d,0)}</td></tr>`).join("");
     X$("m7x-rsq").innerHTML=`<table><thead><tr><th>Mål d / a / s (mm)</th><th>Rund kg/m</th><th>Firkant kg/m</th><th>Sekskant kg/m</th><th>A rund mm²</th></tr></thead><tbody>${rows||`<tr><td colspan="5">Ingen mål nær ${X$("m7x-vq").value}</td></tr>`}</tbody></table>`;
     X$("m7x-flat").innerHTML=`<table class="m7x-flat"><thead><tr><th>b \\ t</th>${FT.map(t=>`<th>${t}</th>`).join("")}</tr></thead><tbody>${FW.map(b=>`<tr><td>${b}</td>${FT.map(t=>`<td>${t<b?k2(b*t*r/1000):""}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
@@ -15212,7 +15214,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
     if(2*t>=Math.min(H,B)){out.innerHTML=`<p class="err">Veggtykkelsen må være mindre enn halve den minste siden.</p>`;return}
     const h=H-2*t,b=B-2*t,A=B*H-b*h,Iy=(B*H**3-b*h**3)/12,Iz=(H*B**3-h*b**3)/12,kgm=A*7.85/1000;
     const q=rect(B,H,t,"c");
-    out.innerHTML=`<div class="callout">${fmt(kgm,2)} kg/m<small>${f1(H)} × ${f1(B)} × ${f1(t)} mm, skarpe hjørner, stål 7,85 g/cm³${isFinite(L)?` · ${fmt(kgm*L/1000,1)} kg for ${fmt(L,0)} mm`:""}</small></div>
+    out.innerHTML=`<div class="callout">${fmt(kgm,2)} kg/m<small>${f1(H)} × ${f1(B)} × ${f1(t)} mm, skarpe hjørner, stål 7850 kg/m³${isFinite(L)?` · ${fmt(kgm*L/1000,1)} kg for ${fmt(L,0)} mm`:""}</small></div>
     <dl class="kv"><div><dt>A</dt><dd>${fmt(A/100,2)} cm²</dd></div><div><dt>I<sub>y</sub></dt><dd>${sig(Iy/1e4)} cm⁴</dd></div><div><dt>W<sub>y</sub></dt><dd>${sig(Iy/(H/2)/1e3)} cm³</dd></div><div><dt>I<sub>z</sub></dt><dd>${sig(Iz/1e4)} cm⁴</dd></div><div><dt>W<sub>z</sub></dt><dd>${sig(Iz/(B/2)/1e3)} cm³</dd></div><div><dt>i<sub>z</sub></dt><dd>${fmt(Math.sqrt(Iz/A)/10,2)} cm</dd></div></dl>
     <p class="small muted" style="margin:0">Til sammenligning med hjørneradier etter EN 10219-2: A = ${fmt(q.A/100,2)} cm², ${fmt(q.A*7.85/1000,2)} kg/m, I<sub>y</sub> = ${sig(q.Iy/1e4)} cm⁴. Skarpe hjørner gir ${fmt((A/q.A-1)*100,1)} % mer areal og ${fmt((Iy/q.Iy-1)*100,1)} % høyere I<sub>y</sub>.</p>`;};
   ["m7x-qH","m7x-qB","m7x-qt","m7x-qL"].forEach(id=>X$(id).oninput=qc);qc();
@@ -15234,7 +15236,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
    ["PTFE","Polytetrafluoretylen (teflon)","D","2,15–2,20","0,4–0,7","20–30","100–200","260","Lavest friksjon, tåler nesten alle kjemikalier. Kryper under last."],
    ["PVDF","Polyvinylidenfluorid","D","1,76–1,78","2,0–2,5","45–55","110–130","140","Kjemikalie- og UV-bestandig. Prosessutstyr, rør."],
    ["PEEK","Polyetereterketon","D","1,30–1,32","3,5–4,2","95–110","45–55","250","Høy styrke ved høy temperatur. Dyr. Medisinsk, olje og gass."]];
-  X$("m7x-tp").innerHTML=`<table><thead><tr><th>Plast</th><th style="text-align:left">Navn</th><th>Struktur</th><th>ρ g/cm³</th><th>E GPa</th><th>σ<sub>y</sub> MPa</th><th>α 10⁻⁶/K</th><th>T<sub>maks</sub> °C</th><th style="text-align:left">Egenskaper og bruk</th></tr></thead><tbody>${TP.map(r=>`<tr><td>${r[0]}</td><td class="txt" style="min-width:170px">${r[1]}</td><td>${r[2]==="A"?"Amorf":"Delkryst."}</td>${r.slice(3,8).map(c=>`<td>${c}</td>`).join("")}<td class="txt" style="min-width:260px">${r[8]}</td></tr>`).join("")}</tbody></table>`;
+  X$("m7x-tp").innerHTML=`<table><thead><tr><th>Plast</th><th style="text-align:left">Navn</th><th>Struktur</th><th>ρ kg/m³</th><th>E GPa</th><th>σ<sub>y</sub> MPa</th><th>α 10⁻⁶/K</th><th>T<sub>maks</sub> °C</th><th style="text-align:left">Egenskaper og bruk</th></tr></thead><tbody>${TP.map(r=>`<tr><td>${r[0]}</td><td class="txt" style="min-width:170px">${r[1]}</td><td>${r[2]==="A"?"Amorf":"Delkryst."}</td>${r.slice(3,8).map((c,i)=>`<td>${i?c:rho(c)}</td>`).join("")}<td class="txt" style="min-width:260px">${r[8]}</td></tr>`).join("")}</tbody></table>`;
   X$("m7x-tpcut").innerHTML=tblHTML(["Operasjon","Klaringsvinkel","Sponvinkel","v<sub>c</sub> m/min","Mating","Merknad"],[
    ["Dreiing","6–10°","0–15°","200–500","0,1–0,5 mm/omdr","Spissradius ≥ 0,5 mm for god overflate. Sørg for at sponene ikke vikler seg."],
    ["Fresing","5–15°","5–15°","250–1000","0,05–0,3 mm/tann","Få skjær (1–2) og store sponrom. Medfres gir best overflate."],
@@ -15284,7 +15286,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
 
 /* ---------- 7.8 herdeplast ---------- */
 {
-  X$("m7x-hp").innerHTML=`<table><thead><tr><th>Materiale</th><th>Kode</th><th>ρ g/cm³</th><th>R<sub>m</sub> MPa</th><th>E GPa</th><th>T<sub>maks</sub> °C</th><th style="text-align:left">Egenskaper og bruk</th></tr></thead><tbody>${[
+  X$("m7x-hp").innerHTML=`<table><thead><tr><th>Materiale</th><th>Kode</th><th>ρ kg/m³</th><th>R<sub>m</sub> MPa</th><th>E GPa</th><th>T<sub>maks</sub> °C</th><th style="text-align:left">Egenskaper og bruk</th></tr></thead><tbody>${[
    ["Epoksy","EP","1,1–1,3","50–90","2,5–4","80–150","Sterkt lim, støpemasse og belegg. Matrise i kompositter. Svært god heft og lite krymp."],
    ["Umettet polyester","UP","1,1–1,4","40–80","3–4,5","60–120","Billig matrise for glassfiber: båter, tanker, takplater. Herdes med styren (lukt)."],
    ["Fenolharpiks (fylt)","PF","1,3–1,9","25–60","5–10","120–150","Bakelitt. Varmebestandig og elektrisk isolerende. Håndtak, isolasjonsplater, bremsebelegg."],
@@ -15294,7 +15296,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${fmt(m[
    ["Glassfiber, UD","GF-EP","1,9–2,1","800–1200","35–45","som matrisen","Alle fibre i én retning. Fjærer, stenger, profiler."],
    ["Karbonfiber, UD","CF-EP","1,5–1,6","1500–2500","120–150","som matrisen","Svært stiv og lett i fiberretningen. Fly, robotarmer, sport."],
    ["Karbonfiber, kvasiisotrop","CF-EP","1,5–1,6","500–800","45–60","som matrisen","Lag i 0°, ±45° og 90°: nesten like egenskaper i alle retninger i planet."]
-  ].map(r=>`<tr><td>${r[0]}</td>${r.slice(1,6).map(c=>`<td>${c}</td>`).join("")}<td class="txt" style="min-width:260px">${r[6]}</td></tr>`).join("")}</tbody></table>`;
+  ].map(r=>`<tr><td>${r[0]}</td>${r.slice(1,6).map((c,i)=>`<td>${i===1?rho(c):c}</td>`).join("")}<td class="txt" style="min-width:260px">${r[6]}</td></tr>`).join("")}</tbody></table>`;
   /* kjeder */
   const svg=X$("m7x-chain"),sl=X$("m7x-ct");let tm=0,sweep=0;
   /* termoplast: 5 kjeder; herdeplast: gitter med tverrbindinger */
