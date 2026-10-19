@@ -1,5 +1,5 @@
 /* Verkstedhåndboka – service worker. Gjør appen tilgjengelig uten nett. */
-const VERSION = "1c8dfd2e08";
+const VERSION = "sok-2026-10-20";
 const CACHE = "vh-" + VERSION;
 const FONTS = "vh-fonts";
 const CORE = [

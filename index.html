@@ -47,7 +47,24 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 .wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
 .bar{position:sticky;top:0;z-index:30;background:var(--sheet);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 16px;height:52px;font-family:var(--body)}
 .bar .bn{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
-.bar .bn span{color:var(--head)}
+.bar .bn #barEmne{color:var(--head)}
+/* Søk i hele håndboka */
+.sok{position:relative;flex:0 1 320px;min-width:0}
+.sok input{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:7px 10px 7px 32px;-webkit-appearance:none;appearance:none}
+.sok input:focus{border-color:var(--accent);background:var(--sheet)}
+.sok svg{position:absolute;left:10px;top:50%;width:16px;height:16px;transform:translateY(-50%);color:var(--ink-2);pointer-events:none}
+.sok-res{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 56px);width:min(640px,calc(100vw - 16px));max-height:min(70vh,560px);overflow:auto;background:var(--sheet);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.18);z-index:40;padding:6px}
+.sok-res .sok-n{font-size:12px;color:var(--ink-2);padding:6px 10px}
+.sok-res a{display:block;padding:8px 10px;border-radius:8px;color:var(--ink);text-decoration:none;line-height:1.35}
+.sok-res a:hover,.sok-res a[aria-selected="true"]{background:var(--accent-soft)}
+.sok-res .sok-t{font-weight:600;overflow-wrap:anywhere}
+.sok-res .sok-c{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.sok-res .sok-k{display:inline-block;font-size:11px;font-weight:600;color:var(--head);border:1px solid var(--head);border-radius:6px;padding:0 5px;margin-right:6px;vertical-align:1px}
+.sok-res mark{background:transparent;color:var(--accent);font-weight:700}
+.sok-hit{outline:3px solid var(--head)!important;outline-offset:3px;border-radius:4px;transition:outline-color 1.2s}
+.sok-hit.sok-ut{outline-color:transparent!important}
+tr.sok-hit{outline:none!important}tr.sok-hit>*{background:var(--zone-soft)!important;transition:background-color 1.2s}tr.sok-hit.sok-ut>*{background:transparent!important}
+@media (max-width:560px){.bar{gap:8px;padding:0 10px}.bar .bn .bn-n{display:none}.bar .bn{flex:0 0 auto}.sok{flex:1 1 auto}}
 .bar .tools{display:flex;gap:6px}
 .bar button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--line);background:var(--sheet);color:var(--ink);border-radius:10px;padding:5px 10px;min-width:40px}
 .bar button:hover{border-color:var(--accent)}
@@ -265,7 +282,12 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </head>
 <body>
 <header class="bar">
-  <div class="bn">Verkstedhåndboka · <span id="barEmne">Emne 1</span></div>
+  <div class="bn"><span class="bn-n">Verkstedhåndboka · </span><span id="barEmne">Emne 1</span></div>
+<div class="sok" role="search">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+<input id="sok" type="search" placeholder="Søk, f.eks. M12 eller H7" aria-label="Søk i hele håndboka" autocomplete="off" spellcheck="false" aria-controls="sokRes" aria-expanded="false">
+<div class="sok-res" id="sokRes" role="listbox" aria-label="Søkeresultater" hidden></div>
+</div>
   <div class="tools">
     <button id="btnSize" title="Større tekst for fremviser">A+</button>
     <button id="btnTheme" title="Lys/mørk">☾</button>
@@ -16803,6 +16825,74 @@ function syncBar(){const i=chaps.findIndex(c=>!c.hidden),a=toc.querySelector('a[
   bar.querySelector('[data-go="-1"]').disabled=i===0;bar.querySelector('[data-go="1"]').disabled=i===chaps.length-1}
 function go(){const t=show();syncBar();if(t)setTimeout(()=>t.scrollIntoView({block:"start"}),0);else window.scrollTo({top:0})}
 window.addEventListener("hashchange",go);
+/* Søk i hele håndboka: delemner, overskrifter, tabellrader og tekst. Bygges når søkefeltet tas i bruk, så tabeller laget av skriptene er med. */
+(function(){
+  const inp=document.getElementById("sok"),box=document.getElementById("sokRes");
+  const norm=t=>t.replace(/\u00ad/g,"").replace(/\s+/g," ").trim();
+  const low=t=>norm(t).toLowerCase();
+  const esc=t=>t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+  const SKIP=".out,.topic-h,nav,svg,script,style,[aria-live]";
+  let idx=null,hits=[],cur=-1;
+  function build(){
+    idx=[];
+    chaps.forEach((c,ci)=>{
+      const cname=norm(c.querySelector("h2").lastChild.textContent),cn="Emne "+(ci+1)+" "+cname;
+      idx.push({k:"Emne",t:cname,ctx:"Emne "+(ci+1),el:c,c,r:0});
+      c.querySelectorAll(".topic").forEach(tp=>{
+        const no=tp.querySelector(".tno"),h=tp.querySelector(".topic-h h3");
+        const tname=(no?no.textContent+" ":"")+(h?norm(h.textContent):"");
+        idx.push({k:"Delemne",t:tname,ctx:cn,el:tp,c,r:0});
+        const ctx=tname+" · "+cn;
+        tp.querySelectorAll("h3,h4").forEach(e=>{if(!e.closest(SKIP))idx.push({k:/tabell/i.test(e.textContent)?"Tabell":"Avsnitt",t:norm(e.textContent),ctx,el:e,c,r:1})});
+        tp.querySelectorAll("tr").forEach(tr=>{if(tr.closest(SKIP)||!tr.querySelector("td"))return;
+          const cells=[...tr.children].map(x=>norm(x.textContent)).filter(Boolean);
+          if(cells.length)idx.push({k:"Tabellrad",t:cells.join(" · "),ctx,el:tr,c,r:2})});
+        tp.querySelectorAll("p,li,.callout").forEach(e=>{if(e.closest(SKIP)||e.closest("li")&&e.tagName!=="LI"||e.querySelector("p,li"))return;
+          const t=norm(e.textContent);if(t.length>2)idx.push({k:"Tekst",t,ctx,el:e,c,r:3})});
+      });
+    });
+    idx.forEach(x=>x.l=x.t.toLowerCase());
+  }
+  function snip(t,w){if(t.length<=110)return t;const i=Math.max(0,t.toLowerCase().indexOf(w)-40);return (i?"… ":"")+t.slice(i,i+110)+(i+110<t.length?" …":"")}
+  function mark(t,ws){let h=esc(t);ws.forEach(w=>{if(!w)return;h=h.replace(new RegExp("("+esc(w).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"),"<mark>$1</mark>")});return h}
+  function find(){
+    const q=low(inp.value),ws=q.split(" ").filter(Boolean);
+    if(!q){close();return}
+    if(!idx)build();
+    hits=idx.filter(x=>ws.every(w=>x.l.includes(w)));
+    hits.forEach(x=>{x.s=x.r*10+(x.l.startsWith(q)?0:x.l.includes(q)?2:4)});
+    hits.sort((a,b)=>a.s-b.s);
+    const seen={};hits=hits.filter(x=>{if(x.r<3)return true;seen[x.ctx]=(seen[x.ctx]||0)+1;return seen[x.ctx]<=2});
+    const shown=hits.slice(0,40);
+    box.innerHTML=shown.length?'<div class="sok-n">'+(hits.length>40?"Viser 40 av "+hits.length+" treff. Skriv mer for å snevre inn.":hits.length+" treff")+"</div>"+
+      shown.map((x,i)=>'<a href="#'+(x.el.id||x.el.closest(".topic,[data-chap]").id)+'" role="option" data-i="'+i+'"><div class="sok-t"><span class="sok-k">'+x.k+"</span>"+mark(x.r===3?snip(x.t,ws[0]):x.t.length>140?x.t.slice(0,140)+" …":x.t,ws)+'</div><div class="sok-c">'+esc(x.ctx)+"</div></a>").join("")
+      :'<div class="sok-n">Ingen treff på «'+esc(norm(inp.value))+'». Prøv et kortere ord, f.eks. «gjenge» eller «moment».</div>';
+    cur=-1;box.hidden=false;inp.setAttribute("aria-expanded","true");
+  }
+  function close(){box.hidden=true;inp.setAttribute("aria-expanded","false");cur=-1}
+  function pick(i){
+    const x=hits[i];if(!x)return;close();inp.blur();
+    let el=x.el;if(!el.isConnected){idx=null;el=x.c}
+    const tp=el.closest(".topic"),id=(tp||x.c).id;
+    if(location.hash!=="#"+id)history.pushState(null,"","#"+id);
+    show();syncBar();
+    setTimeout(()=>{el.scrollIntoView({block:x.r===0?"start":"center"});
+      if(x.r){el.classList.add("sok-hit");setTimeout(()=>el.classList.add("sok-ut"),1800);setTimeout(()=>el.classList.remove("sok-hit","sok-ut"),3200)}},0);
+  }
+  function sel(d){const a=box.querySelectorAll("a");if(!a.length)return;cur=(cur+d+a.length)%a.length;a.forEach((e,i)=>e.setAttribute("aria-selected",i===cur));a[cur].scrollIntoView({block:"nearest"})}
+  inp.addEventListener("input",find);
+  inp.addEventListener("focus",()=>{idx=null;if(inp.value)find()});
+  inp.addEventListener("keydown",e=>{
+    if(e.key==="ArrowDown"){e.preventDefault();if(box.hidden)find();else sel(1)}
+    else if(e.key==="ArrowUp"){e.preventDefault();sel(-1)}
+    else if(e.key==="Enter"){e.preventDefault();pick(cur<0?0:cur)}
+    else if(e.key==="Escape"){if(!box.hidden){e.stopPropagation();close()}else inp.blur()}
+  });
+  box.addEventListener("mousedown",e=>e.preventDefault());
+  box.addEventListener("click",e=>{const a=e.target.closest("a[data-i]");if(a){e.preventDefault();pick(+a.dataset.i)}});
+  inp.addEventListener("blur",()=>setTimeout(close,150));
+  document.addEventListener("keydown",e=>{if(e.key==="/"&&!e.target.closest("input,textarea,select,[contenteditable]")){e.preventDefault();inp.focus();inp.select()}});
+})();
 go();
 })();
 </script>
