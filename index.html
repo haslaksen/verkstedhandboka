@@ -48,6 +48,22 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 .bar{position:sticky;top:0;z-index:30;background:var(--sheet);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 16px;height:52px;font-family:var(--body)}
 .bar .bn{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
 .bar .bn #barEmne{color:var(--head)}
+/* Hurtigoppslag øverst i delemnet, forklaringen i «Les mer» */
+.hurtig{border:2px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:12px 14px;margin:6px 0 16px}
+.hurtig-h{font-weight:700;color:var(--accent);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.hurtig-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr));gap:8px}
+.hurtig-g>div{background:var(--sheet);border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:3px}
+.hurtig-g h4{margin:0 0 2px!important;font-size:13px;color:var(--head)}
+.hurtig-g h4:not(:first-child){margin-top:6px!important}
+.hurtig-g b{font-family:"Times New Roman",Georgia,serif;font-size:17px;font-weight:600}
+.hurtig-g span{font-size:12.5px;color:var(--ink-2)}
+.hurtig-u{font-size:12.5px;color:var(--ink-2);margin-top:8px}
+@media (max-width:560px){.hurtig{padding:10px}.hurtig-g{grid-template-columns:1fr;gap:6px}.hurtig-g>div{flex-direction:row;flex-wrap:wrap;column-gap:16px;padding:6px 10px}.hurtig-g h4,.hurtig-g span{flex-basis:100%}.hurtig-g b{font-size:16px}}
+details.lesmer{margin-top:22px;border-top:1px solid var(--line);padding-top:10px}
+details.lesmer>summary{cursor:pointer;font-weight:600;color:var(--accent);padding:8px 0;list-style:none}
+details.lesmer>summary::-webkit-details-marker{display:none}
+details.lesmer>summary::before{content:"▸ ";display:inline-block;transition:transform .15s}
+details.lesmer[open]>summary::before{transform:rotate(90deg)}
 /* Søk i hele håndboka */
 .sok{position:relative;flex:0 1 320px;min-width:0}
 .sok input{width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:7px 10px 7px 32px;-webkit-appearance:none;appearance:none}
@@ -3352,29 +3368,19 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .el9a-nu{text-transform:none!important;letter-spacing:.02em!important;font-size:13px!important}
 .el9a-dec{font-family:var(--mono);font-size:22px;font-weight:500}
 </style>
-  <p class="lead">Ohms lov og effektformelen dekker de fleste beregningene i verkstedet: U = R · I og P = U · I. For trefase og motorer kommer √3 og effektfaktoren cos φ inn.</p>
-  <div class="note"><p>Arbeid på elektriske anlegg krever riktig kompetanse og må følge FSE og NEK 400. Kapitlet er for forståelse og kontrollregning, ikke for installasjonsarbeid.</p></div>
-  <h3>Strøm, spenning og motstand</h3>
-  <p>Prikkene er strømmen. Øker du spenningen, går de fortere. Øker du motstanden, går de saktere. Motstanden gløder sterkere jo mer effekt den avgir. I grafen er hver motstand en rett linje, og jo brattere linjen er, jo lavere er motstanden.</p>
-  <figure class="fig">
-    <svg id="fig-ohm" viewBox="0 0 600 220" role="img" aria-label="Strømkrets med spenningskilde, motstand og amperemeter der strømmen følger Ohms lov"></svg>
-    <div class="ctrl"><label for="ohm-u" class="small muted" style="min-width:90px">Spenning U</label><input type="range" id="ohm-u" min="0" max="24" step="0.5" value="12" style="flex:1;min-width:140px"><span id="ohm-uo" class="mono" style="min-width:64px;text-align:right"></span></div>
-    <div class="ctrl"><label for="ohm-r" class="small muted" style="min-width:90px">Motstand R</label><input type="range" id="ohm-r" min="1" max="100" step="1" value="20" style="flex:1;min-width:140px"><span id="ohm-ro" class="mono" style="min-width:64px;text-align:right"></span></div>
-    <div class="ctrl"><button class="chip play" id="ohm-play" type="button"></button><button class="chip" id="ohm-demo-u" type="button">Demo: øk U</button><button class="chip" id="ohm-demo-r" type="button">Demo: øk R</button></div>
-    <dl class="kv"><div><dt>Strøm I = U / R</dt><dd id="ohm-i"></dd></div><div><dt>Effekt P = U · I</dt><dd id="ohm-p"></dd></div></dl>
-    <svg id="fig-ohm-graph" viewBox="0 0 600 240" role="img" aria-label="Graf over strøm mot spenning for ulike motstander"></svg>
-    <figcaption>«Demo: øk U» holder R fast, så strømmen øker i takt med spenningen. «Demo: øk R» holder U fast, så strømmen faller.</figcaption>
-  </figure>
-  <h3>Formler: Ohms lov og effekt</h3>
-  <p>Fire størrelser går igjen: spenning <b>U</b> i volt (V), strøm <b>I</b> i ampere (A), motstand <b>R</b> i ohm (Ω) og effekt <b>P</b> i watt (W). Kjenner du to av dem, kan du regne ut de to andre.</p>
-  <div class="two">
-    <figure class="fig"><svg id="tri-ohm" viewBox="0 0 280 236" role="img" aria-label="Ohms trekant med U øverst og R og I nederst"></svg><figcaption>Ohms trekant. Trykk på størrelsen du vil finne, og dekk den til. Det som står igjen er formelen: over hverandre betyr del, ved siden av hverandre betyr gang.</figcaption></figure>
-    <figure class="fig"><svg id="tri-p" viewBox="0 0 280 236" role="img" aria-label="Effekttrekant med P øverst og U og I nederst"></svg><figcaption>Effekttrekanten virker på samme måte, med P øverst og U og I nederst.</figcaption></figure>
+  <div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Ohms lov</h4><b>U = R · I</b><b>I = U / R</b><b>R = U / I</b></div>
+    <div><h4>Effekt</h4><b>P = U · I</b><b>P = R · I²</b><b>P = U² / R</b></div>
+    <div><h4>Seriekopling</h4><b>R = R₁ + R₂ + …</b><b>U = U₁ + U₂ + …</b><span>Samme strøm I overalt</span></div>
+    <div><h4>Parallellkopling</h4><b>1/R = 1/R₁ + 1/R₂ + …</b><b>R = R₁ · R₂ / (R₁ + R₂)</b><b>I = I₁ + I₂ + …</b><span>Samme spenning U over alle</span></div>
+    <div><h4>Spenningsdeler</h4><b>U₂ = U · R₂ / (R₁ + R₂)</b><h4>Strømdeling</h4><b>I₁ = I · R₂ / (R₁ + R₂)</b></div>
+    <div><h4>Kirchhoff</h4><b>ΣI<sub>inn</sub> = ΣI<sub>ut</sub></b><span>i hvert knutepunkt</span><b>ΣU = 0</b><span>rundt hver lukket sløyfe</span></div>
   </div>
-  <h4 style="margin-top:8px">Alle tolv formler, ordnet etter det du skal finne</h4>
-  <div class="tbl" id="el-f12"></div>
-  <h4 style="margin-top:8px">Andre formler i elektro</h4>
-  <div class="tbl" id="el-fmore"></div>
+  <div class="hurtig-u">U spenning (V) · I strøm (A) · R motstand (Ω) · P effekt (W)</div>
+</div>
+  <div class="note"><p>Arbeid på elektriske anlegg krever riktig kompetanse og må følge FSE og NEK 400. Kapitlet er for forståelse og kontrollregning, ikke for installasjonsarbeid.</p></div>
   <h3>Ohms lov og effekt</h3>
   <p class="small muted">Fyll inn to verdier. De andre regnes ut.</p>
   <div class="calc">
@@ -3391,7 +3397,47 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="e-out" aria-live="polite"></div>
   </div>
-<p>Nesten alle kretser er bygd av motstander i serie, i parallell eller en blanding. Med to enkle regler, Kirchhoffs lover, kan du finne strøm og spenning overalt i kretsen.</p>
+<h3>Kalkulator: opptil fire motstander</h3>
+<p class="small muted">Velg kopling og antall. Kretsfiguren under følger kalkulatoren.</p>
+<div class="calc">
+  <div class="fields">
+    <div class="chips" id="el9a-sp-mode" style="margin:0"></div>
+    <div class="chips" id="el9a-sp-n" style="margin:0"></div>
+    <div class="field"><label class="el9a-nu" for="el9a-sp-u">Spenning U (V)</label><input id="el9a-sp-u" inputmode="decimal" value="24"></div>
+    <div class="el9a-r4">
+      <div class="field"><label class="el9a-nu" for="el9a-sp-r1">R₁ (Ω)</label><input id="el9a-sp-r1" inputmode="decimal" value="10"></div>
+      <div class="field"><label class="el9a-nu" for="el9a-sp-r2">R₂ (Ω)</label><input id="el9a-sp-r2" inputmode="decimal" value="20"></div>
+      <div class="field"><label class="el9a-nu" for="el9a-sp-r3">R₃ (Ω)</label><input id="el9a-sp-r3" inputmode="decimal" value="30"></div>
+      <div class="field"><label class="el9a-nu" for="el9a-sp-r4">R₄ (Ω)</label><input id="el9a-sp-r4" inputmode="decimal" value="60"></div>
+    </div>
+  </div>
+  <div class="out" id="el9a-sp-out" aria-live="polite"></div>
+</div>
+<h4 style="margin-top:8px">Alle tolv formler, ordnet etter det du skal finne</h4>
+  <div class="tbl" id="el-f12"></div>
+  <h4 style="margin-top:8px">Andre formler i elektro</h4>
+  <div class="tbl" id="el-fmore"></div>
+  <details class="lesmer">
+<summary>Les mer: forklaring, animasjoner og Kirchhoffs lover</summary>
+<p class="lead">Ohms lov og effektformelen dekker de fleste beregningene i verkstedet: U = R · I og P = U · I. For trefase og motorer kommer √3 og effektfaktoren cos φ inn.</p>
+<h3>Strøm, spenning og motstand</h3>
+  <p>Prikkene er strømmen. Øker du spenningen, går de fortere. Øker du motstanden, går de saktere. Motstanden gløder sterkere jo mer effekt den avgir. I grafen er hver motstand en rett linje, og jo brattere linjen er, jo lavere er motstanden.</p>
+  <figure class="fig">
+    <svg id="fig-ohm" viewBox="0 0 600 220" role="img" aria-label="Strømkrets med spenningskilde, motstand og amperemeter der strømmen følger Ohms lov"></svg>
+    <div class="ctrl"><label for="ohm-u" class="small muted" style="min-width:90px">Spenning U</label><input type="range" id="ohm-u" min="0" max="24" step="0.5" value="12" style="flex:1;min-width:140px"><span id="ohm-uo" class="mono" style="min-width:64px;text-align:right"></span></div>
+    <div class="ctrl"><label for="ohm-r" class="small muted" style="min-width:90px">Motstand R</label><input type="range" id="ohm-r" min="1" max="100" step="1" value="20" style="flex:1;min-width:140px"><span id="ohm-ro" class="mono" style="min-width:64px;text-align:right"></span></div>
+    <div class="ctrl"><button class="chip play" id="ohm-play" type="button"></button><button class="chip" id="ohm-demo-u" type="button">Demo: øk U</button><button class="chip" id="ohm-demo-r" type="button">Demo: øk R</button></div>
+    <dl class="kv"><div><dt>Strøm I = U / R</dt><dd id="ohm-i"></dd></div><div><dt>Effekt P = U · I</dt><dd id="ohm-p"></dd></div></dl>
+    <svg id="fig-ohm-graph" viewBox="0 0 600 240" role="img" aria-label="Graf over strøm mot spenning for ulike motstander"></svg>
+    <figcaption>«Demo: øk U» holder R fast, så strømmen øker i takt med spenningen. «Demo: øk R» holder U fast, så strømmen faller.</figcaption>
+  </figure>
+  <h3>Formler: Ohms lov og effekt</h3>
+  <p>Fire størrelser går igjen: spenning <b>U</b> i volt (V), strøm <b>I</b> i ampere (A), motstand <b>R</b> i ohm (Ω) og effekt <b>P</b> i watt (W). Kjenner du to av dem, kan du regne ut de to andre.</p>
+  <div class="two">
+    <figure class="fig"><svg id="tri-ohm" viewBox="0 0 280 236" role="img" aria-label="Ohms trekant med U øverst og R og I nederst"></svg><figcaption>Ohms trekant. Trykk på størrelsen du vil finne, og dekk den til. Det som står igjen er formelen: over hverandre betyr del, ved siden av hverandre betyr gang.</figcaption></figure>
+    <figure class="fig"><svg id="tri-p" viewBox="0 0 280 236" role="img" aria-label="Effekttrekant med P øverst og U og I nederst"></svg><figcaption>Effekttrekanten virker på samme måte, med P øverst og U og I nederst.</figcaption></figure>
+  </div>
+  <p>Nesten alle kretser er bygd av motstander i serie, i parallell eller en blanding. Med to enkle regler, Kirchhoffs lover, kan du finne strøm og spenning overalt i kretsen.</p>
 
 <h3>Seriekopling</h3>
 <p>I en seriekopling går den samme strømmen gjennom alle motstandene, fordi den bare har én vei. Spenningen fordeles, og den største motstanden får det største spenningsfallet. Brytes kretsen ett sted, stopper strømmen overalt.</p>
@@ -3426,22 +3472,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
 </div>
 
-<h3>Kalkulator: opptil fire motstander</h3>
-<p class="small muted">Velg kopling og antall. Kretsfiguren under følger kalkulatoren.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="chips" id="el9a-sp-mode" style="margin:0"></div>
-    <div class="chips" id="el9a-sp-n" style="margin:0"></div>
-    <div class="field"><label class="el9a-nu" for="el9a-sp-u">Spenning U (V)</label><input id="el9a-sp-u" inputmode="decimal" value="24"></div>
-    <div class="el9a-r4">
-      <div class="field"><label class="el9a-nu" for="el9a-sp-r1">R₁ (Ω)</label><input id="el9a-sp-r1" inputmode="decimal" value="10"></div>
-      <div class="field"><label class="el9a-nu" for="el9a-sp-r2">R₂ (Ω)</label><input id="el9a-sp-r2" inputmode="decimal" value="20"></div>
-      <div class="field"><label class="el9a-nu" for="el9a-sp-r3">R₃ (Ω)</label><input id="el9a-sp-r3" inputmode="decimal" value="30"></div>
-      <div class="field"><label class="el9a-nu" for="el9a-sp-r4">R₄ (Ω)</label><input id="el9a-sp-r4" inputmode="decimal" value="60"></div>
-    </div>
-  </div>
-  <div class="out" id="el9a-sp-out" aria-live="polite"></div>
-</div>
 <figure class="fig">
   <svg id="el9a-sp-fig" viewBox="0 0 600 250" role="img" aria-label="Krets med motstander i serie eller parallell der prikkene viser strømmen"></svg>
   <div class="ctrl"><button class="chip play" id="el9a-sp-play" type="button"></button><span class="small muted">Prikkene viser strømmen. Farten viser forholdet mellom strømmene i kretsen.</span></div>
@@ -3464,6 +3494,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>ΣU = 0</b><span>rundt hver lukket sløyfe. U = U₁ + U₂ + U₃</span></div>
 </div>
 <p>Formlene for serie- og parallellkopling kommer direkte fra disse to lovene. I feilsøking betyr spenningsloven at hele kildespenningen ligger over et brudd i en seriekrets: måler du 24 V over en åpen bryter eller en brent sikring, er det der feilen er.</p>
+</details>
 </div>
 <div class="topic" id="el9-batteri">
   <div class="topic-h"><span class="tno">9.2</span><h3>Elektriske batterier</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
@@ -16874,6 +16905,7 @@ window.addEventListener("hashchange",go);
     const x=hits[i];if(!x)return;close();inp.blur();
     let el=x.el;if(!el.isConnected){idx=null;el=x.c}
     const tp=el.closest(".topic"),id=(tp||x.c).id;
+    const dt=el.closest("details");if(dt)dt.open=true;
     if(location.hash!=="#"+id)history.pushState(null,"","#"+id);
     show();syncBar();
     setTimeout(()=>{el.scrollIntoView({block:x.r===0?"start":"center"});
