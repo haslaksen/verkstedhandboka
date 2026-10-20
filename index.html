@@ -3497,30 +3497,18 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </details>
 </div>
 <div class="topic" id="el9-batteri">
-  <div class="topic-h"><span class="tno">9.2</span><h3>Elektriske batterier</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Et batteri gjør kjemisk energi om til elektrisk energi. Hver celle har en fast spenning som bestemmes av kjemien. Spenningen øker du med celler i serie, kapasiteten med celler i parallell.</p>
-
+<div class="topic-h"><span class="tno">9.2</span><h3>Elektriske batterier</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Serie- og parallellkopling av celler</h4><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span><b>R<sub>i</sub> = n<sub>s</sub> · R<sub>i,celle</sub> / n<sub>p</sub></b><span>indre resistans i pakken</span></div>
+    <div><h4>Kapasitet, energi, polspenning og driftstid</h4><b>W = U · C</b><span>energi i Wh, med C i Ah</span><b>t = C / I</b><span>driftstid i h (teoretisk)</span><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span><b>I<sub>k</sub> = E / R<sub>i</sub></b><span>kortslutningsstrøm</span></div>
+  </div>
+</div>
 <h3>Celletyper</h3>
 <div class="tbl" id="el9a-bt-t"></div>
 <p class="small muted">Nominelle cellespenninger etter IEC 60086 (primærceller) og IEC 61960 / IEC 61951 / IEC 60896 (oppladbare). Ladespenning, sluttspenning og energitetthet er <b>veiledende</b> og varierer med produsent og utførelse: følg alltid databladet. Energitetthet etter Battery University.</p>
-
-<h3>Serie- og parallellkopling av celler</h3>
-<div class="el9a-eq">
-  <div><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span></div>
-  <div><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span></div>
-  <div><b>R<sub>i</sub> = n<sub>s</sub> · R<sub>i,celle</sub> / n<sub>p</sub></b><span>indre resistans i pakken</span></div>
-</div>
-<p>Et batteri betegnes ofte som for eksempel <b>5S2P</b>: fem celler i serie, to slike rekker i parallell. En 18 V verktøybatteripakke på 5,0 Ah er typisk 5S2P med Li-ion-celler på 3,6 V og 2,5 Ah. Det samme batteriet selges ofte som «20 V max», som er spenningen når cellene er fulladet (5 · 4,0 V).</p>
-<p>Bare like celler med samme alder og ladetilstand skal koples sammen. En svak celle i en serierekke blir tømt først og kan bli ladet i feil retning av de andre. Derfor har Li-ion-pakker et styresystem (BMS) som overvåker hver celle.</p>
-
 <h3>Kapasitet, energi, polspenning og driftstid</h3>
-<p>Kapasiteten i Ah sier hvor lenge batteriet kan levere en strøm. Energien i Wh tar også med spenningen, og er det riktige målet når du sammenligner batterier med ulik spenning. Under belastning faller polspenningen fordi strømmen gir spenningsfall over den indre resistansen R<sub>i</sub>. Det merkes ved kulde og på gamle batterier, der R<sub>i</sub> er høyere.</p>
-<div class="el9a-eq">
-  <div><b>W = U · C</b><span>energi i Wh, med C i Ah</span></div>
-  <div><b>t = C / I</b><span>driftstid i h (teoretisk)</span></div>
-  <div><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span></div>
-  <div><b>I<sub>k</sub> = E / R<sub>i</sub></b><span>kortslutningsstrøm</span></div>
-</div>
 <div class="calc">
   <div class="fields">
     <div class="field"><label class="el9a-nu" for="el9a-bt-type">Celletype</label><select id="el9a-bt-type"></select></div>
@@ -3540,12 +3528,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9a-bt-out" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="el9a-bt-fig" viewBox="0 0 600 270" role="img" aria-label="Battericeller koplet i serie og parallell med polspenning under last"></svg>
-  <figcaption>Figuren følger kalkulatoren. Cellene i hver rekke står i serie, rekkene står i parallell. Til høyre: polspenningen faller rett ned med strømmen, og helningen er den indre resistansen.</figcaption>
-</figure>
 <p class="small">Driftstiden er teoretisk. Ved stor strøm gir særlig bly- og alkaliske batterier mindre kapasitet enn merket, og blybatterier bør ikke lades ut mer enn ca. 50 % for å holde lenge. Li-ion tåler dypere utlading, men lever lengst når de ikke står lenge helt fulle eller helt tomme.</p>
-
 <h3>Sikkerhet</h3>
 <ul class="el9a-list">
   <li><b>Kortslutning.</b> Et startbatteri eller et verktøybatteri kan gi flere hundre ampere. En nøkkel eller ring over polene blir glødende på sekunder. Dekk til polene og ta av ringer og klokke.</li>
@@ -3554,18 +3537,40 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <li><b>Lagring og avfall.</b> Lagre Li-ion delvis ladet (ca. 40–60 %) og kjølig. Brukte batterier er farlig avfall og leveres til innsamling. Tape polene på løse batterier.</li>
   <li><b>Store anlegg.</b> Batterianlegg med høy spenning (truck, elbil, UPS) er elektriske anlegg. Arbeid på dem krever opplæring etter FSE.</li>
 </ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Et batteri gjør kjemisk energi om til elektrisk energi. Hver celle har en fast spenning som bestemmes av kjemien. Spenningen øker du med celler i serie, kapasiteten med celler i parallell.</p>
+<h3>Serie- og parallellkopling av celler</h3>
+<div class="el9a-eq">
+  <div><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span></div>
+  <div><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span></div>
+  <div><b>R<sub>i</sub> = n<sub>s</sub> · R<sub>i,celle</sub> / n<sub>p</sub></b><span>indre resistans i pakken</span></div>
+</div>
+<p>Et batteri betegnes ofte som for eksempel <b>5S2P</b>: fem celler i serie, to slike rekker i parallell. En 18 V verktøybatteripakke på 5,0 Ah er typisk 5S2P med Li-ion-celler på 3,6 V og 2,5 Ah. Det samme batteriet selges ofte som «20 V max», som er spenningen når cellene er fulladet (5 · 4,0 V).</p>
+<p>Bare like celler med samme alder og ladetilstand skal koples sammen. En svak celle i en serierekke blir tømt først og kan bli ladet i feil retning av de andre. Derfor har Li-ion-pakker et styresystem (BMS) som overvåker hver celle.</p>
+<h3>Kapasitet, energi, polspenning og driftstid</h3>
+<p>Kapasiteten i Ah sier hvor lenge batteriet kan levere en strøm. Energien i Wh tar også med spenningen, og er det riktige målet når du sammenligner batterier med ulik spenning. Under belastning faller polspenningen fordi strømmen gir spenningsfall over den indre resistansen R<sub>i</sub>. Det merkes ved kulde og på gamle batterier, der R<sub>i</sub> er høyere.</p>
+<div class="el9a-eq">
+  <div><b>W = U · C</b><span>energi i Wh, med C i Ah</span></div>
+  <div><b>t = C / I</b><span>driftstid i h (teoretisk)</span></div>
+  <div><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span></div>
+  <div><b>I<sub>k</sub> = E / R<sub>i</sub></b><span>kortslutningsstrøm</span></div>
+</div>
+<figure class="fig">
+  <svg id="el9a-bt-fig" viewBox="0 0 600 270" role="img" aria-label="Battericeller koplet i serie og parallell med polspenning under last"></svg>
+  <figcaption>Figuren følger kalkulatoren. Cellene i hver rekke står i serie, rekkene står i parallell. Til høyre: polspenningen faller rett ned med strømmen, og helningen er den indre resistansen.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="el9-totalr">
-  <div class="topic-h"><span class="tno">9.3</span><h3>Total resistans i krets</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">De fleste kretser er en blanding av serie- og parallellkopling. Totalmotstanden finner du ved å forenkle trinn for trinn: slå sammen en gruppe som er rent i serie eller rent i parallell, og tegn kretsen på nytt.</p>
-
+<div class="topic-h"><span class="tno">9.3</span><h3>Total resistans i krets</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Motstand og temperatur</h4><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span><b>Δt = t − 20 °C</b><span>temperaturendring i K</span><b>Δt = (R<sub>t</sub> / R<sub>20</sub> − 1) / α</b><span>temperatur fra målt motstand</span></div>
+  </div>
+</div>
 <h3>Blandet kopling: forenkle trinn for trinn</h3>
-<ol class="el9a-list">
-  <li>Finn en gruppe motstander som ligger <b>rent i serie</b> (samme strøm, ingen avgreining mellom dem) eller <b>rent i parallell</b> (koplet mellom de samme to punktene).</li>
-  <li>Regn ut én erstatningsmotstand for gruppen og tegn kretsen på nytt.</li>
-  <li>Gjenta til det er én motstand igjen. Det er totalmotstanden.</li>
-  <li>Gå baklengs for å finne strøm og spenning i hver motstand: I = U / R<sub>t</sub> gjennom kretsen, deretter spenningsfall og grenstrømmer.</li>
-</ol>
 <div class="calc">
   <div class="fields">
     <div class="field"><label class="el9a-nu" for="el9a-mx-set">Oppsett</label><select id="el9a-mx-set"></select></div>
@@ -3579,23 +3584,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9a-mx-out" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="el9a-mx-fig" viewBox="0 0 600 230" role="img" aria-label="Kretsen tegnet på nytt for hvert forenklingstrinn"></svg>
-  <div class="ctrl"><button class="chip" id="el9a-mx-prev" type="button">◀ Forrige</button><button class="chip" id="el9a-mx-next" type="button">Neste ▶</button><button class="chip play" id="el9a-mx-play" type="button"></button><span class="mono small" id="el9a-mx-stepno"></span></div>
-  <ol class="el9a-steps" id="el9a-mx-steps"></ol>
-  <figcaption>Den markerte gruppen slås sammen i neste trinn. Den nye erstatningsmotstanden vises i grønt.</figcaption>
-</figure>
-
 <h3>Motstand og temperatur: R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</h3>
-<p>Motstanden i metaller øker når de blir varme. Temperaturkoeffisienten α sier hvor mye motstanden endrer seg per grad, regnet fra 20 °C. Kobber har α ≈ 0,004 1/K, så motstanden øker ca. 4 % per 10 °C. Formelen er en lineær tilnærming som gjelder godt fra ca. −50 til +150 °C.</p>
-<div class="el9a-eq">
-  <div><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span></div>
-  <div><b>Δt = t − 20 °C</b><span>temperaturendring i K</span></div>
-  <div><b>Δt = (R<sub>t</sub> / R<sub>20</sub> − 1) / α</b><span>temperatur fra målt motstand</span></div>
-</div>
 <div class="tbl" id="el9a-al-t"></div>
 <p class="small muted">α ved 20 °C, unntatt Pt100. Kobber etter IEC 60028, Pt100 etter IEC 60751 (middelverdi 0–100 °C). Øvrige verdier er typiske verdier fra standard tabellverk og varierer med renhet og legering.</p>
-<p>Det brukes i praksis. En Pt100-føler har 100 Ω ved 0 °C og 138,5 Ω ved 100 °C. Viklingstemperaturen i en motor kan bestemmes ved å måle kald og varm viklingsmotstand. En glødetråd av wolfram har derimot så mye høyere motstand varm enn kald at strømstøtet ved innkopling blir mange ganger driftsstrømmen. Ved slike høye temperaturer er den lineære formelen for unøyaktig.</p>
 <div class="calc">
   <div class="fields">
     <div class="chips" id="el9a-tc-mode" style="margin:0"></div>
@@ -3611,12 +3602,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9a-tc-out" aria-live="polite"></div>
 </div>
-<h3>Hva kan en motstand være?</h3>
-  <p>Alt som strømmen må gjennom, har motstand. Noen ganger er motstanden selve hensikten, som i et varmeelement. Andre ganger er den et tap, som i en lang kabel, eller en fare, som i en løs kobling.</p>
-  <div class="sym-grid" id="res-ex"></div>
-  <h3>Motstand i en leder: R = ρ · L / A</h3>
-  <p>Motstanden øker med lengden og minker med tverrsnittet. Materialet bestemmer resistiviteten ρ. Varme gir mer motstand i de fleste metaller, fordi atomene vibrerer mer og hindrer elektronene.</p>
-  <div class="calc">
+<h3>Motstand i en leder: R = ρ · L / A</h3>
+<p>Motstanden øker med lengden og minker med tverrsnittet. Materialet bestemmer resistiviteten ρ. Varme gir mer motstand i de fleste metaller, fordi atomene vibrerer mer og hindrer elektronene.</p>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="rl-mat">Materiale</label><select id="rl-mat"></select></div>
       <div class="row2">
@@ -3631,14 +3619,42 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="rl-out" aria-live="polite"></div>
   </div>
-  <figure class="fig">
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">De fleste kretser er en blanding av serie- og parallellkopling. Totalmotstanden finner du ved å forenkle trinn for trinn: slå sammen en gruppe som er rent i serie eller rent i parallell, og tegn kretsen på nytt.</p>
+<h3>Blandet kopling: forenkle trinn for trinn</h3>
+<ol class="el9a-list">
+  <li>Finn en gruppe motstander som ligger <b>rent i serie</b> (samme strøm, ingen avgreining mellom dem) eller <b>rent i parallell</b> (koplet mellom de samme to punktene).</li>
+  <li>Regn ut én erstatningsmotstand for gruppen og tegn kretsen på nytt.</li>
+  <li>Gjenta til det er én motstand igjen. Det er totalmotstanden.</li>
+  <li>Gå baklengs for å finne strøm og spenning i hver motstand: I = U / R<sub>t</sub> gjennom kretsen, deretter spenningsfall og grenstrømmer.</li>
+</ol>
+<figure class="fig">
+  <svg id="el9a-mx-fig" viewBox="0 0 600 230" role="img" aria-label="Kretsen tegnet på nytt for hvert forenklingstrinn"></svg>
+  <div class="ctrl"><button class="chip" id="el9a-mx-prev" type="button">◀ Forrige</button><button class="chip" id="el9a-mx-next" type="button">Neste ▶</button><button class="chip play" id="el9a-mx-play" type="button"></button><span class="mono small" id="el9a-mx-stepno"></span></div>
+  <ol class="el9a-steps" id="el9a-mx-steps"></ol>
+  <figcaption>Den markerte gruppen slås sammen i neste trinn. Den nye erstatningsmotstanden vises i grønt.</figcaption>
+</figure>
+<h3>Motstand og temperatur: R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</h3>
+<p>Motstanden i metaller øker når de blir varme. Temperaturkoeffisienten α sier hvor mye motstanden endrer seg per grad, regnet fra 20 °C. Kobber har α ≈ 0,004 1/K, så motstanden øker ca. 4 % per 10 °C. Formelen er en lineær tilnærming som gjelder godt fra ca. −50 til +150 °C.</p>
+<div class="el9a-eq">
+  <div><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span></div>
+  <div><b>Δt = t − 20 °C</b><span>temperaturendring i K</span></div>
+  <div><b>Δt = (R<sub>t</sub> / R<sub>20</sub> − 1) / α</b><span>temperatur fra målt motstand</span></div>
+</div>
+<p>Det brukes i praksis. En Pt100-føler har 100 Ω ved 0 °C og 138,5 Ω ved 100 °C. Viklingstemperaturen i en motor kan bestemmes ved å måle kald og varm viklingsmotstand. En glødetråd av wolfram har derimot så mye høyere motstand varm enn kald at strømstøtet ved innkopling blir mange ganger driftsstrømmen. Ved slike høye temperaturer er den lineære formelen for unøyaktig.</p>
+<h3>Hva kan en motstand være?</h3>
+<p>Alt som strømmen må gjennom, har motstand. Noen ganger er motstanden selve hensikten, som i et varmeelement. Andre ganger er den et tap, som i en lang kabel, eller en fare, som i en løs kobling.</p>
+<div class="sym-grid" id="res-ex"></div>
+<h3>Motstand i en leder: R = ρ · L / A</h3>
+<figure class="fig">
     <svg id="fig-cond" viewBox="0 0 600 230" role="img" aria-label="Elektroner som beveger seg gjennom en leder med atomer, der lengde, tverrsnitt, materiale og temperatur påvirker motstanden"></svg>
     <div class="ctrl"><button class="chip play" id="cond-play" type="button"></button><span class="small muted">Følger kalkulatoren over. Prøv å endre lengde, tverrsnitt, materiale og temperatur.</span></div>
     <figcaption>Elektronene (blå) blir hindret av atomene (grå) i lederen. Lengre leder gir flere hindringer på veien. Tykkere leder gir plass til flere elektroner samtidig. Varme får atomene til å vibrere mer. Figuren viser prinsippet og er ikke i målestokk.</figcaption>
   </figure>
-  <h3>Overgangsmotstand: når en kobling blir varm</h3>
-  <p>En god kobling har nesten ingen motstand. En løs eller oksidert klemme kan ha mange hundre ganger mer. Effekten som blir til varme er P = I² · R, så selv en liten motstand gir mye varme når strømmen er stor. Forstørrelsen viser hvorfor: strømmen må gjennom de få punktene der metall faktisk berører metall.</p>
-  <figure class="fig">
+<h3>Overgangsmotstand: når en kobling blir varm</h3>
+<p>En god kobling har nesten ingen motstand. En løs eller oksidert klemme kan ha mange hundre ganger mer. Effekten som blir til varme er P = I² · R, så selv en liten motstand gir mye varme når strømmen er stor. Forstørrelsen viser hvorfor: strømmen må gjennom de få punktene der metall faktisk berører metall.</p>
+<figure class="fig">
     <svg id="fig-joint" viewBox="0 0 600 350" role="img" aria-label="Rekkeklemme med forstørret kontaktflate, temperaturkurve og varmeeffekt for ulike tilstander"></svg>
     <div class="ctrl"><span class="chips" id="joint-q" style="margin:0"></span></div>
     <div class="ctrl"><label for="joint-i" class="small muted" style="min-width:70px">Strøm</label><input type="range" id="joint-i" min="1" max="32" step="1" value="16" style="flex:1;min-width:140px"><span id="joint-io" class="mono" style="min-width:48px;text-align:right"></span></div>
@@ -3646,11 +3662,62 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <p id="joint-why" style="margin:4px 0 0;font-size:14px;font-weight:600"></p>
     <figcaption>Temperaturene er illustrasjoner av hvordan det utvikler seg, ikke målte verdier. «Termografi» viser figuren slik et varmekamera ser den, som brukes for å finne varme koblinger under drift. En varm klemme er et varsel: slå av, og ettertrekk eller bytt den. Arbeid i elektriske anlegg skal gjøres av kvalifisert personell.</figcaption>
   </figure>
+</details>
 </div>
 <div class="topic" id="el9-kond">
-  <div class="topic-h"><span class="tno">9.4</span><h3>Kondensatorer</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">En kondensator er to ledende plater med en isolator mellom. Den lagrer elektrisk ladning og energi i et elektrisk felt. Kondensatorer glatter likespenning, filtrerer støy, gir faseforskyvning i enfasemotorer og forbedrer effektfaktoren i anlegg.</p>
-
+<div class="topic-h"><span class="tno">9.4</span><h3>Kondensatorer</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Kapasitans: C = Q / U</h4><b>C = Q / U</b><span>C i F, Q i coulomb (C = A · s), U i V</span><b>C = ε₀ · ε<sub>r</sub> · A / d</b><span>platekondensator. A i m², d i m</span><b>ε₀ = 8,854 · 10⁻¹² F/m</b><span>permittiviteten i vakuum</span><b>1 µF = 1000 nF = 10⁶ pF</b><span>vanlige enheter</span></div>
+    <div><h4>Serie- og parallellkopling</h4><b>C = C₁ + C₂ + C₃</b><span>parallell</span><b>1/C = 1/C₁ + 1/C₂ + 1/C₃</b><span>serie</span><b>W = ½ · C · U²</b><span>lagret energi i J (W · s)</span><b>U₁ = Q / C₁</b><span>spenning over hver i serie</span></div>
+    <div><h4>Opplading og utlading</h4><b>τ = R · C</b><span>tidskonstant i s, med R i Ω og C i F</span><b>u<sub>C</sub> = U · (1 − e<sup>−t/τ</sup>)</b><span>opplading</span><b>u<sub>C</sub> = U · e<sup>−t/τ</sup></b><span>utlading</span><b>i = (U / R) · e<sup>−t/τ</sup></b><span>strømmen i begge tilfeller</span></div>
+  </div>
+</div>
+<h3>Kapasitans: C = Q / U</h3>
+<div class="tbl" id="el9a-er-t"></div>
+<p class="small muted">Relativ permittivitet ε<sub>r</sub>, <b>veiledende</b> verdier ved romtemperatur og lav frekvens.</p>
+<h3>Serie- og parallellkopling</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="chips" id="el9a-cs-mode" style="margin:0"></div>
+    <div class="field"><label class="el9a-nu" for="el9a-cs-u">Spenning U (V)</label><input id="el9a-cs-u" inputmode="decimal" value="400"></div>
+    <div class="el9a-r4" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="field"><label class="el9a-nu" for="el9a-cs-c1">C₁ (µF)</label><input id="el9a-cs-c1" inputmode="decimal" value="470"></div>
+      <div class="field"><label class="el9a-nu" for="el9a-cs-c2">C₂ (µF)</label><input id="el9a-cs-c2" inputmode="decimal" value="470"></div>
+      <div class="field"><label class="el9a-nu" for="el9a-cs-c3">C₃ (µF)</label><input id="el9a-cs-c3" inputmode="decimal" placeholder="tom"></div>
+    </div>
+  </div>
+  <div class="out" id="el9a-cs-out" aria-live="polite"></div>
+</div>
+<p class="small">Seriekopling brukes for å få høyere spenningsklasse, for eksempel i mellomkretsen i en frekvensomformer. Da må det stå balansemotstander parallelt med hver kondensator, fordi lekkstrømmene er ulike og ellers fordeler spenningen skjevt.</p>
+<h3>Opplading og utlading: τ = R · C</h3>
+<div class="tbl" id="el9a-tau-t"></div>
+<h3>Typer</h3>
+<div class="tbl" id="el9a-ct-t"></div>
+<h3>Merkekoder</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><label class="el9a-nu" for="el9a-cc-in">Kode på kondensatoren</label><input id="el9a-cc-in" value="104K 2A" autocomplete="off" spellcheck="false"></div>
+    <div class="chips" id="el9a-cc-ex" style="margin:0"></div>
+  </div>
+  <div class="out" id="el9a-cc-out" aria-live="polite"></div>
+</div>
+<div class="two">
+  <div class="tbl" id="el9a-tol-t"></div>
+  <div class="tbl" id="el9a-vc-t"></div>
+</div>
+<p class="small muted">Toleransebokstaver etter IEC 60062. Spenningskoder etter EIA-198 (vanlig på film- og elektrolyttkondensatorer).</p>
+<h3>Sikkerhet</h3>
+<ul class="el9a-list">
+  <li><b>Restladning.</b> En kondensator kan holde farlig spenning lenge etter at strømmen er slått av. Mål alltid spenningen før du tar i, og lad ut med en motstand, aldri ved å kortslutte med en skrutrekker.</li>
+  <li><b>Frekvensomformere og sveisemaskiner</b> har store kondensatorer i mellomkretsen. Vent minst den tiden som står på merkingen (ofte 5–15 minutter), og kontroller med måler. Arbeid på slikt utstyr skal følge FSE.</li>
+  <li><b>Polaritet.</b> Elektrolytt- og tantalkondensatorer er polariserte. Feil polaritet eller for høy spenning kan få dem til å svelle, lekke eller eksplodere.</li>
+  <li><b>Spenningsklasse.</b> Velg en kondensator med spenningsklasse godt over driftsspenningen. En motorkondensator for vekselspenning skal ha AC-merking, for eksempel 450 V AC.</li>
+</ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">En kondensator er to ledende plater med en isolator mellom. Den lagrer elektrisk ladning og energi i et elektrisk felt. Kondensatorer glatter likespenning, filtrerer støy, gir faseforskyvning i enfasemotorer og forbedrer effektfaktoren i anlegg.</p>
 <h3>Kapasitans: C = Q / U</h3>
 <p>Kapasitansen C sier hvor mye ladning Q kondensatoren tar opp per volt. Enheten er farad (F). 1 F er svært mye, så i praksis brukes µF, nF og pF.</p>
 <div class="el9a-eq">
@@ -3677,9 +3744,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
   </div>
 </div>
-<div class="tbl" id="el9a-er-t"></div>
-<p class="small muted">Relativ permittivitet ε<sub>r</sub>, <b>veiledende</b> verdier ved romtemperatur og lav frekvens.</p>
-
 <h3>Serie- og parallellkopling</h3>
 <p>Kondensatorer oppfører seg motsatt av motstander. I parallell legges platearealene sammen, så kapasitansen øker. I serie blir avstanden mellom de ytterste platene større, så kapasitansen minker. I serie får alle samme ladning, og den minste kondensatoren får den største spenningen.</p>
 <div class="el9a-eq">
@@ -3688,20 +3752,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>W = ½ · C · U²</b><span>lagret energi i J (W · s)</span></div>
   <div><b>U₁ = Q / C₁</b><span>spenning over hver i serie</span></div>
 </div>
-<div class="calc">
-  <div class="fields">
-    <div class="chips" id="el9a-cs-mode" style="margin:0"></div>
-    <div class="field"><label class="el9a-nu" for="el9a-cs-u">Spenning U (V)</label><input id="el9a-cs-u" inputmode="decimal" value="400"></div>
-    <div class="el9a-r4" style="grid-template-columns:repeat(3,minmax(0,1fr))">
-      <div class="field"><label class="el9a-nu" for="el9a-cs-c1">C₁ (µF)</label><input id="el9a-cs-c1" inputmode="decimal" value="470"></div>
-      <div class="field"><label class="el9a-nu" for="el9a-cs-c2">C₂ (µF)</label><input id="el9a-cs-c2" inputmode="decimal" value="470"></div>
-      <div class="field"><label class="el9a-nu" for="el9a-cs-c3">C₃ (µF)</label><input id="el9a-cs-c3" inputmode="decimal" placeholder="tom"></div>
-    </div>
-  </div>
-  <div class="out" id="el9a-cs-out" aria-live="polite"></div>
-</div>
-<p class="small">Seriekopling brukes for å få høyere spenningsklasse, for eksempel i mellomkretsen i en frekvensomformer. Da må det stå balansemotstander parallelt med hver kondensator, fordi lekkstrømmene er ulike og ellers fordeler spenningen skjevt.</p>
-
 <h3>Opplading og utlading: τ = R · C</h3>
 <p>En kondensator lades ikke opp momentant. Strømmen er størst i starten og avtar etter hvert som spenningen over kondensatoren nærmer seg kildespenningen. Tidskonstanten τ er tiden det tar å nå 63 % av full spenning. Etter 5τ regnes kondensatoren som full, eller tom ved utlading.</p>
 <div class="el9a-eq">
@@ -3718,37 +3768,13 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv el9a-nt" id="el9a-rc-kv"></dl>
   <figcaption>Kurven tegnes i tidsskalaen 0–5τ. Øk R eller C, og τ blir lengre. Kildespenningen er 12 V. Strømmen (stiplet) er størst i det øyeblikket bryteren slås om.</figcaption>
 </figure>
-<div class="tbl" id="el9a-tau-t"></div>
-
-<h3>Typer</h3>
-<div class="tbl" id="el9a-ct-t"></div>
-
 <h3>Merkekoder</h3>
 <p>Små kondensatorer merkes med en tresifret kode i pF: de to første sifrene er verdien, det tredje er antall nuller. <b>104</b> er 10 · 10⁴ pF = 100 nF. En bokstav etter koden er toleransen, og en kode som <b>2A</b> eller <b>1H</b> er spenningsklassen. Verdier kan også skrives med enhetsbokstaven som komma: <b>4n7</b> = 4,7 nF og <b>2µ2</b> = 2,2 µF.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><label class="el9a-nu" for="el9a-cc-in">Kode på kondensatoren</label><input id="el9a-cc-in" value="104K 2A" autocomplete="off" spellcheck="false"></div>
-    <div class="chips" id="el9a-cc-ex" style="margin:0"></div>
-  </div>
-  <div class="out" id="el9a-cc-out" aria-live="polite"></div>
-</div>
-<div class="two">
-  <div class="tbl" id="el9a-tol-t"></div>
-  <div class="tbl" id="el9a-vc-t"></div>
-</div>
-<p class="small muted">Toleransebokstaver etter IEC 60062. Spenningskoder etter EIA-198 (vanlig på film- og elektrolyttkondensatorer).</p>
-
-<h3>Sikkerhet</h3>
-<ul class="el9a-list">
-  <li><b>Restladning.</b> En kondensator kan holde farlig spenning lenge etter at strømmen er slått av. Mål alltid spenningen før du tar i, og lad ut med en motstand, aldri ved å kortslutte med en skrutrekker.</li>
-  <li><b>Frekvensomformere og sveisemaskiner</b> har store kondensatorer i mellomkretsen. Vent minst den tiden som står på merkingen (ofte 5–15 minutter), og kontroller med måler. Arbeid på slikt utstyr skal følge FSE.</li>
-  <li><b>Polaritet.</b> Elektrolytt- og tantalkondensatorer er polariserte. Feil polaritet eller for høy spenning kan få dem til å svelle, lekke eller eksplodere.</li>
-  <li><b>Spenningsklasse.</b> Velg en kondensator med spenningsklasse godt over driftsspenningen. En motorkondensator for vekselspenning skal ha AC-merking, for eksempel 450 V AC.</li>
-</ul>
+</details>
 </div>
 <div class="topic" id="el9-ac">
-  <div class="topic-h"><span class="tno">9.5</span><h3>Vekselstrømkretser</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">9.5</span><h3>Vekselstrømkretser</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<style>
 .el9b-eq{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
 .el9b-eq>div{border:1px solid var(--line);background:var(--sheet);padding:8px 12px;min-width:0;flex:1 1 160px}
 .el9b-eq b{display:block;font-family:var(--mono);font-size:16px;font-weight:500;overflow-wrap:anywhere}
@@ -3772,8 +3798,36 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .el9b-big{width:124px!important;height:76px!important}
 .el9b-big svg{width:116px!important;height:70px!important}
 </style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Sinusspenning</h4><b>u = Û · sin(ωt + φ)</b><span>øyeblikksverdi i V. Û er toppverdien</span><b>ω = 2π · f</b><span>vinkelfrekvens i rad/s</span><b>T = 1 / f</b><span>periode i s. 50 Hz gir 20 ms</span><b>U = Û / √2 ≈ 0,707 · Û</b><span>effektivverdi. Û = √2 · U</span></div>
+    <div><h4>Impedans</h4><b>Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</b><span>impedans i Ω</span><b>I = U / Z</b><span>Ohms lov for vekselstrøm</span><b>tan φ = (X<sub>L</sub> − X<sub>C</sub>) / R</b><span>positiv φ: induktiv krets</span><b>cos φ = R / Z</b><span>effektfaktoren</span></div>
+    <div><h4>Serieresonans</h4><b>f<sub>0</sub> = 1 / (2π · √(L · C))</b><span>resonansfrekvens i Hz, L i H og C i F</span></div>
+  </div>
+</div>
+<h3>R, L og C i vekselstrøm</h3>
+<div class="tbl el9b-tx" id="el9b-rlc-t"></div>
+<p class="small muted">L i henry (H) og C i farad (F): 1 mH = 0,001 H og 1 µF = 0,000 001 F. Ved likestrøm (f = 0) er spolen bare trådmotstanden, og kondensatoren er et brudd.</p>
+<h4>Kalkulator: R–L–C i serie</h4>
+<div class="calc">
+  <div class="fields">
+    <div class="row2">
+      <div class="field"><label for="el9b-k-u">Spenning U (V)</label><input id="el9b-k-u" inputmode="decimal" value="230"></div>
+      <div class="field"><label for="el9b-k-f">Frekvens f (Hz)</label><input id="el9b-k-f" inputmode="decimal" value="50"></div>
+    </div>
+    <div class="field"><label for="el9b-k-r">Motstand R (Ω)</label><input id="el9b-k-r" inputmode="decimal" value="20"></div>
+    <div class="row2">
+      <div class="field"><label for="el9b-k-l">Spole L (mH)</label><input id="el9b-k-l" inputmode="decimal" value="100"></div>
+      <div class="field"><label for="el9b-k-c">Kondensator C (µF)</label><input id="el9b-k-c" inputmode="decimal" value="150"></div>
+    </div>
+    <p class="small muted" style="margin:0">La L eller C stå tom eller 0 hvis kretsen ikke har den komponenten.</p>
+  </div>
+  <div class="out" id="el9b-k-out" aria-live="polite"></div>
+</div>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
 <p class="lead">Nettspenningen skifter retning 100 ganger i sekundet og følger en sinuskurve, fordi den lages av roterende generatorer. Spoler og kondensatorer oppfører seg annerledes i vekselstrøm enn i likestrøm. Det er grunnen til at vi får effektfaktor og fasekompensering, og til at transformatoren virker.</p>
-
 <h3>Sinusspenning</h3>
 <p>Tenk deg en pil (viser) med lengde Û som roterer med vinkelhastigheten ω. Høyden til pilspissen er øyeblikksverdien u. En hel omdreining er én periode T, og antall perioder per sekund er frekvensen f.</p>
 <div class="el9b-eq">
@@ -3793,18 +3847,14 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <figcaption>Animasjonen går 100 ganger saktere enn virkeligheten. Den blå viseren tegner den heltrukne kurven. Den stiplede (oransje) viseren ligger φ grader foran (positiv φ) eller etter (negativ φ). Faseforskyvning kan oppgis i grader eller i tid: 90° ved 50 Hz er 5 ms.</figcaption>
 </figure>
 <p><b>Frekvens og fase.</b> I Norge og resten av Europa er f = 50 Hz, så T = 20 ms og ω = 314 rad/s. Fasevinkelen φ forteller hvor mye én kurve er forskjøvet i forhold til en annen med samme frekvens. Toppene kommer da på ulike tidspunkt. Trefase bygger på dette, med 120° mellom fasene.</p>
-
 <h3>R, L og C i vekselstrøm</h3>
 <p>En motstand oppfører seg likt uansett frekvens. En spole motarbeider endringer i strømmen, så den gir større motstand jo høyere frekvensen er. En kondensator lades opp og ut hver halvperiode og slipper lettere gjennom jo høyere frekvensen er. Denne frekvensavhengige motstanden kalles <b>reaktans X</b> og måles i ohm.</p>
-<div class="tbl el9b-tx" id="el9b-rlc-t"></div>
-<p class="small muted">L i henry (H) og C i farad (F): 1 mH = 0,001 H og 1 µF = 0,000 001 F. Ved likestrøm (f = 0) er spolen bare trådmotstanden, og kondensatoren er et brudd.</p>
 <figure class="fig">
   <svg id="el9b-rlcf" viewBox="0 0 600 220" role="img" aria-label="Spenning og strøm for motstand, spole og kondensator"></svg>
   <div class="ctrl"><span class="chips" id="el9b-rlcf-c" style="margin:0"></span></div>
   <p id="el9b-rlcf-t" style="margin:0;font-size:14px"></p>
   <figcaption>Svart er spenningen u, blå er strømmen i. Til venstre er de samme to størrelsene vist som visere.</figcaption>
 </figure>
-
 <h3>Impedans</h3>
 <p>Når en krets har både R, L og C, kalles den totale motstanden <b>impedans Z</b>. X<sub>L</sub> og X<sub>C</sub> virker mot hverandre og trekkes fra hverandre. Reaktansen står 90° på R i viserdiagrammet, derfor brukes Pytagoras.</p>
 <div class="el9b-eq">
@@ -3817,52 +3867,24 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h4>Serieresonans</h4>
 <p>Ved én bestemt frekvens f<sub>0</sub> er X<sub>L</sub> = X<sub>C</sub>. Da opphever de hverandre, Z = R og strømmen blir størst. Spenningen over L og C hver for seg kan da bli mange ganger større enn kildespenningen. Resonans brukes i filtre og svingekretser, men kan også gi uønskede overspenninger, for eksempel mellom kompenseringskondensatorer og overharmoniske fra frekvensomformere.</p>
 <div class="el9b-eq"><div><b>f<sub>0</sub> = 1 / (2π · √(L · C))</b><span>resonansfrekvens i Hz, L i H og C i F</span></div></div>
-<h4>Kalkulator: R–L–C i serie</h4>
-<div class="calc">
-  <div class="fields">
-    <div class="row2">
-      <div class="field"><label for="el9b-k-u">Spenning U (V)</label><input id="el9b-k-u" inputmode="decimal" value="230"></div>
-      <div class="field"><label for="el9b-k-f">Frekvens f (Hz)</label><input id="el9b-k-f" inputmode="decimal" value="50"></div>
-    </div>
-    <div class="field"><label for="el9b-k-r">Motstand R (Ω)</label><input id="el9b-k-r" inputmode="decimal" value="20"></div>
-    <div class="row2">
-      <div class="field"><label for="el9b-k-l">Spole L (mH)</label><input id="el9b-k-l" inputmode="decimal" value="100"></div>
-      <div class="field"><label for="el9b-k-c">Kondensator C (µF)</label><input id="el9b-k-c" inputmode="decimal" value="150"></div>
-    </div>
-    <p class="small muted" style="margin:0">La L eller C stå tom eller 0 hvis kretsen ikke har den komponenten.</p>
-  </div>
-  <div class="out" id="el9b-k-out" aria-live="polite"></div>
-</div>
+</details>
 </div>
 <div class="topic" id="el9-effekt">
-  <div class="topic-h"><span class="tno">9.6</span><h3>Effektforhold i vekselstrømkretser</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">En motor trekker mer strøm enn effekten alene skulle tilsi. Spolene i motoren trenger et magnetfelt, og energien i feltet pendler fram og tilbake mellom nettet og motoren to ganger hver periode. Den pendlende delen gjør ikke noe arbeid, men den går gjennom kabler, sikringer og transformatorer.</p>
+<div class="topic-h"><span class="tno">9.6</span><h3>Effektforhold i vekselstrømkretser</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Fasekompensering</h4><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span><b>C = Q<sub>C</sub> / (ω · U²)</b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span><b>C = Q<sub>C</sub> / (3 · ω · U²)</b><span>trefase i trekant: per kondensator</span></div>
+  </div>
+</div>
 <h3>Aktiv, reaktiv og tilsynelatende effekt</h3>
 <div class="tbl el9b-tx" id="el9b-pq-t"></div>
-<p>Sammenhengen er S² = P² + Q² og cos φ = P / S. I trefase er U linjespenningen (for eksempel 400 V) og I linjestrømmen.</p>
-
-<h3>Effekttrekanten</h3>
-<p>P, Q og S danner en rettvinklet trekant. Vinkelen φ mellom P og S er den samme som faseforskyvningen mellom strøm og spenning. Figuren viser en last på 10 kW på 400 V trefase. Flytt glideren og se hva som skjer med S og strømmen når P er den samme.</p>
-<figure class="fig">
-  <svg id="el9b-pt" viewBox="0 0 600 270" role="img" aria-label="Effekttrekant med aktiv, reaktiv og tilsynelatende effekt"></svg>
-  <div class="el9b-sl"><label for="el9b-pt-c">cos φ</label><input type="range" id="el9b-pt-c" min="0.5" max="1" step="0.01" value="0.8"><output id="el9b-pt-co"></output></div>
-  <figcaption>P er den samme hele tiden. Lavere cos φ gir mer reaktiv effekt Q, større S og dermed større strøm. Den stiplede streken viser strømmen ved cos φ = 1.</figcaption>
-</figure>
-
 <h3>Hvorfor dårlig cos φ gir større strøm</h3>
-<p>Strømmen må bære både P og Q, og den bestemmes av S: I = S / (√3 · U). Når cos φ blir lavere, blir S større for samme P, og strømmen øker med 1 / cos φ. Tapet i kablene er I² · R, så det øker med 1 / cos² φ. Halveres cos φ, dobles strømmen og tapet firedobles. Kabler, sikringer og transformatorer må dimensjoneres for den større strømmen, selv om nyttig effekt er den samme. Derfor tar nettselskapet betalt for reaktiv effekt hos store kunder, og derfor bør motorer ikke gå lenge på tomgang.</p>
 <div class="two">
   <div><h4>Strøm og tap ved 10 kW, 400 V trefase</h4><div class="tbl" id="el9b-cos-t"></div></div>
   <div><h4>Typisk cos φ (veiledende)</h4><div class="tbl el9b-tx" id="el9b-cos-typ"></div></div>
 </div>
-
 <h3>Fasekompensering</h3>
-<p>En kondensator tar reaktiv effekt med motsatt fortegn av en spole. Plassert nær motoren leverer den det magnetfeltet trenger lokalt, så den reaktive strømmen slipper å gå gjennom hele nettet. Strømmen i kabelen foran kondensatoren går ned, mens motoren selv merker ingen forskjell.</p>
-<div class="el9b-eq">
-  <div><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span></div>
-  <div><b>C = Q<sub>C</sub> / (ω · U²)</b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span></div>
-  <div><b>C = Q<sub>C</sub> / (3 · ω · U²)</b><span>trefase i trekant: per kondensator</span></div>
-</div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -3881,18 +3903,50 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="el9b-q-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Kompenser normalt til cos φ ≈ 0,95, ikke helt til 1, og aldri slik at anlegget blir kapasitivt. Kondensatorer skal ha utladingsmotstander, fordi de kan holde farlig spenning etter frakobling. Sammen med frekvensomformere brukes kondensatorbatterier med sperrespoler for å unngå resonans.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">En motor trekker mer strøm enn effekten alene skulle tilsi. Spolene i motoren trenger et magnetfelt, og energien i feltet pendler fram og tilbake mellom nettet og motoren to ganger hver periode. Den pendlende delen gjør ikke noe arbeid, men den går gjennom kabler, sikringer og transformatorer.</p>
+<h3>Aktiv, reaktiv og tilsynelatende effekt</h3>
+<p>Sammenhengen er S² = P² + Q² og cos φ = P / S. I trefase er U linjespenningen (for eksempel 400 V) og I linjestrømmen.</p>
+<h3>Effekttrekanten</h3>
+<p>P, Q og S danner en rettvinklet trekant. Vinkelen φ mellom P og S er den samme som faseforskyvningen mellom strøm og spenning. Figuren viser en last på 10 kW på 400 V trefase. Flytt glideren og se hva som skjer med S og strømmen når P er den samme.</p>
+<figure class="fig">
+  <svg id="el9b-pt" viewBox="0 0 600 270" role="img" aria-label="Effekttrekant med aktiv, reaktiv og tilsynelatende effekt"></svg>
+  <div class="el9b-sl"><label for="el9b-pt-c">cos φ</label><input type="range" id="el9b-pt-c" min="0.5" max="1" step="0.01" value="0.8"><output id="el9b-pt-co"></output></div>
+  <figcaption>P er den samme hele tiden. Lavere cos φ gir mer reaktiv effekt Q, større S og dermed større strøm. Den stiplede streken viser strømmen ved cos φ = 1.</figcaption>
+</figure>
+<h3>Hvorfor dårlig cos φ gir større strøm</h3>
+<p>Strømmen må bære både P og Q, og den bestemmes av S: I = S / (√3 · U). Når cos φ blir lavere, blir S større for samme P, og strømmen øker med 1 / cos φ. Tapet i kablene er I² · R, så det øker med 1 / cos² φ. Halveres cos φ, dobles strømmen og tapet firedobles. Kabler, sikringer og transformatorer må dimensjoneres for den større strømmen, selv om nyttig effekt er den samme. Derfor tar nettselskapet betalt for reaktiv effekt hos store kunder, og derfor bør motorer ikke gå lenge på tomgang.</p>
+<h3>Fasekompensering</h3>
+<p>En kondensator tar reaktiv effekt med motsatt fortegn av en spole. Plassert nær motoren leverer den det magnetfeltet trenger lokalt, så den reaktive strømmen slipper å gå gjennom hele nettet. Strømmen i kabelen foran kondensatoren går ned, mens motoren selv merker ingen forskjell.</p>
+<div class="el9b-eq">
+  <div><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span></div>
+  <div><b>C = Q<sub>C</sub> / (ω · U²)</b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span></div>
+  <div><b>C = Q<sub>C</sub> / (3 · ω · U²)</b><span>trefase i trekant: per kondensator</span></div>
+</div>
+</details>
 </div>
 <div class="topic" id="el9-magnet">
-  <div class="topic-h"><span class="tno">9.7</span><h3>Magnetisme</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Rundt en magnet og rundt enhver leder med strøm er det et magnetfelt. Magnetfeltet kan trekke på jern og gi kraft på strømførende ledere. Det er grunnlaget for elektromagneter, releer, kontaktorer, motorer og magnetchucker.</p>
-
+<div class="topic-h"><span class="tno">9.7</span><h3>Magnetisme</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Elektromagnet: B, Φ og H</h4><b>H = N · I / l</b><span>magnetisk feltstyrke i A/m. l er lengden av feltlinjene</span><b>B = µ₀ · µ<sub>r</sub> · H</b><span>flukstetthet i tesla (T = Vs/m²)</span><b>Φ = B · A</b><span>magnetisk fluks i weber (Wb = Vs)</span><b>µ₀ = 4π · 10⁻⁷ H/m</b><span>permeabiliteten i vakuum (1,257 · 10⁻⁶)</span></div>
+    <div><h4>Kraft på en strømførende leder</h4><b>F = B · I · l</b><span>kraft i N. B i T, I i A, l er lederlengden i feltet i m</span></div>
+  </div>
+</div>
+<h3>Elektromagnet: B, Φ og H</h3>
+<div class="tbl" id="el9a-mu-t"></div>
+<p class="small muted">Relativ permeabilitet µ<sub>r</sub>, <b>veiledende</b>. For jern og stål avhenger µ<sub>r</sub> sterkt av flukstettheten, varmebehandlingen og legeringen, og verdiene er typiske maksimalverdier ved lave felt.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Rundt en magnet og rundt enhver leder med strøm er det et magnetfelt. Magnetfeltet kan trekke på jern og gi kraft på strømførende ledere. Det er grunnlaget for elektromagneter, releer, kontaktorer, motorer og magnetchucker.</p>
 <h3>Feltlinjer</h3>
 <p>Feltlinjene viser retningen en kompassnål peker. Utenfor magneten går de fra nordpol til sørpol, inne i magneten fra sør til nord, så de er alltid lukkede. Der linjene ligger tett, er feltet sterkt. Like poler frastøter hverandre, ulike poler tiltrekker hverandre.</p>
 <figure class="fig">
   <svg id="el9a-fl-fig" viewBox="0 0 600 300" role="img" aria-label="Stavmagnet med feltlinjer og et kompass som kan flyttes"></svg>
   <figcaption>Flytt kompasset med musen eller fingeren. Nålens røde ende (nord) peker langs feltet. Jorden er selv en stor magnet, og kompassets nordende peker mot den geografiske nordpolen, som derfor magnetisk sett er en sørpol.</figcaption>
 </figure>
-
 <h3>Høyrehåndsregelen</h3>
 <div class="two">
   <figure class="fig">
@@ -3905,7 +3959,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <figcaption><b>Spole:</b> grip spolen med høyre hånd slik at fingrene følger strømmen i viklingene. Tommelen peker mot nordpolen. Snur du strømmen, bytter polene plass.</figcaption>
   </figure>
 </div>
-
 <h3>Elektromagnet: B, Φ og H</h3>
 <p>En spole med strøm blir en magnet. En jernkjerne samler feltlinjene og gjør feltet hundrevis eller tusenvis av ganger sterkere, fordi jernet selv blir magnetisert. Feltet forsvinner nesten helt når strømmen brytes, og det er derfor elektromagneter kan styres.</p>
 <div class="el9a-eq">
@@ -3922,9 +3975,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv el9a-nt" id="el9a-em-kv"></dl>
   <figcaption>Lukket kjerne uten luftspalte, med middellengde l = 0,3 m og tverrsnitt A = 4 cm². Fluksen går rundt i kjernen. Jern går i metning ved ca. 1,5–2 T: over det gir mer strøm nesten ikke sterkere felt, og formelen med fast µ<sub>r</sub> gjelder ikke lenger. En luftspalte i kjernen gjør feltet mye svakere, fordi luft har µ<sub>r</sub> = 1.</figcaption>
 </figure>
-<div class="tbl" id="el9a-mu-t"></div>
-<p class="small muted">Relativ permeabilitet µ<sub>r</sub>, <b>veiledende</b>. For jern og stål avhenger µ<sub>r</sub> sterkt av flukstettheten, varmebehandlingen og legeringen, og verdiene er typiske maksimalverdier ved lave felt.</p>
-
 <h3>Magnetisme i verkstedet</h3>
 <ul class="el9a-list">
   <li><b>Magnetchuck</b> på planslipemaskin holder arbeidsstykket med et felt som går gjennom stykket. Arbeidsstykket blir ofte magnetisert og må avmagnetiseres etterpå.</li>
@@ -3936,7 +3986,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <li><b>Magnetisk blåsing</b> ved likestrømssveising: magnetfeltet rundt buen blir skjevt nær kanter og jordklemme og skyver buen til siden. Flytt jordklemmen eller bruk vekselstrøm.</li>
   <li>Austenittisk rustfritt stål (for eksempel 1.4301) er nesten umagnetisk når det er glødet, men kan bli svakt magnetisk etter kaldbearbeiding. En magnet er derfor ingen sikker test på materialet.</li>
 </ul>
-
 <h3>Kraft på en strømførende leder: F = B · I · l</h3>
 <p>En leder med strøm i et magnetfelt får en kraft på tvers av både feltet og strømmen. Feltet rundt lederen forsterker magnetfeltet på den ene siden og svekker det på den andre, og lederen skyves mot den svake siden. Dette er prinsippet i alle elektriske motorer. Retningen finner du med venstrehåndsregelen: feltlinjene inn i håndflaten, fingrene i strømretningen, og tommelen viser kraften.</p>
 <div class="el9a-eq">
@@ -3951,29 +4000,18 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv el9a-nt" id="el9a-fb-kv"></dl>
   <figcaption>Sett ovenfra: en stang ligger på to skinner i et magnetfelt som peker opp mot deg (⊙). Strømmen går fra skinne til skinne gjennom stangen, og kraften ruller stangen langs skinnene. Negativ strøm betyr motsatt strømretning, og da snur kraften. Farten er bare en illustrasjon.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="el9-spoler">
-  <div class="topic-h"><span class="tno">9.8</span><h3>Spoler: Serie- og parallellkopling</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">En spole er en tråd viklet i vindinger, ofte rundt en jernkjerne. Den lagrer energi i magnetfeltet og motsetter seg endringer i strømmen. Spoler finnes i releer, kontaktorer, magnetventiler, motorer, transformatorer og filtre. For spolens motstand mot vekselstrøm, X<sub>L</sub>, se <a href="#el9-ac">vekselstrømkretser</a>.</p>
-
-<h3>Induktans</h3>
-<p>Induktansen L sier hvor stor spenning spolen induserer når strømmen endrer seg. Enheten er henry (H). Induktansen øker med kvadratet av antall vindinger, og en jernkjerne øker den mye.</p>
-<div class="el9a-eq">
-  <div><b>L = µ₀ · µ<sub>r</sub> · N² · A / l</b><span>lang spole. A i m², l i m</span></div>
-  <div><b>e = −L · Δi / Δt</b><span>indusert spenning i V</span></div>
-  <div><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span></div>
-  <div><b>τ = L / R</b><span>tidskonstant i s</span></div>
+<div class="topic-h"><span class="tno">9.8</span><h3>Spoler: Serie- og parallellkopling</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Induktans</h4><b>L = µ₀ · µ<sub>r</sub> · N² · A / l</b><span>lang spole. A i m², l i m</span><b>e = −L · Δi / Δt</b><span>indusert spenning i V</span><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span><b>τ = L / R</b><span>tidskonstant i s</span></div>
+    <div><h4>Serie- og parallellkopling</h4><b>L = L₁ + L₂ + L₃</b><span>serie</span><b>1/L = 1/L₁ + 1/L₂ + 1/L₃</b><span>parallell</span></div>
+  </div>
 </div>
-
-<h3>Serie- og parallellkopling</h3>
-<p>Spoler koples som motstander, så lenge feltene ikke påvirker hverandre: i serie legges induktansene sammen, i parallell blir totalen mindre enn den minste. Står spolene tett med felles kjerne, kommer gjensidig induktans i tillegg, og da gjelder ikke formlene. Det er det transformatoren utnytter.</p>
-<div class="el9a-eq">
-  <div><b>L = L₁ + L₂ + L₃</b><span>serie</span></div>
-  <div><b>1/L = 1/L₁ + 1/L₂ + 1/L₃</b><span>parallell</span></div>
-</div>
-
 <h3>Innkopling: τ = L / R</h3>
-<p>Når en spole koples til likespenning, stiger strømmen gradvis, fordi spolen induserer en motspenning. Etter én tidskonstant er strømmen 63 % av sluttverdien U / R, og etter 5τ er den regnet som full. Derfor trekker en kontaktor litt etter at spolen får spenning. Sluttstrømmen bestemmes bare av motstanden i tråden.</p>
 <div class="calc">
   <div class="fields">
     <div class="chips" id="el9a-ls-mode" style="margin:0"></div>
@@ -3990,12 +4028,30 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9a-ls-out" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">En spole er en tråd viklet i vindinger, ofte rundt en jernkjerne. Den lagrer energi i magnetfeltet og motsetter seg endringer i strømmen. Spoler finnes i releer, kontaktorer, magnetventiler, motorer, transformatorer og filtre. For spolens motstand mot vekselstrøm, X<sub>L</sub>, se <a href="#el9-ac">vekselstrømkretser</a>.</p>
+<h3>Induktans</h3>
+<p>Induktansen L sier hvor stor spenning spolen induserer når strømmen endrer seg. Enheten er henry (H). Induktansen øker med kvadratet av antall vindinger, og en jernkjerne øker den mye.</p>
+<div class="el9a-eq">
+  <div><b>L = µ₀ · µ<sub>r</sub> · N² · A / l</b><span>lang spole. A i m², l i m</span></div>
+  <div><b>e = −L · Δi / Δt</b><span>indusert spenning i V</span></div>
+  <div><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span></div>
+  <div><b>τ = L / R</b><span>tidskonstant i s</span></div>
+</div>
+<h3>Serie- og parallellkopling</h3>
+<p>Spoler koples som motstander, så lenge feltene ikke påvirker hverandre: i serie legges induktansene sammen, i parallell blir totalen mindre enn den minste. Står spolene tett med felles kjerne, kommer gjensidig induktans i tillegg, og da gjelder ikke formlene. Det er det transformatoren utnytter.</p>
+<div class="el9a-eq">
+  <div><b>L = L₁ + L₂ + L₃</b><span>serie</span></div>
+  <div><b>1/L = 1/L₁ + 1/L₂ + 1/L₃</b><span>parallell</span></div>
+</div>
+<h3>Innkopling: τ = L / R</h3>
+<p>Når en spole koples til likespenning, stiger strømmen gradvis, fordi spolen induserer en motspenning. Etter én tidskonstant er strømmen 63 % av sluttverdien U / R, og etter 5τ er den regnet som full. Derfor trekker en kontaktor litt etter at spolen får spenning. Sluttstrømmen bestemmes bare av motstanden i tråden.</p>
 <figure class="fig">
   <svg id="el9a-ls-fig" viewBox="0 0 600 240" role="img" aria-label="Strømkurve ved innkopling av en spole"></svg>
   <div class="ctrl"><button class="chip" id="el9a-ls-go" type="button">Slå på</button><button class="chip play" id="el9a-ls-play" type="button"></button></div>
   <figcaption>Strømmen i spolen etter innkopling, med verdiene fra kalkulatoren. Den stiplede linjen er spenningen over spolen: full spenning i starten og nesten null når strømmen er stabil.</figcaption>
 </figure>
-
 <h3>Frigangsdiode og spenningsspiss</h3>
 <p>Spolen vil holde strømmen i gang. Brytes strømmen brått, blir Δi / Δt veldig stor, og spolen induserer en spenningsspiss som kan bli flere hundre volt. Den kan ødelegge transistorutganger i PLS og styringer og brenne kontaktene i brytere og releer. En <b>frigangsdiode</b> i sperreretning over spolen gir strømmen en vei å løpe ut på, slik at spenningen bare blir diodens ledespenning, ca. 0,7 V.</p>
 <figure class="fig">
@@ -4003,27 +4059,18 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><span class="chips" id="el9a-fd-mode" style="margin:0"></span><button class="chip" id="el9a-fd-go" type="button">Slå av</button></div>
   <figcaption>Illustrasjon, ikke i målestokk. Uten diode stiger spenningen over bryteren til den slår gjennom eller en gnist oppstår. Med diode går strømmen i ring gjennom dioden og avtar med τ = L / R. Ulempen er at releet slipper litt senere. For vekselspenningsspoler brukes RC-ledd eller varistor i stedet for diode.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="el9-induksjon">
-  <div class="topic-h"><span class="tno">9.9</span><h3>Induksjon</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Når magnetfeltet gjennom en spole endrer seg, induseres det en spenning i spolen. Det er induksjon, og det er slik generatorer lager strøm og transformatorer virker. Det er endringen som teller: et stillestående felt gir ingen spenning.</p>
-
-<h3>Faradays induksjonslov</h3>
-<div class="el9a-eq">
-  <div><b>e = −N · ΔΦ / Δt</b><span>indusert spenning i V. N er antall vindinger</span></div>
-  <div><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
+<div class="topic-h"><span class="tno">9.9</span><h3>Induksjon</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Faradays induksjonslov</h4><b>e = −N · ΔΦ / Δt</b><span>indusert spenning i V. N er antall vindinger</span><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
+    <div><h4>Generatoren</h4><b>e = N · B · A · ω · sin(ωt)</b><span>A er spolens areal i m²</span><b>Ê = N · B · A · ω</b><span>toppverdi</span><b>ω = 2π · n / 60</b><span>n i o/min</span></div>
+    <div><h4>Selvinduksjon</h4><b>e = −L · Δi / Δt</b><span>selvindusert spenning i V</span></div>
+  </div>
 </div>
-<p>Spenningen blir større jo flere vindinger spolen har, jo sterkere magneten er og jo fortere feltet endrer seg. Minustegnet er Lenz’ lov (se under).</p>
-<figure class="fig">
-  <svg id="el9a-in-fig" viewBox="0 0 600 280" role="img" aria-label="Magnet som beveges inn og ut av en spole med et voltmeter som gir utslag"></svg>
-  <div class="el9a-sl"><label for="el9a-in-x">Magnetens plass</label><input type="range" id="el9a-in-x" min="0" max="100" step="1" value="0"><output id="el9a-in-xo"></output></div>
-  <div class="ctrl"><span class="chips" id="el9a-in-n" style="margin:0"></span><button class="chip" id="el9a-in-flip" type="button">Snu magneten</button><button class="chip play" id="el9a-in-play" type="button"></button></div>
-  <figcaption>Dra i glidebryteren eller trykk «Spill av». Voltmeteret slår bare ut mens magneten beveger seg, og mer jo raskere den går. Inn og ut gir utslag hver sin vei. Bokstaven ved spoleenden viser polen spolen selv får: den motsetter seg alltid bevegelsen.</figcaption>
-</figure>
-
-<h3>Lenz’ lov</h3>
-<p>Den induserte strømmen går alltid slik at den motvirker endringen som skapte den. Skyver du en nordpol inn i spolen, blir spoleenden en nordpol som skyver tilbake. Trekker du den ut, blir enden en sørpol som holder igjen. Du må altså gjøre et arbeid for å bevege magneten, og det arbeidet blir til elektrisk energi. Uten Lenz’ lov ville man fått energi gratis.</p>
-
 <h3>Leder i bevegelse: e = B · l · v</h3>
 <div class="calc">
   <div class="fields">
@@ -4039,7 +4086,23 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9a-bl-out" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Når magnetfeltet gjennom en spole endrer seg, induseres det en spenning i spolen. Det er induksjon, og det er slik generatorer lager strøm og transformatorer virker. Det er endringen som teller: et stillestående felt gir ingen spenning.</p>
+<h3>Faradays induksjonslov</h3>
+<div class="el9a-eq">
+  <div><b>e = −N · ΔΦ / Δt</b><span>indusert spenning i V. N er antall vindinger</span></div>
+  <div><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
+</div>
+<p>Spenningen blir større jo flere vindinger spolen har, jo sterkere magneten er og jo fortere feltet endrer seg. Minustegnet er Lenz’ lov (se under).</p>
+<figure class="fig">
+  <svg id="el9a-in-fig" viewBox="0 0 600 280" role="img" aria-label="Magnet som beveges inn og ut av en spole med et voltmeter som gir utslag"></svg>
+  <div class="el9a-sl"><label for="el9a-in-x">Magnetens plass</label><input type="range" id="el9a-in-x" min="0" max="100" step="1" value="0"><output id="el9a-in-xo"></output></div>
+  <div class="ctrl"><span class="chips" id="el9a-in-n" style="margin:0"></span><button class="chip" id="el9a-in-flip" type="button">Snu magneten</button><button class="chip play" id="el9a-in-play" type="button"></button></div>
+  <figcaption>Dra i glidebryteren eller trykk «Spill av». Voltmeteret slår bare ut mens magneten beveger seg, og mer jo raskere den går. Inn og ut gir utslag hver sin vei. Bokstaven ved spoleenden viser polen spolen selv får: den motsetter seg alltid bevegelsen.</figcaption>
+</figure>
+<h3>Lenz’ lov</h3>
+<p>Den induserte strømmen går alltid slik at den motvirker endringen som skapte den. Skyver du en nordpol inn i spolen, blir spoleenden en nordpol som skyver tilbake. Trekker du den ut, blir enden en sørpol som holder igjen. Du må altså gjøre et arbeid for å bevege magneten, og det arbeidet blir til elektrisk energi. Uten Lenz’ lov ville man fått energi gratis.</p>
 <h3>Generatoren</h3>
 <p>En spole som roterer i et magnetfelt, får fluksen gjennom seg endret hele tiden. Spenningen blir størst når spolesidene skjærer feltlinjene vinkelrett (spoleplanet langs feltet), og null når de går parallelt med linjene. Resultatet er en sinusformet vekselspenning. Én omdreining i et topolet felt gir én periode, så 3000 o/min gir 50 Hz. Mer om sinusspenning under <a href="#el9-ac">vekselstrømkretser</a> og <a href="#el9-trafo">transformator</a>.</p>
 <div class="el9a-eq">
@@ -4054,7 +4117,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv el9a-nt" id="el9a-gen-kv"></dl>
   <figcaption>Spolen sees fra enden. Animasjonen går sakte for å synes. Tallene gjelder en spole med N = 200, A = 50 cm² og B = 0,5 T ved det valgte turtallet.</figcaption>
 </figure>
-
 <h3>Virvelstrøm</h3>
 <p>Også i massivt metall induseres det spenning når feltet endrer seg. Da går strømmen i lukkede ringer inne i metallet, virvelstrømmer, og varmer det opp. I transformator- og motorkjerner er det et tap, derfor bygges kjernene av tynne, isolerte blikk som bryter opp strømbanene. Andre steder er virvelstrøm selve hensikten.</p>
 <figure class="fig">
@@ -4067,16 +4129,57 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <li><b>Virvelstrømbrems</b> i tunge kjøretøy og treningsapparater, og virvelstrømdemping i vekter.</li>
   <li><b>Virvelstrømprøving (ET):</b> en probe finner sprekker og måler belegg på ledende materialer.</li>
 </ul>
-
 <h3>Selvinduksjon</h3>
 <p>En spole induserer også spenning i seg selv når strømmen gjennom den endrer seg. Denne spenningen motvirker endringen: ved innkopling bremser den strømøkningen, ved utkopling prøver den å holde strømmen i gang. Med L = 0,5 H og en strøm på 0,5 A som brytes på 1 ms blir e = 0,5 · 0,5 / 0,001 = 250 V. Se <a href="#el9-spoler">spoler</a> for innkoplingsforløpet og frigangsdioden.</p>
 <div class="el9a-eq">
   <div><b>e = −L · Δi / Δt</b><span>selvindusert spenning i V</span></div>
 </div>
+</details>
 </div>
 <div class="topic" id="el9-trafo">
-  <div class="topic-h"><span class="tno">9.10</span><h3>Sinusformet spenning. Transformator</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">En transformator endrer størrelsen på en vekselspenning uten bevegelige deler. Den finnes i alt fra ladere og styreskap til sveisemaskiner og nettstasjoner, og den virker bare med vekselspenning.</p>
+<div class="topic-h"><span class="tno">9.10</span><h3>Sinusformet spenning. Transformator</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Transformatorprinsippet</h4><b>U<sub>1</sub> / U<sub>2</sub> = N<sub>1</sub> / N<sub>2</sub></b><span>omsetningsforholdet ü</span><b>I<sub>1</sub> / I<sub>2</sub> = N<sub>2</sub> / N<sub>1</sub></b><span>strømmen omvendt av spenningen</span><b>U<sub>1</sub> · I<sub>1</sub> = U<sub>2</sub> · I<sub>2</sub></b><span>ideell transformator: S<sub>1</sub> = S<sub>2</sub></span><b>η = P<sub>2</sub> / P<sub>1</sub></b><span>virkningsgrad</span></div>
+  </div>
+</div>
+<h3>Transformatorprinsippet</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><label for="el9b-t-u1">Primærspenning U<sub>1</sub> (V)</label><input id="el9b-t-u1" inputmode="decimal" value="230"></div>
+    <div class="row2">
+      <div class="field"><label for="el9b-t-n1">Vindinger N<sub>1</sub></label><input id="el9b-t-n1" inputmode="decimal" value="1150"></div>
+      <div class="field"><label for="el9b-t-n2">Vindinger N<sub>2</sub></label><input id="el9b-t-n2" inputmode="decimal" value="120"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="el9b-t-i2">Last I<sub>2</sub> (A)</label><input id="el9b-t-i2" inputmode="decimal" value="4"></div>
+      <div class="field"><label for="el9b-t-eta">Virkningsgrad η (%)</label><input id="el9b-t-eta" inputmode="decimal" value="90"></div>
+    </div>
+  </div>
+  <div class="out" id="el9b-t-out" aria-live="polite"></div>
+</div>
+<h3>Tomgang og kortslutningsspenning u<sub>k</sub></h3>
+<div class="calc">
+  <div class="fields">
+    <div class="row2">
+      <div class="field"><label for="el9b-uk-s">Merkeeffekt S<sub>N</sub> (kVA)</label><input id="el9b-uk-s" inputmode="decimal" value="800"></div>
+      <div class="field"><label for="el9b-uk-sys">System</label><select id="el9b-uk-sys"><option value="3" selected>Trefase</option><option value="1">Enfase</option></select></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="el9b-uk-u">Sekundær U<sub>2</sub> (V)</label><input id="el9b-uk-u" inputmode="decimal" value="400"></div>
+      <div class="field"><label for="el9b-uk-k">u<sub>k</sub> (%)</label><input id="el9b-uk-k" inputmode="decimal" value="6"></div>
+    </div>
+  </div>
+  <div class="out" id="el9b-uk-out" aria-live="polite"></div>
+</div>
+<p class="small muted">Forenklet: nettet foran transformatoren regnes som uendelig stivt. Den virkelige kortslutningsstrømmen er lavere, og den beregnes etter NEK 400 ved prosjektering.</p>
+<h3>Typer transformatorer</h3>
+<div class="tbl el9b-tx" id="el9b-tt"></div>
+<div class="note"><p><b>Strømtransformator: aldri åpen sekundærside.</b> Primærstrømmen bestemmes av lasten, ikke av transformatoren. Åpnes sekundærkretsen mens det går strøm i primærlederen, blir hele primærstrømmen magnetiseringsstrøm. Kjernen går i metning, og det oppstår spenningstopper som kan bli livsfarlige og ødelegge transformatoren. Kortslutt alltid sekundærklemmene (S1–S2) før et instrument kobles fra.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">En transformator endrer størrelsen på en vekselspenning uten bevegelige deler. Den finnes i alt fra ladere og styreskap til sveisemaskiner og nettstasjoner, og den virker bare med vekselspenning.</p>
 <h3>Transformatorprinsippet</h3>
 <p>Primærviklingen med N<sub>1</sub> vindinger får vekselspenning. Strømmen lager en vekslende magnetisk fluks Φ i jernkjernen. Fluksen går også gjennom sekundærviklingen med N<sub>2</sub> vindinger og induserer en spenning der. Hver vinding får like stor spenning, så spenningen blir proporsjonal med antall vindinger.</p>
 <p>Med likespenning endrer ikke fluksen seg, og det induseres ingen spenning. Da begrenses primærstrømmen bare av trådmotstanden, og transformatoren brenner.</p>
@@ -4092,46 +4195,33 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>η = P<sub>2</sub> / P<sub>1</sub></b><span>virkningsgrad</span></div>
 </div>
 <p>Det som går ned i spenning, går opp i strøm. En 230/24 V-transformator som leverer 4 A, trekker litt over 0,4 A på primærsiden. Tapene er <b>jerntap</b> i kjernen, som er omtrent konstante også på tomgang, og <b>kobbertap</b> i viklingene, som øker med I². Store transformatorer har virkningsgrad godt over 95 %, små styrestrømstransformatorer lavere (veiledende).</p>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><label for="el9b-t-u1">Primærspenning U<sub>1</sub> (V)</label><input id="el9b-t-u1" inputmode="decimal" value="230"></div>
-    <div class="row2">
-      <div class="field"><label for="el9b-t-n1">Vindinger N<sub>1</sub></label><input id="el9b-t-n1" inputmode="decimal" value="1150"></div>
-      <div class="field"><label for="el9b-t-n2">Vindinger N<sub>2</sub></label><input id="el9b-t-n2" inputmode="decimal" value="120"></div>
-    </div>
-    <div class="row2">
-      <div class="field"><label for="el9b-t-i2">Last I<sub>2</sub> (A)</label><input id="el9b-t-i2" inputmode="decimal" value="4"></div>
-      <div class="field"><label for="el9b-t-eta">Virkningsgrad η (%)</label><input id="el9b-t-eta" inputmode="decimal" value="90"></div>
-    </div>
-  </div>
-  <div class="out" id="el9b-t-out" aria-live="polite"></div>
-</div>
-
 <h3>Tomgang og kortslutningsspenning u<sub>k</sub></h3>
 <p><b>Tomgang:</b> Uten last trekker primærsiden bare en liten magnetiseringsstrøm, og sekundærspenningen er litt høyere enn merkespenningen, som gjelder ved full last.</p>
 <p><b>Kortslutningsspenning:</b> Kortslutt sekundærsiden og øk primærspenningen fra null til merkestrømmen går. Den spenningen, i prosent av merkespenningen, er u<sub>k</sub>. Lav u<sub>k</sub> gir lite spenningsfall under last, men stor kortslutningsstrøm: I<sub>k</sub> ≈ I<sub>N</sub> · 100 / u<sub>k</sub>. Fordelingstransformatorer har typisk u<sub>k</sub> rundt 4–6 % (veiledende), som gir kortslutningsstrøm på 15–25 ganger merkestrømmen. Sveisetransformatorer er bygd med stor u<sub>k</sub>, slik at strømmen holder seg begrenset når elektroden kortslutter.</p>
+</details>
+</div>
+<div class="topic" id="el9-stjerne">
+<div class="topic-h"><span class="tno">9.11</span><h3>Stjerne- og trekantkopling</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<h3>Fasespenning og linjespenning</h3>
+<p><b>Linjespenningen</b> U er spenningen mellom to faser. <b>Fasespenningen</b> U<sub>f</sub> er spenningen over én vikling. I et 400 V TN-nett er spenningen mellom fase og N 230 V, fordi 400 / √3 = 231 V.</p>
+<div class="tbl el9b-tx" id="el9b-yd-t"></div>
+<h3>Effekt i stjerne og trekant</h3>
 <div class="calc">
   <div class="fields">
     <div class="row2">
-      <div class="field"><label for="el9b-uk-s">Merkeeffekt S<sub>N</sub> (kVA)</label><input id="el9b-uk-s" inputmode="decimal" value="800"></div>
-      <div class="field"><label for="el9b-uk-sys">System</label><select id="el9b-uk-sys"><option value="3" selected>Trefase</option><option value="1">Enfase</option></select></div>
-    </div>
-    <div class="row2">
-      <div class="field"><label for="el9b-uk-u">Sekundær U<sub>2</sub> (V)</label><input id="el9b-uk-u" inputmode="decimal" value="400"></div>
-      <div class="field"><label for="el9b-uk-k">u<sub>k</sub> (%)</label><input id="el9b-uk-k" inputmode="decimal" value="6"></div>
+      <div class="field"><label for="el9b-y-r">R per element (Ω)</label><input id="el9b-y-r" inputmode="decimal" value="53"></div>
+      <div class="field"><label for="el9b-y-u">Linjespenning U (V)</label><input id="el9b-y-u" inputmode="decimal" value="400"></div>
     </div>
   </div>
-  <div class="out" id="el9b-uk-out" aria-live="polite"></div>
+  <div class="out" id="el9b-y-out" aria-live="polite"></div>
 </div>
-<p class="small muted">Forenklet: nettet foran transformatoren regnes som uendelig stivt. Den virkelige kortslutningsstrømmen er lavere, og den beregnes etter NEK 400 ved prosjektering.</p>
-
-<h3>Typer transformatorer</h3>
-<div class="tbl el9b-tx" id="el9b-tt"></div>
-<div class="note"><p><b>Strømtransformator: aldri åpen sekundærside.</b> Primærstrømmen bestemmes av lasten, ikke av transformatoren. Åpnes sekundærkretsen mens det går strøm i primærlederen, blir hele primærstrømmen magnetiseringsstrøm. Kjernen går i metning, og det oppstår spenningstopper som kan bli livsfarlige og ødelegge transformatoren. Kortslutt alltid sekundærklemmene (S1–S2) før et instrument kobles fra.</p></div>
-</div>
-<div class="topic" id="el9-stjerne">
-  <div class="topic-h"><span class="tno">9.11</span><h3>Stjerne- og trekantkopling</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">En trefasemotor har tre like viklinger, og et trefase varmeelement har tre like motstander. De kan kobles i stjerne (Y) eller trekant (Δ). Koblingen avgjør hvilken spenning hver vikling får, og den må passe til nettet og merkeskiltet.</p>
+<h3>Merkeskilt og kobling</h3>
+<p>Merkeskiltet oppgir to spenninger. Den laveste er spenningen hver vikling er laget for, og gjelder trekant. Den høyeste gjelder stjerne. Velg koblingen som gir viklingen sin merkespenning.</p>
+<div class="tbl el9b-tx" id="el9b-plate-t"></div>
+<p class="small muted">I Norge finnes både 400 V TN-nett og 230 V IT-nett. Sjekk nettet før motoren kobles. Stjerne-trekant-start krever at motoren skal gå i trekant på det aktuelle nettet.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">En trefasemotor har tre like viklinger, og et trefase varmeelement har tre like motstander. De kan kobles i stjerne (Y) eller trekant (Δ). Koblingen avgjør hvilken spenning hver vikling får, og den må passe til nettet og merkeskiltet.</p>
 <h3>Klemmebrettet</h3>
 <p>Viklingene har endene U1–U2, V1–V2 og W1–W2. På klemmebrettet er nedre rad forskjøvet (W2 U2 V2), slik at laskene kan ligge rett. <b>Stjerne:</b> laskene ligger vannrett og binder sammen W2, U2 og V2 til et nullpunkt. <b>Trekant:</b> tre loddrette lasker, U1–W2, V1–U2 og W1–V2, slik at viklingene danner en ring.</p>
 <figure class="fig">
@@ -4142,11 +4232,6 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <p id="el9b-kb-msg" style="margin:4px 0 0;font-size:14px;font-weight:600;min-height:2.6em" aria-live="polite"></p>
   <figcaption>Velg kobling, nett og hva som står på merkeskiltet. Til høyre vises spenningen hver vikling får.</figcaption>
 </figure>
-
-<h3>Fasespenning og linjespenning</h3>
-<p><b>Linjespenningen</b> U er spenningen mellom to faser. <b>Fasespenningen</b> U<sub>f</sub> er spenningen over én vikling. I et 400 V TN-nett er spenningen mellom fase og N 230 V, fordi 400 / √3 = 231 V.</p>
-<div class="tbl el9b-tx" id="el9b-yd-t"></div>
-
 <h3>Visere for trefase</h3>
 <p>De tre fasespenningene er like store og forskjøvet 120°. Summen er null i hvert øyeblikk, og derfor går det ingen strøm i N når lasten er symmetrisk. Linjespenningen er forskjellen mellom to fasevisere, og den blir √3 ganger lengre.</p>
 <figure class="fig">
@@ -4154,46 +4239,23 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><button class="chip play" id="el9b-3f-play" type="button"></button><button class="chip" id="el9b-3f-l" type="button" aria-pressed="false">Vis linjespenning U<sub>12</sub></button></div>
   <figcaption>L1 oransje, L2 svart, L3 grå. Animasjonen går 100 ganger saktere enn virkeligheten. U<sub>12</sub> = U<sub>1</sub> − U<sub>2</sub> ligger 30° foran U<sub>1</sub> og er √3 ganger så stor.</figcaption>
 </figure>
-
 <h3>Effekt i stjerne og trekant</h3>
 <p>Med samme motstand R i hvert element får hvert element √3 ganger høyere spenning i trekant enn i stjerne. Effekten i en motstand er U² / R, så den blir 3 ganger så stor. Linjestrømmen blir også 3 ganger så stor (√3 fra spenningen og √3 fra koblingen). Dette brukes i totrinns varmeelementer, og det er grunnen til at stjerne-trekant-start gir omtrent en tredjedel av startstrømmen. Selve stjerne-trekant-starten er vist under <a href="#motorstyring">Motorstyring</a>.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="row2">
-      <div class="field"><label for="el9b-y-r">R per element (Ω)</label><input id="el9b-y-r" inputmode="decimal" value="53"></div>
-      <div class="field"><label for="el9b-y-u">Linjespenning U (V)</label><input id="el9b-y-u" inputmode="decimal" value="400"></div>
-    </div>
-  </div>
-  <div class="out" id="el9b-y-out" aria-live="polite"></div>
-</div>
-
-<h3>Merkeskilt og kobling</h3>
-<p>Merkeskiltet oppgir to spenninger. Den laveste er spenningen hver vikling er laget for, og gjelder trekant. Den høyeste gjelder stjerne. Velg koblingen som gir viklingen sin merkespenning.</p>
-<div class="tbl el9b-tx" id="el9b-plate-t"></div>
-<p class="small muted">I Norge finnes både 400 V TN-nett og 230 V IT-nett. Sjekk nettet før motoren kobles. Stjerne-trekant-start krever at motoren skal gå i trekant på det aktuelle nettet.</p>
+</details>
 </div>
 <div class="topic" id="el9-motor">
-  <div class="topic-h"><span class="tno">9.12</span><h3>Enfase- og trefasemotor</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Asynkronmotoren (induksjonsmotoren) er den vanligste motoren i industrien. Statoren lager et roterende magnetfelt, og rotoren, ofte en kortslutningsrotor («ekornbur») uten børster, blir dratt med.</p>
-<h3>Dreiefeltet</h3>
-<p>Tre viklinger er plassert 120° fra hverandre i statoren og får hver sin fase. Strømmene er forskjøvet 120° i tid. Summen av de tre feltene blir ett felt med konstant styrke som roterer. Bytter du to faser, roterer feltet motsatt vei, og motoren snur.</p>
-<figure class="fig">
-  <svg id="el9b-df" viewBox="0 0 600 300" role="img" aria-label="Stator med tre viklinger og et roterende magnetfelt, med fasestrømmene til høyre"></svg>
-  <div class="ctrl"><button class="chip play" id="el9b-df-play" type="button"></button><button class="chip" id="el9b-df-sw" type="button" aria-pressed="false">Bytt to faser (L2 ↔ L3)</button></div>
-  <figcaption>De tynne pilene er feltet fra hver vikling, og de følger strømmen i sin fase. Den tykke blå pilen er summen. Rotoren (streken i midten) henger litt etter feltet. Det er sakkingen, her overdrevet. Animasjonen går 200 ganger saktere enn en 2-polet motor på 50 Hz.</figcaption>
-</figure>
-<p>Rotoren må gå litt saktere enn feltet. Bare da skjærer feltet rotorstavene, slik at det induseres strøm og moment i rotoren. Gikk rotoren like fort som feltet, ble momentet null.</p>
-
+<div class="topic-h"><span class="tno">9.12</span><h3>Enfase- og trefasemotor</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Synkront turtall</h4><b>n<sub>s</sub> = 60 · f / p</b><span>o/min. p = antall polpar, poltallet er 2p</span></div>
+    <div><h4>Sakking</h4><b>s = (n<sub>s</sub> − n) / n<sub>s</sub> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
+  </div>
+</div>
 <h3>Synkront turtall</h3>
-<div class="el9b-eq"><div><b>n<sub>s</sub> = 60 · f / p</b><span>o/min. p = antall polpar, poltallet er 2p</span></div></div>
 <div class="tbl" id="el9b-ns-t"></div>
 <p class="small muted">Merketurtall er veiledende for standard asynkronmotorer. Les alltid merkeskiltet.</p>
-
 <h3>Sakking</h3>
-<div class="el9b-eq">
-  <div><b>s = (n<sub>s</sub> − n) / n<sub>s</sub> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span></div>
-  <div><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
-</div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -4204,37 +4266,16 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="el9b-s-out" aria-live="polite"></div>
 </div>
-
-<h3>Momentkurven</h3>
-<p>Momentet varierer med turtallet. Ved start gir motoren <b>startmomentet M<sub>A</sub></b>. Under oppkjøringen kan momentet dykke litt (<b>sadelmomentet M<sub>S</sub></b>) før det stiger til <b>kippmomentet M<sub>K</sub></b>, det største motoren klarer. Mot synkront turtall faller momentet bratt. Motoren går der motorkurven krysser lastkurven. Blir lasten større enn kippmomentet, stopper motoren («kipper»), og strømmen blir like stor som startstrømmen. Momentet er omtrent proporsjonalt med U², så 10 % for lav spenning gir rundt 19 % mindre moment.</p>
-<figure class="fig">
-  <svg id="el9b-mk" viewBox="0 0 600 290" role="img" aria-label="Momentkurve for asynkronmotor med lastkurve og arbeidspunkt"></svg>
-  <div class="ctrl"><span class="chips" id="el9b-mk-c" style="margin:0"></span></div>
-  <figcaption>Typisk kurveform for en standard kortslutningsmotor. Verdiene er veiledende og varierer mellom motorer. Det skraverte feltet er overskuddsmomentet som akselererer motoren og lasten.</figcaption>
-</figure>
-
 <h3>Merkeskiltet</h3>
-<p>Trykk på et felt på skiltet eller en rad i tabellen.</p>
-<figure class="fig">
-  <svg id="el9b-ms" viewBox="0 0 600 270" role="img" aria-label="Typisk merkeskilt for en trefase asynkronmotor"></svg>
-  <figcaption>Eksempel på en 4 kW, 4-polet motor. Produsentens skilt kan ha en annen rekkefølge.</figcaption>
-</figure>
 <div class="tbl" id="el9b-ms-t"></div>
-
 <h3>Enfasemotorer</h3>
-<p>En enkelt vikling på enfase gir et felt som bare pulserer fram og tilbake, det roterer ikke. Motoren kan gå hvis den først er i gang, men den starter ikke av seg selv. Derfor har enfasemotoren en <b>hjelpevikling</b> der strømmen forskyves i fase, vanligvis med en kondensator. Til sammen gir de to viklingene et roterende felt.</p>
-<figure class="fig">
-  <svg id="el9b-km" viewBox="0 0 600 220" role="img" aria-label="Koblingsskjema for kondensatormotor med driftskondensator og startkondensator"></svg>
-  <figcaption>Kondensatormotor. Begge viklingene sitter i samme stator. Driftskondensatoren C<sub>d</sub> er alltid inne. Startkondensatoren C<sub>s</sub> kobles ut av sentrifugalbryteren eller et startrelé når motoren har fått opp farten. Bytter du tilkoblingen av hjelpeviklingen, snur motoren.</figcaption>
-</figure>
 <div class="tbl el9b-tx" id="el9b-1f-t"></div>
 <p class="small muted">En kondensator som byttes, skal ha samme kapasitans (µF) og minst samme spenning som den gamle. Verdien står på kondensatoren eller merkeskiltet.</p>
-
 <h3>Feil og symptomer</h3>
 <div class="tbl el9b-tx" id="el9b-feil-t"></div>
 <p class="small muted">Feilsøking på spenningsførende anlegg skal bare gjøres av kvalifisert personell. Trefasemotorkalkulatoren og motorstyringen følger under.</p>
-  <h3>Trefasemotor</h3>
-  <div class="calc">
+<h3>Trefasemotor</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="m-p">Akseleffekt (kW)</label><input id="m-p" inputmode="decimal" value="7,5"></div>
@@ -4248,16 +4289,13 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="m-out" aria-live="polite"></div>
   </div>
-  <h3 id="motorstyring">Motorstyring</h3>
-  <p>En motor styres med to kretser. <b>Hovedstrømmen</b> går fra nettet gjennom sikringer, kontaktorens hovedkontakter og motorvernet til motoren. <b>Styrestrømmen</b> er en egen, svakere krets med trykknapper og hjelpekontakter som styrer kontaktorens spole.</p>
-  <div class="note"><p>Figurene er prinsippskjemaer for forståelse. Kobling i anlegg skal utføres av kvalifisert personell etter NEK 400 og maskindirektivet, og nødstopp skal følge kravene i NEK EN 60204-1.</p></div>
-
-  <h4 style="margin-top:12px">Symboler (IEC 60617)</h4>
-  <p class="small muted">Trykk på et symbol for å se det i hvile og påvirket.</p>
-  <div class="gd-detail" id="ms-detail" aria-live="polite"></div>
-  <div class="gd-grid" id="ms-sym"></div>
-
-  <div class="two">
+<h3 id="motorstyring">Motorstyring</h3>
+<div class="note"><p>Figurene er prinsippskjemaer for forståelse. Kobling i anlegg skal utføres av kvalifisert personell etter NEK 400 og maskindirektivet, og nødstopp skal følge kravene i NEK EN 60204-1.</p></div>
+<h4 style="margin-top:12px">Symboler (IEC 60617)</h4>
+<p class="small muted">Trykk på et symbol for å se det i hvile og påvirket.</p>
+<div class="gd-detail" id="ms-detail" aria-live="polite"></div>
+<div class="gd-grid" id="ms-sym"></div>
+<div class="two">
     <div><h4>Bokstavkoder (IEC 81346-2)</h4><div class="tbl"><table><thead><tr><th>Kode</th><th style="text-align:left">Komponent</th><th style="text-align:left">Eldre kode</th></tr></thead><tbody>
       <tr><td>Q</td><td class="txt">Kontaktor, motorvernbryter</td><td class="txt">K</td></tr>
       <tr><td>S</td><td class="txt">Trykknapp, bryter</td><td class="txt">S</td></tr>
@@ -4275,75 +4313,93 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
       <tr><td>97–98</td><td class="txt">Motorvern, sluttekontakt (feilsignal)</td></tr></tbody></table></div>
       <p class="small muted">Første siffer er løpenummer, andre siffer forteller funksjonen.</p></div>
   </div>
-
-  <h4 style="margin-top:12px">Direktestart med selvhold</h4>
-  <p>Den vanligste motorstyringen. Start-knappen S1 gir spolen Q1 spenning. Når Q1 trekker til, lukker også hjelpekontakten Q1 13–14, som ligger parallelt med S1. Den holder spolen inne etter at du slipper knappen. Stopp-knappen S0 og motorvernets 95–96 ligger i serie, så begge kan bryte kretsen.</p>
-  <figure class="fig">
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Asynkronmotoren (induksjonsmotoren) er den vanligste motoren i industrien. Statoren lager et roterende magnetfelt, og rotoren, ofte en kortslutningsrotor («ekornbur») uten børster, blir dratt med.</p>
+<h3>Dreiefeltet</h3>
+<p>Tre viklinger er plassert 120° fra hverandre i statoren og får hver sin fase. Strømmene er forskjøvet 120° i tid. Summen av de tre feltene blir ett felt med konstant styrke som roterer. Bytter du to faser, roterer feltet motsatt vei, og motoren snur.</p>
+<figure class="fig">
+  <svg id="el9b-df" viewBox="0 0 600 300" role="img" aria-label="Stator med tre viklinger og et roterende magnetfelt, med fasestrømmene til høyre"></svg>
+  <div class="ctrl"><button class="chip play" id="el9b-df-play" type="button"></button><button class="chip" id="el9b-df-sw" type="button" aria-pressed="false">Bytt to faser (L2 ↔ L3)</button></div>
+  <figcaption>De tynne pilene er feltet fra hver vikling, og de følger strømmen i sin fase. Den tykke blå pilen er summen. Rotoren (streken i midten) henger litt etter feltet. Det er sakkingen, her overdrevet. Animasjonen går 200 ganger saktere enn en 2-polet motor på 50 Hz.</figcaption>
+</figure>
+<p>Rotoren må gå litt saktere enn feltet. Bare da skjærer feltet rotorstavene, slik at det induseres strøm og moment i rotoren. Gikk rotoren like fort som feltet, ble momentet null.</p>
+<h3>Synkront turtall</h3>
+<div class="el9b-eq"><div><b>n<sub>s</sub> = 60 · f / p</b><span>o/min. p = antall polpar, poltallet er 2p</span></div></div>
+<h3>Sakking</h3>
+<div class="el9b-eq">
+  <div><b>s = (n<sub>s</sub> − n) / n<sub>s</sub> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span></div>
+  <div><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
+</div>
+<h3>Momentkurven</h3>
+<p>Momentet varierer med turtallet. Ved start gir motoren <b>startmomentet M<sub>A</sub></b>. Under oppkjøringen kan momentet dykke litt (<b>sadelmomentet M<sub>S</sub></b>) før det stiger til <b>kippmomentet M<sub>K</sub></b>, det største motoren klarer. Mot synkront turtall faller momentet bratt. Motoren går der motorkurven krysser lastkurven. Blir lasten større enn kippmomentet, stopper motoren («kipper»), og strømmen blir like stor som startstrømmen. Momentet er omtrent proporsjonalt med U², så 10 % for lav spenning gir rundt 19 % mindre moment.</p>
+<figure class="fig">
+  <svg id="el9b-mk" viewBox="0 0 600 290" role="img" aria-label="Momentkurve for asynkronmotor med lastkurve og arbeidspunkt"></svg>
+  <div class="ctrl"><span class="chips" id="el9b-mk-c" style="margin:0"></span></div>
+  <figcaption>Typisk kurveform for en standard kortslutningsmotor. Verdiene er veiledende og varierer mellom motorer. Det skraverte feltet er overskuddsmomentet som akselererer motoren og lasten.</figcaption>
+</figure>
+<h3>Merkeskiltet</h3>
+<p>Trykk på et felt på skiltet eller en rad i tabellen.</p>
+<figure class="fig">
+  <svg id="el9b-ms" viewBox="0 0 600 270" role="img" aria-label="Typisk merkeskilt for en trefase asynkronmotor"></svg>
+  <figcaption>Eksempel på en 4 kW, 4-polet motor. Produsentens skilt kan ha en annen rekkefølge.</figcaption>
+</figure>
+<h3>Enfasemotorer</h3>
+<p>En enkelt vikling på enfase gir et felt som bare pulserer fram og tilbake, det roterer ikke. Motoren kan gå hvis den først er i gang, men den starter ikke av seg selv. Derfor har enfasemotoren en <b>hjelpevikling</b> der strømmen forskyves i fase, vanligvis med en kondensator. Til sammen gir de to viklingene et roterende felt.</p>
+<figure class="fig">
+  <svg id="el9b-km" viewBox="0 0 600 220" role="img" aria-label="Koblingsskjema for kondensatormotor med driftskondensator og startkondensator"></svg>
+  <figcaption>Kondensatormotor. Begge viklingene sitter i samme stator. Driftskondensatoren C<sub>d</sub> er alltid inne. Startkondensatoren C<sub>s</sub> kobles ut av sentrifugalbryteren eller et startrelé når motoren har fått opp farten. Bytter du tilkoblingen av hjelpeviklingen, snur motoren.</figcaption>
+</figure>
+<h3>Motorstyring</h3>
+<p>En motor styres med to kretser. <b>Hovedstrømmen</b> går fra nettet gjennom sikringer, kontaktorens hovedkontakter og motorvernet til motoren. <b>Styrestrømmen</b> er en egen, svakere krets med trykknapper og hjelpekontakter som styrer kontaktorens spole.</p>
+<h4 style="margin-top:12px">Direktestart med selvhold</h4>
+<p>Den vanligste motorstyringen. Start-knappen S1 gir spolen Q1 spenning. Når Q1 trekker til, lukker også hjelpekontakten Q1 13–14, som ligger parallelt med S1. Den holder spolen inne etter at du slipper knappen. Stopp-knappen S0 og motorvernets 95–96 ligger i serie, så begge kan bryte kretsen.</p>
+<figure class="fig">
     <svg id="dol-svg" viewBox="0 0 620 380" role="img" aria-label="Hovedstrøm og styrestrøm for direktestart med selvhold"></svg>
     <div class="ctrl"><button class="chip play" type="button" id="dol-start">▶ Start (S1)</button><button class="chip" type="button" id="dol-stop">■ Stopp (S0)</button><button class="chip" type="button" id="dol-over" aria-pressed="false">Overbelast motoren</button><button class="chip" type="button" id="dol-reset" hidden>↺ Tilbakestill motorvern</button></div>
     <p id="dol-msg" style="margin:6px 0 0;font-size:14px;font-weight:600;min-height:2.6em" aria-live="polite"></p>
     <figcaption>Rød ledning har spenning. Prikkene viser strømmen når kretsen er sluttet. Trykknappene slippes automatisk etter et øyeblikk, som i virkeligheten.</figcaption>
   </figure>
-
-  <h4 style="margin-top:12px">Stjerne-trekant-start</h4>
-  <p>Store motorer trekker 6–8 ganger merkestrømmen ved direktestart. Med stjerne-trekant starter motoren i stjerne, der hver vikling bare får 230 V. Etter noen sekunder kobler et tidsrelé om til trekant, der viklingene får full spenning. Startstrømmen blir omtrent en tredjedel, men det blir også startmomentet.</p>
-  <figure class="fig">
+<h4 style="margin-top:12px">Stjerne-trekant-start</h4>
+<p>Store motorer trekker 6–8 ganger merkestrømmen ved direktestart. Med stjerne-trekant starter motoren i stjerne, der hver vikling bare får 230 V. Etter noen sekunder kobler et tidsrelé om til trekant, der viklingene får full spenning. Startstrømmen blir omtrent en tredjedel, men det blir også startmomentet.</p>
+<figure class="fig">
     <svg id="yd-svg" viewBox="0 0 600 230" role="img" aria-label="Stjernekobling og trekantkobling med strømkurve"></svg>
     <div class="ctrl"><button class="chip play" type="button" id="yd-start">▶ Start</button></div>
     <p id="yd-msg" style="margin:6px 0 0;font-size:14px;font-weight:600" aria-live="polite"></p>
   </figure>
-
-  <h4 style="margin-top:12px">Dreieretningsvending</h4>
-  <p>En trefasemotor snur når to av fasene byttes. Det gjøres med to kontaktorer: Q1 for fram og Q2 for bak, der Q2 bytter L1 og L3. De må <b>forrigles</b>, slik at begge aldri kan være inne samtidig. Det gjøres med brytekontakter fra hver kontaktor i den andres spolekrets, og ofte også mekanisk.</p>
-  <figure class="fig">
+<h4 style="margin-top:12px">Dreieretningsvending</h4>
+<p>En trefasemotor snur når to av fasene byttes. Det gjøres med to kontaktorer: Q1 for fram og Q2 for bak, der Q2 bytter L1 og L3. De må <b>forrigles</b>, slik at begge aldri kan være inne samtidig. Det gjøres med brytekontakter fra hver kontaktor i den andres spolekrets, og ofte også mekanisk.</p>
+<figure class="fig">
     <svg id="rv-svg" viewBox="0 0 600 330" role="img" aria-label="To kontaktorer for fram og bak med faseombytte"></svg>
     <div class="ctrl"><button class="chip play" type="button" id="rv-f">▶ Fram (Q1)</button><button class="chip" type="button" id="rv-s">■ Stopp</button><button class="chip play" type="button" id="rv-b">◀ Bak (Q2)</button></div>
     <p id="rv-msg" style="margin:6px 0 0;font-size:14px;font-weight:600" aria-live="polite"></p>
   </figure>
+</details>
 </div>
 <div class="topic" id="el9-tabeller">
-  <div class="topic-h"><span class="tno">9.13</span><h3>Elektriske tabeller</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <h3>Resistivitet og temperaturkoeffisient</h3>
+<div class="topic-h"><span class="tno">9.13</span><h3>Elektriske tabeller</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<h3>Resistivitet og temperaturkoeffisient</h3>
 <p>Motstanden i en leder er R = ρ · L / A. Varme gir større motstand i metaller: R<sub>T</sub> = R<sub>20</sub> · (1 + α · (T − 20 °C)). For kobber gir 50 °C oppvarming rundt 20 % mer motstand.</p>
 <div class="tbl el9b-tx" id="el9b-rho-t"></div>
 <p class="small muted">Verdier ved 20 °C. Kobber og aluminium: standardverdier for ledermateriale (glødet kobber etter IEC 60028). Øvrige: tabellverdier for rene metaller og typiske legeringer (CRC Handbook of Chemistry and Physics). Legeringer varierer med sammensetning og er veiledende.</p>
-
 <h3>Standard tverrsnitt og AWG</h3>
 <p>Standard tverrsnitt etter IEC 60228 (mm²):</p>
 <div class="chips" id="el9b-std"></div>
-<p>Amerikansk utstyr og ledninger er merket i AWG (American Wire Gauge). Større AWG-tall betyr tynnere leder, og tre trinn ned dobler omtrent tverrsnittet. Tabellen er regnet ut fra definisjonen i ASTM B258: d = 0,127 mm · 92<sup>(36 − n)/39</sup>.</p>
 <div class="tbl" id="el9b-awg-t"></div>
 <p class="small muted">«Nærmeste større» er det minste metriske standardtverrsnittet som ikke er mindre enn AWG-lederen.</p>
-
 <h3>Strømføringsevne, referansemetoder</h3>
-<p>Hvor mye strøm en kabel tåler, avhenger av hvordan den er forlagt, fordi varmen må komme seg bort. Tabellen gjelder bare de forholdene som står under. Andre omgivelsestemperaturer, flere kabler samlet eller varmeisolasjon gir lavere verdier, og det må korrigeres med faktorer etter NEK 400-5-52.</p>
 <div class="tbl" id="el9b-iz-t"></div>
 <p class="small muted">IEC 60364-5-52, tabell B.52.2 (tilsvarende tabell i NEK 400-5-52): kobberledere, PVC-isolasjon (70 °C ledertemperatur), <b>to belastede ledere</b> (enfase), omgivelsestemperatur 30 °C i luft, én kurs alene. Trefase (tre belastede ledere) gir lavere verdier. Vernet skal oppfylle I<sub>B</sub> ≤ I<sub>n</sub> ≤ I<sub>z</sub>. Dimensjonering av installasjoner skal gjøres etter NEK 400 av kvalifisert personell.</p>
-
 <h3>Automatsikringer: størrelser og karakteristikk</h3>
 <p>Standard merkestrømmer I<sub>n</sub> for automatsikringer (IEC 60898-1), i A. Trykk på en for å se utløsestrømmene:</p>
 <div class="chips" id="el9b-in"></div>
 <div class="tbl el9b-tx" id="el9b-bcd-t"></div>
-<figure class="fig">
-  <svg id="el9b-trip" viewBox="0 0 600 300" role="img" aria-label="Prinsippskisse av utløsekurver for automatsikring"></svg>
-  <div class="ctrl"><span class="chips" id="el9b-trip-c" style="margin:0"></span></div>
-  <figcaption>Prinsippskisse. Det termiske området (bimetall) er felles. Det magnetiske området (momentan utløsning, under 0,1 s) avhenger av karakteristikken. Begge akser er logaritmiske.</figcaption>
-</figure>
 <p class="small muted">IEC 60898-1: sikringen skal ikke løse ut ved 1,13 · I<sub>n</sub> innen 1 time, og skal løse ut ved 1,45 · I<sub>n</sub> innen 1 time (I<sub>n</sub> ≤ 63 A). Ved 2,55 · I<sub>n</sub> skal den løse ut på 1–60 s (I<sub>n</sub> ≤ 32 A). Momentan utløsning: B over 3 til og med 5 · I<sub>n</sub>, C over 5 til og med 10 · I<sub>n</sub>, D over 10 til og med 20 · I<sub>n</sub>.</p>
-
 <h3>Fargekoder for motstander</h3>
-<p>Ringene leses fra den enden der ringene sitter tettest. Med 4 ringer er de to første siffer, den tredje multiplikator og den fjerde toleranse. Med 5 ringer er de tre første siffer. Toleranseringen sitter ofte med litt større avstand.</p>
-<figure class="fig">
-  <svg id="el9b-res" viewBox="0 0 600 140" role="img" aria-label="Motstand med fargeringer"></svg>
-  <div class="ctrl"><span class="chips" id="el9b-res-n" style="margin:0"></span></div>
-  <div class="el9b-rings" id="el9b-res-s"></div>
-  <div class="ctrl"><label for="el9b-res-v" class="small muted">Finn ringer for verdi</label><input id="el9b-res-v" inputmode="text" placeholder="f.eks. 4,7k" style="max-width:150px"><button class="chip" id="el9b-res-go" type="button">Finn ringer</button></div>
-  <div id="el9b-res-out" aria-live="polite"></div>
-</figure>
 <div class="tbl" id="el9b-col-t"></div>
 <p class="small muted">Fargekode etter IEC 60062. Skriv k for kΩ og M for MΩ i søkefeltet.</p>
-  <h3>Spenningsfall i kabel</h3>
-  <div class="calc">
+<h3>Spenningsfall i kabel</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="v-sys">System</label><select id="v-sys"><option value="1">Enfase</option><option value="3" selected>Trefase</option></select></div>
@@ -4360,79 +4416,137 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="v-out" aria-live="polite"></div>
   </div>
-  <div class="two">
+<div class="two">
     <div><h3>Typisk merkestrøm, 400 V motor</h3><div class="tbl" id="e-motor"></div></div>
     <div><h3>Lederfarger</h3><div class="tbl" id="e-col"></div>
       <h3>IP-klasser (IEC 60529)</h3><div class="tbl" id="e-ip"></div></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<h3>Standard tverrsnitt og AWG</h3>
+<p>Amerikansk utstyr og ledninger er merket i AWG (American Wire Gauge). Større AWG-tall betyr tynnere leder, og tre trinn ned dobler omtrent tverrsnittet. Tabellen er regnet ut fra definisjonen i ASTM B258: d = 0,127 mm · 92<sup>(36 − n)/39</sup>.</p>
+<h3>Strømføringsevne, referansemetoder</h3>
+<p>Hvor mye strøm en kabel tåler, avhenger av hvordan den er forlagt, fordi varmen må komme seg bort. Tabellen gjelder bare de forholdene som står under. Andre omgivelsestemperaturer, flere kabler samlet eller varmeisolasjon gir lavere verdier, og det må korrigeres med faktorer etter NEK 400-5-52.</p>
+<h3>Automatsikringer: størrelser og karakteristikk</h3>
+<figure class="fig">
+  <svg id="el9b-trip" viewBox="0 0 600 300" role="img" aria-label="Prinsippskisse av utløsekurver for automatsikring"></svg>
+  <div class="ctrl"><span class="chips" id="el9b-trip-c" style="margin:0"></span></div>
+  <figcaption>Prinsippskisse. Det termiske området (bimetall) er felles. Det magnetiske området (momentan utløsning, under 0,1 s) avhenger av karakteristikken. Begge akser er logaritmiske.</figcaption>
+</figure>
+<h3>Fargekoder for motstander</h3>
+<p>Ringene leses fra den enden der ringene sitter tettest. Med 4 ringer er de to første siffer, den tredje multiplikator og den fjerde toleranse. Med 5 ringer er de tre første siffer. Toleranseringen sitter ofte med litt større avstand.</p>
+<figure class="fig">
+  <svg id="el9b-res" viewBox="0 0 600 140" role="img" aria-label="Motstand med fargeringer"></svg>
+  <div class="ctrl"><span class="chips" id="el9b-res-n" style="margin:0"></span></div>
+  <div class="el9b-rings" id="el9b-res-s"></div>
+  <div class="ctrl"><label for="el9b-res-v" class="small muted">Finn ringer for verdi</label><input id="el9b-res-v" inputmode="text" placeholder="f.eks. 4,7k" style="max-width:150px"><button class="chip" id="el9b-res-go" type="button">Finn ringer</button></div>
+  <div id="el9b-res-out" aria-live="polite"></div>
+</figure>
+</details>
 </div>
 <div class="topic" id="el9-symboler">
-  <div class="topic-h"><span class="tno">9.14</span><h3>Elektrosymboler</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Generelle koblingssymboler etter IEC 60617. Trykk på et symbol for å se forklaringen. Symbolene for kontaktorer, motorvern og trykknapper i motorstyring er vist med animasjon under <a href="#motorstyring">Motorstyring</a>.</p>
+<div class="topic-h"><span class="tno">9.14</span><h3>Elektrosymboler</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
 <div class="gd-detail" id="el9b-sd" aria-live="polite"></div>
 <div id="el9b-sg"></div>
 <h3>Flere bokstavkoder (IEC 81346-2)</h3>
-<p>Kodene for kontaktor (Q), bryter (S), vern (F), relé (K), motor (M), visning (P) og sensor (B) står i tabellen under <a href="#motorstyring">Motorstyring</a>. Her er de andre vanlige. Koden følger <b>funksjonen</b> til komponenten, ikke hvordan den ser ut: en lampe som lyser opp et rom er E, mens en signallampe er P.</p>
 <div class="tbl el9b-tx" id="el9b-81346"></div>
 <p class="small muted">IEC 81346-2:2009, tabell 1. Referansebetegnelsen skrives med minus foran, for eksempel −R1, −T1, −X2.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Generelle koblingssymboler etter IEC 60617. Trykk på et symbol for å se forklaringen. Symbolene for kontaktorer, motorvern og trykknapper i motorstyring er vist med animasjon under <a href="#motorstyring">Motorstyring</a>.</p>
+<h3>Flere bokstavkoder (IEC 81346-2)</h3>
+<p>Kodene for kontaktor (Q), bryter (S), vern (F), relé (K), motor (M), visning (P) og sensor (B) står i tabellen under <a href="#motorstyring">Motorstyring</a>. Her er de andre vanlige. Koden følger <b>funksjonen</b> til komponenten, ikke hvordan den ser ut: en lampe som lyser opp et rom er E, mens en signallampe er P.</p>
+</details>
 </div>
 <div class="topic" id="el9-maling">
-  <div class="topic-h"><span class="tno">9.15</span><h3>Måling med multimeter</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
-  <p class="lead">Et multimeter måler spenning, strøm og motstand, og har ofte summer for kontinuitet. Det viktigste å huske er hvordan instrumentet kobles: spenning måles <b>parallelt</b>, strøm måles <b>i serie</b>, og motstand måles <b>spenningsløst</b>.</p>
-  <div class="note"><p><b>Sikkerhet:</b> Bruk et instrument med riktig målekategori (CAT) for stedet du måler. Sjekk ledninger og prober før bruk. Arbeid på anlegg over 50 V AC krever kompetanse etter FSE. Figurene viser prinsippet på en enkel 12 V-krets.</p></div>
-  <h3>Likestrøm (1-fas): slik måler du</h3>
-  <p>Velg måletype. Se hvordan bryteren dreies, hvilken kontakt den røde ledningen skal i, og hvor probene skal holdes. «Vis vanlig feil» viser hva som skjer når det gjøres galt.</p>
-  <figure class="fig">
-    <svg id="mm-svg" viewBox="0 0 640 360" role="img" aria-label="Multimeter koblet til en krets med batteri, sikring, bryter og lampe"></svg>
-    <div class="ctrl"><span class="chips" id="mm-modes" style="margin:0"></span><button class="chip" type="button" id="mm-err">Vis vanlig feil</button></div>
-    <p id="mm-msg" style="margin:6px 0 0;font-size:14px;font-weight:600;min-height:2.6em" aria-live="polite"></p>
-  </figure>
-  <h4>Fremgangsmåte</h4>
-  <ol id="mm-how" style="margin:0 0 12px;padding-left:22px;font-size:14px;max-width:68ch"></ol>
-  <h3>Vekselstrøm: 2-fas og 3-fas nett</h3>
-  <p>I verkstedet møter du fire vanlige nett. Hvilket nett du står i, avgjør hvilke spenninger du skal lese. I Norge er IT-nett med 230 V mellom fasene vanlig i eldre anlegg, mens nyere anlegg ofte er TN med 230/400 V. «2-fas» er en 230 V-kurs i IT-nett: stikkontakten har to faser og jord, ingen nøytralleder.</p>
-  <figure class="fig">
-    <svg id="mmac-net" viewBox="0 0 640 250" role="img" aria-label="Transformatorens sekundærside i TN-nett og IT-nett, med faser, nøytral og jord"></svg>
-    <figcaption>Venstre: TN-nett. Stjernepunktet er jordet og ført ut som N, så fase–N og fase–jord er 230 V og fase–fase er 400 V. Høyre: IT-nett. Ingen del er jordet, og det er 230 V mellom fasene. En 2-fas kurs tar ut to av fasene.</figcaption>
-  </figure>
-  <div class="tbl"><table><thead><tr><th style="text-align:left">Leder</th><th style="text-align:left">Farge (NEK 400 / IEC 60445)</th><th style="text-align:left">Merknad</th></tr></thead><tbody>
+<div class="topic-h"><span class="tno">9.15</span><h3>Måling med multimeter</h3><a class="up" href="#elektro" aria-label="Til innholdet i emne 9">↑ Innhold</a></div>
+<div class="note"><p><b>Sikkerhet:</b> Bruk et instrument med riktig målekategori (CAT) for stedet du måler. Sjekk ledninger og prober før bruk. Arbeid på anlegg over 50 V AC krever kompetanse etter FSE. Figurene viser prinsippet på en enkel 12 V-krets.</p></div>
+<h3>Vekselstrøm: 2-fas og 3-fas nett</h3>
+<div class="tbl"><table><thead><tr><th style="text-align:left">Leder</th><th style="text-align:left">Farge (NEK 400 / IEC 60445)</th><th style="text-align:left">Merknad</th></tr></thead><tbody>
     <tr><td class="txt"><span class="mmac-sw" style="background:#8b4a1c"></span>L1</td><td class="txt">Brun</td><td class="txt">Fase</td></tr>
     <tr><td class="txt"><span class="mmac-sw" style="background:#1a1a1a"></span>L2</td><td class="txt">Svart</td><td class="txt">Fase</td></tr>
     <tr><td class="txt"><span class="mmac-sw" style="background:#8c8c8c"></span>L3</td><td class="txt">Grå</td><td class="txt">Fase</td></tr>
     <tr><td class="txt"><span class="mmac-sw" style="background:#1e6fd9"></span>N</td><td class="txt">Blå</td><td class="txt">Nøytralleder. Finnes bare i TN-nett. I en IT-kurs kan blå leder være brukt som fase.</td></tr>
     <tr><td class="txt"><span class="mmac-sw" style="background:repeating-linear-gradient(90deg,#3a9a3a 0 6px,#e8c51a 6px 12px)"></span>PE</td><td class="txt">Gul/grønn</td><td class="txt">Beskyttelsesjord. Skal aldri føre strøm i normal drift.</td></tr>
   </tbody></table></div>
-  <p class="small muted">Fargene er ikke en garanti. Eldre anlegg og IT-kurser kan ha andre farger. Mål alltid, og stol ikke på fargen alene.</p>
-
-  <h3>Spenningsmåling i 2-fas og 3-fas</h3>
-  <p>Bryteren står på <b>V~</b>, rød ledning i <b>VΩ</b> og svart i <b>COM</b>. Velg nett og hvilke to punkter du måler mellom. Viserne viser spenningene som piler som roterer 50 ganger i sekundet; her i sakte film. Instrumentet viser lengden av pilen mellom de to punktene, altså forskjellen mellom dem, som effektivverdi (RMS).</p>
-  <figure class="fig">
-    <svg id="mmac-v" viewBox="0 0 640 420" role="img" aria-label="Multimeter som måler vekselspenning mellom to ledere, med viserdiagram og spenningskurver"></svg>
-    <div class="ctrl"><span class="chips" id="mmac-vsys" style="margin:0"></span></div>
-    <div class="ctrl"><span class="small muted" style="min-width:70px">Mål mellom</span><span class="chips" id="mmac-vpair" style="margin:0"></span><button class="chip play" type="button" id="mmac-vplay"></button></div>
-    <p id="mmac-vmsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
-  </figure>
-  <div class="note"><p><b>Hvorfor 400 V og ikke 460 V?</b> To faser på 230 V er forskjøvet 120°. Forskjellen mellom dem er √3 · 230 ≈ 400 V, ikke 230 + 230. Toppverdien er √2 større enn effektivverdien: 400 V RMS har toppverdi ≈ 566 V. Derfor må instrument og prober tåle minst 600 V CAT III i en fordeling.</p></div>
-
-  <h3>Forventede verdier</h3>
-  <div class="tbl"><table><thead><tr><th style="text-align:left">Måling</th><th>3-fas TN 230/400 V</th><th>3-fas IT 230 V</th><th>2-fas IT 230 V</th><th>1-fas TN 230 V</th></tr></thead><tbody>
+<p class="small muted">Fargene er ikke en garanti. Eldre anlegg og IT-kurser kan ha andre farger. Mål alltid, og stol ikke på fargen alene.</p>
+<h3>Spenningsmåling i 2-fas og 3-fas</h3>
+<div class="note"><p><b>Hvorfor 400 V og ikke 460 V?</b> To faser på 230 V er forskjøvet 120°. Forskjellen mellom dem er √3 · 230 ≈ 400 V, ikke 230 + 230. Toppverdien er √2 større enn effektivverdien: 400 V RMS har toppverdi ≈ 566 V. Derfor må instrument og prober tåle minst 600 V CAT III i en fordeling.</p></div>
+<h3>Forventede verdier</h3>
+<div class="tbl"><table><thead><tr><th style="text-align:left">Måling</th><th>3-fas TN 230/400 V</th><th>3-fas IT 230 V</th><th>2-fas IT 230 V</th><th>1-fas TN 230 V</th></tr></thead><tbody>
     <tr><td class="txt">Fase–fase</td><td>400 V</td><td>230 V</td><td>230 V</td><td>–</td></tr>
     <tr><td class="txt">Fase–N</td><td>230 V</td><td>– (ingen N)</td><td>– (ingen N)</td><td>230 V</td></tr>
     <tr><td class="txt">Fase–PE</td><td>230 V</td><td>ca. 133 V*</td><td>ca. 133 V*</td><td>230 V</td></tr>
     <tr><td class="txt">N–PE</td><td>0–2 V</td><td>–</td><td>–</td><td>0–2 V</td></tr>
   </tbody></table></div>
-  <p class="small muted">* I IT-nett er ingen del av nettet jordet. Spenningen fase–jord bestemmes av kapasitansen mellom ledere og jord og kan variere mye. Ved jordfeil på én fase blir den 0 V mot jord på den fasen og 230 V på de andre. Et høyohmig multimeter kan vise rare, flytende verdier. Flere volt mellom N og PE i TN-nett tyder på stor last eller dårlig N-forbindelse.</p>
-
-  <h3>Strømmåling med tang i 2-fas og 3-fas</h3>
-  <p>På 230/400 V måles strøm <b>alltid med strømtang</b>, ikke ved å bryte kretsen og koble multimeteret i serie. Tanga måler magnetfeltet rundt lederne den omslutter, og viser <b>summen</b> av strømmene som går gjennom kjeften. Prikkene viser strømmen: i vekselstrøm går den fram og tilbake 50 ganger i sekundet.</p>
-  <figure class="fig">
+<p class="small muted">* I IT-nett er ingen del av nettet jordet. Spenningen fase–jord bestemmes av kapasitansen mellom ledere og jord og kan variere mye. Ved jordfeil på én fase blir den 0 V mot jord på den fasen og 230 V på de andre. Et høyohmig multimeter kan vise rare, flytende verdier. Flere volt mellom N og PE i TN-nett tyder på stor last eller dårlig N-forbindelse.</p>
+<h3>Motstand i motorviklinger (spenningsløst)</h3>
+<p class="small muted">Viklingsmotstanden er lav (fra noen tidels ohm på store motorer til noen titalls ohm på små), så kortslutt probene først og trekk fra ledningsmotstanden. «0L» mot jord på et multimeter betyr bare at det ikke er kortslutning. Isolasjonen skal kontrolleres med isolasjonsmåler (typisk 500 V DC), og resultatet skal være godt over 1 MΩ. Det er arbeid for elektrofagperson.</p>
+<div class="note"><p><b>Typiske feil ved måling i 2-fas og 3-fas</b></p>
+  <ul style="margin:4px 0 0;padding-left:20px;font-size:14px">
+    <li>Rød ledning står i A-kontakten fra en strømmåling. Det gir kortslutning mellom fasene når du måler spenning, og lysbue.</li>
+    <li>Instrumentet er for lav CAT eller for lav spenning, for eksempel CAT II 300 V i en fordeling.</li>
+    <li>Måling på V⎓ (likespenning) på et vekselspenningsnett viser rundt 0 V eller hoppende tall.</li>
+    <li>Måler bare fase–jord i IT-nett og tror fasen er død. Mål alltid mellom alle faser også.</li>
+    <li>Strømmåling med multimeteret i serie på 230/400 V. Bruk tang.</li>
+  </ul></div>
+<h3>Oversikt over metodene</h3>
+<div class="tbl"><table><thead><tr><th>Måling</th><th style="text-align:left">Kobling</th><th style="text-align:left">Rød ledning</th><th style="text-align:left">Kretsen</th><th style="text-align:left">Typisk feil</th></tr></thead><tbody>
+    <tr><td>Spenning V</td><td class="txt">Parallelt over komponenten</td><td class="txt">VΩ</td><td class="txt">Med spenning</td><td class="txt">Rød ledning glemt i A-kontakten gir kortslutning</td></tr>
+    <tr><td>Strøm A</td><td class="txt">I serie, kretsen brytes</td><td class="txt">A eller mA</td><td class="txt">Slå av, koble inn, slå på</td><td class="txt">Koblet parallelt, eller for stor strøm for mA-inngangen</td></tr>
+    <tr><td>Strømtang</td><td class="txt">Rundt én leder</td><td class="txt">–</td><td class="txt">Med strøm, ikke brutt</td><td class="txt">Rundt hele kabelen gir 0</td></tr>
+    <tr><td>Motstand Ω</td><td class="txt">Over komponenten, frakoblet i én ende</td><td class="txt">VΩ</td><td class="txt">Spenningsløs</td><td class="txt">Måler med spenning på, eller gjennom parallelle deler</td></tr>
+    <tr><td>Kontinuitet •)))</td><td class="txt">Over leder eller sikring</td><td class="txt">VΩ</td><td class="txt">Spenningsløs</td><td class="txt">Tolker kort pip som god forbindelse i en løs kobling</td></tr></tbody></table></div>
+<h3>Kontroll av spenningsløshet</h3>
+<div class="two">
+    <div><h3>Målekategorier (CAT)</h3><div class="tbl"><table><thead><tr><th>Kategori</th><th style="text-align:left">Hvor</th></tr></thead><tbody>
+      <tr><td>CAT II</td><td class="txt">Stikkontakter og apparater som plugges inn</td></tr>
+      <tr><td>CAT III</td><td class="txt">Fast installasjon: fordelinger, kurser, motorer, maskiner</td></tr>
+      <tr><td>CAT IV</td><td class="txt">Inntak, måler, luftlinjer og jordkabel inn til bygget</td></tr></tbody></table></div>
+      <p class="small muted">Instrumentet og probene må ha minst den kategorien og spenningen du måler på, for eksempel CAT III 600 V.</p></div>
+    <div><h3>Tolke avlesningen</h3><div class="tbl"><table><thead><tr><th>Viser</th><th style="text-align:left">Betyr</th></tr></thead><tbody>
+      <tr><td>0L / OL</td><td class="txt">Over måleområdet, eller brudd ved motstandsmåling</td></tr>
+      <tr><td>Minus foran</td><td class="txt">Probene er byttet om ved likestrøm. Verdien er riktig, retningen motsatt</td></tr>
+      <tr><td>Hopper</td><td class="txt">Dårlig kontakt, eller AC-signal målt på DC</td></tr>
+      <tr><td>True RMS</td><td class="txt">Riktig AC-verdi også for forvrengte kurver, f.eks. fra frekvensomformere</td></tr>
+      <tr><td>±(1 % + 2)</td><td class="txt">Nøyaktighet: 1 % av avlesningen pluss 2 i siste siffer</td></tr></tbody></table></div></div>
+  </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og animasjoner</summary>
+<p class="lead">Et multimeter måler spenning, strøm og motstand, og har ofte summer for kontinuitet. Det viktigste å huske er hvordan instrumentet kobles: spenning måles <b>parallelt</b>, strøm måles <b>i serie</b>, og motstand måles <b>spenningsløst</b>.</p>
+<h3>Likestrøm (1-fas): slik måler du</h3>
+<p>Velg måletype. Se hvordan bryteren dreies, hvilken kontakt den røde ledningen skal i, og hvor probene skal holdes. «Vis vanlig feil» viser hva som skjer når det gjøres galt.</p>
+<figure class="fig">
+    <svg id="mm-svg" viewBox="0 0 640 360" role="img" aria-label="Multimeter koblet til en krets med batteri, sikring, bryter og lampe"></svg>
+    <div class="ctrl"><span class="chips" id="mm-modes" style="margin:0"></span><button class="chip" type="button" id="mm-err">Vis vanlig feil</button></div>
+    <p id="mm-msg" style="margin:6px 0 0;font-size:14px;font-weight:600;min-height:2.6em" aria-live="polite"></p>
+  </figure>
+<h4>Fremgangsmåte</h4>
+<ol id="mm-how" style="margin:0 0 12px;padding-left:22px;font-size:14px;max-width:68ch"></ol>
+<h3>Vekselstrøm: 2-fas og 3-fas nett</h3>
+<p>I verkstedet møter du fire vanlige nett. Hvilket nett du står i, avgjør hvilke spenninger du skal lese. I Norge er IT-nett med 230 V mellom fasene vanlig i eldre anlegg, mens nyere anlegg ofte er TN med 230/400 V. «2-fas» er en 230 V-kurs i IT-nett: stikkontakten har to faser og jord, ingen nøytralleder.</p>
+<figure class="fig">
+    <svg id="mmac-net" viewBox="0 0 640 250" role="img" aria-label="Transformatorens sekundærside i TN-nett og IT-nett, med faser, nøytral og jord"></svg>
+    <figcaption>Venstre: TN-nett. Stjernepunktet er jordet og ført ut som N, så fase–N og fase–jord er 230 V og fase–fase er 400 V. Høyre: IT-nett. Ingen del er jordet, og det er 230 V mellom fasene. En 2-fas kurs tar ut to av fasene.</figcaption>
+  </figure>
+<h3>Spenningsmåling i 2-fas og 3-fas</h3>
+<p>Bryteren står på <b>V~</b>, rød ledning i <b>VΩ</b> og svart i <b>COM</b>. Velg nett og hvilke to punkter du måler mellom. Viserne viser spenningene som piler som roterer 50 ganger i sekundet; her i sakte film. Instrumentet viser lengden av pilen mellom de to punktene, altså forskjellen mellom dem, som effektivverdi (RMS).</p>
+<figure class="fig">
+    <svg id="mmac-v" viewBox="0 0 640 420" role="img" aria-label="Multimeter som måler vekselspenning mellom to ledere, med viserdiagram og spenningskurver"></svg>
+    <div class="ctrl"><span class="chips" id="mmac-vsys" style="margin:0"></span></div>
+    <div class="ctrl"><span class="small muted" style="min-width:70px">Mål mellom</span><span class="chips" id="mmac-vpair" style="margin:0"></span><button class="chip play" type="button" id="mmac-vplay"></button></div>
+    <p id="mmac-vmsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
+  </figure>
+<h3>Strømmåling med tang i 2-fas og 3-fas</h3>
+<p>På 230/400 V måles strøm <b>alltid med strømtang</b>, ikke ved å bryte kretsen og koble multimeteret i serie. Tanga måler magnetfeltet rundt lederne den omslutter, og viser <b>summen</b> av strømmene som går gjennom kjeften. Prikkene viser strømmen: i vekselstrøm går den fram og tilbake 50 ganger i sekundet.</p>
+<figure class="fig">
     <svg id="mmac-i" viewBox="0 0 640 370" role="img" aria-label="Strømtang rundt én eller flere ledere i en kabel til en last, med strømprikker som går fram og tilbake"></svg>
     <div class="ctrl"><span class="chips" id="mmac-isys" style="margin:0"></span></div>
     <div class="ctrl"><span class="small muted" style="min-width:70px">Tang rundt</span><span class="chips" id="mmac-iclamp" style="margin:0"></span></div>
     <div class="ctrl"><label class="small" style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="mmac-ifault"> Jordfeil: 0,5 A lekker fra L1 til PE</label><button class="chip play" type="button" id="mmac-iplay"></button></div>
     <p id="mmac-imsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
   </figure>
-  <div class="two">
+<div class="two">
     <div><h4>Dette viser tanga</h4><ul style="margin:0;padding-left:20px;font-size:14px">
       <li>Rundt <b>én fase</b>: strømmen i den fasen.</li>
       <li>Rundt <b>alle faser</b> i en symmetrisk 3-fas last: 0 A. Strømmene er forskjøvet 120° og opphever hverandre.</li>
@@ -4446,52 +4560,22 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
       <li>Ved frekvensomformer: bruk True RMS-tang.</li>
     </ul></div>
   </div>
-
-  <h3>Motstand i motorviklinger (spenningsløst)</h3>
-  <p>En trefasemotor har tre like viklinger. Med laskene fjernet og motoren spenningsløs og frakoblet kan hver vikling måles for seg. Viklingene skal ha <b>lik motstand</b>, og det skal ikke være forbindelse mellom viklingene eller mot jord.</p>
-  <figure class="fig">
+<h3>Motstand i motorviklinger (spenningsløst)</h3>
+<p>En trefasemotor har tre like viklinger. Med laskene fjernet og motoren spenningsløs og frakoblet kan hver vikling måles for seg. Viklingene skal ha <b>lik motstand</b>, og det skal ikke være forbindelse mellom viklingene eller mot jord.</p>
+<figure class="fig">
     <svg id="mmac-r" viewBox="0 0 640 300" role="img" aria-label="Klemmebrett på trefasemotor med laskene fjernet og multimeter som måler viklingsmotstand"></svg>
     <div class="ctrl"><span class="chips" id="mmac-rpair" style="margin:0"></span><button class="chip" type="button" id="mmac-rfault">Vis motor med viklingsfeil</button></div>
     <p id="mmac-rmsg" style="margin:6px 0 0;font-size:14px;max-width:72ch;min-height:3em" aria-live="polite"></p>
   </figure>
-  <p class="small muted">Viklingsmotstanden er lav (fra noen tidels ohm på store motorer til noen titalls ohm på små), så kortslutt probene først og trekk fra ledningsmotstanden. «0L» mot jord på et multimeter betyr bare at det ikke er kortslutning. Isolasjonen skal kontrolleres med isolasjonsmåler (typisk 500 V DC), og resultatet skal være godt over 1 MΩ. Det er arbeid for elektrofagperson.</p>
-
-  <div class="note"><p><b>Typiske feil ved måling i 2-fas og 3-fas</b></p>
-  <ul style="margin:4px 0 0;padding-left:20px;font-size:14px">
-    <li>Rød ledning står i A-kontakten fra en strømmåling. Det gir kortslutning mellom fasene når du måler spenning, og lysbue.</li>
-    <li>Instrumentet er for lav CAT eller for lav spenning, for eksempel CAT II 300 V i en fordeling.</li>
-    <li>Måling på V⎓ (likespenning) på et vekselspenningsnett viser rundt 0 V eller hoppende tall.</li>
-    <li>Måler bare fase–jord i IT-nett og tror fasen er død. Mål alltid mellom alle faser også.</li>
-    <li>Strømmåling med multimeteret i serie på 230/400 V. Bruk tang.</li>
-  </ul></div>
-  <h3>Oversikt over metodene</h3>
-  <div class="tbl"><table><thead><tr><th>Måling</th><th style="text-align:left">Kobling</th><th style="text-align:left">Rød ledning</th><th style="text-align:left">Kretsen</th><th style="text-align:left">Typisk feil</th></tr></thead><tbody>
-    <tr><td>Spenning V</td><td class="txt">Parallelt over komponenten</td><td class="txt">VΩ</td><td class="txt">Med spenning</td><td class="txt">Rød ledning glemt i A-kontakten gir kortslutning</td></tr>
-    <tr><td>Strøm A</td><td class="txt">I serie, kretsen brytes</td><td class="txt">A eller mA</td><td class="txt">Slå av, koble inn, slå på</td><td class="txt">Koblet parallelt, eller for stor strøm for mA-inngangen</td></tr>
-    <tr><td>Strømtang</td><td class="txt">Rundt én leder</td><td class="txt">–</td><td class="txt">Med strøm, ikke brutt</td><td class="txt">Rundt hele kabelen gir 0</td></tr>
-    <tr><td>Motstand Ω</td><td class="txt">Over komponenten, frakoblet i én ende</td><td class="txt">VΩ</td><td class="txt">Spenningsløs</td><td class="txt">Måler med spenning på, eller gjennom parallelle deler</td></tr>
-    <tr><td>Kontinuitet •)))</td><td class="txt">Over leder eller sikring</td><td class="txt">VΩ</td><td class="txt">Spenningsløs</td><td class="txt">Tolker kort pip som god forbindelse i en løs kobling</td></tr></tbody></table></div>
-  <h3>Kontroll av spenningsløshet</h3>
-  <p>Før arbeid på et frakoblet anlegg skal det kontrolleres at det er spenningsløst. Test prøveren på en kjent kilde før og etter, slik at du vet at den virker. Mål mellom alle faser og mot jord.</p>
-  <figure class="fig">
+<h3>Kontroll av spenningsløshet</h3>
+<p>Før arbeid på et frakoblet anlegg skal det kontrolleres at det er spenningsløst. Test prøveren på en kjent kilde før og etter, slik at du vet at den virker. Mål mellom alle faser og mot jord.</p>
+<figure class="fig">
     <svg id="sl-svg" viewBox="0 0 600 300" role="img" aria-label="Spenningsprøver som måler mellom faser og jord i rekkefølge"></svg>
     <div class="ctrl"><button class="chip play" type="button" id="sl-pp"></button><button class="chip" type="button" id="sl-next">Neste steg →</button></div>
     <p id="sl-msg" style="margin:6px 0 0;font-size:14px;font-weight:600" aria-live="polite"></p>
     <figcaption>Eksempelet viser et IT-nett uten N. I TN-nett måles også mot N. Bruk en topolet spenningsprøver beregnet for formålet.</figcaption>
   </figure>
-  <div class="two">
-    <div><h3>Målekategorier (CAT)</h3><div class="tbl"><table><thead><tr><th>Kategori</th><th style="text-align:left">Hvor</th></tr></thead><tbody>
-      <tr><td>CAT II</td><td class="txt">Stikkontakter og apparater som plugges inn</td></tr>
-      <tr><td>CAT III</td><td class="txt">Fast installasjon: fordelinger, kurser, motorer, maskiner</td></tr>
-      <tr><td>CAT IV</td><td class="txt">Inntak, måler, luftlinjer og jordkabel inn til bygget</td></tr></tbody></table></div>
-      <p class="small muted">Instrumentet og probene må ha minst den kategorien og spenningen du måler på, for eksempel CAT III 600 V.</p></div>
-    <div><h3>Tolke avlesningen</h3><div class="tbl"><table><thead><tr><th>Viser</th><th style="text-align:left">Betyr</th></tr></thead><tbody>
-      <tr><td>0L / OL</td><td class="txt">Over måleområdet, eller brudd ved motstandsmåling</td></tr>
-      <tr><td>Minus foran</td><td class="txt">Probene er byttet om ved likestrøm. Verdien er riktig, retningen motsatt</td></tr>
-      <tr><td>Hopper</td><td class="txt">Dårlig kontakt, eller AC-signal målt på DC</td></tr>
-      <tr><td>True RMS</td><td class="txt">Riktig AC-verdi også for forvrengte kurver, f.eks. fra frekvensomformere</td></tr>
-      <tr><td>±(1 % + 2)</td><td class="txt">Nøyaktighet: 1 % av avlesningen pluss 2 i siste siffer</td></tr></tbody></table></div></div>
-  </div>
+</details>
 </div>
 </section>
 
