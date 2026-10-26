@@ -1,5 +1,5 @@
 /* Verkstedhåndboka – service worker. Gjør appen tilgjengelig uten nett. */
-const VERSION = "hurtig-toleranser-2026-10-26";
+const VERSION = "hurtig-si-2026-10-26";
 const CACHE = "vh-" + VERSION;
 const FONTS = "vh-fonts";
 const CORE = [
