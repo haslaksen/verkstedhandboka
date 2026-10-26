@@ -1648,8 +1648,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#s4-bukk"><span class="tn">4.11</span><span class="tt">Bukking, valsing</span></a></li>
   </ol></nav>
 <div class="topic" id="s4-fuger">
-  <div class="topic-h"><span class="tno">4.1</span><h3>Fugeformer, terminologi</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">4.1</span><h3>Fugeformer, terminologi</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<style>
 .s4x-jg{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:8px;margin:8px 0 12px}
 .s4x-jc{font:inherit;color:inherit;background:var(--sheet);border:1px solid var(--line);padding:4px;cursor:pointer;text-align:center;min-width:0}
 .s4x-jc:hover{border-color:var(--accent)}
@@ -1666,17 +1666,23 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .s4x-g{text-transform:none;letter-spacing:0}
 .s4x-cap{font-family:var(--display);font-weight:600;font-size:13px;padding:6px 10px;background:var(--paper);border-bottom:1px solid var(--line)}
 </style>
-<p class="lead">Fugen er formen kantene får før sveising. Den avgjør om sveisen når gjennom hele godset, hvor mye tilsett som går med, og hvor mye platene trekker seg. Tynne plater sveises uten fasing; tykkere gods må fases slik at buen kommer ned til roten.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Fugeformer</h4><span>I: tynne plater uten fasing · V og Y: fra én side · X og K: fra begge sider, ca. halvt tilsett og mindre vridning</span></div>
+    <div><h4>Begreper</h4><span>α fugevinkel · b rotåpning (spalte) · c rotflate (steg)</span></div>
+    <div><h4>Fugeareal, V-fuge</h4><b>A = (t − c)² · tan(α/2) + b · t</b><b>m = A · ρ / 10⁶</b><span>kg/m, A i mm², ρ i kg/m³</span></div>
+    <div><h4>Overhøyde</h4><span>Slak overgang ved tåen gir bedre utmatting. Stor overhøyde er en feil</span></div>
+  </div>
+  <div class="hurtig-u">t godstykkelse (mm)</div>
+</div>
 <h3>Fugeformer etter ISO 9692-1</h3>
-<p>Trykk på en fugeform for å se mål og begreper.</p>
 <div class="s4x-jg" id="s4x-jg"></div>
 <figure class="fig">
   <svg id="s4x-jbig" viewBox="0 0 600 300" role="img" aria-label="Tverrsnitt av valgt fugeform med målbegreper"></svg>
   <div id="s4x-jtxt" class="small" aria-live="polite"></div>
   <figcaption>Tverrsnitt, sett langs sveisen. Spalten og rotflaten er tegnet litt overdrevet for å synes.</figcaption>
 </figure>
-
 <h3>Begreper</h3>
 <dl class="kv">
   <div><dt>α fugevinkel</dt><dd>Hele åpningsvinkelen</dd></div>
@@ -1686,24 +1692,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><dt>t godstykkelse</dt><dd>Platetykkelse</dd></div>
   <div><dt>h fasedybde</dt><dd>Dybde på fasen</dd></div>
 </dl>
-<ul class="s4x-ul">
-  <li><b>α / β:</b> stor nok til at elektroden eller pistolen kommer ned og buen smelter begge kanter. Større vinkel gir mer tilsett, mer varme og mer krymping.</li>
-  <li><b>b:</b> gir plass til at rotstrengen trenger gjennom. For liten spalte gir manglende gjennombrenning, for stor gir gjennombrenning og stor rotvulst.</li>
-  <li><b>c:</b> en liten steg tåler varmen fra rotstrengen uten å brenne igjennom. Uten rotflate (c = 0) brenner man lett hull.</li>
-  <li><b>X og K</b> sveises fra begge sider. De bruker omtrent halvparten av tilsettet til en V-fuge og gir mindre vinkelvridning fordi krympingen balanseres.</li>
-</ul>
-
 <h3>Anbefalte mål</h3>
 <div class="tbl" id="s4x-jtab"></div>
 <p class="small muted">Etter EN ISO 9692-1:2013, tabell 1 (sveis fra én side), tabell 2 (fra begge sider) og tabell 3 (kilsveis). Prosessnummer etter ISO 4063: 3 gassveising, 111 dekket elektrode, 13 MIG/MAG, 141 TIG, 52 laser. Målene er anbefalinger; WPS-en gjelder når den finnes.</p>
-
 <h3>Sveisens deler</h3>
-<figure class="fig">
-  <div class="ctrl"><span class="chips" id="s4x-an-mode" style="margin:0"><button class="chip" type="button" data-m="v" aria-pressed="true">Stumpsveis i V-fuge</button><button class="chip" type="button" data-m="k" aria-pressed="false">Kilsveis i T-skjøt</button></span></div>
-  <svg id="s4x-anat" viewBox="0 0 600 330" role="img" aria-label="Tverrsnitt av sveis med rot, tå, overhøyde, lag og strenger"></svg>
-  <div id="s4x-an-txt" class="small"></div>
-  <figcaption>En <b>streng</b> er én sveisestreng lagt i én omgang. Et <b>lag</b> er én eller flere strenger ved siden av hverandre i samme høyde. Tallene viser rekkefølgen.</figcaption>
-</figure>
 <dl class="kv">
   <div><dt>Sveiserot</dt><dd>Den dypeste delen, der rotstrengen ligger</dd></div>
   <div><dt>Tå</dt><dd>Overgangen sveis–grunnmateriale på overflaten</dd></div>
@@ -1711,10 +1703,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><dt>Overhøyde</dt><dd>Sveisemetall over plateflaten</dd></div>
   <div><dt>HAZ</dt><dd>Varmepåvirket sone: grunnmateriale som ikke smeltet, men fikk endret struktur</dd></div>
 </dl>
-<p>Tåen er der spenningene samles. En jevn, slak overgang ved tåen gir mye bedre utmattingsfasthet enn en høy, bratt overhøyde. Derfor er stor overhøyde en feil, ikke ekstra sikkerhet.</p>
-
 <h3>Fugeareal og tilsatsmengde, V-fuge</h3>
-<p>Arealet av fugen: A = (t − c)² · tan(α/2) + b · t. I tillegg kommer overhøyden og rotvulsten, regnet som parabelsegmenter (⅔ · bredde · høyde). Masse per meter: m = A · ρ / 10⁶ (kg/m, A i mm², ρ i kg/m³).</p>
 <div class="calc" id="s4x-v-calc">
   <div class="fields">
     <div class="row2">
@@ -1741,35 +1730,49 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-v-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Utbyttet η er <b>veiledende</b>: elektrode ca. 0,55–0,65 (stubb, slagg og sprut), MAG massiv tråd ca. 0,90–0,95, rørtråd ca. 0,80–0,90, TIG nær 1. Kappeoverlapp på 1 mm per side er tatt med i overhøyden.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Fugen er formen kantene får før sveising. Den avgjør om sveisen når gjennom hele godset, hvor mye tilsett som går med, og hvor mye platene trekker seg. Tynne plater sveises uten fasing; tykkere gods må fases slik at buen kommer ned til roten.</p>
+<h3>Fugeformer etter ISO 9692-1</h3>
+<p>Trykk på en fugeform for å se mål og begreper.</p>
+<h3>Begreper</h3>
+<ul class="s4x-ul">
+  <li><b>α / β:</b> stor nok til at elektroden eller pistolen kommer ned og buen smelter begge kanter. Større vinkel gir mer tilsett, mer varme og mer krymping.</li>
+  <li><b>b:</b> gir plass til at rotstrengen trenger gjennom. For liten spalte gir manglende gjennombrenning, for stor gir gjennombrenning og stor rotvulst.</li>
+  <li><b>c:</b> en liten steg tåler varmen fra rotstrengen uten å brenne igjennom. Uten rotflate (c = 0) brenner man lett hull.</li>
+  <li><b>X og K</b> sveises fra begge sider. De bruker omtrent halvparten av tilsettet til en V-fuge og gir mindre vinkelvridning fordi krympingen balanseres.</li>
+</ul>
+<h3>Sveisens deler</h3>
+<figure class="fig">
+  <div class="ctrl"><span class="chips" id="s4x-an-mode" style="margin:0"><button class="chip" type="button" data-m="v" aria-pressed="true">Stumpsveis i V-fuge</button><button class="chip" type="button" data-m="k" aria-pressed="false">Kilsveis i T-skjøt</button></span></div>
+  <svg id="s4x-anat" viewBox="0 0 600 330" role="img" aria-label="Tverrsnitt av sveis med rot, tå, overhøyde, lag og strenger"></svg>
+  <div id="s4x-an-txt" class="small"></div>
+  <figcaption>En <b>streng</b> er én sveisestreng lagt i én omgang. Et <b>lag</b> er én eller flere strenger ved siden av hverandre i samme høyde. Tallene viser rekkefølgen.</figcaption>
+</figure>
+<p>Tåen er der spenningene samles. En jevn, slak overgang ved tåen gir mye bedre utmattingsfasthet enn en høy, bratt overhøyde. Derfor er stor overhøyde en feil, ikke ekstra sikkerhet.</p>
+<h3>Fugeareal og tilsatsmengde, V-fuge</h3>
+<p>Arealet av fugen: A = (t − c)² · tan(α/2) + b · t. I tillegg kommer overhøyden og rotvulsten, regnet som parabelsegmenter (⅔ · bredde · høyde). Masse per meter: m = A · ρ / 10⁶ (kg/m, A i mm², ρ i kg/m³).</p>
+</details>
 </div>
 <div class="topic" id="s4-symboler">
-  <div class="topic-h"><span class="tno">4.2</span><h3>Sveising – symboler, angivelse på tegninger</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Sveisesymbolet består av en pil mot skjøten, en heltrukket referanselinje og en stiplet identifikasjonslinje. Grunnsymbolet plasseres på linjen og forteller fugetypen.</p>
-  <h3>Oppbygging</h3>
-  <div class="diagram" id="weld-anat"></div>
-  <div class="anat">
-    <div><b>Pilside</b>Symbol på den heltrukne linjen: sveisen legges på den siden pilen peker mot.</div>
-    <div><b>Motsatt side</b>Symbol på den stiplede linjen: sveisen legges på motsatt side av skjøten.</div>
-    <div><b>Mål foran symbolet</b>Sveisens tverrsnitt: a-mål eller z-mål for kilsveis, s for gjennomsveis.</div>
-    <div><b>Mål etter symbolet</b>Lengde, eller antall × lengde (avstand) for avbrutt sveis.</div>
-    <div><b>Halen</b>Prosessnummer, kvalitetsnivå og WPS-referanse.</div>
+<div class="topic-h"><span class="tno">4.2</span><h3>Sveising – symboler, angivelse på tegninger</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Oppbygging</h4><span>Pil mot skjøten · heltrukket referanselinje · stiplet identifikasjonslinje</span></div>
+    <div><h4>Side</h4><span>Symbol på heltrukket linje: sveis der pilen peker</span><span>Symbol på stiplet linje: sveis på motsatt side</span></div>
+    <div><h4>Kilsveis</h4><b>z = a · √2</b><span>a = høyden i trekanten, z = beinlengden</span></div>
+    <div><h4>Prosesser (ISO 4063)</h4><span>111 elektrode · 135 MAG · 131 MIG · 141 TIG · 311 gass</span></div>
   </div>
-
-  <h3>Grunnsymboler</h3>
-  <div class="sym-grid" id="weld-basic"></div>
-
-  <h3>Tilleggssymboler</h3>
-  <div class="mods" id="weld-supp"></div>
-
-  <h3>Pilside eller motsatt side?</h3>
-  <figure class="fig">
-    <svg id="fig-side" viewBox="0 0 600 210" role="img" aria-label="Sveisesymbol på heltrukket eller stiplet linje og hvor sveisen havner"></svg>
-    <div class="ctrl"><button class="chip" data-side="arrow" type="button" aria-pressed="true">Pilside</button><button class="chip" data-side="other" type="button" aria-pressed="false">Motsatt side</button><button class="chip" data-side="both" type="button" aria-pressed="false">Begge sider</button></div>
-    <figcaption>Symbol på den heltrukne linjen: sveisen legges der pilen peker. Symbol på den stiplede linjen: sveisen legges på motsatt side av platen.</figcaption>
-  </figure>
-  <h3>a-mål og z-mål for kilsveis</h3>
-  <p>a-målet er høyden i den største likebente trekanten som passer inn i sveisen. z-målet er beinlengden. For en likebent kilsveis er z = a · √2.</p>
-  <div class="calc">
+</div>
+<h3>Oppbygging</h3>
+<div class="diagram" id="weld-anat"></div>
+<h3>Grunnsymboler</h3>
+<div class="sym-grid" id="weld-basic"></div>
+<h3>Tilleggssymboler</h3>
+<div class="mods" id="weld-supp"></div>
+<h3>a-mål og z-mål for kilsveis</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="a-a">a-mål (mm)</label><input id="a-a" inputmode="decimal" value="5"></div>
@@ -1782,19 +1785,46 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="a-out" aria-live="polite"></div>
   </div>
-
-  <figure class="fig">
+<h3>Prosessnumre (ISO 4063)</h3>
+<div class="tbl" id="weld-proc"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Sveisesymbolet består av en pil mot skjøten, en heltrukket referanselinje og en stiplet identifikasjonslinje. Grunnsymbolet plasseres på linjen og forteller fugetypen.</p>
+<h3>Oppbygging</h3>
+<div class="anat">
+    <div><b>Pilside</b>Symbol på den heltrukne linjen: sveisen legges på den siden pilen peker mot.</div>
+    <div><b>Motsatt side</b>Symbol på den stiplede linjen: sveisen legges på motsatt side av skjøten.</div>
+    <div><b>Mål foran symbolet</b>Sveisens tverrsnitt: a-mål eller z-mål for kilsveis, s for gjennomsveis.</div>
+    <div><b>Mål etter symbolet</b>Lengde, eller antall × lengde (avstand) for avbrutt sveis.</div>
+    <div><b>Halen</b>Prosessnummer, kvalitetsnivå og WPS-referanse.</div>
+  </div>
+<h3>Pilside eller motsatt side?</h3>
+<figure class="fig">
+    <svg id="fig-side" viewBox="0 0 600 210" role="img" aria-label="Sveisesymbol på heltrukket eller stiplet linje og hvor sveisen havner"></svg>
+    <div class="ctrl"><button class="chip" data-side="arrow" type="button" aria-pressed="true">Pilside</button><button class="chip" data-side="other" type="button" aria-pressed="false">Motsatt side</button><button class="chip" data-side="both" type="button" aria-pressed="false">Begge sider</button></div>
+    <figcaption>Symbol på den heltrukne linjen: sveisen legges der pilen peker. Symbol på den stiplede linjen: sveisen legges på motsatt side av platen.</figcaption>
+  </figure>
+<h3>a-mål og z-mål for kilsveis</h3>
+<p>a-målet er høyden i den største likebente trekanten som passer inn i sveisen. z-målet er beinlengden. For en likebent kilsveis er z = a · √2.</p>
+<figure class="fig">
     <svg id="fig-az" viewBox="0 0 600 230" role="img" aria-label="Tverrsnitt av kilsveis med a-mål og z-mål"></svg>
     
     
   </figure>
-  <h3>Prosessnumre (ISO 4063)</h3>
-  <div class="tbl" id="weld-proc"></div>
+</details>
 </div>
 <div class="topic" id="s4-roek">
-  <div class="topic-h"><span class="tno">4.3</span><h3>Sveiserøyk – klassifisering og merking av elektroder, krav til avlufting</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Merkingen på elektrodepakken forteller fasthet, seighet, dekktype, strømart, sveisestilling og hydrogeninnhold. Sveiserøyken fra elektroden er kreftfremkallende, så avsug ved kilden er et krav, ikke et valg.</p>
-
+<div class="topic-h"><span class="tno">4.3</span><h3>Sveiserøyk – klassifisering og merking av elektroder, krav til avlufting</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Sveiserøyk</h4><span>Kreftfremkallende (IARC gruppe 1), også fra ulegert stål. Avsug ved kilden er et krav</span></div>
+    <div><h4>Punktavsug</h4><span>Dobbel avstand gir ca. ¼ av lufthastigheten. Hold avsuget nær buen</span></div>
+    <div><h4>Hydrogen</h4><span>H5, H10, H15 = maks 5, 10, 15 ml H₂ per 100 g sveisemetall</span></div>
+    <div><h4>Elektrodemerking</h4><span>E 42 3 B 32 H5: Re 420 MPa, 47 J ved −30 °C, basisk, maks 5 ml H₂</span></div>
+    <div><h4>Grenseverdi</h4><span>Sveiserøyk 5 mg/m³, i tillegg egne verdier for Mn, Ni, Cu og Cr(VI)</span></div>
+  </div>
+</div>
 <h3>Dekoder: EN ISO 2560-A og AWS A5.1/A5.5</h3>
 <div class="calc">
   <div class="fields">
@@ -1804,7 +1834,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-dec-out" aria-live="polite"></div>
 </div>
 <p class="small muted">EN ISO 2560-A (europeisk, flytegrense og 47 J slagseighet) og AWS A5.1 (ulegert) / A5.5 (lavlegert). ISO 2560-B bruker AWS-lignende tall i MPa: E4918 tilsvarer E7018.</p>
-
 <div class="s4x-grid2">
   <div class="tbl"><div class="s4x-cap">Fasthet (ISO 2560-A)</div><div id="s4x-iso-fa"></div></div>
   <div class="tbl"><div class="s4x-cap">Slagseighet 47 J</div><div id="s4x-iso-sl"></div></div>
@@ -1814,11 +1843,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="tbl"><div class="s4x-cap">AWS: to siste sifre</div><div id="s4x-aws-dk"></div></div>
 </div>
 <p class="small muted">Hydrogen: H5, H10 og H15 = maks 5, 10 og 15 ml H₂ per 100 g sveisemetall. Lavt hydrogen (basiske elektroder, tørket) motvirker kaldsprekker i sterke og tykke stål.</p>
-
 <h3>Sveiserøyk er kreftfremkallende</h3>
 <p>IARC klassifiserte sveiserøyk i <b>gruppe 1, kreftfremkallende for mennesker</b> (Monografi 118, vurdert 2017, utgitt 2018). Det gjelder all sveiserøyk, også fra ulegert stål. UV-strålingen fra buen er også i gruppe 1. Røyken er partikler under 1 µm som når helt ned i lungeblærene.</p>
 <div class="tbl" id="s4x-fume"></div>
-
 <h3>Tiltak i prioritert rekkefølge</h3>
 <ol class="s4x-ul">
   <li><b>Fjerne eller erstatte:</b> velg prosess og tilsett som gir lite røyk (TIG og pulverbue gir lite, rørtråd og elektrode mye). Fjern maling, sink og olje før sveising. Lav strøm og kort bue gir mindre røyk.</li>
@@ -1826,7 +1853,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Organisatoriske tiltak:</b> hold hodet utenfor røykfanen, begrens tid, hold andre unna, rengjør og vedlikehold avsuget.</li>
   <li><b>Personlig verneutstyr:</b> friskluftforsynt sveisehjelm når de andre tiltakene ikke er nok, alltid ved rustfritt og i trange rom.</li>
 </ol>
-
 <h3>Norske krav</h3>
 <ul class="s4x-ul">
   <li>Arbeidsgiver skal kartlegge og risikovurdere sveiserøyk, og ofte måle eksponeringen (forskrift om utførelse av arbeid kap. 5 <i>Varmt arbeid</i>, §§ 5-1 og 5-2).</li>
@@ -1836,7 +1862,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Opplæring i varmt arbeid (§ 5-3).</li>
 </ul>
 <p class="small muted">Kilder: Arbeidstilsynet, «Varmt arbeid» og «Målinger av sveiserøyk»; forskrift om utførelse av arbeid kap. 5, § 3-11 og kap. 31; forskrift om tiltaks- og grenseverdier, vedlegg 1. Sjekk gjeldende utgave på arbeidstilsynet.no.</p>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Merkingen på elektrodepakken forteller fasthet, seighet, dekktype, strømart, sveisestilling og hydrogeninnhold. Sveiserøyken fra elektroden er kreftfremkallende, så avsug ved kilden er et krav, ikke et valg.</p>
 <h3>Punktavsug: avstanden avgjør</h3>
 <p>Lufthastigheten foran en avsugsåpning faller omtrent med kvadratet av avstanden: <b>v = Q / (10 · x² + A)</b> (Dalla Valle, åpning uten flens; med flens trengs ca. 25 % mindre luft). Dobbel avstand gir omtrent en firedel av hastigheten. Ved sveising bør fangsthastigheten ved kilden være ca. 0,5–1,0 m/s.</p>
 <figure class="fig">
@@ -1849,48 +1877,73 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div id="s4x-ex-read" class="small" aria-live="polite"></div>
   <figcaption>Avsugsarm med Ø160 mm åpning. Fangsthastighet etter ACGIH <i>Industrial Ventilation</i> (sveising: 0,5–1,0 m/s). Trekk i rommet krever høyere hastighet.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="s4-gass">
-  <div class="topic-h"><span class="tno">4.4</span><h3>Anbefalte beskyttelsesgasser</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Beskyttelsesgassen holder luft borte fra smeltebadet. I tillegg styrer den buen: inert gass (argon, helium) reagerer ikke, mens aktiv gass (CO₂, O₂) stabiliserer buen på stål og gir bedre innbrenning.</p>
-
+<div class="topic-h"><span class="tno">4.4</span><h3>Anbefalte beskyttelsesgasser</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Klasser (ISO 14175)</h4><span>I1 = ren argon (TIG, MIG på aluminium)</span><span>M21 = argon + 15–25 % CO₂ (MAG på stål) · C1 = ren CO₂</span></div>
+    <div><h4>Rørtråd</h4><span>Bruk gassen leverandøren oppgir, typisk M21 eller C1</span></div>
+    <div><h4>Formiergass</h4><span>Rustfritt og titan trenger rotbeskyttelse. Fortrenger oksygen: ventiler trange rom</span></div>
+  </div>
+</div>
 <h3>Klasser etter EN ISO 14175</h3>
 <div class="tbl" id="s4x-gcls"></div>
 <p class="small muted">EN ISO 14175:2008. Resten er argon; i M- og R-gruppene kan argon helt eller delvis erstattes av helium. Eksempel på betegnelse: <span class="mono">ISO 14175 – M21 – ArC – 18</span> = argon med 18 % CO₂.</p>
-
 <h3>Valg av gass</h3>
 <div class="tbl" id="s4x-gsel"></div>
 <p class="small muted">Følg tilsatsleverandørens gass for rørtråd: flussen er avstemt mot en bestemt gass (typisk M21 eller C1).</p>
-
 <h3>Formiergass (rotgass)</h3>
-<p>Ved sveising av rustfritt og titan må baksiden av roten også beskyttes. Uten formiergass oksiderer roten (blå og svarte anløpsfarger, «sukring»), og den kromfattige oksidhuden ødelegger korrosjonsbestandigheten. Røret eller baksiden spyles før tenning og under hele rotsveisingen.</p>
 <div class="tbl" id="s4x-ftab"></div>
 <figure class="fig">
   <svg id="s4x-purge" viewBox="0 0 600 220" role="img" aria-label="Rør som spyles med formiergass, argon inn nederst og nitrogen-hydrogen inn øverst"></svg>
   <figcaption>Argon er tyngre enn luft (ca. 1,4 ganger) og fyller fra bunnen, så luften skal ut på toppen. N₂/H₂ er lettere enn luft og fylles fra toppen. Spyl til restoksygenet er lavt nok (mål med O₂-måler); kravet står i WPS-en.</figcaption>
 </figure>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Beskyttelsesgassen holder luft borte fra smeltebadet. I tillegg styrer den buen: inert gass (argon, helium) reagerer ikke, mens aktiv gass (CO₂, O₂) stabiliserer buen på stål og gir bedre innbrenning.</p>
+<h3>Formiergass (rotgass)</h3>
+<p>Ved sveising av rustfritt og titan må baksiden av roten også beskyttes. Uten formiergass oksiderer roten (blå og svarte anløpsfarger, «sukring»), og den kromfattige oksidhuden ødelegger korrosjonsbestandigheten. Røret eller baksiden spyles før tenning og under hele rotsveisingen.</p>
 <p>Hydrogenholdig formiergass kan være brennbar ved utløpet ved høyt H₂-innhold. Les sikkerhetsdatabladet, og sørg for ventilasjon: alle formiergasser fortrenger oksygen, og trange rom og rør er livsfarlige.</p>
+</details>
 </div>
 <div class="topic" id="s4-elektroder">
-  <div class="topic-h"><span class="tno">4.5</span><h3>Sammenligningsliste over elektroder</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Europeiske (EN ISO) og amerikanske (AWS) betegnelser beskriver samme tilsett på ulik måte. EN ISO 2560-A oppgir flytegrense og temperatur for 47 J; AWS oppgir strekkfasthet i ksi og har ofte 27 J. Derfor er ekvivalensen omtrentlig: sammenlign alltid kravene i WPS-en med produktets sertifikat.</p>
+<div class="topic-h"><span class="tno">4.5</span><h3>Sammenligningsliste over elektroder</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>EN ISO ↔ AWS</h4><span>E 42 x B 32 H5 ≈ E7018 (basisk) · E 38 x R/RC 1x ≈ E6013 (rutil) · E 38 x C 21 ≈ E6010 (cellulose)</span></div>
+    <div><h4>Rustfritt</h4><span>308L til 304 · 316L til 316L · 309L mellom ulegert og rustfritt («svart–hvitt»)</span></div>
+  </div>
+</div>
 <div class="filter"><label for="s4x-el-q" class="small muted">Søk</label><input id="s4x-el-q" placeholder="f.eks. 7018, 316L, SG2" autocomplete="off"><span id="s4x-el-n" class="small muted"></span></div>
 <div class="tbl" id="s4x-el-tab"></div>
 <p class="small muted">«x» betyr at symbolet varierer mellom produkter (typisk slagtemperatur). Standarder: EN ISO 2560-A ↔ AWS A5.1 (ulegerte elektroder), AWS A5.5 og EN ISO 3580-A (lavlegerte/varmfaste), EN ISO 14341-A ↔ AWS A5.18 (MAG-tråd), EN ISO 636-A (TIG-stav), EN ISO 3581-A ↔ AWS A5.4 (rustfrie elektroder), EN ISO 14343-A ↔ AWS A5.9 (rustfri tråd/stav), EN ISO 18273 ↔ AWS A5.10 (aluminium). SG2/SG3 er gamle DIN 8559-navn som fortsatt brukes i verkstedet.</p>
 <div class="note"><p><b>Rustfritt:</b> 308L til 1.4301/1.4307 (304), 316L til 1.4404 (316L). 309L har mer krom og nikkel og brukes mellom ulegert og rustfritt stål («svart–hvitt»), fordi oppblandingen med ulegert stål ellers gir martensitt og sprekker.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Europeiske (EN ISO) og amerikanske (AWS) betegnelser beskriver samme tilsett på ulik måte. EN ISO 2560-A oppgir flytegrense og temperatur for 47 J; AWS oppgir strekkfasthet i ksi og har ofte 27 J. Derfor er ekvivalensen omtrentlig: sammenlign alltid kravene i WPS-en med produktets sertifikat.</p>
+</details>
 </div>
 <div class="topic" id="s4-gassmengde">
-  <div class="topic-h"><span class="tno">4.6</span><h3>Gassmengde for TIG og MAG (håndformel)</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">For lite gass slipper inn luft og gir porer. For mye gass blir turbulent, suger inn luft, og gir også porer. Riktig mengde avhenger av tråd, dyse, strøm og trekk.</p>
-
+<div class="topic-h"><span class="tno">4.6</span><h3>Gassmengde for TIG og MAG (håndformel)</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>MAG / MIG</h4><b>l/min ≈ 10 × tråd-Ø (mm)</b><span>1,2 mm → ca. 12 l/min</span></div>
+    <div><h4>TIG</h4><span>Følg dysen og strømmen, se tabellen</span></div>
+    <div><h4>Helium</h4><span>Argon-måler viser for lite: rent helium ≈ 3,2 × avlest</span></div>
+    <div><h4>Trekk</h4><span>Gassen går ut med 1–2 m/s. Skjerm ved vind over ca. 2 m/s. Mer gass hjelper ikke</span></div>
+  </div>
+</div>
 <h3>Håndformler</h3>
 <dl class="kv">
   <div><dt>MAG / MIG</dt><dd>l/min ≈ 10 × tråd-Ø (mm)</dd></div>
   <div><dt>Eksempel</dt><dd>1,2 mm → ca. 12 l/min</dd></div>
   <div><dt>TIG</dt><dd>se tabell (veiledende)</dd></div>
 </dl>
-<p>For TIG finnes ingen like sikker håndformel; mengden følger gassdysen og strømmen. Tabellen under er veiledende.</p>
-
 <div class="calc" id="s4x-gm-calc">
   <div class="fields">
     <div class="field"><label for="s4x-gm-pr">Prosess</label><select id="s4x-gm-pr"><option value="mag">MAG/MIG (135/131)</option><option value="tig">TIG (141)</option></select></div>
@@ -1906,14 +1959,17 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-gm-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Helium: en strømningsmåler kalibrert for argon viser for lite når gassen er lettere. Faktisk mengde ≈ avlest · √(ρ<sub>Ar</sub>/ρ<sub>gass</sub>), for rent helium ca. 3,2 ganger avlest. Flaskeinnhold ≈ volum × trykk (ideell gass, veiledende).</p>
-
 <h3>Veiledende gassmengder</h3>
 <div class="two">
   <div class="tbl" id="s4x-gm-mag"></div>
   <div class="tbl" id="s4x-gm-tig"></div>
 </div>
 <p class="small muted"><b>Veiledende</b> verdier for argonbaserte gasser. Spraybue og høy strøm trenger øvre del av området. TIG-dysenummer = innerdiameter i 1/16″ (nr. 6 = 9,5 mm). Gasslinse gir laminær strøm og tåler lengre utstikk.</p>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">For lite gass slipper inn luft og gir porer. For mye gass blir turbulent, suger inn luft, og gir også porer. Riktig mengde avhenger av tråd, dyse, strøm og trekk.</p>
+<h3>Håndformler</h3>
+<p>For TIG finnes ingen like sikker håndformel; mengden følger gassdysen og strømmen. Tabellen under er veiledende.</p>
 <h3>Trekk og turbulens</h3>
 <p>Gassen kommer ut av dysen med bare 1–2 m/s. Et trekk i samme størrelse blåser den bort fra smeltebadet. AWS D1.1 tillater gassbeskyttet sveising bare i vind opp til ca. 8 km/t (2,2 m/s) uten skjerming. Øker man gassmengden for å kompensere, blir strømningen turbulent (Reynoldstall over ca. 2000) og drar inn luft.</p>
 <figure class="fig">
@@ -1926,12 +1982,19 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div id="s4x-dr-read" class="small" aria-live="polite"></div>
   <figcaption>MAG med 16 mm gassdyse og ca. 15 mm fra dyse til arbeidsstykke. Prikkene er gass (blå) og luft (rød). Porene i strengen viser hvor luft nådde smeltebadet. Forenklet modell.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="s4-wolfram">
-  <div class="topic-h"><span class="tno">4.7</span><h3>Wolframtråd-diameter (huskeregel)</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Wolframelektroden skal tåle strømmen uten at spissen smelter, men ikke være så tykk at buen blir ustabil ved lav strøm. Velg den minste diameteren som tåler strømmen.</p>
+<div class="topic-h"><span class="tno">4.7</span><h3>Wolframtråd-diameter (huskeregel)</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Diameter</h4><span>DC−: ca. 100 A per mm (2,4 mm → ca. 240 A)</span><span>AC: ca. ½–⅔ av dette</span></div>
+    <div><h4>Farger (ISO 6848)</h4><span>WP grønn · WCe 20 grå · WLa 10 svart · WLa 15 gull</span></div>
+    <div><h4>Sliping</h4><span>Slip på langs, med egen diamantskive</span></div>
+  </div>
+</div>
 <div class="note"><p><b>Huskeregel (veiledende):</b> med DC− tåler elektroden ca. <b>100 A per mm diameter</b> (2,4 mm → ca. 240 A). Med AC tåler den bare omtrent halvparten til to tredjedeler, fordi elektroden er pluss i halve perioden og da får mesteparten av varmen.</p></div>
-
 <div class="calc" id="s4x-w-calc">
   <div class="fields">
     <div class="row2">
@@ -1943,11 +2006,12 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl" id="s4x-w-tab"></div>
 <p class="small muted"><b>Veiledende</b> strømområder for legerte elektroder (WCe 20, WLa 15/20) med argon. Produsentens tabell gjelder. Ren wolfram (WP) tåler mindre.</p>
-
 <h3>Typer og fargekoder (ISO 6848)</h3>
 <div class="tbl" id="s4x-w-col"></div>
 <p class="small muted">Etter ISO 6848:2015, tabell 1. Fargen sitter på enden av elektroden. AWS A5.12 bruker delvis andre farger (for eksempel oransje for EWCe-2). Thorierte elektroder er svakt radioaktive: slipestøvet må ikke pustes inn, og de erstattes i dag av cerium og lantan.</p>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Wolframelektroden skal tåle strømmen uten at spissen smelter, men ikke være så tykk at buen blir ustabil ved lav strøm. Velg den minste diameteren som tåler strømmen.</p>
 <h3>Sliping av spissen</h3>
 <p>Slip alltid <b>på langs</b>, med elektroden pekende i slipeskivens rotasjonsretning. Slipesporene leder da buen rett ut av spissen. Tverrslipte spor gir en bue som vandrer. Bruk egen skive (diamant) som ikke forurenser wolframen med stål.</p>
 <figure class="fig">
@@ -1957,22 +2021,20 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <figcaption>Spisslengde L = d / (2 · tan(θ/2)). En spiss med lengde 2–2,5 × d gir ca. 22–28°. Liten spissvinkel: bred bue, lite innbrenning, kort levetid. Stor spissvinkel: smal bue, dypere innbrenning, lengre levetid. Ved høy strøm gir en liten avflatning i tuppen at spissen ikke smelter av.</figcaption>
 </figure>
 <p>Ved AC på aluminium med moderne inverter brukes en litt butt spiss. På eldre transformatormaskiner smeltes en kule på ren wolfram (WP) eller zirkonium (WZr).</p>
+</details>
 </div>
 <div class="topic" id="s4-gassveis">
-  <div class="topic-h"><span class="tno">4.8</span><h3>Gassveising og -skjæring</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Ved gassveising (prosess 311) smelter en oksygen–acetylenflamme kantene og tilsettstaven. Flammen er mykere enn en bue, så gassveising egner seg til tynne plater, rør og reparasjoner, og til oppvarming, lodding og retting.</p>
-
-<h3>Flammetyper</h3>
-<figure class="fig">
-  <svg id="s4x-fl-fig" viewBox="0 0 600 300" role="img" aria-label="Reduserende, nøytral og oksiderende flamme"></svg>
-  <figcaption>Den høyeste temperaturen, ca. 3100 °C, ligger 2–5 mm foran flammekjernen. Der holdes smeltebadet.</figcaption>
-</figure>
-<ul class="s4x-ul">
-  <li><b>Nøytral</b> (O₂ : C₂H₂ ca. 1 : 1 fra brenneren): skarp, avrundet kjerne. Brukes til stål, kobber og de fleste materialer. Resten av oksygenet til forbrenningen kommer fra lufta.</li>
-  <li><b>Reduserende</b> (acetylenoverskudd): en lys «fjær» rundt kjernen. Karbon tas opp i badet; brukes til påleggssveising og noe støpejern og aluminium.</li>
-  <li><b>Oksiderende</b> (oksygenoverskudd): kort, spiss kjerne og hvesende lyd. Brenner stål, men brukes på messing fordi oksidhuden holder sinken tilbake.</li>
-</ul>
-
+<div class="topic-h"><span class="tno">4.8</span><h3>Gassveising og -skjæring</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Flamme</h4><span>Nøytral 1 : 1 til stål og kobber · reduserende for påleggssveising · oksiderende til messing</span></div>
+    <div><h4>Teknikk</h4><span>Venstresveising opp til ca. 3 mm · høyresveising over 3 mm</span></div>
+    <div><h4>Forbruk</h4><span>Acetylen ca. 100 l/h per mm stål</span></div>
+    <div><h4>Skjærebrenner</h4><span>Bare ulegert og lavlegert stål. Rustfritt, aluminium og støpejern: plasma eller laser</span></div>
+    <div><h4>Sikkerhet</h4><span>Aldri fett på oksygenutstyr · acetylen aldri over 1,5 bar · tilbakeslagssikring på begge gasser</span></div>
+  </div>
+</div>
 <h3>Munnstykke og trykk</h3>
 <div class="calc" id="s4x-gv-calc">
   <div class="fields"><div class="field"><label for="s4x-gv-t">Godstykkelse stål (mm)</label><input id="s4x-gv-t" inputmode="decimal" value="3"></div></div>
@@ -1980,30 +2042,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl" id="s4x-gv-tab"></div>
 <p class="small muted"><b>Veiledende</b> for injektorbrennere. Sveiseinnsatsene er stemplet med godstykkelsen de er laget for. Acetylenforbruk ca. 100 l/h per mm stål; oksygenforbruket er litt høyere ved nøytral flamme. Følg brennerprodusentens tabell. Acetylen må aldri brukes over 1,5 bar.</p>
-
-<h3>Venstre- og høyresveising</h3>
-<figure class="fig">
-  <svg id="s4x-lr-fig" viewBox="0 0 600 220" role="img" aria-label="Brenner- og stavstilling ved venstre- og høyresveising"></svg>
-  <figcaption>For en høyrehendt sveiser: brenneren i høyre hånd peker mot venstre, staven i venstre hånd. Venstresveising: sveisen går mot venstre, flammen peker fremover mot det kalde godset og staven går foran. Høyresveising: sveisen går mot høyre, flammen peker bakover mot den ferdige sveisen og staven går bak flammen.</figcaption>
-</figure>
-<ul class="s4x-ul">
-  <li><b>Venstresveising</b> brukes på tynt gods, ca. opp til 3 mm. Flammen forvarmer kantene uten å brenne igjennom, og badet er lett å styre.</li>
-  <li><b>Høyresveising</b> brukes over ca. 3 mm. Flammen varmer badet og roten direkte, beskytter sveisen mens den kjøles, og gir smalere fuge og høyere hastighet.</li>
-</ul>
-
-<h3>Skjærebrenner</h3>
-<p>Oksygenskjæring smelter ikke stålet; den <b>brenner</b> det. Forvarmeflammen varmer stålet til antennelsestemperaturen (ca. 1150 °C), og skjæreoksygenet forbrenner jernet til jernoksid, som blåses ut. Det virker bare når:</p>
-<ul class="s4x-ul">
-  <li>antennelsestemperaturen er lavere enn smeltepunktet (ellers renner metallet bort),</li>
-  <li>oksidet smelter ved lavere temperatur enn metallet (ellers danner det et lokk), og</li>
-  <li>forbrenningen gir nok varme til å holde prosessen i gang.</li>
-</ul>
-<p>Ulegert og lavlegert stål oppfyller dette. Rustfritt stål, aluminium, kobber og støpejern gjør det ikke; de skjæres med plasma eller laser. Stål med høyt karboninnhold må forvarmes for å unngå herdesprekker i snittkanten.</p>
-
 <h3>Flaskefarger (EN 1089-3)</h3>
 <div class="tbl" id="s4x-cyl"></div>
 <p class="small muted">EN 1089-3: fargen gjelder flaskens <b>skulder</b>; stor «N» på skulderen viser den nye fargekoden. Kroppsfargen er ikke normert. Gassen identifiseres alltid ut fra etiketten, ikke fargen. Slanger etter EN ISO 3821: blå for oksygen, rød for acetylen og andre brenngasser.</p>
-
 <h3>Tilbakeslagssikring og sikkerhet</h3>
 <p>Ved tilbakeslag brenner flammen inn i brenneren og kan gå videre inn i slangen. En tilbakeslagssikring etter EN ISO 5175-1 skal sitte på <b>både oksygen- og acetylensiden</b>, normalt på regulatoren. Den har tilbakestrømningsventil (hindrer gassblanding i slangen), flammesperre (sintret filter som slukker flammen), og ofte temperatur- og trykkutløst stengeventil.</p>
 <ul class="s4x-ul">
@@ -2014,37 +2055,59 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Lekkasjesøk med lekkasjespray, aldri med flamme. Steng flaskeventilene og tøm slangene etter bruk.</li>
   <li>Varmt arbeid utenfor fast sveiseplass krever normalt sertifikat for varme arbeider og brannvakt.</li>
 </ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved gassveising (prosess 311) smelter en oksygen–acetylenflamme kantene og tilsettstaven. Flammen er mykere enn en bue, så gassveising egner seg til tynne plater, rør og reparasjoner, og til oppvarming, lodding og retting.</p>
+<h3>Flammetyper</h3>
+<figure class="fig">
+  <svg id="s4x-fl-fig" viewBox="0 0 600 300" role="img" aria-label="Reduserende, nøytral og oksiderende flamme"></svg>
+  <figcaption>Den høyeste temperaturen, ca. 3100 °C, ligger 2–5 mm foran flammekjernen. Der holdes smeltebadet.</figcaption>
+</figure>
+<ul class="s4x-ul">
+  <li><b>Nøytral</b> (O₂ : C₂H₂ ca. 1 : 1 fra brenneren): skarp, avrundet kjerne. Brukes til stål, kobber og de fleste materialer. Resten av oksygenet til forbrenningen kommer fra lufta.</li>
+  <li><b>Reduserende</b> (acetylenoverskudd): en lys «fjær» rundt kjernen. Karbon tas opp i badet; brukes til påleggssveising og noe støpejern og aluminium.</li>
+  <li><b>Oksiderende</b> (oksygenoverskudd): kort, spiss kjerne og hvesende lyd. Brenner stål, men brukes på messing fordi oksidhuden holder sinken tilbake.</li>
+</ul>
+<h3>Venstre- og høyresveising</h3>
+<figure class="fig">
+  <svg id="s4x-lr-fig" viewBox="0 0 600 220" role="img" aria-label="Brenner- og stavstilling ved venstre- og høyresveising"></svg>
+  <figcaption>For en høyrehendt sveiser: brenneren i høyre hånd peker mot venstre, staven i venstre hånd. Venstresveising: sveisen går mot venstre, flammen peker fremover mot det kalde godset og staven går foran. Høyresveising: sveisen går mot høyre, flammen peker bakover mot den ferdige sveisen og staven går bak flammen.</figcaption>
+</figure>
+<ul class="s4x-ul">
+  <li><b>Venstresveising</b> brukes på tynt gods, ca. opp til 3 mm. Flammen forvarmer kantene uten å brenne igjennom, og badet er lett å styre.</li>
+  <li><b>Høyresveising</b> brukes over ca. 3 mm. Flammen varmer badet og roten direkte, beskytter sveisen mens den kjøles, og gir smalere fuge og høyere hastighet.</li>
+</ul>
+<h3>Skjærebrenner</h3>
+<p>Oksygenskjæring smelter ikke stålet; den <b>brenner</b> det. Forvarmeflammen varmer stålet til antennelsestemperaturen (ca. 1150 °C), og skjæreoksygenet forbrenner jernet til jernoksid, som blåses ut. Det virker bare når:</p>
+<ul class="s4x-ul">
+  <li>antennelsestemperaturen er lavere enn smeltepunktet (ellers renner metallet bort),</li>
+  <li>oksidet smelter ved lavere temperatur enn metallet (ellers danner det et lokk), og</li>
+  <li>forbrenningen gir nok varme til å holde prosessen i gang.</li>
+</ul>
+<p>Ulegert og lavlegert stål oppfyller dette. Rustfritt stål, aluminium, kobber og støpejern gjør det ikke; de skjæres med plasma eller laser. Stål med høyt karboninnhold må forvarmes for å unngå herdesprekker i snittkanten.</p>
+</details>
 </div>
 <div class="topic" id="s4-bue">
-  <div class="topic-h"><span class="tno">4.9</span><h3>Elektrisk buesveising</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">I buesveising smelter en elektrisk lysbue mellom elektroden og arbeidsstykket metallet. Strømkilden, polariteten og innstillingene bestemmer hvordan buen oppfører seg.</p>
-
+<div class="topic-h"><span class="tno">4.9</span><h3>Elektrisk buesveising</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Strøm, dekket elektrode</h4><b>I ≈ 40 × d</b><span>A, d = kjernetråd i mm. 10–20 % lavere vertikalt</span></div>
+    <div><h4>Buespenning (EN IEC 60974-1)</h4><b>U = 20 + 0,04 · I</b><span>elektrode</span><b>U = 10 + 0,04 · I</b><span>TIG</span><b>U = 14 + 0,05 · I</b><span>MIG/MAG</span></div>
+    <div><h4>Varmetilførsel</h4><b>Q = k · U · I · 60 / (v · 1000)</b><span>kJ/mm, v i mm/min</span><span>k: 121 = 1,0 · 111, 13x = 0,8 · 141 = 0,6</span></div>
+    <div><h4>Strømkilde</h4><span>Fallende (CC): elektrode og TIG · flat (CV): MIG/MAG</span></div>
+  </div>
+  <div class="hurtig-u">U buespenning (V) · I strøm (A) · v sveisehastighet</div>
+</div>
 <h3>Prosesser (ISO 4063)</h3>
 <div class="tbl" id="s4x-pr-tab"></div>
 <p class="small muted">k = termisk virkningsgrad etter EN 1011-1, brukt i formelen for varmetilførsel nedenfor. Se også prosesslisten under 4.2.</p>
-
 <h3>Strømkildens karakteristikk</h3>
-<p>Arbeidspunktet ligger der strømkildens kurve krysser buens kurve. Buespenningen øker med buelengden. Hvordan strømmen da endrer seg, avhenger av kurveformen:</p>
-<ul class="s4x-ul">
-  <li><b>Fallende (konstant strøm, CC)</b> for elektrode (111) og TIG (141): sveiseren styrer buelengden med hånden. Strømmen, og dermed innbrenningen, holder seg nesten konstant selv om hånden skjelver.</li>
-  <li><b>Flat (konstant spenning, CV)</b> for MIG/MAG (13x): tråden mates med fast hastighet. Blir buen kortere, øker strømmen kraftig, tråden smelter raskere og buen blir lengre igjen. Buen regulerer seg selv.</li>
-</ul>
-<figure class="fig">
-  <div class="ctrl"><span class="chips" id="s4x-ch-mode" style="margin:0"><button class="chip" type="button" data-m="cc" aria-pressed="true">Fallende (111, 141)</button><button class="chip" type="button" data-m="cv" aria-pressed="false">Flat (13x)</button></span></div>
-  <svg id="s4x-ch-fig" viewBox="0 0 600 320" role="img" aria-label="Spenning mot strøm for strømkilde og bue, med arbeidspunkt"></svg>
-  <div class="ctrl"><label for="s4x-ch-l" class="small muted">Buelengde</label><input type="range" id="s4x-ch-l" min="2" max="8" step="0.1" value="4" style="flex:1;min-width:160px"><span class="mono" id="s4x-ch-lv"></span></div>
-  <div id="s4x-ch-read" class="small" aria-live="polite"></div>
-  <figcaption>Skjematisk. Den stiplede kurven er utgangspunktet ved 4 mm buelengde.</figcaption>
-</figure>
-<p>Normerte arbeidsspenninger (EN IEC 60974-1) gir en god startverdi ved innstilling:</p>
 <div class="tbl" id="s4x-ul-tab"></div>
-
 <h3>Polaritet</h3>
 <div class="tbl" id="s4x-pol-tab"></div>
 <p class="small muted">DC− = elektroden på minus (rett polaritet), DC+ = elektroden på pluss (omvendt polaritet). Følg alltid elektrodepakken. Jordkabelen (returkabelen) festes nær sveisestedet på arbeidsstykket; ellers kan sveisestrøm gå gjennom jordledere og bygningsdeler. Sveiseutstyr kobles og vedlikeholdes etter NEK 400 / FSE.</p>
-
 <h3>Strøm for dekket elektrode (111)</h3>
-<p>Håndregel: <b>I ≈ 40 × d</b> (A, d = kjernetrådens diameter i mm). Senk strømmen ca. 10–20 % vertikalt og over hode, der badet ellers renner.</p>
 <div class="calc" id="s4x-mma-calc">
   <div class="fields">
     <div class="row2">
@@ -2056,9 +2119,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl" id="s4x-mma-tab"></div>
 <p class="small muted"><b>Veiledende</b> strømområder for rutile og basiske elektroder i flat stilling. Pakningens område gjelder.</p>
-
 <h3>Varmetilførsel</h3>
-<p><b>Q = k · U · I · 60 / (v · 1000)</b> &nbsp;(kJ/mm), der U er buespenning (V), I er strøm (A) og v er sveisehastighet (mm/min). Uten k er det buenergien. For mye varme gir grove korn og lav seighet; for lite gir harde soner og sprekker. WPS-en angir ofte grenser.</p>
 <div class="calc" id="s4x-q-calc">
   <div class="fields">
     <div class="field"><label for="s4x-q-pr">Prosess</label><select id="s4x-q-pr"></select></div>
@@ -2074,27 +2135,65 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-q-out" aria-live="polite"></div>
 </div>
 <p class="small muted">k etter EN 1011-1: 121 = 1,0; 111, 114, 13x = 0,8; 141 og 15 = 0,6.</p>
-
 <h3>Sveisefeil: årsak og tiltak</h3>
 <div class="tbl" id="s4x-def-tab"></div>
 <p class="small muted">Nummer etter ISO 6520-1. Akseptkriterier (kvalitetsnivå B, C, D) står i ISO 5817.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">I buesveising smelter en elektrisk lysbue mellom elektroden og arbeidsstykket metallet. Strømkilden, polariteten og innstillingene bestemmer hvordan buen oppfører seg.</p>
+<h3>Strømkildens karakteristikk</h3>
+<p>Arbeidspunktet ligger der strømkildens kurve krysser buens kurve. Buespenningen øker med buelengden. Hvordan strømmen da endrer seg, avhenger av kurveformen:</p>
+<ul class="s4x-ul">
+  <li><b>Fallende (konstant strøm, CC)</b> for elektrode (111) og TIG (141): sveiseren styrer buelengden med hånden. Strømmen, og dermed innbrenningen, holder seg nesten konstant selv om hånden skjelver.</li>
+  <li><b>Flat (konstant spenning, CV)</b> for MIG/MAG (13x): tråden mates med fast hastighet. Blir buen kortere, øker strømmen kraftig, tråden smelter raskere og buen blir lengre igjen. Buen regulerer seg selv.</li>
+</ul>
+<figure class="fig">
+  <div class="ctrl"><span class="chips" id="s4x-ch-mode" style="margin:0"><button class="chip" type="button" data-m="cc" aria-pressed="true">Fallende (111, 141)</button><button class="chip" type="button" data-m="cv" aria-pressed="false">Flat (13x)</button></span></div>
+  <svg id="s4x-ch-fig" viewBox="0 0 600 320" role="img" aria-label="Spenning mot strøm for strømkilde og bue, med arbeidspunkt"></svg>
+  <div class="ctrl"><label for="s4x-ch-l" class="small muted">Buelengde</label><input type="range" id="s4x-ch-l" min="2" max="8" step="0.1" value="4" style="flex:1;min-width:160px"><span class="mono" id="s4x-ch-lv"></span></div>
+  <div id="s4x-ch-read" class="small" aria-live="polite"></div>
+  <figcaption>Skjematisk. Den stiplede kurven er utgangspunktet ved 4 mm buelengde.</figcaption>
+</figure>
+<p>Normerte arbeidsspenninger (EN IEC 60974-1) gir en god startverdi ved innstilling:</p>
+<h3>Strøm for dekket elektrode (111)</h3>
+<p>Håndregel: <b>I ≈ 40 × d</b> (A, d = kjernetrådens diameter i mm). Senk strømmen ca. 10–20 % vertikalt og over hode, der badet ellers renner.</p>
+<h3>Varmetilførsel</h3>
+<p><b>Q = k · U · I · 60 / (v · 1000)</b> &nbsp;(kJ/mm), der U er buespenning (V), I er strøm (A) og v er sveisehastighet (mm/min). Uten k er det buenergien. For mye varme gir grove korn og lav seighet; for lite gir harde soner og sprekker. WPS-en angir ofte grenser.</p>
+</details>
 </div>
 <div class="topic" id="s4-lodd">
-  <div class="topic-h"><span class="tno">4.10</span><h3>Hardlodding, sveiselodding</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Ved lodding smelter bare tilsettet (loddet), ikke grunnmaterialet. Loddet fukter overflatene og binder seg til dem ved diffusjon. Derfor kan ulike metaller, for eksempel kobber og stål, sammenføyes, og varmen blir lavere enn ved sveising.</p>
-
+<div class="topic-h"><span class="tno">4.10</span><h3>Hardlodding, sveiselodding</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Lodding</h4><span>Bløtlodding under 450 °C · hardlodding over 450 °C. Grunnmaterialet smelter ikke</span></div>
+    <div><h4>Spalte</h4><span>0,05–0,2 mm. Halv spalte gir dobbelt kapillærtrykk</span></div>
+    <div><h4>Overlapp</h4><span>Ca. 3 × tynneste godstykkelse. Lodd tåler skjær best</span></div>
+    <div><h4>Forbudt og feil</h4><span>Kadmiumlodd er forbudt · CuP-lodd ikke på stål eller nikkel</span></div>
+  </div>
+</div>
 <h3>Tre metoder</h3>
 <div class="tbl" id="s4x-lo-cmp"></div>
-
 <h3>Loddemetaller (ISO 17672)</h3>
 <div class="tbl" id="s4x-lo-tab"></div>
 <p class="small muted">Etter ISO 17672 (hardlodd) og ISO 9453 (bløtlodd); temperaturer er solidus–likvidus. Arbeidstemperaturen ligger litt over likvidus. Lodd med kadmium er forbudt i EU og skal ikke brukes. Fosforholdig lodd (CuP) må ikke brukes på stål eller nikkel: det danner sprø fosfider.</p>
-
 <h3>Flussmiddel</h3>
-<p>Flussmiddelet løser oksidene og hindrer nye i å dannes, slik at loddet kan fukte. Det viser også temperaturen: flussen blir klar og flytende når loddetemperaturen er nådd. Flussrester er korrosive og vaskes bort med varmt vann.</p>
 <div class="tbl" id="s4x-fx-tab"></div>
 <p class="small muted">Typer etter EN 1045, nå erstattet av EN ISO 18496. Temperaturområdene er virkeområdet for flussen.</p>
-
+<h3>Arbeidsgang ved hardlodding</h3>
+<ol class="s4x-ul">
+  <li><b>Tilpass:</b> riktig spalte, og overlapp på ca. 3 × tynneste godstykkelse (veiledende). Lodd tåler skjær best, ikke strekk.</li>
+  <li><b>Rengjør:</b> slip eller puss blankt, og avfett. Loddet fukter ikke oksid, olje eller maling.</li>
+  <li><b>Fluss:</b> påfør på begge deler før oppvarming (ikke nødvendig ved CuP på kobber).</li>
+  <li><b>Varm opp</b> hele skjøten jevnt med bred, lett reduserende flamme. Varm det tykkeste godset mest. Det er godset som skal smelte loddet, ikke flammen.</li>
+  <li><b>Tilfør lodd</b> når flussen er klar. Loddet trekkes mot det varmeste stedet: legg flammen på motsatt side for å trekke det gjennom.</li>
+  <li><b>Avkjøl</b> uten bevegelse, og vask bort flussresten.</li>
+</ol>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved lodding smelter bare tilsettet (loddet), ikke grunnmaterialet. Loddet fukter overflatene og binder seg til dem ved diffusjon. Derfor kan ulike metaller, for eksempel kobber og stål, sammenføyes, og varmen blir lavere enn ved sveising.</p>
+<h3>Flussmiddel</h3>
+<p>Flussmiddelet løser oksidene og hindrer nye i å dannes, slik at loddet kan fukte. Det viser også temperaturen: flussen blir klar og flytende når loddetemperaturen er nådd. Flussrester er korrosive og vaskes bort med varmt vann.</p>
 <h3>Spaltevidde og kapillærkraft</h3>
 <p>Loddet trekkes inn i spalten av kapillærkraften. Kapillærtrykket er omvendt proporsjonalt med spaltevidden: <b>Δp = 2 · γ · cos θ / s</b>, der γ er overflatespenningen, θ fuktevinkelen og s spaltevidden. Halv spalte gir dobbelt så stort trykk. Er spalten for trang, kommer ikke flussen ut og loddet ikke inn; er den for vid, fyller den ikke og skjøten blir svak.</p>
 <figure class="fig">
@@ -2106,35 +2205,21 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div id="s4x-cap-read" class="small" aria-live="polite"></div>
   <figcaption>Skjematisk, spalten er sterkt forstørret. Stighøyden er regnet relativt til 0,1 mm. Anbefalt spalte for sølvlodd med fluss er ca. 0,05–0,15 mm (<b>veiledende</b>; se loddeleverandøren).</figcaption>
 </figure>
-
-<h3>Arbeidsgang ved hardlodding</h3>
-<ol class="s4x-ul">
-  <li><b>Tilpass:</b> riktig spalte, og overlapp på ca. 3 × tynneste godstykkelse (veiledende). Lodd tåler skjær best, ikke strekk.</li>
-  <li><b>Rengjør:</b> slip eller puss blankt, og avfett. Loddet fukter ikke oksid, olje eller maling.</li>
-  <li><b>Fluss:</b> påfør på begge deler før oppvarming (ikke nødvendig ved CuP på kobber).</li>
-  <li><b>Varm opp</b> hele skjøten jevnt med bred, lett reduserende flamme. Varm det tykkeste godset mest. Det er godset som skal smelte loddet, ikke flammen.</li>
-  <li><b>Tilfør lodd</b> når flussen er klar. Loddet trekkes mot det varmeste stedet: legg flammen på motsatt side for å trekke det gjennom.</li>
-  <li><b>Avkjøl</b> uten bevegelse, og vask bort flussresten.</li>
-</ol>
+</details>
 </div>
 <div class="topic" id="s4-bukk">
-  <div class="topic-h"><span class="tno">4.11</span><h3>Bukking, valsing</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
-  <p class="lead">Når en plate bøyes, strekkes ytre side og trykkes indre side sammen. Et sted i mellom finnes et lag som verken strekkes eller trykkes: nøytralaksen. Lengden av den gir utfoldet lengde.</p>
-
-<h3>Nøytralaksen og K-faktoren</h3>
-<p>Nøytralaksen ligger i avstanden <b>K · t</b> fra innsiden. Ved stor radius ligger den midt i godset (K = 0,5). Ved liten radius flyttes den innover, mot trykksiden. DIN 6935 gir for r/t &lt; 5: <b>K = (0,65 + 0,5 · lg(r/t)) / 2</b>, og K = 0,5 for r/t ≥ 5.</p>
-<figure class="fig">
-  <svg id="s4x-na-fig" viewBox="0 0 600 320" role="img" aria-label="Bøyd plate med strekk- og trykksone og nøytralakse"></svg>
-  <div class="ctrl">
-    <label for="s4x-na-rt" class="small muted">r/t</label><input type="range" id="s4x-na-rt" min="0.7" max="6" step="0.1" value="1" style="flex:1;min-width:120px">
-    <label for="s4x-na-a" class="small muted">Bøyevinkel α</label><input type="range" id="s4x-na-a" min="30" max="150" step="5" value="90" style="flex:1;min-width:120px">
+<div class="topic-h"><span class="tno">4.11</span><h3>Bukking, valsing</h3><a class="up" href="#sammenfoyning" aria-label="Til innholdet i emne 4">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Bøyetillegg</h4><b>BA = π · (r + K · t) · α / 180</b><span>K = 0,5 ved stor radius</span></div>
+    <div><h4>Utfoldet lengde, 90°</h4><b>L = A + B − 2(r + t) + BA</b><span>A og B er ytre mål</span></div>
+    <div><h4>Valsing</h4><b>L = π · (D<sub>i</sub> + t) = π · (D<sub>y</sub> − t)</b></div>
+    <div><h4>Bøying</h4><span>Bøy helst på tvers av valseretningen. Rustfritt og høyfast stål fjærer mer</span></div>
   </div>
-  <div id="s4x-na-read" class="small mono" aria-live="polite"></div>
-  <figcaption>Sideriss av bøyd plate. α er hvor mye platen bøyes (90° gir rett vinkel mellom beina).</figcaption>
-</figure>
-
+  <div class="hurtig-u">r innvendig radius · t tykkelse · K nøytralaksens plassering · α bøyevinkel (°)</div>
+</div>
 <h3>Bøyetillegg og utfoldet lengde</h3>
-<p>Bøyetillegget er buelengden av nøytralaksen: <b>BA = π · (r + K · t) · α / 180</b>. Med ytre mål A og B (til skjæringen av yttersidene) er utfoldet lengde <b>L = A + B − 2 · (r + t) · tan(α/2) + BA</b>. For 90° blir det L = A + B − 2(r + t) + BA.</p>
 <div class="calc" id="s4x-bk-calc">
   <div class="fields">
     <div class="row2">
@@ -2152,14 +2237,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="s4x-bk-out" aria-live="polite"></div>
 </div>
-
 <h3>Minste bøyeradius</h3>
-<p>Er radien for liten, sprekker yttersiden fordi strekket blir større enn materialet tåler. Strekket i ytterfiberen er omtrent ε = t / (2r + t). Bøy helst på tvers av valseretningen; langs valseretningen trengs større radius.</p>
 <div class="tbl" id="s4x-rmin"></div>
 <p class="small muted"><b>Veiledende</b> for kaldbøying 90°, t ≤ ca. 6 mm, bøyelinje på tvers av valseretningen. Sjekk produktstandarden (for eksempel EN 10025, EN 10088, EN 485-2) eller leverandørens data.</p>
-
 <h3>Fjæring</h3>
-<p>Etter bøying fjærer platen litt tilbake fordi den elastiske delen av deformasjonen går tilbake. Fjæringen øker med flytegrensen og med forholdet r/t, og minker med økende E-modul. Rustfritt og høyfast stål fjærer mer enn S235; aluminium fjærer mye fordi E-modulen er lav. Kompenser ved å overbøye: bøy en prøve, mål, og regn ut.</p>
 <div class="calc" id="s4x-sb-calc">
   <div class="fields">
     <div class="row2">
@@ -2171,9 +2252,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-sb-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Fjæringsfaktor K<sub>f</sub> = α<sub>etter</sub> / α<sub>under last</sub> gjelder for samme materiale, tykkelse og radius.</p>
-
 <h3>Valsing</h3>
-<p>Ved valsing av rør og sylindre er radien stor i forhold til tykkelsen, så nøytralaksen ligger midt i godset. Utfoldet lengde: <b>L = π · (D<sub>i</sub> + t) = π · (D<sub>y</sub> − t)</b>. Endene på platen blir rette i en tre-valsemaskin fordi de ikke kommer inn mellom valsene; de må forbøyes (i kantpresse eller med forbøying i maskinen) før valsing.</p>
 <div class="calc" id="s4x-va-calc">
   <div class="fields">
     <div class="row2">
@@ -2185,6 +2264,29 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="s4x-va-out" aria-live="polite"></div>
 </div>
 <figure class="fig"><svg id="s4x-va-fig" viewBox="0 0 600 230" role="img" aria-label="Rørtverrsnitt og utfoldet plate med nøytralaksen"></svg><figcaption>Lengden måles på nøytralaksen (stiplet), midt i godset.</figcaption></figure>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Når en plate bøyes, strekkes ytre side og trykkes indre side sammen. Et sted i mellom finnes et lag som verken strekkes eller trykkes: nøytralaksen. Lengden av den gir utfoldet lengde.</p>
+<h3>Nøytralaksen og K-faktoren</h3>
+<p>Nøytralaksen ligger i avstanden <b>K · t</b> fra innsiden. Ved stor radius ligger den midt i godset (K = 0,5). Ved liten radius flyttes den innover, mot trykksiden. DIN 6935 gir for r/t &lt; 5: <b>K = (0,65 + 0,5 · lg(r/t)) / 2</b>, og K = 0,5 for r/t ≥ 5.</p>
+<figure class="fig">
+  <svg id="s4x-na-fig" viewBox="0 0 600 320" role="img" aria-label="Bøyd plate med strekk- og trykksone og nøytralakse"></svg>
+  <div class="ctrl">
+    <label for="s4x-na-rt" class="small muted">r/t</label><input type="range" id="s4x-na-rt" min="0.7" max="6" step="0.1" value="1" style="flex:1;min-width:120px">
+    <label for="s4x-na-a" class="small muted">Bøyevinkel α</label><input type="range" id="s4x-na-a" min="30" max="150" step="5" value="90" style="flex:1;min-width:120px">
+  </div>
+  <div id="s4x-na-read" class="small mono" aria-live="polite"></div>
+  <figcaption>Sideriss av bøyd plate. α er hvor mye platen bøyes (90° gir rett vinkel mellom beina).</figcaption>
+</figure>
+<h3>Bøyetillegg og utfoldet lengde</h3>
+<p>Bøyetillegget er buelengden av nøytralaksen: <b>BA = π · (r + K · t) · α / 180</b>. Med ytre mål A og B (til skjæringen av yttersidene) er utfoldet lengde <b>L = A + B − 2 · (r + t) · tan(α/2) + BA</b>. For 90° blir det L = A + B − 2(r + t) + BA.</p>
+<h3>Minste bøyeradius</h3>
+<p>Er radien for liten, sprekker yttersiden fordi strekket blir større enn materialet tåler. Strekket i ytterfiberen er omtrent ε = t / (2r + t). Bøy helst på tvers av valseretningen; langs valseretningen trengs større radius.</p>
+<h3>Fjæring</h3>
+<p>Etter bøying fjærer platen litt tilbake fordi den elastiske delen av deformasjonen går tilbake. Fjæringen øker med flytegrensen og med forholdet r/t, og minker med økende E-modul. Rustfritt og høyfast stål fjærer mer enn S235; aluminium fjærer mye fordi E-modulen er lav. Kompenser ved å overbøye: bøy en prøve, mål, og regn ut.</p>
+<h3>Valsing</h3>
+<p>Ved valsing av rør og sylindre er radien stor i forhold til tykkelsen, så nøytralaksen ligger midt i godset. Utfoldet lengde: <b>L = π · (D<sub>i</sub> + t) = π · (D<sub>y</sub> − t)</b>. Endene på platen blir rette i en tre-valsemaskin fordi de ikke kommer inn mellom valsene; de må forbøyes (i kantpresse eller med forbøying i maskinen) før valsing.</p>
+</details>
 </div>
 </section>
 
