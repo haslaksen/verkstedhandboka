@@ -3115,8 +3115,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#m7-herde"><span class="tn">7.8</span><span class="tt">Herdeplast</span></a></li>
   </ol></nav>
 <div class="topic" id="m7-oversikt">
-  <div class="topic-h"><span class="tno">7.1</span><h3>Metalliske materialer – oversikt</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">7.1</span><h3>Metalliske materialer – oversikt</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<style>
 .m7x-tbox{max-height:440px;overflow:auto}
 .m7x-tree text{cursor:default}
 .m7x-tree .m7x-n{cursor:pointer}
@@ -3132,6 +3132,23 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .m7x-l td:first-child{font-family:var(--mono);white-space:nowrap}
 .m7x-codes svg{width:100%;height:auto;display:block;border:1px solid var(--line);background:var(--sheet)}
 </style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Stål eller støpejern</h4><span>Stål: under ca. 2 % karbon · støpejern: over 2 %</span></div>
+    <div><h4>Stål</h4><span>ρ 7850 kg/m³ · E 210 GPa · α 12 · 10⁻⁶/K · magnetisk</span></div>
+    <div><h4>Aluminium</h4><span>ρ 2600–2800 kg/m³ · E 70 GPa · α 23 · 10⁻⁶/K · leder varme ca. 4 × stål</span></div>
+    <div><h4>Rustfritt austenittisk</h4><span>ρ 7900–8000 kg/m³ · α 16 · 10⁻⁶/K · umagnetisk · leder varme dårlig</span></div>
+    <div><h4>Kobber og messing</h4><span>Kobber ρ 8900 kg/m³ · messing ρ 8400–8500 kg/m³</span></div>
+  </div>
+  <div class="hurtig-u">ρ densitet · E elastisitetsmodul · α lengdeutvidelse</div>
+</div>
+<h3>Typiske egenskaper per gruppe</h3>
+<div class="tbl" id="m7x-grp"></div>
+<p class="small muted">Typiske verdier ved romtemperatur. Spennene dekker vanlige legeringer i gruppen. ρ = densitet, E = elastisitetsmodul, α = lengdeutvidelseskoeffisient, λ = varmeledningsevne. Gråjern har ikke én fast E-modul fordi grafittflakene gjør kurven krum. Bruk datablad for konstruksjon.</p>
+<div class="note"><p><b>Hvorfor betyr dette noe i verkstedet?</b> Aluminium utvider seg dobbelt så mye som stål ved samme oppvarming, og leder varme ca. 4 ganger bedre. Det krever mer varme ved sveising og gir større krymp. Austenittisk rustfritt leder varme dårlig, så varmen blir liggende i skjæret og verktøyet. Bruk lavere skjærehastighet og ikke la verktøyet gni.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Metaller deles først etter om jern er hovedbestanddel. Jernholdige metaller (stål og støpejern) er sterke, stive og billige, men ruster. Ikke-jernmetallene er lettere, leder varme og strøm bedre eller tåler korrosjon bedre, men koster mer.</p>
 <figure class="fig">
   <svg id="m7x-tree" class="m7x-tree" viewBox="0 0 600 410" role="img" aria-label="Oversiktstre over metalliske materialer"></svg>
@@ -3144,36 +3161,34 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Lavlegert / høylegert:</b> i betegnelsene etter EN 10027-1 går skillet ved 5 % for ett enkelt element. Høylegert stål får X foran, for eksempel X5CrNi18-10.</li>
   <li><b>Rustfritt stål:</b> minst 10,5 % Cr og høyst 1,2 % C (EN 10088-1). Kromet danner et tynt oksidsjikt som leger seg selv.</li>
 </ul>
-<h3>Typiske egenskaper per gruppe</h3>
-<div class="tbl" id="m7x-grp"></div>
-<p class="small muted">Typiske verdier ved romtemperatur. Spennene dekker vanlige legeringer i gruppen. ρ = densitet, E = elastisitetsmodul, α = lengdeutvidelseskoeffisient, λ = varmeledningsevne. Gråjern har ikke én fast E-modul fordi grafittflakene gjør kurven krum. Bruk datablad for konstruksjon.</p>
-<div class="note"><p><b>Hvorfor betyr dette noe i verkstedet?</b> Aluminium utvider seg dobbelt så mye som stål ved samme oppvarming, og leder varme ca. 4 ganger bedre. Det krever mer varme ved sveising og gir større krymp. Austenittisk rustfritt leder varme dårlig, så varmen blir liggende i skjæret og verktøyet. Bruk lavere skjærehastighet og ikke la verktøyet gni.</p></div>
+</details>
 </div>
 <div class="topic" id="m7-metall">
-  <div class="topic-h"><span class="tno">7.2</span><h3>Metalliske materialer</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <h3>Aluminium: betegnelser etter EN 573</h3>
-<p>Aluminium skrives <span class="mono">EN AW-6082 [AlSi1MgMn]</span>. <span class="mono">A</span> = aluminium, <span class="mono">W</span> = smidd (wrought, dvs. valset, ekstrudert eller smidd). Støpelegeringer heter <span class="mono">EN AC-</span> og har fem siffer. Første siffer i den firesifrede koden er legeringsserien. Den kjemiske betegnelsen i klammer viser hovedelementene med omtrentlig prosent.</p>
+<div class="topic-h"><span class="tno">7.2</span><h3>Metalliske materialer</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Stål (EN 10027)</h4><span>S355 = konstruksjonsstål, flytegrense 355 MPa</span><span>C45 = 0,45 % karbon, for varmebehandling</span></div>
+    <div><h4>Aluminium</h4><span>EN AW-6082-T6: 6xxx = AlMgSi · T6 = utherdet · H = kaldbearbeidet · O = bløtglødd</span></div>
+    <div><h4>Rustfritt</h4><span>1.4301 (304) = A2 · 1.4404 (316L) = A4, syrefast</span><b>PREN = %Cr + 3,3 · %Mo + 16 · %N</b><span>motstand mot gropkorrosjon</span></div>
+    <div><h4>Varmebehandling</h4><span>Anløping 150–250 °C (verktøy) · seigherding 500–700 °C</span><span>Spenningsfrigløding 550–650 °C</span></div>
+  </div>
+</div>
+<h3>Aluminium: betegnelser etter EN 573</h3>
 <div class="tbl m7x-l" id="m7x-alser"></div>
 <p class="small muted">Etter EN 573-1/-3. «Herdbar» betyr utherdbar (innherding + elding). De ikke-herdbare seriene får fastheten ved kaldbearbeiding (H-tilstander).</p>
 <h3>Tilstandskoder etter EN 515</h3>
-<p>Tilstanden står etter legeringen, for eksempel <span class="mono">6082-T6</span> eller <span class="mono">5083-H111</span>. Den sier mer om fastheten enn legeringen gjør: plate i 6082-O har R<sub>p0,2</sub> under 85 MPa, mens 6082-T6 har rundt 250–260 MPa (EN 485-2).</p>
 <div class="tbl m7x-l" id="m7x-temper"></div>
 <p class="small muted">Etter EN 515. Andre siffer i H-koden: 2 = ¼ hard, 4 = ½ hard, 6 = ¾ hard, 8 = hard, 9 = ekstra hard. Tx51 = avspent ved strekking, Tx52 = avspent ved stuking, Tx510/Tx511 = strekket, uten/med lett etterretting (ekstrudert).</p>
 <div class="note"><p><b>Sveising av T6:</b> Varmen fra sveisingen overelder materialet i en sone på 20–40 mm på hver side, avhengig av tykkelsen. Der faller fastheten til omtrent halvparten. Konstruksjoner i 6082-T6 dimensjoneres derfor med redusert fasthet i varmepåvirket sone (EN 1999-1-1).</p></div>
-
 <h3>Kobberlegeringer</h3>
-<p>Kobberlegeringer har numre etter EN 1412: <span class="mono">CW614N</span>. <span class="mono">C</span> = kobber, <span class="mono">W</span> = smidd (<span class="mono">C</span> = støpt), tre siffer, og en bokstav for gruppen: A–C kobber, D–E lavlegert kobber, G Cu-Al, H Cu-Ni, K Cu-Sn (bronse), L–M Cu-Zn (messing), N–P Cu-Zn-Pb (automatmessing), R–S sammensatt messing.</p>
 <div class="tbl m7x-l" id="m7x-cu"></div>
 <p class="small muted">Etter EN 12163–12168 (stang, rør, profiler) og EN 1982 (støpte). Blyinnholdet i automatmessing er under nedtrapping (RoHS/REACH og drikkevannskrav). Spør etter blyfri messing til drikkevann.</p>
-
 <h3>Rustfritt stål etter EN 10088</h3>
-<p>Strukturen avgjør egenskapene. <b>Austenittisk</b> (Cr-Ni) er seigt, sveisbart og umagnetisk, men kaldherder kraftig under maskinering. <b>Ferrittisk</b> (bare Cr) er magnetisk og billigere, men mindre seigt. <b>Martensittisk</b> kan herdes (kniver, aksler). <b>Duplex</b> er halvt austenitt og halvt ferritt: dobbel flytegrense og god motstand mot spenningskorrosjon.</p>
 <div class="filter"><span class="chips" id="m7x-ssf" style="margin:0"><button class="chip" type="button" data-k="" aria-pressed="true">Alle</button><button class="chip" type="button" data-k="A" aria-pressed="false">Austenittisk</button><button class="chip" type="button" data-k="F" aria-pressed="false">Ferrittisk</button><button class="chip" type="button" data-k="M" aria-pressed="false">Martensittisk / PH</button><button class="chip" type="button" data-k="D" aria-pressed="false">Duplex</button></span></div>
 <div class="tbl m7x-l" id="m7x-ss"></div>
 <p class="small muted">EN 10088-1/-3. AISI/UNS er nærmeste tilsvarende amerikanske betegnelse, ikke alltid helt lik analyse. PREN = %Cr + 3,3·%Mo + 16·%N (motstand mot gropkorrosjon). Tallene er regnet med typisk analyse og er veiledende. Fester i A2 er av 304-typen og A4 av 316-typen (ISO 3506).</p>
-
 <h3>Hardhetsomregning HV – HB – HRC – R<sub>m</sub></h3>
-<p>Hardhet og strekkfasthet henger sammen fordi begge måler motstand mot plastisk deformasjon. Omregningen er empirisk og gjelder <b>ulegert og lavlegert stål</b> (ISO 18265, tabell A.1). Den gjelder ikke for rustfritt austenittisk stål, kaldbearbeidet stål eller ikke-jernmetaller, og den gir ikke grunnlag for å godkjenne et materiale.</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -3187,7 +3202,27 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl m7x-tbox" id="m7x-htbl"></div>
 <p class="small muted">Etter ISO 18265:2013, tabell A.1 (stål). HB i parentes ligger utenfor området der Brinell-verdiene er direkte målt. Rm-omregningen har stor spredning, typisk ±10 % eller mer.</p>
-
+<h3>Varmebehandling av stål</h3>
+<div class="tbl m7x-l" id="m7x-vb"></div>
+<div class="tbl m7x-l" id="m7x-vbs"></div>
+<p class="small muted">Temperaturene er veiledende og avhenger av analyse og dimensjon. Stålspesifikke områder etter EN ISO 683-1 (C45), EN ISO 683-2 (42CrMo4) og EN ISO 683-3 (16MnCr5). Følg alltid produsentens datablad. Bruk hansker og visir ved bråkjøling i olje (brann- og sprutfare).</p>
+<h3>Vanlige verkstedmaterialer</h3>
+<div class="tbl" id="mat-table"></div>
+<p class="small muted">R<sub>m</sub> = strekkfasthet, R<sub>e</sub>/R<sub>p0,2</sub> = flytegrense. Verdiene er typiske minimumsverdier for tynne dimensjoner og varierer med tykkelse og leveringstilstand. Sjekk materialsertifikatet ved konstruksjon.</p>
+<h3>Slik leses betegnelsene</h3>
+<div class="mods" id="mat-codes"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<h3>Aluminium: betegnelser etter EN 573</h3>
+<p>Aluminium skrives <span class="mono">EN AW-6082 [AlSi1MgMn]</span>. <span class="mono">A</span> = aluminium, <span class="mono">W</span> = smidd (wrought, dvs. valset, ekstrudert eller smidd). Støpelegeringer heter <span class="mono">EN AC-</span> og har fem siffer. Første siffer i den firesifrede koden er legeringsserien. Den kjemiske betegnelsen i klammer viser hovedelementene med omtrentlig prosent.</p>
+<h3>Tilstandskoder etter EN 515</h3>
+<p>Tilstanden står etter legeringen, for eksempel <span class="mono">6082-T6</span> eller <span class="mono">5083-H111</span>. Den sier mer om fastheten enn legeringen gjør: plate i 6082-O har R<sub>p0,2</sub> under 85 MPa, mens 6082-T6 har rundt 250–260 MPa (EN 485-2).</p>
+<h3>Kobberlegeringer</h3>
+<p>Kobberlegeringer har numre etter EN 1412: <span class="mono">CW614N</span>. <span class="mono">C</span> = kobber, <span class="mono">W</span> = smidd (<span class="mono">C</span> = støpt), tre siffer, og en bokstav for gruppen: A–C kobber, D–E lavlegert kobber, G Cu-Al, H Cu-Ni, K Cu-Sn (bronse), L–M Cu-Zn (messing), N–P Cu-Zn-Pb (automatmessing), R–S sammensatt messing.</p>
+<h3>Rustfritt stål etter EN 10088</h3>
+<p>Strukturen avgjør egenskapene. <b>Austenittisk</b> (Cr-Ni) er seigt, sveisbart og umagnetisk, men kaldherder kraftig under maskinering. <b>Ferrittisk</b> (bare Cr) er magnetisk og billigere, men mindre seigt. <b>Martensittisk</b> kan herdes (kniver, aksler). <b>Duplex</b> er halvt austenitt og halvt ferritt: dobbel flytegrense og god motstand mot spenningskorrosjon.</p>
+<h3>Hardhetsomregning HV – HB – HRC – R<sub>m</sub></h3>
+<p>Hardhet og strekkfasthet henger sammen fordi begge måler motstand mot plastisk deformasjon. Omregningen er empirisk og gjelder <b>ulegert og lavlegert stål</b> (ISO 18265, tabell A.1). Den gjelder ikke for rustfritt austenittisk stål, kaldbearbeidet stål eller ikke-jernmetaller, og den gir ikke grunnlag for å godkjenne et materiale.</p>
 <h3>Varmebehandling av stål</h3>
 <p>All varmebehandling av stål bygger på at strukturen endres når stålet varmes over A<sub>1</sub> (ca. 723 °C), der perlitt går over til austenitt. Over A<sub>3</sub> er alt austenitt. Hva som skjer når stålet kjøles ned, avhenger av hvor fort det går: langsom avkjøling gir bløt ferritt og perlitt, rask avkjøling gir hard martensitt.</p>
 <figure class="fig">
@@ -3195,33 +3230,28 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="ctrl"><span class="chips" id="m7x-fecc" style="margin:0"></span></div>
   <figcaption>Stålhjørnet av jern–karbon-diagrammet (skjematisk). Velg en behandling for å se temperaturområdet. Den stiplede loddlinjen er C45 (0,45 % C).</figcaption>
 </figure>
-<div class="tbl m7x-l" id="m7x-vb"></div>
-<div class="tbl m7x-l" id="m7x-vbs"></div>
-<p class="small muted">Temperaturene er veiledende og avhenger av analyse og dimensjon. Stålspesifikke områder etter EN ISO 683-1 (C45), EN ISO 683-2 (42CrMo4) og EN ISO 683-3 (16MnCr5). Følg alltid produsentens datablad. Bruk hansker og visir ved bråkjøling i olje (brann- og sprutfare).</p>
-  <p class="lead">Stål betegnes etter EN 10027: bokstaven sier bruksområdet og tallet sier minste flytegrense eller karboninnhold. Materialnummeret (1.xxxx) er det samme materialet skrevet som tall.</p>
-  <h3>Strekkprøven</h3>
-  <p>En prøvestav trekkes til brudd. Først strekker den seg elastisk og går tilbake når lasten fjernes. Over flytegrensen R<sub>e</sub> blir forlengelsen varig. Ved strekkfastheten R<sub>m</sub> begynner staven å snøre seg inn, og så ryker den.</p>
-  <figure class="fig">
+<p class="lead">Stål betegnes etter EN 10027: bokstaven sier bruksområdet og tallet sier minste flytegrense eller karboninnhold. Materialnummeret (1.xxxx) er det samme materialet skrevet som tall.</p>
+<h3>Strekkprøven</h3>
+<p>En prøvestav trekkes til brudd. Først strekker den seg elastisk og går tilbake når lasten fjernes. Over flytegrensen R<sub>e</sub> blir forlengelsen varig. Ved strekkfastheten R<sub>m</sub> begynner staven å snøre seg inn, og så ryker den.</p>
+<figure class="fig">
     <svg id="fig-ss" viewBox="0 0 600 280" role="img" aria-label="Spenning-tøyningskurve med prøvestav som strekkes"></svg>
     <div class="ctrl"><button class="chip play" id="ss-play" type="button"></button><label for="ss-mat" class="small muted">Materiale</label><select id="ss-mat" style="width:auto"></select></div>
     <figcaption>Den elastiske delen er tegnet bredere enn den er. I virkeligheten er den elastiske tøyningen bare rundt 0,1–0,4 %.</figcaption>
   </figure>
-  <h3>Vanlige verkstedmaterialer</h3>
-  <div class="tbl" id="mat-table"></div>
-  <p class="small muted">R<sub>m</sub> = strekkfasthet, R<sub>e</sub>/R<sub>p0,2</sub> = flytegrense. Verdiene er typiske minimumsverdier for tynne dimensjoner og varierer med tykkelse og leveringstilstand. Sjekk materialsertifikatet ved konstruksjon.</p>
-  <h3>Slik leses betegnelsene</h3>
-  <div class="mods" id="mat-codes"></div>
+</details>
 </div>
 <div class="topic" id="m7-vekt">
-  <div class="topic-h"><span class="tno">7.3</span><h3>Vekttabeller – stålprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Vekt per meter er tverrsnittsareal ganger densitet. Med areal i mm² og densitet i kg/m³ får man kg/m direkte ved å dele på 10⁶ (1 000 000).</p>
-<figure class="fig">
-  <svg id="m7x-shp" viewBox="0 0 600 220" role="img" aria-label="Tverrsnitt av rund, firkant, sekskant og flat med arealformler"></svg>
-  <figcaption>m′ = A · ρ / 10⁶ &nbsp;(m′ i kg/m, A i mm², ρ i kg/m³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
-</figure>
+<div class="topic-h"><span class="tno">7.3</span><h3>Vekttabeller – stålprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Vekt per meter</h4><b>m′ = A · ρ / 10⁶</b><span>kg/m, A i mm², ρ i kg/m³</span></div>
+    <div><h4>Rundstål</h4><b>m′ ≈ 0,00617 · d²</b><span>kg/m, d i mm</span></div>
+    <div><h4>Plate</h4><span>7,85 kg/m² per mm tykkelse</span><span>2 m² × 10 mm = 157 kg</span></div>
+  </div>
+  <div class="hurtig-u">Stål ρ = 7850 kg/m³</div>
+</div>
 <div class="field" style="max-width:340px"><label for="m7x-vmat">Materiale (skalerer alle tabellene)</label><select id="m7x-vmat"></select></div>
-<p class="small" id="m7x-vinfo" style="margin-top:10px"></p>
-<p class="small muted">Tabellene er regnet med skarpe kanter. Faktisk vekt kan avvike litt på grunn av valsetoleranser (EN 10058–10061) og kantradier. Til innkjøp og løft er det mer enn nøyaktig nok.</p>
 <h3>Rundstål, firkantstål og sekskantstål</h3>
 <div class="filter"><label for="m7x-vq" class="small muted">Mål (mm)</label><input id="m7x-vq" inputmode="decimal" placeholder="f.eks. 40"></div>
 <div class="tbl m7x-tbox" id="m7x-rsq"></div>
@@ -3232,8 +3262,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <h3>Plate: kg/m²</h3>
 <div class="tbl" id="m7x-plate"></div>
 <p class="small muted">Plate etter EN 10029 (varmvalset plate fra 3 mm) og EN 10051 (bånd). En stålplate på 1 mm veier 7,85 kg/m². Gang med tykkelsen og arealet: 2000 × 1000 × 10 mm = 2 m² · 78,5 kg/m² = 157 kg.</p>
-  <h3>Vektkalkulator</h3>
-  <div class="calc">
+<h3>Vektkalkulator</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="w-shape">Profil</label>
@@ -3248,10 +3278,28 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="w-out" aria-live="polite"></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Vekt per meter er tverrsnittsareal ganger densitet. Med areal i mm² og densitet i kg/m³ får man kg/m direkte ved å dele på 10⁶ (1 000 000).</p>
+<figure class="fig">
+  <svg id="m7x-shp" viewBox="0 0 600 220" role="img" aria-label="Tverrsnitt av rund, firkant, sekskant og flat med arealformler"></svg>
+  <figcaption>m′ = A · ρ / 10⁶ &nbsp;(m′ i kg/m, A i mm², ρ i kg/m³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
+</figure>
+<p class="small" id="m7x-vinfo" style="margin-top:10px"></p>
+<p class="small muted">Tabellene er regnet med skarpe kanter. Faktisk vekt kan avvike litt på grunn av valsetoleranser (EN 10058–10061) og kantradier. Til innkjøp og løft er det mer enn nøyaktig nok.</p>
+</details>
 </div>
 <div class="topic" id="m7-ror">
-  <div class="topic-h"><span class="tno">7.4</span><h3>Emnerør</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Rør bestilles på ytterdiameter og veggtykkelse. Rør til rørsystemer har en nominell størrelse (DN eller tommer) som bare omtrent tilsvarer innvendig diameter. Ytterdiameteren er fast, så rør med ulik veggtykkelse passer i samme koblinger.</p>
+<div class="topic-h"><span class="tno">7.4</span><h3>Emnerør</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Masse (EN 10220)</h4><b>m′ = (D − T) · T · 0,0246615</b><span>kg/m, D og T i mm</span></div>
+    <div><h4>Innvendig diameter</h4><b>d = D − 2 · T</b></div>
+    <div><h4>Størrelse</h4><span>Rør bestilles på ytterdiameter og vegg. DN og tommer er bare navn</span></div>
+  </div>
+  <div class="hurtig-u">D ytterdiameter · T veggtykkelse · d innvendig diameter (mm)</div>
+</div>
 <h3>Hvilken standard?</h3>
 <div class="tbl"><table>
 <thead><tr><th style="text-align:left">Standard</th><th style="text-align:left">Type rør</th><th style="text-align:left">Typisk bruk og kjennetegn</th></tr></thead>
@@ -3267,7 +3315,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="m7x-dn"></div>
 <p class="small muted">DN og ytterdiameter etter EN 10220 serie 1. NPS, ytterdiameter og Sch 40 etter ASME B36.10M. kg/m er regnet med Sch 40-veggen og ASME-diameteren. Rørgjengen R/G har samme tommebetegnelse som NPS for DN 6–150.</p>
 <h3>Emnerør og presisjonsrør: utvalg</h3>
-<p>Masse etter EN 10220: <span class="mono">m′ = (D − T) · T · 0,0246615</span> kg/m, med D og T i mm. Konstanten er π · 7850 / 10⁶, altså stål med densitet 7850 kg/m³. Formelen er eksakt for et rør uten toleranser.</p>
 <div class="filter">
   <span class="chips" id="m7x-rstd" style="margin:0"><button class="chip" type="button" data-k="" aria-pressed="true">Alle</button><button class="chip" type="button" data-k="P" aria-pressed="false">EN 10305-1</button><button class="chip" type="button" data-k="S" aria-pressed="false">EN 10297-1</button><button class="chip" type="button" data-k="R" aria-pressed="false">EN 10220 rør</button></span>
   <label for="m7x-rq" class="small muted">Ytter-Ø eller innv. Ø</label><input id="m7x-rq" inputmode="decimal" placeholder="f.eks. 60">
@@ -3290,14 +3337,30 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m7x-rout" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Rør bestilles på ytterdiameter og veggtykkelse. Rør til rørsystemer har en nominell størrelse (DN eller tommer) som bare omtrent tilsvarer innvendig diameter. Ytterdiameteren er fast, så rør med ulik veggtykkelse passer i samme koblinger.</p>
+<h3>Emnerør og presisjonsrør: utvalg</h3>
+<p>Masse etter EN 10220: <span class="mono">m′ = (D − T) · T · 0,0246615</span> kg/m, med D og T i mm. Konstanten er π · 7850 / 10⁶, altså stål med densitet 7850 kg/m³. Formelen er eksakt for et rør uten toleranser.</p>
+<h3>Kalkulator: rør</h3>
 <figure class="fig">
   <svg id="m7x-rfig" viewBox="0 0 600 260" role="img" aria-label="Tverrsnitt av rør med ytterdiameter, innerdiameter og veggtykkelse"></svg>
   <figcaption>Tverrsnittet tegnes i riktig forhold. Arealet er ringen mellom de to sirklene: A = π · (D² − d²) / 4 = π · (D − T) · T.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="m7-bjelke">
-  <div class="topic-h"><span class="tno">7.5</span><h3>Bjelkeprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Bjelkeprofiler er valset slik at mest mulig materiale ligger langt fra den nøytrale aksen. Da blir treghetsmomentet stort i forhold til vekten. IPE er smale og høye bjelker. HEA og HEB er brede og omtrent kvadratiske søyle- og bjelkeprofiler. UNP er U-profiler med skrå flensinnside.</p>
+<div class="topic-h"><span class="tno">7.5</span><h3>Bjelkeprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Profiler</h4><span>IPE smal og høy · HEA og HEB brede · UNP U-profil</span></div>
+    <div><h4>Punktlast midt på</h4><b>M = F · L / 4</b><b>δ = F · L³ / (48 · E · I)</b></div>
+    <div><h4>Jevn last Q</h4><b>M = Q · L / 8</b><b>δ = 5 · Q · L³ / (384 · E · I)</b></div>
+    <div><h4>Krav</h4><span>Nedbøyning høyst L/300 (veiledende). E = 210 000 MPa</span></div>
+  </div>
+  <div class="hurtig-u">F punktlast · Q total jevn last (N) · L spenn · I treghetsmoment (mm⁴)</div>
+</div>
 <dl class="kv" style="margin-bottom:14px">
   <div><dt>I<sub>y</sub> (cm⁴)</dt><dd style="font-family:var(--body);font-size:14px">Stivhet ved bøying om sterk akse. Bestemmer nedbøyningen.</dd></div>
   <div><dt>W<sub>y</sub> (cm³)</dt><dd style="font-family:var(--body);font-size:14px">Elastisk motstandsmoment. Spenning σ = M / W.</dd></div>
@@ -3309,13 +3372,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl m7x-tbox" id="m7x-btbl"></div>
 <p class="small muted" id="m7x-bsrc">IPE, HEA, HEB etter EN 10365 (tidl. Euronorm 19-57 og 53-62). UNP etter EN 10365 / DIN 1026-1. Verdiene stemmer med ArcelorMittals profiltabeller og er kontrollregnet fra geometrien. Masse G regnet med 7850 kg/m³. W er elastisk motstandsmoment (W<sub>el</sub>).</p>
-<figure class="fig">
-  <svg id="m7x-bfig" viewBox="0 0 600 380" role="img" aria-label="Valgt bjelkeprofil tegnet i skala med mål"></svg>
-  <div class="ctrl"><span class="chips" id="m7x-bsc" style="margin:0"><button class="chip" type="button" data-k="fit" aria-pressed="true">Fyll figuren</button><button class="chip" type="button" data-k="fix" aria-pressed="false">Felles skala</button></span><span class="mono" id="m7x-bname"></span></div>
-  <figcaption>Profilen tegnes i riktig forhold med rotradius r. Med «Felles skala» har alle profilene samme målestokk, så du ser størrelsesforskjellen. UNP har 8 % skrå flensinnside. Flenstykkelsen t<sub>f</sub> måles midt på flensen.</figcaption>
-</figure>
 <h3>Rask kontroll av bjelke</h3>
-<p>Fritt opplagt bjelke med valgt profil, bøying om sterk akse. Egenvekten er tatt med. Dette er en overslagsberegning for å velge profil, ikke en kontroll etter Eurokode 3 (vipping, knekking av flens og lokale laster er ikke med).</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -3330,18 +3387,26 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m7x-bout" aria-live="polite"></div>
 </div>
 <p class="small muted">M = F·L/4 og δ = F·L³/(48·E·I) for punktlast. M = Q·L/8 og δ = 5·Q·L³/(384·E·I) for jevnt fordelt total last Q. E = 210 000 MPa. Vanlig krav til nedbøyning er L/300 for bjelker (veiledende, avhenger av bruk).</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Bjelkeprofiler er valset slik at mest mulig materiale ligger langt fra den nøytrale aksen. Da blir treghetsmomentet stort i forhold til vekten. IPE er smale og høye bjelker. HEA og HEB er brede og omtrent kvadratiske søyle- og bjelkeprofiler. UNP er U-profiler med skrå flensinnside.</p>
+<figure class="fig">
+  <svg id="m7x-bfig" viewBox="0 0 600 380" role="img" aria-label="Valgt bjelkeprofil tegnet i skala med mål"></svg>
+  <div class="ctrl"><span class="chips" id="m7x-bsc" style="margin:0"><button class="chip" type="button" data-k="fit" aria-pressed="true">Fyll figuren</button><button class="chip" type="button" data-k="fix" aria-pressed="false">Felles skala</button></span><span class="mono" id="m7x-bname"></span></div>
+  <figcaption>Profilen tegnes i riktig forhold med rotradius r. Med «Felles skala» har alle profilene samme målestokk, så du ser størrelsesforskjellen. UNP har 8 % skrå flensinnside. Flenstykkelsen t<sub>f</sub> måles midt på flensen.</figcaption>
+</figure>
+<h3>Rask kontroll av bjelke</h3>
+<p>Fritt opplagt bjelke med valgt profil, bøying om sterk akse. Egenvekten er tatt med. Dette er en overslagsberegning for å velge profil, ikke en kontroll etter Eurokode 3 (vipping, knekking av flens og lokale laster er ikke med).</p>
+</details>
 </div>
 <div class="topic" id="m7-hul">
-  <div class="topic-h"><span class="tno">7.6</span><h3>Hulprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Hulprofiler er rør med kvadratisk (SHS), rektangulært (RHS) eller sirkulært (CHS) tverrsnitt. De er stive mot vridning og knekking i begge retninger, og derfor gode som søyler, rammer og stativer.</p>
-<div class="two">
-  <div>
-    <h4>EN 10219 – kaldformet</h4>
-    <p class="small">Sveiset rør formet kaldt fra bånd. Større hjørneradius (r<sub>o</sub> = 2·t opp til 6 mm vegg). Billigst og mest brukt i verksted. Merkes f.eks. S355J2H.</p>
-  </div>
-  <div>
-    <h4>EN 10210 – varmformet</h4>
-    <p class="small">Varmformet eller normalisert etter forming. Mindre hjørneradius (r<sub>o</sub> = 1,5·t), jevnere egenskaper og ingen kaldherdede hjørner. Brukes i tunge konstruksjoner og der det sveises i hjørnene.</p>
+<div class="topic-h"><span class="tno">7.6</span><h3>Hulprofiler</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Typer</h4><span>SHS kvadratisk · RHS rektangulær · CHS rund</span></div>
+    <div><h4>Kaldformet EN 10219</h4><span>Billigst og vanligst. Større hjørneradius. F.eks. S355J2H</span></div>
+    <div><h4>Varmformet EN 10210</h4><span>Mindre hjørneradius, jevnere egenskaper. Tunge konstruksjoner</span></div>
   </div>
 </div>
 <div class="filter">
@@ -3350,10 +3415,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl m7x-tbox" id="m7x-htab"></div>
 <p class="small muted" id="m7x-hnote">Verdiene er regnet med hjørneradiene som standardene foreskriver til beregning: EN 10219-2: r<sub>o</sub> = 2t / 2,5t / 3t og r<sub>i</sub> = t / 1,5t / 2t for t ≤ 6 / ≤ 10 / &gt; 10 mm. EN 10210-2: r<sub>o</sub> = 1,5t, r<sub>i</sub> = t. Kontrollert mot publiserte tabeller (avvik under 0,5 %). Masse med 7850 kg/m³. Utvalg av vanlige mål. Trykk på en rad for å tegne den.</p>
-<figure class="fig">
-  <svg id="m7x-hfig" viewBox="0 0 600 300" role="img" aria-label="Valgt hulprofil i skala med akser og mål"></svg>
-  <figcaption id="m7x-hcap">Profilen i riktig forhold. y–y er sterk akse (bøying i høyderetningen H).</figcaption>
-</figure>
 <h3>RHS-kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -3369,16 +3430,41 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m7x-qout" aria-live="polite"></div>
 </div>
 <p class="small muted"><b>Uten hjørneradius:</b> kalkulatoren regner med skarpe hjørner (ytre rektangel minus indre rektangel). Det gir for høyt areal, vekt og treghetsmoment, typisk 2–5 % på arealet og mer på treghetsmomentet. Avviket øker med veggtykkelsen. Bruk tabellen over når dimensjonen finnes der.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Hulprofiler er rør med kvadratisk (SHS), rektangulært (RHS) eller sirkulært (CHS) tverrsnitt. De er stive mot vridning og knekking i begge retninger, og derfor gode som søyler, rammer og stativer.</p>
+<div class="two">
+  <div>
+    <h4>EN 10219 – kaldformet</h4>
+    <p class="small">Sveiset rør formet kaldt fra bånd. Større hjørneradius (r<sub>o</sub> = 2·t opp til 6 mm vegg). Billigst og mest brukt i verksted. Merkes f.eks. S355J2H.</p>
+  </div>
+  <div>
+    <h4>EN 10210 – varmformet</h4>
+    <p class="small">Varmformet eller normalisert etter forming. Mindre hjørneradius (r<sub>o</sub> = 1,5·t), jevnere egenskaper og ingen kaldherdede hjørner. Brukes i tunge konstruksjoner og der det sveises i hjørnene.</p>
+  </div>
+</div>
+<figure class="fig">
+  <svg id="m7x-hfig" viewBox="0 0 600 300" role="img" aria-label="Valgt hulprofil i skala med akser og mål"></svg>
+  <figcaption id="m7x-hcap">Profilen i riktig forhold. y–y er sterk akse (bøying i høyderetningen H).</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="m7-termo">
-  <div class="topic-h"><span class="tno">7.7</span><h3>Termoplast</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Termoplaster består av lange molekylkjeder som ikke er bundet til hverandre. Ved oppvarming glir kjedene fra hverandre og plasten mykner. Derfor kan termoplast smeltes, sveises og formes om igjen, og den kan gjenvinnes.</p>
-<p><b>Amorf</b> plast (PC, PMMA, ABS, PVC) har tilfeldig kveilede kjeder. Den er ofte glassklar, krymper lite og mykner gradvis over glassovergangstemperaturen T<sub>g</sub>. <b>Delkrystallinsk</b> plast (PE, PP, PA, POM, PET, PTFE, PEEK) har ordnede områder. Den er seig, glatt og slitesterk og har et tydelig smeltepunkt, men krymper mer og kan slå seg.</p>
+<div class="topic-h"><span class="tno">7.7</span><h3>Termoplast</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Varmeutvidelse</h4><b>ΔL = α · L₀ · ΔT</b><span>plast utvider seg 5–20 ganger mer enn stål</span></div>
+    <div><h4>Måling</h4><span>Mål plastdeler ved 20–23 °C. La dem temperere seg etter maskinering</span></div>
+    <div><h4>Termoplast</h4><span>Kan smeltes, sveises og gjenvinnes</span></div>
+    <div><h4>HMS</h4><span>Røyk fra brennende plast er giftig. Brenneprøve bare med liten bit og avsug</span></div>
+  </div>
+  <div class="hurtig-u">α lengdeutvidelse (1/K) · L₀ lengde · ΔT temperaturendring</div>
+</div>
 <h3>Vanlige termoplaster</h3>
 <div class="tbl" id="m7x-tp"></div>
 <p class="small muted">Veiledende typiske verdier for ufylt materiale ved 23 °C. PA er oppgitt tørr: kondisjonert (med fukt) synker E-modulen til omtrent halvparten. T<sub>maks</sub> = høyeste temperatur ved langvarig bruk uten belastning. Bruk produsentens datablad.</p>
 <h3>Varmeutvidelse: ΔL-kalkulator</h3>
-<p>Plast utvider seg 5–20 ganger mer enn stål. En plastdel som er målt riktig i et kaldt verksted, kan være utenfor toleransen i et varmt. Mål plastdeler ved 20–23 °C, og la dem temperere seg etter maskinering.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="m7x-dmat">Materiale</label><select id="m7x-dmat"></select></div>
@@ -3393,6 +3479,18 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m7x-dout" aria-live="polite"></div>
 </div>
+<h3>Maskinering av plast</h3>
+<div class="tbl m7x-l" id="m7x-tpcut"></div>
+<p class="small muted">Veiledende utgangsverdier fra produsentanbefalinger for ufylt plast. Glassfylte typer krever hardmetall eller diamant og lavere hastighet.</p>
+<h3>Identifikasjon</h3>
+<div class="tbl m7x-l" id="m7x-tpid"></div>
+<div class="note"><p><b>HMS:</b> Røyken fra brennende plast er giftig. PVC gir saltsyredamp, PA og PUR kan gi blåsyre, POM gir formaldehyd, og PTFE gir svært giftige fluorforbindelser allerede over ca. 400 °C. Brenneprøve gjøres bare med en fyrstikkstor bit, i punktavsug, aldri på PTFE.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Termoplaster består av lange molekylkjeder som ikke er bundet til hverandre. Ved oppvarming glir kjedene fra hverandre og plasten mykner. Derfor kan termoplast smeltes, sveises og formes om igjen, og den kan gjenvinnes.</p>
+<p><b>Amorf</b> plast (PC, PMMA, ABS, PVC) har tilfeldig kveilede kjeder. Den er ofte glassklar, krymper lite og mykner gradvis over glassovergangstemperaturen T<sub>g</sub>. <b>Delkrystallinsk</b> plast (PE, PP, PA, POM, PET, PTFE, PEEK) har ordnede områder. Den er seig, glatt og slitesterk og har et tydelig smeltepunkt, men krymper mer og kan slå seg.</p>
+<h3>Varmeutvidelse: ΔL-kalkulator</h3>
+<p>Plast utvider seg 5–20 ganger mer enn stål. En plastdel som er målt riktig i et kaldt verksted, kan være utenfor toleransen i et varmt. Mål plastdeler ved 20–23 °C, og la dem temperere seg etter maskinering.</p>
 <figure class="fig">
   <svg id="m7x-dfig" viewBox="0 0 600 220" role="img" aria-label="Staver av stål og valgt plast som utvider seg med temperaturen"></svg>
   <div class="ctrl"><button class="chip play" id="m7x-dplay" type="button"></button><span class="mono" id="m7x-dtemp"></span></div>
@@ -3407,8 +3505,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Avspenning og fukt:</b> Plater og stenger har indre spenninger. Grovbearbeid, la delen hvile (gjerne avspenningsgløding etter leverandørens anvisning), og finbearbeid. PA tar opp fukt og vokser: PA6 kan øke ca. 2–3 % i lengde ved full metning i vann.</li>
   <li><b>Toleranser:</b> Regn ikke med tettere toleranser enn materialet tåler. Varmeutvidelsen fra 20 til 30 °C er alene 0,1–0,2 mm per meter.</li>
 </ul>
-<div class="tbl m7x-l" id="m7x-tpcut"></div>
-<p class="small muted">Veiledende utgangsverdier fra produsentanbefalinger for ufylt plast. Glassfylte typer krever hardmetall eller diamant og lavere hastighet.</p>
 <h3>Identifikasjon</h3>
 <p>Ukjent plast kan ofte bestemmes med enkle prøver. Start med de som ikke krever flamme.</p>
 <ol class="m7x-ul">
@@ -3417,23 +3513,32 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Beilstein-prøve:</b> Varm en kobbertråd, berør plasten og hold tråden i flammen igjen. Grønn flamme betyr klor (PVC).</li>
   <li><b>Brenneprøve</b> (bare en liten bit, i avtrekk, med verneutstyr): se tabellen.</li>
 </ol>
-<div class="tbl m7x-l" id="m7x-tpid"></div>
-<div class="note"><p><b>HMS:</b> Røyken fra brennende plast er giftig. PVC gir saltsyredamp, PA og PUR kan gi blåsyre, POM gir formaldehyd, og PTFE gir svært giftige fluorforbindelser allerede over ca. 400 °C. Brenneprøve gjøres bare med en fyrstikkstor bit, i punktavsug, aldri på PTFE.</p></div>
 <h3>Gjenvinningskoder</h3>
 <p>Symbolet med tall i en trekant viser plasttypen, slik at den kan sorteres. Kode 7 er alt annet, blant annet PC, PA og blandinger. Etter ISO 1043 merkes tekniske plastdeler også med forkortelsen mellom &gt;&nbsp;&lt;, for eksempel <span class="mono">&gt;PA6-GF30&lt;</span> (PA6 med 30 % glassfiber).</p>
 <div class="m7x-codes" id="m7x-codes"></div>
+</details>
 </div>
 <div class="topic" id="m7-herde">
-  <div class="topic-h"><span class="tno">7.8</span><h3>Herdeplast</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
-  <p class="lead">Herdeplast (termoherdende plast) er støpt eller formet som en væske eller masse som herder ved en kjemisk reaksjon. Kjedene bindes sammen i alle retninger til ett stort nettverk. Den kan ikke smeltes igjen: ved for høy temperatur brytes den ned i stedet for å mykne.</p>
+<div class="topic-h"><span class="tno">7.8</span><h3>Herdeplast</h3><a class="up" href="#materialer" aria-label="Til innholdet i emne 7">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Herdeplast</h4><span>Herder ved kjemisk reaksjon og kan ikke smeltes igjen</span></div>
+    <div><h4>Kompositter</h4><span>Fibrene er harde og slipende, matrisen er myk og varmefølsom</span></div>
+    <div><h4>HMS</h4><span>Epoksy og isocyanater: se sikkerhetsdatabladet</span></div>
+  </div>
+</div>
+<h3>Vanlige herdeplaster og kompositter</h3>
+<div class="tbl" id="m7x-hp"></div>
+<p class="small muted">Veiledende verdier. Herdeplast varierer mye med herder, fyllstoff og herdeforløp. For kompositter avhenger verdiene sterkt av fiberinnhold og fiberretning: UD = alle fibrene i én retning, verdiene gjelder langs fibrene. Bruk produsentens datablad.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Herdeplast (termoherdende plast) er støpt eller formet som en væske eller masse som herder ved en kjemisk reaksjon. Kjedene bindes sammen i alle retninger til ett stort nettverk. Den kan ikke smeltes igjen: ved for høy temperatur brytes den ned i stedet for å mykne.</p>
 <figure class="fig">
   <svg id="m7x-chain" viewBox="0 0 600 260" role="img" aria-label="Lineære kjeder i termoplast og tverrbundet nettverk i herdeplast ved oppvarming"></svg>
   <div class="ctrl"><button class="chip play" id="m7x-cplay" type="button"></button><label for="m7x-ct" class="small muted">Temperatur</label><input type="range" id="m7x-ct" min="20" max="300" value="20" step="1"><span class="mono" id="m7x-ctv"></span></div>
   <figcaption>Venstre: termoplast. Kjedene ligger løst og glir fra hverandre når temperaturen øker, så plasten mykner og smelter. Høyre: herdeplast. Tverrbindingene (prikkene) holder nettverket sammen, så det beholder formen til det brytes ned.</figcaption>
 </figure>
-<h3>Vanlige herdeplaster og kompositter</h3>
-<div class="tbl" id="m7x-hp"></div>
-<p class="small muted">Veiledende verdier. Herdeplast varierer mye med herder, fyllstoff og herdeforløp. For kompositter avhenger verdiene sterkt av fiberinnhold og fiberretning: UD = alle fibrene i én retning, verdiene gjelder langs fibrene. Bruk produsentens datablad.</p>
 <h3>Maskinering av kompositter</h3>
 <p>Glass- og karbonfiber er harde og slipende, mens matrisen er myk og varmefølsom. Feil teknikk gir delaminering (lagene skiller seg), oppflising av fibre og brent matrise.</p>
 <div class="two">
@@ -3459,6 +3564,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <p class="small muted">Se sikkerhetsdatabladet for produktet og Arbeidstilsynets veiledning om epoksy og isocyanater. Skjæredata må tas fra verktøyleverandøren for aktuell kompositt.</p>
+</details>
 </div>
 </section>
 
