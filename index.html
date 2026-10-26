@@ -558,21 +558,32 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#t2-ruhetprosess"><span class="tn">2.10</span><span class="tt">Ruhetsverdier ved forskjellige bearbeidingsprosesser</span></a></li>
   </ol></nav>
 <div class="topic" id="t2-iso">
-  <div class="topic-h"><span class="tno">2.1</span><h3>ISO-systemet</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av grunnmålet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
-  <p>Store bokstaver gjelder hull (innvendige mål), små bokstaver gjelder aksler (utvendige mål). <b>H</b> har nedre avmål 0, <b>h</b> har øvre avmål 0. Jo lavere IT-tall, jo strammere toleranse.</p>
-  <h3>Bokstaven flytter sonen, tallet bestemmer bredden</h3>
-  <p>Alle bokstavene for samme grunnmål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
-  <figure class="fig">
+<div class="topic-h"><span class="tno">2.1</span><h3>ISO-systemet</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Les toleransen</h4><span>Ø40 H7: grunnmål 40 · H = sonens plassering · 7 = toleransegrad IT7</span></div>
+    <div><h4>Hull og aksel</h4><span>Store bokstaver = hull · små = aksel</span><span>H: nedre avmål 0 · h: øvre avmål 0</span></div>
+    <div><h4>Toleransegrad</h4><span>IT5–IT7 presisjon (sliping, brotsjing) · IT8–IT11 vanlig maskinering · IT12–IT16 grovt</span></div>
+    <div><h4>Mål</h4><b>største mål = grunnmål + øvre avmål</b><b>minste mål = grunnmål + nedre avmål</b></div>
+  </div>
+</div>
+<h3>Grunntoleranser IT1–IT16 (µm)</h3>
+<p class="small muted">Kolonnen for grunnmålet over er markert. Intervallene gjelder «over – til og med».</p>
+<div class="tbl" id="it-table"></div>
+<div class="note"><p><b>Tommelfinger for toleransegrader:</b> IT5–IT7 for presisjonspasninger (sliping, fin dreiing, brotsjing), IT8–IT11 for vanlig maskinering, IT12–IT16 for grove mål, støping, smiing og termisk skjæring.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av grunnmålet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
+<p>Store bokstaver gjelder hull (innvendige mål), små bokstaver gjelder aksler (utvendige mål). <b>H</b> har nedre avmål 0, <b>h</b> har øvre avmål 0. Jo lavere IT-tall, jo strammere toleranse.</p>
+<h3>Bokstaven flytter sonen, tallet bestemmer bredden</h3>
+<p>Alle bokstavene for samme grunnmål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
+<figure class="fig">
     <svg id="fig-ladder" viewBox="0 0 600 270" role="img" aria-label="Toleransesoner for alle avmålsbokstaver"></svg>
     <div class="ctrl"><span id="ladder-read" class="small muted"></span></div>
     
   </figure>
-  <h3>Grunntoleranser IT1–IT16 (µm)</h3>
-  <p class="small muted">Kolonnen for grunnmålet over er markert. Intervallene gjelder «over – til og med».</p>
-  <div class="tbl" id="it-table"></div>
-
-  <div class="note"><p><b>Tommelfinger for toleransegrader:</b> IT5–IT7 for presisjonspasninger (sliping, fin dreiing, brotsjing), IT8–IT11 for vanlig maskinering, IT12–IT16 for grove mål, støping, smiing og termisk skjæring.</p></div>
+</details>
 </div>
 <div class="topic" id="t2-tol">
   <div class="topic-h"><span class="tno">2.2</span><h3>ISO-toleranser – boring og aksel</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
@@ -599,11 +610,18 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </figure>
 </div>
 <div class="topic" id="t2-aksel">
-  <div class="topic-h"><span class="tno">2.3</span><h3>ISO-pasninger – aksel</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <p class="lead">En passning beskriver hvordan et hull og en aksel med samme grunnmål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
-  <p>I verksted er <b>hullbasis</b> vanligst: hullet lages som H (fordi brotsjer og tolkene er standard), og akselen tilpasses for ønsket funksjon.</p>
-  <h3>Beregn passning</h3>
-  <div class="calc">
+<div class="topic-h"><span class="tno">2.3</span><h3>ISO-pasninger – aksel</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Passning</h4><b>klaring = hull − aksel</b><span>positiv = klaring, negativ = grep</span></div>
+    <div><h4>Ytterpunktene</h4><span>Største hull − minste aksel = største klaring</span><span>Minste hull − største aksel = minste klaring (eller største grep)</span></div>
+    <div><h4>Vanlige passninger (hullbasis)</h4><span>H7/g6 glide · H7/h6 skyve · H7/k6 overgang · H7/n6 fast · H7/p6 lett press · H7/s6 press</span></div>
+    <div><h4>Hullbasis</h4><span>Hullet lages som H, akselen tilpasses</span></div>
+  </div>
+</div>
+<h3>Beregn passning</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="f-size">Grunnmål (mm)</label><input id="f-size" inputmode="decimal" value="25"></div>
       <div class="row2">
@@ -617,16 +635,21 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="f-out" aria-live="polite"></div>
   </div>
-  <h3>Slik går delene sammen</h3>
-  <p>Passningen avgjøres av de to ytterpunktene: største hull med minste aksel gir mest klaring, minste hull med største aksel gir minst klaring eller mest grep. Avvikene er sterkt forstørret i figuren.</p>
-  <figure class="fig">
+<h3>Avmål for vanlige akseltoleranser (µm)</h3>
+<p class="small muted">Øvre avmål over, nedre under. Etter ISO 286-2. Trykk på en kolonneoverskrift for å markere den.</p>
+<div class="tbl" id="t2-shafttab"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En passning beskriver hvordan et hull og en aksel med samme grunnmål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
+<p>I verksted er <b>hullbasis</b> vanligst: hullet lages som H (fordi brotsjer og tolkene er standard), og akselen tilpasses for ønsket funksjon.</p>
+<h3>Slik går delene sammen</h3>
+<p>Passningen avgjøres av de to ytterpunktene: største hull med minste aksel gir mest klaring, minste hull med største aksel gir minst klaring eller mest grep. Avvikene er sterkt forstørret i figuren.</p>
+<figure class="fig">
     <svg id="fig-fit" viewBox="0 0 600 250" role="img" aria-label="Hull og aksel settes sammen, med klaring eller grep forstørret"></svg>
     <div class="ctrl"><button class="chip play" id="fit-play" type="button">▶ Monter</button><button class="chip" id="fit-max" type="button" aria-pressed="true">Største hull + minste aksel</button><button class="chip" id="fit-min" type="button" aria-pressed="false">Minste hull + største aksel</button></div>
     
   </figure>
-  <h3>Avmål for vanlige akseltoleranser (µm)</h3>
-  <p class="small muted">Øvre avmål over, nedre under. Etter ISO 286-2. Trykk på en kolonneoverskrift for å markere den.</p>
-  <div class="tbl" id="t2-shafttab"></div>
+</details>
 </div>
 <div class="topic" id="t2-boring">
   <div class="topic-h"><span class="tno">2.4</span><h3>ISO-pasninger – boring</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
@@ -638,11 +661,17 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="tbl" id="t2-holetab"></div>
 </div>
 <div class="topic" id="t2-gen">
-  <div class="topic-h"><span class="tno">2.5</span><h3>Toleranse for ikke toleransesatte mål</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <p class="lead">Mål uten egen toleranse på tegningen følger toleranseklassen i tittelfeltet, for eksempel <span class="mono">ISO 2768-mK</span>. Første bokstav gjelder lengder og vinkler (del 1), andre bokstav gjelder form og beliggenhet (del 2).</p>
-
-  <h3>Finn tillatt avvik</h3>
-  <div class="calc">
+<div class="topic-h"><span class="tno">2.5</span><h3>Toleranse for ikke toleransesatte mål</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Tittelfeltet</h4><span>ISO 2768-mK: m = lengder og vinkler (del 1), K = form og beliggenhet (del 2)</span></div>
+    <div><h4>ISO 2768-m, lengder</h4><span>0,5–6: ±0,1 · 6–30: ±0,2 · 30–120: ±0,3 · 120–400: ±0,5 · 400–1000: ±0,8 mm</span></div>
+    <div><h4>ISO 2768-f, lengder</h4><span>0,5–6: ±0,05 · 6–30: ±0,1 · 30–120: ±0,15 · 120–400: ±0,2 mm</span></div>
+  </div>
+</div>
+<h3>Finn tillatt avvik</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="g-size">Nominelt mål (mm)</label><input id="g-size" inputmode="decimal" value="85"></div>
       <div class="field"><label for="g-cls">Klasse</label>
@@ -650,60 +679,70 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="g-out" aria-live="polite"></div>
   </div>
-
-  <h3>Hvor kommer toleransen fra?</h3>
-  <figure class="fig">
-    <svg id="fig-draw" viewBox="0 0 600 250" role="img" aria-label="Tegning der et mål uten toleranse får toleranse fra tittelfeltet"></svg>
-    
-    <figcaption>Målet står uten toleranse på tegningen. Toleransen hentes fra klassen i tittelfeltet og intervallet målet ligger i.</figcaption>
-  </figure>
-  <h3>Lengdemål (± mm)</h3>
-  <div class="tbl" id="g-lin"></div>
-  <div class="two">
+<h3>Lengdemål (± mm)</h3>
+<div class="tbl" id="g-lin"></div>
+<div class="two">
     <div><h3>Radier og fasehøyder (± mm)</h3><div class="tbl" id="g-rad"></div></div>
     <div><h3>Vinkler (etter korteste vinkelben)</h3><div class="tbl" id="g-ang"></div></div>
   </div>
-
-  <h3>Del 2 — form og beliggenhet (mm)</h3>
-  <div class="two">
+<h3>Del 2 — form og beliggenhet (mm)</h3>
+<div class="two">
     <div><h4>Retthet og planhet</h4><div class="tbl" id="g-flat"></div></div>
     <div><h4>Vinkelretthet (korteste side som referanse)</h4><div class="tbl" id="g-perp"></div></div>
     <div><h4>Symmetri</h4><div class="tbl" id="g-sym"></div></div>
     <div><h4>Sirkulært kast</h4><div class="tbl" id="g-run"></div></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Mål uten egen toleranse på tegningen følger toleranseklassen i tittelfeltet, for eksempel <span class="mono">ISO 2768-mK</span>. Første bokstav gjelder lengder og vinkler (del 1), andre bokstav gjelder form og beliggenhet (del 2).</p>
+<h3>Hvor kommer toleransen fra?</h3>
+<figure class="fig">
+    <svg id="fig-draw" viewBox="0 0 600 250" role="img" aria-label="Tegning der et mål uten toleranse får toleranse fra tittelfeltet"></svg>
+    
+    <figcaption>Målet står uten toleranse på tegningen. Toleransen hentes fra klassen i tittelfeltet og intervallet målet ligger i.</figcaption>
+  </figure>
+</details>
 </div>
 <div class="topic" id="t2-geo">
-  <div class="topic-h"><span class="tno">2.6</span><h3>Geometriske toleranser</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <p class="lead">Måltoleranser styrer størrelse. Form- og beliggenhetstoleranser styrer hvordan flater og akser ligger: hvor rett, hvor plant, hvor vinkelrett, og hvor de er plassert i forhold til en referanse.</p>
-  <h3>Symbolene</h3>
-  <p>Oversikt over symbolene i form- og beliggenhetstoleranser, med modifikatorer, referanser og grunnregler. Trykk på et symbol for å se hva det styrer, hvordan toleransesonen ser ut, om det trenger referanse, og hvordan det måles.</p>
-  <div class="gd-detail" id="gd-detail" aria-live="polite"></div>
-  <div id="gd-gallery"></div>
-  <h3>Slik kontrolleres toleransene</h3>
-  <p>Velg en egenskap og se hvordan måleuret leser av. Toleransesonen er markert, og avlesningen viser største minus minste utslag.</p>
-  <figure class="fig">
+<div class="topic-h"><span class="tno">2.6</span><h3>Geometriske toleranser</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Form (uten referanse)</h4><span>Retthet · planhet · rundhet · sylindrisitet</span></div>
+    <div><h4>Retning og plassering</h4><span>Parallellitet · vinkelretthet · posisjon · konsentrisitet · symmetri (trenger referanse)</span></div>
+    <div><h4>Kast</h4><span>Sirkulært og totalt kast, målt med måleur mens delen roterer</span></div>
+    <div><h4>Måling</h4><span>Avlesning = største minus minste utslag på måleuret</span></div>
+  </div>
+</div>
+<h3>Symbolene</h3>
+<div class="gd-detail" id="gd-detail" aria-live="polite"></div>
+<div id="gd-gallery"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Måltoleranser styrer størrelse. Form- og beliggenhetstoleranser styrer hvordan flater og akser ligger: hvor rett, hvor plant, hvor vinkelrett, og hvor de er plassert i forhold til en referanse.</p>
+<h3>Symbolene</h3>
+<p>Oversikt over symbolene i form- og beliggenhetstoleranser, med modifikatorer, referanser og grunnregler. Trykk på et symbol for å se hva det styrer, hvordan toleransesonen ser ut, om det trenger referanse, og hvordan det måles.</p>
+<h3>Slik kontrolleres toleransene</h3>
+<p>Velg en egenskap og se hvordan måleuret leser av. Toleransesonen er markert, og avlesningen viser største minus minste utslag.</p>
+<figure class="fig">
     <svg id="fig-gm" viewBox="0 0 600 270" role="img" aria-label="Animasjon av måling av form- og beliggenhetstoleranser"></svg>
     <div class="ctrl"><span class="chips" id="gm-modes" style="margin:0"></span><button class="chip play" id="gm-play" type="button"></button><span id="gm-read" class="mono"></span></div>
     
   </figure>
+</details>
 </div>
 <div class="topic" id="t2-geotegn">
-  <div class="topic-h"><span class="tno">2.7</span><h3>Angivelse av geometriske toleranser på tegninger</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <h3>Toleranserammen</h3>
-  <div class="diagram" style="padding:20px;display:grid;justify-items:start;gap:4px">
-    <div class="frame" aria-label="Posisjon, diameter 0,1 ved maksimum materialbetingelse, referanser A, B og C">
-      <span id="frame-ic"></span><span>Ø0,1 Ⓜ</span><span>A</span><span>B</span><span>C</span>
-    </div>
+<div class="topic-h"><span class="tno">2.7</span><h3>Angivelse av geometriske toleranser på tegninger</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Toleranserammen</h4><span>1 egenskap · 2 toleranse (Ø = sylindrisk sone) · 3 tillegg (Ⓜ, Ⓛ, Ⓟ) · 4 referanser A, B, C</span></div>
+    <div><h4>Referanser</h4><span>Rekkefølgen bestemmer oppspenningen: primær, sekundær, tertiær</span></div>
+    <div><h4>Bonustoleranse ved Ⓜ</h4><b>tillatt posisjon = oppgitt + (målt hull − minste hull)</b></div>
   </div>
-  <div class="anat">
-    <div><b>1. Egenskap</b>Symbolet for hva som kontrolleres.</div>
-    <div><b>2. Toleranse</b>Sonens størrelse i mm. Ø foran betyr sylindrisk sone.</div>
-    <div><b>3. Tillegg</b>Modifikatorer som Ⓜ, Ⓛ eller Ⓟ.</div>
-    <div><b>4. Referanser</b>Primær, sekundær, tertiær. Rekkefølgen bestemmer oppspenningen.</div>
-  </div>
-  <h3>Bonustoleranse ved Ⓜ</h3>
-  <p>Når posisjonstoleransen har Ⓜ, gjelder den oppgitte verdien når hullet er på sitt minste tillatte mål (mest materiale igjen). Blir hullet større, øker posisjonstoleransen like mye. Dette gir mer å gå på i produksjon og kan kontrolleres med en fast funksjonstolke.</p>
-  <div class="calc">
+</div>
+<h3>Bonustoleranse ved Ⓜ</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="b-nom">Hull, nominelt Ø</label><input id="b-nom" inputmode="decimal" value="10"></div>
@@ -717,6 +756,23 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="b-out" aria-live="polite"></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<h3>Toleranserammen</h3>
+<div class="diagram" style="padding:20px;display:grid;justify-items:start;gap:4px">
+    <div class="frame" aria-label="Posisjon, diameter 0,1 ved maksimum materialbetingelse, referanser A, B og C">
+      <span id="frame-ic"></span><span>Ø0,1 Ⓜ</span><span>A</span><span>B</span><span>C</span>
+    </div>
+  </div>
+<div class="anat">
+    <div><b>1. Egenskap</b>Symbolet for hva som kontrolleres.</div>
+    <div><b>2. Toleranse</b>Sonens størrelse i mm. Ø foran betyr sylindrisk sone.</div>
+    <div><b>3. Tillegg</b>Modifikatorer som Ⓜ, Ⓛ eller Ⓟ.</div>
+    <div><b>4. Referanser</b>Primær, sekundær, tertiær. Rekkefølgen bestemmer oppspenningen.</div>
+  </div>
+<h3>Bonustoleranse ved Ⓜ</h3>
+<p>Når posisjonstoleransen har Ⓜ, gjelder den oppgitte verdien når hullet er på sitt minste tillatte mål (mest materiale igjen). Blir hullet større, øker posisjonstoleransen like mye. Dette gir mer å gå på i produksjon og kan kontrolleres med en fast funksjonstolke.</p>
+</details>
 </div>
 <div class="topic" id="t2-ovftegn">
   <div class="topic-h"><span class="tno">2.8</span><h3>Angivelse av overflatebeskaffenhet på tegninger</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
@@ -724,17 +780,28 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="mods" id="surf-sym"></div>
 </div>
 <div class="topic" id="t2-ruhet">
-  <div class="topic-h"><span class="tno">2.9</span><h3>Overflateruhet</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
-  <p class="lead">Ra er det aritmetiske middelavviket for profilen over målelengden, oppgitt i µm. Hvert trinn i N-skalaen dobler omtrent Ra-verdien.</p>
-  <h3>Hva er Ra?</h3>
-  <p>En nål trekkes over flaten og registrerer profilen. Ra er gjennomsnittet av avstanden fra midtlinjen til profilen, regnet som positive tall. De blå og oransje arealene er like store.</p>
-  <figure class="fig">
+<div class="topic-h"><span class="tno">2.9</span><h3>Overflateruhet</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Ra</h4><span>Middelavvik fra midtlinjen i µm. Ett trinn i N-skalaen ≈ dobbel Ra</span></div>
+    <div><h4>Vanlige klasser</h4><span>N6 = Ra 0,8: pasningsflater, brotsjede hull</span><span>N7 = Ra 1,6: fin dreiing og fresing · N8 = Ra 3,2: vanlig maskinert · N9 = Ra 6,3: grovt</span></div>
+    <div><h4>Rz</h4><span>Rz ≈ 4,5 × Ra (grovt overslag)</span></div>
+  </div>
+</div>
+<h3>Ruhetsklasser</h3>
+<div class="tbl" id="ra-table"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ra er det aritmetiske middelavviket for profilen over målelengden, oppgitt i µm. Hvert trinn i N-skalaen dobler omtrent Ra-verdien.</p>
+<h3>Hva er Ra?</h3>
+<p>En nål trekkes over flaten og registrerer profilen. Ra er gjennomsnittet av avstanden fra midtlinjen til profilen, regnet som positive tall. De blå og oransje arealene er like store.</p>
+<figure class="fig">
     <svg id="fig-ra" viewBox="0 0 600 220" role="img" aria-label="Taster som følger overflateprofilen, med midtlinje og Ra"></svg>
     <div class="ctrl"><button class="chip play" id="ra-play" type="button"></button><label for="ra-n" class="small muted">Klasse</label><input type="range" id="ra-n" min="0" max="11" value="7" style="flex:1;min-width:140px"><span id="ra-read" class="mono"></span></div>
     <figcaption>Høydene er forstørret mange tusen ganger. Ekte profiler er uregelmessige, men prinsippet er det samme.</figcaption>
   </figure>
-  <h3>Ruhetsklasser</h3>
-  <div class="tbl" id="ra-table"></div>
+</details>
 </div>
 <div class="topic" id="t2-ruhetprosess">
   <div class="topic-h"><span class="tno">2.10</span><h3>Ruhetsverdier ved forskjellige bearbeidingsprosesser</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
