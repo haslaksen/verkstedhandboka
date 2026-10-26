@@ -5441,8 +5441,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <li><a href="#fy11-syre"><span class="tn">11.10</span><span class="tt">Syrer og baser</span></a></li>
   </ol></nav>
 <div class="topic" id="fy11-hast">
-  <div class="topic-h"><span class="tno">11.1</span><h3>Hastighetsberegninger</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">11.1</span><h3>Hastighetsberegninger</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<style>
 .fy11a-rng{display:flex;flex-wrap:wrap;gap:10px;align-items:center;width:100%}
 .fy11a-rng label{min-width:76px}
 .fy11a-rng input[type="range"]{flex:1;min-width:140px}
@@ -5451,11 +5451,18 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .fy11a-ex p:last-child{margin:0}
 .fy11a-ex b.mono{font-weight:500}
 </style>
-<p class="lead">Fart sier hvor fort noe beveger seg, og akselerasjon sier hvor fort farten endrer seg. Med disse to størrelsene kan du regne ut bremselengder, falltider og hvor fort kanten på en slipeskive går.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Fart</h4><b>v = s / t</b><span>1 m/s = 3,6 km/h</span></div>
+    <div><h4>Akselerasjon</h4><b>a = Δv / Δt</b><b>v = v₀ + a · t</b><b>s = v₀ · t + ½ · a · t²</b></div>
+    <div><h4>Stopplengde</h4><b>s = v · t<sub>r</sub> + v² / (2 · a)</b><span>reaksjonslengde + bremselengde</span></div>
+    <div><h4>Fritt fall</h4><b>v = g · t</b><b>h = ½ · g · t²</b><b>v = √(2 · g · h)</b><span>g = 9,81 m/s², uten luftmotstand</span></div>
+    <div><h4>Rotasjon</h4><b>ω = 2π · n / 60</b><span>vinkelhastighet i rad/s</span><b>v = π · d · n / 60 000</b><span>periferihastighet i m/s, d i mm</span></div>
+  </div>
+  <div class="hurtig-u">s strekning (m) · t tid (s) · v fart (m/s) · a akselerasjon (m/s²) · n turtall (o/min)</div>
+</div>
 <h3>Fart og gjennomsnittsfart</h3>
-<p>Fart er strekning delt på tid: <span class="mono">v = s / t</span>. SI-enheten er m/s. Gjennomsnittsfarten er <b>hele strekningen delt på hele tiden</b>. Den er ikke gjennomsnittet av fartene, fordi du bruker lengre tid på den langsomme delen.</p>
-<div class="fy11a-ex"><p><b>Eksempel:</b> 10 km ut i 50 km/h og 10 km hjem i 100 km/h tar 0,2 h + 0,1 h = 0,3 h. Gjennomsnittsfarten er 20 km / 0,3 h = <b class="mono">66,7 km/h</b>, ikke 75 km/h.</p></div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5465,20 +5472,9 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-kmh-out" aria-live="polite"></div>
 </div>
-
 <h3>Akselerasjon og bevegelseslikningene</h3>
-<p>Akselerasjon er endring i fart per tid: <span class="mono">a = Δv / Δt</span>, i m/s². En akselerasjon på 2 m/s² betyr at farten øker med 2 m/s hvert sekund. Negativ akselerasjon kalles retardasjon (oppbremsing). Likningene under gjelder bare når akselerasjonen er <b>konstant</b>.</p>
 <div class="tbl" id="fy11a-kin-tbl"></div>
-<figure class="fig">
-  <svg id="fy11a-kin" viewBox="0 0 600 390" role="img" aria-label="Vogn med konstant akselerasjon og tilhørende s–t- og v–t-graf"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11a-kin-play" type="button">▶ Spill av</button><span class="mono" id="fy11a-kin-read"></span></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-kin-v0">Startfart v₀</label><input type="range" id="fy11a-kin-v0" min="0" max="15" step="1" value="2"><span class="mono" id="fy11a-kin-v0o"></span></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-kin-a">Akselerasjon a</label><input type="range" id="fy11a-kin-a" min="-3" max="3" step="0.5" value="1.5"><span class="mono" id="fy11a-kin-ao"></span></div>
-  <figcaption>Strekene over banen viser hvor vogna er etter hvert hele sekund. Med positiv a blir avstanden større for hvert sekund, og s–t-grafen krummer oppover. v–t-grafen er en rett linje med stigning a. Det skraverte arealet under v–t-grafen er strekningen vogna har kjørt. Med negativ a bremser vogna til den står.</figcaption>
-</figure>
-
 <h3>Bremselengde og stopplengde</h3>
-<p>Stopplengden består av to deler. I <b>reaksjonstiden</b> kjører du videre med full fart: <span class="mono">s<sub>r</sub> = v · t<sub>r</sub></span>. Deretter bremser du med retardasjonen a: <span class="mono">s<sub>b</sub> = v² / (2 · a)</span>. Bremselengden øker med <b>kvadratet</b> av farten. Dobbel fart gir fire ganger så lang bremselengde.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11a-br-v">Fart (km/h)</label><input id="fy11a-br-v" inputmode="decimal" value="50"></div>
@@ -5490,18 +5486,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-br-out" aria-live="polite"></div>
 </div>
-
 <h3>Fritt fall</h3>
-<p>Uten luftmotstand faller alt med samme akselerasjon, tyngdeakselerasjonen <span class="mono">g = 9,81 m/s²</span>, uansett masse. Da er <span class="mono">v = g · t</span>, <span class="mono">h = ½ · g · t²</span> og <span class="mono">v = √(2 · g · h)</span>. Tabellen viser hvorfor verktøy som faller fra stillas eller travers er farlig: fra 10 m treffer en fastnøkkel med omtrent 50 km/h.</p>
 <div class="tbl" id="fy11a-fall"></div>
 <p class="small muted">Regnet uten luftmotstand. For kompakte, tunge gjenstander er feilen liten på disse høydene.</p>
-
 <h3>Rotasjon: vinkelhastighet og periferihastighet</h3>
-<p>Alle punkter på en roterende skive har samme turtall n og samme <b>vinkelhastighet</b> <span class="mono">ω = 2π · n / 60</span> (rad/s, n i o/min). Men punkter langt ut går en lengre vei per omdreining. <b>Periferihastigheten</b> er farten i ytterkanten: <span class="mono">v = π · d · n / 60</span> (m/s, d i m) eller <span class="mono">v = ω · r</span>. Med d i mm deler du på 60 000.</p>
-<figure class="fig">
-  <svg id="fy11a-rot" viewBox="0 0 600 230" role="img" aria-label="Roterende skive der punktet ytterst har dobbelt så stor fart som punktet halvveis inne"></svg>
-  <figcaption>Samme turtall, dobbel radius: dobbel periferihastighet. Derfor har en stor skive på samme maskin mye høyere kantfart.</figcaption>
-</figure>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5514,50 +5502,57 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="fy11a-pv-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Skjærehastighet ved dreiing, fresing og boring oppgis i m/min: v<sub>c</sub> = π · d · n / 1000 (d i mm). Se kapittel 7 Skjæredata.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Fart sier hvor fort noe beveger seg, og akselerasjon sier hvor fort farten endrer seg. Med disse to størrelsene kan du regne ut bremselengder, falltider og hvor fort kanten på en slipeskive går.</p>
+<h3>Fart og gjennomsnittsfart</h3>
+<p>Fart er strekning delt på tid: <span class="mono">v = s / t</span>. SI-enheten er m/s. Gjennomsnittsfarten er <b>hele strekningen delt på hele tiden</b>. Den er ikke gjennomsnittet av fartene, fordi du bruker lengre tid på den langsomme delen.</p>
+<div class="fy11a-ex"><p><b>Eksempel:</b> 10 km ut i 50 km/h og 10 km hjem i 100 km/h tar 0,2 h + 0,1 h = 0,3 h. Gjennomsnittsfarten er 20 km / 0,3 h = <b class="mono">66,7 km/h</b>, ikke 75 km/h.</p></div>
+<h3>Akselerasjon og bevegelseslikningene</h3>
+<p>Akselerasjon er endring i fart per tid: <span class="mono">a = Δv / Δt</span>, i m/s². En akselerasjon på 2 m/s² betyr at farten øker med 2 m/s hvert sekund. Negativ akselerasjon kalles retardasjon (oppbremsing). Likningene under gjelder bare når akselerasjonen er <b>konstant</b>.</p>
+<figure class="fig">
+  <svg id="fy11a-kin" viewBox="0 0 600 390" role="img" aria-label="Vogn med konstant akselerasjon og tilhørende s–t- og v–t-graf"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11a-kin-play" type="button">▶ Spill av</button><span class="mono" id="fy11a-kin-read"></span></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-kin-v0">Startfart v₀</label><input type="range" id="fy11a-kin-v0" min="0" max="15" step="1" value="2"><span class="mono" id="fy11a-kin-v0o"></span></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-kin-a">Akselerasjon a</label><input type="range" id="fy11a-kin-a" min="-3" max="3" step="0.5" value="1.5"><span class="mono" id="fy11a-kin-ao"></span></div>
+  <figcaption>Strekene over banen viser hvor vogna er etter hvert hele sekund. Med positiv a blir avstanden større for hvert sekund, og s–t-grafen krummer oppover. v–t-grafen er en rett linje med stigning a. Det skraverte arealet under v–t-grafen er strekningen vogna har kjørt. Med negativ a bremser vogna til den står.</figcaption>
+</figure>
+<h3>Bremselengde og stopplengde</h3>
+<p>Stopplengden består av to deler. I <b>reaksjonstiden</b> kjører du videre med full fart: <span class="mono">s<sub>r</sub> = v · t<sub>r</sub></span>. Deretter bremser du med retardasjonen a: <span class="mono">s<sub>b</sub> = v² / (2 · a)</span>. Bremselengden øker med <b>kvadratet</b> av farten. Dobbel fart gir fire ganger så lang bremselengde.</p>
+<h3>Fritt fall</h3>
+<p>Uten luftmotstand faller alt med samme akselerasjon, tyngdeakselerasjonen <span class="mono">g = 9,81 m/s²</span>, uansett masse. Da er <span class="mono">v = g · t</span>, <span class="mono">h = ½ · g · t²</span> og <span class="mono">v = √(2 · g · h)</span>. Tabellen viser hvorfor verktøy som faller fra stillas eller travers er farlig: fra 10 m treffer en fastnøkkel med omtrent 50 km/h.</p>
+<h3>Rotasjon: vinkelhastighet og periferihastighet</h3>
+<p>Alle punkter på en roterende skive har samme turtall n og samme <b>vinkelhastighet</b> <span class="mono">ω = 2π · n / 60</span> (rad/s, n i o/min). Men punkter langt ut går en lengre vei per omdreining. <b>Periferihastigheten</b> er farten i ytterkanten: <span class="mono">v = π · d · n / 60</span> (m/s, d i m) eller <span class="mono">v = ω · r</span>. Med d i mm deler du på 60 000.</p>
+<figure class="fig">
+  <svg id="fy11a-rot" viewBox="0 0 600 230" role="img" aria-label="Roterende skive der punktet ytterst har dobbelt så stor fart som punktet halvveis inne"></svg>
+  <figcaption>Samme turtall, dobbel radius: dobbel periferihastighet. Derfor har en stor skive på samme maskin mye høyere kantfart.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="fy11-kraft">
-  <div class="topic-h"><span class="tno">11.2</span><h3>Kraft og energi</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">En kraft endrer bevegelsen til et legeme. Energi er evnen til å utføre arbeid, og effekt er hvor fort arbeidet gjøres. Med disse begrepene kan du dimensjonere en vinsj, forstå hvorfor en fallende last er farlig og regne på tap i en maskin.</p>
-
-<h3>Newtons tre lover</h3>
-<div class="two">
-  <div><h4>1. Treghetsloven</h4><p class="small">Et legeme som ikke påvirkes av en resulterende kraft, står i ro eller beveger seg med konstant fart i rett linje. Derfor fortsetter en løs last på lasteplanet framover når bilen bremser. Lasten må sikres.</p></div>
-  <div><h4>2. Kraftloven</h4><p class="small">Den resulterende kraften gir akselerasjon: <span class="mono">ΣF = m · a</span>. 1 N er kraften som gir 1 kg akselerasjonen 1 m/s². Stor masse krever stor kraft for å starte og stoppe, for eksempel en tung last i en travers.</p></div>
-  <div><h4>3. Kraft og motkraft</h4><p class="small">Når et legeme virker på et annet med en kraft, virker det andre tilbake med like stor og motsatt rettet kraft. Matekraften i boret presser like hardt tilbake på maskinen og arbeidsstykket. Derfor må emnet spennes fast.</p></div>
+<div class="topic-h"><span class="tno">11.2</span><h3>Kraft og energi</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Kraft og tyngde</h4><b>ΣF = m · a</b><b>G = m · g</b><span>g = 9,81 m/s². 1 000 kg veier ca. 9,8 kN</span></div>
+    <div><h4>Skråplan</h4><b>G<sub>∥</sub> = G · sin α</b><span>langs planet</span><b>G<sub>⊥</sub> = G · cos α</b><span>vinkelrett på planet</span></div>
+    <div><h4>Løftestropp, to parter</h4><b>F = G / (2 · cos(β/2))</b><span>β = toppvinkel. Aldri over 120°</span></div>
+    <div><h4>Arbeid og energi</h4><b>W = F · s</b><b>E<sub>p</sub> = m · g · h</b><b>E<sub>k</sub> = ½ · m · v²</b></div>
+    <div><h4>Effekt</h4><b>P = W / t</b><b>P = F · v</b><b>P = M · ω</b></div>
+    <div><h4>Virkningsgrad</h4><b>η = P<sub>ut</sub> / P<sub>inn</sub></b><b>η<sub>tot</sub> = η₁ · η₂ · η₃</b><span>flere ledd etter hverandre</span></div>
+  </div>
+  <div class="hurtig-u">F kraft (N) · m masse (kg) · W arbeid (J) · P effekt (W) · M moment (Nm) · ω vinkelhastighet (rad/s)</div>
 </div>
-
-<h3>Masse og tyngde</h3>
-<p><b>Masse</b> m (kg) er stoffmengden og er den samme overalt. <b>Tyngde</b> G (N) er kraften jorda trekker med: <span class="mono">G = m · g</span>, med <span class="mono">g = 9,81 m/s²</span>. En last på 1 000 kg har tyngden 9 810 N ≈ 9,8 kN. Som overslag er 1 kg ≈ 10 N.</p>
-
 <h3>Dekomponering av krefter: skråplanet</h3>
-<p>En kraft kan deles i to komponenter som til sammen gir samme virkning. På et skråplan deler vi tyngden i én komponent <b>langs planet</b> <span class="mono">G<sub>∥</sub> = G · sin α</span>, som vil dra lasten nedover, og én <b>vinkelrett på planet</b> <span class="mono">G<sub>⊥</sub> = G · cos α</span>, som presser lasten mot underlaget. Normalkraften N fra planet er like stor som G<sub>⊥</sub>.</p>
-<figure class="fig">
-  <svg id="fy11a-inc" viewBox="0 0 600 310" role="img" aria-label="Kloss på skråplan med tyngden delt i komponent langs og vinkelrett på planet"></svg>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-inc-a">Vinkel α</label><input type="range" id="fy11a-inc-a" min="0" max="60" step="1" value="30"><span class="mono" id="fy11a-inc-ao"></span></div>
-  <div class="ctrl"><label class="small muted" for="fy11a-inc-m">Masse m (kg)</label><input id="fy11a-inc-m" inputmode="decimal" value="100" style="width:96px"></div>
-  <figcaption>De stiplede linjene viser at de to komponentene danner et rektangel med G som diagonal. Ved α = 30° er G<sub>∥</sub> nøyaktig halvparten av G, fordi sin 30° = 0,5.</figcaption>
-</figure>
-<p>Samme dekomponering gjelder for løftestropper. Med to parter og toppvinkel β blir kraften i hver part <span class="mono">F = G / (2 · cos(β/2))</span>. Jo større vinkel, desto større kraft i hver part. Ved 120° bærer hver part hele lasten.</p>
 <div class="tbl" id="fy11a-sling"></div>
 <p class="small muted">Gjelder symmetrisk løft med to parter. Toppvinkel over 120° skal ikke brukes. Følg alltid merkingen (WLL) og produsentens tabell for stroppen.</p>
-
 <h3>Arbeid og energi</h3>
-<p>Arbeid utføres når en kraft flytter noe i kraftens retning: <span class="mono">W = F · s</span> (J = Nm). Virker kraften skrått på bevegelsen, teller bare komponenten langs bevegelsen: <span class="mono">W = F · s · cos α</span>. Arbeidet lagres som energi:</p>
 <dl class="kv">
   <div><dt>Potensiell energi</dt><dd>Eₚ = m · g · h</dd></div>
   <div><dt>Kinetisk energi</dt><dd>Eₖ = ½ · m · v²</dd></div>
   <div><dt>Energibevaring</dt><dd>Eₚ + Eₖ = konst.</dd></div>
 </dl>
-<p style="margin-top:12px">Energi kan ikke forsvinne, bare gå over til andre former. Uten friksjon går en pendel eller en fallende last fram og tilbake mellom stillingsenergi og bevegelsesenergi. Med friksjon blir en del til varme. Legg merke til at Eₖ øker med <b>kvadratet</b> av farten: dobbel fart gir fire ganger så mye energi som må tas opp ved en kollisjon eller oppbremsing.</p>
-<figure class="fig">
-  <svg id="fy11a-pen" viewBox="0 0 600 300" role="img" aria-label="Pendel med energistolper for potensiell og kinetisk energi"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11a-pen-play" type="button">▶ Spill av</button><button class="chip" id="fy11a-pen-fr" type="button" aria-pressed="false">Med friksjon</button><button class="chip" id="fy11a-pen-reset" type="button">Start på nytt</button></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-pen-th">Startvinkel</label><input type="range" id="fy11a-pen-th" min="10" max="80" step="1" value="50"><span class="mono" id="fy11a-pen-tho"></span></div>
-  <figcaption>Lodd 1 kg i en snor på 2 m. I ytterstillingen er all energi potensiell, i bunnen er all energi kinetisk. Slå på friksjon for å se energien gå over til varme. Summen er hele tiden den samme.</figcaption>
-</figure>
-
 <h3>Effekt og virkningsgrad</h3>
-<p>Effekt er arbeid per tid: <span class="mono">P = W / t</span> (W = J/s). For en last som flyttes med konstant fart er <span class="mono">P = F · v</span>. Ingen maskin gir ut all energien den får inn. <b>Virkningsgraden</b> er forholdet mellom nyttig effekt og tilført effekt: <span class="mono">η = P<sub>ut</sub> / P<sub>inn</sub></span>, alltid under 1. Tapet blir varme. Står flere ledd etter hverandre, ganges virkningsgradene: <span class="mono">η<sub>tot</sub> = η₁ · η₂ · η₃</span>.</p>
 <div class="tbl" id="fy11a-eta"></div>
 <p class="small muted">Veiledende verdier. Elektromotor: IE3-grensene i IEC 60034-30-1 for 4-polede motorer fra 0,75 kW til 110 kW. Snekkedrev er selvlåsende først når virkningsgraden er under ca. 0,5, og kan da ikke drives baklengs.</p>
 <h4 style="margin-top:16px">Kalkulator: løfteeffekt for vinsj</h4>
@@ -5574,10 +5569,9 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-w-out" aria-live="polite"></div>
 </div>
-<p>Ved rotasjon er effekten moment ganger vinkelhastighet: <span class="mono">P = M · ω</span>. Kalkulatoren under regner dette i verkstedenheter (kW, Nm og o/min).</p>
-  <h3>Moment, turtall og effekt</h3>
-  <p class="small muted">Fyll inn to av tre verdier.</p>
-  <div class="calc">
+<h3>Moment, turtall og effekt</h3>
+<p class="small muted">Fyll inn to av tre verdier.</p>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="tq-p">Effekt P (kW)</label><input id="tq-p" inputmode="decimal" value="7,5"></div>
       <div class="field"><label for="tq-n">Turtall n (o/min)</label><input id="tq-n" inputmode="decimal" value="1460"></div>
@@ -5585,56 +5579,69 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="tq-out" aria-live="polite"></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En kraft endrer bevegelsen til et legeme. Energi er evnen til å utføre arbeid, og effekt er hvor fort arbeidet gjøres. Med disse begrepene kan du dimensjonere en vinsj, forstå hvorfor en fallende last er farlig og regne på tap i en maskin.</p>
+<h3>Newtons tre lover</h3>
+<div class="two">
+  <div><h4>1. Treghetsloven</h4><p class="small">Et legeme som ikke påvirkes av en resulterende kraft, står i ro eller beveger seg med konstant fart i rett linje. Derfor fortsetter en løs last på lasteplanet framover når bilen bremser. Lasten må sikres.</p></div>
+  <div><h4>2. Kraftloven</h4><p class="small">Den resulterende kraften gir akselerasjon: <span class="mono">ΣF = m · a</span>. 1 N er kraften som gir 1 kg akselerasjonen 1 m/s². Stor masse krever stor kraft for å starte og stoppe, for eksempel en tung last i en travers.</p></div>
+  <div><h4>3. Kraft og motkraft</h4><p class="small">Når et legeme virker på et annet med en kraft, virker det andre tilbake med like stor og motsatt rettet kraft. Matekraften i boret presser like hardt tilbake på maskinen og arbeidsstykket. Derfor må emnet spennes fast.</p></div>
+</div>
+<h3>Masse og tyngde</h3>
+<p><b>Masse</b> m (kg) er stoffmengden og er den samme overalt. <b>Tyngde</b> G (N) er kraften jorda trekker med: <span class="mono">G = m · g</span>, med <span class="mono">g = 9,81 m/s²</span>. En last på 1 000 kg har tyngden 9 810 N ≈ 9,8 kN. Som overslag er 1 kg ≈ 10 N.</p>
+<h3>Dekomponering av krefter: skråplanet</h3>
+<p>En kraft kan deles i to komponenter som til sammen gir samme virkning. På et skråplan deler vi tyngden i én komponent <b>langs planet</b> <span class="mono">G<sub>∥</sub> = G · sin α</span>, som vil dra lasten nedover, og én <b>vinkelrett på planet</b> <span class="mono">G<sub>⊥</sub> = G · cos α</span>, som presser lasten mot underlaget. Normalkraften N fra planet er like stor som G<sub>⊥</sub>.</p>
+<figure class="fig">
+  <svg id="fy11a-inc" viewBox="0 0 600 310" role="img" aria-label="Kloss på skråplan med tyngden delt i komponent langs og vinkelrett på planet"></svg>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-inc-a">Vinkel α</label><input type="range" id="fy11a-inc-a" min="0" max="60" step="1" value="30"><span class="mono" id="fy11a-inc-ao"></span></div>
+  <div class="ctrl"><label class="small muted" for="fy11a-inc-m">Masse m (kg)</label><input id="fy11a-inc-m" inputmode="decimal" value="100" style="width:96px"></div>
+  <figcaption>De stiplede linjene viser at de to komponentene danner et rektangel med G som diagonal. Ved α = 30° er G<sub>∥</sub> nøyaktig halvparten av G, fordi sin 30° = 0,5.</figcaption>
+</figure>
+<p>Samme dekomponering gjelder for løftestropper. Med to parter og toppvinkel β blir kraften i hver part <span class="mono">F = G / (2 · cos(β/2))</span>. Jo større vinkel, desto større kraft i hver part. Ved 120° bærer hver part hele lasten.</p>
+<h3>Arbeid og energi</h3>
+<p>Arbeid utføres når en kraft flytter noe i kraftens retning: <span class="mono">W = F · s</span> (J = Nm). Virker kraften skrått på bevegelsen, teller bare komponenten langs bevegelsen: <span class="mono">W = F · s · cos α</span>. Arbeidet lagres som energi:</p>
+<p style="margin-top:12px">Energi kan ikke forsvinne, bare gå over til andre former. Uten friksjon går en pendel eller en fallende last fram og tilbake mellom stillingsenergi og bevegelsesenergi. Med friksjon blir en del til varme. Legg merke til at Eₖ øker med <b>kvadratet</b> av farten: dobbel fart gir fire ganger så mye energi som må tas opp ved en kollisjon eller oppbremsing.</p>
+<figure class="fig">
+  <svg id="fy11a-pen" viewBox="0 0 600 300" role="img" aria-label="Pendel med energistolper for potensiell og kinetisk energi"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11a-pen-play" type="button">▶ Spill av</button><button class="chip" id="fy11a-pen-fr" type="button" aria-pressed="false">Med friksjon</button><button class="chip" id="fy11a-pen-reset" type="button">Start på nytt</button></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-pen-th">Startvinkel</label><input type="range" id="fy11a-pen-th" min="10" max="80" step="1" value="50"><span class="mono" id="fy11a-pen-tho"></span></div>
+  <figcaption>Lodd 1 kg i en snor på 2 m. I ytterstillingen er all energi potensiell, i bunnen er all energi kinetisk. Slå på friksjon for å se energien gå over til varme. Summen er hele tiden den samme.</figcaption>
+</figure>
+<h3>Effekt og virkningsgrad</h3>
+<p>Effekt er arbeid per tid: <span class="mono">P = W / t</span> (W = J/s). For en last som flyttes med konstant fart er <span class="mono">P = F · v</span>. Ingen maskin gir ut all energien den får inn. <b>Virkningsgraden</b> er forholdet mellom nyttig effekt og tilført effekt: <span class="mono">η = P<sub>ut</sub> / P<sub>inn</sub></span>, alltid under 1. Tapet blir varme. Står flere ledd etter hverandre, ganges virkningsgradene: <span class="mono">η<sub>tot</sub> = η₁ · η₂ · η₃</span>.</p>
+<p>Ved rotasjon er effekten moment ganger vinkelhastighet: <span class="mono">P = M · ω</span>. Kalkulatoren over regner dette i verkstedenheter (kW, Nm og o/min).</p>
+</details>
 </div>
 <div class="topic" id="fy11-friksjon">
-  <div class="topic-h"><span class="tno">11.3</span><h3>Friksjon</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">Friksjon er kraften som motvirker at to flater glir mot hverandre. Den er nødvendig i bremser, remdrifter og skruforbindelser, men gir tap og slitasje i lagre og føringer.</p>
-
-<h3>Friksjonskraft: F<sub>R</sub> = µ · F<sub>N</sub></h3>
-<p>Friksjonskraften er friksjonstallet µ ganger <b>normalkraften</b> F<sub>N</sub>, kraften som presser flatene sammen. Friksjonen avhenger av materialparet, overflaten og smøringen, men nesten ikke av hvor stor kontaktflaten er.</p>
-<ul class="small" style="max-width:72ch;padding-left:20px">
-  <li><b>Statisk friksjon (hvilefriksjon), µ<sub>s</sub>:</b> holder en gjenstand i ro. Den er bare så stor som den må være, opp til grensen <span class="mono">µ<sub>s</sub> · F<sub>N</sub></span>.</li>
-  <li><b>Kinetisk friksjon (glidefriksjon), µ<sub>k</sub>:</b> virker når flatene glir. Den er som regel lavere enn den statiske. Derfor går det lettere å skyve en kasse når den først er i gang, og derfor kan en føring «hakke» (stick-slip) ved lav mating.</li>
-</ul>
-
-<h3>Kloss på skråplan: når begynner den å skli?</h3>
-<p>Klossen blir liggende så lenge komponenten langs planet <span class="mono">G · sin α</span> er mindre enn største friksjon <span class="mono">µ<sub>s</sub> · G · cos α</span>. Grensen er når de er like store, altså når <span class="mono">tan α = µ<sub>s</sub></span>. Dette er en enkel måte å måle friksjonstallet på: vipp planet til klossen sklir og les av vinkelen.</p>
-<figure class="fig">
-  <svg id="fy11a-fr" viewBox="0 0 600 310" role="img" aria-label="Kloss på skråplan der vinkelen økes til klossen sklir"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11a-fr-play" type="button">▶ Spill av</button><span class="mono" id="fy11a-fr-read"></span></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-fr-us">Statisk µ<sub>s</sub></label><input type="range" id="fy11a-fr-us" min="0.05" max="0.8" step="0.01" value="0.3"><span class="mono" id="fy11a-fr-uso"></span></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-fr-uk">Kinetisk µ<sub>k</sub></label><input type="range" id="fy11a-fr-uk" min="0.02" max="0.8" step="0.01" value="0.22"><span class="mono" id="fy11a-fr-uko"></span></div>
-  <figcaption>Kloss 10 kg. Vinkelen økes til G<sub>∥</sub> blir større enn største statiske friksjon. Da sklir klossen, og friksjonen faller til µ<sub>k</sub> · G<sub>⊥</sub>. Klossen akselererer med a = g · (sin α − µ<sub>k</sub> · cos α).</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">11.3</span><h3>Friksjon</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Friksjon</h4><b>F<sub>R</sub> = µ · F<sub>N</sub></b><span>statisk µ<sub>s</sub> er større enn kinetisk µ<sub>k</sub></span></div>
+    <div><h4>Skråplan</h4><b>tan α = µ<sub>s</sub></b><span>vinkelen der klossen begynner å skli</span></div>
+    <div><h4>Rullefriksjon</h4><b>F<sub>R</sub> = c<sub>r</sub> · F<sub>N</sub></b><span>rullelager c<sub>r</sub> ≈ 0,001–0,003</span></div>
+    <div><h4>Tau, rem og bånd</h4><b>F₁ = F₂ · e<sup>µ·β</sup></b><span>β i radianer</span><b>µ′ = µ / sin(γ/2)</b><span>kilerem med rillevinkel γ</span></div>
+    <div><h4>Brems</h4><b>F<sub>B</sub> = µ · F<sub>N</sub></b><b>M = 2 · µ · F<sub>N</sub> · r<sub>m</sub></b><span>skivebrems med to klosser</span><b>a<sub>maks</sub> = µ · g</b></div>
+    <div><h4>Gjenger</h4><b>tan ρ′ = µ / cos 30°</b><span>metrisk gjenge</span><span>Selvlåsende når stigningsvinkelen φ &lt; ρ′</span></div>
+  </div>
+  <div class="hurtig-u">µ friksjonstall · F<sub>N</sub> normalkraft (N) · β omslutningsvinkel (rad) · r<sub>m</sub> middelradius (m)</div>
+</div>
 <h3>Friksjonstall for vanlige materialpar</h3>
-<p>Friksjonstall er ikke materialkonstanter. De varierer med overflateruhet, renhet, temperatur og smøremiddel, og ulike tabellverk oppgir ulike verdier. Bruk dem til overslag, og regn med sikkerhet der friksjonen skal holde noe fast.</p>
 <h4 style="margin-top:12px">Statisk friksjon i delefuger (metaller)</h4>
 <div class="tbl" id="fy11a-frt1"></div>
 <p class="small muted">Kilde: VDI 2230 Blatt 1, tabell A5 (statisk friksjonstall i delefugen, romtemperatur). Brukes blant annet for å regne hvor stor tverrkraft en skrueforbindelse tåler før delene sklir.</p>
 <h4 style="margin-top:12px">Glidefriksjon, veiledende</h4>
 <div class="tbl" id="fy11a-frt2"></div>
 <p class="small muted">Veiledende verdier etter Tabellenbuch Metall (Europa Lehrmittel) og Kuchling, Taschenbuch der Physik, samlet i schweizer-fn.de. Bremsebelegg skal aldri smøres: olje eller fett på belegget gir kraftig redusert bremsekraft.</p>
-
 <h3>Rullefriksjon</h3>
-<p>Når et hjul eller en kule ruller, deformeres underlaget og hjulet litt, og det gir en liten motstand: <span class="mono">F<sub>R</sub> = c<sub>r</sub> · F<sub>N</sub></span>. Rullemotstandstallet c<sub>r</sub> er mye lavere enn glidefriksjonstall. Det er derfor rullelager, hjul og kulebøssinger brukes.</p>
 <dl class="kv">
   <div><dt>Rullelager</dt><dd>ca. 0,001–0,003</dd></div>
   <div><dt>Stålhjul på skinne</dt><dd>ca. 0,001–0,002</dd></div>
   <div><dt>Bildekk på asfalt</dt><dd>ca. 0,01–0,015</dd></div>
 </dl>
 <p class="small muted" style="margin-top:6px">Veiledende. For rullelager oppgir SKF friksjonstall (referert til boringen) på ca. 0,001–0,003 avhengig av lagertype.</p>
-
-<h3>Friksjon i gjenger og skruer</h3>
-<p>En gjenge er et skråplan viklet rundt en sylinder. Den er <b>selvlåsende</b> når stigningsvinkelen φ er mindre enn friksjonsvinkelen ρ′, der <span class="mono">tan ρ′ = µ / cos 30°</span> for metrisk gjenge (flankevinkel 60°). For M10 er stigningen 1,5 mm og midtdiameteren 9,026 mm, så <span class="mono">tan φ = 1,5 / (π · 9,026)</span> og φ ≈ 3,0°. Med µ = 0,10 blir ρ′ ≈ 6,6°. Bolten løsner derfor ikke av seg selv under statisk last.</p>
-<p>Når en skrue trekkes til, går omtrent 90 % av tiltrekkingsmomentet til friksjon i gjengene og under hodet. Bare rundt 10 % gir forspenning. Små endringer i friksjonen (tørt, oljet, belagt) gir derfor stor endring i forspenningskraften. Se tiltrekkingsmoment under maskinelementer.</p>
-
 <h3>Tau, rem og båndbrems: Eytelweins formel</h3>
-<p>Når et tau, en rem eller et bremsebånd ligger rundt en trommel, vokser kraften eksponentielt med omslutningsvinkelen β: <span class="mono">F₁ = F₂ · e<sup>µ·β</sup></span>, med β i radianer. Derfor kan du holde en stor last med et par tørn rundt en pullert. For kilerem gir kilevirkningen et større effektivt friksjonstall <span class="mono">µ′ = µ / sin(γ/2)</span>, der γ er rillevinkelen.</p>
-<figure class="fig">
-  <svg id="fy11a-ey" viewBox="0 0 600 230" role="img" aria-label="Tau rundt trommel med stor kraft på den ene siden og liten kraft på den andre"></svg>
-  <figcaption>Forskjellen F₁ − F₂ er kraften som overføres til trommelen, som drivkraft i en remdrift eller bremsekraft i en båndbrems.</figcaption>
-</figure>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5649,16 +5656,56 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-ey-out" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Friksjon er kraften som motvirker at to flater glir mot hverandre. Den er nødvendig i bremser, remdrifter og skruforbindelser, men gir tap og slitasje i lagre og føringer.</p>
+<h3>Friksjonskraft: F<sub>R</sub> = µ · F<sub>N</sub></h3>
+<p>Friksjonskraften er friksjonstallet µ ganger <b>normalkraften</b> F<sub>N</sub>, kraften som presser flatene sammen. Friksjonen avhenger av materialparet, overflaten og smøringen, men nesten ikke av hvor stor kontaktflaten er.</p>
+<ul class="small" style="max-width:72ch;padding-left:20px">
+  <li><b>Statisk friksjon (hvilefriksjon), µ<sub>s</sub>:</b> holder en gjenstand i ro. Den er bare så stor som den må være, opp til grensen <span class="mono">µ<sub>s</sub> · F<sub>N</sub></span>.</li>
+  <li><b>Kinetisk friksjon (glidefriksjon), µ<sub>k</sub>:</b> virker når flatene glir. Den er som regel lavere enn den statiske. Derfor går det lettere å skyve en kasse når den først er i gang, og derfor kan en føring «hakke» (stick-slip) ved lav mating.</li>
+</ul>
+<h3>Kloss på skråplan: når begynner den å skli?</h3>
+<p>Klossen blir liggende så lenge komponenten langs planet <span class="mono">G · sin α</span> er mindre enn største friksjon <span class="mono">µ<sub>s</sub> · G · cos α</span>. Grensen er når de er like store, altså når <span class="mono">tan α = µ<sub>s</sub></span>. Dette er en enkel måte å måle friksjonstallet på: vipp planet til klossen sklir og les av vinkelen.</p>
+<figure class="fig">
+  <svg id="fy11a-fr" viewBox="0 0 600 310" role="img" aria-label="Kloss på skråplan der vinkelen økes til klossen sklir"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11a-fr-play" type="button">▶ Spill av</button><span class="mono" id="fy11a-fr-read"></span></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-fr-us">Statisk µ<sub>s</sub></label><input type="range" id="fy11a-fr-us" min="0.05" max="0.8" step="0.01" value="0.3"><span class="mono" id="fy11a-fr-uso"></span></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-fr-uk">Kinetisk µ<sub>k</sub></label><input type="range" id="fy11a-fr-uk" min="0.02" max="0.8" step="0.01" value="0.22"><span class="mono" id="fy11a-fr-uko"></span></div>
+  <figcaption>Kloss 10 kg. Vinkelen økes til G<sub>∥</sub> blir større enn største statiske friksjon. Da sklir klossen, og friksjonen faller til µ<sub>k</sub> · G<sub>⊥</sub>. Klossen akselererer med a = g · (sin α − µ<sub>k</sub> · cos α).</figcaption>
+</figure>
+<h3>Friksjonstall for vanlige materialpar</h3>
+<p>Friksjonstall er ikke materialkonstanter. De varierer med overflateruhet, renhet, temperatur og smøremiddel, og ulike tabellverk oppgir ulike verdier. Bruk dem til overslag, og regn med sikkerhet der friksjonen skal holde noe fast.</p>
+<h3>Rullefriksjon</h3>
+<p>Når et hjul eller en kule ruller, deformeres underlaget og hjulet litt, og det gir en liten motstand: <span class="mono">F<sub>R</sub> = c<sub>r</sub> · F<sub>N</sub></span>. Rullemotstandstallet c<sub>r</sub> er mye lavere enn glidefriksjonstall. Det er derfor rullelager, hjul og kulebøssinger brukes.</p>
+<h3>Friksjon i gjenger og skruer</h3>
+<p>En gjenge er et skråplan viklet rundt en sylinder. Den er <b>selvlåsende</b> når stigningsvinkelen φ er mindre enn friksjonsvinkelen ρ′, der <span class="mono">tan ρ′ = µ / cos 30°</span> for metrisk gjenge (flankevinkel 60°). For M10 er stigningen 1,5 mm og midtdiameteren 9,026 mm, så <span class="mono">tan φ = 1,5 / (π · 9,026)</span> og φ ≈ 3,0°. Med µ = 0,10 blir ρ′ ≈ 6,6°. Bolten løsner derfor ikke av seg selv under statisk last.</p>
+<p>Når en skrue trekkes til, går omtrent 90 % av tiltrekkingsmomentet til friksjon i gjengene og under hodet. Bare rundt 10 % gir forspenning. Små endringer i friksjonen (tørt, oljet, belagt) gir derfor stor endring i forspenningskraften. Se tiltrekkingsmoment under maskinelementer.</p>
+<h3>Tau, rem og båndbrems: Eytelweins formel</h3>
+<p>Når et tau, en rem eller et bremsebånd ligger rundt en trommel, vokser kraften eksponentielt med omslutningsvinkelen β: <span class="mono">F₁ = F₂ · e<sup>µ·β</sup></span>, med β i radianer. Derfor kan du holde en stor last med et par tørn rundt en pullert. For kilerem gir kilevirkningen et større effektivt friksjonstall <span class="mono">µ′ = µ / sin(γ/2)</span>, der γ er rillevinkelen.</p>
+<figure class="fig">
+  <svg id="fy11a-ey" viewBox="0 0 600 230" role="img" aria-label="Tau rundt trommel med stor kraft på den ene siden og liten kraft på den andre"></svg>
+  <figcaption>Forskjellen F₁ − F₂ er kraften som overføres til trommelen, som drivkraft i en remdrift eller bremsekraft i en båndbrems.</figcaption>
+</figure>
 <h3>Bremsekraft</h3>
 <p>En brems er friksjon brukt med vilje. Bremsekraften er <span class="mono">F<sub>B</sub> = µ · F<sub>N</sub></span>, der F<sub>N</sub> er kraften som presser belegget mot skiva eller trommelen. For en skivebrems med to klosser er bremsemomentet <span class="mono">M = 2 · µ · F<sub>N</sub> · r<sub>m</sub></span>, der r<sub>m</sub> er middelradien til belegget. Bremseenergien blir varme: en bil som bremser fra 50 km/h, må gjøre om hele Eₖ = ½ · m · v² til varme i bremsene. Høyeste mulige retardasjon på et underlag er <span class="mono">a = µ · g</span>, så friksjonen mellom dekk og vei setter grensen.</p>
+</details>
 </div>
 <div class="topic" id="fy11-trykk">
-  <div class="topic-h"><span class="tno">11.4</span><h3>Trykk, væsker og gasser</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">Trykk er kraft fordelt på et areal. Det styrer alt fra trykkluft og gassflasker til hvor mye en last veier under vann. Pascals lov og hydrauliske krefter finner du i kapittel 11 Hydraulikk.</p>
-
+<div class="topic-h"><span class="tno">11.4</span><h3>Trykk, væsker og gasser</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Trykk</h4><b>p = F / A</b><span>1 bar = 100 000 Pa = 0,1 N/mm² = 14,5 psi</span></div>
+    <div><h4>Absolutt trykk</h4><b>p<sub>abs</sub> = p<sub>e</sub> + p<sub>atm</sub></b><span>p<sub>atm</sub> ≈ 1 bar. Manometeret viser p<sub>e</sub></span></div>
+    <div><h4>Væsketrykk og oppdrift</h4><b>p = ρ · g · h</b><span>vann: ca. 0,1 bar per meter</span><b>F<sub>B</sub> = ρ<sub>væske</sub> · g · V</b></div>
+    <div><h4>Gass</h4><b>p₁ · V₁ = p₂ · V₂</b><span>samme temperatur</span><b>p₁V₁ / T₁ = p₂V₂ / T₂</b><span>absolutt trykk, T i kelvin</span></div>
+    <div><h4>Gassflaske</h4><span>liter gass ≈ flaskevolum × fylletrykk (bar)</span><span>50 l, 200 bar ≈ 10 000 l gass</span></div>
+    <div><h4>Strømning i rør</h4><b>Q = A₁ · v₁ = A₂ · v₂</b><b>Δp = λ · (L / d) · ρ · v² / 2</b><span>trykkfall</span></div>
+  </div>
+  <div class="hurtig-u">p trykk (Pa, bar) · A areal (m²) · ρ densitet (kg/m³) · h dybde (m) · V volum (m³) · Q volumstrøm (m³/s)</div>
+</div>
 <h3>Trykk og enheter</h3>
-<p>Trykk er kraft per areal: <span class="mono">p = F / A</span>. SI-enheten er pascal, 1 Pa = 1 N/m², som er et svært lite trykk. I verkstedet brukes bar, og i amerikansk utstyr psi.</p>
 <dl class="kv">
   <div><dt>1 bar</dt><dd>100 000 Pa = 0,1 MPa</dd></div>
   <div><dt>1 bar</dt><dd>0,1 N/mm²</dd></div>
@@ -5667,25 +5714,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><dt>1 atm (normal)</dt><dd>1,01325 bar</dd></div>
   <div><dt>10 m vannsøyle</dt><dd>≈ 0,98 bar</dd></div>
 </dl>
-
-<h3>Overtrykk, absolutt trykk og atmosfæretrykk</h3>
-<p>Luften rundt oss trykker med omtrent 1 bar (normalt 1,013 bar ved havflaten). Et vanlig manometer viser <b>overtrykk</b> p<sub>e</sub>, altså trykket over atmosfæretrykket. <b>Absolutt trykk</b> regnes fra fullstendig vakuum: <span class="mono">p<sub>abs</sub> = p<sub>e</sub> + p<sub>atm</sub></span>. Gasslovene under krever absolutt trykk.</p>
-<figure class="fig">
-  <svg id="fy11a-pref" viewBox="0 0 600 270" role="img" aria-label="Trykkskala som viser absolutt trykk, atmosfæretrykk, overtrykk og undertrykk"></svg>
-  <figcaption>Et dekk med 2,2 bar på manometeret har 3,2 bar absolutt trykk. En vakuumsug med 0,6 bar undertrykk har 0,4 bar absolutt.</figcaption>
-</figure>
-
-<h3>Hydrostatisk trykk: p = ρ · g · h</h3>
-<p>I en væske øker trykket med dybden fordi væsken over må bæres: <span class="mono">p = ρ · g · h</span>. Trykket avhenger bare av dybde og tetthet, ikke av formen eller størrelsen på tanken. I vann øker trykket med ca. 0,1 bar per meter. Derfor blir veggen nederst i en tank, en dam eller et kar belastet mest.</p>
-<figure class="fig">
-  <svg id="fy11a-tank" viewBox="0 0 600 300" role="img" aria-label="Tank med væske og manometer som senkes til forskjellig dybde"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11a-tank-play" type="button">▶ Spill av</button><label class="small muted" for="fy11a-tank-liq">Væske</label><select id="fy11a-tank-liq" style="width:auto"></select></div>
-  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-tank-h">Dybde h</label><input type="range" id="fy11a-tank-h" min="0" max="10" step="0.1" value="5"><span class="mono" id="fy11a-tank-ho"></span></div>
-  <figcaption>Manometeret viser overtrykket ved måleproben. Pilene på veggen viser at trykket øker jevnt med dybden. Tettheter for sjøvann og hydraulikkolje er veiledende.</figcaption>
-</figure>
-
 <h3>Arkimedes’ lov: oppdrift</h3>
-<p>Et legeme i en væske får en oppdrift som er like stor som tyngden av væsken det fortrenger: <span class="mono">F<sub>B</sub> = ρ<sub>væske</sub> · g · V</span>. Er legemet tettere enn væsken, synker det, men det veier mindre under vann. Det har betydning ved løft i sjø: lasten blir tyngre i det øyeblikket den kommer opp av vannet.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11a-ar-mat">Materiale</label><select id="fy11a-ar-mat"></select></div>
@@ -5696,9 +5725,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-ar-out" aria-live="polite"></div>
 </div>
-
 <h3>Gasser: Boyle–Mariotte og den ideelle gassloven</h3>
-<p>Gass lar seg komprimere. Ved konstant temperatur er trykk ganger volum konstant (Boyle–Mariotte): <span class="mono">p₁ · V₁ = p₂ · V₂</span>. Halvert volum gir dobbelt trykk. Endres også temperaturen, gjelder den ideelle gassloven <span class="mono">p · V / T = konstant</span>, eller <span class="mono">p₁V₁ / T₁ = p₂V₂ / T₂</span>. Her må trykket være <b>absolutt</b> og temperaturen i <b>kelvin</b> (T = °C + 273,15).</p>
 <h4 style="margin-top:12px">Hvor mye gass er det i beholderen?</h4>
 <p class="small">Med Boyle–Mariotte kan du regne om fra beholderen til fri tilstand (atmosfæretrykk). For gassflasker brukes tommelregelen <b>liter gass ≈ flaskevolum × fylletrykk i bar</b>. Fra en trykkluftbeholder kan du bare bruke luften mellom fylletrykket og det laveste trykket verktøyet trenger.</p>
 <div class="chips"><button class="chip" type="button" id="fy11a-gb-p1">Gassflaske 50 l, 200 bar</button><button class="chip" type="button" id="fy11a-gb-p2">Kompressortank 270 l, 10 → 6 bar</button></div>
@@ -5730,14 +5757,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-ig-out" aria-live="polite"></div>
 </div>
-
 <h3>Strømning i rør: kontinuitetslikningen Q = A · v</h3>
-<p>Det som strømmer inn i et rør, må strømme ut. Volumstrømmen Q er derfor den samme i hele røret: <span class="mono">Q = A₁ · v₁ = A₂ · v₂</span>. Der røret blir smalere, må væsken gå fortere. Halvert diameter gir fjerdedels areal og <b>fire ganger</b> så høy hastighet. Gjelder væsker, og gasser når trykkendringen er liten.</p>
-<figure class="fig">
-  <svg id="fy11a-pipe" viewBox="0 0 600 180" role="img" aria-label="Rør som snevres inn der væskepartiklene går fortere i den smale delen"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11a-pipe-play" type="button">▶ Spill av</button><span class="mono small" id="fy11a-pipe-read"></span></div>
-  <figcaption>Partiklene i den smale delen går fortere fordi samme mengde må passere et mindre tverrsnitt. Verdiene følger kalkulatoren under.</figcaption>
-</figure>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11a-q-q">Volumstrøm Q (l/min)</label><input id="fy11a-q-q" inputmode="decimal" value="40"></div>
@@ -5748,12 +5768,43 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11a-q-out" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Trykk er kraft fordelt på et areal. Det styrer alt fra trykkluft og gassflasker til hvor mye en last veier under vann. Pascals lov og hydrauliske krefter finner du i kapittel 11 Hydraulikk.</p>
+<h3>Trykk og enheter</h3>
+<p>Trykk er kraft per areal: <span class="mono">p = F / A</span>. SI-enheten er pascal, 1 Pa = 1 N/m², som er et svært lite trykk. I verkstedet brukes bar, og i amerikansk utstyr psi.</p>
+<h3>Overtrykk, absolutt trykk og atmosfæretrykk</h3>
+<p>Luften rundt oss trykker med omtrent 1 bar (normalt 1,013 bar ved havflaten). Et vanlig manometer viser <b>overtrykk</b> p<sub>e</sub>, altså trykket over atmosfæretrykket. <b>Absolutt trykk</b> regnes fra fullstendig vakuum: <span class="mono">p<sub>abs</sub> = p<sub>e</sub> + p<sub>atm</sub></span>. Gasslovene under krever absolutt trykk.</p>
+<figure class="fig">
+  <svg id="fy11a-pref" viewBox="0 0 600 270" role="img" aria-label="Trykkskala som viser absolutt trykk, atmosfæretrykk, overtrykk og undertrykk"></svg>
+  <figcaption>Et dekk med 2,2 bar på manometeret har 3,2 bar absolutt trykk. En vakuumsug med 0,6 bar undertrykk har 0,4 bar absolutt.</figcaption>
+</figure>
+<h3>Hydrostatisk trykk: p = ρ · g · h</h3>
+<p>I en væske øker trykket med dybden fordi væsken over må bæres: <span class="mono">p = ρ · g · h</span>. Trykket avhenger bare av dybde og tetthet, ikke av formen eller størrelsen på tanken. I vann øker trykket med ca. 0,1 bar per meter. Derfor blir veggen nederst i en tank, en dam eller et kar belastet mest.</p>
+<figure class="fig">
+  <svg id="fy11a-tank" viewBox="0 0 600 300" role="img" aria-label="Tank med væske og manometer som senkes til forskjellig dybde"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11a-tank-play" type="button">▶ Spill av</button><label class="small muted" for="fy11a-tank-liq">Væske</label><select id="fy11a-tank-liq" style="width:auto"></select></div>
+  <div class="ctrl fy11a-rng"><label class="small muted" for="fy11a-tank-h">Dybde h</label><input type="range" id="fy11a-tank-h" min="0" max="10" step="0.1" value="5"><span class="mono" id="fy11a-tank-ho"></span></div>
+  <figcaption>Manometeret viser overtrykket ved måleproben. Pilene på veggen viser at trykket øker jevnt med dybden. Tettheter for sjøvann og hydraulikkolje er veiledende.</figcaption>
+</figure>
+<h3>Arkimedes’ lov: oppdrift</h3>
+<p>Et legeme i en væske får en oppdrift som er like stor som tyngden av væsken det fortrenger: <span class="mono">F<sub>B</sub> = ρ<sub>væske</sub> · g · V</span>. Er legemet tettere enn væsken, synker det, men det veier mindre under vann. Det har betydning ved løft i sjø: lasten blir tyngre i det øyeblikket den kommer opp av vannet.</p>
+<h3>Gasser: Boyle–Mariotte og den ideelle gassloven</h3>
+<p>Gass lar seg komprimere. Ved konstant temperatur er trykk ganger volum konstant (Boyle–Mariotte): <span class="mono">p₁ · V₁ = p₂ · V₂</span>. Halvert volum gir dobbelt trykk. Endres også temperaturen, gjelder den ideelle gassloven <span class="mono">p · V / T = konstant</span>, eller <span class="mono">p₁V₁ / T₁ = p₂V₂ / T₂</span>. Her må trykket være <b>absolutt</b> og temperaturen i <b>kelvin</b> (T = °C + 273,15).</p>
+<h3>Strømning i rør: kontinuitetslikningen Q = A · v</h3>
+<p>Det som strømmer inn i et rør, må strømme ut. Volumstrømmen Q er derfor den samme i hele røret: <span class="mono">Q = A₁ · v₁ = A₂ · v₂</span>. Der røret blir smalere, må væsken gå fortere. Halvert diameter gir fjerdedels areal og <b>fire ganger</b> så høy hastighet. Gjelder væsker, og gasser når trykkendringen er liten.</p>
+<figure class="fig">
+  <svg id="fy11a-pipe" viewBox="0 0 600 180" role="img" aria-label="Rør som snevres inn der væskepartiklene går fortere i den smale delen"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11a-pipe-play" type="button">▶ Spill av</button><span class="mono small" id="fy11a-pipe-read"></span></div>
+  <figcaption>Partiklene i den smale delen går fortere fordi samme mengde må passere et mindre tverrsnitt. Verdiene følger kalkulatoren over.</figcaption>
+</figure>
 <h3>Trykkfall</h3>
 <p>Friksjon mot rørveggen, bend, ventiler og innsnevringer gir trykkfall. Ved turbulent strømning er trykkfallet i et rett rør <span class="mono">Δp = λ · (L / d) · ρ · v² / 2</span>, der λ er rørfriksjonstallet. Trykkfallet øker altså omtrent med <b>kvadratet</b> av hastigheten: dobbel volumstrøm i samme rør gir omtrent fire ganger så stort trykkfall. Trykkfallet blir til varme og er tapt effekt. Derfor velges rørdiameter slik at hastigheten holdes innenfor anbefalte verdier; se kapittel 11 Hydraulikk. I trykkluftnett er tommelfingerregelen at trykkfallet fra kompressor til uttak ikke bør overstige ca. 0,1 bar (veiledende).</p>
+</details>
 </div>
 <div class="topic" id="fy11-temp">
-  <div class="topic-h"><span class="tno">11.5</span><h3>Temperatur</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">11.5</span><h3>Temperatur</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<style>
 .fy11b-sw{display:inline-block;width:34px;height:18px;border:1px solid var(--ink-2);vertical-align:middle}
 .fy11b-ex{border:1px solid var(--line);background:var(--paper);padding:10px 14px;margin:8px 0 16px;max-width:78ch;font-size:14px}
 .fy11b-ex p:last-child{margin:0}
@@ -5807,10 +5858,19 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .fy11b-adv{margin:0;padding-left:20px;font-size:14px}
 .fy11b-adv li{margin:3px 0}
 </style>
-<p class="lead">Temperatur er et mål for hvor kraftig partiklene i et stoff beveger seg. Den styrer mål (varmeutvidelse), hardhet (herding og anløping), sveising (forvarming) og helse og sikkerhet (brannskader, antennelse). I verkstedet må du kunne regne mellom skalaene, lese farger på stål og velge riktig måleinstrument.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Celsius og kelvin</h4><b>T = t + 273,15</b><span>ΔT: 1 K = 1 °C</span></div>
+    <div><h4>Fahrenheit</h4><b>t<sub>F</sub> = 1,8 · t + 32</b><b>t = (t<sub>F</sub> − 32) / 1,8</b></div>
+    <div><h4>Varmeutvidelse</h4><b>ΔL = α · L · ΔT</b><span>stål: α ≈ 12 · 10⁻⁶/K, 1 m blir ca. 0,012 mm lengre per °C</span></div>
+    <div><h4>Anløpsfarger</h4><span>Strågul ca. 220 °C · brunrød ca. 250 °C · blå ca. 300 °C · grå 360 °C: hardheten er borte</span></div>
+    <div><h4>Glødefarger</h4><span>Mørkerød ca. 680 °C · kirsebærrød ca. 780 °C · gul ca. 1100 °C</span></div>
+    <div><h4>IR-termometer</h4><span>Blankt metall har lav ε og gir for lav verdi. Mål på sort tape (ε ≈ 0,95)</span></div>
+  </div>
+  <div class="hurtig-u">t temperatur (°C) · T absolutt temperatur (K) · α lengdeutvidelse (1/K) · ε emissivitet</div>
+</div>
 <h3>Temperaturskalaer: °C, K og °F</h3>
-<p><b>Celsius</b> har 0 °C der vann fryser og 100 °C der vann koker ved normalt lufttrykk. <b>Kelvin</b> er SI-enheten og starter i det absolutte nullpunktet, der partiklene har minst mulig bevegelse: 0 K = −273,15 °C. Ett kelvin er like stort som én celsiusgrad, så en <b>temperaturforskjell</b> ΔT er det samme tallet i K og i °C. Kelvin må brukes når temperaturen ganges eller opphøyes, for eksempel i gasslovene og strålingsformelen (T⁴). <b>Fahrenheit</b> brukes i USA og dukker opp i amerikanske manualer og datablad. Én fahrenheitgrad er 5/9 K.</p>
 <div class="tbl" id="fy11b-tform"></div>
 <div class="calc">
   <div class="fields">
@@ -5823,29 +5883,16 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11b-tout" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="fy11b-thermo" viewBox="0 0 600 230" role="img" aria-label="Termometer med celsius-, fahrenheit- og kelvinskala"></svg>
-  <figcaption>Termometeret følger kalkulatoren. De tre skalaene ligger over hverandre, så den stiplede linjen viser samme temperatur på alle tre. Legg merke til at −40 °C = −40 °F, og at 20 °C er referansetemperaturen for lengdemål (ISO 1): et mål på tegningen gjelder ved 20 °C.</figcaption>
-</figure>
-
 <h3>Anløpsfarger på stål</h3>
-<p>Når blankt stål varmes opp i luft, vokser et tynt oksidlag på overflaten. Lyset reflekteres både fra oksidlaget og fra metallet under, og tykkelsen avgjør hvilken farge du ser (interferens, som en oljeflekk på vann). Fargen viser derfor hvor varm overflaten har vært. Smeder og verktøymakere har brukt dette til å <b>anløpe</b> herdet verktøy: Stålet herdes først, blir glassharde og sprøtt, og varmes så til en bestemt farge for å få litt seighet tilbake.</p>
 <div class="tbl" id="fy11b-anlop"></div>
 <p class="small muted">Veiledende verdier for ulegert verktøystål etter vanlige tabellverk (f.eks. Tabellenbuch Metall). Fargen avhenger også av hvor lenge stålet holdes varmt: lang tid gir samme farge ved lavere temperatur. Legert og rustfritt stål får fargene ved høyere temperaturer.</p>
 <div class="note"><p><b>Slipebrann.</b> Gule eller blå flekker etter sliping av herdet verktøy (bor, dreiestål, stanseverktøy) betyr at eggen har vært over ca. 200–300 °C. Da har stålet mistet hardhet akkurat der det trengs. Slip med lett trykk, skarp skive og kjøling. På rustfritt stål er anløpsfarger etter sveising et oksidlag som svekker korrosjonsbestandigheten. Det fjernes ved beising eller sliping (se 11.10 om trygg håndtering av beisepasta).</p></div>
-
 <h3>Glødefarger</h3>
-<p>Over ca. 500 °C sender stålet ut synlig lys. Fargen går fra mørkt rødbrunt via kirsebærrødt og gult til nesten hvitt. Glødefargen brukes til å bedømme temperaturen ved smiing, retting med flamme og herding. Ulegert stål med ca. 0,45 % C herdes typisk ved kirsebærrød til lys kirsebærrød glød.</p>
 <div class="tbl" id="fy11b-glod"></div>
 <p class="small muted">Veiledende, etter vanlige tabellverk (f.eks. Tabellenbuch Metall). Bedøm glødefarger i svakt, jevnt lys. I sterkt lys eller sollys ser gløden svakere ut, og man varmer lett for mye. Bruk instrument når temperaturen er kritisk.</p>
-
 <h3>Måleinstrumenter for temperatur</h3>
 <div class="tbl" id="fy11b-instr"></div>
 <p class="small muted">Toleranser: termoelementer etter IEC 60584-1 (størst av de to verdiene gjelder), Pt100 etter IEC 60751 (|t| i °C). Måleområdet for et ferdig følerelement kan være mindre enn for selve tråden. Sjekk databladet.</p>
-<figure class="fig">
-  <svg id="fy11b-tcfig" viewBox="0 0 600 240" role="img" aria-label="Termoelement og Pt100 koblet til instrument"></svg>
-  <figcaption>Venstre: Et termoelement er to ulike metaller sveiset sammen i målepunktet. Temperaturforskjellen mellom målepunktet og koblingspunktet i instrumentet gir en liten spenning, ca. 41 µV per °C for type K. Instrumentet måler temperaturen i koblingspunktet og legger den til (kaldloddkompensasjon). Derfor må skjøteledningen være av riktig type. Høyre: Pt100 er en platinamotstand der resistansen øker med temperaturen. Med 3 eller 4 ledere trekker instrumentet fra resistansen i ledningene.</figcaption>
-</figure>
 <div class="two">
 <div>
 <p><b>Pt100 – resistans og temperatur</b><br><span class="small muted">Callendar–Van Dusen etter IEC 60751: R = R₀ · (1 + A·t + B·t²) for t ≥ 0 °C, med R₀ = 100 Ω, A = 3,9083 · 10⁻³, B = −5,775 · 10⁻⁷. Under 0 °C kommer et ekstra ledd med C = −4,183 · 10⁻¹².</span></p>
@@ -5872,21 +5919,12 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </div>
 </div>
 </div>
-
 <h3>IR-måling og emissivitet</h3>
-<p>Et IR-termometer måler varmestrålingen fra overflaten. Hvor mye en flate stråler ved en gitt temperatur, avhenger av <b>emissiviteten ε</b> (0 til 1). Et matt, sort legeme har ε nær 1. Blankt metall har lav ε og <b>speiler</b> i stedet strålingen fra omgivelsene. Står instrumentet på ε = 0,95 og du måler på blank aluminium, viser det vanligvis alt for lav temperatur, og det kan vise varmen fra deg selv eller en lampe som speiles i flaten.</p>
-<figure class="fig">
-  <svg id="fy11b-irfig" viewBox="0 0 600 220" role="img" aria-label="IR-termometer som mottar egenstråling og reflektert stråling"></svg>
-  <div class="ctrl fy11b-rng"><label class="small muted" for="fy11b-eps">Emissivitet ε</label><input type="range" id="fy11b-eps" min="0.05" max="1" step="0.05" value="0.9"><span class="mono" id="fy11b-epso"></span></div>
-  <figcaption>Strålingen som når instrumentet, er egenstråling (andel ε) pluss reflektert stråling fra omgivelsene (andel 1 − ε). Dra i glidebryteren: Med lav ε kommer det meste av signalet fra omgivelsene, ikke fra emnet.</figcaption>
-</figure>
 <div class="tbl" id="fy11b-emis"></div>
 <p class="small muted">Veiledende verdier for vanlige IR-termometre (bølgelengde ca. 8–14 µm), samlet fra produsenttabeller. Emissiviteten varierer med overflate, temperatur og bølgelengde.</p>
 <div class="note"><p><b>Slik måler du blankt metall:</b> Sett på en bit sort isolasjonstape eller matt sort maling (ε ≈ 0,95) og mål på den. Eller mål samme punkt med en kontaktføler og juster ε på IR-termometeret til det viser det samme. Mål vinkelrett på flaten og nært nok til at målepunktet er mindre enn emnet.</p></div>
-<h3>Temperaturutvidelse</h3>
-<p>Alle materialer utvider seg når de varmes opp: <span class="mono">ΔL = α · L · ΔT</span>, der α er lengdeutvidelseskoeffisienten (tabell 11.7). Derfor gjelder mål ved 20 °C, og derfor kan et akselnav krympes på ved å varme navet. Kalkulatoren under regner ut forlengelse og nødvendig oppvarming for krympepasning.</p>
-  <h3>Temperaturutvidelse og krympepasning</h3>
-  <div class="calc">
+<h3>Temperaturutvidelse og krympepasning</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="th-mat">Materiale</label><select id="th-mat"></select></div>
       <div class="row2">
@@ -5900,18 +5938,54 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="th2-out" aria-live="polite"></div>
   </div>
-  <figure class="fig">
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Temperatur er et mål for hvor kraftig partiklene i et stoff beveger seg. Den styrer mål (varmeutvidelse), hardhet (herding og anløping), sveising (forvarming) og helse og sikkerhet (brannskader, antennelse). I verkstedet må du kunne regne mellom skalaene, lese farger på stål og velge riktig måleinstrument.</p>
+<h3>Temperaturskalaer: °C, K og °F</h3>
+<p><b>Celsius</b> har 0 °C der vann fryser og 100 °C der vann koker ved normalt lufttrykk. <b>Kelvin</b> er SI-enheten og starter i det absolutte nullpunktet, der partiklene har minst mulig bevegelse: 0 K = −273,15 °C. Ett kelvin er like stort som én celsiusgrad, så en <b>temperaturforskjell</b> ΔT er det samme tallet i K og i °C. Kelvin må brukes når temperaturen ganges eller opphøyes, for eksempel i gasslovene og strålingsformelen (T⁴). <b>Fahrenheit</b> brukes i USA og dukker opp i amerikanske manualer og datablad. Én fahrenheitgrad er 5/9 K.</p>
+<figure class="fig">
+  <svg id="fy11b-thermo" viewBox="0 0 600 230" role="img" aria-label="Termometer med celsius-, fahrenheit- og kelvinskala"></svg>
+  <figcaption>Termometeret følger kalkulatoren. De tre skalaene ligger over hverandre, så den stiplede linjen viser samme temperatur på alle tre. Legg merke til at −40 °C = −40 °F, og at 20 °C er referansetemperaturen for lengdemål (ISO 1): et mål på tegningen gjelder ved 20 °C.</figcaption>
+</figure>
+<h3>Anløpsfarger på stål</h3>
+<p>Når blankt stål varmes opp i luft, vokser et tynt oksidlag på overflaten. Lyset reflekteres både fra oksidlaget og fra metallet under, og tykkelsen avgjør hvilken farge du ser (interferens, som en oljeflekk på vann). Fargen viser derfor hvor varm overflaten har vært. Smeder og verktøymakere har brukt dette til å <b>anløpe</b> herdet verktøy: Stålet herdes først, blir glassharde og sprøtt, og varmes så til en bestemt farge for å få litt seighet tilbake.</p>
+<h3>Glødefarger</h3>
+<p>Over ca. 500 °C sender stålet ut synlig lys. Fargen går fra mørkt rødbrunt via kirsebærrødt og gult til nesten hvitt. Glødefargen brukes til å bedømme temperaturen ved smiing, retting med flamme og herding. Ulegert stål med ca. 0,45 % C herdes typisk ved kirsebærrød til lys kirsebærrød glød.</p>
+<h3>Måleinstrumenter for temperatur</h3>
+<figure class="fig">
+  <svg id="fy11b-tcfig" viewBox="0 0 600 240" role="img" aria-label="Termoelement og Pt100 koblet til instrument"></svg>
+  <figcaption>Venstre: Et termoelement er to ulike metaller sveiset sammen i målepunktet. Temperaturforskjellen mellom målepunktet og koblingspunktet i instrumentet gir en liten spenning, ca. 41 µV per °C for type K. Instrumentet måler temperaturen i koblingspunktet og legger den til (kaldloddkompensasjon). Derfor må skjøteledningen være av riktig type. Høyre: Pt100 er en platinamotstand der resistansen øker med temperaturen. Med 3 eller 4 ledere trekker instrumentet fra resistansen i ledningene.</figcaption>
+</figure>
+<h3>IR-måling og emissivitet</h3>
+<p>Et IR-termometer måler varmestrålingen fra overflaten. Hvor mye en flate stråler ved en gitt temperatur, avhenger av <b>emissiviteten ε</b> (0 til 1). Et matt, sort legeme har ε nær 1. Blankt metall har lav ε og <b>speiler</b> i stedet strålingen fra omgivelsene. Står instrumentet på ε = 0,95 og du måler på blank aluminium, viser det vanligvis alt for lav temperatur, og det kan vise varmen fra deg selv eller en lampe som speiles i flaten.</p>
+<figure class="fig">
+  <svg id="fy11b-irfig" viewBox="0 0 600 220" role="img" aria-label="IR-termometer som mottar egenstråling og reflektert stråling"></svg>
+  <div class="ctrl fy11b-rng"><label class="small muted" for="fy11b-eps">Emissivitet ε</label><input type="range" id="fy11b-eps" min="0.05" max="1" step="0.05" value="0.9"><span class="mono" id="fy11b-epso"></span></div>
+  <figcaption>Strålingen som når instrumentet, er egenstråling (andel ε) pluss reflektert stråling fra omgivelsene (andel 1 − ε). Dra i glidebryteren: Med lav ε kommer det meste av signalet fra omgivelsene, ikke fra emnet.</figcaption>
+</figure>
+<h3>Temperaturutvidelse</h3>
+<p>Alle materialer utvider seg når de varmes opp: <span class="mono">ΔL = α · L · ΔT</span>, der α er lengdeutvidelseskoeffisienten (tabell 11.7). Derfor gjelder mål ved 20 °C, og derfor kan et akselnav krympes på ved å varme navet. Kalkulatoren over regner ut forlengelse og nødvendig oppvarming for krympepasning.</p>
+<h3>Temperaturutvidelse og krympepasning</h3>
+<figure class="fig">
     <svg id="fig-heat" viewBox="0 0 600 170" role="img" aria-label="Stav som blir lengre når den varmes opp"></svg>
     <div class="ctrl"><button class="chip play" id="heat-play" type="button">▶ Varm opp</button><span id="heat-read" class="mono"></span></div>
     <figcaption>Forlengelsen er forstørret. Verdiene følger kalkulatoren over.</figcaption>
   </figure>
+</details>
 </div>
 <div class="topic" id="fy11-varme">
-  <div class="topic-h"><span class="tno">11.6</span><h3>Varmelære</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">Varme er energi som går fra et varmt sted til et kaldere. I verkstedet handler varmelære om hvor mye energi som trengs for å varme et emne, hvor fort varmen sprer seg, og hvorfor forvarming før sveising virker.</p>
-
+<div class="topic-h"><span class="tno">11.6</span><h3>Varmelære</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Varmemengde</h4><b>Q = m · c · ΔT</b><span>c: stål 460, aluminium 900, vann 4182 J/(kg·K)</span></div>
+    <div><h4>Smelting og fordamping</h4><b>Q = m · L</b><span>temperaturen står stille under faseskiftet</span></div>
+    <div><h4>Varmetransport</h4><b>Φ = λ · A · ΔT / d</b><span>ledning</span><b>Φ = h · A · ΔT</b><span>konveksjon</span><b>Φ = ε · σ · A · (T₁⁴ − T₂⁴)</b><span>stråling, T i kelvin</span></div>
+    <div><h4>Forvarming før sveising</h4><b>CEV = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15</b><span>behovet øker tydelig over ca. 0,45</span><span>Mål temperaturen 4 · t fra fugekanten, høyst 50 mm</span></div>
+  </div>
+  <div class="hurtig-u">Q varme (J) · m masse (kg) · c spes. varmekapasitet (J/(kg·K)) · Φ varmestrøm (W) · σ = 5,67 · 10⁻⁸ W/(m²·K⁴)</div>
+</div>
 <h3>Varmemengde: Q = m · c · ΔT</h3>
-<p>Energien som trengs for å endre temperaturen til et stoff, er <span class="mono">Q = m · c · ΔT</span>. Her er Q varmemengden i J, m massen i kg, ΔT temperaturendringen i K (eller °C), og c den <b>spesifikke varmekapasiteten</b> i J/(kg·K): energien som skal til for å varme 1 kg med 1 K. Vann har svært høy c, omtrent ni ganger så høy som stål. Derfor kjøler vann så godt, og derfor tar det lang tid å varme opp en full kjølevæsketank.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11b-qmat">Stoff</label><select id="fy11b-qmat"></select></div>
@@ -5928,32 +6002,13 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="fy11b-qout" aria-live="polite"></div>
 </div>
 <p class="small muted">c-verdiene gjelder ved romtemperatur. For stål øker c med temperaturen; middelverdien fra 20 til 200 °C er ca. 490 J/(kg·K) (etter NS-EN 1993-1-2). Kalkulatoren tar ikke med varmetap.</p>
-
 <h3>Smeltevarme og fordampningsvarme</h3>
-<p>Når et stoff smelter eller fordamper, går energien med til å bryte bindingene mellom partiklene. Temperaturen står stille til hele massen har skiftet fase. Energien er <span class="mono">Q = m · L</span>, der L er smeltevarmen L<sub>s</sub> eller fordampningsvarmen L<sub>f</sub> i kJ/kg. Det kreves 2257 kJ for å fordampe 1 kg kokende vann, mer enn fem ganger så mye som å varme det fra 0 til 100 °C. Derfor gir damp verre brannskader enn kokende vann: dampen avgir fordampningsvarmen når den kondenserer på huden.</p>
-<figure class="fig">
-  <svg id="fy11b-hc" viewBox="0 0 600 300" role="img" aria-label="Oppvarmingskurve for 1 kg is fra −20 °C til damp ved 120 °C"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11b-hc-play" type="button">▶ Spill av</button><span class="mono" id="fy11b-hc-read"></span></div>
-  <figcaption>Oppvarmingskurve for 1 kg is ved normalt lufttrykk med jevn varmetilførsel. På de flate delene skifter stoffet fase, og all energien går med til det. Fordampningen tar mest energi av alt.</figcaption>
-</figure>
 <div class="tbl" id="fy11b-latent"></div>
 <p class="small muted">Smeltevarme for metaller er regnet fra molare verdier (CRC Handbook of Chemistry and Physics) og avrundet. Vann og etanol ved normalt lufttrykk.</p>
-<div class="fy11b-ex"><p><b>Eksempel – smelte 1 kg aluminium fra 20 °C:</b> Oppvarming til 660 °C: 1 · 900 · 640 ≈ 576 kJ (c øker med temperaturen, så dette er i underkant). Smelting: 1 · 397 = 397 kJ. Til sammen <b class="mono">≈ 0,97 MJ ≈ 0,27 kWh</b> uten tap. En smelteovn trenger mye mer fordi den taper varme hele tiden.</p></div>
-
 <h3>Varmetransport: ledning, konveksjon og stråling</h3>
-<p>Varme går alltid fra varmt til kaldt, på tre måter. Oftest skjer alle tre samtidig.</p>
-<figure class="fig">
-  <svg id="fy11b-ht" viewBox="0 0 600 260" role="img" aria-label="Varmeledning i en stav, konveksjon i luft og varmestråling"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11b-ht-play" type="button">▶ Spill av</button></div>
-  <figcaption>Ledning: Partiklene i den varme enden svinger kraftig og dytter energien videre til naboene. Konveksjon: Varm luft eller væske stiger, kald synker, og strømmen tar med seg varmen. Stråling: Varme flater sender ut infrarød stråling som går gjennom luft (og vakuum) og varmer det den treffer.</figcaption>
-</figure>
 <div class="tbl" id="fy11b-htt"></div>
 <p class="small muted">Varmeovergangstall h: typiske områder etter Incropera, <i>Fundamentals of Heat and Mass Transfer</i>. σ = 5,67 · 10⁻⁸ W/(m²·K⁴) (Stefan–Boltzmanns konstant). Φ er varmestrøm i W.</p>
-<p><b>Eksempel på stråling:</b> En stålplate med ε = 0,8 ved 200 °C i et verksted på 20 °C taper <span class="mono">Φ/A = ε · σ · (T₁⁴ − T₂⁴) = 0,8 · 5,67 · 10⁻⁸ · (473,15⁴ − 293,15⁴) ≈ 1,9 kW/m²</span> bare ved stråling. Temperaturene må stå i kelvin. Fordi strålingen øker med T⁴, blir den den dominerende varmetapsformen ved høye temperaturer. Derfor kjøler et glødende emne seg raskt ned til mørk glød, og deretter mye langsommere.</p>
-
 <h3>Forvarming før sveising</h3>
-<p>Ved sveising av tykt gods eller stål med høyt karbon- eller legeringsinnhold kan den varmepåvirkede sonen (HAZ) bli hard og sprø. Kommer det i tillegg hydrogen og spenninger, kan det oppstå <b>kaldsprekker</b>, ofte timer etter sveising. Forvarming hjelper på tre måter: Avkjølingen går langsommere, så det dannes mindre hard martensitt. Hydrogenet får bedre tid til å diffundere ut. Og temperaturforskjellene, og dermed spenningene, blir mindre.</p>
-<p>Behovet styres av karbonekvivalenten <span class="mono">CEV = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15</span> (IIW, i vekt-%), godstykkelsen, hydrogeninnholdet i tilsettmaterialet og varmetilførselen. Forvarmingstemperaturen tas fra <b>sveiseprosedyren (WPS)</b> eller beregnes etter NS-EN 1011-2. Som en grov huskeregel øker behovet tydelig når CEV er over ca. 0,45 (veiledende). Temperaturen måles med kontakttermometer eller temperaturkritt i avstanden <span class="mono">A = 4 · t</span> fra fugekanten, men høyst 50 mm, når t ≤ 50 mm. Når t > 50 mm, skal A være minst 75 mm (ISO 13916).</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11b-pmat">Materiale</label><select id="fy11b-pmat"></select></div>
@@ -5974,11 +6029,36 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11b-pout" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Varme er energi som går fra et varmt sted til et kaldere. I verkstedet handler varmelære om hvor mye energi som trengs for å varme et emne, hvor fort varmen sprer seg, og hvorfor forvarming før sveising virker.</p>
+<h3>Varmemengde: Q = m · c · ΔT</h3>
+<p>Energien som trengs for å endre temperaturen til et stoff, er <span class="mono">Q = m · c · ΔT</span>. Her er Q varmemengden i J, m massen i kg, ΔT temperaturendringen i K (eller °C), og c den <b>spesifikke varmekapasiteten</b> i J/(kg·K): energien som skal til for å varme 1 kg med 1 K. Vann har svært høy c, omtrent ni ganger så høy som stål. Derfor kjøler vann så godt, og derfor tar det lang tid å varme opp en full kjølevæsketank.</p>
+<h3>Smeltevarme og fordampningsvarme</h3>
+<p>Når et stoff smelter eller fordamper, går energien med til å bryte bindingene mellom partiklene. Temperaturen står stille til hele massen har skiftet fase. Energien er <span class="mono">Q = m · L</span>, der L er smeltevarmen L<sub>s</sub> eller fordampningsvarmen L<sub>f</sub> i kJ/kg. Det kreves 2257 kJ for å fordampe 1 kg kokende vann, mer enn fem ganger så mye som å varme det fra 0 til 100 °C. Derfor gir damp verre brannskader enn kokende vann: dampen avgir fordampningsvarmen når den kondenserer på huden.</p>
+<figure class="fig">
+  <svg id="fy11b-hc" viewBox="0 0 600 300" role="img" aria-label="Oppvarmingskurve for 1 kg is fra −20 °C til damp ved 120 °C"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11b-hc-play" type="button">▶ Spill av</button><span class="mono" id="fy11b-hc-read"></span></div>
+  <figcaption>Oppvarmingskurve for 1 kg is ved normalt lufttrykk med jevn varmetilførsel. På de flate delene skifter stoffet fase, og all energien går med til det. Fordampningen tar mest energi av alt.</figcaption>
+</figure>
+<div class="fy11b-ex"><p><b>Eksempel – smelte 1 kg aluminium fra 20 °C:</b> Oppvarming til 660 °C: 1 · 900 · 640 ≈ 576 kJ (c øker med temperaturen, så dette er i underkant). Smelting: 1 · 397 = 397 kJ. Til sammen <b class="mono">≈ 0,97 MJ ≈ 0,27 kWh</b> uten tap. En smelteovn trenger mye mer fordi den taper varme hele tiden.</p></div>
+<h3>Varmetransport: ledning, konveksjon og stråling</h3>
+<p>Varme går alltid fra varmt til kaldt, på tre måter. Oftest skjer alle tre samtidig.</p>
+<figure class="fig">
+  <svg id="fy11b-ht" viewBox="0 0 600 260" role="img" aria-label="Varmeledning i en stav, konveksjon i luft og varmestråling"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11b-ht-play" type="button">▶ Spill av</button></div>
+  <figcaption>Ledning: Partiklene i den varme enden svinger kraftig og dytter energien videre til naboene. Konveksjon: Varm luft eller væske stiger, kald synker, og strømmen tar med seg varmen. Stråling: Varme flater sender ut infrarød stråling som går gjennom luft (og vakuum) og varmer det den treffer.</figcaption>
+</figure>
+<p><b>Eksempel på stråling:</b> En stålplate med ε = 0,8 ved 200 °C i et verksted på 20 °C taper <span class="mono">Φ/A = ε · σ · (T₁⁴ − T₂⁴) = 0,8 · 5,67 · 10⁻⁸ · (473,15⁴ − 293,15⁴) ≈ 1,9 kW/m²</span> bare ved stråling. Temperaturene må stå i kelvin. Fordi strålingen øker med T⁴, blir den den dominerende varmetapsformen ved høye temperaturer. Derfor kjøler et glødende emne seg raskt ned til mørk glød, og deretter mye langsommere.</p>
+<h3>Forvarming før sveising</h3>
+<p>Ved sveising av tykt gods eller stål med høyt karbon- eller legeringsinnhold kan den varmepåvirkede sonen (HAZ) bli hard og sprø. Kommer det i tillegg hydrogen og spenninger, kan det oppstå <b>kaldsprekker</b>, ofte timer etter sveising. Forvarming hjelper på tre måter: Avkjølingen går langsommere, så det dannes mindre hard martensitt. Hydrogenet får bedre tid til å diffundere ut. Og temperaturforskjellene, og dermed spenningene, blir mindre.</p>
+<p>Behovet styres av karbonekvivalenten <span class="mono">CEV = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15</span> (IIW, i vekt-%), godstykkelsen, hydrogeninnholdet i tilsettmaterialet og varmetilførselen. Forvarmingstemperaturen tas fra <b>sveiseprosedyren (WPS)</b> eller beregnes etter NS-EN 1011-2. Som en grov huskeregel øker behovet tydelig når CEV er over ca. 0,45 (veiledende). Temperaturen måles med kontakttermometer eller temperaturkritt i avstanden <span class="mono">A = 4 · t</span> fra fugekanten, men høyst 50 mm, når t ≤ 50 mm. Når t > 50 mm, skal A være minst 75 mm (ISO 13916).</p>
 <figure class="fig">
   <svg id="fy11b-pfig" viewBox="0 0 600 230" role="img" aria-label="Snitt av to plater med fuge, varmet sone og målepunkt"></svg>
   <figcaption>Den skraverte sonen er stålet som skal varmes, b på hver side av fugen gjennom hele tykkelsen. Målepunktet A ligger innenfor den varme sonen. Tallene følger kalkulatoren.</figcaption>
 </figure>
 <p class="small muted">Virkningsgraden er et grovt, veiledende anslag for hvor mye av den tilførte energien som havner i emnet. Resten går tapt til luft og stråling. Propan: nedre brennverdi ca. 46 MJ/kg. Kalkulatoren gir et overslag for utstyr og gass, ikke forvarmingstemperaturen; den står i WPS.</p>
+</details>
 </div>
 <div class="topic" id="fy11-tabeller">
   <div class="topic-h"><span class="tno">11.7</span><h3>Fysiske og varmetekniske tabeller</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
@@ -6013,27 +6093,23 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="note"><p><b>Tunge gasser samler seg nederst.</b> Argon, CO₂ og propan er tyngre enn luft og renner ned i groper, kummer, tanker og kjellere. De fortrenger oksygenet uten at du merker det, og det er fare for kvelning. Sørg for avtrekk nede ved gulvet ved TIG- og MIG/MAG-sveising i trange rom. Ved lekkasje av oksygen blir klær og hår mye lettere antennelige.</p></div>
 </div>
 <div class="topic" id="fy11-periodisk">
-  <div class="topic-h"><span class="tno">11.8</span><h3>Det periodiske systemet, spenningsrekken</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">Det periodiske systemet ordner alle grunnstoffene etter atomnummer, altså antall protoner i kjernen. Stoffer i samme kolonne (gruppe) har like mange elektroner ytterst og oppfører seg kjemisk likt. Spenningsrekken viser hvilke metaller som korroderer når to ulike metaller er i kontakt, og er grunnlaget for valg av festemidler og offeranoder.</p>
-
+<div class="topic-h"><span class="tno">11.8</span><h3>Det periodiske systemet, spenningsrekken</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Galvanisk korrosjon</h4><span>Metallet som er minst edelt i rekka, blir anode og ruster</span><span>Krever metallkontakt og felles fukt</span></div>
+    <div><h4>Største spenningsforskjell</h4><span>Marint 0,15 V · utendørs 0,25 V · innendørs tørt 0,50 V</span></div>
+    <div><h4>Areal</h4><span>Liten anode og stor katode er farlig: stålbolter i rustfri plate</span><span>Rustfrie bolter i stor stålplate går som regel bra</span></div>
+    <div><h4>Offeranode</h4><span>Sink, aluminium eller magnesium. Males aldri, må ha blank kontakt</span></div>
+  </div>
+</div>
 <h3>Det periodiske systemet</h3>
-<p>Trykk på et grunnstoff for detaljer, eller søk på navn, symbol eller atomnummer. Trykk på en stoffgruppe for å framheve den. På smal skjerm kan tabellen rulles sidelengs. Atommassen er gjennomsnittlig masse i atommasseenheter (u). Den er også massen av ett mol i gram.</p>
 <div class="filter"><input id="fy11b-pq" type="search" placeholder="Søk, f.eks. Cr, krom eller 24" aria-label="Søk i det periodiske systemet"></div>
 <div class="chips fy11b-leg" id="fy11b-pleg"></div>
 <div class="fy11b-det" id="fy11b-pdet" aria-live="polite"></div>
 <div class="tbl fy11b-ptw"><div class="fy11b-pt" id="fy11b-ptab"></div></div>
 <p class="small muted">Atommasser etter IUPAC (standard atomvekt, forkortet). [ ] = massetallet til den mest stabile isotopen for grunnstoffer uten stabile isotoper. Grunnstoff 113–118 er bare laget i små mengder, og plasseringen i stoffgrupper er forventet, ikke målt.</p>
-
-<h3>Galvanisk spenningsrekke i sjøvann</h3>
-<p>Hvert metall får et elektrisk potensial når det ligger i en elektrolytt (sjøvann, regnvann, kondens). Når to ulike metaller har metallisk kontakt og samtidig er fuktet av den samme elektrolytten, blir de et batteri: Det <b>uedleste</b> metallet (mest negativt) blir <b>anode</b> og korroderer raskere. Det edleste blir <b>katode</b> og beskyttes. Jo større potensialforskjell, desto større drivkraft.</p>
-<figure class="fig">
-  <svg id="fy11b-gser" viewBox="0 0 600 540" role="img" aria-label="Galvanisk spenningsrekke for konstruksjonsmetaller i sjøvann"></svg>
-  <figcaption>Korrosjonspotensial i strømmende sjøvann, mot kalomelelektrode (SCE). Strekene viser området hvert metall normalt ligger i. Rustfritt stål har to plasser: <b>passivt</b> med intakt oksidfilm, og <b>aktivt</b> i spalter og stillestående vann der filmen er brutt. Metallene du velger i korrosjonsvelgeren under, blir framhevet.</figcaption>
-</figure>
-<p class="small muted">Veiledende og avrundet, etter galvanisk rekke i ASTM G82 (målinger i strømmende sjøvann ved 10–27 °C). Rekkefølgen kan endre seg i andre elektrolytter og temperaturer.</p>
-
 <h3>Galvanisk korrosjonsvelger</h3>
-<p>Velg to metaller som har kontakt med hverandre, miljøet og arealforholdet. Arealforholdet er viktig: Strømmen fra katoden må dekkes av anoden. En stor katode og en liten anode konsentrerer korrosjonen på et lite område. Ulegerte stålbolter i en rustfri plate er farlig; rustfrie bolter i en stor stålplate går som regel bra.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="fy11b-ga">Metall 1</label><select id="fy11b-ga"></select></div>
@@ -6043,29 +6119,51 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11b-gout" aria-live="polite"></div>
 </div>
+<h3>Offeranoder (katodisk beskyttelse)</h3>
+<div class="tbl" id="fy11b-anode"></div>
+<p class="small muted">Potensialer mot Ag/AgCl/sjøvann. Sink og aluminium: konstruksjonsverdier etter DNV-RP-B401. Magnesium: veiledende.</p>
+<div class="note"><p><b>Praktiske regler:</b> Anoder skal aldri males. Kontaktflaten mot underlaget skal være blank, og boltene tette. Bytt anoden når omtrent halvparten er brukt opp (veiledende). Bruk ikke magnesium i sjøvann, og ikke sink i ferskvann. For mye beskyttelse kan gi hydrogen, som får maling til å flasse av (katodisk avskalling) og kan gjøre høyfast stål sprøtt. Aluminiumsskrog er særlig utsatt.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Det periodiske systemet ordner alle grunnstoffene etter atomnummer, altså antall protoner i kjernen. Stoffer i samme kolonne (gruppe) har like mange elektroner ytterst og oppfører seg kjemisk likt. Spenningsrekken viser hvilke metaller som korroderer når to ulike metaller er i kontakt, og er grunnlaget for valg av festemidler og offeranoder.</p>
+<h3>Det periodiske systemet</h3>
+<p>Trykk på et grunnstoff for detaljer, eller søk på navn, symbol eller atomnummer. Trykk på en stoffgruppe for å framheve den. På smal skjerm kan tabellen rulles sidelengs. Atommassen er gjennomsnittlig masse i atommasseenheter (u). Den er også massen av ett mol i gram.</p>
+<h3>Galvanisk spenningsrekke i sjøvann</h3>
+<p>Hvert metall får et elektrisk potensial når det ligger i en elektrolytt (sjøvann, regnvann, kondens). Når to ulike metaller har metallisk kontakt og samtidig er fuktet av den samme elektrolytten, blir de et batteri: Det <b>uedleste</b> metallet (mest negativt) blir <b>anode</b> og korroderer raskere. Det edleste blir <b>katode</b> og beskyttes. Jo større potensialforskjell, desto større drivkraft.</p>
+<figure class="fig">
+  <svg id="fy11b-gser" viewBox="0 0 600 540" role="img" aria-label="Galvanisk spenningsrekke for konstruksjonsmetaller i sjøvann"></svg>
+  <figcaption>Korrosjonspotensial i strømmende sjøvann, mot kalomelelektrode (SCE). Strekene viser området hvert metall normalt ligger i. Rustfritt stål har to plasser: <b>passivt</b> med intakt oksidfilm, og <b>aktivt</b> i spalter og stillestående vann der filmen er brutt. Metallene du velger i korrosjonsvelgeren over, blir framhevet.</figcaption>
+</figure>
+<p class="small muted">Veiledende og avrundet, etter galvanisk rekke i ASTM G82 (målinger i strømmende sjøvann ved 10–27 °C). Rekkefølgen kan endre seg i andre elektrolytter og temperaturer.</p>
+<h3>Galvanisk korrosjonsvelger</h3>
+<p>Velg to metaller som har kontakt med hverandre, miljøet og arealforholdet. Arealforholdet er viktig: Strømmen fra katoden må dekkes av anoden. En stor katode og en liten anode konsentrerer korrosjonen på et lite område. Ulegerte stålbolter i en rustfri plate er farlig; rustfrie bolter i en stor stålplate går som regel bra.</p>
 <figure class="fig">
   <svg id="fy11b-gfig" viewBox="0 0 600 260" role="img" aria-label="Galvanisk element: anode og katode i kontakt under en vannfilm"></svg>
   <div class="ctrl"><button class="chip play" id="fy11b-g-play" type="button">▶ Spill av</button></div>
   <figcaption>Elektronene går gjennom metallet fra anoden til katoden. På anoden går metallatomer i oppløsning som ioner (korrosjon). På katoden tar oksygenet i vannet opp elektronene. Bredden på platene viser arealforholdet du har valgt.</figcaption>
 </figure>
 <p class="small muted">Grenseverdiene for potensialforskjell (0,15 V i marint miljø, 0,25 V utendørs, 0,50 V innendørs tørt) er vanlige tommelfingerregler for valg av metallpar (jf. MIL-STD-889). Vurderingen er veiledende. Ved viktige konstruksjoner: følg prosjektets korrosjonsspesifikasjon.</p>
-
 <h3>Offeranoder (katodisk beskyttelse)</h3>
 <p>En offeranode bruker spenningsrekken med vilje. Et uedelt metall kobles til konstruksjonen, slik at det blir anode og korroderer i stedet. Stålet blir katode og beskyttes. Beskyttelsen virker bare der anoden og konstruksjonen er i den samme elektrolytten, og bare når det er god <b>metallisk kontakt</b> mellom dem. Ulegert stål i sjøvann regnes som beskyttet når potensialet er −0,80 V eller mer negativt, målt mot en Ag/AgCl-referanseelektrode (DNV-RP-B401).</p>
-<div class="tbl" id="fy11b-anode"></div>
-<p class="small muted">Potensialer mot Ag/AgCl/sjøvann. Sink og aluminium: konstruksjonsverdier etter DNV-RP-B401. Magnesium: veiledende.</p>
-<div class="note"><p><b>Praktiske regler:</b> Anoder skal aldri males. Kontaktflaten mot underlaget skal være blank, og boltene tette. Bytt anoden når omtrent halvparten er brukt opp (veiledende). Bruk ikke magnesium i sjøvann, og ikke sink i ferskvann. For mye beskyttelse kan gi hydrogen, som får maling til å flasse av (katodisk avskalling) og kan gjøre høyfast stål sprøtt. Aluminiumsskrog er særlig utsatt.</p></div>
+</details>
 </div>
 <div class="topic" id="fy11-losning">
-  <div class="topic-h"><span class="tno">11.9</span><h3>Løsninger</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">En løsning er en jevn blanding av et stoff i et annet, for eksempel glykol i vann. Skjærevæske er en <b>emulsjon</b>: små oljedråper fordelt i vann. Den regnes på samme måte. I verkstedet må du kunne blande riktig styrke, justere styrken i en tank og lese av frysepunktet for kjølevæske.</p>
-
+<div class="topic-h"><span class="tno">11.9</span><h3>Løsninger</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Konsentrasjon</h4><b>m<sub>stoff</sub> / m<sub>løsning</sub> · 100 %</b><span>masseprosent</span><b>V<sub>stoff</sub> / V<sub>løsning</sub> · 100 %</b><span>volumprosent</span></div>
+    <div><h4>Fortynning</h4><b>C₁ · V₁ = C₂ · V₂</b></div>
+    <div><h4>Refraktometer</h4><b>C = Brix · faktor</b><span>faktoren står i produktdatabladet</span></div>
+    <div><h4>Blandingskorset</h4><b>V<sub>a</sub> : V<sub>b</sub> = (c − b) : (a − c)</b></div>
+    <div><h4>Skjærevæske</h4><span>Typisk 3–10 %. Konsentrat i vann, ikke vann i konsentrat</span></div>
+    <div><h4>Glykol i vann (MEG)</h4><span>30 % ≈ −14 °C · 40 % ≈ −24 °C · 50 % ≈ −37 °C</span></div>
+  </div>
+  <div class="hurtig-u">C konsentrasjon (%) · V volum (l)</div>
+</div>
 <h3>Masseprosent og volumprosent</h3>
 <div class="tbl" id="fy11b-konsf"></div>
-<p>Volum er ikke alltid additivt. 1 l etanol og 1 l vann gir litt under 2 l blanding, fordi molekylene pakker seg tettere. For skjærevæske-emulsjoner er feilen så liten at den ikke betyr noe i praksis. Skjærevæskekonsentrasjon oppgis i <b>volumprosent</b>.</p>
-
 <h3>Fortynning: C₁ · V₁ = C₂ · V₂</h3>
-<p>Mengden virkestoff er den samme før og etter at du har tilsatt vann. Derfor er konsentrasjon ganger volum likt før og etter: <span class="mono">C₁ · V₁ = C₂ · V₂</span>. Her er C₁ konsentrasjonen i konsentratet, V₁ volumet av konsentratet, C₂ ønsket konsentrasjon og V₂ ferdig volum.</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -6077,9 +6175,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="fy11b-cout" aria-live="polite"></div>
 </div>
 <div class="note"><p><b>Konsentrat i vann, ikke omvendt.</b> Skjærevæskekonsentrat skal helles i vannet under omrøring, eller blandes i en blandeventil. Heller du vann i konsentratet, kan det dannes en tykk, ustabil emulsjon med klumper (invertert emulsjon). Regelen er den samme som for syre (se 11.10), men grunnen er en annen.</p></div>
-
 <h3>Justere styrken i en tank: blandingskorset</h3>
-<p>Konsentrasjonen i maskintanken endrer seg hele tiden: Vann fordamper og gjør emulsjonen sterkere, og spon og lekkasjer tar med seg væske. Mål konsentrasjonen med <b>refraktometer</b>. Avlesningen (°Brix) ganges med <b>refraktometerfaktoren</b> fra produktdatabladet: <span class="mono">C = Brix · faktor</span>. Blandingskorset viser i hvilket forhold to væsker med konsentrasjon a og b må blandes for å få c: <span class="mono">V<sub>a</sub> : V<sub>b</sub> = (c − b) : (a − c)</span>.</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -6095,12 +6191,23 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="fy11b-tout2" aria-live="polite"></div>
 </div>
+<h3>Glykol og frysepunkt</h3>
+<div class="tbl" id="fy11b-glytab"></div>
+<p class="small muted">Veiledende verdier for ren glykol i vann (volumprosent), etter ASHRAE-data gjengitt av Engineering ToolBox. Ferdigblandet kjølevæske inneholder tilsetningsstoffer. Bruk produsentens tabell, og kontroller med refraktometer eller glykolmåler. Ved frysepunktet dannes først sørpe (iskrystaller), før væsken fryser helt.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En løsning er en jevn blanding av et stoff i et annet, for eksempel glykol i vann. Skjærevæske er en <b>emulsjon</b>: små oljedråper fordelt i vann. Den regnes på samme måte. I verkstedet må du kunne blande riktig styrke, justere styrken i en tank og lese av frysepunktet for kjølevæske.</p>
+<h3>Masseprosent og volumprosent</h3>
+<p>Volum er ikke alltid additivt. 1 l etanol og 1 l vann gir litt under 2 l blanding, fordi molekylene pakker seg tettere. For skjærevæske-emulsjoner er feilen så liten at den ikke betyr noe i praksis. Skjærevæskekonsentrasjon oppgis i <b>volumprosent</b>.</p>
+<h3>Fortynning: C₁ · V₁ = C₂ · V₂</h3>
+<p>Mengden virkestoff er den samme før og etter at du har tilsatt vann. Derfor er konsentrasjon ganger volum likt før og etter: <span class="mono">C₁ · V₁ = C₂ · V₂</span>. Her er C₁ konsentrasjonen i konsentratet, V₁ volumet av konsentratet, C₂ ønsket konsentrasjon og V₂ ferdig volum.</p>
+<h3>Justere styrken i en tank: blandingskorset</h3>
+<p>Konsentrasjonen i maskintanken endrer seg hele tiden: Vann fordamper og gjør emulsjonen sterkere, og spon og lekkasjer tar med seg væske. Mål konsentrasjonen med <b>refraktometer</b>. Avlesningen (°Brix) ganges med <b>refraktometerfaktoren</b> fra produktdatabladet: <span class="mono">C = Brix · faktor</span>. Blandingskorset viser i hvilket forhold to væsker med konsentrasjon a og b må blandes for å få c: <span class="mono">V<sub>a</sub> : V<sub>b</sub> = (c − b) : (a − c)</span>.</p>
 <figure class="fig">
   <svg id="fy11b-xfig" viewBox="0 0 600 220" role="img" aria-label="Blandingskors"></svg>
   <figcaption>Blandingskorset: Skriv de to konsentrasjonene til venstre og ønsket konsentrasjon i midten. Trekk fra på skrå (største minus minste). Tallene til høyre er hvor mange deler du skal ta av væsken på samme linje. Tallene følger kalkulatoren over.</figcaption>
 </figure>
 <p class="small muted">Typisk konsentrasjon for vannblandbar skjærevæske er ca. 3–10 %, avhengig av bearbeiding og materiale. Følg produsentens anbefaling (veiledende). For svak emulsjon gir dårlig rustbeskyttelse og bakterievekst. For sterk gir hudirritasjon og skum.</p>
-
 <h3>Glykol og frysepunkt</h3>
 <p>Glykol senker frysepunktet til vann. Kjølevæske i motorer og kjøleanlegg er vanligvis <b>monoetylenglykol (MEG)</b>. Den er giftig og smaker søtt, så den må oppbevares utilgjengelig for barn og dyr. <b>Propylenglykol</b> er mye mindre giftig og brukes der væsken kan komme i kontakt med mat eller drikkevann. Frysepunktet synker bare til en viss grense, ca. 60 % glykol. Tilsetter du mer, stiger frysepunktet igjen, og ren MEG fryser allerede ved −13 °C. Bland derfor aldri sterkere enn produsenten anbefaler.</p>
 <figure class="fig">
@@ -6108,46 +6215,31 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl fy11b-rng"><label class="small muted" for="fy11b-gly">Glykol (vol-%)</label><input type="range" id="fy11b-gly" min="0" max="60" step="1" value="40"><span class="mono" id="fy11b-glyo"></span></div>
   <figcaption>Frysepunkt for blandinger av glykol og vann. Dra i glidebryteren for å lese av. Mellom tabellpunktene er verdiene interpolert.</figcaption>
 </figure>
-<div class="tbl" id="fy11b-glytab"></div>
-<p class="small muted">Veiledende verdier for ren glykol i vann (volumprosent), etter ASHRAE-data gjengitt av Engineering ToolBox. Ferdigblandet kjølevæske inneholder tilsetningsstoffer. Bruk produsentens tabell, og kontroller med refraktometer eller glykolmåler. Ved frysepunktet dannes først sørpe (iskrystaller), før væsken fryser helt.</p>
+</details>
 </div>
 <div class="topic" id="fy11-syre">
-  <div class="topic-h"><span class="tno">11.10</span><h3>Syrer og baser</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
-  <p class="lead">Syrer og baser finnes overalt i verkstedet: batterisyre, beisepasta for rustfritt stål, avkalkingsmidler, alkaliske avfettingsmidler, lut og våt betong. Sterke syrer og baser er <b>etsende</b> og kan gi varige skader på øyne og hud på sekunder. Dette delemnet går gjennom det grunnleggende og legger vekt på verneutstyr og trygg håndtering.</p>
-
-<h3>pH-skalaen</h3>
-<p>pH sier hvor sur eller basisk en vannløsning er. pH 7 er nøytralt. Under 7 er løsningen <b>sur</b>, over 7 er den <b>basisk</b> (alkalisk). Skalaen er logaritmisk: Ett trinn betyr ti ganger så sterk. pH 2 er altså 10 ganger surere enn pH 3 og 100 000 ganger surere enn rent vann. Baser er like farlige som syrer. Lut trenger dypt inn i vevet og kan være verre for øynene enn mange syrer.</p>
-<figure class="fig">
-  <svg id="fy11b-ph" viewBox="0 0 600 250" role="img" aria-label="pH-skala med vanlige stoffer fra hverdag og verksted"></svg>
-  <figcaption>Omtrentlige pH-verdier. Den faktiske verdien avhenger av konsentrasjonen. Skjærevæske-emulsjon ligger normalt på ca. pH 8,5–9,5 (veiledende). Faller pH-verdien, er det ofte et tegn på bakterievekst.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">11.10</span><h3>Syrer og baser</h3><a class="up" href="#fysikk" aria-label="Til innholdet i emne 11">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>pH</h4><span>Under 7 sur · 7 nøytral · over 7 basisk</span><span>Ett trinn = 10 ganger sterkere</span></div>
+    <div><h4>Nøytralisering</h4><b>syre + base → salt + vann</b></div>
+    <div><h4>Fortynning</h4><span>Alltid syre i vann. Vann først, så syre</span></div>
+    <div><h4>Sprut på hud eller i øyne</h4><span>Skyll straks med mye vann i minst 15 minutter</span><span>Ring 113. Giftinformasjonen 22 59 13 00</span></div>
+  </div>
+</div>
 <h3>Nøytralisering</h3>
-<p>En syre og en base opphever hverandre: <span class="mono">syre + base → salt + vann</span>. Eksempel: <span class="mono">HCl + NaOH → NaCl + H₂O</span>. Saltsyre og natronlut gir vanlig koksalt og vann. Nøytralisering utvikler varme. I verkstedet brukes den til å gjøre søl og avfall ufarlig, med absorberings- og nøytraliseringsmiddel som angitt i sikkerhetsdatabladet (seksjon 6), og til å skylle bort syrerester etter beising. Kontroller resultatet med pH-papir.</p>
 <div class="fy11b-warn"><p><b>Aldri nøytraliser på kroppen.</b> Ved sprut på hud eller i øyne skal du <b>bare skylle med rikelig vann</b>. Et «motmiddel» gir varme og tar tid du ikke har, og du risikerer å skade øyet med to kjemikalier i stedet for ett.</p></div>
-
 <h3>Fortynning: alltid syre i vann</h3>
-<p>Når konsentrert syre (særlig svovelsyre) blandes med vann, utvikles mye varme. Heller du <b>vann i syren</b>, legger vannet seg på toppen fordi det er lettere (svovelsyre har densitet ca. 1840 kg/m³). All varmen utvikles i det tynne vannlaget, vannet koker momentant, og syre spruter ut. Heller du <b>syren sakte i vannet</b> under omrøring, synker den og blandes inn, og varmen fordeles i en stor vannmengde. Det samme gjelder når du løser lut (NaOH) i vann: litt om gangen i kaldt vann.</p>
-<figure class="fig">
-  <svg id="fy11b-dil" viewBox="0 0 600 270" role="img" aria-label="Riktig og feil fortynning av syre"></svg>
-  <div class="ctrl"><button class="chip play" id="fy11b-dil-play" type="button">▶ Spill av</button></div>
-  <figcaption>Venstre: Syren helles sakte i mye vann og fordeler seg, og temperaturen stiger litt. Høyre: Vann på konsentrert syre koker i overflaten og slynger ut dråper av syre.</figcaption>
-</figure>
 <div class="note"><p><b>Husk:</b> Vann først, så syre. Bruk ren beholder som tåler kjemikaliet og varmen. Ha på vernebriller og hansker, og bruk visir når du heller. Merk beholderen med innhold og faresymbol. Bruk aldri drikkeflasker eller umerkede beholdere.</p></div>
-
 <h3>Sikkerhetsdatablad og stoffkartotek</h3>
-<p>Alle farlige kjemikalier skal ha et <b>sikkerhetsdatablad (SDS)</b> på norsk fra leverandøren. Arbeidsgiveren skal ha et <b>stoffkartotek</b> med datablad for alle farlige kjemikalier på arbeidsplassen, tilgjengelig for de ansatte. Les databladet <b>før</b> du tar i bruk et nytt produkt. Databladet har alltid de samme 16 seksjonene (REACH, vedlegg II). De fire viktigste for deg i verkstedet er merket.</p>
 <div class="tbl" id="fy11b-sds"></div>
-
 <h3>Faresymboler</h3>
-<p>Faresymbolene (CLP/GHS) er en rød ruter på hvit bunn med et sort symbol. Etiketten har også et <b>varselord</b>: «Fare» for de alvorligste farene og «Advarsel» for de mindre alvorlige. I tillegg står det faresetninger (H-setninger) og sikkerhetssetninger (P-setninger).</p>
 <div class="fy11b-ghs" id="fy11b-ghs"></div>
 <p class="small muted">Symbolene over er <b>forenklet</b> og laget for denne boka. Originalene er definert i CLP-forordningen (EF) nr. 1272/2008, vedlegg V.</p>
-
 <h3>Verneutstyr</h3>
 <div class="tbl" id="fy11b-ppe"></div>
 <p class="small muted">Riktig hanskemateriale og filtertype står i sikkerhetsdatabladet, seksjon 8. Verneutstyr er siste skanse. Bytt først til et mindre farlig produkt og bruk avtrekk der du kan.</p>
-
 <h3>Øyeskylling og førstehjelp ved sprut</h3>
 <div class="fy11b-warn"><p><b>Skyll straks med rikelig vann.</b> De første sekundene avgjør hvor stor skaden blir. Ikke let etter motmiddel, og ikke vent på hjelp før du begynner å skylle.</p></div>
 <ol class="fy11b-steps">
@@ -6158,6 +6250,29 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <li><div><b>Svelget:</b> Skyll munnen og drikk litt vann. Ikke fremkall brekninger. Kontakt Giftinformasjonen eller 113.</div></li>
 </ol>
 <div class="note"><p><b>Øyeskyllestasjon:</b> Skal være merket med grønt skilt og stå nær stedet der det brukes etsende stoffer, slik at du når den på noen sekunder. Skylleflasker er førstehjelp på vei til rennende vann og erstatter ikke lang skylling. Sjekk utløpsdatoen på flaskene. Ved <b>flussyre</b> (finnes i noen beisepastaer for rustfritt stål) gjelder egne førstehjelpstiltak med kalsiumglukonat. De skal stå i databladet og finnes på stedet før arbeidet starter.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Syrer og baser finnes overalt i verkstedet: batterisyre, beisepasta for rustfritt stål, avkalkingsmidler, alkaliske avfettingsmidler, lut og våt betong. Sterke syrer og baser er <b>etsende</b> og kan gi varige skader på øyne og hud på sekunder. Dette delemnet går gjennom det grunnleggende og legger vekt på verneutstyr og trygg håndtering.</p>
+<h3>pH-skalaen</h3>
+<p>pH sier hvor sur eller basisk en vannløsning er. pH 7 er nøytralt. Under 7 er løsningen <b>sur</b>, over 7 er den <b>basisk</b> (alkalisk). Skalaen er logaritmisk: Ett trinn betyr ti ganger så sterk. pH 2 er altså 10 ganger surere enn pH 3 og 100 000 ganger surere enn rent vann. Baser er like farlige som syrer. Lut trenger dypt inn i vevet og kan være verre for øynene enn mange syrer.</p>
+<figure class="fig">
+  <svg id="fy11b-ph" viewBox="0 0 600 250" role="img" aria-label="pH-skala med vanlige stoffer fra hverdag og verksted"></svg>
+  <figcaption>Omtrentlige pH-verdier. Den faktiske verdien avhenger av konsentrasjonen. Skjærevæske-emulsjon ligger normalt på ca. pH 8,5–9,5 (veiledende). Faller pH-verdien, er det ofte et tegn på bakterievekst.</figcaption>
+</figure>
+<h3>Nøytralisering</h3>
+<p>En syre og en base opphever hverandre: <span class="mono">syre + base → salt + vann</span>. Eksempel: <span class="mono">HCl + NaOH → NaCl + H₂O</span>. Saltsyre og natronlut gir vanlig koksalt og vann. Nøytralisering utvikler varme. I verkstedet brukes den til å gjøre søl og avfall ufarlig, med absorberings- og nøytraliseringsmiddel som angitt i sikkerhetsdatabladet (seksjon 6), og til å skylle bort syrerester etter beising. Kontroller resultatet med pH-papir.</p>
+<h3>Fortynning: alltid syre i vann</h3>
+<p>Når konsentrert syre (særlig svovelsyre) blandes med vann, utvikles mye varme. Heller du <b>vann i syren</b>, legger vannet seg på toppen fordi det er lettere (svovelsyre har densitet ca. 1840 kg/m³). All varmen utvikles i det tynne vannlaget, vannet koker momentant, og syre spruter ut. Heller du <b>syren sakte i vannet</b> under omrøring, synker den og blandes inn, og varmen fordeles i en stor vannmengde. Det samme gjelder når du løser lut (NaOH) i vann: litt om gangen i kaldt vann.</p>
+<figure class="fig">
+  <svg id="fy11b-dil" viewBox="0 0 600 270" role="img" aria-label="Riktig og feil fortynning av syre"></svg>
+  <div class="ctrl"><button class="chip play" id="fy11b-dil-play" type="button">▶ Spill av</button></div>
+  <figcaption>Venstre: Syren helles sakte i mye vann og fordeler seg, og temperaturen stiger litt. Høyre: Vann på konsentrert syre koker i overflaten og slynger ut dråper av syre.</figcaption>
+</figure>
+<h3>Sikkerhetsdatablad og stoffkartotek</h3>
+<p>Alle farlige kjemikalier skal ha et <b>sikkerhetsdatablad (SDS)</b> på norsk fra leverandøren. Arbeidsgiveren skal ha et <b>stoffkartotek</b> med datablad for alle farlige kjemikalier på arbeidsplassen, tilgjengelig for de ansatte. Les databladet <b>før</b> du tar i bruk et nytt produkt. Databladet har alltid de samme 16 seksjonene (REACH, vedlegg II). De fire viktigste for deg i verkstedet er merket.</p>
+<h3>Faresymboler</h3>
+<p>Faresymbolene (CLP/GHS) er en rød ruter på hvit bunn med et sort symbol. Etiketten har også et <b>varselord</b>: «Fare» for de alvorligste farene og «Advarsel» for de mindre alvorlige. I tillegg står det faresetninger (H-setninger) og sikkerhetssetninger (P-setninger).</p>
+</details>
 </div>
 </section>
 
