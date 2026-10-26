@@ -2,7 +2,7 @@
 
 Nettbasert verkstedhåndbok for verksted og undervisning (VG2 Industriteknologi).
 
-**Emner (som i verkstedhåndboka):** 1 SI-enheter, 2 Toleranser, 3 Maskinering, 4 Sammenføyning, 5 Maskinelement, 6 Gjenger, 7 Materialer, 8 Hydraulikk og pneumatikk, 9 Elektro, 10 Matematikk, 11 Fysikk, 12 Mekanikk. Hvert emne har innholdsliste med delemner; delemner merket «kommer» fylles inn fortløpende.
+**Emner (som i verkstedhåndboka):** 1 SI-enheter, 2 Toleranser, 3 Maskinering, 4 Sammenføyning, 5 Maskinelement, 6 Gjenger, 7 Materialer, 8 Hydraulikk og pneumatikk, 9 Elektro, 10 Matematikk, 11 Fysikk, 12 Mekanikk. Hvert emne har innholdsliste med delemner. Øverst i delemnene står et blått «Hurtigoppslag» med de viktigste formlene, så kalkulatorer og tabeller, og forklaringen ligger i en lukket «Les mer».
 
 Hele appen er én statisk side, `index.html`, uten byggesteg eller avhengigheter.
 
