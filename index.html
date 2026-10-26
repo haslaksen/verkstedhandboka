@@ -4596,8 +4596,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <li><a href="#ma10-trigtab"><span class="tn">10.10</span><span class="tt">Trigonometriske tabeller</span></a></li>
   </ol></nav>
 <div class="topic" id="ma10-algebra">
-  <div class="topic-h"><span class="tno">10.1</span><h3>Algebra</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">10.1</span><h3>Algebra</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<style>
 .ma10x-f{font-family:var(--mono);font-size:15px;background:var(--paper);border-left:3px solid var(--accent);padding:8px 12px;margin:8px 0 14px;max-width:78ch;overflow-x:auto;line-height:1.7}
 .ma10x-f b{color:var(--accent);font-weight:600}
 .ma10x-ol{margin:0 0 12px;padding-left:22px;max-width:68ch}
@@ -4625,17 +4625,18 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .ma10x-legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px}
 @media (max-width:560px){.ma10x-step{font-size:14px;grid-template-columns:minmax(0,1fr)}}
 </style>
-<p class="lead">Algebra er regning med bokstaver. Kan du snu en formel, trenger du bare å huske én versjon av den: turtallsformelen gir deg også skjærehastigheten og diameteren.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Regnerekkefølge</h4><span>Parenteser → potenser → gange og dele → pluss og minus</span></div>
+    <div><h4>Brøk</h4><b>a/b + c/d = (a·d + b·c) / (b·d)</b><b>a/b · c/d = (a·c) / (b·d)</b><b>a/b : c/d = a/b · d/c</b></div>
+    <div><h4>Potenser</h4><b>aᵐ · aⁿ = aᵐ⁺ⁿ</b><b>aᵐ / aⁿ = aᵐ⁻ⁿ</b><b>(aᵐ)ⁿ = aᵐ·ⁿ</b><b>a⁰ = 1 &nbsp; a⁻ⁿ = 1 / aⁿ</b></div>
+    <div><h4>Kvadratsetningene</h4><b>(a + b)² = a² + 2ab + b²</b><b>(a − b)² = a² − 2ab + b²</b><b>(a + b)(a − b) = a² − b²</b></div>
+    <div><h4>Andregradslikning</h4><b>ax² + bx + c = 0</b><b>x = (−b ± √(b² − 4ac)) / (2a)</b></div>
+    <div><h4>Snu en formel</h4><span>Gjør det samme på begge sider til den ukjente står alene</span><b>n = v<sub>c</sub> · 1000 / (π · D)</b><span>fra v<sub>c</sub> = π · D · n / 1000</span></div>
+  </div>
+</div>
 <h3>Regnerekkefølge</h3>
-<p>Et uttrykk regnes alltid ut i samme rekkefølge, både på papiret og i kalkulatoren. Bryter du den, får du et helt annet svar uten at noe ser galt ut.</p>
-<ol class="ma10x-ol">
-  <li><b>Parenteser</b> (også det som står under en rot eller en brøkstrek)</li>
-  <li><b>Potenser og røtter</b></li>
-  <li><b>Multiplikasjon og divisjon</b>, fra venstre mot høyre</li>
-  <li><b>Addisjon og subtraksjon</b>, fra venstre mot høyre</li>
-</ol>
-<div class="ma10x-f">2 + 3 · 4² = 2 + 3 · 16 = 2 + 48 = <b>50</b></div>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Uttrykk</th><th style="text-align:left">Riktig</th><th style="text-align:left">Vanlig feil</th><th style="text-align:left">Hvorfor</th></tr></thead>
   <tbody>
@@ -4646,9 +4647,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <tr><td>π · 40² / 4</td><td>1256,6</td><td>3947,8</td><td class="txt">Bare diameteren skal kvadreres, ikke π. (π · 40)² / 4 gir feil areal.</td></tr>
   </tbody>
 </table></div>
-
 <h3>Brøkregning</h3>
-<p>Brøk møter du i tommemål og i forhold (utvekslinger, målestokker). En brøk er en divisjon: teller delt på nevner. Du kan bare legge sammen brøker som har samme nevner, fordi delene da er like store.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Regel</th><th style="text-align:left">Formel</th><th style="text-align:left">Eksempel</th></tr></thead>
   <tbody>
@@ -4671,9 +4670,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-fr-out" aria-live="polite"></div>
 </div>
-
 <h3>Potensregler</h3>
-<p>En potens aⁿ betyr a ganget med seg selv n ganger. Reglene under følger direkte av det, og de forklarer også omregning av enheter: 1 m = 10³ mm, så 1 m² = (10³)² mm² = 10⁶ mm².</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Regel</th><th style="text-align:left">Eksempel</th><th style="text-align:left">Bruk</th></tr></thead>
   <tbody>
@@ -4689,29 +4686,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </tbody>
 </table></div>
 <p class="small muted">Reglene gjelder bare ved samme grunntall. 2² · 3³ kan ikke slås sammen til én potens. Summer kan heller ikke deles opp: (a + b)² er ikke a² + b², se kvadratsetningene under.</p>
-
-<h3>Kvadratsetningene</h3>
-<div class="ma10x-f">1. (a + b)² = a² + 2ab + b²<br>2. (a − b)² = a² − 2ab + b²<br>3. (a + b)(a − b) = a² − b² &nbsp;<span class="small muted" style="font-family:var(--body)">(konjugatsetningen)</span></div>
-<p>Figuren viser hvorfor (a + b)² har et midtledd. Et kvadrat med side a + b består av ett kvadrat a², ett kvadrat b² og <b>to</b> rektangler a · b. Glemmer du midtleddet, mangler du de to rektanglene.</p>
-<figure class="fig">
-  <svg id="ma10x-sq-svg" viewBox="0 0 600 300" role="img" aria-label="Kvadrat med side a pluss b delt i a i andre, b i andre og to rektangler a ganger b"></svg>
-  <div class="ctrl">
-    <button class="chip play" id="ma10x-sq-play" type="button">▶ Sett sammen</button>
-    <label for="ma10x-sq-a" class="small muted">a</label><input type="range" id="ma10x-sq-a" min="1" max="9" step="1" value="5" style="flex:1;min-width:90px">
-    <label for="ma10x-sq-b" class="small muted">b</label><input type="range" id="ma10x-sq-b" min="1" max="6" step="1" value="3" style="flex:1;min-width:90px">
-  </div>
-  <figcaption id="ma10x-sq-cap"></figcaption>
-</figure>
-<p>Konjugatsetningen kan også vises med figurer: tar du et kvadrat b² ut av hjørnet på et kvadrat a², kan resten klippes og legges om til et rektangel med sidene (a + b) og (a − b).</p>
-<figure class="fig">
-  <svg id="ma10x-cj-svg" viewBox="0 0 600 270" role="img" aria-label="a i andre minus b i andre legges om til rektangel a pluss b ganger a minus b"></svg>
-  <div class="ctrl"><button class="chip play" id="ma10x-cj-play" type="button">▶ Legg om</button><span class="mono" id="ma10x-cj-read"></span></div>
-  <figcaption>Den oransje stripen (b · (a − b)) flyttes og dreies 90°. Arealet er det samme, men nå er det et rektangel.</figcaption>
-</figure>
-<p><b>I verkstedet:</b> Hoderegning: 52² = (50 + 2)² = 2500 + 200 + 4 = 2704. Ringareal for et rør: A = π/4 · (D² − d²) = π/4 · (D + d)(D − d). Med D = 60 og d = 50: π/4 · 110 · 10 = 863,9 mm².</p>
-
 <h3>Faktorisering</h3>
-<p>Å faktorisere er å skrive et uttrykk som et produkt. Det er det motsatte av å gange ut parenteser. Du bruker det til å forkorte brøker, til å løse likninger (et produkt er null når én faktor er null) og til å forenkle formler.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Metode</th><th style="text-align:left">Eksempel</th><th style="text-align:left">Merknad</th></tr></thead>
   <tbody>
@@ -4723,9 +4698,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <tr><td>Forkorte brøk</td><td>(x² − 9) / (x − 3) = x + 3</td><td class="txt">Faktoriser telleren først: (x + 3)(x − 3) / (x − 3). Gjelder for x ≠ 3.</td></tr>
   </tbody>
 </table></div>
-
 <h3>Likninger og å snu formler</h3>
-<p>En likning er en vekt i balanse. Gjør du det samme på begge sider, er den fortsatt i balanse. For å få en bokstav alene, opphever du det som er gjort med den, i <b>motsatt rekkefølge</b> av regnerekkefølgen: først pluss og minus, så gange og dele, til slutt potenser.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Står det …</th><th style="text-align:left">… gjør du på begge sider</th><th style="text-align:left">Eksempel</th></tr></thead>
   <tbody>
@@ -4737,7 +4710,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <tr><td>√x</td><td>opphøy i 2</td><td>√x = 3 → x = 9</td></tr>
   </tbody>
 </table></div>
-<p>Turtallsformelen <span class="mono">n = v<sub>c</sub> · 1000 / (π · D)</span> (n i o/min, v<sub>c</sub> i m/min, D i mm) kan snus slik at du finner diameteren eller skjærehastigheten. Tallet 1000 gjør om meter til millimeter. Velg hva du vil finne, og se stegene ett for ett.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label>Løs for</label>
@@ -4757,11 +4729,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <div id="ma10x-sf-res"></div>
   </div>
 </div>
-
 <h3>Andregradslikning og abc-formelen</h3>
-<p>En likning på formen <span class="mono">ax² + bx + c = 0</span> (a ≠ 0) løses med abc-formelen. Uttrykket under rottegnet, <b>diskriminanten</b> b² − 4ac, avgjør hvor mange løsninger det er: positiv gir to, null gir én, negativ gir ingen reelle løsninger.</p>
-<div class="ma10x-f">x = (−b ± √(b² − 4ac)) / (2a)</div>
-<p><b>Eksempel:</b> En rektangulær plate skal ha areal 1200 mm² og omkrets 140 mm. Sidene er da x og 70 − x, så x(70 − x) = 1200, som gir x² − 70x + 1200 = 0. Løsningene er 30 og 40: platen er 30 × 40 mm.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-q-a">a</label><input id="ma10x-q-a" inputmode="decimal" value="1"></div>
@@ -4770,9 +4738,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-q-out" aria-live="polite"></div>
 </div>
-
 <h3>Standardform og tierpotenser</h3>
-<p>Svært store og svært små tall skrives på standardform: <span class="mono">a · 10ⁿ</span>, der 1 ≤ a &lt; 10 og n er et helt tall. Eksponenten forteller hvor mange plasser kommaet er flyttet: positiv mot høyre, negativ mot venstre. På kalkulatoren tastes 10ⁿ som <span class="mono">EXP</span> eller <span class="mono">E</span>: 1,2 · 10⁻⁵ blir <span class="mono">1.2E-5</span>. I teknikken brukes ofte <b>ingeniørform</b>, der eksponenten er delelig med 3, slik at den passer med SI-prefiksene.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Størrelse</th><th style="text-align:left">Vanlig skrivemåte</th><th style="text-align:left">Standardform</th><th style="text-align:left">Prefiks</th></tr></thead>
   <tbody>
@@ -4793,13 +4759,69 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-sci-out" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Algebra er regning med bokstaver. Kan du snu en formel, trenger du bare å huske én versjon av den: turtallsformelen gir deg også skjærehastigheten og diameteren.</p>
+<h3>Regnerekkefølge</h3>
+<p>Et uttrykk regnes alltid ut i samme rekkefølge, både på papiret og i kalkulatoren. Bryter du den, får du et helt annet svar uten at noe ser galt ut.</p>
+<ol class="ma10x-ol">
+  <li><b>Parenteser</b> (også det som står under en rot eller en brøkstrek)</li>
+  <li><b>Potenser og røtter</b></li>
+  <li><b>Multiplikasjon og divisjon</b>, fra venstre mot høyre</li>
+  <li><b>Addisjon og subtraksjon</b>, fra venstre mot høyre</li>
+</ol>
+<div class="ma10x-f">2 + 3 · 4² = 2 + 3 · 16 = 2 + 48 = <b>50</b></div>
+<h3>Brøkregning</h3>
+<p>Brøk møter du i tommemål og i forhold (utvekslinger, målestokker). En brøk er en divisjon: teller delt på nevner. Du kan bare legge sammen brøker som har samme nevner, fordi delene da er like store.</p>
+<h3>Potensregler</h3>
+<p>En potens aⁿ betyr a ganget med seg selv n ganger. Reglene under følger direkte av det, og de forklarer også omregning av enheter: 1 m = 10³ mm, så 1 m² = (10³)² mm² = 10⁶ mm².</p>
+<h3>Kvadratsetningene</h3>
+<div class="ma10x-f">1. (a + b)² = a² + 2ab + b²<br>2. (a − b)² = a² − 2ab + b²<br>3. (a + b)(a − b) = a² − b² &nbsp;<span class="small muted" style="font-family:var(--body)">(konjugatsetningen)</span></div>
+<p>Figuren viser hvorfor (a + b)² har et midtledd. Et kvadrat med side a + b består av ett kvadrat a², ett kvadrat b² og <b>to</b> rektangler a · b. Glemmer du midtleddet, mangler du de to rektanglene.</p>
+<figure class="fig">
+  <svg id="ma10x-sq-svg" viewBox="0 0 600 300" role="img" aria-label="Kvadrat med side a pluss b delt i a i andre, b i andre og to rektangler a ganger b"></svg>
+  <div class="ctrl">
+    <button class="chip play" id="ma10x-sq-play" type="button">▶ Sett sammen</button>
+    <label for="ma10x-sq-a" class="small muted">a</label><input type="range" id="ma10x-sq-a" min="1" max="9" step="1" value="5" style="flex:1;min-width:90px">
+    <label for="ma10x-sq-b" class="small muted">b</label><input type="range" id="ma10x-sq-b" min="1" max="6" step="1" value="3" style="flex:1;min-width:90px">
+  </div>
+  <figcaption id="ma10x-sq-cap"></figcaption>
+</figure>
+<p>Konjugatsetningen kan også vises med figurer: tar du et kvadrat b² ut av hjørnet på et kvadrat a², kan resten klippes og legges om til et rektangel med sidene (a + b) og (a − b).</p>
+<figure class="fig">
+  <svg id="ma10x-cj-svg" viewBox="0 0 600 270" role="img" aria-label="a i andre minus b i andre legges om til rektangel a pluss b ganger a minus b"></svg>
+  <div class="ctrl"><button class="chip play" id="ma10x-cj-play" type="button">▶ Legg om</button><span class="mono" id="ma10x-cj-read"></span></div>
+  <figcaption>Den oransje stripen (b · (a − b)) flyttes og dreies 90°. Arealet er det samme, men nå er det et rektangel.</figcaption>
+</figure>
+<p><b>I verkstedet:</b> Hoderegning: 52² = (50 + 2)² = 2500 + 200 + 4 = 2704. Ringareal for et rør: A = π/4 · (D² − d²) = π/4 · (D + d)(D − d). Med D = 60 og d = 50: π/4 · 110 · 10 = 863,9 mm².</p>
+<h3>Faktorisering</h3>
+<p>Å faktorisere er å skrive et uttrykk som et produkt. Det er det motsatte av å gange ut parenteser. Du bruker det til å forkorte brøker, til å løse likninger (et produkt er null når én faktor er null) og til å forenkle formler.</p>
+<h3>Likninger og å snu formler</h3>
+<p>En likning er en vekt i balanse. Gjør du det samme på begge sider, er den fortsatt i balanse. For å få en bokstav alene, opphever du det som er gjort med den, i <b>motsatt rekkefølge</b> av regnerekkefølgen: først pluss og minus, så gange og dele, til slutt potenser.</p>
+<p>Turtallsformelen <span class="mono">n = v<sub>c</sub> · 1000 / (π · D)</span> (n i o/min, v<sub>c</sub> i m/min, D i mm) kan snus slik at du finner diameteren eller skjærehastigheten. Tallet 1000 gjør om meter til millimeter. Velg hva du vil finne, og se stegene ett for ett.</p>
+<h3>Andregradslikning og abc-formelen</h3>
+<p>En likning på formen <span class="mono">ax² + bx + c = 0</span> (a ≠ 0) løses med abc-formelen. Uttrykket under rottegnet, <b>diskriminanten</b> b² − 4ac, avgjør hvor mange løsninger det er: positiv gir to, null gir én, negativ gir ingen reelle løsninger.</p>
+<div class="ma10x-f">x = (−b ± √(b² − 4ac)) / (2a)</div>
+<p><b>Eksempel:</b> En rektangulær plate skal ha areal 1200 mm² og omkrets 140 mm. Sidene er da x og 70 − x, så x(70 − x) = 1200, som gir x² − 70x + 1200 = 0. Løsningene er 30 og 40: platen er 30 × 40 mm.</p>
+<h3>Standardform og tierpotenser</h3>
+<p>Svært store og svært små tall skrives på standardform: <span class="mono">a · 10ⁿ</span>, der 1 ≤ a &lt; 10 og n er et helt tall. Eksponenten forteller hvor mange plasser kommaet er flyttet: positiv mot høyre, negativ mot venstre. På kalkulatoren tastes 10ⁿ som <span class="mono">EXP</span> eller <span class="mono">E</span>: 1,2 · 10⁻⁵ blir <span class="mono">1.2E-5</span>. I teknikken brukes ofte <b>ingeniørform</b>, der eksponenten er delelig med 3, slik at den passer med SI-prefiksene.</p>
+</details>
 </div>
 <div class="topic" id="ma10-okonomi">
-  <div class="topic-h"><span class="tno">10.2</span><h3>Økonomi</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Prosent, mva, rabatt, påslag, renter, lån og avskrivninger. Til slutt regner vi ut hva en maskintime koster, som er grunnlaget for å prise en jobb i verkstedet.</p>
-
+<div class="topic-h"><span class="tno">10.2</span><h3>Økonomi</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Prosent</h4><b>del = helhet · p / 100</b><b>vekstfaktor = 1 ± p / 100</b></div>
+    <div><h4>Mva 25 %</h4><b>med mva = uten mva · 1,25</b><b>uten mva = med mva / 1,25</b></div>
+    <div><h4>Rabatt</h4><b>pris = listepris · (1 − r / 100)</b></div>
+    <div><h4>Renter</h4><b>K<sub>n</sub> = K<sub>0</sub> · (1 + r / 100)ⁿ</b><span>rentes rente over n år</span></div>
+    <div><h4>Lån</h4><span>Annuitet: like store terminbeløp</span><span>Serielån: like store avdrag, synkende beløp</span></div>
+    <div><h4>Maskin</h4><b>timekostnad = faste kostnader per år / timer i drift</b><span>lønn kommer i tillegg</span></div>
+  </div>
+  <div class="hurtig-u">p prosent · r rente eller rabatt (%) · K kapital · n antall år</div>
+</div>
 <h3>Prosentregning</h3>
-<p>Prosent betyr hundredeler: 1 % = 0,01. Det som er viktig, er <b>hva</b> prosenten regnes av. En endring regnes alltid i prosent av den gamle verdien.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Spørsmål</th><th style="text-align:left">Formel</th><th style="text-align:left">Eksempel</th></tr></thead>
   <tbody>
@@ -4813,7 +4835,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <tr><td>Flere endringer etter hverandre</td><td>V = V₁ · V₂ · …</td><td>+10 % og så −10 %: 1,10 · 0,90 = 0,99 → −1 %</td></tr>
   </tbody>
 </table></div>
-<p><b>Prosent eller prosentpoeng?</b> Går renten fra 4 % til 5 %, har den steget med 1 <b>prosentpoeng</b>, men med 25 <b>prosent</b> (1 er 25 % av 4). Prosentpoeng er differansen mellom to prosenttall. Prosent er den relative endringen.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-pc-g">Startverdi</label><input id="ma10x-pc-g" inputmode="decimal" value="2400"></div>
@@ -4822,9 +4843,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-pc-out" aria-live="polite"></div>
 </div>
-
 <h3>Merverdiavgift (mva)</h3>
-<p>Alminnelig mva-sats i Norge er <b>25 %</b>, og den regnes av prisen <b>uten</b> mva. Derfor er mva-delen av en pris med mva bare 20 %: 25 / 125 = 0,20. Bedrifter fører priser eksklusive mva, mens privatkunder skal ha priser inklusive mva.</p>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Fra → til</th><th style="text-align:left">Formel (25 %)</th><th style="text-align:left">Eksempel</th></tr></thead>
   <tbody>
@@ -4835,9 +4854,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </tbody>
 </table></div>
 <p class="small muted">Satser per 2026: 25 % alminnelig, 15 % for næringsmidler, 12 % blant annet for persontransport og overnatting. Sjekk skatteetaten.no ved tvil.</p>
-
 <h3>Rabatt</h3>
-<p>Rabatt trekkes fra listeprisen: <span class="mono">pris = listepris · (1 − r / 100)</span>. Flere rabatter etter hverandre ganges, de legges ikke sammen: 20 % og deretter 10 % gir 0,80 · 0,90 = 0,72, altså 28 % samlet rabatt, ikke 30 %. Mva legges på til slutt, av prisen etter rabatt.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-mv-x">Beløp (kr)</label><input id="ma10x-mv-x" inputmode="decimal" value="12500"></div>
@@ -4849,10 +4866,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-mv-out" aria-live="polite"></div>
 </div>
-
 <h3>Påslag, avanse og dekningsgrad</h3>
-<p>Kostprisen K er hva varen eller jobben koster deg. Salgsprisen S (ekskl. mva) er hva kunden betaler. <b>Påslag</b> regnes i prosent av kostprisen, mens <b>avanseprosent</b> regnes i prosent av salgsprisen. Er kostprisen den eneste variable kostnaden, er avanseprosenten det samme som <b>dekningsgraden</b> (DG). De to prosenttallene blir aldri like, fordi de regnes av hvert sitt grunnlag.</p>
-<div class="ma10x-f">Avanse (kr) = S − K<br>Påslag % = (S − K) / K · 100 &nbsp; → &nbsp; S = K · (1 + påslag / 100)<br>DG % = (S − K) / S · 100 &nbsp; → &nbsp; S = K / (1 − DG / 100)<br>DG = påslag / (100 + påslag) · 100 &nbsp;&nbsp; påslag = DG / (100 − DG) · 100</div>
 <div class="tbl" id="ma10x-dg-tbl"></div>
 <div class="calc">
   <div class="fields">
@@ -4869,10 +4883,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-dg-out" aria-live="polite"></div>
 </div>
-
 <h3>Renter: enkel rente og rentes rente</h3>
-<p>Med <b>enkel rente</b> får du rente bare av startkapitalen, så renten blir like stor hvert år. Med <b>rentes rente</b> legges renten til kapitalen hvert år, og neste år får du rente også av renten. Det gir eksponentiell vekst.</p>
-<div class="ma10x-f">Enkel rente: &nbsp;K = K₀ · (1 + p · n / 100)<br>Rentes rente: K = K₀ · (1 + p / 100)ⁿ<br>Tommelfingerregel: kapitalen dobles etter omtrent 72 / p år</div>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-ri-k">Startkapital K₀ (kr)</label><input id="ma10x-ri-k" inputmode="decimal" value="100000"></div>
@@ -4883,15 +4894,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-ri-out" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="ma10x-ri-svg" viewBox="0 0 600 280" role="img" aria-label="Graf over kapitalen med enkel rente og rentes rente"></svg>
-  <div class="ma10x-legend"><span><i style="background:var(--accent)"></i>Rentes rente</span><span><i style="background:var(--ink-2)"></i>Enkel rente</span><span><i style="background:var(--zone)"></i>Startkapital</span></div>
-</figure>
-
 <h3>Lån: annuitet og serielån</h3>
-<p>Et <b>annuitetslån</b> har like store terminbeløp hele tiden. I starten er det meste renter, mot slutten er det meste avdrag. Et <b>serielån</b> har like store avdrag, så terminbeløpet er størst i starten og synker etter hvert som renten regnes av en lavere restgjeld. Serielånet gir lavere renter totalt.</p>
-<div class="ma10x-f">Rente per termin: r = p / (100 · t) &nbsp;&nbsp; antall terminer: N = år · t<br>Annuitet: A = L · r / (1 − (1 + r)⁻ᴺ)<br>Serielån: avdrag = L / N, rente = restgjeld · r</div>
-<p class="small muted">L = lånebeløp, p = nominell årsrente, t = terminer per år. Effektiv rente uten gebyrer: (1 + r)ᵗ − 1.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-ln-l">Lånebeløp L (kr)</label><input id="ma10x-ln-l" inputmode="decimal" value="1500000"></div>
@@ -4906,16 +4909,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-ln-out" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="ma10x-ln-svg" viewBox="0 0 600 260" role="img" aria-label="Søylediagram med renter og avdrag per år"></svg>
-  <div class="ma10x-legend"><span><i style="background:var(--zone)"></i>Renter</span><span><i style="background:var(--accent)"></i>Avdrag</span></div>
-</figure>
 <div class="tbl" id="ma10x-ln-tbl"></div>
-
 <h3>Avskrivning av en maskin</h3>
-<p>En maskin taper verdi med årene. Avskrivningen fordeler innkjøpsprisen over levetiden som en kostnad. <b>Lineær</b> avskrivning trekker fra like mye hvert år. <b>Saldoavskrivning</b> trekker fra en fast prosent av restverdien, så beløpet blir mindre for hvert år og verdien når aldri helt null. Saldometoden brukes i skatteregnskapet. Maskiner ligger i saldogruppe d, med maksimal sats 20 %.</p>
-<div class="ma10x-f">Lineær: årlig avskrivning = (A − R) / n<br>Saldo: &nbsp;verdi etter n år = A · (1 − s / 100)ⁿ</div>
-<p class="small muted">A = anskaffelseskost, R = restverdi (utrangeringsverdi), n = levetid i år, s = saldosats. Saldogruppe d: skatteloven § 14-43.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="ma10x-av-a">Anskaffelseskost A (kr)</label><input id="ma10x-av-a" inputmode="decimal" value="1200000"></div>
@@ -4927,14 +4922,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-av-out" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="ma10x-av-svg" viewBox="0 0 600 260" role="img" aria-label="Bokført verdi per år med lineær og saldoavskrivning"></svg>
-  <div class="ma10x-legend"><span><i style="background:var(--accent)"></i>Lineær</span><span><i style="background:var(--zone)"></i>Saldo</span></div>
-</figure>
-
 <h3>Timekostnad for maskin</h3>
-<p>For å prise en jobb må du vite hva en time i maskinen koster, selv når ingen står ved den. Maskintimesatsen samler de faste kostnadene per år og deler dem på antall timer maskinen faktisk går. Derfor blir timen dyr hvis maskinen står mye stille. Lønn til operatøren kommer i tillegg.</p>
-<div class="ma10x-f">Avskrivning/år = (A − R) / n<br>Kalkulatorisk rente/år = (A + R) / 2 · p / 100 &nbsp;<span class="small muted" style="font-family:var(--body)">(gjennomsnittlig bundet kapital)</span><br>Faste kostnader/år = avskrivning + rente + vedlikehold + plass<br>Timesats = faste kostnader / timer per år + effekt · utnyttelse · strømpris</div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -4965,33 +4953,59 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="ma10x-mt-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Oppbygningen følger prinsippet i VDI 3258 (maskintimesats). Tallene i feltene er bare eksempler. Utnyttelse er hvor stor del av merkeeffekten maskinen bruker i snitt mens den går.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Prosent, mva, rabatt, påslag, renter, lån og avskrivninger. Til slutt regner vi ut hva en maskintime koster, som er grunnlaget for å prise en jobb i verkstedet.</p>
+<h3>Prosentregning</h3>
+<p>Prosent betyr hundredeler: 1 % = 0,01. Det som er viktig, er <b>hva</b> prosenten regnes av. En endring regnes alltid i prosent av den gamle verdien.</p>
+<p><b>Prosent eller prosentpoeng?</b> Går renten fra 4 % til 5 %, har den steget med 1 <b>prosentpoeng</b>, men med 25 <b>prosent</b> (1 er 25 % av 4). Prosentpoeng er differansen mellom to prosenttall. Prosent er den relative endringen.</p>
+<h3>Merverdiavgift (mva)</h3>
+<p>Alminnelig mva-sats i Norge er <b>25 %</b>, og den regnes av prisen <b>uten</b> mva. Derfor er mva-delen av en pris med mva bare 20 %: 25 / 125 = 0,20. Bedrifter fører priser eksklusive mva, mens privatkunder skal ha priser inklusive mva.</p>
+<h3>Rabatt</h3>
+<p>Rabatt trekkes fra listeprisen: <span class="mono">pris = listepris · (1 − r / 100)</span>. Flere rabatter etter hverandre ganges, de legges ikke sammen: 20 % og deretter 10 % gir 0,80 · 0,90 = 0,72, altså 28 % samlet rabatt, ikke 30 %. Mva legges på til slutt, av prisen etter rabatt.</p>
+<h3>Påslag, avanse og dekningsgrad</h3>
+<p>Kostprisen K er hva varen eller jobben koster deg. Salgsprisen S (ekskl. mva) er hva kunden betaler. <b>Påslag</b> regnes i prosent av kostprisen, mens <b>avanseprosent</b> regnes i prosent av salgsprisen. Er kostprisen den eneste variable kostnaden, er avanseprosenten det samme som <b>dekningsgraden</b> (DG). De to prosenttallene blir aldri like, fordi de regnes av hvert sitt grunnlag.</p>
+<div class="ma10x-f">Avanse (kr) = S − K<br>Påslag % = (S − K) / K · 100 &nbsp; → &nbsp; S = K · (1 + påslag / 100)<br>DG % = (S − K) / S · 100 &nbsp; → &nbsp; S = K / (1 − DG / 100)<br>DG = påslag / (100 + påslag) · 100 &nbsp;&nbsp; påslag = DG / (100 − DG) · 100</div>
+<h3>Renter: enkel rente og rentes rente</h3>
+<p>Med <b>enkel rente</b> får du rente bare av startkapitalen, så renten blir like stor hvert år. Med <b>rentes rente</b> legges renten til kapitalen hvert år, og neste år får du rente også av renten. Det gir eksponentiell vekst.</p>
+<div class="ma10x-f">Enkel rente: &nbsp;K = K₀ · (1 + p · n / 100)<br>Rentes rente: K = K₀ · (1 + p / 100)ⁿ<br>Tommelfingerregel: kapitalen dobles etter omtrent 72 / p år</div>
+<figure class="fig">
+  <svg id="ma10x-ri-svg" viewBox="0 0 600 280" role="img" aria-label="Graf over kapitalen med enkel rente og rentes rente"></svg>
+  <div class="ma10x-legend"><span><i style="background:var(--accent)"></i>Rentes rente</span><span><i style="background:var(--ink-2)"></i>Enkel rente</span><span><i style="background:var(--zone)"></i>Startkapital</span></div>
+</figure>
+<h3>Lån: annuitet og serielån</h3>
+<p>Et <b>annuitetslån</b> har like store terminbeløp hele tiden. I starten er det meste renter, mot slutten er det meste avdrag. Et <b>serielån</b> har like store avdrag, så terminbeløpet er størst i starten og synker etter hvert som renten regnes av en lavere restgjeld. Serielånet gir lavere renter totalt.</p>
+<div class="ma10x-f">Rente per termin: r = p / (100 · t) &nbsp;&nbsp; antall terminer: N = år · t<br>Annuitet: A = L · r / (1 − (1 + r)⁻ᴺ)<br>Serielån: avdrag = L / N, rente = restgjeld · r</div>
+<p class="small muted">L = lånebeløp, p = nominell årsrente, t = terminer per år. Effektiv rente uten gebyrer: (1 + r)ᵗ − 1.</p>
+<figure class="fig">
+  <svg id="ma10x-ln-svg" viewBox="0 0 600 260" role="img" aria-label="Søylediagram med renter og avdrag per år"></svg>
+  <div class="ma10x-legend"><span><i style="background:var(--zone)"></i>Renter</span><span><i style="background:var(--accent)"></i>Avdrag</span></div>
+</figure>
+<h3>Avskrivning av en maskin</h3>
+<p>En maskin taper verdi med årene. Avskrivningen fordeler innkjøpsprisen over levetiden som en kostnad. <b>Lineær</b> avskrivning trekker fra like mye hvert år. <b>Saldoavskrivning</b> trekker fra en fast prosent av restverdien, så beløpet blir mindre for hvert år og verdien når aldri helt null. Saldometoden brukes i skatteregnskapet. Maskiner ligger i saldogruppe d, med maksimal sats 20 %.</p>
+<div class="ma10x-f">Lineær: årlig avskrivning = (A − R) / n<br>Saldo: &nbsp;verdi etter n år = A · (1 − s / 100)ⁿ</div>
+<p class="small muted">A = anskaffelseskost, R = restverdi (utrangeringsverdi), n = levetid i år, s = saldosats. Saldogruppe d: skatteloven § 14-43.</p>
+<figure class="fig">
+  <svg id="ma10x-av-svg" viewBox="0 0 600 260" role="img" aria-label="Bokført verdi per år med lineær og saldoavskrivning"></svg>
+  <div class="ma10x-legend"><span><i style="background:var(--accent)"></i>Lineær</span><span><i style="background:var(--zone)"></i>Saldo</span></div>
+</figure>
+<h3>Timekostnad for maskin</h3>
+<p>For å prise en jobb må du vite hva en time i maskinen koster, selv når ingen står ved den. Maskintimesatsen samler de faste kostnadene per år og deler dem på antall timer maskinen faktisk går. Derfor blir timen dyr hvis maskinen står mye stille. Lønn til operatøren kommer i tillegg.</p>
+<div class="ma10x-f">Avskrivning/år = (A − R) / n<br>Kalkulatorisk rente/år = (A + R) / 2 · p / 100 &nbsp;<span class="small muted" style="font-family:var(--body)">(gjennomsnittlig bundet kapital)</span><br>Faste kostnader/år = avskrivning + rente + vedlikehold + plass<br>Timesats = faste kostnader / timer per år + effekt · utnyttelse · strømpris</div>
+</details>
 </div>
 <div class="topic" id="ma10-deriv">
-  <div class="topic-h"><span class="tno">10.3</span><h3>Derivasjonsregler</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Den deriverte f′(x) er stigningstallet til tangenten i et punkt på grafen, altså hvor fort funksjonen endrer seg akkurat der. Den brukes til å finne fart og akselerasjon, og til å finne toppunkter og bunnpunkter.</p>
-
-<h3>Definisjon</h3>
-<p>Stigningstallet mellom to punkter på grafen er Δy / Δx. Lar du avstanden h mellom punktene bli mindre og mindre, går sekanten over i tangenten:</p>
-<div class="ma10x-f">f′(x) = lim<span class="ma10x-sub">h→0</span> (f(x + h) − f(x)) / h</div>
-
-<h3>Interaktiv graf: tangent og stigningstall</h3>
-<figure class="fig">
-  <div class="chips" id="ma10x-dv-chips" style="margin:0">
-    <button class="chip" type="button" data-f="0" aria-pressed="true">f(x) = x²</button>
-    <button class="chip" type="button" data-f="1" aria-pressed="false">f(x) = x³ − 3x</button>
-    <button class="chip" type="button" data-f="2" aria-pressed="false">f(x) = sin x</button>
+<div class="topic-h"><span class="tno">10.3</span><h3>Derivasjonsregler</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Definisjon</h4><b>f′(x) = stigningstallet til tangenten</b></div>
+    <div><h4>Regler</h4><b>(xⁿ)′ = n · xⁿ⁻¹</b><b>(k)′ = 0 &nbsp; (k · f)′ = k · f′</b><b>(f + g)′ = f′ + g′</b></div>
+    <div><h4>Andre funksjoner</h4><b>(sin x)′ = cos x</b><span>x i radianer</span><b>(cos x)′ = −sin x</b><b>(eˣ)′ = eˣ &nbsp; (ln x)′ = 1/x</b></div>
+    <div><h4>Fart og akselerasjon</h4><b>v = s′(t)</b><b>a = v′(t)</b></div>
+    <div><h4>Topp og bunn</h4><span>Løs f′(x) = 0 og sjekk fortegnet rundt punktet</span></div>
   </div>
-  <svg id="ma10x-dv-svg" viewBox="0 0 600 340" role="img" aria-label="Graf med tangent i et punkt som kan flyttes"></svg>
-  <div class="ctrl">
-    <label for="ma10x-dv-x" class="small muted">x₀</label>
-    <input type="range" id="ma10x-dv-x" min="-3" max="3" step="0.01" value="1" style="flex:1;min-width:140px">
-    <button class="chip play" id="ma10x-dv-h" type="button">▶ La h gå mot 0</button>
-    <label class="small muted"><input type="checkbox" id="ma10x-dv-d" style="width:auto;vertical-align:middle"> Vis f′(x)</label>
-  </div>
-  <div class="mono small" id="ma10x-dv-read" aria-live="polite"></div>
-  <figcaption>Dra det blå punktet langs grafen. Tangenten (oransje) har stigningstallet f′(x₀). Der tangenten er vannrett, er f′(x₀) = 0: der ligger toppunkter og bunnpunkter. Med «La h gå mot 0» ser du sekanten bli til tangenten.</figcaption>
-</figure>
-
+</div>
 <h3>Derivasjonsregler</h3>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Regel</th><th style="text-align:left">f(x)</th><th style="text-align:left">f′(x)</th><th style="text-align:left">Eksempel</th></tr></thead>
@@ -5013,10 +5027,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </tbody>
 </table></div>
 <p class="small muted">Reglene for sin, cos og tan gjelder bare når x er i radianer. Regner du i grader, kommer faktoren π/180 inn i den deriverte.</p>
-
 <h3>Fart og akselerasjon</h3>
-<p>Er posisjonen s(t) kjent, er farten den deriverte av posisjonen, og akselerasjonen den deriverte av farten. Den deriverte er alltid «endring per tidsenhet».</p>
-<div class="ma10x-f">v(t) = s′(t) &nbsp;&nbsp; a(t) = v′(t) = s″(t)</div>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Bevegelse</th><th style="text-align:left">Posisjon s(t)</th><th style="text-align:left">Fart v(t)</th><th style="text-align:left">Akselerasjon a(t)</th></tr></thead>
   <tbody>
@@ -5027,11 +5038,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </tbody>
 </table></div>
 <p class="small muted">Stempelbevegelsen er forenklet til en ren harmonisk bevegelse (uendelig lang veivstang). Farten er størst midt i slaget og null i dødpunktene, der akselerasjonen er størst.</p>
-
 <h3>Toppunkt og bunnpunkt (optimalisering)</h3>
-<p>Der en glatt funksjon har et toppunkt eller bunnpunkt, er tangenten vannrett: <b>f′(x) = 0</b>. Fortegnet til f′ rundt punktet avgjør hva det er: går f′ fra + til −, er det et toppunkt; fra − til +, et bunnpunkt. Alternativt: f″(x) &lt; 0 gir toppunkt, f″(x) &gt; 0 gir bunnpunkt. Husk også å sjekke endepunktene i definisjonsområdet.</p>
-<p><b>Eksempel: største volum av en eske.</b> Fra en plate a × b klipper du ut like store kvadrater x i hvert hjørne og bretter opp kantene. Volumet er</p>
-<div class="ma10x-f">V(x) = x · (a − 2x) · (b − 2x) = 4x³ − 2(a + b)x² + abx<br>V′(x) = 12x² − 4(a + b)x + ab = 0<br>x = ((a + b) − √(a² − ab + b²)) / 6 &nbsp;<span class="small muted" style="font-family:var(--body)">(den andre løsningen er for stor, x må være under b/2)</span></div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5042,19 +5049,56 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-bx-out" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Den deriverte f′(x) er stigningstallet til tangenten i et punkt på grafen, altså hvor fort funksjonen endrer seg akkurat der. Den brukes til å finne fart og akselerasjon, og til å finne toppunkter og bunnpunkter.</p>
+<h3>Definisjon</h3>
+<p>Stigningstallet mellom to punkter på grafen er Δy / Δx. Lar du avstanden h mellom punktene bli mindre og mindre, går sekanten over i tangenten:</p>
+<div class="ma10x-f">f′(x) = lim<span class="ma10x-sub">h→0</span> (f(x + h) − f(x)) / h</div>
+<h3>Interaktiv graf: tangent og stigningstall</h3>
+<figure class="fig">
+  <div class="chips" id="ma10x-dv-chips" style="margin:0">
+    <button class="chip" type="button" data-f="0" aria-pressed="true">f(x) = x²</button>
+    <button class="chip" type="button" data-f="1" aria-pressed="false">f(x) = x³ − 3x</button>
+    <button class="chip" type="button" data-f="2" aria-pressed="false">f(x) = sin x</button>
+  </div>
+  <svg id="ma10x-dv-svg" viewBox="0 0 600 340" role="img" aria-label="Graf med tangent i et punkt som kan flyttes"></svg>
+  <div class="ctrl">
+    <label for="ma10x-dv-x" class="small muted">x₀</label>
+    <input type="range" id="ma10x-dv-x" min="-3" max="3" step="0.01" value="1" style="flex:1;min-width:140px">
+    <button class="chip play" id="ma10x-dv-h" type="button">▶ La h gå mot 0</button>
+    <label class="small muted"><input type="checkbox" id="ma10x-dv-d" style="width:auto;vertical-align:middle"> Vis f′(x)</label>
+  </div>
+  <div class="mono small" id="ma10x-dv-read" aria-live="polite"></div>
+  <figcaption>Dra det blå punktet langs grafen. Tangenten (oransje) har stigningstallet f′(x₀). Der tangenten er vannrett, er f′(x₀) = 0: der ligger toppunkter og bunnpunkter. Med «La h gå mot 0» ser du sekanten bli til tangenten.</figcaption>
+</figure>
+<h3>Fart og akselerasjon</h3>
+<p>Er posisjonen s(t) kjent, er farten den deriverte av posisjonen, og akselerasjonen den deriverte av farten. Den deriverte er alltid «endring per tidsenhet».</p>
+<div class="ma10x-f">v(t) = s′(t) &nbsp;&nbsp; a(t) = v′(t) = s″(t)</div>
+<h3>Toppunkt og bunnpunkt (optimalisering)</h3>
+<p>Der en glatt funksjon har et toppunkt eller bunnpunkt, er tangenten vannrett: <b>f′(x) = 0</b>. Fortegnet til f′ rundt punktet avgjør hva det er: går f′ fra + til −, er det et toppunkt; fra − til +, et bunnpunkt. Alternativt: f″(x) &lt; 0 gir toppunkt, f″(x) &gt; 0 gir bunnpunkt. Husk også å sjekke endepunktene i definisjonsområdet.</p>
+<p><b>Eksempel: største volum av en eske.</b> Fra en plate a × b klipper du ut like store kvadrater x i hvert hjørne og bretter opp kantene. Volumet er</p>
+<div class="ma10x-f">V(x) = x · (a − 2x) · (b − 2x) = 4x³ − 2(a + b)x² + abx<br>V′(x) = 12x² − 4(a + b)x + ab = 0<br>x = ((a + b) − √(a² − ab + b²)) / 6 &nbsp;<span class="small muted" style="font-family:var(--body)">(den andre løsningen er for stor, x må være under b/2)</span></div>
 <figure class="fig">
   <svg id="ma10x-bx-svg" viewBox="0 0 600 260" role="img" aria-label="Utbrettet plate med hjørnekutt og graf over volumet"></svg>
   <figcaption>Venstre: platen med kuttene. Høyre: V(x). Det grønne punktet er maksimum, der V′(x) = 0.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="ma10-areal">
-  <div class="topic-h"><span class="tno">10.4</span><h3>Arealberegninger</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Areal trenger du for platebehov, vekt av plater, malingsmengde og tverrsnitt (spenning = kraft / areal). Omkretsen gir skjærelengde, sveiselengde og kantlist. Velg en figur, fyll inn målene, og figuren tegnes i riktig forhold med målsetting.</p>
-<p>Alle formlene bygger på rektangelet. Parallellogrammet er et rektangel med en trekant flyttet fra den ene enden til den andre. En trekant er et halvt parallellogram. Et trapes er gjennomsnittet av de to parallelle sidene ganger høyden. Sirkelen kan deles i tynne sektorer som legges om til et rektangel med sidene πr og r.</p>
-
+<div class="topic-h"><span class="tno">10.4</span><h3>Arealberegninger</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Rektangel og trekant</h4><b>A = l · b</b><b>A = g · h / 2</b></div>
+    <div><h4>Parallellogram og trapes</h4><b>A = g · h</b><b>A = (a + c) · h / 2</b></div>
+    <div><h4>Sirkel</h4><b>A = π · r² = π · d² / 4</b><b>O = π · d</b></div>
+    <div><h4>Sirkelsektor</h4><b>A = π · r² · v / 360</b><b>b = π · r · v / 180</b><span>buelengde</span></div>
+  </div>
+  <div class="hurtig-u">A areal · O omkrets · g grunnlinje · h høyde · r radius · d diameter · v vinkel (°)</div>
+</div>
 <h3>Figurer</h3>
 <div class="gd-grid ma10x-cards" id="ma10x-ar-cards"></div>
-
 <h3>Kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -5067,49 +5111,58 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <div class="diagram"><svg id="ma10x-ar-svg" viewBox="0 0 420 300" role="img" aria-label="Valgt figur tegnet i målestokk med mål"></svg></div>
   </div>
 </div>
-
 <h3>Regulære mangekanter</h3>
-<p>For en regulær n-kant er <b>nøkkelvidden</b> s diameteren på den innskrevne sirkelen (mål over flatene), og <b>hjørnemålet</b> e diameteren på den omskrevne sirkelen (mål over hjørnene). Halve sidelengden, halve nøkkelvidden og halve hjørnemålet danner en rettvinklet trekant med vinkelen 180°/n. Derfor er e = s / cos(180°/n) og sidelengden l = s · tan(180°/n).</p>
 <div class="tbl" id="ma10x-ng-tbl"></div>
 <p class="small muted">Faktorene er regnet ut fra formlene. For sekskanten: e = 1,1547 · s og A = 0,8660 · s². Skal du frese en sekskant av rundstål, må rundstålet ha minst diameter e.</p>
-  <h3>Areal og volum</h3>
-  <div class="tbl" id="geo-f"></div>
+<h3>Areal og volum</h3>
+<div class="tbl" id="geo-f"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Areal trenger du for platebehov, vekt av plater, malingsmengde og tverrsnitt (spenning = kraft / areal). Omkretsen gir skjærelengde, sveiselengde og kantlist. Velg en figur, fyll inn målene, og figuren tegnes i riktig forhold med målsetting.</p>
+<p>Alle formlene bygger på rektangelet. Parallellogrammet er et rektangel med en trekant flyttet fra den ene enden til den andre. En trekant er et halvt parallellogram. Et trapes er gjennomsnittet av de to parallelle sidene ganger høyden. Sirkelen kan deles i tynne sektorer som legges om til et rektangel med sidene πr og r.</p>
+<h3>Regulære mangekanter</h3>
+<p>For en regulær n-kant er <b>nøkkelvidden</b> s diameteren på den innskrevne sirkelen (mål over flatene), og <b>hjørnemålet</b> e diameteren på den omskrevne sirkelen (mål over hjørnene). Halve sidelengden, halve nøkkelvidden og halve hjørnemålet danner en rettvinklet trekant med vinkelen 180°/n. Derfor er e = s / cos(180°/n) og sidelengden l = s · tan(180°/n).</p>
+</details>
 </div>
 <div class="topic" id="ma10-pyt">
-  <div class="topic-h"><span class="tno">10.5</span><h3>Den pytagoreiske læresetning</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <h3>Pytagoras: a² + b² = c²</h3>
-  <p>Kvadratet på hypotenusen er like stort som kvadratene på de to katetene til sammen. Med sidene 3, 4 og 5 kan du telle rutene: 9 + 16 = 25. Dette er også tømrerens 3-4-5-regel for å sjekke at et hjørne er rett.</p>
-  <figure class="fig">
+<div class="topic-h"><span class="tno">10.5</span><h3>Den pytagoreiske læresetning</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Pytagoras</h4><b>a² + b² = c²</b><span>c er hypotenusen, motsatt den rette vinkelen</span><b>c = √(a² + b²)</b><b>a = √(c² − b²)</b></div>
+    <div><h4>Kjente tall</h4><span>3-4-5 · 5-12-13 · 6-8-10. Kontroller rett vinkel med 3-4-5</span></div>
+  </div>
+</div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<h3>Pytagoras: a² + b² = c²</h3>
+<p>Kvadratet på hypotenusen er like stort som kvadratene på de to katetene til sammen. Med sidene 3, 4 og 5 kan du telle rutene: 9 + 16 = 25. Dette er også tømrerens 3-4-5-regel for å sjekke at et hjørne er rett.</p>
+<figure class="fig">
     <svg id="py-svg" viewBox="0 0 520 300" role="img" aria-label="Rettvinklet trekant med sidene 3, 4 og 5 og kvadrater på hver side"></svg>
     <div class="ctrl">
       <button class="chip play" id="py-play" type="button">▶ Tell rutene</button>
       <span class="mono" id="py-read">9 + 16 = 25</span>
     </div>
   </figure>
+</details>
 </div>
 <div class="topic" id="ma10-linear">
-  <div class="topic-h"><span class="tno">10.6</span><h3>Lineære funksjoner</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">En lineær funksjon har en rett linje som graf. Den beskriver alt som øker eller minker like mye for hver enhet: kostnad per stykk, temperaturomregning, fall på et rør.</p>
-<div class="ma10x-f">y = a · x + b</div>
+<div class="topic-h"><span class="tno">10.6</span><h3>Lineære funksjoner</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Rett linje</h4><b>y = a · x + b</b></div>
+    <div><h4>Stigningstall</h4><b>a = Δy / Δx = (y₂ − y₁) / (x₂ − x₁)</b><b>b = y₁ − a · x₁</b><span>konstantleddet, y når x = 0</span></div>
+    <div><h4>Stigning og fall</h4><b>prosent = Δh / L · 100</b><b>promille = Δh / L · 1000</b></div>
+    <div><h4>Skjæringspunkt</h4><b>a₁ · x + b₁ = a₂ · x + b₂</b><span>løs for x (break-even)</span></div>
+  </div>
+</div>
 <dl class="kv" style="margin-bottom:14px">
   <div><dt>Stigningstall a</dt><dd>a = Δy / Δx</dd></div>
   <div><dt>Konstantledd b</dt><dd>y når x = 0</dd></div>
   <div><dt>Gjennom to punkter</dt><dd>a = (y₂ − y₁) / (x₂ − x₁)</dd></div>
   <div><dt>Deretter</dt><dd>b = y₁ − a · x₁</dd></div>
 </dl>
-<p><b>a</b> forteller hvor mye y endrer seg når x øker med 1. Er a positiv, stiger linjen. Er a negativ, synker den. Er a = 0, er linjen vannrett. <b>b</b> er der linjen skjærer y-aksen, ofte en fast kostnad eller et startnivå.</p>
-
-<h3>Interaktiv graf</h3>
-<figure class="fig">
-  <svg id="ma10x-ln2-svg" viewBox="0 0 600 400" role="img" aria-label="Koordinatsystem med en rett linje, to punkter som kan dras og stigningstrekant"></svg>
-  <div class="ctrl">
-    <label for="ma10x-ln2-a" class="small muted">a</label><input type="range" id="ma10x-ln2-a" min="-4" max="4" step="0.1" value="0.5" style="flex:1;min-width:120px">
-    <label for="ma10x-ln2-b" class="small muted">b</label><input type="range" id="ma10x-ln2-b" min="-6" max="6" step="0.5" value="1" style="flex:1;min-width:120px">
-  </div>
-  <div class="mono small" id="ma10x-ln2-read" aria-live="polite"></div>
-  <figcaption>Dra punktene P₁ og P₂ (de låses til halve ruter), eller bruk gliderne. Stigningstrekanten viser Δx og Δy mellom punktene. Uansett hvor på linjen du legger punktene, blir Δy / Δx det samme.</figcaption>
-</figure>
-
 <h3>Eksempler fra verkstedet</h3>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Situasjon</th><th style="text-align:left">Likning</th><th style="text-align:left">a betyr</th><th style="text-align:left">b betyr</th></tr></thead>
@@ -5129,10 +5182,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-tc-out" aria-live="polite"></div>
 </div>
-
 <h3>Stigning og fall: prosent og promille</h3>
-<p>Stigning er stigningstallet a skrevet som prosent eller promille: høydeforskjellen delt på den vannrette lengden. Et avløpsrør med fall 1 : 50 faller 2 cm per meter, altså 2 % eller 20 ‰. Vinkelen er v = tan⁻¹(Δh / L). For små stigninger er prosent og grader nesten proporsjonale, men 100 % er 45°, ikke 90°.</p>
-<div class="ma10x-f">stigning % = Δh / L · 100 &nbsp;&nbsp; stigning ‰ = Δh / L · 1000 &nbsp;&nbsp; 1 : (L / Δh)</div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5143,11 +5193,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-sl-out" aria-live="polite"></div>
 </div>
-
 <h3>Skjæringspunkt mellom to linjer (break-even)</h3>
-<p>To linjer y = a₁x + b₁ og y = a₂x + b₂ skjærer hverandre der y-verdiene er like: a₁x + b₁ = a₂x + b₂. Det gir</p>
-<div class="ma10x-f">x = (b₂ − b₁) / (a₁ − a₂) &nbsp;&nbsp; y = a₁ · x + b₁</div>
-<p>Er a₁ = a₂, er linjene parallelle og skjærer aldri. <b>Eksempel:</b> En del kan lages i en manuell maskin (kort oppsett, høy stykkpris) eller i CNC (langt oppsett med programmering, lav stykkpris). Skjæringspunktet er seriestørrelsen der de to koster like mye. Over den lønner CNC seg.</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -5161,26 +5207,48 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-be-out" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En lineær funksjon har en rett linje som graf. Den beskriver alt som øker eller minker like mye for hver enhet: kostnad per stykk, temperaturomregning, fall på et rør.</p>
+<div class="ma10x-f">y = a · x + b</div>
+<p><b>a</b> forteller hvor mye y endrer seg når x øker med 1. Er a positiv, stiger linjen. Er a negativ, synker den. Er a = 0, er linjen vannrett. <b>b</b> er der linjen skjærer y-aksen, ofte en fast kostnad eller et startnivå.</p>
+<h3>Interaktiv graf</h3>
+<figure class="fig">
+  <svg id="ma10x-ln2-svg" viewBox="0 0 600 400" role="img" aria-label="Koordinatsystem med en rett linje, to punkter som kan dras og stigningstrekant"></svg>
+  <div class="ctrl">
+    <label for="ma10x-ln2-a" class="small muted">a</label><input type="range" id="ma10x-ln2-a" min="-4" max="4" step="0.1" value="0.5" style="flex:1;min-width:120px">
+    <label for="ma10x-ln2-b" class="small muted">b</label><input type="range" id="ma10x-ln2-b" min="-6" max="6" step="0.5" value="1" style="flex:1;min-width:120px">
+  </div>
+  <div class="mono small" id="ma10x-ln2-read" aria-live="polite"></div>
+  <figcaption>Dra punktene P₁ og P₂ (de låses til halve ruter), eller bruk gliderne. Stigningstrekanten viser Δx og Δy mellom punktene. Uansett hvor på linjen du legger punktene, blir Δy / Δx det samme.</figcaption>
+</figure>
+<h3>Stigning og fall: prosent og promille</h3>
+<p>Stigning er stigningstallet a skrevet som prosent eller promille: høydeforskjellen delt på den vannrette lengden. Et avløpsrør med fall 1 : 50 faller 2 cm per meter, altså 2 % eller 20 ‰. Vinkelen er v = tan⁻¹(Δh / L). For små stigninger er prosent og grader nesten proporsjonale, men 100 % er 45°, ikke 90°.</p>
+<div class="ma10x-f">stigning % = Δh / L · 100 &nbsp;&nbsp; stigning ‰ = Δh / L · 1000 &nbsp;&nbsp; 1 : (L / Δh)</div>
+<h3>Skjæringspunkt mellom to linjer (break-even)</h3>
+<p>To linjer y = a₁x + b₁ og y = a₂x + b₂ skjærer hverandre der y-verdiene er like: a₁x + b₁ = a₂x + b₂. Det gir</p>
+<div class="ma10x-f">x = (b₂ − b₁) / (a₁ − a₂) &nbsp;&nbsp; y = a₁ · x + b₁</div>
+<p>Er a₁ = a₂, er linjene parallelle og skjærer aldri. <b>Eksempel:</b> En del kan lages i en manuell maskin (kort oppsett, høy stykkpris) eller i CNC (langt oppsett med programmering, lav stykkpris). Skjæringspunktet er seriestørrelsen der de to koster like mye. Over den lønner CNC seg.</p>
 <figure class="fig">
   <svg id="ma10x-be-svg" viewBox="0 0 600 280" role="img" aria-label="To kostnadslinjer og skjæringspunktet"></svg>
   <div class="ma10x-legend"><span><i style="background:var(--zone)"></i>A (manuell)</span><span><i style="background:var(--accent)"></i>B (CNC)</span></div>
 </figure>
+</details>
 </div>
 <div class="topic" id="ma10-volum">
-  <div class="topic-h"><span class="tno">10.7</span><h3>Volumberegninger</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Volum gir vekt (masse = volum · densitet), materialbehov og oljemengde. Overflaten gir malings- og belegningsmengde. Velg et legeme, fyll inn målene og materialet, så får du tegning, volum, overflate og masse.</p>
-<p>Alle <b>prismer og sylindere</b> følger samme regel: V = grunnflate · høyde, fordi hvert tynne snitt er like stort. Alle <b>spisse legemer</b> (kjegle, pyramide) har V = grunnflate · høyde / 3. Et avkortet legeme er et stort spisst legeme minus det lille som er kuttet av toppen.</p>
-
-<h3>Kjeglen er en tredjedel av sylinderen</h3>
-<figure class="fig">
-  <svg id="ma10x-cn-svg" viewBox="0 0 600 260" role="img" aria-label="En kjegle fylles og tømmes tre ganger i en sylinder med samme grunnflate og høyde"></svg>
-  <div class="ctrl"><button class="chip play" id="ma10x-cn-play" type="button">▶ Spill av</button><span class="mono" id="ma10x-cn-read"></span></div>
-  <figcaption>Kjeglen og sylinderen har samme diameter og høyde. Det trengs tre fulle kjegler for å fylle sylinderen. Merk at kjeglen er halvfull først når væsken står 79 % opp, fordi volumet vokser med høyden i tredje potens.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">10.7</span><h3>Volumberegninger</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Prisme og sylinder</h4><b>V = G · h</b><b>V = π · r² · h</b></div>
+    <div><h4>Kjegle og pyramide</h4><b>V = G · h / 3</b><b>V = π · r² · h / 3</b></div>
+    <div><h4>Kule</h4><b>V = 4/3 · π · r³</b><b>O = 4 · π · r²</b><span>overflate</span></div>
+    <div><h4>Masse</h4><b>m = V · ρ</b><span>stål ρ = 7850 kg/m³</span></div>
+  </div>
+  <div class="hurtig-u">V volum · G grunnflate · h høyde · r radius · ρ densitet</div>
+</div>
 <h3>Legemer</h3>
 <div class="gd-grid ma10x-cards" id="ma10x-vo-cards"></div>
-
 <h3>Kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -5198,18 +5266,32 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
 </div>
 <p class="small muted">Alle mål i mm. Densiteter fra kapittelet Materialer og vekt. Gjør om mål fra mm til m (÷ 1000), så blir volumet i m³, og masse (kg) = V (m³) · ρ (kg/m³).</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Volum gir vekt (masse = volum · densitet), materialbehov og oljemengde. Overflaten gir malings- og belegningsmengde. Velg et legeme, fyll inn målene og materialet, så får du tegning, volum, overflate og masse.</p>
+<p>Alle <b>prismer og sylindere</b> følger samme regel: V = grunnflate · høyde, fordi hvert tynne snitt er like stort. Alle <b>spisse legemer</b> (kjegle, pyramide) har V = grunnflate · høyde / 3. Et avkortet legeme er et stort spisst legeme minus det lille som er kuttet av toppen.</p>
+<h3>Kjeglen er en tredjedel av sylinderen</h3>
+<figure class="fig">
+  <svg id="ma10x-cn-svg" viewBox="0 0 600 260" role="img" aria-label="En kjegle fylles og tømmes tre ganger i en sylinder med samme grunnflate og høyde"></svg>
+  <div class="ctrl"><button class="chip play" id="ma10x-cn-play" type="button">▶ Spill av</button><span class="mono" id="ma10x-cn-read"></span></div>
+  <figcaption>Kjeglen og sylinderen har samme diameter og høyde. Det trengs tre fulle kjegler for å fylle sylinderen. Merk at kjeglen er halvfull først når væsken står 79 % opp, fordi volumet vokser med høyden i tredje potens.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="ma10-trig">
-  <div class="topic-h"><span class="tno">10.8</span><h3>Trigonometri</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <h3>Hvilken side hører til hvilken funksjon?</h3>
-  <p>I en rettvinklet trekant ser du alltid fra vinkelen du regner med. Siden rett overfor vinkelen er <b>motstående</b>, siden inntil vinkelen er <b>hosliggende</b>, og den lengste siden (overfor den rette vinkelen) er <b>hypotenusen</b>.</p>
-  <figure class="fig">
-    <svg id="soh-svg" viewBox="0 0 600 170" role="img" aria-label="Tre trekanter som viser sidene for sinus, cosinus og tangens"></svg>
-    <figcaption>De markerte sidene er de to som inngår i hver funksjon.</figcaption>
-  </figure>
-  <h3>Kalkulator: rettvinklet trekant</h3>
-  <p class="small muted">Fyll inn to verdier, hvorav minst én side. Vinkel A står mot siden a.</p>
-  <div class="calc">
+<div class="topic-h"><span class="tno">10.8</span><h3>Trigonometri</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Rettvinklet trekant</h4><b>sin v = motstående / hypotenus</b><b>cos v = hosliggende / hypotenus</b><b>tan v = motstående / hosliggende</b></div>
+    <div><h4>Pytagoras</h4><b>c² = a² + b²</b></div>
+    <div><h4>Hullsirkel</h4><b>X = r · cos v</b><b>Y = r · sin v</b><span>v målt fra X-aksen</span></div>
+    <div><h4>Vinkelsum</h4><span>Trekant: 180°. Den ukjente vinkelen i en rettvinklet trekant er 90° − v</span></div>
+  </div>
+</div>
+<h3>Kalkulator: rettvinklet trekant</h3>
+<p class="small muted">Fyll inn to verdier, hvorav minst én side. Vinkel A står mot siden a.</p>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="tr-a">Motstående a</label><input id="tr-a" inputmode="decimal" value="30"></div>
@@ -5223,9 +5305,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="tr-out" aria-live="polite"></div>
   </div>
-  <h3>Hullsirkel (boltsirkel)</h3>
-  <p>Hvert hull ligger på en sirkel med radius r = Ø/2. Koordinatene finner du med trigonometri: <span class="mono">X = r · cos v</span> og <span class="mono">Y = r · sin v</span>, der v er hullets vinkel. Spill av for å se boresekvensen, eller trykk på et hull i tabellen.</p>
-  <div class="calc">
+<h3>Hullsirkel (boltsirkel)</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="hc-d">Delesirkel Ø (mm)</label><input id="hc-d" inputmode="decimal" value="100"></div>
@@ -5238,36 +5319,40 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <div class="out" id="hc-out" aria-live="polite"></div>
   </div>
-  <figure class="fig">
+<h3>Trigonometri</h3>
+<div class="tbl" id="trig-f"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<h3>Hvilken side hører til hvilken funksjon?</h3>
+<p>I en rettvinklet trekant ser du alltid fra vinkelen du regner med. Siden rett overfor vinkelen er <b>motstående</b>, siden inntil vinkelen er <b>hosliggende</b>, og den lengste siden (overfor den rette vinkelen) er <b>hypotenusen</b>.</p>
+<figure class="fig">
+    <svg id="soh-svg" viewBox="0 0 600 170" role="img" aria-label="Tre trekanter som viser sidene for sinus, cosinus og tangens"></svg>
+    <figcaption>De markerte sidene er de to som inngår i hver funksjon.</figcaption>
+  </figure>
+<h3>Hullsirkel (boltsirkel)</h3>
+<p>Hvert hull ligger på en sirkel med radius r = Ø/2. Koordinatene finner du med trigonometri: <span class="mono">X = r · cos v</span> og <span class="mono">Y = r · sin v</span>, der v er hullets vinkel. Spill av for å se boresekvensen, eller trykk på et hull i tabellen.</p>
+<figure class="fig">
     <svg id="hc-svg" viewBox="0 0 560 330" role="img" aria-label="Hullsirkel med projeksjon av valgt hull på X- og Y-aksen"></svg>
     <div class="ctrl">
       <button class="chip play" id="hc-play" type="button">▶ Vis boresekvens</button>
       <span class="mono" id="hc-read"></span>
     </div>
   </figure>
-  <h3>Trigonometri</h3>
-  <div class="tbl" id="trig-f"></div>
+</details>
 </div>
 <div class="topic" id="ma10-trigfunk">
-  <div class="topic-h"><span class="tno">10.9</span><h3>Trigonometriske funksjoner</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Når vinkelen går rundt fra 0° til 360°, gjentar sin, cos og tan seg. Grafene viser fortegnet i hver kvadrant, hvor funksjonene er null og hvor tangens går mot uendelig. Det trenger du for å tolke koordinater, vekselstrøm og svingninger.</p>
-
+<div class="topic-h"><span class="tno">10.9</span><h3>Trigonometriske funksjoner</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Radianer</h4><b>rad = grader · π / 180</b><b>grader = rad · 180 / π</b><span>1 rad ≈ 57,3°</span></div>
+    <div><h4>Sinussetningen</h4><b>a / sin A = b / sin B = c / sin C</b></div>
+    <div><h4>Cosinussetningen</h4><b>c² = a² + b² − 2ab · cos C</b></div>
+    <div><h4>Areal av trekant</h4><b>A = ½ · a · b · sin C</b></div>
+    <div><h4>Enhetssirkelen</h4><b>sin² v + cos² v = 1</b><b>tan v = sin v / cos v</b></div>
+  </div>
+</div>
 <h3>Grafene til sin, cos og tan</h3>
-<figure class="fig">
-  <svg id="ma10x-tf-svg" viewBox="0 0 600 432" role="img" aria-label="Grafene til sinus, cosinus og tangens fra 0 til 360 grader med markør for valgt vinkel"></svg>
-  <div class="ctrl">
-    <button class="chip play" id="ma10x-tf-play" type="button">▶ Spill av</button>
-    <label for="ma10x-tf-v" class="small muted">Vinkel</label>
-    <input type="range" id="ma10x-tf-v" min="0" max="360" step="1" value="35" style="flex:1;min-width:140px">
-  </div>
-  <div class="chips" id="ma10x-tf-chips" style="margin:0">
-    <button class="chip" type="button" data-k="sin" aria-pressed="true">Samme sin</button>
-    <button class="chip" type="button" data-k="cos" aria-pressed="false">Samme cos</button>
-    <button class="chip" type="button" data-k="tan" aria-pressed="false">Samme tan</button>
-  </div>
-  <div class="mono small" id="ma10x-tf-read" aria-live="polite"></div>
-  <figcaption>Dra i glideren eller trykk i grafen. Den stiplede markøren viser den andre vinkelen mellom 0° og 360° som gir samme verdi: sin v = sin(180° − v), cos v = cos(360° − v) og tan v = tan(180° + v). Derfor gir sin⁻¹, cos⁻¹ og tan⁻¹ på kalkulatoren bare én av to mulige vinkler.</figcaption>
-</figure>
 <div class="tbl"><table class="ma10x-l">
   <thead><tr><th>Kvadrant</th><th style="text-align:left">Vinkel</th><th style="text-align:left">sin</th><th style="text-align:left">cos</th><th style="text-align:left">tan</th></tr></thead>
   <tbody>
@@ -5277,11 +5362,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <tr><td>IV</td><td>270°–360°</td><td>−</td><td>+</td><td>−</td></tr>
   </tbody>
 </table></div>
-<p>sin og cos har <b>periode</b> 360° og svinger mellom −1 og 1. cos-grafen er sin-grafen forskjøvet 90°: cos v = sin(v + 90°). tan v = sin v / cos v har periode 180° og er ikke definert der cos v = 0, altså ved 90° og 270°. En vekselspenning følger samme form: u = û · sin(ωt), der û er toppverdien.</p>
-
 <h3>Radianer og grader</h3>
-<p>En radian er vinkelen der buen er like lang som radien. En hel omdreining er 2π radianer, fordi omkretsen er 2πr. Radianer gjør formlene enkle: buelengden er b = r · v og vinkelhastigheten ω = 2π · n / 60 (rad/s, n i o/min). Kalkulatoren må stå i riktig modus (DEG eller RAD).</p>
-<div class="ma10x-f">rad = grader · π / 180 &nbsp;&nbsp; grader = rad · 180 / π &nbsp;&nbsp; 1 rad = 57,2958°</div>
 <div class="two">
   <div class="tbl" style="margin:0"><table class="ma10x-l">
     <thead><tr><th>Grader</th><th style="text-align:left">Radianer</th><th style="text-align:left">Desimal</th></tr></thead>
@@ -5308,16 +5389,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
   </div>
 </div>
-
 <h3>Vilkårlige trekanter</h3>
-<p>Sinus, cosinus og tangens som sideforhold gjelder bare i rettvinklede trekanter. For alle trekanter bruker du sinussetningen og cosinussetningen. Store bokstaver er vinkler, og siden a står rett overfor vinkelen A.</p>
-<div class="ma10x-f">Sinussetningen: &nbsp; a / sin A = b / sin B = c / sin C<br>Cosinussetningen: c² = a² + b² − 2ab · cos C<br>Arealsetningen: &nbsp; T = ½ · a · b · sin C<br>Vinkelsum: &nbsp; &nbsp; &nbsp; &nbsp; A + B + C = 180°</div>
-<figure class="fig">
-  <svg id="ma10x-ct-svg" viewBox="0 0 600 300" role="img" aria-label="Trekant der hjørnet C kan dras, med cosinussetningen som utvidet Pytagoras"></svg>
-  <div class="mono small" id="ma10x-ct-read" aria-live="polite"></div>
-  <figcaption>Dra hjørnet C. Cosinussetningen er Pytagoras med et korreksjonsledd: når C = 90° er cos C = 0, og leddet −2ab · cos C forsvinner. Er C spiss, blir c² mindre enn a² + b². Er C stump, blir c² større. Den stiplede høyden h = b · sin C gir arealsetningen.</figcaption>
-</figure>
-<p><b>Hvilken setning?</b> Kjenner du to sider og vinkelen mellom dem (SVS) eller alle tre sidene (SSS), bruker du cosinussetningen. Kjenner du en side og vinkelen overfor den, pluss én verdi til (VSV, SSV), bruker du sinussetningen. Ved SSV (to sider og en vinkel som <b>ikke</b> ligger mellom dem) kan det finnes to trekanter, fordi sin B = sin(180° − B).</p>
 <div class="calc">
   <div class="fields">
     <p class="small muted" style="margin:0">Fyll inn tre verdier, minst én side. Vinkler i grader. Eller velg et eksempel:</p>
@@ -5343,9 +5415,41 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="ma10x-st-out" aria-live="polite"></div>
 </div>
-  <h3>Sinus og cosinus på enhetssirkelen</h3>
-  <p>Tenk deg en viser med lengde 1 som roterer. Den vannrette projeksjonen av viseren er <b>cos v</b>, og den loddrette er <b>sin v</b>. Når vinkelen øker, tegner høyden en sinuskurve.</p>
-  <figure class="fig">
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Når vinkelen går rundt fra 0° til 360°, gjentar sin, cos og tan seg. Grafene viser fortegnet i hver kvadrant, hvor funksjonene er null og hvor tangens går mot uendelig. Det trenger du for å tolke koordinater, vekselstrøm og svingninger.</p>
+<h3>Grafene til sin, cos og tan</h3>
+<figure class="fig">
+  <svg id="ma10x-tf-svg" viewBox="0 0 600 432" role="img" aria-label="Grafene til sinus, cosinus og tangens fra 0 til 360 grader med markør for valgt vinkel"></svg>
+  <div class="ctrl">
+    <button class="chip play" id="ma10x-tf-play" type="button">▶ Spill av</button>
+    <label for="ma10x-tf-v" class="small muted">Vinkel</label>
+    <input type="range" id="ma10x-tf-v" min="0" max="360" step="1" value="35" style="flex:1;min-width:140px">
+  </div>
+  <div class="chips" id="ma10x-tf-chips" style="margin:0">
+    <button class="chip" type="button" data-k="sin" aria-pressed="true">Samme sin</button>
+    <button class="chip" type="button" data-k="cos" aria-pressed="false">Samme cos</button>
+    <button class="chip" type="button" data-k="tan" aria-pressed="false">Samme tan</button>
+  </div>
+  <div class="mono small" id="ma10x-tf-read" aria-live="polite"></div>
+  <figcaption>Dra i glideren eller trykk i grafen. Den stiplede markøren viser den andre vinkelen mellom 0° og 360° som gir samme verdi: sin v = sin(180° − v), cos v = cos(360° − v) og tan v = tan(180° + v). Derfor gir sin⁻¹, cos⁻¹ og tan⁻¹ på kalkulatoren bare én av to mulige vinkler.</figcaption>
+</figure>
+<p>sin og cos har <b>periode</b> 360° og svinger mellom −1 og 1. cos-grafen er sin-grafen forskjøvet 90°: cos v = sin(v + 90°). tan v = sin v / cos v har periode 180° og er ikke definert der cos v = 0, altså ved 90° og 270°. En vekselspenning følger samme form: u = û · sin(ωt), der û er toppverdien.</p>
+<h3>Radianer og grader</h3>
+<p>En radian er vinkelen der buen er like lang som radien. En hel omdreining er 2π radianer, fordi omkretsen er 2πr. Radianer gjør formlene enkle: buelengden er b = r · v og vinkelhastigheten ω = 2π · n / 60 (rad/s, n i o/min). Kalkulatoren må stå i riktig modus (DEG eller RAD).</p>
+<div class="ma10x-f">rad = grader · π / 180 &nbsp;&nbsp; grader = rad · 180 / π &nbsp;&nbsp; 1 rad = 57,2958°</div>
+<h3>Vilkårlige trekanter</h3>
+<p>Sinus, cosinus og tangens som sideforhold gjelder bare i rettvinklede trekanter. For alle trekanter bruker du sinussetningen og cosinussetningen. Store bokstaver er vinkler, og siden a står rett overfor vinkelen A.</p>
+<div class="ma10x-f">Sinussetningen: &nbsp; a / sin A = b / sin B = c / sin C<br>Cosinussetningen: c² = a² + b² − 2ab · cos C<br>Arealsetningen: &nbsp; T = ½ · a · b · sin C<br>Vinkelsum: &nbsp; &nbsp; &nbsp; &nbsp; A + B + C = 180°</div>
+<figure class="fig">
+  <svg id="ma10x-ct-svg" viewBox="0 0 600 300" role="img" aria-label="Trekant der hjørnet C kan dras, med cosinussetningen som utvidet Pytagoras"></svg>
+  <div class="mono small" id="ma10x-ct-read" aria-live="polite"></div>
+  <figcaption>Dra hjørnet C. Cosinussetningen er Pytagoras med et korreksjonsledd: når C = 90° er cos C = 0, og leddet −2ab · cos C forsvinner. Er C spiss, blir c² mindre enn a² + b². Er C stump, blir c² større. Den stiplede høyden h = b · sin C gir arealsetningen.</figcaption>
+</figure>
+<p><b>Hvilken setning?</b> Kjenner du to sider og vinkelen mellom dem (SVS) eller alle tre sidene (SSS), bruker du cosinussetningen. Kjenner du en side og vinkelen overfor den, pluss én verdi til (VSV, SSV), bruker du sinussetningen. Ved SSV (to sider og en vinkel som <b>ikke</b> ligger mellom dem) kan det finnes to trekanter, fordi sin B = sin(180° − B).</p>
+<h3>Sinus og cosinus på enhetssirkelen</h3>
+<p>Tenk deg en viser med lengde 1 som roterer. Den vannrette projeksjonen av viseren er <b>cos v</b>, og den loddrette er <b>sin v</b>. Når vinkelen øker, tegner høyden en sinuskurve.</p>
+<figure class="fig">
     <svg id="uc-svg" viewBox="0 0 600 260" role="img" aria-label="Enhetssirkel med sinus og cosinus og tilhørende sinuskurve"></svg>
     <div class="ctrl">
       <button class="chip play" id="uc-play" type="button" aria-pressed="false">▶ Spill av</button>
@@ -5355,11 +5459,56 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     </div>
     <figcaption>Dra i glidebryteren eller spill av. Blå er cos v, oransje er sin v. Fortegnet skifter etter hvilken kvadrant viseren står i.</figcaption>
   </figure>
+</details>
 </div>
 <div class="topic" id="ma10-trigtab">
-  <div class="topic-h"><span class="tno">10.10</span><h3>Trigonometriske tabeller</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
-  <p class="lead">Tabell over sin, cos, tan og cot for 0°–90° med fire desimaler, omregning fra verdi til vinkel og mellom desimalgrader og grader, minutter og sekunder. Tabellen er regnet ut direkte, så den er like nøyaktig som en kalkulator med fire desimaler.</p>
-
+<div class="topic-h"><span class="tno">10.10</span><h3>Trigonometriske tabeller</h3><a class="up" href="#matematikk" aria-label="Til innholdet i emne 10">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Eksakte verdier</h4><b>sin 30° = cos 60° = ½</b><b>sin 45° = cos 45° = √2 / 2</b><b>sin 60° = cos 30° = √3 / 2</b><b>tan 45° = 1</b></div>
+    <div><h4>Fra verdi til vinkel</h4><b>v = sin⁻¹, cos⁻¹, tan⁻¹</b><span>SHIFT + sin/cos/tan på kalkulatoren</span></div>
+    <div><h4>Grader, minutter, sekunder</h4><b>1° = 60′ = 3600″</b><b>12,5° = 12° 30′</b></div>
+  </div>
+</div>
+<h3>Tabell 0°–90°</h3>
+<div class="filter">
+  <div class="chips" id="ma10x-tt-step" style="margin:0">
+    <button class="chip" type="button" data-s="1" aria-pressed="true">Steg 1°</button>
+    <button class="chip" type="button" data-s="0.5" aria-pressed="false">0,5°</button>
+    <button class="chip" type="button" data-s="0.1" aria-pressed="false">0,1°</button>
+  </div>
+  <label for="ma10x-tt-q" class="small muted">Søk vinkel</label>
+  <input id="ma10x-tt-q" inputmode="decimal" placeholder="f.eks. 37,5" style="max-width:140px">
+</div>
+<div class="tbl ma10x-scroll" id="ma10x-tt"></div>
+<p class="small muted" id="ma10x-tt-info"></p>
+<h3>Fra verdi til vinkel (invers)</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="row2">
+      <div class="field"><label for="ma10x-iv-f">Funksjon</label><select id="ma10x-iv-f"><option value="sin">sin</option><option value="cos">cos</option><option value="tan">tan</option><option value="cot">cot</option></select></div>
+      <div class="field"><label for="ma10x-iv-x">Verdi</label><input id="ma10x-iv-x" inputmode="decimal" value="0,6"></div>
+    </div>
+    <p class="small muted" style="margin:0">Du kan også skrive en brøk, for eksempel <span class="mono">3/5</span>.</p>
+  </div>
+  <div class="out" id="ma10x-iv-out" aria-live="polite"></div>
+</div>
+<h3>Desimalgrader og grader, minutter, sekunder</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><label for="ma10x-dm-d">Desimalgrader</label><input id="ma10x-dm-d" inputmode="decimal" value="36,8699"></div>
+    <div class="row2" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="field"><label for="ma10x-dm-g">Grader</label><input id="ma10x-dm-g" inputmode="numeric"></div>
+      <div class="field"><label for="ma10x-dm-m">Min.</label><input id="ma10x-dm-m" inputmode="numeric"></div>
+      <div class="field"><label for="ma10x-dm-s">Sek.</label><input id="ma10x-dm-s" inputmode="decimal"></div>
+    </div>
+  </div>
+  <div class="out" id="ma10x-dm-out" aria-live="polite"></div>
+</div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Tabell over sin, cos, tan og cot for 0°–90° med fire desimaler, omregning fra verdi til vinkel og mellom desimalgrader og grader, minutter og sekunder. Tabellen er regnet ut direkte, så den er like nøyaktig som en kalkulator med fire desimaler.</p>
 <h3>Eksakte verdier</h3>
 <p>Vinklene 30°, 45° og 60° kommer fra to enkle trekanter. Et kvadrat med side 1 delt på diagonalen gir en 45°-trekant med hypotenus √2. En likesidet trekant med side 2 delt på midten gir en 30°–60°-trekant med katetene 1 og √3. Sidene er funnet med Pytagoras.</p>
 <div class="two">
@@ -5379,48 +5528,14 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </table></div>
 </div>
 <p class="small muted">Huskeregel for sin: √0/2, √1/2, √2/2, √3/2, √4/2 for 0°, 30°, 45°, 60°, 90°. cos er samme rekke baklengs.</p>
-
 <h3>Tabell 0°–90°</h3>
 <p>Fordi cos v = sin(90° − v) og cot v = tan(90° − v), leses trykte tabeller ofte begge veier. Her har hver vinkel sin egen rad. cot v = 1 / tan v.</p>
-<div class="filter">
-  <div class="chips" id="ma10x-tt-step" style="margin:0">
-    <button class="chip" type="button" data-s="1" aria-pressed="true">Steg 1°</button>
-    <button class="chip" type="button" data-s="0.5" aria-pressed="false">0,5°</button>
-    <button class="chip" type="button" data-s="0.1" aria-pressed="false">0,1°</button>
-  </div>
-  <label for="ma10x-tt-q" class="small muted">Søk vinkel</label>
-  <input id="ma10x-tt-q" inputmode="decimal" placeholder="f.eks. 37,5" style="max-width:140px">
-</div>
-<div class="tbl ma10x-scroll" id="ma10x-tt"></div>
-<p class="small muted" id="ma10x-tt-info"></p>
-
 <h3>Fra verdi til vinkel (invers)</h3>
 <p>Kjenner du forholdet mellom to sider, finner du vinkelen med den inverse funksjonen: sin⁻¹ (arcsin), cos⁻¹ (arccos) eller tan⁻¹ (arctan). Kalkulatoren gir vinkelen i første kvadrant (eller andre for cos). Den andre mulige vinkelen mellom 0° og 360° står også i svaret.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="row2">
-      <div class="field"><label for="ma10x-iv-f">Funksjon</label><select id="ma10x-iv-f"><option value="sin">sin</option><option value="cos">cos</option><option value="tan">tan</option><option value="cot">cot</option></select></div>
-      <div class="field"><label for="ma10x-iv-x">Verdi</label><input id="ma10x-iv-x" inputmode="decimal" value="0,6"></div>
-    </div>
-    <p class="small muted" style="margin:0">Du kan også skrive en brøk, for eksempel <span class="mono">3/5</span>.</p>
-  </div>
-  <div class="out" id="ma10x-iv-out" aria-live="polite"></div>
-</div>
-
 <h3>Desimalgrader og grader, minutter, sekunder</h3>
 <p>1° = 60′ (minutter) og 1′ = 60″ (sekunder). Eldre tegninger, delehoder og sinuslinjaltabeller bruker ofte grader og minutter. Desimaldelen av gradene ganges med 60 for å få minutter, og desimaldelen av minuttene ganges med 60 for å få sekunder.</p>
 <div class="ma10x-f">v = G + M / 60 + S / 3600 &nbsp;&nbsp; Eksempel: 36,8699° = 36° 52′ 11,6″</div>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><label for="ma10x-dm-d">Desimalgrader</label><input id="ma10x-dm-d" inputmode="decimal" value="36,8699"></div>
-    <div class="row2" style="grid-template-columns:1fr 1fr 1fr">
-      <div class="field"><label for="ma10x-dm-g">Grader</label><input id="ma10x-dm-g" inputmode="numeric"></div>
-      <div class="field"><label for="ma10x-dm-m">Min.</label><input id="ma10x-dm-m" inputmode="numeric"></div>
-      <div class="field"><label for="ma10x-dm-s">Sek.</label><input id="ma10x-dm-s" inputmode="decimal"></div>
-    </div>
-  </div>
-  <div class="out" id="ma10x-dm-out" aria-live="polite"></div>
-</div>
+</details>
 </div>
 </section>
 
