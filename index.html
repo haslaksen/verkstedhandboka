@@ -769,8 +769,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#m3-cncgj"><span class="tn">3.16</span><span class="tt">CNC-gjenging – radiell innmating</span></a></li>
   </ol></nav>
 <div class="topic" id="m3-valg">
-  <div class="topic-h"><span class="tno">3.1</span><h3>Fremgangsmåte for valg av skjæredata</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">3.1</span><h3>Fremgangsmåte for valg av skjæredata</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<style>
 .m3a-steps{list-style:none;counter-reset:m3a;padding:0;margin:8px 0 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .m3a-steps li{counter-increment:m3a;background:var(--sheet);padding:10px 12px 10px 50px;position:relative;font-size:14px;min-width:0}
 .m3a-steps li::before{content:counter(m3a);position:absolute;left:12px;top:10px;width:26px;height:26px;border:1.5px solid var(--accent);color:var(--accent);font-family:var(--mono);font-size:14px;display:grid;place-items:center}
@@ -789,8 +789,16 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .m3a-ctl input[type="range"]{flex:1;min-width:140px}
 .m3a-ctl .mono{min-width:70px}
 </style>
-<p class="lead">Skjæredata velges i en fast rekkefølge: først materialet, så operasjonen, så verktøyet. Tallene fra tabellen er et startpunkt. Sponene, lyden og slitasjen forteller hvordan du skal justere.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Turtall</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b></div>
+    <div><h4>Mating og tid</h4><b>v<sub>f</sub> = f · n</b><span>dreiing og boring</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span><b>T = L / v<sub>f</sub></b></div>
+    <div><h4>ISO-materialgrupper</h4><span>P blå stål · M gul rustfritt · K rød støpejern</span><span>N grønn aluminium og ikke-jern · S brun titan og superlegeringer · H grå herdet stål</span></div>
+    <div><h4>Rekkefølge</h4><span>Materialgruppe → skjær og kvalitet → v<sub>c</sub>, f og a<sub>p</sub> fra katalogen → n og v<sub>f</sub></span></div>
+  </div>
+  <div class="hurtig-u">v<sub>c</sub> skjærehastighet (m/min) · D diameter (mm) · n turtall (o/min) · f mating (mm/omdr) · L lengde (mm)</div>
+</div>
 <h3>Trinn for trinn</h3>
 <ol class="m3a-steps">
   <li><b>Materialgruppe</b>Finn ISO-gruppen (P, M, K, N, S eller H) og hardheten. Gruppen bestemmer skjærekvalitet, sponbryter og område for v<sub>c</sub>. Hardere materiale gir lavere v<sub>c</sub>.</li>
@@ -802,30 +810,16 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Kontroll av effekt og overflate</b>Regn skjæreffekten P<sub>c</sub> og sammenlign med maskinens effekt. Regn teoretisk R<sub>t</sub>/R<sub>a</sub> og sammenlign med tegningskravet. Er en av dem for høy, senk a<sub>p</sub> eller f.</li>
   <li><b>Juster etter spon og lyd</b>Se på sponene og lytt. Juster matingen først for sponformen, deretter v<sub>c</sub> for slitasje og varme. Gå tilbake til trinn 4 eller 6.</li>
 </ol>
-
 <h3>ISO-materialgruppene</h3>
-<p>Fargekoden står på verktøyesker og i katalogene, slik at du raskt finner riktig skjærkvalitet og sponbryter. Gruppene bygger på hvordan materialet oppfører seg ved skjæring, ikke på hvordan det er satt sammen.</p>
-<figure class="fig">
-  <svg id="m3a-isofig" viewBox="0 0 600 175" role="img" aria-label="ISO-fargekoder for materialgruppene P, M, K, N, S og H"></svg>
-  <figcaption>Fargekoder etter ISO 513. Se delemnet om hardmetallkvaliteter for anvendelsesområdene 01–50.</figcaption>
-</figure>
 <div class="tbl" id="m3a-isotab"></div>
-
 <h3>Grovbearbeiding og finbearbeiding ved dreiing (veiledende)</h3>
 <div class="tbl" id="m3a-optab"></div>
 <p class="small muted">Veiledende for negative skjær med størrelse 12 (for eksempel CNMG 1204..) i stål på en stabil maskin. Følg sponbryterens arbeidsområde fra leverandøren.</p>
-
 <h3>Sponformer</h3>
-<p>Et godt spon er kort og krøllet, gjerne formet som «6» eller «9». Det tar med seg varmen, faller ut av arbeidsområdet og sliter ikke på emnet. Lange bånd vikler seg rundt emnet og verktøyet og er farlige. Sterkt knuste småspon betyr at eggen er overbelastet.</p>
-<figure class="fig">
-  <svg id="m3a-chips" viewBox="0 0 600 205" role="img" aria-label="Fem sponformer fra lange bånd til knuste spon"></svg>
-  <figcaption>Sponformen styres mest av matingen og sponbryteren. Høyere f gir tykkere spon som bryter lettere.</figcaption>
-</figure>
 <div class="tbl" id="m3a-chiptab"></div>
 <p class="small muted">Strå- til blåfarget stålspon ved tørr dreiing med hardmetall er normalt: varmen skal gå ut med sponet, ikke inn i emnet eller verktøyet.</p>
-  <p class="lead">Skjærehastigheten v<sub>c</sub> bestemmes av materialet og verktøyet. Turtallet regnes ut fra den og diameteren. Matingen bestemmer sponet og overflaten.</p>
-  <h3>Turtall, mating og tid</h3>
-  <div class="calc">
+<h3>Turtall, mating og tid</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="c-mat">Materiale</label><select id="c-mat"></select></div>
       <div class="field"><label for="c-op">Operasjon og verktøy</label><select id="c-op"></select></div>
@@ -841,32 +835,50 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="c-out" aria-live="polite"></div>
   </div>
-  <div class="note"><p><b>Formler:</b> n = v<sub>c</sub> · 1000 / (π · D) &nbsp;·&nbsp; v<sub>f</sub> = f<sub>z</sub> · z · n (fresing) eller f · n (boring, dreiing) &nbsp;·&nbsp; tid = L / v<sub>f</sub>. Ved dreiing er D emnediameteren, og z settes til 1.</p></div>
-  <h3>Hva er skjærehastighet?</h3>
-  <p>v<sub>c</sub> er hvor fort eggen beveger seg gjennom materialet. Et punkt på kanten går π · D for hver omdreining, så samme v<sub>c</sub> krever høyere turtall på en liten fres enn på en stor.</p>
-  <figure class="fig">
+<div class="note"><p><b>Formler:</b> n = v<sub>c</sub> · 1000 / (π · D) &nbsp;·&nbsp; v<sub>f</sub> = f<sub>z</sub> · z · n (fresing) eller f · n (boring, dreiing) &nbsp;·&nbsp; tid = L / v<sub>f</sub>. Ved dreiing er D emnediameteren, og z settes til 1.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Skjæredata velges i en fast rekkefølge: først materialet, så operasjonen, så verktøyet. Tallene fra tabellen er et startpunkt. Sponene, lyden og slitasjen forteller hvordan du skal justere.</p>
+<h3>ISO-materialgruppene</h3>
+<p>Fargekoden står på verktøyesker og i katalogene, slik at du raskt finner riktig skjærkvalitet og sponbryter. Gruppene bygger på hvordan materialet oppfører seg ved skjæring, ikke på hvordan det er satt sammen.</p>
+<figure class="fig">
+  <svg id="m3a-isofig" viewBox="0 0 600 175" role="img" aria-label="ISO-fargekoder for materialgruppene P, M, K, N, S og H"></svg>
+  <figcaption>Fargekoder etter ISO 513. Se delemnet om hardmetallkvaliteter for anvendelsesområdene 01–50.</figcaption>
+</figure>
+<h3>Sponformer</h3>
+<p>Et godt spon er kort og krøllet, gjerne formet som «6» eller «9». Det tar med seg varmen, faller ut av arbeidsområdet og sliter ikke på emnet. Lange bånd vikler seg rundt emnet og verktøyet og er farlige. Sterkt knuste småspon betyr at eggen er overbelastet.</p>
+<figure class="fig">
+  <svg id="m3a-chips" viewBox="0 0 600 205" role="img" aria-label="Fem sponformer fra lange bånd til knuste spon"></svg>
+  <figcaption>Sponformen styres mest av matingen og sponbryteren. Høyere f gir tykkere spon som bryter lettere.</figcaption>
+</figure>
+<p class="lead">Skjærehastigheten v<sub>c</sub> bestemmes av materialet og verktøyet. Turtallet regnes ut fra den og diameteren. Matingen bestemmer sponet og overflaten.</p>
+<h3>Hva er skjærehastighet?</h3>
+<p>v<sub>c</sub> er hvor fort eggen beveger seg gjennom materialet. Et punkt på kanten går π · D for hver omdreining, så samme v<sub>c</sub> krever høyere turtall på en liten fres enn på en stor.</p>
+<figure class="fig">
     <svg id="fig-vc" viewBox="0 0 600 250" role="img" aria-label="Roterende verktøy med skjærehastighet i kanten"></svg>
     <div class="ctrl"><button class="chip play" id="vc-play" type="button"></button><span class="small muted">Sakte film. Følger verdiene i kalkulatoren.</span></div>
     
   </figure>
+</details>
 </div>
 <div class="topic" id="m3-dreiing">
-  <div class="topic-h"><span class="tno">3.2</span><h3>Maskineringsformler ved dreiing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Ved dreiing roterer emnet og verktøyet mates langs eller på tvers. v<sub>c</sub> regnes på diameteren som skjæres. Skjæredybden a<sub>p</sub> og matingen f gir sponets tverrsnitt, og dermed kraft og effekt.</p>
-<figure class="fig">
-  <svg id="m3a-tfig" viewBox="0 52 600 252" role="img" aria-label="Lengdedreiing sett ovenfra med emnediameter, skjæredybde, mating og innstillingsvinkel"></svg>
-  <figcaption>Lengdedreiing sett ovenfra. v<sub>c</sub> virker vinkelrett på arket, i eggens punkt. Innstillingsvinkelen κ<sub>r</sub> måles mellom hovedeggen og matingsretningen.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">3.2</span><h3>Maskineringsformler ved dreiing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Turtall og tid</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><b>T = L / (f · n)</b></div>
+    <div><h4>Spon</h4><b>Q = v<sub>c</sub> · a<sub>p</sub> · f</b><span>cm³/min</span><b>h = f · sin κ<sub>r</sub></b><span>spontykkelse</span></div>
+    <div><h4>Kraft og effekt</h4><b>F<sub>c</sub> = k<sub>c</sub> · a<sub>p</sub> · f</b><b>P<sub>c</sub> = v<sub>c</sub> · a<sub>p</sub> · f · k<sub>c</sub> / 60 000</b><span>kW</span><b>P<sub>mot</sub> = P<sub>c</sub> / η</b></div>
+    <div><h4>Ruhet</h4><b>R<sub>t</sub> ≈ f² / (8 · r<sub>ε</sub>)</b><span>dobbel mating gir fire ganger høyere rygger</span></div>
+  </div>
+  <div class="hurtig-u">a<sub>p</sub> skjæredybde (mm) · f mating (mm/omdr) · k<sub>c</sub> spesifikk skjærkraft (N/mm²) · r<sub>ε</sub> nesradius (mm)</div>
+</div>
 <h3>Formler</h3>
 <div class="tbl" id="m3a-tform"></div>
 <p class="small muted">D i mm, v<sub>c</sub> i m/min, a<sub>p</sub>, f og r<sub>ε</sub> i mm, L i mm. R<sub>t</sub> og R<sub>a</sub> er teoretiske verdier. Virkelig ruhet blir høyere på grunn av vibrasjoner, slitasje og påsveising.</p>
-
 <h3>Spesifikk skjærkraft k<sub>c</sub></h3>
-<p>k<sub>c</sub> er kraften som trengs per mm² spontverrsnitt. Den øker når sponet blir tynnere, fordi en større del av arbeidet går med til å deformere materialet nær eggen. Derfor oppgis k<sub>c1.1</sub> (for h = 1 mm og b = 1 mm) og eksponenten m<sub>c</sub>, og k<sub>c</sub> = k<sub>c1.1</sub> · h<sup>−m<sub>c</sub></sup>.</p>
 <div class="tbl" id="m3a-kctab"></div>
 <p class="small muted">Veiledende verdier etter VDI 3323-materialgruppene, slik de er gjengitt i ISCARs materialtabell. Verdiene gjelder for sponvinkel 0°. En positiv sponvinkel senker k<sub>c</sub> med omtrent 1 % per grad. Bruk leverandørens data når de finnes.</p>
-
 <h3>Kalkulator: effekt, sponvolum og overflate</h3>
 <div class="calc">
   <div class="fields">
@@ -890,7 +902,15 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3a-tout" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved dreiing roterer emnet og verktøyet mates langs eller på tvers. v<sub>c</sub> regnes på diameteren som skjæres. Skjæredybden a<sub>p</sub> og matingen f gir sponets tverrsnitt, og dermed kraft og effekt.</p>
+<figure class="fig">
+  <svg id="m3a-tfig" viewBox="0 52 600 252" role="img" aria-label="Lengdedreiing sett ovenfra med emnediameter, skjæredybde, mating og innstillingsvinkel"></svg>
+  <figcaption>Lengdedreiing sett ovenfra. v<sub>c</sub> virker vinkelrett på arket, i eggens punkt. Innstillingsvinkelen κ<sub>r</sub> måles mellom hovedeggen og matingsretningen.</figcaption>
+</figure>
+<h3>Spesifikk skjærkraft k<sub>c</sub></h3>
+<p>k<sub>c</sub> er kraften som trengs per mm² spontverrsnitt. Den øker når sponet blir tynnere, fordi en større del av arbeidet går med til å deformere materialet nær eggen. Derfor oppgis k<sub>c1.1</sub> (for h = 1 mm og b = 1 mm) og eksponenten m<sub>c</sub>, og k<sub>c</sub> = k<sub>c1.1</sub> · h<sup>−m<sub>c</sub></sup>.</p>
 <h3>Hvorfor mating og nesradius gir ruhet</h3>
 <p>Nesradien setter et avtrykk for hver omdreining, forskjøvet med matingen f. Mellom avtrykkene står det igjen små rygger. Høyden er R<sub>t</sub> ≈ f² / (8 · r<sub>ε</sub>): dobbel mating gir fire ganger så høye rygger, mens dobbel nesradius halverer dem.</p>
 <figure class="fig">
@@ -900,20 +920,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="m3a-ctl"><span class="small muted">Nesradius r<sub>ε</sub></span><div class="chips" id="m3a-rr"></div></div>
   <figcaption id="m3a-rcap"></figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="m3-konus">
-  <div class="topic-h"><span class="tno">3.3</span><h3>Konusdreiing og sponverrsnitt</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">En konus er bestemt av to diametre og lengden mellom dem. Konisiteten C = (D − d) / L skrives som 1 : x. Vinkelen du stiller inn på maskinen, er den halve konusvinkelen α/2, der tan(α/2) = (D − d) / (2 · L).</p>
-
+<div class="topic-h"><span class="tno">3.3</span><h3>Konusdreiing og sponverrsnitt</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Konus</h4><b>tan(α/2) = (D − d) / (2 · L)</b><span>α/2 = innstillingsvinkel</span><b>C = (D − d) / L</b><span>konisitet, f.eks. 1:20</span></div>
+    <div><h4>Pinoldokken</h4><b>S = (D − d) · L<sub>tot</sub> / (2 · L)</b><span>forskyvning, L<sub>tot</sub> = hele emnelengden</span></div>
+    <div><h4>Sponverrsnitt</h4><b>h = f · sin κ<sub>r</sub></b><b>b = a<sub>p</sub> / sin κ<sub>r</sub></b></div>
+  </div>
+  <div class="hurtig-u">D stor diameter · d liten diameter · L konuslengde (mm) · κ<sub>r</sub> innstillingsvinkel</div>
+</div>
 <h3>Metoder</h3>
-<figure class="fig">
-  <svg id="m3a-kfig" viewBox="0 0 600 440" role="img" aria-label="Fire metoder for konusdreiing"></svg>
-  <figcaption>Konusen er tegnet brattere enn vanlig for å vise prinsippet.</figcaption>
-</figure>
 <div class="tbl" id="m3a-kmet"></div>
-
 <h3>Kalkulator: forskyvning av pinoldokken</h3>
-<p>Når hele emnet ligger skrått mellom spissene, gir forskyvningen S en konus over hele emnelengden. Er konusen bare en del av emnet, må S regnes på hele lengden mellom spissene: S = (D − d) · L<sub>tot</sub> / (2 · L).</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -927,23 +949,13 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3a-kout" aria-live="polite"></div>
 </div>
-
 <h3>Vanlige konisiteter</h3>
 <div class="tbl" id="m3a-ktab"></div>
 <p class="small muted">Konisiteter etter ISO 1119. α/2 er innstillingsvinkelen for toppsleide og konuslinjal. Morsekonus står i et eget kapittel.</p>
-
 <h3>Sponverrsnitt</h3>
-<p>Sponets tverrsnitt er A = a<sub>p</sub> · f. Det samme arealet kan være tykt og smalt eller tynt og bredt, avhengig av innstillingsvinkelen κ<sub>r</sub>:</p>
 <div class="note"><p><b>h = f · sin κ<sub>r</sub></b> (spontykkelse) &nbsp;·&nbsp; <b>b = a<sub>p</sub> / sin κ<sub>r</sub></b> (sponbredde, lengden av eggen i inngrep) &nbsp;·&nbsp; A = a<sub>p</sub> · f = h · b</p></div>
-<figure class="fig">
-  <svg id="m3a-sfig" viewBox="0 0 600 300" role="img" aria-label="Sponverrsnitt ved ulike innstillingsvinkler"></svg>
-  <div class="m3a-ctl"><label for="m3a-sk" class="small muted">Innstillingsvinkel κ<sub>r</sub></label><input type="range" id="m3a-sk" min="30" max="95" step="5" value="75"><span id="m3a-sko" class="mono"></span></div>
-  <figcaption>a<sub>p</sub> = 2 mm og f = 0,5 mm holdes fast. Nesradien er sett bort fra.</figcaption>
-</figure>
-<p>Lav κ<sub>r</sub> fordeler kraften over en lengre egg og gir tynnere spon. Da tåler skjæret høyere mating, og eggen går mykere inn i materialet. Ulempen er større radiell kraft, som presser slanke emner unna og gir vibrasjoner. Ved slanke aksler og ansatser brukes derfor κ<sub>r</sub> = 90–95°. Fordi k<sub>c</sub> øker når h blir mindre, krever tynne spon litt mer effekt for samme sponvolum.</p>
-  <h3>Konisitet</h3>
-  <p>Ser du på kjeglen fra siden, danner halve diameterforskjellen og lengden en rettvinklet trekant. Derfor er <span class="mono">tan(α/2) = (D − d) / (2 · L)</span>. Det er α/2 du stiller oversleden på.</p>
-  <div class="calc">
+<h3>Konisitet</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="k-big">Stor Ø D (mm)</label><input id="k-big" inputmode="decimal" value="40"></div>
@@ -956,7 +968,27 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="k-out" aria-live="polite"></div>
   </div>
-  <div class="two">
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En konus er bestemt av to diametre og lengden mellom dem. Konisiteten C = (D − d) / L skrives som 1 : x. Vinkelen du stiller inn på maskinen, er den halve konusvinkelen α/2, der tan(α/2) = (D − d) / (2 · L).</p>
+<h3>Metoder</h3>
+<figure class="fig">
+  <svg id="m3a-kfig" viewBox="0 0 600 440" role="img" aria-label="Fire metoder for konusdreiing"></svg>
+  <figcaption>Konusen er tegnet brattere enn vanlig for å vise prinsippet.</figcaption>
+</figure>
+<h3>Kalkulator: forskyvning av pinoldokken</h3>
+<p>Når hele emnet ligger skrått mellom spissene, gir forskyvningen S en konus over hele emnelengden. Er konusen bare en del av emnet, må S regnes på hele lengden mellom spissene: S = (D − d) · L<sub>tot</sub> / (2 · L).</p>
+<h3>Sponverrsnitt</h3>
+<p>Sponets tverrsnitt er A = a<sub>p</sub> · f. Det samme arealet kan være tykt og smalt eller tynt og bredt, avhengig av innstillingsvinkelen κ<sub>r</sub>:</p>
+<figure class="fig">
+  <svg id="m3a-sfig" viewBox="0 0 600 300" role="img" aria-label="Sponverrsnitt ved ulike innstillingsvinkler"></svg>
+  <div class="m3a-ctl"><label for="m3a-sk" class="small muted">Innstillingsvinkel κ<sub>r</sub></label><input type="range" id="m3a-sk" min="30" max="95" step="5" value="75"><span id="m3a-sko" class="mono"></span></div>
+  <figcaption>a<sub>p</sub> = 2 mm og f = 0,5 mm holdes fast. Nesradien er sett bort fra.</figcaption>
+</figure>
+<p>Lav κ<sub>r</sub> fordeler kraften over en lengre egg og gir tynnere spon. Da tåler skjæret høyere mating, og eggen går mykere inn i materialet. Ulempen er større radiell kraft, som presser slanke emner unna og gir vibrasjoner. Ved slanke aksler og ansatser brukes derfor κ<sub>r</sub> = 90–95°. Fordi k<sub>c</sub> øker når h blir mindre, krever tynne spon litt mer effekt for samme sponvolum.</p>
+<h3>Konisitet</h3>
+<p>Ser du på kjeglen fra siden, danner halve diameterforskjellen og lengden en rettvinklet trekant. Derfor er <span class="mono">tan(α/2) = (D − d) / (2 · L)</span>. Det er α/2 du stiller oversleden på.</p>
+<div class="two">
     <figure class="fig">
       <svg id="k-svg" viewBox="0 0 320 220" role="img" aria-label="Kjegle sett fra siden med målene D, d, L og vinkelen alfa halve"></svg>
       <figcaption>Den markerte trekanten gir vinkelen α/2.</figcaption>
@@ -967,37 +999,25 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
       <figcaption>Sinuslinjalen er hypotenusen, endemålene er motstående side: h = L · sin θ.</figcaption>
     </figure>
   </div>
+</details>
 </div>
 <div class="topic" id="m3-fresing">
-  <div class="topic-h"><span class="tno">3.4</span><h3>Maskineringsformler for fresing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Ved fresing roterer verktøyet og emnet mates. Hver tann tar et kommaformet spon, så spontykkelsen endrer seg gjennom inngrepet. Radiell inngrepsbredde a<sub>e</sub> bestemmer hvor tykt sponet faktisk blir.</p>
-<figure class="fig">
-  <svg id="m3a-mfig1" viewBox="0 0 600 230" role="img" aria-label="Fresing med radiell inngrepsbredde ae og aksiell skjæredybde ap"></svg>
-  <figcaption>a<sub>e</sub> er radiell inngrepsbredde (sidesteg), a<sub>p</sub> er aksiell skjæredybde.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">3.4</span><h3>Maskineringsformler for fresing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Turtall og mating</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b></div>
+    <div><h4>Sponvolum</h4><b>Q = a<sub>e</sub> · a<sub>p</sub> · v<sub>f</sub> / 1000</b><span>cm³/min</span></div>
+    <div><h4>Smal fresebredde</h4><b>f<sub>z,korr</sub> = f<sub>z</sub> / √(1 − (1 − 2 · a<sub>e</sub>/D)²)</b><span>øk tannmatingen når a<sub>e</sub> er under D/2</span></div>
+    <div><h4>Med- og motfresing</h4><span>Motfresing på manuelle maskiner med slakk i spindelen, ellers kan medfresing trekke bordet med seg</span></div>
+  </div>
+  <div class="hurtig-u">f<sub>z</sub> tannmating (mm) · z antall tenner · a<sub>e</sub> fresebredde · a<sub>p</sub> skjæredybde (mm)</div>
+</div>
 <h3>Formler</h3>
 <div class="tbl" id="m3a-mform"></div>
 <p class="small muted">D, a<sub>e</sub>, a<sub>p</sub> og f<sub>z</sub> i mm, v<sub>f</sub> i mm/min, k<sub>c</sub> i N/mm². φ<sub>s</sub> er inngrepsvinkelen i radianer ved sidefresing (inngrepet starter ved 0°). Formlene følger Sandvik Coromants formelsamling.</p>
-
-<h3>Medfresing og motfresing</h3>
-<p>Ved <b>medfresing</b> går tennene samme vei som matingen i snittet. Tannen går inn der sponet er tykkest og ut ved null. Det gir mindre varme, mindre slitasje og bedre overflate, og er førstevalget på CNC. Ved <b>motfresing</b> starter tannen med null spontykkelse. Den gnir og glir før den begynner å skjære, og det gir varme, herding av overflaten og slitasje. Motfresing brukes på manuelle maskiner med slark i spindelen, ellers kan medfresing trekke bordet med seg. Den brukes også når overflaten er hard eller har glødeskall.</p>
-<figure class="fig">
-  <svg id="m3a-mfig2" viewBox="0 0 600 300" role="img" aria-label="Animasjon av spontykkelsen ved medfresing og motfresing"></svg>
-  <div class="ctrl"><button class="chip play" id="m3a-mplay" type="button"></button><span class="small muted">Tannmatingen er tegnet sterkt forstørret.</span></div>
-  <figcaption>Kurvene under viser spontykkelsen h = f<sub>z</sub> · sin φ gjennom inngrepet. Arealet under kurvene er det samme, men rekkefølgen er motsatt.</figcaption>
-</figure>
-
 <h3>Radiell sponfortynning</h3>
-<p>Når a<sub>e</sub> er mindre enn halve diameteren, når tannen aldri full spontykkelse. Sponet blir tynnere enn f<sub>z</sub>, eggen gnir i stedet for å skjære, og verktøyet slites raskt. Øk derfor f<sub>z</sub> slik at maksimal spontykkelse h<sub>ex</sub> blir lik den anbefalte f<sub>z</sub>.</p>
 <div class="tbl" id="m3a-thin"></div>
-
-<h3>Kulefres: effektiv diameter</h3>
-<figure class="fig">
-  <svg id="m3a-mfig3" viewBox="0 0 600 200" role="img" aria-label="Kulefres med effektiv diameter ved liten skjæredybde"></svg>
-  <figcaption>Ved liten a<sub>p</sub> skjærer kulefresen på en mye mindre diameter enn nominell. Regn turtallet med D<sub>eff</sub>, ellers blir v<sub>c</sub> altfor lav.</figcaption>
-</figure>
-
 <h3>Kalkulator: fresing</h3>
 <div class="calc">
   <div class="fields">
@@ -1018,18 +1038,44 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3a-mout" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved fresing roterer verktøyet og emnet mates. Hver tann tar et kommaformet spon, så spontykkelsen endrer seg gjennom inngrepet. Radiell inngrepsbredde a<sub>e</sub> bestemmer hvor tykt sponet faktisk blir.</p>
+<figure class="fig">
+  <svg id="m3a-mfig1" viewBox="0 0 600 230" role="img" aria-label="Fresing med radiell inngrepsbredde ae og aksiell skjæredybde ap"></svg>
+  <figcaption>a<sub>e</sub> er radiell inngrepsbredde (sidesteg), a<sub>p</sub> er aksiell skjæredybde.</figcaption>
+</figure>
+<h3>Medfresing og motfresing</h3>
+<p>Ved <b>medfresing</b> går tennene samme vei som matingen i snittet. Tannen går inn der sponet er tykkest og ut ved null. Det gir mindre varme, mindre slitasje og bedre overflate, og er førstevalget på CNC. Ved <b>motfresing</b> starter tannen med null spontykkelse. Den gnir og glir før den begynner å skjære, og det gir varme, herding av overflaten og slitasje. Motfresing brukes på manuelle maskiner med slark i spindelen, ellers kan medfresing trekke bordet med seg. Den brukes også når overflaten er hard eller har glødeskall.</p>
+<figure class="fig">
+  <svg id="m3a-mfig2" viewBox="0 0 600 300" role="img" aria-label="Animasjon av spontykkelsen ved medfresing og motfresing"></svg>
+  <div class="ctrl"><button class="chip play" id="m3a-mplay" type="button"></button><span class="small muted">Tannmatingen er tegnet sterkt forstørret.</span></div>
+  <figcaption>Kurvene under viser spontykkelsen h = f<sub>z</sub> · sin φ gjennom inngrepet. Arealet under kurvene er det samme, men rekkefølgen er motsatt.</figcaption>
+</figure>
+<h3>Radiell sponfortynning</h3>
+<p>Når a<sub>e</sub> er mindre enn halve diameteren, når tannen aldri full spontykkelse. Sponet blir tynnere enn f<sub>z</sub>, eggen gnir i stedet for å skjære, og verktøyet slites raskt. Øk derfor f<sub>z</sub> slik at maksimal spontykkelse h<sub>ex</sub> blir lik den anbefalte f<sub>z</sub>.</p>
+<h3>Kulefres: effektiv diameter</h3>
+<figure class="fig">
+  <svg id="m3a-mfig3" viewBox="0 0 600 200" role="img" aria-label="Kulefres med effektiv diameter ved liten skjæredybde"></svg>
+  <figcaption>Ved liten a<sub>p</sub> skjærer kulefresen på en mye mindre diameter enn nominell. Regn turtallet med D<sub>eff</sub>, ellers blir v<sub>c</sub> altfor lav.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="m3-boring">
-  <div class="topic-h"><span class="tno">3.5</span><h3>Maskineringsformler ved boring og sliping</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Ved boring regnes v<sub>c</sub> på borets ytterdiameter, og f er mating per omdreining for hele boret. Spissen må mates inn i tillegg til hulldybden, og det tar tid.</p>
-<figure class="fig">
-  <svg id="m3a-bfig" viewBox="0 0 600 220" role="img" aria-label="Spiralbor med spissvinkel 118 grader og spisslengde"></svg>
-  <figcaption>Spisslengden l<sub>s</sub> = (D/2) / tan(σ/2). For σ = 118° blir l<sub>s</sub> ≈ 0,3 · D. For 140° (vanlig på hardmetallbor) blir den ≈ 0,18 · D.</figcaption>
-</figure>
+<div class="topic-h"><span class="tno">3.5</span><h3>Maskineringsformler ved boring og sliping</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Boring</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><b>l<sub>s</sub> ≈ 0,3 · D</b><span>spisslengde ved 118°</span></div>
+    <div><h4>Effekt og moment</h4><b>P<sub>c</sub> = v<sub>c</sub> · D · f · k<sub>c</sub> / 240 000</b><span>kW</span><b>M<sub>c</sub> = P<sub>c</sub> · 30 000 / (π · n)</b><span>Nm</span></div>
+    <div><h4>Sliping</h4><b>v<sub>s</sub> = π · d · n / 60 000</b><span>m/s, d i mm</span><b>n<sub>maks</sub> = v<sub>maks</sub> · 60 000 / (π · d)</b></div>
+    <div><h4>Fargestriper på skiva</h4><span>Blå 50 · gul 63 · rød 80 · grønn 100 · blå + gul 125 m/s</span></div>
+  </div>
+  <div class="hurtig-u">v<sub>c</sub> (m/min) · D bordiameter (mm) · f mating (mm/omdr) · v<sub>s</sub> periferihastighet (m/s)</div>
+</div>
 <h3>Formler for boring</h3>
 <div class="tbl" id="m3a-bform"></div>
 <p class="small muted">Etter Sandvik Coromants formelsamling for boring. κ<sub>r</sub> = σ/2. Matekraft og moment er veiledende. Et spiralbor med tverregg kan få vesentlig høyere matekraft enn formelen gir. Forboring eller sentrumsboring reduserer den.</p>
-
 <h3>Kalkulator: boring</h3>
 <div class="calc">
   <div class="fields">
@@ -1046,19 +1092,11 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3a-bout" aria-live="polite"></div>
 </div>
-
 <h3>Sliping: periferihastighet</h3>
-<p>Slipeskiva tåler bare en bestemt periferihastighet. Over den kan sentrifugalkraften sprenge skiva. Maks hastighet (m/s) og maks turtall står på skiva eller etiketten. Ingen av dem skal overskrides. Den samme maskinen kan ha skiver med ulik grense, så sjekk hver gang du skifter skive.</p>
-<figure class="fig">
-  <svg id="m3a-gfig" viewBox="0 0 600 220" role="img" aria-label="Slipeskive og emne ved rundsliping med hastighetene vs og vw"></svg>
-  <figcaption>Ved rundsliping roterer både skive og emne. Forholdet q = v<sub>s</sub> / v<sub>w</sub> (begge i samme enhet) styrer hvor mye hvert korn tar.</figcaption>
-</figure>
 <div class="two">
   <div><h3>Formler</h3><div class="tbl" id="m3a-gform"></div></div>
   <div><h3>Fargestriper for maks hastighet</h3><div class="tbl" id="m3a-gcol"></div><p class="small muted">EN 12413. Skiver uten stripe har grensen skrevet på etiketten.</p></div>
 </div>
-<p>Høy q (rask skive, langsomt emne) gir små spon per korn og fin overflate, men mer varme. Lav q gir grovere sliping med større fare for at skiva slites ujevnt. Veiledende: q ≈ 60–80 ved grovsliping og 80–120 ved finsliping.</p>
-
 <h3>Kalkulator: slipeskive</h3>
 <div class="calc">
   <div class="fields">
@@ -1075,24 +1113,38 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m3a-gout" aria-live="polite"></div>
 </div>
 <p class="small muted">Klangprøv nye keramiske skiver før montering, bruk skivens flenser og mellomlegg, og la skiva gå tomgang bak skjermen før du begynner å slipe. Montering av slipeskiver skal bare gjøres av en person med opplæring.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved boring regnes v<sub>c</sub> på borets ytterdiameter, og f er mating per omdreining for hele boret. Spissen må mates inn i tillegg til hulldybden, og det tar tid.</p>
+<figure class="fig">
+  <svg id="m3a-bfig" viewBox="0 0 600 220" role="img" aria-label="Spiralbor med spissvinkel 118 grader og spisslengde"></svg>
+  <figcaption>Spisslengden l<sub>s</sub> = (D/2) / tan(σ/2). For σ = 118° blir l<sub>s</sub> ≈ 0,3 · D. For 140° (vanlig på hardmetallbor) blir den ≈ 0,18 · D.</figcaption>
+</figure>
+<h3>Sliping: periferihastighet</h3>
+<p>Slipeskiva tåler bare en bestemt periferihastighet. Over den kan sentrifugalkraften sprenge skiva. Maks hastighet (m/s) og maks turtall står på skiva eller etiketten. Ingen av dem skal overskrides. Den samme maskinen kan ha skiver med ulik grense, så sjekk hver gang du skifter skive.</p>
+<figure class="fig">
+  <svg id="m3a-gfig" viewBox="0 0 600 220" role="img" aria-label="Slipeskive og emne ved rundsliping med hastighetene vs og vw"></svg>
+  <figcaption>Ved rundsliping roterer både skive og emne. Forholdet q = v<sub>s</sub> / v<sub>w</sub> (begge i samme enhet) styrer hvor mye hvert korn tar.</figcaption>
+</figure>
+<p>Høy q (rask skive, langsomt emne) gir små spon per korn og fin overflate, men mer varme. Lav q gir grovere sliping med større fare for at skiva slites ujevnt. Veiledende: q ≈ 60–80 ved grovsliping og 80–120 ved finsliping.</p>
+</details>
 </div>
 <div class="topic" id="m3-vaesker">
-  <div class="topic-h"><span class="tno">3.6</span><h3>Skjærvæsker</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Skjærvæsken kjøler, smører, fjerner spon og beskytter mot rust. Hvilken av oppgavene som er viktigst, avhenger av materialet og operasjonen. Det avgjør hvilken væsketype du velger.</p>
+<div class="topic-h"><span class="tno">3.6</span><h3>Skjærvæsker</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Konsentrasjon</h4><b>C = Brix · faktor</b><span>faktoren står i produktdatabladet</span><span>Normalt ca. 4–10 %</span></div>
+    <div><h4>For svak eller for sterk</h4><span>For svak: rust, dårlig smøring, bakterier</span><span>For sterk: hudproblemer, skum, forbruk</span></div>
+    <div><h4>Blanding</h4><span>Konsentrat i vann, ikke vann i konsentrat</span></div>
+  </div>
+</div>
 <h3>Typer</h3>
 <div class="tbl" id="m3a-vtype"></div>
-
 <h3>Valg etter materiale og operasjon (veiledende)</h3>
 <div class="tbl" id="m3a-vmat"></div>
 <p class="small muted">Veiledende. Følg verktøy- og væskeleverandørens anbefaling. Ved fresing av stål med hardmetall gir stadig oppvarming og avkjøling termosprekker i eggen, så der kjøres det ofte tørt. Kjøler du, må kjølingen være rikelig og jevn.</p>
-
 <h3>Konsentrasjon og refraktometer</h3>
-<p>Vannblandbare væsker virker bare riktig ved riktig konsentrasjon, normalt ca. 4–10 %. For lav konsentrasjon gir rust, dårlig smøring og bakterievekst. For høy gir hudproblemer, skum og unødvendig forbruk. Konsentrasjonen måles med refraktometer: avlest verdi (°Brix) × <b>refraktometerfaktoren</b> fra produktdatabladet = konsentrasjon i %.</p>
-<figure class="fig">
-  <svg id="m3a-vfig" viewBox="0 0 600 248" role="img" aria-label="Avlesning i refraktometer"></svg>
-  <div class="m3a-ctl"><label for="m3a-vb" class="small muted">Avlest grenselinje</label><input type="range" id="m3a-vb" min="0" max="15" step="0.1" value="5"><span id="m3a-vbo" class="mono"></span></div>
-  <figcaption>Se mot lyset. Grenselinjen mellom det blå og det lyse feltet gir avlesningen. Nullstill instrumentet med rent vann før målingen.</figcaption>
-</figure>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -1104,13 +1156,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m3a-vout" aria-live="polite"></div>
 </div>
 <p class="small muted">Bland alltid konsentratet inn i vannet, aldri vann i konsentrat, ellers kan det bli en tykk, ustabil blanding. Etterfyll gjerne med ferdig blanding i stedet for rent konsentrat.</p>
-
 <h3>Helse og miljø</h3>
 <div class="tbl" id="m3a-vhms"></div>
-
 <h3>Vedlikehold</h3>
 <div class="tbl" id="m3a-vved"></div>
 <p class="small muted">pH og konsentrasjon etter Fuchs' håndbok for skjærevæsker. Nitrittgrensen er fra tysk regelverk (TRGS 611), som ofte brukes som referanse. Avfallskode etter den europeiske avfallslisten.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Skjærvæsken kjøler, smører, fjerner spon og beskytter mot rust. Hvilken av oppgavene som er viktigst, avhenger av materialet og operasjonen. Det avgjør hvilken væsketype du velger.</p>
+<h3>Konsentrasjon og refraktometer</h3>
+<p>Vannblandbare væsker virker bare riktig ved riktig konsentrasjon, normalt ca. 4–10 %. For lav konsentrasjon gir rust, dårlig smøring og bakterievekst. For høy gir hudproblemer, skum og unødvendig forbruk. Konsentrasjonen måles med refraktometer: avlest verdi (°Brix) × <b>refraktometerfaktoren</b> fra produktdatabladet = konsentrasjon i %.</p>
+<figure class="fig">
+  <svg id="m3a-vfig" viewBox="0 0 600 248" role="img" aria-label="Avlesning i refraktometer"></svg>
+  <div class="m3a-ctl"><label for="m3a-vb" class="small muted">Avlest grenselinje</label><input type="range" id="m3a-vb" min="0" max="15" step="0.1" value="5"><span id="m3a-vbo" class="mono"></span></div>
+  <figcaption>Se mot lyset. Grenselinjen mellom det blå og det lyse feltet gir avlesningen. Nullstill instrumentet med rent vann før målingen.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="m3-vendeskjaer">
   <div class="topic-h"><span class="tno">3.7</span><h3>Vendeskjær – bestillingskode</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
@@ -1171,8 +1232,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Gruppeinndeling, farger og bokstavkoder etter ISO 513. Egenskaper og bruksområder er veiledende.</p>
 </div>
 <div class="topic" id="m3-hull">
-  <div class="topic-h"><span class="tno">3.9</span><h3>Hullbearbeiding</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">3.9</span><h3>Hullbearbeiding</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<style>
 .m3b-ctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .m3b-ctl input[type="range"]{flex:1;min-width:140px}
 .m3b-ctl input:not([type="range"]){max-width:110px}
@@ -1192,35 +1253,27 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .m3b-tag.u{border-color:var(--bad);color:var(--bad)}
 .m3b-alt{margin:0;padding-left:18px;font-size:14px}
 </style>
-<p class="lead">Et hull lages ofte i flere trinn. Boret gir posisjon og volum, men ikke nøyaktig mål og god overflate. Kreves det en passning, for eksempel H7, må hullet etterbearbeides med brotsj, opprømmer eller utboringsverktøy.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Spissvinkel</h4><span>118° for stål, standardbor</span><b>l<sub>s</sub> ≈ 0,3 · D</b><span>spisslengde ved 118°</span></div>
+    <div><h4>Brotsjing</h4><span>Lite tillegg på diameteren. Håndbrotsjing ca. 0,1–0,2 mm</span><span>Brotsjen følger hullet: posisjonen bestemmes av boret</span></div>
+    <div><h4>Kjernehull for gjenge</h4><b>d ≈ D − P</b><span>skjærende gjengebor</span></div>
+  </div>
+  <div class="hurtig-u">D diameter (mm) · P stigning (mm)</div>
+</div>
 <h3>Metodene</h3>
-<figure class="fig">
-  <svg id="m3b-hfig" viewBox="0 0 600 380" role="img" aria-label="Prinsippskisser av åtte metoder for hullbearbeiding"></svg>
-  <figcaption>Prinsippskisser i snitt. Verktøyet er blått, emnet er skravert. Stiplet linje viser hullet før operasjonen. Tilleggene er overdrevet.</figcaption>
-</figure>
 <div class="tbl" id="m3b-hmet"></div>
-
 <h3>Oppnåelig toleranse og ruhet (veiledende)</h3>
-<figure class="fig">
-  <svg id="m3b-itfig" viewBox="0 0 600 316" role="img" aria-label="Oppnåelige IT-grader for ulike metoder"></svg>
-  <figcaption>Søylen viser vanlig oppnåelig IT-område. Til høyre står typisk middelruhet R<sub>a</sub> i µm.</figcaption>
-</figure>
 <div class="tbl" id="m3b-ittab"></div>
 <p class="small muted">Veiledende verdier under stabile forhold med riktige skjæredata og skarpt verktøy. Toleransegradene er etter ISO 286-1. Vil du ha bedre resultat, må du legge til en operasjon, ikke bare kjøre den forrige saktere.</p>
-
 <h3>Senterboring</h3>
-<p>Senterboret lager et senterhull med 60° senk for dreiing mellom spisser. Senken bærer emnet, og den sylindriske delen foran gir plass til spissen på pinolen, slik at spissen ikke bunner. Form A har bare 60°-senk. Form B har i tillegg en 120° beskyttelsessenk, slik at kanten på senterhullet ikke blir slått i stykker. Form R har buet profil.</p>
-<p>For å <b>starte et bor</b> er et NC-punktbor bedre enn et senterbor. Velg en spissvinkel som er lik eller litt større enn borets spissvinkel, slik at borspissen tar først og ikke hjørnene.</p>
 <div class="tbl" id="m3b-cdtab"></div>
 <p class="small muted">Mål for senterbor etter DIN 333, form A. Senk-Ø er den største diameteren på senterhullet, form A etter DIN 332-1.</p>
-
 <h3>Spissvinkel</h3>
 <div class="tbl" id="m3b-sptab"></div>
 <p class="small muted">Spisslengde l<sub>s</sub> = (D/2) / tan(σ/2). Se også formlene for boring i 3.5. Større spissvinkel gir kortere spiss, men større matekraft og dårligere selvsentrering. Bor med stor spissvinkel har derfor ofte krysslipt spiss (kort tverregg).</p>
-
 <h3>Brotsjing</h3>
-<p>Brotsjen fjerner bare et lite tillegg og gir mål og overflate. Hullets posisjon og retning bestemmes av boret, ikke av brotsjen, for brotsjen følger hullet. Tillegget må være riktig: med for lite tillegg gnir eggene i stedet for å skjære. Materialet kaldherder, brotsjen slites, og hullet kan bli for lite. For stort tillegg overbelaster brotsjen og gir dårlig overflate og for stort hull.</p>
 <div class="tbl" id="m3b-btab" style="max-width:420px"></div>
 <p class="small muted">Veiledende tillegg på diameteren for maskinbrotsjing etter produsenttabeller. Ved håndbrotsjing brukes mindre tillegg, ca. 0,1–0,2 mm.</p>
 <div class="calc">
@@ -1229,23 +1282,47 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3b-bout" aria-live="polite"></div>
 </div>
-
+<h3>Gjengeboring og gjengefresing</h3>
+<div class="tbl" id="m3b-gtab"></div>
+<p class="small muted">Borediameter og typer gjengebor står i 3.10. Gjengemål (storediameter, midtdiameter, lillediameter) står i gjengekapitlet.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Et hull lages ofte i flere trinn. Boret gir posisjon og volum, men ikke nøyaktig mål og god overflate. Kreves det en passning, for eksempel H7, må hullet etterbearbeides med brotsj, opprømmer eller utboringsverktøy.</p>
+<h3>Metodene</h3>
+<figure class="fig">
+  <svg id="m3b-hfig" viewBox="0 0 600 380" role="img" aria-label="Prinsippskisser av åtte metoder for hullbearbeiding"></svg>
+  <figcaption>Prinsippskisser i snitt. Verktøyet er blått, emnet er skravert. Stiplet linje viser hullet før operasjonen. Tilleggene er overdrevet.</figcaption>
+</figure>
+<h3>Oppnåelig toleranse og ruhet (veiledende)</h3>
+<figure class="fig">
+  <svg id="m3b-itfig" viewBox="0 0 600 316" role="img" aria-label="Oppnåelige IT-grader for ulike metoder"></svg>
+  <figcaption>Søylen viser vanlig oppnåelig IT-område. Til høyre står typisk middelruhet R<sub>a</sub> i µm.</figcaption>
+</figure>
+<h3>Senterboring</h3>
+<p>Senterboret lager et senterhull med 60° senk for dreiing mellom spisser. Senken bærer emnet, og den sylindriske delen foran gir plass til spissen på pinolen, slik at spissen ikke bunner. Form A har bare 60°-senk. Form B har i tillegg en 120° beskyttelsessenk, slik at kanten på senterhullet ikke blir slått i stykker. Form R har buet profil.</p>
+<p>For å <b>starte et bor</b> er et NC-punktbor bedre enn et senterbor. Velg en spissvinkel som er lik eller litt større enn borets spissvinkel, slik at borspissen tar først og ikke hjørnene.</p>
+<h3>Brotsjing</h3>
+<p>Brotsjen fjerner bare et lite tillegg og gir mål og overflate. Hullets posisjon og retning bestemmes av boret, ikke av brotsjen, for brotsjen følger hullet. Tillegget må være riktig: med for lite tillegg gnir eggene i stedet for å skjære. Materialet kaldherder, brotsjen slites, og hullet kan bli for lite. For stort tillegg overbelaster brotsjen og gir dårlig overflate og for stort hull.</p>
 <h3>Opprømming, utboring og forsenking</h3>
 <ul class="m3b-list">
   <li><b>Opprømming</b> (oppboring) gjøres med en opprømmer eller et senkebor med 3–4 skjær. Verktøyet styres bedre enn et spiralbor fordi det har flere skjær og ingen tverregg. Hullet blir rundere og rettere, og flater ut før brotsjing eller i støpte og forhåndsstansede hull.</li>
   <li><b>Utboring</b> gjøres med en bor- eller utboringsstang med ett skjær. Stangen styres av maskinen og ikke av hullet. Derfor er utboring den eneste av metodene som <b>retter opp posisjon og retning</b>. Finutboringshoder kan stilles i µm. Utstikket bør være kort. Bruk stangen med størst mulig diameter.</li>
   <li><b>Forsenking</b>: konisk forsenk (90° for metriske senkeskruer) eller plan forsenk med styretapp for sylinderskruer. Forsenk gjøres med lav v<sub>c</sub> for å unngå ratter. Avgrading av hull er også en form for forsenking.</li>
 </ul>
-
-<h3>Gjengeboring og gjengefresing</h3>
-<div class="tbl" id="m3b-gtab"></div>
-<p class="small muted">Borediameter og typer gjengebor står i 3.10. Gjengemål (storediameter, midtdiameter, lillediameter) står i gjengekapitlet.</p>
+</details>
 </div>
 <div class="topic" id="m3-gjengebor">
-  <div class="topic-h"><span class="tno">3.10</span><h3>Gjengebor</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Før gjengeboring bores et kjernehull som er litt større enn den teoretiske lillediameteren. Da blir gjengen ikke helt full (ca. 75 %), men gjengeboret går mye lettere og bryter sjeldnere. Gjengen blir nesten like sterk, fordi det er bolten som er det svake leddet.</p>
+<div class="topic-h"><span class="tno">3.10</span><h3>Gjengebor</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Kjernehull</h4><b>d ≈ D − P</b><span>skjærende gjengebor, ca. 75–80 % gjenge</span><b>d ≈ D − 0,45 · P</b><span>formende gjengebor</span></div>
+    <div><h4>Eksempler</h4><span>M6 → 5,0 · M8 → 6,8 · M10 → 8,5 · M12 → 10,2 mm</span></div>
+    <div><h4>Tommegjenger</h4><b>P = 25,4 / TPI</b></div>
+  </div>
+  <div class="hurtig-u">D nominell diameter (mm) · P stigning (mm) · TPI gjenger per tomme</div>
+</div>
 <div class="tbl" id="m3b-gform"></div>
-
 <h3>Kalkulator: gjenge → bor</h3>
 <div class="calc">
   <div class="fields">
@@ -1258,11 +1335,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3b-gout" aria-live="polite"></div>
 </div>
-<figure class="fig">
-  <svg id="m3b-gfig" viewBox="0 0 600 220" role="img" aria-label="Snitt av innvendig gjenge med kjernehullet"></svg>
-  <figcaption>Snitt gjennom mutteren, tre stigninger. Skravert: mutterens gjengetenner. Stiplet: grunnprofilen som mangler fordi kjernehullet er større enn D<sub>1</sub>. Figuren følger kalkulatoren.</figcaption>
-</figure>
-
 <h3>Tabell over kjernehull</h3>
 <div class="filter">
   <input id="m3b-gq" type="search" placeholder="Søk, f.eks. M12 eller 1/2" aria-label="Søk i gjengetabellen">
@@ -1272,31 +1344,41 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Bor for skjærende gjengebor etter ISO 2306 / DIN 336 og DIN 13. Lillediameter D<sub>1</sub> for toleranse 6H etter ISO 965-2 (for M1–M1,4 er øvre grense ikke tatt med). Gjengeprosent = (D − d) / (1,299 · P) · 100 %. Bor for formende gjengebor er regneverdien D − 0,45 · P. Produsentene runder av til 0,05 mm og oppgir litt ulike verdier (for eksempel M10: 9,25–9,3 mm). Bruk produsentens tabell for formende gjengebor.</p>
 <div class="tbl" id="m3b-gun"></div>
 <p class="small muted">Bor for UNC og UNF (ca. 75 % gjenge) etter ASME B1.1 / Machinery's Handbook. Nummer- og bokstavbor er amerikanske borserier. mm-boret er den vanlige metriske erstatningen.</p>
-
 <h3>Typer gjengebor</h3>
 <div class="tbl" id="m3b-gtyp"></div>
 <div class="tbl" id="m3b-ganc"></div>
 <p class="small muted">Anskjæringsformer etter DIN 2197. Lang anskjæring fordeler sponet på flere tenner og gir lavere moment, men krever lengre hull under gjengen.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Før gjengeboring bores et kjernehull som er litt større enn den teoretiske lillediameteren. Da blir gjengen ikke helt full (ca. 75 %), men gjengeboret går mye lettere og bryter sjeldnere. Gjengen blir nesten like sterk, fordi det er bolten som er det svake leddet.</p>
+<h3>Kalkulator: gjenge → bor</h3>
+<figure class="fig">
+  <svg id="m3b-gfig" viewBox="0 0 600 220" role="img" aria-label="Snitt av innvendig gjenge med kjernehullet"></svg>
+  <figcaption>Snitt gjennom mutteren, tre stigninger. Skravert: mutterens gjengetenner. Stiplet: grunnprofilen som mangler fordi kjernehullet er større enn D<sub>1</sub>. Figuren følger kalkulatoren.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="m3-data">
-  <div class="topic-h"><span class="tno">3.11</span><h3>Skjæredata: boring, brotsjing, dreiing og fresing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Tallene her er startverdier for HSS og hardmetall under normale forhold. Alle verdier er veiledende. Følg verktøyprodusentens data når de finnes, og juster etter spon, lyd og slitasje.</p>
-
+<div class="topic-h"><span class="tno">3.11</span><h3>Skjæredata: boring, brotsjing, dreiing og fresing</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Fra tabell til maskin</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><span>boring og dreiing</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span></div>
+    <div><h4>Husk</h4><span>Verdiene er veiledende. Start i nedre del, og følg verktøyleverandøren</span></div>
+  </div>
+</div>
 <h3>Brotsjing: skjærehastighet v<sub>c</sub> (m/min, veiledende)</h3>
 <div class="two">
   <div><div class="tbl" id="m3b-rvc"></div></div>
   <div><div class="tbl" id="m3b-rf"></div></div>
 </div>
 <p class="small muted">Tommelfingerregel: v<sub>c</sub> ved brotsjing ≈ ½–⅔ av v<sub>c</sub> ved boring, og matingen ≈ 2–3 ganger boremating. Lav hastighet og høy mating gir best mål og overflate. For lav mating gjør at eggene gnir. HM-verdiene her er satt til 2–3 ganger HSS. Moderne HM-brotsjer kan ofte kjøres raskere etter produsentens data.</p>
-
 <h3>Dreiing: mating f og skjæredybde a<sub>p</sub> per ISO-gruppe</h3>
 <div class="tbl" id="m3b-tdat"></div>
 <p class="small muted">Veiledende for vendeskjær med nesradius 0,8 mm (fin: 0,4 mm). Mindre nesradius krever lavere mating. Regel: a<sub>p</sub> bør være større enn r<sub>ε</sub>, og f under ca. ½ · r<sub>ε</sub>. M-materialer kaldherder, så a<sub>p</sub> og f må være store nok til at eggen skjærer under det herdede laget. H betyr herdet stål, med CBN eller keramikk.</p>
-
 <h3>Gjengeboring: v<sub>c</sub> (m/min, veiledende)</h3>
 <div class="tbl" id="m3b-tvc"></div>
 <p class="small muted">Matingen ved gjengeboring er alltid lik stigningen: f = P og v<sub>f</sub> = n · P. Ved stiv gjengeboring (synkron) styrer maskinen dette. Med flytende gjengeholder skal programmert mating være litt under n · P. Grått støpejern og blymessing egner seg ikke for gjengeforming, fordi materialet ikke flyter.</p>
-
 <h3>Kalkulator: brotsjing og gjengeboring</h3>
 <div class="calc">
   <div class="fields">
@@ -1312,29 +1394,31 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m3b-dout" aria-live="polite"></div>
 </div>
 <p class="small muted">Tabellene for v<sub>c</sub> ved boring, fresing og dreiing, boremating og tannmating ved fresing står nedenfor.</p>
-  <h3>Skjærehastighet v<sub>c</sub> (m/min, veiledende)</h3>
-  <div class="tbl" id="vc-table"></div>
-  <p class="small muted">Start midt i området og juster etter spon, lyd og slitasje. Belagte hardmetallskjær tåler de høyeste verdiene. Følg verktøyleverandørens data når de finnes.</p>
-  <div class="two">
+<h3>Skjærehastighet v<sub>c</sub> (m/min, veiledende)</h3>
+<div class="tbl" id="vc-table"></div>
+<p class="small muted">Start midt i området og juster etter spon, lyd og slitasje. Belagte hardmetallskjær tåler de høyeste verdiene. Følg verktøyleverandørens data når de finnes.</p>
+<div class="two">
     <div><h3>Mating ved boring (HSS, mm/omdr)</h3><div class="tbl" id="drill-feed"></div></div>
     <div><h3>Tannmating f<sub>z</sub> ved fresing (hardmetall, mm)</h3><div class="tbl" id="mill-feed"></div></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Tallene her er startverdier for HSS og hardmetall under normale forhold. Alle verdier er veiledende. Følg verktøyprodusentens data når de finnes, og juster etter spon, lyd og slitasje.</p>
+</details>
 </div>
 <div class="topic" id="m3-delehode">
-  <div class="topic-h"><span class="tno">3.12</span><h3>Delehodet</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Delehodet deler en omdreining av arbeidsstykket i like deler, for eksempel tenner på et tannhjul, spor eller flater. Sveiven driver en snekke mot et snekkehjul, vanligvis med utvekslingen 40 : 1. Hullskiva gjør det mulig å stoppe sveiven på en brøkdel av en omdreining.</p>
-<figure class="fig">
-  <svg id="m3b-dfig" viewBox="0 0 600 300" role="img" aria-label="Animasjon av delehode med sveiv, hullskive, sektorarmer og arbeidsstykke"></svg>
-  <div class="ctrl"><button class="chip play" id="m3b-dplay" type="button"></button><span class="small muted" id="m3b-dstat"></span></div>
-  <figcaption>Sveiven dreies hele omdreininger pluss et antall hull. Sektorarmene omslutter antall hull for brøkdelen, så du slipper å telle hver gang. Etter hver deling flyttes armene fram. Arbeidsstykket dreies 1/40 av sveivens bevegelse.</figcaption>
-</figure>
-
-<h3>Direkte deling</h3>
-<p>Snekken kobles ut, og spindelen dreies direkte. En hullskive eller et hakk på spindelnesen (ofte 24 delinger) låses med en pinne. Med 24 hull kan du dele i 2, 3, 4, 6, 8, 12 og 24. Det går raskt, men gir få muligheter.</p>
-
+<div class="topic-h"><span class="tno">3.12</span><h3>Delehodet</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Enkel deling 40 : 1</h4><b>n<sub>k</sub> = 40 / N</b><span>sveivomdreininger per deling</span></div>
+    <div><h4>Vinkeldeling</h4><b>n<sub>k</sub> = α / 9°</b><span>1 omdreining = 9°</span></div>
+    <div><h4>Eksempel</h4><span>N = 6: 40 / 6 = 6 ⅔ = 6 omdreininger + 12 hull på 18-hullsirkelen</span></div>
+  </div>
+  <div class="hurtig-u">N antall delinger · α vinkel (°)</div>
+</div>
 <h3>Enkel deling (40 : 1)</h3>
 <div class="tbl" id="m3b-dform"></div>
-<p>Eksempel N = 7: 40/7 = 5 5/7. Brøken 5/7 må finnes på en hullsirkel med et hulltall som er delelig med 7, for eksempel 21: 5/7 = 15/21. Sveiven dreies altså 5 hele omdreininger og 15 hull på 21-hullsirkelen. Sektorarmene stilles slik at de omslutter 15 mellomrom (16 hull medregnet hullet pinnen står i).</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="m3b-dN">Antall delinger N</label><input id="m3b-dN" inputmode="numeric" value="7"></div>
@@ -1342,13 +1426,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="m3b-dNout" aria-live="polite"></div>
 </div>
-
 <h3>Standard hullskiver</h3>
 <div class="tbl" id="m3b-dplt"></div>
 <p class="small muted">Brown &amp; Sharpe skive 1–3 og Cincinnati standardskive (to sider). Andre delehoder kan ha andre skiver. Les hulltallene på din egen skive.</p>
-
 <h3>Vinkeldeling</h3>
-<p>En omdreining på sveiven gir 360° / 40 = <b>9°</b> på arbeidsstykket. Antall omdreininger er derfor vinkelen i grader delt på 9. Ett hull på en hullsirkel med h hull gir 9° / h, for eksempel 0,5° (30′) på 18-hullsirkelen og 20′ på 27-hullsirkelen. Går det ikke opp, velger du den sirkelen som gir minst feil.</p>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -1360,6 +1441,21 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m3b-dAout" aria-live="polite"></div>
 </div>
 <p class="small muted">Når N ikke går opp på noen hullsirkel (for eksempel N = 51 eller 127 på Brown &amp; Sharpe), brukes differensialdeling, der hullskiva drives med vekselhjul, eller et delehode med flere skiver. Fjern alltid slark ved å dreie sveiven samme vei hver gang. Har du dreid for langt, går du godt tilbake og kjører inn igjen.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Delehodet deler en omdreining av arbeidsstykket i like deler, for eksempel tenner på et tannhjul, spor eller flater. Sveiven driver en snekke mot et snekkehjul, vanligvis med utvekslingen 40 : 1. Hullskiva gjør det mulig å stoppe sveiven på en brøkdel av en omdreining.</p>
+<figure class="fig">
+  <svg id="m3b-dfig" viewBox="0 0 600 300" role="img" aria-label="Animasjon av delehode med sveiv, hullskive, sektorarmer og arbeidsstykke"></svg>
+  <div class="ctrl"><button class="chip play" id="m3b-dplay" type="button"></button><span class="small muted" id="m3b-dstat"></span></div>
+  <figcaption>Sveiven dreies hele omdreininger pluss et antall hull. Sektorarmene omslutter antall hull for brøkdelen, så du slipper å telle hver gang. Etter hver deling flyttes armene fram. Arbeidsstykket dreies 1/40 av sveivens bevegelse.</figcaption>
+</figure>
+<h3>Direkte deling</h3>
+<p>Snekken kobles ut, og spindelen dreies direkte. En hullskive eller et hakk på spindelnesen (ofte 24 delinger) låses med en pinne. Med 24 hull kan du dele i 2, 3, 4, 6, 8, 12 og 24. Det går raskt, men gir få muligheter.</p>
+<h3>Enkel deling (40 : 1)</h3>
+<p>Eksempel N = 7: 40/7 = 5 5/7. Brøken 5/7 må finnes på en hullsirkel med et hulltall som er delelig med 7, for eksempel 21: 5/7 = 15/21. Sveiven dreies altså 5 hele omdreininger og 15 hull på 21-hullsirkelen. Sektorarmene stilles slik at de omslutter 15 mellomrom (16 hull medregnet hullet pinnen står i).</p>
+<h3>Vinkeldeling</h3>
+<p>En omdreining på sveiven gir 360° / 40 = <b>9°</b> på arbeidsstykket. Antall omdreininger er derfor vinkelen i grader delt på 9. Ett hull på en hullsirkel med h hull gir 9° / h, for eksempel 0,5° (30′) på 18-hullsirkelen og 20′ på 27-hullsirkelen. Går det ikke opp, velger du den sirkelen som gir minst feil.</p>
+</details>
 </div>
 <div class="topic" id="m3-nomogram">
   <div class="topic-h"><span class="tno">3.13</span><h3>Nomogrammer</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
@@ -1382,11 +1478,16 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </figure>
 </div>
 <div class="topic" id="m3-sliping">
-  <div class="topic-h"><span class="tno">3.14</span><h3>Sliping</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">En slipeskive består av slipekorn, bindemiddel og porer. Kornene skjærer, bindemiddelet holder dem, og porene gir plass til spon og kjølevæske. Når kornene blir sløve, skal de brytes løs slik at nye, skarpe korn kommer fram. Betegnelsen på skiva forteller hvordan dette er balansert.</p>
-
+<div class="topic-h"><span class="tno">3.14</span><h3>Sliping</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Periferihastighet</h4><b>v<sub>s</sub> = π · d · n / 60 000</b><span>m/s, d i mm</span></div>
+    <div><h4>Før montering</h4><span>Ringtest: klar klang = hel skive, dump lyd = kast skiva</span><span>Maks hastighet og turtall på skiva ≥ maskinens</span></div>
+    <div><h4>Sikkerhet</h4><span>Vernebriller, verneskjerm på plass, stå til siden ved oppstart</span></div>
+  </div>
+</div>
 <h3>Betegnelse etter ISO 525</h3>
-<p>Rekkefølgen er: <b>form</b> – (mål D × T × H) – <b>slipemiddel</b> – <b>kornstørrelse</b> – <b>hardhet</b> – <b>struktur</b> – <b>bindemiddel</b> – <b>maks arbeidshastighet</b>. Produsenten kan legge til egne koder foran slipemiddelet og etter bindemiddelet.</p>
 <div class="field" style="max-width:380px"><label for="m3b-scode">Skriv eller velg en betegnelse</label><input id="m3b-scode" value="1 A 46 K 5 V 35 m/s" autocomplete="off" spellcheck="false" style="text-transform:uppercase"></div>
 <div class="chips" id="m3b-sex"></div>
 <div class="desig m3b-desig" id="m3b-sdes"></div>
@@ -1396,38 +1497,15 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><div class="tbl" id="m3b-sbd"></div></div>
 </div>
 <p class="small muted">Inndeling av hardhet etter ISO 525. Kornstørrelser etter FEPA (F4–F220 makrokorn, F230 og finere mikrokorn). Grensene mellom grov, middels og fin er veiledende. Diamant (D) og CBN (B) betegnes etter ISO 6104.</p>
-
-<h3>Skiveformer</h3>
-<figure class="fig">
-  <svg id="m3b-sfig" viewBox="0 0 600 420" role="img" aria-label="Snitt av ni vanlige skiveformer"></svg>
-  <figcaption>Snitt gjennom skiva langs aksen (stiplet). Tallet er formnummeret i ISO 525. Pilen viser slipeflaten.</figcaption>
-</figure>
-
 <h3>Valg av skive etter materiale (veiledende)</h3>
 <div class="tbl" id="m3b-sval"></div>
-<p>Hovedregelen: <b>hardt materiale – bløt skive, mykt materiale – hard skive</b>. Hardt materiale gjør kornene raskt sløve, og da må bindingen slippe dem lett. Stor kontaktflate (planskiver, sideflaten på en koppskive) gir varme og krever også bløtere skive og åpnere struktur. Mykt og seigt materiale tetter porene, så du trenger grovere korn og åpen struktur.</p>
-
-<h3>Avretting</h3>
-<p>Avretting gjør skiva rund og skarp igjen. En diamant fjerner sløve korn og tettet bindemiddel og gir skiva riktig profil.</p>
-<ul class="m3b-list">
-  <li>Diamanten holdes skråstilt ca. 10–15° i skivas rotasjonsretning, litt under senter, slik at den ikke hogger seg fast. Drei diamanten i holderen av og til, så den holder seg spiss.</li>
-  <li>Ta små skjær, typisk 0,01–0,03 mm per pass (veiledende), og bruk kjølevæske hvis du sliper vått.</li>
-  <li><b>Matehastigheten bestemmer skiva</b>: rask mating over skiva gir en åpen, aggressiv skive (grovsliping). Langsom mating gir en tett skive med fin overflate, men mer varme.</li>
-  <li>Avrett etter montering, når skiva ratter, er tettet («glatt») eller har feil profil.</li>
-</ul>
-
-<h3>Balansering</h3>
-<p>En skive i ubalanse gir vibrasjoner, rattermerker i overflaten og belastning på lagrene. Presisjonsskiver balanseres statisk: skiva monteres på flensen og settes på en dor på en balanseringsbukk. Den tunge siden ruller ned, og vektene i flensen flyttes til skiva blir stående i alle stillinger. Skiva balanseres, avrettes og balanseres på nytt, fordi avrettingen endrer vektfordelingen. Mange slipemaskiner har automatisk balansering under drift.</p>
-
 <h3>Ringtest (klangprøve)</h3>
-<p>Ringtesten avslører sprekker i keramisk bundne skiver før montering. En hel skive gir en klar klang. En sprukket skive gir en dump lyd.</p>
 <ol class="m3b-steps">
   <li>Skiva skal være tørr og ren. Heng den på en finger eller en dor gjennom hullet, eller sett store skiver på et rent, hardt underlag.</li>
   <li>Bank lett med et ikke-metallisk verktøy, for eksempel skaftet på en skrutrekker eller en treklubbe, ca. 45° på hver side av den loddrette senterlinjen, 25–50 mm fra kanten.</li>
   <li>Drei skiva 45° og gjenta. En dump lyd ett sted betyr at skiva skal kasseres og merkes.</li>
 </ol>
 <p class="small muted">Kunstharpiksbundne skiver klinger svakere enn keramiske, og små skiver kan ikke testes slik. De kontrolleres visuelt. Fremgangsmåten er etter ANSI B7.1.</p>
-
 <h3>Sikkerhet</h3>
 <ul class="m3b-list">
   <li>Maks arbeidshastighet og maks turtall på skiva må være minst like høye som maskinens. Se fargestripene i 3.5.</li>
@@ -1438,6 +1516,31 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Bruk vernebriller eller visir, og ikke bruk hansker eller løse klær ved slipebukk.</li>
   <li>Ikke slip aluminium på en skive for stål. Aluminium tetter skiva, og blandingen av aluminium- og jernstøv kan gi brann.</li>
 </ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En slipeskive består av slipekorn, bindemiddel og porer. Kornene skjærer, bindemiddelet holder dem, og porene gir plass til spon og kjølevæske. Når kornene blir sløve, skal de brytes løs slik at nye, skarpe korn kommer fram. Betegnelsen på skiva forteller hvordan dette er balansert.</p>
+<h3>Betegnelse etter ISO 525</h3>
+<p>Rekkefølgen er: <b>form</b> – (mål D × T × H) – <b>slipemiddel</b> – <b>kornstørrelse</b> – <b>hardhet</b> – <b>struktur</b> – <b>bindemiddel</b> – <b>maks arbeidshastighet</b>. Produsenten kan legge til egne koder foran slipemiddelet og etter bindemiddelet.</p>
+<h3>Skiveformer</h3>
+<figure class="fig">
+  <svg id="m3b-sfig" viewBox="0 0 600 420" role="img" aria-label="Snitt av ni vanlige skiveformer"></svg>
+  <figcaption>Snitt gjennom skiva langs aksen (stiplet). Tallet er formnummeret i ISO 525. Pilen viser slipeflaten.</figcaption>
+</figure>
+<h3>Valg av skive etter materiale (veiledende)</h3>
+<p>Hovedregelen: <b>hardt materiale – bløt skive, mykt materiale – hard skive</b>. Hardt materiale gjør kornene raskt sløve, og da må bindingen slippe dem lett. Stor kontaktflate (planskiver, sideflaten på en koppskive) gir varme og krever også bløtere skive og åpnere struktur. Mykt og seigt materiale tetter porene, så du trenger grovere korn og åpen struktur.</p>
+<h3>Avretting</h3>
+<p>Avretting gjør skiva rund og skarp igjen. En diamant fjerner sløve korn og tettet bindemiddel og gir skiva riktig profil.</p>
+<ul class="m3b-list">
+  <li>Diamanten holdes skråstilt ca. 10–15° i skivas rotasjonsretning, litt under senter, slik at den ikke hogger seg fast. Drei diamanten i holderen av og til, så den holder seg spiss.</li>
+  <li>Ta små skjær, typisk 0,01–0,03 mm per pass (veiledende), og bruk kjølevæske hvis du sliper vått.</li>
+  <li><b>Matehastigheten bestemmer skiva</b>: rask mating over skiva gir en åpen, aggressiv skive (grovsliping). Langsom mating gir en tett skive med fin overflate, men mer varme.</li>
+  <li>Avrett etter montering, når skiva ratter, er tettet («glatt») eller har feil profil.</li>
+</ul>
+<h3>Balansering</h3>
+<p>En skive i ubalanse gir vibrasjoner, rattermerker i overflaten og belastning på lagrene. Presisjonsskiver balanseres statisk: skiva monteres på flensen og settes på en dor på en balanseringsbukk. Den tunge siden ruller ned, og vektene i flensen flyttes til skiva blir stående i alle stillinger. Skiva balanseres, avrettes og balanseres på nytt, fordi avrettingen endrer vektfordelingen. Mange slipemaskiner har automatisk balansering under drift.</p>
+<h3>Ringtest (klangprøve)</h3>
+<p>Ringtesten avslører sprekker i keramisk bundne skiver før montering. En hel skive gir en klar klang. En sprukket skive gir en dump lyd.</p>
+</details>
 </div>
 <div class="topic" id="m3-cnc">
   <div class="topic-h"><span class="tno">3.15</span><h3>CNC-koder</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
@@ -1473,17 +1576,21 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Kommentarer står i parentes. Mange styringer godtar ikke æ, ø og å, så de er skrevet AE, OE og AA. Kjør alltid nye programmer i enkeltblokk med redusert hurtiggang og sjekk korreksjonene først.</p>
 </div>
 <div class="topic" id="m3-cncgj">
-  <div class="topic-h"><span class="tno">3.16</span><h3>CNC-gjenging – radiell innmating</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
-  <p class="lead">Gjengen dreies med mange pass i samme spor. Hvert pass går dypere. Ved konstant innmating per pass blir sponarealet større for hvert pass, fordi skjæret er V-formet. Derfor brukes avtakende innmating: store skjær først og mindre mot slutten, slik at sponarealet blir omtrent likt.</p>
-
+<div class="topic-h"><span class="tno">3.16</span><h3>CNC-gjenging – radiell innmating</h3><a class="up" href="#maskinering" aria-label="Til innholdet i emne 3">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Gjengedybde, metrisk</h4><b>h<sub>3</sub> = 0,6134 · P</b><span>utvendig</span><b>H<sub>1</sub> = 0,5413 · P</b><span>innvendig</span></div>
+    <div><h4>Avtakende innmating</h4><b>a<sub>k</sub> = a<sub>p</sub> / √(n − 1) · √φ</b><span>φ = 0,3 i pass 1, deretter 1, 2, 3 …</span></div>
+    <div><h4>X-diameter</h4><b>X<sub>k</sub> = D − 2 · a<sub>k</sub></b><span>utvendig</span><b>X<sub>k</sub> = D − 2 · a<sub>p</sub> + 2 · a<sub>k</sub></b><span>innvendig</span></div>
+  </div>
+  <div class="hurtig-u">P stigning (mm) · a<sub>p</sub> total gjengedybde · n antall pass · D nominell diameter (mm)</div>
+</div>
 <h3>Gjengedybde</h3>
 <div class="tbl" id="m3b-tdep"></div>
 <p class="small muted">Etter ISO 68-1 (grunnprofil). h<sub>3</sub> = 17/24 · H = 0,6134 · P for utvendig gjenge med rotradius. H<sub>1</sub> = 5/8 · H = 0,5413 · P. Skjærprodusentenes tabeller kan oppgi litt større total dybde enn dette. Bruk produsentens verdi når den finnes, og kontroller med gjengering eller tolk.</p>
-
 <h3>Avtakende innmating</h3>
 <div class="tbl" id="m3b-tinf"></div>
-<p>Formelen gir den <b>akkumulerte</b> dybden etter hvert pass. Innmatingen i passet Δ er forskjellen mellom to linjer. Sponarealet er proporsjonalt med dybden i annen potens, altså med φ. Det øker derfor like mye i hvert pass, bortsett fra første pass (φ = 0,3), som er lettere fordi skjæret går inn i fullt materiale med spissen.</p>
-
 <h3>Kalkulator: pass og X-diameter</h3>
 <div class="calc">
   <div class="fields">
@@ -1501,19 +1608,25 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl" id="m3b-ttab"></div>
 <p class="small muted">Antall pass er veiledende og står i skjærprodusentens tabell. Typisk 5–8 pass for P = 1–2 mm i stål, flere i rustfritt og varmefaste materialer. Legg gjerne til 1–2 fjærpass uten innmating til slutt.</p>
-
+<h3>Radiell innmating og flankeinnmating</h3>
+<div class="tbl" id="m3b-tcmp"></div>
+<h3>G92 og G76 (Fanuc)</h3>
+<div class="tbl"><pre class="m3b-pre" id="m3b-tg"></pre></div>
+<p class="small muted">G76 (to-blokks format): P mmrraa = antall finpass, avfasing og skjærvinkel. Q = minste skjæredybde (µm), R = finishtillegg (mm). I andre blokk: P = gjengedybde og Q = første skjæredybde, begge i µm på radius, og F = stigning. Bruk G97 (fast turtall) ved gjenging, og start minst 3 · P foran gjengen, slik at sleiden når riktig hastighet.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Gjengen dreies med mange pass i samme spor. Hvert pass går dypere. Ved konstant innmating per pass blir sponarealet større for hvert pass, fordi skjæret er V-formet. Derfor brukes avtakende innmating: store skjær først og mindre mot slutten, slik at sponarealet blir omtrent likt.</p>
+<h3>Avtakende innmating</h3>
+<p>Formelen gir den <b>akkumulerte</b> dybden etter hvert pass. Innmatingen i passet Δ er forskjellen mellom to linjer. Sponarealet er proporsjonalt med dybden i annen potens, altså med φ. Det øker derfor like mye i hvert pass, bortsett fra første pass (φ = 0,3), som er lettere fordi skjæret går inn i fullt materiale med spissen.</p>
 <h3>Radiell innmating og flankeinnmating</h3>
 <figure class="fig">
   <svg id="m3b-tfig" viewBox="0 0 600 300" role="img" aria-label="Animasjon av radiell innmating og modifisert flankeinnmating"></svg>
   <div class="ctrl"><button class="chip play" id="m3b-tplay" type="button"></button><span class="small muted" id="m3b-tstat"></span></div>
   <figcaption>Mørk: sponet i dette passet. Ved radiell innmating skjærer begge flankene, og sponet blir V-formet og stivt. Ved modifisert flankeinnmating (3–5° mindre enn flankevinkelen, her 27°) skjærer nesten bare den ene flanken, og sponet blir lettere å lede bort.</figcaption>
 </figure>
-<div class="tbl" id="m3b-tcmp"></div>
-
 <h3>G92 og G76 (Fanuc)</h3>
 <p><b>G92</b> er en enkel gjengesyklus: én blokk per pass med radiell innmating. Du skriver X-diameteren for hvert pass, for eksempel fra kalkulatoren. Syklusen går inn, gjenger til Z, trekker ut og går tilbake til startpunktet. <b>G76</b> regner ut alle passene selv og bruker flankeinnmating. Den akkumulerte dybden er Δd · √k etter pass k, altså samme avtakende prinsipp. Første pass Δd (Q) bestemmer antall pass: n ≈ (a<sub>p</sub> / Δd)².</p>
-<div class="tbl"><pre class="m3b-pre" id="m3b-tg"></pre></div>
-<p class="small muted">G76 (to-blokks format): P mmrraa = antall finpass, avfasing og skjærvinkel. Q = minste skjæredybde (µm), R = finishtillegg (mm). I andre blokk: P = gjengedybde og Q = første skjæredybde, begge i µm på radius, og F = stigning. Bruk G97 (fast turtall) ved gjenging, og start minst 3 · P foran gjengen, slik at sleiden når riktig hastighet.</p>
+</details>
 </div>
 </section>
 
