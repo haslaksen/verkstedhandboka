@@ -350,8 +350,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#si-prefiks"><span class="tn">1.5</span><span class="tt">Prefikser</span></a></li>
   </ol></nav>
 <div class="topic" id="si-grunn">
-  <div class="topic-h"><span class="tno">1.1</span><h3>SI-grunnenheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">1.1</span><h3>SI-grunnenheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
+<style>
 .si-tag{display:inline-block;font-family:var(--mono);font-size:12px;border:1px solid var(--line);padding:0 6px;color:var(--ink-2)}
 .si-ok{color:var(--ok)}
 .si-bad{color:var(--bad)}
@@ -369,13 +369,14 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .si-rw th{text-align:left}
 .si-gb{white-space:nowrap}
 </style>
-<p class="lead">SI (Système international d'unités) er det internasjonale enhetssystemet. Alle mål på tegninger, i standarder og i maskinstyringer bygger på sju grunnenheter. Alle andre enheter er satt sammen av dem.</p>
-
-<h3>Hvorfor SI</h3>
-<p><b>Ett felles språk.</b> En tegning fra Tyskland, et datablad fra Japan og en standard fra ISO bruker de samme enhetene. Det gir færre feil når deler skal passe sammen.</p>
-<p><b>Koherente enheter.</b> Mellom SI-enhetene er det ingen omregningsfaktorer: 1 N = 1 kg · 1 m/s², 1 J = 1 N · 1 m og 1 W = 1 J / 1 s. Setter du inn alle verdier i SI-enheter, gir formelen svaret i SI-enhet uten ekstra tall. Det er derfor formelsamlinger virker. Blander du enheter, må det inn en konstant. Et eksempel er <span class="mono">P = M · n / 9550</span>, der 9550 bare er der fordi P er i kW og n i o/min, ikke i W og rad/s.</p>
-<p><b>Faste naturkonstanter.</b> Siden 2019 er alle grunnenhetene definert ut fra naturkonstanter med fast, eksakt verdi. Kiloet er ikke lenger et metallodd i Paris. Alle laboratorier kan dermed realisere enhetene selv, og sporbarheten fra skyvelæret ditt via kalibrering til definisjonen blir sikker.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>De sju grunnenhetene</h4><span>meter m · kilogram kg · sekund s · ampere A · kelvin K · mol mol · candela cd</span></div>
+    <div><h4>Koherent</h4><span>Ingen omregningsfaktorer: 1 N = 1 kg · m/s² · 1 J = 1 N · m · 1 W = 1 J/s</span></div>
+    <div><h4>Huskeregel</h4><span>Sett alt inn i SI-enheter, så kommer svaret ut i SI-enhet</span></div>
+  </div>
+</div>
 <h3>De sju grunnenhetene</h3>
 <div class="tbl si-tb"><table>
 <thead><tr><th>Størrelse</th><th>Symbol</th><th style="text-align:left">Enhet</th><th>Enhets&shy;symbol</th><th style="text-align:left">Definert ut fra (eksakt verdi)</th><th style="text-align:left">Bygger også på</th></tr></thead>
@@ -389,7 +390,13 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <tr><td>Lysstyrke</td><td><span class="si-q">I</span><sub>v</sub></td><td class="txt" style="min-width:0">candela</td><td>cd</td><td class="txt">Lysutbyttet <span class="si-q">K</span><sub>cd</sub> = 683 lm/W ved 540 · 10¹² Hz</td><td class="txt" style="min-width:0">s, m, kg</td></tr>
 </tbody></table></div>
 <p class="small muted">Kilde: BIPM, SI-brosjyren 9. utg. (2019), og ISO 80000-1. Størrelsessymbolene skrives i kursiv, enhetssymbolene rett. Sekundet er definert først, og meteren bygger på sekundet via lyshastigheten. Kiloet bygger på sekundet og meteren via Plancks konstant. Lengdemål på tegninger gjelder ved 20 °C (ISO 1).</p>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">SI (Système international d'unités) er det internasjonale enhetssystemet. Alle mål på tegninger, i standarder og i maskinstyringer bygger på sju grunnenheter. Alle andre enheter er satt sammen av dem.</p>
+<h3>Hvorfor SI</h3>
+<p><b>Ett felles språk.</b> En tegning fra Tyskland, et datablad fra Japan og en standard fra ISO bruker de samme enhetene. Det gir færre feil når deler skal passe sammen.</p>
+<p><b>Koherente enheter.</b> Mellom SI-enhetene er det ingen omregningsfaktorer: 1 N = 1 kg · 1 m/s², 1 J = 1 N · 1 m og 1 W = 1 J / 1 s. Setter du inn alle verdier i SI-enheter, gir formelen svaret i SI-enhet uten ekstra tall. Det er derfor formelsamlinger virker. Blander du enheter, må det inn en konstant. Et eksempel er <span class="mono">P = M · n / 9550</span>, der 9550 bare er der fordi P er i kW og n i o/min, ikke i W og rad/s.</p>
+<p><b>Faste naturkonstanter.</b> Siden 2019 er alle grunnenhetene definert ut fra naturkonstanter med fast, eksakt verdi. Kiloet er ikke lenger et metallodd i Paris. Alle laboratorier kan dermed realisere enhetene selv, og sporbarheten fra skyvelæret ditt via kalibrering til definisjonen blir sikker.</p>
 <h3>Fra grunnenheter til avledet enhet</h3>
 <p>En avledet enhet får du ved å sette grunnenhetene inn i den fysiske formelen. Kraft er masse ganger akselerasjon (<span class="mono">F = m · a</span>), og da blir newton kg · m/s². Trykk er kraft per areal, og da blir pascal N/m². Velg en enhet for å se hvordan den løses opp, steg for steg, til grunnenheter.</p>
 <figure class="fig">
@@ -397,18 +404,24 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="ctrl chips" id="si-g-chips" style="margin:0"></div>
   <figcaption>Øverst: de sju grunnenhetene (kg, m, s, A, K, mol, cd). De markerte inngår i enheten du har valgt. Under hvert steg står formelen eller enheten som er satt inn.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="si-avledet">
-  <div class="topic-h"><span class="tno">1.2</span><h3>Avledede enheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
-  <p class="lead">22 avledede enheter har eget navn og symbol. De er bare forkortelser for kombinasjoner av grunnenheter, og de kan regnes med på samme måte som andre enheter.</p>
-<p>Enheter oppkalt etter personer skrives med stor forbokstav i symbolet (N, Pa, W, V), men med liten forbokstav når navnet skrives ut (newton, pascal, watt, volt). Kolonnen «I grunnenheter» viser hva enheten egentlig er. Den er nyttig når du skal kontrollere at en formel gir riktig enhet.</p>
+<div class="topic-h"><span class="tno">1.2</span><h3>Avledede enheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Mekanikk</h4><span>N = kg · m/s² · Pa = N/m² · J = N · m · W = J/s</span></div>
+    <div><h4>Trykk og spenning</h4><span>1 MPa = 1 N/mm² · 1 bar = 0,1 MPa · 200 bar = 20 MPa</span></div>
+    <div><h4>Elektro</h4><span>V = W/A · Ω = V/A · C = A · s · F = C/V</span></div>
+    <div><h4>Temperatur</h4><span>t = T − 273,15. Lengdemål gjelder ved 20 °C</span></div>
+  </div>
+</div>
 <div class="tbl si-tb"><table>
 <thead><tr><th>Størrelse</th><th style="text-align:left">Enhet</th><th>Symbol</th><th style="text-align:left">Andre SI-enheter</th><th style="text-align:left">I grunnenheter</th><th style="text-align:left">Verkstedeksempel</th></tr></thead>
 <tbody id="si-d-body"></tbody></table></div>
 <p class="small muted">Kilde: SI-brosjyren 9. utg., tabell 4. Radian og steradian er dimensjonsløse (m/m og m²/m²), men navnet viser hva tallet betyr. Belysningsverdier: NS-EN 12464-1, minimumsverdier for arbeidsplasser innendørs. S355: minste flytegrense for tykkelse opp til 16 mm etter NS-EN 10025-2.</p>
-
 <h3>Ikke-SI-enheter som er tillatt</h3>
-<p>Noen enheter er så innarbeidet at de er godtatt sammen med SI. De er ikke koherente: regner du med dem i en formel, må du gjøre om til SI først (min til s, bar til Pa, l til m³).</p>
 <div class="tbl si-tb"><table>
 <thead><tr><th>Enhet</th><th>Symbol</th><th>Verdi i SI</th><th style="text-align:left">Merknad</th></tr></thead>
 <tbody>
@@ -425,11 +438,33 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <tr><td>omdreininger per minutt</td><td>o/min</td><td>min⁻¹ = (1/60) s⁻¹</td><td class="txt">Turtall. Standarder og maskinskilt skriver ofte min⁻¹, fordi «omdreining» ikke er en enhet. «rpm» er engelsk.</td></tr>
 </tbody></table></div>
 <p class="small muted">Kilde: SI-brosjyren 9. utg., tabell 8 (min, h, d, °, ′, ″, ha, l, t, dB). Bar og o/min står ikke i tabell 8. Støy: forskrift om tiltaks- og grenseverdier (Arbeidstilsynet).</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">22 avledede enheter har eget navn og symbol. De er bare forkortelser for kombinasjoner av grunnenheter, og de kan regnes med på samme måte som andre enheter.</p>
+<p>Enheter oppkalt etter personer skrives med stor forbokstav i symbolet (N, Pa, W, V), men med liten forbokstav når navnet skrives ut (newton, pascal, watt, volt). Kolonnen «I grunnenheter» viser hva enheten egentlig er. Den er nyttig når du skal kontrollere at en formel gir riktig enhet.</p>
+<h3>Ikke-SI-enheter som er tillatt</h3>
+<p>Noen enheter er så innarbeidet at de er godtatt sammen med SI. De er ikke koherente: regner du med dem i en formel, må du gjøre om til SI først (min til s, bar til Pa, l til m³).</p>
+</details>
 </div>
 <div class="topic" id="si-skriv">
-  <div class="topic-h"><span class="tno">1.3</span><h3>Skrivemåte for tall og enheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
-  <p class="lead">Riktig skrivemåte er ikke pirk. «5 Mm» og «5 mm» er en faktor på en milliard fra hverandre, og «1.500» kan bety halvannen eller femtenhundre. Reglene under følger SI-brosjyren, ISO 80000-1 og norsk praksis (Språkrådet).</p>
-
+<div class="topic-h"><span class="tno">1.3</span><h3>Skrivemåte for tall og enheter</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Tall</h4><span>Desimalkomma: 12,5 mm · tusenskille med mellomrom: 12 500 N · 0,05 (ikke ,05)</span></div>
+    <div><h4>Enheter</h4><span>Mellomrom: 25 mm, 20 °C, 50 % · men 45° tett inntil · ingen punktum eller flertalls-s</span></div>
+    <div><h4>Store og små bokstaver</h4><span>kg (liten k) · kW, MPa, kWh · s for sekund · m² for kvadratmeter</span></div>
+    <div><h4>Toleranse</h4><span>(25 ± 0,1) mm eller 25 mm ± 0,1 mm</span></div>
+  </div>
+</div>
+<h3>Riktig og feil</h3>
+<div class="tbl si-rw"><table>
+<thead><tr><th>Feil</th><th>Riktig</th><th style="text-align:left">Hvorfor</th></tr></thead>
+<tbody id="si-w-body"></tbody></table></div>
+<p class="small muted">Kilde: SI-brosjyren 9. utg., kap. 5, ISO 80000-1:2022 og Språkrådets skriveregler. Mellomrommet mellom tall og enhet bør være hardt (ikke-brytende), slik at tall og enhet ikke deles over to linjer.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Riktig skrivemåte er ikke pirk. «5 Mm» og «5 mm» er en faktor på en milliard fra hverandre, og «1.500» kan bety halvannen eller femtenhundre. Reglene under følger SI-brosjyren, ISO 80000-1 og norsk praksis (Språkrådet).</p>
 <div class="two">
 <div>
 <h3>Tall</h3>
@@ -453,20 +488,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </ul>
 </div>
 </div>
-
 <h3>Kursiv eller rett</h3>
 <p><b>Størrelser</b> (det du måler) skrives i <i>kursiv</i>: <span class="si-q">F</span>, <span class="si-q">m</span>, <span class="si-q">p</span>, <span class="si-q">d</span>. <b>Enheter</b> skrives alltid <b>rett</b>: N, m, Pa. Da ser du forskjell på <span class="si-q">m</span> (masse) og m (meter): <span class="si-q">m</span> = 5 kg og <span class="si-q">l</span> = 5 m. Indekser som er beskrivende ord, skrives rett: <span class="si-q">R</span><sub>m</sub>, <span class="si-q">F</span><sub>maks</sub>. I håndskrift og enkle tekstfelt er dette vanskelig å få til, men i rapporter og på tegninger bør det følges.</p>
-
-<h3>Riktig og feil</h3>
-<div class="tbl si-rw"><table>
-<thead><tr><th>Feil</th><th>Riktig</th><th style="text-align:left">Hvorfor</th></tr></thead>
-<tbody id="si-w-body"></tbody></table></div>
-<p class="small muted">Kilde: SI-brosjyren 9. utg., kap. 5, ISO 80000-1:2022 og Språkrådets skriveregler. Mellomrommet mellom tall og enhet bør være hardt (ikke-brytende), slik at tall og enhet ikke deles over to linjer.</p>
+</details>
 </div>
 <div class="topic" id="si-omregn">
-  <div class="topic-h"><span class="tno">1.4</span><h3>Omregning</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
-  <p class="lead">Oppslagstabell for omregninger du møter i verkstedet: amerikanske tegninger, gamle maskiner med kp og hk, kompressorer i psi og datablader i Btu. Kalkulatoren under tabellen regner om vilkårlige verdier.</p>
-<p>Verdier merket <span class="pill ok">eksakt</span> er definisjoner. Tommen er for eksempel <b>definert</b> som nøyaktig 25,4 mm (siden 1959), så den er ingen avrundet måling. Den omvendte verdien er avrundet til seks gjeldende siffer.</p>
+<div class="topic-h"><span class="tno">1.4</span><h3>Omregning</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Lengde</h4><span>1 in = 25,4 mm · 1 ft = 304,8 mm · 1 thou = 25,4 µm</span></div>
+    <div><h4>Masse og kraft</h4><span>1 lb = 0,4536 kg · 1 kp = 9,81 N · 1 lbf = 4,448 N</span></div>
+    <div><h4>Trykk</h4><span>1 bar = 14,5 psi · 1 psi = 0,06895 bar · 1 MPa = 10 bar</span></div>
+    <div><h4>Effekt og moment</h4><span>1 hk = 0,7355 kW · 1 hp = 0,7457 kW · 1 kpm = 9,81 Nm</span></div>
+    <div><h4>Volum</h4><span>1 l = 1 dm³ · 1 US gal = 3,785 l · 1 UK gal = 4,546 l</span></div>
+  </div>
+</div>
 <div class="filter">
   <input id="si-c-q" type="search" placeholder="Søk, f.eks. psi" aria-label="Søk i omregningstabellen">
 </div>
@@ -476,7 +513,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <tbody id="si-c-body"></tbody></table></div>
 <p class="small muted">Kilder: NIST SP 811 (2008), vedlegg B, og SI-brosjyren 9. utg. kcal og Btu er de internasjonale tabellverdiene (IT). mVs regnes med vann på 1000 kg/m³ og normtyngdeakselerasjonen <span class="si-q">g</span><sub>n</sub> = 9,806 65 m/s².</p>
 <div class="note"><p><b>Tre forskjellige «mil»:</b> en norsk mil er 10 km. En engelsk mile er 1609,344 m. På amerikanske tegninger betyr <i>mil</i> (eller <i>thou</i>) en tusendels tomme = 25,4 µm. «2 mil» i en belegg- eller platetykkelse er altså 0,0508 mm, ikke 3,2 km.</p></div>
-
 <h3>Temperatur: punkt og differanse</h3>
 <div class="two">
 <dl class="kv">
@@ -487,13 +523,11 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </dl>
 <p class="small" style="margin:0">En temperaturforskjell på 1 °C er lik 1 K. Derfor står ΔT og α (1/K) i kelvin. En forskjell på 1 °F er bare 5/9 K. Typiske punkter: 0 °C = 32 °F = 273,15 K, 20 °C = 68 °F og 100 °C = 212 °F. Like mange grader i begge skalaene får du ved −40 °C = −40 °F.</p>
 </div>
-
 <h3>Brøktommer til millimeter</h3>
-<p>Tommemål på tegninger og verktøy skrives som brøk med nevner 2, 4, 8, 16, 32 eller 64. Tabellen viser alle 64-deler opp til 1″. Uthevede rader er hele 16-deler, som også er de vanlige borstørrelsene. For andre verdier finnes det en tomme-kalkulator under «Tomme ↔ millimeter» i gjengekapitlet. Den gir også nærmeste 1/64″ tilbake.</p>
 <div class="si-inch" id="si-inch"></div>
 <p class="small muted">1″ = 25,4 mm eksakt. Desimaltommene er eksakte. Millimeterverdiene er avrundet til 0,001 mm (eksakt verdi er <span class="mono">n · 0,396875 mm</span> for n/64″).</p>
-  <h3>Omregning av enheter</h3>
-  <div class="calc">
+<h3>Omregning av enheter</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="u-q">Størrelse</label><select id="u-q"></select></div>
       <div class="row2">
@@ -503,11 +537,24 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="u-out" aria-live="polite"></div>
   </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Oppslagstabell for omregninger du møter i verkstedet: amerikanske tegninger, gamle maskiner med kp og hk, kompressorer i psi og datablader i Btu. Kalkulatoren under tabellen regner om vilkårlige verdier.</p>
+<p>Verdier merket <span class="pill ok">eksakt</span> er definisjoner. Tommen er for eksempel <b>definert</b> som nøyaktig 25,4 mm (siden 1959), så den er ingen avrundet måling. Den omvendte verdien er avrundet til seks gjeldende siffer.</p>
+<h3>Brøktommer til millimeter</h3>
+<p>Tommemål på tegninger og verktøy skrives som brøk med nevner 2, 4, 8, 16, 32 eller 64. Tabellen viser alle 64-deler opp til 1″. Uthevede rader er hele 16-deler, som også er de vanlige borstørrelsene. For andre verdier finnes det en tomme-kalkulator under «Tomme ↔ millimeter» i gjengekapitlet. Den gir også nærmeste 1/64″ tilbake.</p>
+</details>
 </div>
 <div class="topic" id="si-prefiks">
-  <div class="topic-h"><span class="tno">1.5</span><h3>Prefikser</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
-  <p class="lead">Et prefiks er en multiplikator foran enheten. Det gjør at tallene holder seg handterlige: 0,000 021 m skrives heller 21 µm, og 210 000 000 000 Pa skrives heller 210 GPa.</p>
-<p>I teknikken brukes helst trinn på 10³ (k, M, G, m, µ, n). Da er det alltid tre nuller mellom hvert trinn. Hekto, deka, desi og centi brukes nesten bare for liter, centimeter og hektar.</p>
+<div class="topic-h"><span class="tno">1.5</span><h3>Prefikser</h3><a class="up" href="#si" aria-label="Til innholdet i emne 1">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Trinn på 10³</h4><span>G 10⁹ · M 10⁶ · k 10³ · m 10⁻³ · µ 10⁻⁶ · n 10⁻⁹</span></div>
+    <div><h4>I verkstedet</h4><span>1 µm = 0,001 mm · 1 kN ≈ tyngden av 102 kg · stål E ≈ 210 GPa</span></div>
+    <div><h4>Potens</h4><span>mm² = (mm)² = 10⁻⁶ m² · mm³ = 10⁻⁹ m³</span></div>
+  </div>
+</div>
 <div class="tbl"><table>
 <thead><tr><th>I verkstedet</th><th style="text-align:left">Eksempel</th></tr></thead>
 <tbody>
@@ -518,7 +565,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <tr><td>kW (kilowatt)</td><td class="txt">Motoreffekt og spindeleffekt: 7,5 kW.</td></tr>
 <tr><td>mΩ / MΩ</td><td class="txt">Kontaktmotstand og jordforbindelser i mΩ. Isolasjonsmotstand i MΩ. Prefiksene er forskjellige med en faktor på 10⁹.</td></tr>
 </tbody></table></div>
-
 <h3>Prefiksomregner</h3>
 <div class="calc">
   <div class="fields">
@@ -530,14 +576,18 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="si-p-out" aria-live="polite"></div>
 </div>
-
+<h3>SI-prefikser</h3>
+<div class="tbl" id="si-pre"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Et prefiks er en multiplikator foran enheten. Det gjør at tallene holder seg handterlige: 0,000 021 m skrives heller 21 µm, og 210 000 000 000 Pa skrives heller 210 GPa.</p>
+<p>I teknikken brukes helst trinn på 10³ (k, M, G, m, µ, n). Da er det alltid tre nuller mellom hvert trinn. Hekto, deka, desi og centi brukes nesten bare for liter, centimeter og hektar.</p>
 <h3>Trappetrinn på 10³</h3>
 <figure class="fig">
   <svg id="si-p-svg" viewBox="0 0 420 238" style="max-width:640px" role="img" aria-label="Trapp med prefiksene fra tera til piko, med en faktor 1000 mellom hvert trinn"></svg>
   <figcaption>Ett trinn ned gir en tusen ganger mindre enhet, og tallet blir tusen ganger større: 1 m = 1000 mm = 1 000 000 µm. Under hvert trinn står et typisk eksempel. Blått trinn er prefikset du regner fra, oransje er det mest lesbare resultatet. Mellom k og grunnenheten ligger h (10²) og da (10¹). Mellom grunnenheten og m ligger d (10⁻¹) og c (10⁻²).</figcaption>
 </figure>
-  <h3>SI-prefikser</h3>
-  <div class="tbl" id="si-pre"></div>
+</details>
 </div>
 </section>
 
