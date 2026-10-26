@@ -2759,29 +2759,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#g6-unified"><span class="tn">6.4</span><span class="tt">Unified-gjenger (UNC, UNF)</span></a></li>
   </ol></nav>
 <div class="topic" id="g6-metrisk">
-  <div class="topic-h"><span class="tno">6.1</span><h3>Utvendige og innvendige gjenger, metriske</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
-  <p class="lead">ISO metriske gjenger har 60° flankevinkel. Betegnelsen <span class="mono">M12</span> betyr grovgjenge med standard stigning, mens finere stigning skrives ut: <span class="mono">M12×1,25</span>. Kapitlet dekker også tommegjenger (UNC, UNF og UN 8) og rørgjenger.</p>
-  <p>For alle gjenger brukes tre diametre: <b>storediameter</b> (d for bolt, D for mutter) er det største målet over gjengetoppene. <b>Midtdiameter</b> (d₂, D₂) ligger der gjengen og gjengegapet er like brede, og er det målet som avgjør om bolt og mutter passer sammen. <b>Lillediameter</b> (d₃ for bolt, D₁ for mutter) er målet i gjengebunnen.</p>
-  <h3>Gjengeprofil</h3>
-  <div class="diagram" id="thread-svg"></div>
-  <h3>Utvendig og innvendig gjenge</h3>
-  <p>Bolten har <b>utvendig gjenge</b> og mutteren <b>innvendig gjenge</b>. De har samme basisprofil, men begge flyttes litt fra basismålet av toleransene. Bolten gjøres litt mindre og mutteren litt større, så det blir klaring på flankene. Storediameteren på bolten er toppen av gjengen, mens storediameteren på mutteren er bunnen av gjengesporet. For lillediameteren er det omvendt.</p>
-  <figure class="fig">
-    <svg id="fig-inex" viewBox="0 0 600 320" role="img" aria-label="Snitt av bolt og mutter med storediameter, midtdiameter og lillediameter for utvendig og innvendig gjenge"></svg>
-    <div class="ctrl"><button class="chip play" id="inex-btn" type="button">⇅ Skru sammen</button><span id="inex-read" class="small muted"></span></div>
-    <figcaption>Halvt lengdesnitt. Målene er diametre, altså dobbel avstand fra aksen. Klaringen mellom flankene er forstørret.</figcaption>
-  </figure>
-  <h3>Les gjengebetegnelsen</h3>
-  <div class="desig" id="desig"></div>
-  <h3>Stigning: én omdreining flytter mutteren P</h3>
-  <p>Skruen er en skråplan viklet rundt en sylinder. For hver hele omdreining flytter mutteren seg én stigning langs aksen.</p>
-  <figure class="fig">
-    <svg id="fig-pitch" viewBox="0 0 600 200" role="img" aria-label="Mutter som flytter seg én stigning per omdreining"></svg>
-    <div class="ctrl"><button class="chip play" id="pitch-play" type="button"></button><span id="pitch-read" class="mono"></span></div>
-    
-  </figure>
-  <h3>Regn ut gjengemål</h3>
-  <div class="calc">
+<div class="topic-h"><span class="tno">6.1</span><h3>Utvendige og innvendige gjenger, metriske</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Betegnelse</h4><span>M12 = grovgjenge · M12×1,25 = fingjenge</span><span>M12×1,25-6H/6g · LH = venstregjenge</span></div>
+    <div><h4>Diametre (bolt)</h4><b>d<sub>2</sub> = d − 0,6495 · P</b><span>midtdiameter</span><b>d<sub>3</sub> = d − 1,2269 · P</b><span>lillediameter</span></div>
+    <div><h4>Mutter</h4><b>D<sub>1</sub> = D − 1,0825 · P</b><span>lillediameter</span></div>
+    <div><h4>Kjernehull</h4><b>d − P</b><span>skjærende gjengebor</span><b>≈ d − P/2</b><span>gjengeformer, sjekk leverandøren</span><span>Blindhull: bor 3–4 stigninger dypere</span></div>
+    <div><h4>Inngrepslengde</h4><span>Stål ≈ 1 × d · støpejern ≈ 1,5 × d · aluminium ≈ 2 × d</span></div>
+  </div>
+  <div class="hurtig-u">d storediameter · P stigning (mm) · 60° flankevinkel · 6g bolt, 6H mutter</div>
+</div>
+<h3>Les gjengebetegnelsen</h3>
+<div class="desig" id="desig"></div>
+<h3>Regn ut gjengemål</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="th-d">Storediameter d</label><input id="th-d" inputmode="decimal" value="12"></div>
@@ -2791,22 +2784,43 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="th-out" aria-live="polite"></div>
   </div>
-  <h3>Metriske gjenger: grense­mål for 6g og 6H</h3>
-  <p>Tabellene viser største og minste mål for den vanligste toleranseklassen: <span class="mono">6g</span> for utvendig gjenge (bolt) og <span class="mono">6H</span> for innvendig gjenge (mutter). Grov- og fingjenger står i samme tabell. Trykk på en rad for å fylle inn kalkulatoren.</p>
-  <div class="filter">
+<h3>Metriske gjenger: grense­mål for 6g og 6H</h3>
+<div class="filter">
     <span class="chips" id="th-kind" style="margin:0"><button class="chip" type="button" data-k="alle" aria-pressed="true">Alle</button><button class="chip" type="button" data-k="grov" aria-pressed="false">Grovgjenge</button><button class="chip" type="button" data-k="fin" aria-pressed="false">Fingjenge</button></span>
     <label for="th-q" class="small muted">Søk</label><input id="th-q" placeholder="f.eks. M12">
   </div>
-  <h4 style="margin-top:16px">Utvendig gjenge (bolt), toleranseklasse 6g</h4>
-  <div class="tbl" id="th-ext"></div>
-  <h4 style="margin-top:16px">Innvendig gjenge (mutter), toleranseklasse 6H</h4>
-  <div class="tbl" id="th-int"></div>
-  <p class="small muted">Etter ISO 965-1/-2. 6g: øvre avmål e<sub>s</sub> = −(15 + 11P) µm, så bolten er litt under basismål og gir plass til belegg og smøring. 6H: nedre avmål 0, så mutteren starter på basismål. Lillediameter for bolt og storediameter for mutter har bare én grense i standarden; den andre styres av gjengeprofilen og kontrolleres med tolk. M1–M1,4 har egne toleranseregler og er ikke med.</p>
-  <h4 style="margin-top:16px">Gjennomgangshull og nøkkelvidde</h4>
-  <div class="tbl" id="th-hole"></div>
-  <p class="small muted">Gjelder storediameteren, uansett stigning. Gjennomgangshull etter ISO 273, nøkkelvidde etter ISO 4032 / 4014. Eldre DIN-mutre har andre nøkkelvidder på M10 (17), M12 (19), M14 (22) og M22 (32).</p>
-  <h3>Toleranseklasser og praksis</h3>
-  <div class="two">
+<h4 style="margin-top:16px">Utvendig gjenge (bolt), toleranseklasse 6g</h4>
+<div class="tbl" id="th-ext"></div>
+<h4 style="margin-top:16px">Innvendig gjenge (mutter), toleranseklasse 6H</h4>
+<div class="tbl" id="th-int"></div>
+<p class="small muted">Etter ISO 965-1/-2. 6g: øvre avmål e<sub>s</sub> = −(15 + 11P) µm, så bolten er litt under basismål og gir plass til belegg og smøring. 6H: nedre avmål 0, så mutteren starter på basismål. Lillediameter for bolt og storediameter for mutter har bare én grense i standarden; den andre styres av gjengeprofilen og kontrolleres med tolk. M1–M1,4 har egne toleranseregler og er ikke med.</p>
+<h4 style="margin-top:16px">Gjennomgangshull og nøkkelvidde</h4>
+<div class="tbl" id="th-hole"></div>
+<p class="small muted">Gjelder storediameteren, uansett stigning. Gjennomgangshull etter ISO 273, nøkkelvidde etter ISO 4032 / 4014. Eldre DIN-mutre har andre nøkkelvidder på M10 (17), M12 (19), M14 (22) og M22 (32).</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">ISO metriske gjenger har 60° flankevinkel. Betegnelsen <span class="mono">M12</span> betyr grovgjenge med standard stigning, mens finere stigning skrives ut: <span class="mono">M12×1,25</span>. Kapitlet dekker også tommegjenger (UNC, UNF og UN 8) og rørgjenger.</p>
+<p>For alle gjenger brukes tre diametre: <b>storediameter</b> (d for bolt, D for mutter) er det største målet over gjengetoppene. <b>Midtdiameter</b> (d₂, D₂) ligger der gjengen og gjengegapet er like brede, og er det målet som avgjør om bolt og mutter passer sammen. <b>Lillediameter</b> (d₃ for bolt, D₁ for mutter) er målet i gjengebunnen.</p>
+<h3>Gjengeprofil</h3>
+<div class="diagram" id="thread-svg"></div>
+<h3>Utvendig og innvendig gjenge</h3>
+<p>Bolten har <b>utvendig gjenge</b> og mutteren <b>innvendig gjenge</b>. De har samme basisprofil, men begge flyttes litt fra basismålet av toleransene. Bolten gjøres litt mindre og mutteren litt større, så det blir klaring på flankene. Storediameteren på bolten er toppen av gjengen, mens storediameteren på mutteren er bunnen av gjengesporet. For lillediameteren er det omvendt.</p>
+<figure class="fig">
+    <svg id="fig-inex" viewBox="0 0 600 320" role="img" aria-label="Snitt av bolt og mutter med storediameter, midtdiameter og lillediameter for utvendig og innvendig gjenge"></svg>
+    <div class="ctrl"><button class="chip play" id="inex-btn" type="button">⇅ Skru sammen</button><span id="inex-read" class="small muted"></span></div>
+    <figcaption>Halvt lengdesnitt. Målene er diametre, altså dobbel avstand fra aksen. Klaringen mellom flankene er forstørret.</figcaption>
+  </figure>
+<h3>Stigning: én omdreining flytter mutteren P</h3>
+<p>Skruen er en skråplan viklet rundt en sylinder. For hver hele omdreining flytter mutteren seg én stigning langs aksen.</p>
+<figure class="fig">
+    <svg id="fig-pitch" viewBox="0 0 600 200" role="img" aria-label="Mutter som flytter seg én stigning per omdreining"></svg>
+    <div class="ctrl"><button class="chip play" id="pitch-play" type="button"></button><span id="pitch-read" class="mono"></span></div>
+    
+  </figure>
+<h3>Metriske gjenger: grense­mål for 6g og 6H</h3>
+<p>Tabellene viser største og minste mål for den vanligste toleranseklassen: <span class="mono">6g</span> for utvendig gjenge (bolt) og <span class="mono">6H</span> for innvendig gjenge (mutter). Grov- og fingjenger står i samme tabell. Trykk på en rad for å fylle inn kalkulatoren.</p>
+<h3>Toleranseklasser og praksis</h3>
+<div class="two">
     <div>
       <h4>Toleranseklasser</h4>
       <p class="small"><span class="mono">6H</span> er standard for innvendig gjenge (mutter), <span class="mono">6g</span> for utvendig (bolt). Tallet er toleransegraden, bokstaven er posisjonen. Full betegnelse: <span class="mono">M12×1,25-6H/6g</span>. Venstregjenge får tillegget <span class="mono">LH</span>.</p>
@@ -2817,21 +2831,25 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
       <p class="small"><b>Gjengebor (skjærende tapp):</b> d − P.<br><b>Gjengeformer:</b> omtrent d − P/2, sjekk leverandørens tabell.<br><b>Blindhull:</b> bor minst 3–4 stigninger dypere enn gjengelengden.<br><b>Inngrepslengde:</b> stål ≈ 1×d, støpejern ≈ 1,5×d, aluminium ≈ 2×d.</p>
     </div>
   </div>
+</details>
 </div>
 <div class="topic" id="g6-trapes">
-  <div class="topic-h"><span class="tno">6.2</span><h3>Trapesgjenger</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
-  <p class="lead">Trapesgjengen har 30° flankevinkel og en bred, flat gjengetopp. Den er laget for bevegelse og kraftoverføring, ikke for festing: ledeskruer i dreiebenker, skruestikker, spindler, presser og ventiler. Profilen tåler store aksialkrefter i begge retninger, og den er lett å lage og etterjustere med en delt mutter.</p>
-
+<div class="topic-h"><span class="tno">6.2</span><h3>Trapesgjenger</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Profil</h4><span>30° flankevinkel. Tr 40 × 7 = d 40 mm, stigning 7 mm</span></div>
+    <div><h4>Diametre</h4><b>d<sub>2</sub> = D<sub>2</sub> = d − 0,5 · P</b><span>midtdiameter</span><b>D<sub>1</sub> = d − P</b><span>mutter, ≈ gjengebor</span></div>
+    <div><h4>Selvlåsing</h4><b>tan φ = P<sub>h</sub> / (π · d<sub>2</sub>)</b><b>tan ρ′ = µ / cos 15°</b><span>Selvlåsende når φ &lt; ρ′</span></div>
+    <div><h4>Toleranse</h4><span>7H/7e middels (vanlig) · 8H/8e grov</span></div>
+  </div>
+  <div class="hurtig-u">d storediameter · P stigning · P<sub>h</sub> stigning per omdreining (flergjenget) · µ friksjonstall</div>
+</div>
 <h3>Profil</h3>
-<figure class="fig">
-  <svg id="g6t-prof" viewBox="0 0 600 330" role="img" aria-label="Trapesgjengeprofil med bolt og mutter, storediameter, midtdiameter og lillediameter, klaring ac og flankevinkel 30 grader"></svg>
-  <figcaption>Basisprofil etter ISO 2904 / DIN 103, tegnet for Tr 40 × 7. Bolt (nederst) og mutter (øverst) møtes på flankene. Klaringen a<sub>c</sub> i topp og bunn gjør at gjengen bare bærer på flankene.</figcaption>
-</figure>
 <div class="note"><p><b>Storediameter</b> d (bolt) &nbsp;·&nbsp; D<sub>4</sub> = d + 2a<sub>c</sub> (mutter)<br>
 <b>Midtdiameter</b> d<sub>2</sub> = D<sub>2</sub> = d − 0,5P<br>
 <b>Lillediameter</b> d<sub>3</sub> = d − 2h<sub>3</sub> (bolt), der h<sub>3</sub> = 0,5P + a<sub>c</sub> &nbsp;·&nbsp; D<sub>1</sub> = d − P (mutter)<br>
 <b>Gjengedybde</b> H<sub>1</sub> = 0,5P (bæredybde) &nbsp;·&nbsp; <b>klaring</b> a<sub>c</sub> = 0,15 mm (P = 1,5), 0,25 mm (P = 2–5), 0,5 mm (P = 6–12), 1 mm (P = 14–44)</p></div>
-
 <h3>Kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -2845,22 +2863,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="g6t-out" aria-live="polite"></div>
 </div>
-
 <h3>Trapesgjenger Tr 8 × 1,5 til Tr 100 × 12</h3>
 <div class="tbl" id="g6t-tab"></div>
 <p class="small muted">Etter ISO 2904 / DIN 103, foretrukket stigning for hver diameter. Mål i mm (basismål). Gjengebor for mutter ≈ D<sub>1</sub>. Mange diametre finnes også med finere og grovere stigning (for eksempel Tr 40 × 3 og Tr 40 × 10); bruk kalkulatoren for dem.</p>
-
-<h3>Betegnelser og toleranser</h3>
-<div class="desig">
-  <div><span class="small muted">Enkel gjenge</span><b class="mono">Tr 40×7</b><span class="small">d = 40, P = 7</span></div>
-  <div><span class="small muted">Flergjenget</span><b class="mono">Tr 40×14 P7</b><span class="small">P<sub>h</sub> = 14 (stigning per omdreining), deling P = 7 → 2 innganger</span></div>
-  <div><span class="small muted">Venstregjenge</span><b class="mono">Tr 40×7 LH</b><span class="small">LH = left hand</span></div>
-  <div><span class="small muted">Med toleranse</span><b class="mono">Tr 40×7-7H/7e</b><span class="small">mutter 7H, bolt 7e</span></div>
-</div>
-<p>Toleranser etter ISO 2903 / DIN 103-3 gis på midtdiameteren. <span class="mono">7H/7e</span> er middels klasse og det vanlige for ledeskruer og spindler. <span class="mono">8H/8e</span> er grov klasse for enklere bruk og når gjengen kan bli skitten. Bokstaven e gir et fast avmål på bolten, slik at det alltid er klaring på flankene. Flergjengede skruer flytter seg langt per omdreining og brukes for rask bevegelse, men de er ikke selvlåsende.</p>
-
 <h3>Selvlåsing</h3>
-<p>Brett ut én gjengegang, så får du et skråplan med lengde π · d<sub>2</sub> og høyde P<sub>h</sub>. Stigningsvinkelen er tan φ = P<sub>h</sub> / (π · d<sub>2</sub>). Friksjonsvinkelen for flankene er tan ρ′ = µ / cos 15°. Gjengen er <b>selvlåsende</b> når φ &lt; ρ′: lasten kan da ikke skru seg ned av seg selv. Virkningsgraden ved løfting er η = tan φ / tan(φ + ρ′), og en selvlåsende gjenge har alltid η under 50 %.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="g6t-ssel">Gjenge</label><select id="g6t-ssel"></select></div>
@@ -2873,15 +2879,34 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="g6t-sout" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Trapesgjengen har 30° flankevinkel og en bred, flat gjengetopp. Den er laget for bevegelse og kraftoverføring, ikke for festing: ledeskruer i dreiebenker, skruestikker, spindler, presser og ventiler. Profilen tåler store aksialkrefter i begge retninger, og den er lett å lage og etterjustere med en delt mutter.</p>
+<h3>Profil</h3>
+<figure class="fig">
+  <svg id="g6t-prof" viewBox="0 0 600 330" role="img" aria-label="Trapesgjengeprofil med bolt og mutter, storediameter, midtdiameter og lillediameter, klaring ac og flankevinkel 30 grader"></svg>
+  <figcaption>Basisprofil etter ISO 2904 / DIN 103, tegnet for Tr 40 × 7. Bolt (nederst) og mutter (øverst) møtes på flankene. Klaringen a<sub>c</sub> i topp og bunn gjør at gjengen bare bærer på flankene.</figcaption>
+</figure>
+<h3>Betegnelser og toleranser</h3>
+<div class="desig">
+  <div><span class="small muted">Enkel gjenge</span><b class="mono">Tr 40×7</b><span class="small">d = 40, P = 7</span></div>
+  <div><span class="small muted">Flergjenget</span><b class="mono">Tr 40×14 P7</b><span class="small">P<sub>h</sub> = 14 (stigning per omdreining), deling P = 7 → 2 innganger</span></div>
+  <div><span class="small muted">Venstregjenge</span><b class="mono">Tr 40×7 LH</b><span class="small">LH = left hand</span></div>
+  <div><span class="small muted">Med toleranse</span><b class="mono">Tr 40×7-7H/7e</b><span class="small">mutter 7H, bolt 7e</span></div>
+</div>
+<p>Toleranser etter ISO 2903 / DIN 103-3 gis på midtdiameteren. <span class="mono">7H/7e</span> er middels klasse og det vanlige for ledeskruer og spindler. <span class="mono">8H/8e</span> er grov klasse for enklere bruk og når gjengen kan bli skitten. Bokstaven e gir et fast avmål på bolten, slik at det alltid er klaring på flankene. Flergjengede skruer flytter seg langt per omdreining og brukes for rask bevegelse, men de er ikke selvlåsende.</p>
+<h3>Selvlåsing</h3>
+<p>Brett ut én gjengegang, så får du et skråplan med lengde π · d<sub>2</sub> og høyde P<sub>h</sub>. Stigningsvinkelen er tan φ = P<sub>h</sub> / (π · d<sub>2</sub>). Friksjonsvinkelen for flankene er tan ρ′ = µ / cos 15°. Gjengen er <b>selvlåsende</b> når φ &lt; ρ′: lasten kan da ikke skru seg ned av seg selv. Virkningsgraden ved løfting er η = tan φ / tan(φ + ρ′), og en selvlåsende gjenge har alltid η under 50 %.</p>
 <figure class="fig">
   <svg id="g6t-incl" viewBox="0 0 600 240" role="img" aria-label="Utbrettet gjengegang som skråplan med stigningsvinkel og friksjonsvinkel"></svg>
   <figcaption>Stigningsvinkelen φ (heltrukken) sammenlignet med friksjonsvinkelen ρ′ (stiplet). Så lenge φ ligger under ρ′, holder friksjonen lasten. Moment for å løfte lasten: T = F · d<sub>2</sub>/2 · tan(φ + ρ′), uten friksjon i anlegget.</figcaption>
 </figure>
 <p class="small muted">Vibrasjoner kan likevel få en selvlåsende gjenge til å vandre. Bruk brems eller lås der lasten ikke får synke.</p>
+</details>
 </div>
 <div class="topic" id="g6-ror">
-  <div class="topic-h"><span class="tno">6.3</span><h3>Rørgjenger</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">6.3</span><h3>Rørgjenger</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
+<style>
 .g6r-cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:8px 0 16px}
 .g6r-cmp>div{border:1px solid var(--line);background:var(--sheet);padding:12px 14px;min-width:0}
 .g6r-cmp h4{margin:0 0 6px}
@@ -2891,8 +2916,49 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .g6r-ul li{margin:4px 0}
 #g6r-cand tr.g6r-best td{background:var(--accent-soft)}
 </style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>G (ISO 228-1, BSPP)</h4><span>Sylindrisk, 55°. Tetter med pakning eller O-ring, ikke i gjengen. Ikke tape</span></div>
+    <div><h4>R, Rc, Rp (ISO 7-1, BSPT)</h4><span>Konisk 1:16, 55°. Tetter i gjengen med tetningsmiddel</span><span>R utvendig konisk · Rc innvendig konisk · Rp innvendig sylindrisk</span></div>
+    <div><h4>NPT</h4><span>Konisk 1:16, men 60° flankevinkel. Ikke byttbar med BSPT</span></div>
+    <div><h4>Størrelse</h4><span>«1/2 tomme» er et navn, ikke et mål. G 1/2 har storediameter 20,955 mm</span></div>
+    <div><h4>Identifiser</h4><span>Mål storediameter og stigning (over 10 stigninger / 10), sjekk vinkel med gjengelære</span></div>
+  </div>
+</div>
+<h3>R, Rp og Rc (ISO 7-1)</h3>
+<div class="tbl" id="g6r-rtab"></div>
+<p class="small muted">Etter ISO 7-1:1994 og EN 10226-1/-2. Gaugelengde er nominell lengde fra lille ende til målplan på hanndelen; toleransen tilsvarer ±1 omdreining. Rc-boret er <b>veiledende</b> (uten konisk opprømmer; med opprømmer kan man bore ca. 0,2–0,5 mm mindre for å spare tappen). Rp-boret er det samme som for G. Følg alltid gjengetapp-leverandørens anbefaling.</p>
+<h3>NPT og NPTF (ANSI/ASME B1.20.1 og B1.20.3)</h3>
+<div class="tbl" id="g6r-npt"></div>
+<p class="small muted">Etter ASME B1.20.1. L1 = håndtrekklengde (lengde i inngrep når delene skrus sammen for hånd). Ytterdiameter er rørets ytterdiameter (ASME B36.10). Gjengebor er <b>veiledende</b> for skjærende tapp uten opprømmer, i tomme med mm i parentes; 1/8″ oppgis ulikt i tabeller (Q, R eller 11/32″).</p>
+<h3>BSPT kontra NPT: like, men ikke byttbare</h3>
+<div class="tbl" id="g6r-bvn"></div>
+<h3>Hvorfor er «1/2 tomme» ikke 12,7 mm?</h3>
+<div class="tbl" id="g6r-nomtab"></div>
+<p class="small muted">Ytterdiameter og veggtykkelse for gjengerør, middels serie, etter EN 10255 (tidligere ISO 65). ASME B36.10 (NPS) har samme ytterdiametre, bortsett fra små avvik på 1/8″ og 1/4″. Innvendig diameter er regnet som ytterdiameter − 2 × vegg. DN er et avrundet nominelt mål i mm, heller ikke det er en faktisk diameter.</p>
+<h3>Identifiser rørgjengen</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><span class="small muted">Hva måler du?</span><span class="chips" id="g6r-side" style="margin:4px 0 0"><button class="chip" type="button" data-s="ut" aria-pressed="true">Hanndel (utvendig)</button><button class="chip" type="button" data-s="inn" aria-pressed="false">Hunndel (innvendig)</button></span></div>
+    <div class="field"><label for="g6r-d" id="g6r-dl">Målt storediameter (mm)</label><input id="g6r-d" inputmode="decimal" value="20,9"></div>
+    <div class="row2">
+      <div class="field"><label for="g6r-p">Stigning</label><input id="g6r-p" inputmode="decimal" value="14"></div>
+      <div class="field"><span class="small muted">Enhet</span><span class="chips" id="g6r-pu" style="margin:4px 0 0"><button class="chip" type="button" data-u="tpi" aria-pressed="true">TPI</button><button class="chip" type="button" data-u="mm" aria-pressed="false">mm</button></span></div>
+    </div>
+    <div class="field"><span class="small muted">Form</span><span class="chips" id="g6r-form" style="margin:4px 0 0"><button class="chip" type="button" data-f="?" aria-pressed="true">Vet ikke</button><button class="chip" type="button" data-f="syl" aria-pressed="false">Sylindrisk</button><button class="chip" type="button" data-f="kon" aria-pressed="false">Konisk</button></span></div>
+    <p class="small muted" style="margin:0">Konisk: diameteren er tydelig mindre ytterst enn innerst (ca. 0,6 mm forskjell over 10 mm lengde).</p>
+  </div>
+  <div class="out" id="g6r-out" aria-live="polite"></div>
+</div>
+<p class="small muted">Toleranse i søket: stigning ±4 %, diameter ±0,4 mm for sylindriske og ±0,7 mm for koniske gjenger (målestedet varierer). Referansediameter for R er målplanet, for NPT håndtrekkplanet L1. Kalkulatoren gir sannsynlige kandidater, ikke et endelig svar; bekreft alltid flankevinkelen med gjengelære.</p>
+<h3>Tetting</h3>
+<div class="note"><p><b>G-gjenger skal ikke tapes</b> når de tetter med pakning, O-ring eller tetningskant. Gjengen er ikke med i tettingen, så tapen gjør ingenting nyttig. Den kan i stedet hindre at pakningen trekkes helt ned, gi feil moment og løse biter. Tett G-gjengen der den skal tette: rett pakning, ren og uskadd tetningsflate.</p></div>
+<h3>Rørgjenge G (ISO 228-1, BSPP)</h3>
+<div class="tbl" id="th-g"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Rørgjenger finnes i to familier: gjenger som <b>tetter i selve gjengen</b> (koniske, 1:16) og gjenger som <b>bare holder delene sammen</b> (sylindriske), der tettingen skjer i en pakning eller O-ring. Blander man dem, eller tetter feil, lekker skjøten.</p>
-
 <h3>Tettende og ikke-tettende rørgjenger</h3>
 <div class="g6r-cmp">
   <div>
@@ -2909,7 +2975,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
 </div>
 <p>Hvorfor 1:16? Diameteren øker 1 mm per 16 mm lengde, altså én grad og 47 minutter halv toppvinkel. Det er nok til at gjengen kiler seg fast etter noen omdreininger, men lite nok til at den ikke sprenger muffen ved normal tiltrekking. Konisiteten gjør også at gjengen tåler slitasje: hanndelen går bare litt lenger inn.</p>
-
 <figure class="fig">
   <svg id="g6r-fig-seal" viewBox="0 0 600 300" role="img" aria-label="Halvt lengdesnitt av hanndel skrudd inn i hunndel, for G med pakning, R i Rc og R i Rp"></svg>
   <div class="ctrl">
@@ -2920,28 +2985,19 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div id="g6r-seal-read" class="small" aria-live="polite"></div>
   <figcaption>Halvt lengdesnitt, aksen nederst. Konisiteten og spalten er sterkt overdrevet; i virkeligheten er 1:16 nesten usynlig. Målplanet til hunndelen ligger i flukt med endeflaten.</figcaption>
 </figure>
-
 <h3>R, Rp og Rc (ISO 7-1)</h3>
 <p>For koniske gjenger gjelder diameteren i <b>målplanet</b>. På hanndelen ligger målplanet én <b>gaugelengde</b> inn fra den lille enden; på hunndelen ligger det i endeflaten. Skrus delene sammen for hånd, møtes målplanene (±1 omdreining). Deretter trekkes det med nøkkel. Profilen er den samme som for G, så storediameteren i målplanet er lik G-gjengens storediameter.</p>
-<div class="tbl" id="g6r-rtab"></div>
-<p class="small muted">Etter ISO 7-1:1994 og EN 10226-1/-2. Gaugelengde er nominell lengde fra lille ende til målplan på hanndelen; toleransen tilsvarer ±1 omdreining. Rc-boret er <b>veiledende</b> (uten konisk opprømmer; med opprømmer kan man bore ca. 0,2–0,5 mm mindre for å spare tappen). Rp-boret er det samme som for G. Følg alltid gjengetapp-leverandørens anbefaling.</p>
-
 <h3>NPT og NPTF (ANSI/ASME B1.20.1 og B1.20.3)</h3>
 <p>Amerikansk konisk rørgjenge: også 1:16 konisitet, men <b>60° flankevinkel</b> og flate topper og bunner. Størrelsen henger, som for BSP, sammen med rørets ytterdiameter, ikke gjengens. NPT tetter med tetningsmiddel eller tape.</p>
 <p><b>NPTF</b> (Dryseal, ASME B1.20.3) har samme stigning og konisitet, men strammere kontroll av toppavskjæringen, slik at topp og bunn presses mot hverandre før flankene. Da tetter metall mot metall uten tetningsmiddel. NPTF og NPT kan skrus sammen, men tørrtettingen virker bare når begge delene er NPTF.</p>
-<div class="tbl" id="g6r-npt"></div>
-<p class="small muted">Etter ASME B1.20.1. L1 = håndtrekklengde (lengde i inngrep når delene skrus sammen for hånd). Ytterdiameter er rørets ytterdiameter (ASME B36.10). Gjengebor er <b>veiledende</b> for skjærende tapp uten opprømmer, i tomme med mm i parentes; 1/8″ oppgis ulikt i tabeller (Q, R eller 11/32″).</p>
-
 <h3>BSPT kontra NPT: like, men ikke byttbare</h3>
 <p>Begge er koniske 1:16 og har omtrent samme diametre, så de forveksles lett. Forskjellen er profilen og, på de fleste dimensjoner, stigningen:</p>
-<div class="tbl" id="g6r-bvn"></div>
 <ul class="g6r-ul">
   <li><b>Flankevinkel:</b> BSPT 55° med avrundede topper og bunner. NPT 60° med flate topper og bunner.</li>
   <li><b>1/2″ og 3/4″:</b> begge har 14 gjenger per tomme (P = 1,814 mm). En NPT-hanndel går derfor et stykke inn i en BSPT-hunndel. Men flankene ligger bare an på en smal stripe fordi vinklene er ulike, og avrundingen møter en flat topp. Det gir lekkasjekanaler og fare for skjæring. Den blir ikke pålitelig tett, heller ikke med ekstra tape.</li>
   <li><b>Andre størrelser:</b> 28 mot 27, 19 mot 18 og 11 mot 11,5 gjenger per tomme. Forskjellen er liten nok til at to–tre gjenger griper før det låser seg, så skjøten kan føles fast uten å være det.</li>
   <li><b>Kontroll:</b> bruk gjengelære med 55°- og 60°-blad. Sjekk stigningen over mange gjenger, ikke én.</li>
 </ul>
-
 <h3>Hvorfor er «1/2 tomme» ikke 12,7 mm?</h3>
 <p>Rørstørrelsen er en <b>nominell størrelse</b>, et navn. Den stammer fra 1800-tallets jernrør, der tallet omtrent tilsvarte innvendig diameter. Senere ble rørene laget med tynnere vegg, men <b>ytterdiameteren ble holdt fast</b> slik at gjengene og koblingene fortsatt passet. Dermed ble innvendig diameter større, og navnet ble stående. Gjengen skjæres i rørets ytterdiameter, så gjengens storediameter er litt under rørets ytterdiameter: G 1/2 er 20,955 mm på et rør med 21,3 mm ytterdiameter.</p>
 <figure class="fig">
@@ -2949,26 +3005,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="ctrl"><span class="chips" id="g6r-nsz" style="margin:0"></span></div>
   <figcaption>Tverrsnitt av gjengerør i middels serie. Stiplet sirkel viser hva tommetallet ville vært i millimeter.</figcaption>
 </figure>
-<div class="tbl" id="g6r-nomtab"></div>
-<p class="small muted">Ytterdiameter og veggtykkelse for gjengerør, middels serie, etter EN 10255 (tidligere ISO 65). ASME B36.10 (NPS) har samme ytterdiametre, bortsett fra små avvik på 1/8″ og 1/4″. Innvendig diameter er regnet som ytterdiameter − 2 × vegg. DN er et avrundet nominelt mål i mm, heller ikke det er en faktisk diameter.</p>
-
 <h3>Identifiser rørgjengen</h3>
 <p>Mål storediameteren på hanndelen (over toppene) eller hullet i hunndelen (over toppene inne, lillediameteren) med skyvelære. Mål stigningen med gjengelære, eller mål over 10 stigninger og del på 10. På koniske gjenger måler du omtrent midt på gjengelengden. Kalkulatoren sammenligner med G, R/Rc/Rp, NPT og metriske gjenger.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><span class="small muted">Hva måler du?</span><span class="chips" id="g6r-side" style="margin:4px 0 0"><button class="chip" type="button" data-s="ut" aria-pressed="true">Hanndel (utvendig)</button><button class="chip" type="button" data-s="inn" aria-pressed="false">Hunndel (innvendig)</button></span></div>
-    <div class="field"><label for="g6r-d" id="g6r-dl">Målt storediameter (mm)</label><input id="g6r-d" inputmode="decimal" value="20,9"></div>
-    <div class="row2">
-      <div class="field"><label for="g6r-p">Stigning</label><input id="g6r-p" inputmode="decimal" value="14"></div>
-      <div class="field"><span class="small muted">Enhet</span><span class="chips" id="g6r-pu" style="margin:4px 0 0"><button class="chip" type="button" data-u="tpi" aria-pressed="true">TPI</button><button class="chip" type="button" data-u="mm" aria-pressed="false">mm</button></span></div>
-    </div>
-    <div class="field"><span class="small muted">Form</span><span class="chips" id="g6r-form" style="margin:4px 0 0"><button class="chip" type="button" data-f="?" aria-pressed="true">Vet ikke</button><button class="chip" type="button" data-f="syl" aria-pressed="false">Sylindrisk</button><button class="chip" type="button" data-f="kon" aria-pressed="false">Konisk</button></span></div>
-    <p class="small muted" style="margin:0">Konisk: diameteren er tydelig mindre ytterst enn innerst (ca. 0,6 mm forskjell over 10 mm lengde).</p>
-  </div>
-  <div class="out" id="g6r-out" aria-live="polite"></div>
-</div>
-<p class="small muted">Toleranse i søket: stigning ±4 %, diameter ±0,4 mm for sylindriske og ±0,7 mm for koniske gjenger (målestedet varierer). Referansediameter for R er målplanet, for NPT håndtrekkplanet L1. Kalkulatoren gir sannsynlige kandidater, ikke et endelig svar; bekreft alltid flankevinkelen med gjengelære.</p>
-
 <h3>Tetting</h3>
 <p>Koniske gjenger (R, Rc, NPT) trenger tetningsmiddel fordi det alltid blir en liten spiralformet kanal ved toppene og bunnene. Tetningsmiddelet fyller kanalen og smører, slik at gjengen kan trekkes uten å skjære seg.</p>
 <figure class="fig">
@@ -2996,26 +3034,32 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </ul>
   </div>
 </div>
-<div class="note"><p><b>G-gjenger skal ikke tapes</b> når de tetter med pakning, O-ring eller tetningskant. Gjengen er ikke med i tettingen, så tapen gjør ingenting nyttig. Den kan i stedet hindre at pakningen trekkes helt ned, gi feil moment og løse biter. Tett G-gjengen der den skal tette: rett pakning, ren og uskadd tetningsflate.</p></div>
 <p>Tabellen over G-gjengens mål (ISO 228-1) følger under.</p>
 <p class="small muted">Standarder: ISO 228-1 (G), ISO 7-1 og EN 10226-1/-2 (R, Rp, Rc), ANSI/ASME B1.20.1 (NPT) og B1.20.3 (NPTF), EN 10255 og ASME B36.10 (rørdimensjoner).</p>
-  <h3>Rørgjenge G (ISO 228-1, BSPP)</h3>
-  <p>Sylindrisk rørgjenge med 55° flankevinkel og stigning oppgitt i gjenger per tomme. Størrelsen er et gammelt rørmål og samsvarer ikke med gjengens storediameter.</p>
-  <div class="tbl" id="th-g"></div>
+<h3>Rørgjenge G (ISO 228-1, BSPP)</h3>
+<p>Sylindrisk rørgjenge med 55° flankevinkel og stigning oppgitt i gjenger per tomme. Størrelsen er et gammelt rørmål og samsvarer ikke med gjengens storediameter.</p>
+</details>
 </div>
 <div class="topic" id="g6-unified">
-  <div class="topic-h"><span class="tno">6.4</span><h3>Unified-gjenger (UNC, UNF)</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
-  <h3 id="tomme">Tommegjenger: UNC, UNF og UN</h3>
-  <p>Unified-gjenger har 60° flankevinkel som de metriske, men målene er i tommer og stigningen oppgis som gjenger per tomme (TPI). <span class="mono">1/2-13 UNC</span> betyr storediameter ½″ med 13 gjenger per tomme.</p>
-  <p>UNC er grovgjenge og UNF er fingjenge. Små størrelser angis med nummer (#4, #6, #8, #10). Toleranseklasse 2A gjelder bolt og 2B mutter, tilsvarende 6g/6H for metrisk.</p>
-  <h4 style="margin-top:16px">UNC — grov</h4>
-  <div class="tbl" id="unc"></div>
-  <h4 style="margin-top:16px">UNF — fin</h4>
-  <div class="tbl" id="unf"></div>
-  <p class="small muted">Lillediameter i tabellen gjelder mutter (D₁). Gjengebor er regnet som storediameter − P og avrundet til nærmeste 0,1 mm.</p>
-  <h3 id="gj-api">UN-gjenger og tiltrekkingsmoment for flensstag (API 6A)</h3>
-  <p>Her ligger alt for stagene i API 6A-tabellen under ett valg: gjengemål med toleranse, gjengebor og tiltrekkingsmoment. Opp til 1″ er gjengen UNC, fra 1 1/8″ er den 8-UN (8 gjenger per tomme, P = 3,175 mm). Velg dimensjon i listen eller trykk på en rad i en av tabellene.</p>
-  <div class="calc" id="un-calc">
+<div class="topic-h"><span class="tno">6.4</span><h3>Unified-gjenger (UNC, UNF)</h3><a class="up" href="#gjenger" aria-label="Til innholdet i emne 6">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Betegnelse</h4><span>1/2-13 UNC = ½″ med 13 gjenger per tomme</span><span>UNC grov · UNF fin · 2A bolt · 2B mutter</span></div>
+    <div><h4>Stigning og bor</h4><b>P = 25,4 / TPI</b><span>mm</span><b>gjengebor ≈ D − P</b></div>
+    <div><h4>Tomme</h4><b>1″ = 25,4 mm</b></div>
+    <div><h4>Flensstag (API 6A)</h4><span>Xylan-belagt stag: bruk aldri momentet for ubehandlet stag</span></div>
+  </div>
+  <div class="hurtig-u">TPI gjenger per tomme · D storediameter · 60° flankevinkel</div>
+</div>
+<h3 id="tomme">Tommegjenger: UNC, UNF og UN</h3>
+<h4 style="margin-top:16px">UNC — grov</h4>
+<div class="tbl" id="unc"></div>
+<h4 style="margin-top:16px">UNF — fin</h4>
+<div class="tbl" id="unf"></div>
+<p class="small muted">Lillediameter i tabellen gjelder mutter (D₁). Gjengebor er regnet som storediameter − P og avrundet til nærmeste 0,1 mm.</p>
+<h3 id="gj-api">UN-gjenger og tiltrekkingsmoment for flensstag (API 6A)</h3>
+<div class="calc" id="un-calc">
     <div class="fields">
       <div class="field"><label for="un-s">Stagdimensjon</label><select id="un-s"></select></div>
       <div class="field"><span class="small muted">Vis mål i</span><span class="chips" id="un-unit" style="margin:4px 0 0"><button class="chip" type="button" data-u="mm" aria-pressed="true">mm</button><button class="chip" type="button" data-u="in" aria-pressed="false">tommer</button></span></div>
@@ -3023,27 +3067,36 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="un-out" aria-live="polite"></div>
   </div>
-  <h4 style="margin-top:16px">Utvendig gjenge (stag), klasse 2A</h4>
-  <div class="tbl" id="un-ext"></div>
-  <h4 style="margin-top:16px">Innvendig gjenge (mutter), klasse 2B</h4>
-  <div class="tbl" id="un-int"></div>
-  <h4 style="margin-top:16px">Tiltrekkingsmoment, Xylan-belagt og ubehandlet</h4>
-  <div class="tbl" id="tq6-tab"></div>
-  <p class="small muted">Gjengemål: toleranse på midtdiameter for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). Staget får et avmål på 0,3 · T, og mutteren får 1,3 · T i toleranse fra basismål. Moment: Xylan er et fluorpolymerbelegg (PTFE-basert), og API 6A regner med friksjonskoeffisient f = 0,07 for belagte stag og f = 0,13 for ubehandlede. Begge gir samme forspenning, lik 50 % av minste flytegrense (105 ksi opp til 2 1/2″, 95 ksi over).</p>
-  <div class="note"><p><b>Viktig:</b> Bruk aldri verdien for ubehandlede stag på Xylan-belagte stag. Med samme moment blir forspenningen omtrent 1,7 ganger høyere, og staget kan nærme seg flytegrensen. Følg alltid prosedyren og smøremiddelet som gjelder for jobben, og kontroller mot den utgaven av API 6A dere arbeider etter.</p></div>
-  <h3>Tomme ↔ millimeter</h3>
-  <div class="calc">
+<h4 style="margin-top:16px">Utvendig gjenge (stag), klasse 2A</h4>
+<div class="tbl" id="un-ext"></div>
+<h4 style="margin-top:16px">Innvendig gjenge (mutter), klasse 2B</h4>
+<div class="tbl" id="un-int"></div>
+<h4 style="margin-top:16px">Tiltrekkingsmoment, Xylan-belagt og ubehandlet</h4>
+<div class="tbl" id="tq6-tab"></div>
+<p class="small muted">Gjengemål: toleranse på midtdiameter for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). Staget får et avmål på 0,3 · T, og mutteren får 1,3 · T i toleranse fra basismål. Moment: Xylan er et fluorpolymerbelegg (PTFE-basert), og API 6A regner med friksjonskoeffisient f = 0,07 for belagte stag og f = 0,13 for ubehandlede. Begge gir samme forspenning, lik 50 % av minste flytegrense (105 ksi opp til 2 1/2″, 95 ksi over).</p>
+<div class="note"><p><b>Viktig:</b> Bruk aldri verdien for ubehandlede stag på Xylan-belagte stag. Med samme moment blir forspenningen omtrent 1,7 ganger høyere, og staget kan nærme seg flytegrensen. Følg alltid prosedyren og smøremiddelet som gjelder for jobben, og kontroller mot den utgaven av API 6A dere arbeider etter.</p></div>
+<h3>Tomme ↔ millimeter</h3>
+<div class="calc">
     <div class="fields">
       <div class="field"><label for="in-v">Tommer (desimal eller brøk, f.eks. 3/8)</label><input id="in-v" value="3/8"></div>
       <div class="field"><label for="mm-v">Millimeter</label><input id="mm-v" inputmode="decimal"></div>
     </div>
     <div class="out" id="in-out" aria-live="polite"></div>
   </div>
-  <figure class="fig">
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<h3>Tommegjenger: UNC, UNF og UN</h3>
+<p>Unified-gjenger har 60° flankevinkel som de metriske, men målene er i tommer og stigningen oppgis som gjenger per tomme (TPI). <span class="mono">1/2-13 UNC</span> betyr storediameter ½″ med 13 gjenger per tomme.</p>
+<p>UNC er grovgjenge og UNF er fingjenge. Små størrelser angis med nummer (#4, #6, #8, #10). Toleranseklasse 2A gjelder bolt og 2B mutter, tilsvarende 6g/6H for metrisk.</p>
+<h3>UN-gjenger og tiltrekkingsmoment for flensstag (API 6A)</h3>
+<p>Her ligger alt for stagene i API 6A-tabellen under ett valg: gjengemål med toleranse, gjengebor og tiltrekkingsmoment. Opp til 1″ er gjengen UNC, fra 1 1/8″ er den 8-UN (8 gjenger per tomme, P = 3,175 mm). Velg dimensjon i listen eller trykk på en rad i en av tabellene.</p>
+<h3>Tomme ↔ millimeter</h3>
+<figure class="fig">
     <svg id="fig-ruler" viewBox="0 0 600 160" role="img" aria-label="Tommelinjal over millimeterlinjal med markør for verdien"></svg>
     <div class="ctrl"><span id="ruler-read" class="mono"></span></div>
     <figcaption>Tommelinjalen deles i halve, kvarte, åttendedeler og sekstendedeler. Jo lengre strek, jo grovere brøk.</figcaption>
   </figure>
+</details>
 </div>
 </section>
 
