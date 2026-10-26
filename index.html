@@ -3354,9 +3354,20 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#h8-symboler"><span class="tn">8.2</span><span class="tt">Hydraulikk-/pneumatikksymboler</span></a></li>
   </ol></nav>
 <div class="topic" id="h8-enheter">
-  <div class="topic-h"><span class="tno">8.1</span><h3>Enheter og formler</h3><a class="up" href="#hydraulikk-pneumatikk" aria-label="Til innholdet i emne 8">↑ Innhold</a></div>
-  <p>Hydraulikk og pneumatikk bruker de samme grunnformlene. Trykket virker på stempelarealet og gir kraft, og volumstrømmen fyller sylinderen og gir hastighet.</p>
-  <div class="two">
+<div class="topic-h"><span class="tno">8.1</span><h3>Enheter og formler</h3><a class="up" href="#hydraulikk-pneumatikk" aria-label="Til innholdet i emne 8">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Stempelareal</h4><b>A = π · D² / 4</b><span>stempelside</span><b>A<sub>r</sub> = π · (D² − d²) / 4</b><span>stangside (ringareal)</span></div>
+    <div><h4>Kraft</h4><b>F = p · A · η</b><span>p i N/mm², A i mm². 1 bar = 0,1 N/mm²</span><b>F₁ / A₁ = F₂ / A₂</b><span>Pascals lov</span></div>
+    <div><h4>Hastighet og strøm</h4><b>v = Q / A</b><b>Q = V<sub>g</sub> · n · η<sub>v</sub></b><span>pumpe</span></div>
+    <div><h4>Effekt</h4><b>P = p · Q / (600 · η)</b><span>P i kW, p i bar, Q i l/min</span></div>
+    <div><h4>Rørdiameter</h4><b>d = √(4 · Q / (π · v))</b><span>Suge 0,5–1,5 · retur 2–4 · trykk 3–6 m/s</span></div>
+    <div><h4>Trykkluft</h4><span>Normalt 6 bar overtrykk i verkstedet</span></div>
+  </div>
+  <div class="hurtig-u">p trykk · A areal · Q volumstrøm · v hastighet · η virkningsgrad · D stempel- og d stangdiameter</div>
+</div>
+<div class="two">
     <div><h3>Enheter for trykk og volumstrøm</h3><div class="tbl"><table><thead><tr><th style="text-align:left">Enhet</th><th>Lik</th></tr></thead><tbody>
       <tr><td class="txt">1 bar</td><td>100 000 Pa = 0,1 MPa = 10 N/cm²</td></tr>
       <tr><td class="txt">1 MPa</td><td>10 bar = 1 N/mm²</td></tr>
@@ -3376,24 +3387,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
       <tr><td class="txt">Pascals lov</td><td class="txt">F₁ / A₁ = F₂ / A₂</td></tr>
     </tbody></table></div></div>
   </div>
-  <p class="lead">Hydraulikk bruker olje som praktisk talt ikke lar seg komprimere. Det gir store krefter og nøyaktig styring. Pumpen lager strøm (l/min), og trykket bygges opp av motstanden i systemet.</p>
-  <h3>Pascals lov: liten kraft blir stor kraft</h3>
-  <p>Trykket er det samme overalt i oljen. Kraften <b>F₁</b> på det <b>lille stempelet (1)</b> gir trykket p = F₁ / A₁. Det samme trykket virker på det <b>store stempelet (2)</b>, som derfor får kraften F₂ = p · A₂. Kraften øker i samme forhold som arealene, men det store stempelet går tilsvarende kortere: s₂ = s₁ · A₁ / A₂.</p>
-  <figure class="fig">
-    <svg id="fig-pas" viewBox="0 0 600 300" role="img" aria-label="Hydraulisk jekk med lite stempel 1 og stort stempel 2"></svg>
-    <div class="ctrl"><button class="chip play" id="pas-play" type="button"></button></div>
-    <div class="ctrl">
-      <label class="small muted" for="pas-f">F₁, kraft på lite stempel (N)</label><input id="pas-f" inputmode="decimal" value="200" style="width:84px">
-      <label class="small muted" for="pas-d1">d₁, lite stempel (mm)</label><input id="pas-d1" inputmode="decimal" value="20" style="width:74px">
-      <label class="small muted" for="pas-d2">d₂, stort stempel (mm)</label><input id="pas-d2" inputmode="decimal" value="80" style="width:74px">
-    </div>
-    <dl class="kv" id="pas-kv"></dl>
-    <figcaption>Hvert pumpeslag presser det lille stempelet ned s₁. Det store stempelet løftes s₂ og holdes oppe av en tilbakeslagsventil mens det lille stempelet går opp igjen og suger ny olje. Stemplene er tegnet i riktig forhold til hverandre.</figcaption>
-  </figure>
-  <h3>Sylinderkraft og hastighet</h3>
-  <div class="calc" id="hy-calc"></div>
-  <h3>Pumpe og effekt</h3>
-  <div class="calc">
+<h3>Sylinderkraft og hastighet</h3>
+<div class="calc" id="hy-calc"></div>
+<h3>Pumpe og effekt</h3>
+<div class="calc">
     <div class="fields">
       <div class="row2">
         <div class="field"><label for="hp-p">Trykk (bar)</label><input id="hp-p" inputmode="decimal" value="180"></div>
@@ -3406,25 +3403,44 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="hp-out" aria-live="polite"></div>
   </div>
-  <div class="note"><p><b>Formler:</b> P(kW) = p(bar) · Q(l/min) / (600 · η) &nbsp;·&nbsp; v = Q / A &nbsp;·&nbsp; rørdiameter d = √(4Q / (π · v)). Anbefalt strømningshastighet: sugeledning 0,5–1,5 m/s, returledning 2–4 m/s, trykkledning 3–6 m/s.</p></div>
-  <div class="two">
+<div class="note"><p><b>Formler:</b> P(kW) = p(bar) · Q(l/min) / (600 · η) &nbsp;·&nbsp; v = Q / A &nbsp;·&nbsp; rørdiameter d = √(4Q / (π · v)). Anbefalt strømningshastighet: sugeledning 0,5–1,5 m/s, returledning 2–4 m/s, trykkledning 3–6 m/s.</p></div>
+<div class="two">
     <div><h3>Viskositet (ISO VG)</h3><div class="tbl" id="hy-vg"></div></div>
     <div><h3>Renhet (ISO 4406)</h3><div class="tbl" id="hy-clean"></div></div>
   </div>
-  <p>Hydraulikksymbolene er de samme som i pneumatikk (se <a href="#h8-symboler">symbolene</a>), men energipilen er <b>fylt</b> for hydraulikk og <b>åpen</b> for pneumatikk.</p>
-  <div class="note"><p><b>Sikkerhet:</b> Avlast trykket og senk lasten før du løsner koblinger. En oljestråle under trykk kan trenge gjennom huden. Kjenn aldri etter lekkasjer med hånden; bruk papp eller papir.</p></div>
-  <p class="lead">Trykkluft overfører energi med luft som medium. Normalt arbeidstrykk i verksted er 6 bar overtrykk. Kraften fra en sylinder er trykk ganger stempelareal, minus friksjon.</p>
-  <h3>Sylinderkraft og luftforbruk</h3>
-  <div class="calc" id="pn-calc"></div>
-  <h3>Slik virker en 5/2-ventil med dobbeltvirkende sylinder</h3>
-  <p>Ventilen har to stillinger. Den ruta som står over portene, bestemmer hvor luften går. Trykk på knappen for å skifte ventil og se hvordan luften styrer stempelet.</p>
-  <figure class="fig">
+<div class="note"><p><b>Sikkerhet:</b> Avlast trykket og senk lasten før du løsner koblinger. En oljestråle under trykk kan trenge gjennom huden. Kjenn aldri etter lekkasjer med hånden; bruk papp eller papir.</p></div>
+<h3>Sylinderkraft og luftforbruk</h3>
+<div class="calc" id="pn-calc"></div>
+<h3>Standard sylinderdiametre (ISO 15552 / ISO 6432)</h3>
+<div class="tbl" id="pn-std"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p>Hydraulikk og pneumatikk bruker de samme grunnformlene. Trykket virker på stempelarealet og gir kraft, og volumstrømmen fyller sylinderen og gir hastighet.</p>
+<p class="lead">Hydraulikk bruker olje som praktisk talt ikke lar seg komprimere. Det gir store krefter og nøyaktig styring. Pumpen lager strøm (l/min), og trykket bygges opp av motstanden i systemet.</p>
+<h3>Pascals lov: liten kraft blir stor kraft</h3>
+<p>Trykket er det samme overalt i oljen. Kraften <b>F₁</b> på det <b>lille stempelet (1)</b> gir trykket p = F₁ / A₁. Det samme trykket virker på det <b>store stempelet (2)</b>, som derfor får kraften F₂ = p · A₂. Kraften øker i samme forhold som arealene, men det store stempelet går tilsvarende kortere: s₂ = s₁ · A₁ / A₂.</p>
+<figure class="fig">
+    <svg id="fig-pas" viewBox="0 0 600 300" role="img" aria-label="Hydraulisk jekk med lite stempel 1 og stort stempel 2"></svg>
+    <div class="ctrl"><button class="chip play" id="pas-play" type="button"></button></div>
+    <div class="ctrl">
+      <label class="small muted" for="pas-f">F₁, kraft på lite stempel (N)</label><input id="pas-f" inputmode="decimal" value="200" style="width:84px">
+      <label class="small muted" for="pas-d1">d₁, lite stempel (mm)</label><input id="pas-d1" inputmode="decimal" value="20" style="width:74px">
+      <label class="small muted" for="pas-d2">d₂, stort stempel (mm)</label><input id="pas-d2" inputmode="decimal" value="80" style="width:74px">
+    </div>
+    <dl class="kv" id="pas-kv"></dl>
+    <figcaption>Hvert pumpeslag presser det lille stempelet ned s₁. Det store stempelet løftes s₂ og holdes oppe av en tilbakeslagsventil mens det lille stempelet går opp igjen og suger ny olje. Stemplene er tegnet i riktig forhold til hverandre.</figcaption>
+  </figure>
+<h3>Pumpe og effekt</h3>
+<p>Hydraulikksymbolene er de samme som i pneumatikk (se <a href="#h8-symboler">symbolene</a>), men energipilen er <b>fylt</b> for hydraulikk og <b>åpen</b> for pneumatikk.</p>
+<p class="lead">Trykkluft overfører energi med luft som medium. Normalt arbeidstrykk i verksted er 6 bar overtrykk. Kraften fra en sylinder er trykk ganger stempelareal, minus friksjon.</p>
+<h3>Slik virker en 5/2-ventil med dobbeltvirkende sylinder</h3>
+<p>Ventilen har to stillinger. Den ruta som står over portene, bestemmer hvor luften går. Trykk på knappen for å skifte ventil og se hvordan luften styrer stempelet.</p>
+<figure class="fig">
     <svg id="fig-pnc" viewBox="0 0 600 290" role="img" aria-label="Pneumatisk krets med 5/2-ventil og dobbeltvirkende sylinder"></svg>
     <div class="ctrl"><button class="chip play" id="pnc-sw" type="button">⇄ Skift ventil</button><span id="pnc-read" class="small muted"></span></div>
     <figcaption>Heltrukket blå linje har trykk. Stiplet linje luftes ut gjennom port 3 eller 5.</figcaption>
   </figure>
-  <h3>Standard sylinderdiametre (ISO 15552 / ISO 6432)</h3>
-  <div class="tbl" id="pn-std"></div>
+</details>
 </div>
 <div class="topic" id="h8-symboler">
   <div class="topic-h"><span class="tno">8.2</span><h3>Hydraulikk-/pneumatikksymboler</h3><a class="up" href="#hydraulikk-pneumatikk" aria-label="Til innholdet i emne 8">↑ Innhold</a></div>
