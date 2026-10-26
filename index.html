@@ -2205,8 +2205,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#e5-koner"><span class="tn">5.10</span><span class="tt">Verktøykoner</span></a></li>
   </ol></nav>
 <div class="topic" id="e5-skruer">
-  <div class="topic-h"><span class="tno">5.1</span><h3>Skruer og muttere</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">5.1</span><h3>Skruer og muttere</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<style>
 .e5a-list{margin:0 0 12px;padding-left:22px;max-width:78ch}
 .e5a-list li{margin:3px 0}
 .e5a-w p{margin:0 0 6px;font-size:14px}
@@ -2215,8 +2215,52 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 .e5a-tq td.e5a-l,.e5a-tq th.e5a-l{border-left:1px solid var(--line)}
 .e5a-desig div b{font-family:var(--mono);font-size:22px}
 </style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Fasthetsklasse 8.8</h4><b>R<sub>m</sub> = 8 × 100 = 800 MPa</b><b>R<sub>e</sub> = 8 × 8 × 10 = 640 MPa</b></div>
+    <div><h4>Andre klasser</h4><span>10.9: R<sub>m</sub> 1000, R<sub>e</sub> 900 MPa</span><span>12.9: R<sub>m</sub> 1200, R<sub>e</sub> 1080 MPa</span></div>
+    <div><h4>Rustfritt</h4><span>A2-70 / A4-70: A2 vanlig rustfritt, A4 syrefast. 70 = R<sub>m</sub> 700 MPa</span></div>
+    <div><h4>Mutter</h4><span>Mutterklassen er lik første tall i skrueklassen: 8.8 → mutter 8</span></div>
+  </div>
+</div>
+<h3>Fasthetsklasse: hva tallene betyr</h3>
+<div class="tbl" id="e5a-cls"></div>
+<p class="small muted">Minsteverdier etter ISO 898-1:2013. R<sub>eL</sub> = nedre flytegrense, R<sub>p0,2</sub> = 0,2 %-grense, R<sub>pf</sub> = 0,0048d-grense for hele skruer (klasse 4.8, 5.8, 6.8). 9.8 finnes bare til og med M16.</p>
+<h3>Velger: styrke og bruddkraft</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><label for="e5a-vk">Fasthetsklasse</label><select id="e5a-vk"></select></div>
+    <div class="field"><label for="e5a-vd">Dimensjon (grovgjenge)</label><select id="e5a-vd"></select></div>
+    <p class="small muted" style="margin:0">Trykk på en rad i A<sub>s</sub>-tabellen for å velge dimensjon.</p>
+  </div>
+  <div class="out" id="e5a-vout" aria-live="polite"></div>
+</div>
+<h3>Spenningsareal A<sub>s</sub> og minste bruddkraft</h3>
+<div class="tbl" id="e5a-as"></div>
+<p class="small muted">A<sub>s</sub> etter ISO 898-1 (grovgjenge). Bruddkraft = A<sub>s</sub> · R<sub>m,min</sub>. Flytekraft = A<sub>s</sub> · R<sub>p0,2,min</sub> for 8.8. For 8.8 er R<sub>m,min</sub> 800 MPa til og med M16 og 830 MPa over M16.</p>
+<h3>Mutre: fasthetsklasser etter ISO 898-2</h3>
+<div class="tbl" id="e5a-nut"></div>
+<p class="small muted">ISO 898-2:2012. Vanlige sekskantmutre ISO 4032 er type 1. Høye mutre ISO 4033 (type 2) har større høyde og brukes for å få klasse 10 og 12 i flere dimensjoner. Lave mutre (ISO 4035) har klasse 04 eller 05 og skal ikke ta full skruelast, for eksempel når de brukes som kontramutter.</p>
+<h3>Rustfritt: A2 og A4 etter ISO 3506</h3>
+<div class="two">
+  <div><div class="tbl" id="e5a-ss"></div></div>
+  <div>
+    <p class="small"><b>A2</b> er austenittisk CrNi-stål (typisk 1.4301 / AISI 304). Godt mot vanlig korrosjon innendørs og utendørs.<br><b>A4</b> har i tillegg molybden (typisk 1.4401/1.4404 / AISI 316). Brukes mot klorider: sjøvann, salt, basseng og offshore.</p>
+    <p class="small"><b>Gnaging:</b> rustfritt mot rustfritt kan kaldsveise i gjengene når det trekkes til tørt. Bruk gjengepasta beregnet for rustfritt, og trekk jevnt, ikke med slagtrekker.</p>
+  </div>
+</div>
+<p class="small muted">ISO 3506-1 (skruer) og ISO 3506-2 (mutre). Verdiene for klasse 70 og 80 er knyttet til mindre dimensjoner (normalt opp til M24 i standarden); for større skruer må verdiene bekreftes med sertifikat fra leverandøren. ISO 3506-1:2020 har også klasse 100.</p>
+<h3>Vanlige skruetyper</h3>
+<div class="tbl" id="e5a-std"></div>
+<h3>Nøkkelvidder, hode- og mutterhøyder</h3>
+<div class="tbl" id="e5a-dim"></div>
+<p class="small muted">s og k etter ISO 4014/4017 (nominelle mål), m = største mutterhøyde etter ISO 4032 og DIN 934. ISO 4762: d<sub>k</sub> = hodediameter, k = hodehøyde (lik d), s = nøkkelvidde for unbrakonøkkel. DIN 934 er trukket tilbake, men slike mutre er fortsatt vanlige.</p>
+<h3>Hodemerking</h3>
+<div class="note"><p><b>12.9 og elforsinking:</b> svært høyfaste skruer kan få hydrogensprøhet ved elektrolytisk belegging. Bruk sortoksidert 12.9, eller belegg uten elektrolyse (sinklamell), når det kreves korrosjonsbeskyttelse.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Skruer og muttere av stål merkes med en fasthetsklasse. Klassen forteller hvor stor strekkraft skruen tåler før den flyter og før den ryker. Den viktigste regelen er at mutteren skal være minst like sterk som skruen, slik at det er skruen som brister og ikke gjengene som river.</p>
-
 <h3>Fasthetsklasse: hva tallene betyr</h3>
 <p>Fasthetsklassen for skruer i karbonstål og legert stål består av to tall atskilt med punktum (ISO 898-1). Første tall × 100 gir nominell strekkfasthet R<sub>m</sub> i MPa (N/mm²). Andre tall × 10 gir flytegrensen i prosent av strekkfastheten. Produktet av tallene × 10 gir derfor nominell flytegrense R<sub>e</sub>.</p>
 <div class="desig e5a-desig">
@@ -2226,79 +2270,45 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><span class="small muted">Flytegrense</span><b>640</b><span class="small">R<sub>e</sub> = 8 × 8 × 10 = 640 MPa</span></div>
 </div>
 <p>Eksempel: 10.9 har R<sub>m</sub> ≈ 1000 MPa og R<sub>e</sub> ≈ 0,9 × 1000 = 900 MPa. Tallene i navnet er nominelle; standarden krever litt høyere minsteverdier, som står i tabellen. Ved høyfaste skruer (8.8 og over) er det ingen tydelig flytegrense, og R<sub>p0,2</sub> (0,2 % varig forlengelse) brukes i stedet for R<sub>e</sub>.</p>
-<div class="tbl" id="e5a-cls"></div>
-<p class="small muted">Minsteverdier etter ISO 898-1:2013. R<sub>eL</sub> = nedre flytegrense, R<sub>p0,2</sub> = 0,2 %-grense, R<sub>pf</sub> = 0,0048d-grense for hele skruer (klasse 4.8, 5.8, 6.8). 9.8 finnes bare til og med M16.</p>
-
 <h3>Velger: styrke og bruddkraft</h3>
 <p>Bruddkraften er strekkfastheten ganger spenningsarealet: F<sub>m</sub> = A<sub>s</sub> · R<sub>m,min</sub>. Spenningsarealet A<sub>s</sub> ligger mellom midtdiameter og lillediameter, fordi gjengen bærer litt mer enn bare kjernen.</p>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><label for="e5a-vk">Fasthetsklasse</label><select id="e5a-vk"></select></div>
-    <div class="field"><label for="e5a-vd">Dimensjon (grovgjenge)</label><select id="e5a-vd"></select></div>
-    <p class="small muted" style="margin:0">Trykk på en rad i A<sub>s</sub>-tabellen for å velge dimensjon.</p>
-  </div>
-  <div class="out" id="e5a-vout" aria-live="polite"></div>
-</div>
-
 <h3>Spenningsareal A<sub>s</sub> og minste bruddkraft</h3>
 <p class="note">A<sub>s</sub> = π/4 · ((d<sub>2</sub> + d<sub>3</sub>) / 2)², der d<sub>2</sub> = d − 0,6495P (midtdiameter) og d<sub>3</sub> = d − 1,2269P (lillediameter på bolt).</p>
-<div class="tbl" id="e5a-as"></div>
-<p class="small muted">A<sub>s</sub> etter ISO 898-1 (grovgjenge). Bruddkraft = A<sub>s</sub> · R<sub>m,min</sub>. Flytekraft = A<sub>s</sub> · R<sub>p0,2,min</sub> for 8.8. For 8.8 er R<sub>m,min</sub> 800 MPa til og med M16 og 830 MPa over M16.</p>
-
 <h3>Mutre: fasthetsklasser etter ISO 898-2</h3>
 <p>Mutterklassen er ett tall, og det er lik første tall i skrueklassen den passer til. En mutter i klasse 8 skal brukes med skruer opp til 8.8. En mutter med høyere klasse kan alltid brukes, men aldri en lavere. Grunnen er at et overbelastet skrueforband skal ryke i skruen, der feilen synes. Avriving av gjengene i mutteren kan skje gradvis og uten forvarsel.</p>
-<div class="tbl" id="e5a-nut"></div>
-<p class="small muted">ISO 898-2:2012. Vanlige sekskantmutre ISO 4032 er type 1. Høye mutre ISO 4033 (type 2) har større høyde og brukes for å få klasse 10 og 12 i flere dimensjoner. Lave mutre (ISO 4035) har klasse 04 eller 05 og skal ikke ta full skruelast, for eksempel når de brukes som kontramutter.</p>
-
 <h3>Rustfritt: A2 og A4 etter ISO 3506</h3>
 <p>Rustfrie skruer merkes med stålgruppe og fasthetsklasse, for eksempel <span class="mono">A2-70</span>. Bokstaven og sifferet gir ståltypen, og tallet etter streken × 10 gir R<sub>m,min</sub> i MPa.</p>
-<div class="two">
-  <div><div class="tbl" id="e5a-ss"></div></div>
-  <div>
-    <p class="small"><b>A2</b> er austenittisk CrNi-stål (typisk 1.4301 / AISI 304). Godt mot vanlig korrosjon innendørs og utendørs.<br><b>A4</b> har i tillegg molybden (typisk 1.4401/1.4404 / AISI 316). Brukes mot klorider: sjøvann, salt, basseng og offshore.</p>
-    <p class="small"><b>Gnaging:</b> rustfritt mot rustfritt kan kaldsveise i gjengene når det trekkes til tørt. Bruk gjengepasta beregnet for rustfritt, og trekk jevnt, ikke med slagtrekker.</p>
-  </div>
-</div>
-<p class="small muted">ISO 3506-1 (skruer) og ISO 3506-2 (mutre). Verdiene for klasse 70 og 80 er knyttet til mindre dimensjoner (normalt opp til M24 i standarden); for større skruer må verdiene bekreftes med sertifikat fra leverandøren. ISO 3506-1:2020 har også klasse 100.</p>
-
 <h3>Vanlige skruetyper</h3>
 <figure class="fig">
   <svg id="e5a-types" viewBox="0 0 600 300" role="img" aria-label="Sideriss av sekskantskrue delgjenget og helgjenget, sylinderskrue med innvendig sekskant og sekskantmutter"></svg>
   <figcaption>Tynne linjer i gjengepartiet viser lillediameteren (forenklet gjengetegning). k = hodehøyde, m = mutterhøyde, s = nøkkelvidde, b = gjengelengde, l = nominell lengde (målt fra undersiden av hodet).</figcaption>
 </figure>
-<div class="tbl" id="e5a-std"></div>
-
 <h3>Nøkkelvidder, hode- og mutterhøyder</h3>
 <p>ISO-seriene har andre nøkkelvidder enn de gamle DIN-standardene på fire dimensjoner: <b>M10, M12, M14 og M22</b> (uthevet i tabellen). Har du en blanding av gamle og nye skruer på verkstedet, trenger du begge nøklene, for eksempel både 16 og 17 mm til M10.</p>
-<div class="tbl" id="e5a-dim"></div>
-<p class="small muted">s og k etter ISO 4014/4017 (nominelle mål), m = største mutterhøyde etter ISO 4032 og DIN 934. ISO 4762: d<sub>k</sub> = hodediameter, k = hodehøyde (lik d), s = nøkkelvidde for unbrakonøkkel. DIN 934 er trukket tilbake, men slike mutre er fortsatt vanlige.</p>
-
 <h3>Hodemerking</h3>
 <p>ISO 898-1 krever at skruer fra M5 med sekskanthode eller innvendig sekskant merkes med fasthetsklasse og produsentmerke, oftest på toppen av hodet. Mutre merkes med klassetallet på en flate eller med et klokkesystem. Umerkede skruer skal regnes som ukjent fasthet, og ikke brukes der det er krav.</p>
 <figure class="fig">
   <svg id="e5a-mark" viewBox="0 0 600 220" role="img" aria-label="Merking på hodet av sekskantskrue 8.8, sylinderskrue 12.9, rustfri skrue A2-70 og mutter klasse 8"></svg>
   <figcaption>Produsentmerket (her «XY») er påkrevd i tillegg til klassen. Mutre kan merkes med klokkesystem: en prikk ved «klokka 12» og et merke ved timen som tilsvarer klassen (klasse 8 → klokka 8).</figcaption>
 </figure>
-<div class="note"><p><b>12.9 og elforsinking:</b> svært høyfaste skruer kan få hydrogensprøhet ved elektrolytisk belegging. Bruk sortoksidert 12.9, eller belegg uten elektrolyse (sinklamell), når det kreves korrosjonsbeskyttelse.</p></div>
+</details>
 </div>
 <div class="topic" id="e5-moment">
-  <div class="topic-h"><span class="tno">5.2</span><h3>Tiltrekkingsmoment</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <p class="lead">Det er forspenningskraften som holder et skrueforband sammen, ikke momentet. Momentnøkkelen er bare en indirekte måte å få riktig forspenning på. Mesteparten av momentet går med til å overvinne friksjon, så smøring og overflate avgjør hvor stor forspenning du faktisk får.</p>
-
-<h3>Hvor blir momentet av?</h3>
-<p>Tiltrekkingsmomentet M<sub>A</sub> deles i tre: friksjon under hodet eller mutteren, friksjon i gjengene og den delen som faktisk strekker skruen. Ved µ = 0,12 går omtrent halvparten til friksjon under hodet, cirka 40 % til gjengefriksjon og bare rundt 10–15 % til forspenning.</p>
-<figure class="fig">
-  <svg id="e5a-tqf" viewBox="0 0 600 300" role="img" aria-label="Animert fordeling av tiltrekkingsmomentet på friksjon under hode, friksjon i gjengene og forspenning"></svg>
-  <div class="ctrl"><button class="chip play" id="e5a-tqf-play" type="button"></button><span class="small muted">Fordelingen følger verdiene i kalkulatoren under.</span></div>
-  <figcaption>Båndbredden er andelen av momentet. Dobler du friksjonen, går nesten alt det ekstra momentet til friksjon, og forspenningen øker lite. Smører du, blir friksjonsandelen mindre og forspenningen større ved samme moment.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">5.2</span><h3>Tiltrekkingsmoment</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Tiltrekkingsmoment, 8.8, µ = 0,12</h4><span>M6: 10 · M8: 25 · M10: 49 · M12: 84 · M16: 206 · M20: 416 Nm</span></div>
+    <div><h4>VDI 2230</h4><b>M<sub>A</sub> = F<sub>M</sub> · (0,16 · P + 0,58 · d<sub>2</sub> · µ<sub>G</sub> + D<sub>Km</sub>/2 · µ<sub>K</sub>)</b><span>F i kN og mål i mm gir Nm</span></div>
+    <div><h4>Hvor blir momentet av?</h4><span>Ca. 90 % går til friksjon i gjenger og under hodet. Bare ca. 10 % gir forspenning</span></div>
+    <div><h4>Smøring</h4><span>Oljet skrue trenger lavere moment. Bruk tabell for riktig µ, ikke «litt ekstra»</span></div>
+  </div>
+  <div class="hurtig-u">M<sub>A</sub> tiltrekkingsmoment (Nm) · F<sub>M</sub> forspenning · P stigning · µ friksjonstall</div>
+</div>
 <h3>Formler etter VDI 2230</h3>
 <div class="note"><p><b>Forspenning ved 90 % utnyttelse:</b> F<sub>M</sub> = ν · R<sub>p0,2</sub> · A<sub>s</sub> / √(1 + 3 · [3/2 · d<sub>2</sub>/d<sub>s</sub> · (P/(π·d<sub>2</sub>) + 1,155 · µ<sub>G</sub>)]²), med ν = 0,9 og d<sub>s</sub> = (d<sub>2</sub> + d<sub>3</sub>)/2.<br>
 <b>Tiltrekkingsmoment:</b> M<sub>A</sub> = F<sub>M</sub> · (0,16 · P + 0,58 · d<sub>2</sub> · µ<sub>G</sub> + D<sub>Km</sub>/2 · µ<sub>K</sub>)<br>
 <span class="small">0,16P = stigningsdelen (strekker skruen). 0,58·d<sub>2</sub>·µ<sub>G</sub> = gjengefriksjon. D<sub>Km</sub>/2·µ<sub>K</sub> = friksjon under hodet, der D<sub>Km</sub> = (d<sub>w</sub> + d<sub>h</sub>)/2 er midlere friksjonsdiameter (d<sub>w</sub> = anleggsdiameter under hodet, d<sub>h</sub> = hulldiameter). F i kN og mål i mm gir M<sub>A</sub> i Nm.</span></p></div>
-<p>Rotleddet tar med at skruen også blir vridd av gjengefriksjonen mens den trekkes til. Strekk og vridning gir til sammen en sammensatt spenning, og den skal være 90 % av R<sub>p0,2</sub>. Derfor gir høyere friksjon <i>lavere</i> tillatt forspenning, men <i>høyere</i> moment.</p>
-
 <h3>Kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -2315,21 +2325,32 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="e5a-mout" aria-live="polite"></div>
 </div>
-
 <h3>Tabell: tiltrekkingsmoment M4–M36</h3>
-<p>Beregnet med formlene over: grovgjenge, µ<sub>G</sub> = µ<sub>K</sub> = µ, 90 % utnyttelse av R<sub>p0,2,min</sub>, d<sub>w</sub> = minste anleggsdiameter etter ISO 4014 og d<sub>h</sub> = middels hull etter ISO 273.</p>
 <div class="chips" id="e5a-tqv"><button class="chip" type="button" data-v="M" aria-pressed="true">Moment M<sub>A</sub> (Nm)</button><button class="chip" type="button" data-v="F" aria-pressed="false">Forspenning F<sub>M</sub> (kN)</button></div>
 <div class="tbl e5a-tq" id="e5a-tqt"></div>
 <p class="small muted">Verdiene er <b>største</b> moment, uten sikkerhetsfaktor. Momentnøkkel og friksjon gir spredning i forspenningen (ofte ±20–25 % eller mer ved håndtrekking), og det tas hensyn til i konstruksjonen, ikke ved å trekke hardere.</p>
-
 <h4 style="margin-top:16px">Kontroll mot publisert VDI 2230-tabell (µ = 0,12)</h4>
 <div class="tbl" id="e5a-chk"></div>
 <p class="small muted">Publiserte verdier: Bossard, «Richtwerte für Vorspannkräfte und Anziehdrehmomente» etter VDI 2230 (ISO 4014–4018 / ISO 4762, hull ISO 273 middels, 90 % utnyttelse). Avviket er avrunding og små forskjeller i d<sub>w</sub>.</p>
-
 <h3>Smøring og friksjon</h3>
-<p>Momenttabellen gjelder bare når friksjonen er den samme som i tabellen. Smører du en skrue som tabellen regner som tørr, får du mye høyere forspenning ved samme moment, og skruen kan flyte eller ryke. Tørr skrue med smurt verdi gir for lav forspenning, og forbandet kan løsne.</p>
 <div class="tbl" id="e5a-mu"></div>
 <p class="small muted"><b>Veiledende.</b> Friksjonsklasser etter VDI 2230. Spredningen er stor; bruk leverandørens verdi for det belegget og smøremiddelet du faktisk har. Er du i tvil, regn med µ = 0,12 for vanlige, lett oljede stålskruer.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Det er forspenningskraften som holder et skrueforband sammen, ikke momentet. Momentnøkkelen er bare en indirekte måte å få riktig forspenning på. Mesteparten av momentet går med til å overvinne friksjon, så smøring og overflate avgjør hvor stor forspenning du faktisk får.</p>
+<h3>Hvor blir momentet av?</h3>
+<p>Tiltrekkingsmomentet M<sub>A</sub> deles i tre: friksjon under hodet eller mutteren, friksjon i gjengene og den delen som faktisk strekker skruen. Ved µ = 0,12 går omtrent halvparten til friksjon under hodet, cirka 40 % til gjengefriksjon og bare rundt 10–15 % til forspenning.</p>
+<figure class="fig">
+  <svg id="e5a-tqf" viewBox="0 0 600 300" role="img" aria-label="Animert fordeling av tiltrekkingsmomentet på friksjon under hode, friksjon i gjengene og forspenning"></svg>
+  <div class="ctrl"><button class="chip play" id="e5a-tqf-play" type="button"></button><span class="small muted">Fordelingen følger verdiene i kalkulatoren under.</span></div>
+  <figcaption>Båndbredden er andelen av momentet. Dobler du friksjonen, går nesten alt det ekstra momentet til friksjon, og forspenningen øker lite. Smører du, blir friksjonsandelen mindre og forspenningen større ved samme moment.</figcaption>
+</figure>
+<h3>Formler etter VDI 2230</h3>
+<p>Rotleddet tar med at skruen også blir vridd av gjengefriksjonen mens den trekkes til. Strekk og vridning gir til sammen en sammensatt spenning, og den skal være 90 % av R<sub>p0,2</sub>. Derfor gir høyere friksjon <i>lavere</i> tillatt forspenning, men <i>høyere</i> moment.</p>
+<h3>Tabell: tiltrekkingsmoment M4–M36</h3>
+<p>Beregnet med formlene over: grovgjenge, µ<sub>G</sub> = µ<sub>K</sub> = µ, 90 % utnyttelse av R<sub>p0,2,min</sub>, d<sub>w</sub> = minste anleggsdiameter etter ISO 4014 og d<sub>h</sub> = middels hull etter ISO 273.</p>
+<h3>Smøring og friksjon</h3>
+<p>Momenttabellen gjelder bare når friksjonen er den samme som i tabellen. Smører du en skrue som tabellen regner som tørr, får du mye høyere forspenning ved samme moment, og skruen kan flyte eller ryke. Tørr skrue med smurt verdi gir for lav forspenning, og forbandet kan løsne.</p>
 <ul class="e5a-list">
   <li>Trekk til i flere trinn og i kryss på flenser og lokk, slik at delene legger seg jevnt.</li>
   <li>Trekk på mutteren når det er mulig, og hold mot på skruehodet. Trekker du på hodet, må hodefriksjonen gjelde for hodet.</li>
@@ -2337,6 +2358,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Skruer som er trukket til flytegrensen (vinkeltrekking), skal ikke gjenbrukes.</li>
 </ul>
 <p class="small">Tiltrekkingsmoment for UN-gjenger og flensstag etter API 6A, med Xylan-belagte og ubehandlede stag, finner du under <a href="#gj-api">Unified-gjenger</a>.</p>
+</details>
 </div>
 <div class="topic" id="e5-riller">
   <div class="topic-h"><span class="tno">5.3</span><h3>Gjengeriller</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
@@ -2365,15 +2387,29 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Etter DIN 76-1 for metrisk ISO-gjenge. Mål i mm. M = grovgjenge med denne stigningen; tabellen gjelder også fingjenger med samme stigning. x<sub>1</sub> og e<sub>1</sub> = største gjengeutløp (normal) når det <i>ikke</i> er frispor. d<sub>g</sub> toleranse h13 (utvendig) og H13 (innvendig). r ≈ radius i bunnen.</p>
 </div>
 <div class="topic" id="e5-skiver">
-  <div class="topic-h"><span class="tno">5.4</span><h3>Enkle fjærskiver, underlagsskiver</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <p class="lead">Underlagsskiva fordeler kraften fra hodet eller mutteren over et større areal, slik at flatetrykket blir lavere og underlaget ikke setter seg. Den dekker også over store eller avlange hull og beskytter overflaten mot riper når mutteren dreies.</p>
-
+<div class="topic-h"><span class="tno">5.4</span><h3>Enkle fjærskiver, underlagsskiver</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Underlagsskiver</h4><span>ISO 7089 normal · 7090 med fase · 7093 stor ytterdiameter (myke materialer)</span></div>
+    <div><h4>Fjærskiver og tannskiver</h4><span>DIN 127 og tannskiver er trukket tilbake. De sikrer ikke skruer fra 8.8 og oppover</span></div>
+    <div><h4>Sikring</h4><span>Løsnesikring holder forspenningen. Tapssikring hindrer bare at delene faller av</span></div>
+  </div>
+</div>
+<h3>Underlagsskiver ISO 7089, 7090, 7091 og 7093</h3>
+<div class="tbl" id="e5a-wt"></div>
+<p class="small muted">Etter ISO 7089, ISO 7091 og ISO 7093-1. d<sub>1</sub> = hulldiameter (minstemål), d<sub>2</sub> = ytterdiameter (største mål), h = tykkelse (nominell). ISO 7090 har samme mål som ISO 7089 fra M5. Til skruer i 10.9 brukes skiver i 300 HV; myke skiver under høyfaste skruer setter seg, og forspenningen faller.</p>
+<h3>Sikring mot løsning</h3>
+<div class="tbl" id="e5a-lock"></div>
+<p class="small muted"><b>Løsnesikring</b> hindrer at mutteren dreier seg løs, slik at forspenningen holdes. <b>Tapssikring</b> hindrer bare at delene faller av; forspenningen kan likevel gå tapt. Vurderingen er generell og veiledende, etter VDI 2230 og forsøk med tverrbelastning.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Underlagsskiva fordeler kraften fra hodet eller mutteren over et større areal, slik at flatetrykket blir lavere og underlaget ikke setter seg. Den dekker også over store eller avlange hull og beskytter overflaten mot riper når mutteren dreies.</p>
 <h3>Skivetyper</h3>
 <figure class="fig">
   <svg id="e5a-wsh" viewBox="0 0 600 330" role="img" aria-label="Snitt av flat skive, skive med fas, stor skive, fjærskive, tallerkenfjær og kileskivepar"></svg>
   <figcaption>Snitt gjennom skivene. Skive med fas (ISO 7090) legges med fasen opp mot hodet. Tallerkenfjæra er tegnet ubelastet med høyden h<sub>0</sub>.</figcaption>
 </figure>
-
 <h3>Underlagsskiver ISO 7089, 7090, 7091 og 7093</h3>
 <ul class="e5a-list">
   <li><b>ISO 7089</b> normal serie, produktklasse A, flat. Hardhetsklasse 200 HV eller 300 HV.</li>
@@ -2381,37 +2417,29 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>ISO 7091</b> normal serie, produktklasse C (grov), 100 HV. Større hull, for grove skruer i grove hull.</li>
   <li><b>ISO 7093-1</b> stor serie (cirka 3 × d). Brukes mot myke materialer, tynnplate og avlange hull.</li>
 </ul>
-<div class="tbl" id="e5a-wt"></div>
-<p class="small muted">Etter ISO 7089, ISO 7091 og ISO 7093-1. d<sub>1</sub> = hulldiameter (minstemål), d<sub>2</sub> = ytterdiameter (største mål), h = tykkelse (nominell). ISO 7090 har samme mål som ISO 7089 fra M5. Til skruer i 10.9 brukes skiver i 300 HV; myke skiver under høyfaste skruer setter seg, og forspenningen faller.</p>
-
 <h3>Fjærskiver DIN 127 og tannskiver</h3>
 <p>DIN 127 (splittet fjærskive, «grower») er <b>trukket tilbake</b> uten erstatning, og det samme gjelder tannskiver (DIN 6797/6798). Grunnen er at de ikke virker som låsing på skruer fra 8.8: ved riktig forspenning er skiva trykket helt flat allerede ved en liten del av forspenningen, og da har den ingen fjærvirkning igjen. Forsøk (Junker-test) viser at forbandet løsner like fort med som uten slik skive. Skiva kan også gi setning fordi kantene graver seg inn.</p>
 <p>Det viktigste mot løsning er <b>riktig og høy nok forspenning</b> og nok klemlengde. Der det er vibrasjoner og tverrbevegelse, brukes metodene i tabellen under.</p>
-
 <h3>Tallerkenfjærer DIN 2093</h3>
 <p>Tallerkenfjæra er en konisk skive som gir stor kraft på liten fjærvei. Den brukes der forspenningen skal holdes selv om delene setter seg eller utvider seg med varmen, for eksempel i koblinger, ventiler og verktøyspenning. Standarden har tre serier: <b>A</b> er stiv (D<sub>e</sub>/t ≈ 18), <b>B</b> middels (≈ 28) og <b>C</b> myk (≈ 40). Fjærene kan stables: <b>vekselvis</b> (rygg mot rygg) gir lengre fjærvei, <b>i samme retning</b> gir større kraft. Ikke bruk tallerkenfjærer som vanlige låseskiver; til skrueforband finnes egne konusskiver (DIN 6796).</p>
-
-<h3>Sikring mot løsning</h3>
-<div class="tbl" id="e5a-lock"></div>
-<p class="small muted"><b>Løsnesikring</b> hindrer at mutteren dreier seg løs, slik at forspenningen holdes. <b>Tapssikring</b> hindrer bare at delene faller av; forspenningen kan likevel gå tapt. Vurderingen er generell og veiledende, etter VDI 2230 og forsøk med tverrbelastning.</p>
+</details>
 </div>
 <div class="topic" id="e5-kiler">
-  <div class="topic-h"><span class="tno">5.5</span><h3>Kiler, splinter, pinner</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <p class="lead">Kiler (passfedrer) overfører dreiemoment mellom aksel og nav ved formlåsing: kilen ligger i et spor i akselen og et spor i navet, og momentet går som flatetrykk mot sidene av kilen. Splinter og pinner sikrer og plasserer deler.</p>
-
-<h3>Kile i aksel og nav</h3>
-<figure class="fig">
-  <svg id="e5a-key" viewBox="0 0 600 280" role="img" aria-label="Snitt av aksel og nav med kile og målene b, h, t1 og t2, og kileformene A, B og C sett ovenfra"></svg>
-  <figcaption>Kilen bærer på sideflatene. Det er klaring over kilen i navet, så kilen skal ikke presse radielt. Form A har runde ender og ligger i et frest spor (endefres), form B er rett og brukes i spor laget med skivefres.</figcaption>
-</figure>
-
+<div class="topic-h"><span class="tno">5.5</span><h3>Kiler, splinter, pinner</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Kraft på kilen</h4><b>F<sub>t</sub> = 2 · T / d</b></div>
+    <div><h4>Flatetrykk mot navet</h4><b>p = F<sub>t</sub> / ((h − t<sub>1</sub>) · l<sub>t</sub> · i · φ)</b><span>φ = 1 for én kile, 0,75 for to</span></div>
+    <div><h4>Bærende lengde</h4><span>Form A (runde ender): l<sub>t</sub> = l − b · Form B (rette ender): l<sub>t</sub> = l</span></div>
+  </div>
+  <div class="hurtig-u">T moment (Nmm) · d akseldiameter · h kilehøyde · t<sub>1</sub> spordybde i aksel · i antall kiler</div>
+</div>
 <h3>Passfeder DIN 6885-1 (høy form)</h3>
-<p>Kilestørrelsen velges etter akseldiameteren. Lengden velges etter momentet (se kalkulatoren), og som tommelfingerregel ikke mer enn cirka 1,5 × d; trengs mer, er to kiler eller et annet forband bedre.</p>
 <div class="tbl" id="e5a-kt"></div>
 <p class="small muted">Etter DIN 6885-1. Mål i mm. t<sub>1</sub> = spordybde i aksel, t<sub>2</sub> = spordybde i nav (målt fra akselens overflate ved kilen). Standardlengder: 6, 8, 10, 12, 14, 16, 18, 20, 22, 25, 28, 32, 36, 40, 45, 50, 56, 63, 70, 80, 90, 100, 110, 125, 140, 160, 180, 200 … mm.</p>
 <div class="tbl" id="e5a-kfit"></div>
 <p class="small muted">Kilebredden b har toleranse h9. Feder for glidende nav (aksialt forskyvbart) kalles glidefeder.</p>
-
 <h3>Flatetrykk på kilen</h3>
 <div class="note"><p>Kraft på kilen: F<sub>t</sub> = 2T / d. Flatetrykk mot navet: p = F<sub>t</sub> / ((h − t<sub>1</sub>) · l<sub>t</sub> · i · φ), der l<sub>t</sub> er bærende lengde (form A: l − b, form B: l), i = antall kiler og φ = 1 for én kile, 0,75 for to kiler (de deler ikke lasten helt likt). Navet er som regel svakest, fordi bærehøyden der er minst.</p></div>
 <div class="calc">
@@ -2432,40 +2460,55 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="e5a-kout" aria-live="polite"></div>
 </div>
-
 <h3>Splinter ISO 1234</h3>
-<p>Splinten sikrer kronemutre, bolter og pinner mot å falle ut. Nominell størrelse er <b>hulldiameteren</b>; splinten er litt tynnere. Velg den største som passer i hullet, bøy beina rundt mutteren eller ut til sidene, og bruk aldri en brukt splint på nytt.</p>
 <div class="tbl" id="e5a-spl"></div>
 <p class="small muted">Etter ISO 1234. Mål i mm. d = tråddiameter (to halvdeler), c = bredden over øyet, b = lengden det lengste beinet stikker ut, a = forskjell i beinlengde. Lengden l måles fra innsiden av øyet til enden av det korte beinet.</p>
-
+<h3>Stifter og fjærstifter</h3>
+<div class="tbl" id="e5a-pint"></div>
+<h4 style="margin-top:16px">Fjærstifter ISO 8752 (tung serie)</h4>
+<div class="tbl" id="e5a-sp"></div>
+<p class="small muted">Etter ISO 8752. Nominell diameter = hulldiameter (hull H12). s = veggtykkelse. Skjærkraften er minste brudd ved dobbelt skjær (to snitt) for stifter av fjærstål; den er ikke en tillatt arbeidslast. Fjærstifter av rustfritt stål har lavere verdier.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Kiler (passfedrer) overfører dreiemoment mellom aksel og nav ved formlåsing: kilen ligger i et spor i akselen og et spor i navet, og momentet går som flatetrykk mot sidene av kilen. Splinter og pinner sikrer og plasserer deler.</p>
+<h3>Kile i aksel og nav</h3>
+<figure class="fig">
+  <svg id="e5a-key" viewBox="0 0 600 280" role="img" aria-label="Snitt av aksel og nav med kile og målene b, h, t1 og t2, og kileformene A, B og C sett ovenfra"></svg>
+  <figcaption>Kilen bærer på sideflatene. Det er klaring over kilen i navet, så kilen skal ikke presse radielt. Form A har runde ender og ligger i et frest spor (endefres), form B er rett og brukes i spor laget med skivefres.</figcaption>
+</figure>
+<h3>Passfeder DIN 6885-1 (høy form)</h3>
+<p>Kilestørrelsen velges etter akseldiameteren. Lengden velges etter momentet (se kalkulatoren), og som tommelfingerregel ikke mer enn cirka 1,5 × d; trengs mer, er to kiler eller et annet forband bedre.</p>
+<h3>Splinter ISO 1234</h3>
+<p>Splinten sikrer kronemutre, bolter og pinner mot å falle ut. Nominell størrelse er <b>hulldiameteren</b>; splinten er litt tynnere. Velg den største som passer i hullet, bøy beina rundt mutteren eller ut til sidene, og bruk aldri en brukt splint på nytt.</p>
 <h3>Stifter og fjærstifter</h3>
 <figure class="fig">
   <svg id="e5a-pins" viewBox="0 0 600 300" role="img" aria-label="Splint, sylindrisk stift, konisk stift og fjærstift med mål"></svg>
   <figcaption>Ikke i samme målestokk. Konisiteten på den koniske stiften er overdrevet; 1 : 50 betyr at diameteren øker 1 mm per 50 mm lengde.</figcaption>
 </figure>
-<div class="tbl" id="e5a-pint"></div>
-<h4 style="margin-top:16px">Fjærstifter ISO 8752 (tung serie)</h4>
-<div class="tbl" id="e5a-sp"></div>
-<p class="small muted">Etter ISO 8752. Nominell diameter = hulldiameter (hull H12). s = veggtykkelse. Skjærkraften er minste brudd ved dobbelt skjær (to snitt) for stifter av fjærstål; den er ikke en tillatt arbeidslast. Fjærstifter av rustfritt stål har lavere verdier.</p>
+</details>
 </div>
 <div class="topic" id="e5-reimer">
-  <div class="topic-h"><span class="tno">5.6</span><h3>Kilereimer og skiver</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">5.6</span><h3>Kilereimer og skiver</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<style>
 .e5b-sw{display:inline-block;width:14px;height:14px;border:1px solid var(--ink);vertical-align:-2px;margin-right:6px}
 .e5b-list{margin:0 0 12px;padding-left:22px;max-width:78ch}
 .e5b-list li{margin:3px 0}
 .e5b-warn p{margin:0 0 6px;font-size:14px}
 </style>
-<p class="lead">Kilereima overfører kraft med friksjon mot skiveflankene. Kileformen presser reima inn i sporet, slik at normalkraften og dermed friksjonen blir mye større enn for en flat reim med samme forspenning. Reima skal bære på flankene, aldri i bunnen av sporet.</p>
-
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Utveksling</h4><b>i = d<sub>2</sub> / d<sub>1</sub> = n<sub>1</sub> / n<sub>2</sub></b><span>d = datumdiameter</span></div>
+    <div><h4>Reimlengde</h4><b>L ≈ 2C + π(D + d)/2 + (D − d)² / (4C)</b></div>
+    <div><h4>Reimhastighet</h4><b>v = π · d · n / 60 000</b><span>m/s, d i mm</span></div>
+    <div><h4>Omslutning lille skive</h4><b>β = 180° − 2 · arcsin((D − d) / (2C))</b></div>
+    <div><h4>Stramming</h4><span>Ca. 16 mm nedbøyning per 1000 mm spenn med produsentens testkraft</span></div>
+  </div>
+  <div class="hurtig-u">C akseavstand · D stor og d liten skive (mm) · n turtall (o/min)</div>
+</div>
 <h3>Kileremprofiler</h3>
-<figure class="fig">
-  <svg id="e5b-vsec" viewBox="0 0 600 230" role="img" aria-label="Tverrsnitt av klassisk A-reim og smal SPA-reim i skivespor"></svg>
-  <figcaption>Tverrsnitt i samme målestokk. Den smale reima (SP) er høyere i forhold til bredden og overfører mer effekt per reim. Reimvinkelen er ca. 40°, mens sporvinkelen er 34° på små og 38° på store skiver, slik at reima kiler seg fast på flankene. Datumbredden b<sub>d</sub> er der skivas datumdiameter måles.</figcaption>
-</figure>
 <div class="tbl" id="e5b-vprof"></div>
 <p class="small muted">d<sub>d,min</sub> = minste datumdiameter på skiva. Profilmål etter DIN 2215 (klassiske) og DIN 7753-1 / ISO 4184 (smale). Minste skivediameter for smale reimer er fra DIN 7753; for klassiske reimer er den <b>veiledende</b>, og produsentene oppgir litt ulike verdier (f.eks. A 71–75, C 180–200). Noen DIN 2215-tabeller oppgir høyde 20 mm for D. Klassiske reimer bestilles ofte etter innvendig lengde L<sub>i</sub>, smale etter datumlengde L<sub>d</sub>: sjekk hvilken lengde som står på reima.</p>
-
 <h3>Utveksling, reimlengde og akseavstand</h3>
 <div class="note"><p><b>Utveksling:</b> i = d<sub>2</sub> / d<sub>1</sub> = n<sub>1</sub> / n<sub>2</sub> (d = datumdiameter, n i o/min). Reimhastigheten er lik på begge skivene, så den store skiva går saktere.<br>
 <b>Reimlengde (datum):</b> L ≈ 2C + π(D + d)/2 + (D − d)² / (4C), der C er akseavstanden, D stor og d liten skive.<br>
@@ -2485,13 +2528,21 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="e5b-rout" aria-live="polite"></div>
 </div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Kilereima overfører kraft med friksjon mot skiveflankene. Kileformen presser reima inn i sporet, slik at normalkraften og dermed friksjonen blir mye større enn for en flat reim med samme forspenning. Reima skal bære på flankene, aldri i bunnen av sporet.</p>
+<h3>Kileremprofiler</h3>
+<figure class="fig">
+  <svg id="e5b-vsec" viewBox="0 0 600 230" role="img" aria-label="Tverrsnitt av klassisk A-reim og smal SPA-reim i skivespor"></svg>
+  <figcaption>Tverrsnitt i samme målestokk. Den smale reima (SP) er høyere i forhold til bredden og overfører mer effekt per reim. Reimvinkelen er ca. 40°, mens sporvinkelen er 34° på små og 38° på store skiver, slik at reima kiler seg fast på flankene. Datumbredden b<sub>d</sub> er der skivas datumdiameter måles.</figcaption>
+</figure>
+<h3>Utveksling, reimlengde og akseavstand</h3>
 <figure class="fig">
   <svg id="e5b-belt" viewBox="0 0 600 270" role="img" aria-label="Animert reimdrift med to skiver som roterer med riktig turtallsforhold"></svg>
   <div class="ctrl"><button class="chip play" id="e5b-belt-play" type="button"></button><span class="small muted">Sakte film. Følger verdiene i kalkulatoren.</span></div>
   <figcaption>Strekene på reima går like fort over begge skivene. Den store skiva trenger derfor flere sekunder per omdreining: turtallet blir delt på utvekslingen.</figcaption>
 </figure>
 <p class="small muted">Veiledende grenser: akseavstand ca. 0,7(D + d) til 2(D + d); omslutningsvinkel helst over 120°; reimhastighet opptil ca. 30 m/s for klassiske og ca. 40 m/s for smale reimer. Produsentens beregning gjelder for valg av antall reimer.</p>
-
 <h3>Oppstramming og nedbøyningskontroll</h3>
 <p>For slakk reim sluror, blir varm og blank på flankene og slites fort. For stram reim overbelaster lagrene og akslene. Kontroller med nedbøyning midt på spennet: trykk reima inn med testkraften fra produsenten (fjærvekt eller reimspenningsmåler), og mål hvor mye den går inn.</p>
 <figure class="fig">
@@ -2503,20 +2554,19 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Flytt motoren på slissene, ikke bend reima over skivekanten med skrutrekker. Det ødelegger strekkcordene.</li>
   <li>Skift alle reimene i et sett samtidig. Gamle og nye reimer har ulik lengde og deler ikke lasten.</li>
 </ul>
-
 <h3>Oppretting med linjal</h3>
 <p>Skivene må ligge i samme plan. Legg en rettholt eller linjal (eller snor) mot planflatene på begge skivene: den skal ligge an i fire punkter. Feilinnretting gir slitasje på den ene flanken, støy og at reima vrir seg eller hopper av.</p>
 <figure class="fig">
   <svg id="e5b-align" viewBox="0 0 600 330" role="img" aria-label="Oppretting av reimskiver: riktig, parallellforskyvning, vinkelfeil og vridning"></svg>
   <figcaption>Sett ovenfra (de tre første) og fra siden (vridning). Grense for kilereim er ca. 0,5° vinkelfeil, for tannreim strengere, ca. 0,25° (veiledende). Kontroller igjen etter at motoren er trukket til.</figcaption>
 </figure>
-
 <h3>Tannreim</h3>
 <p>Tannreim (synkronreim) overfører kraft med tenner, ikke friksjon. Den sluror derfor ikke, og brukes der fasen må holdes: CNC-akser, kamaksler, posisjonering. Utvekslingen er i = z<sub>2</sub> / z<sub>1</sub> (antall tenner på skivene). Profilen angis med deling: T5 og T10 (DIN 7721, trapes), AT5/AT10 og HTD 3M, 5M, 8M, 14M (runde tenner, tallet er delingen i mm). Reim og skive må ha samme profil og deling.</p>
 <ul class="e5b-list">
   <li>Krever mindre forspenning enn kilereim, men nøyaktigere oppretting. Én av skivene har flenser som holder reima på plass.</li>
   <li>Minst ca. 6 tenner i inngrep på den lille skiva (veiledende), ellers hopper reima over tenner.</li>
 </ul>
+</details>
 </div>
 <div class="topic" id="e5-sikring">
   <div class="topic-h"><span class="tno">5.7</span><h3>Sikringsringer</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
@@ -2551,17 +2601,33 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </ul>
 </div>
 <div class="topic" id="e5-lim">
-  <div class="topic-h"><span class="tno">5.8</span><h3>Lim</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <p class="lead">Lim fordeler kraften over hele limflaten, tetter og hindrer korrosjon i fugen. Det krever ren overflate, riktig fugeutforming og tid til å herde. Velg type etter materialer, spalte, temperatur og om delene skal demonteres.</p>
-
+<div class="topic-h"><span class="tno">5.8</span><h3>Lim</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Gjengelim</h4><span>Lilla: lav, små skruer · Blå: middels, M6–M36</span><span>Rød: høy, varm til ca. 250 °C for å løsne · Grønn: penetrerende</span></div>
+    <div><h4>Forbehandling</h4><span>Avfett, slip eller blås, la tørke. Passive flater trenger aktivator</span></div>
+    <div><h4>Limfuge</h4><span>Last limet i skjær. Unngå flekk og spalting</span></div>
+  </div>
+</div>
 <h3>Limtyper</h3>
 <div class="tbl" id="e5b-limtbl"></div>
 <p class="small muted"><b>Veiledende</b> verdier ved romtemperatur. Herdetid og temperaturområde varierer mye mellom produkter; teknisk datablad gjelder. Håndfast = kan flyttes forsiktig, full = full styrke.</p>
-
 <h3>Fargekoder for gjengelim</h3>
 <div class="tbl" id="e5b-farge"></div>
 <p class="small muted">Fargene er en vanlig bransjekonvensjon (blant annet Loctite 222, 243, 263/271 og 290), men <b>de varierer med produsent</b>, og grønn brukes også på høyfaste gjengelimer og festelimer. Les alltid etiketten. Anaerobe lim herder uten luft og i kontakt med metall; passive overflater (rustfritt, sinkbelagt, anodisert aluminium, plast) herder langsomt og trenger aktivator.</p>
-
+<h3>HMS</h3>
+<ul class="e5b-list">
+  <li>Les sikkerhetsdatabladet (SDS). Bruk nitrilhansker og vernebriller, og ha god ventilasjon.</li>
+  <li><b>Epoksy og akryl</b> er sterkt allergifremkallende. Unngå all hudkontakt, også med uherdet søl på verktøy og hansker.</li>
+  <li><b>PU med isocyanater:</b> krever opplæring for yrkesbruk når innholdet av diisocyanater er over 0,1 % (EU-krav). Se etiketten.</li>
+  <li><b>Cyanoakrylat</b> limer hud på sekunder. Ikke riv fra hverandre: bløt opp med varmt såpevann eller aceton. Lim i øyet: skyll og kontakt lege.</li>
+  <li>Oppvarming for demontering gir røyk fra limet. Bruk avsug og ikke åpen flamme nær løsemidler.</li>
+  <li>Uherdet lim og tomme patroner med rester er farlig avfall. Herdet lim kan normalt kastes som vanlig avfall.</li>
+</ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Lim fordeler kraften over hele limflaten, tetter og hindrer korrosjon i fugen. Det krever ren overflate, riktig fugeutforming og tid til å herde. Velg type etter materialer, spalte, temperatur og om delene skal demonteres.</p>
 <h3>Forbehandling</h3>
 <ol class="e5b-list">
   <li><b>Avfett</b> med egnet rens (isopropanol, aceton eller limprodusentens rens). Olje og fingerfett gir svak binding.</li>
@@ -2570,7 +2636,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li><b>Primer eller aktivator</b> der databladet krever det: plast som PE/PP, passive metaller for anaerobe lim, kald temperatur.</li>
   <li><b>Lim innen kort tid</b>, fikser delene og la herde i riktig temperatur. Under ca. 15 °C går de fleste lim mye saktere.</li>
 </ol>
-
 <h3>Limfuger: skjær kontra flekk og spalting</h3>
 <p>En limfuge er sterk i skjær og trykk, fordi hele flaten tar lasten. Ved flekking (peel) og spalting (cleavage) konsentreres kraften i en smal linje ved kanten, og fugen åpnes som en glidelås. Konstruer derfor slik at limet belastes i skjær.</p>
 <figure class="fig">
@@ -2582,24 +2647,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <li>Hindre flekk med en skrue, nagle eller fals ved enden av fugen, eller ved å gjøre den tynne delen stivere.</li>
   <li>Hold limspalten slik databladet sier. Anaerobe lim fungerer bare i tynne spalter, epoksy og MS-polymer fyller større spalter.</li>
 </ul>
-
-<h3>HMS</h3>
-<ul class="e5b-list">
-  <li>Les sikkerhetsdatabladet (SDS). Bruk nitrilhansker og vernebriller, og ha god ventilasjon.</li>
-  <li><b>Epoksy og akryl</b> er sterkt allergifremkallende. Unngå all hudkontakt, også med uherdet søl på verktøy og hansker.</li>
-  <li><b>PU med isocyanater:</b> krever opplæring for yrkesbruk når innholdet av diisocyanater er over 0,1 % (EU-krav). Se etiketten.</li>
-  <li><b>Cyanoakrylat</b> limer hud på sekunder. Ikke riv fra hverandre: bløt opp med varmt såpevann eller aceton. Lim i øyet: skyll og kontakt lege.</li>
-  <li>Oppvarming for demontering gir røyk fra limet. Bruk avsug og ikke åpen flamme nær løsemidler.</li>
-  <li>Uherdet lim og tomme patroner med rester er farlig avfall. Herdet lim kan normalt kastes som vanlig avfall.</li>
-</ul>
+</details>
 </div>
 <div class="topic" id="e5-tannhjul">
-  <div class="topic-h"><span class="tno">5.9</span><h3>Tannhjulsberegninger</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
-  <p class="lead">Rette sylindriske tannhjul (cylindriske tannhjul med rette tenner) beregnes ut fra modulen m og tannantallet z. Modulen er delesirkelens diameter delt på antall tenner og sier hvor store tennene er. To hjul må ha samme modul og inngrepsvinkel (normalt 20°) for å gå sammen.</p>
-
+<div class="topic-h"><span class="tno">5.9</span><h3>Tannhjulsberegninger</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Diametre</h4><b>d = m · z</b><span>delesirkel</span><b>d<sub>a</sub> = m · (z + 2)</b><span>toppsirkel</span><b>d<sub>f</sub> = m · (z − 2,5)</b><span>fotsirkel</span></div>
+    <div><h4>Tann</h4><b>h = 2,25 · m</b><b>p = π · m</b><span>deling</span></div>
+    <div><h4>Par</h4><b>a = m · (z<sub>1</sub> + z<sub>2</sub>) / 2</b><span>akseavstand</span><b>i = z<sub>2</sub> / z<sub>1</sub> = n<sub>1</sub> / n<sub>2</sub></b></div>
+    <div><h4>Tommehjul</h4><b>m = 25,4 / DP</b></div>
+  </div>
+  <div class="hurtig-u">m modul (mm) · z antall tenner · n turtall · α = 20°</div>
+</div>
 <h3>Formler (standard profil, α = 20°)</h3>
 <div class="tbl" id="e5b-gf"></div>
-
 <h3>Tannhjulskalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -2612,32 +2675,33 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="out" id="e5b-gout" aria-live="polite"></div>
 </div>
+<h3>Standard modulrekke</h3>
+<div class="tbl" id="e5b-mod"></div>
+<p class="small muted">DIN 780-1 / ISO 54. Velg rekke 1 først; rekke 2 bare når rekke 1 ikke passer. ISO 54 dekker modul 1–50.</p>
+<h3>Diametral pitch og modul</h3>
+<div class="calc">
+  <div class="fields"><div class="field"><label for="e5b-dp">Diametral pitch DP (1/tomme)</label><input id="e5b-dp" inputmode="decimal" value="12"></div></div>
+  <div class="out" id="e5b-dpout" aria-live="polite"></div>
+</div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Rette sylindriske tannhjul (cylindriske tannhjul med rette tenner) beregnes ut fra modulen m og tannantallet z. Modulen er delesirkelens diameter delt på antall tenner og sier hvor store tennene er. To hjul må ha samme modul og inngrepsvinkel (normalt 20°) for å gå sammen.</p>
+<h3>Tannhjulskalkulator</h3>
 <figure class="fig">
   <svg id="e5b-gear" viewBox="0 0 600 330" role="img" aria-label="To inngripende tannhjul med evolventprofil som roterer med riktig utveksling"></svg>
   <div class="ctrl"><button class="chip play" id="e5b-gear-play" type="button"></button><span class="small muted">Følger kalkulatoren. Merket tann viser hvor langt hvert hjul har gått.</span></div>
   <figcaption>Evolventtenner tegnet ut fra m og z. De stiplede delesirklene ruller mot hverandre uten å gli; akseavstanden er summen av radiene. Det store hjulet går z<sub>1</sub>/z<sub>2</sub> så fort som det lille, i motsatt retning.</figcaption>
 </figure>
 <p class="small muted">Under ca. 17 tenner (α = 20°, uten profilforskyvning) skjærer verktøyet bort foten av tannen (underskjæring). Praktisk nedre grense er ca. 14 tenner; færre krever profilforskyvning.</p>
-
-<h3>Standard modulrekke</h3>
-<div class="tbl" id="e5b-mod"></div>
-<p class="small muted">DIN 780-1 / ISO 54. Velg rekke 1 først; rekke 2 bare når rekke 1 ikke passer. ISO 54 dekker modul 1–50.</p>
-
 <h3>Diametral pitch og modul</h3>
 <p>Tommebaserte tannhjul angis med diametral pitch DP = antall tenner per tomme delesirkeldiameter. Omregning: <b>m = 25,4 / DP</b>. DP 10 tilsvarer m = 2,54 mm, som ikke går sammen med m 2,5. Circular pitch CP (deling i tommer) gir m = 25,4 · CP / π.</p>
-<div class="calc">
-  <div class="fields"><div class="field"><label for="e5b-dp">Diametral pitch DP (1/tomme)</label><input id="e5b-dp" inputmode="decimal" value="12"></div></div>
-  <div class="out" id="e5b-dpout" aria-live="polite"></div>
-</div>
-
 <h3>Skrå tannhjul</h3>
 <p>Tennene står i vinkelen β mot aksen. Flere tenner er i inngrep samtidig, så hjulene går roligere og tar mer last, men gir en aksialkraft som lagrene må ta. Verktøyet og tannprofilen er normert i normalsnittet, derfor regner man med <b>normalmodul m<sub>n</sub></b>: d = m<sub>n</sub> · z / cos β, og a = m<sub>n</sub>(z<sub>1</sub> + z<sub>2</sub>) / (2 cos β). To skrå hjul på parallelle aksler må ha samme β, men motsatt stigning (høyre/venstre).</p>
-
 <h3>Snekkedrift</h3>
 <p>Snekke og snekkehjul har kryssende aksler (normalt 90°) og gir stor utveksling i ett trinn: <b>i = z<sub>2</sub> / antall innganger</b> på snekka. Et hjul med 40 tenner og en eninngangs snekke gir i = 40. Eninngangs snekke med liten stigningsvinkel kan være selvsperrende (hjulet kan ikke drive snekka), men virkningsgraden er da lav og det blir mye varme. Selvsperring må ikke brukes som eneste brems.</p>
-
 <h3>Koniske tannhjul</h3>
 <p>Koniske tannhjul overfører bevegelse mellom aksler som krysser hverandre, oftest 90°. Utvekslingen er i = z<sub>2</sub> / z<sub>1</sub>. Modulen angis på den ytre (største) delesirkelen. Spissene til kjeglene må møtes i samme punkt, så aksialinnstillingen med mellomlegg er viktig for riktig tannanlegg.</p>
+</details>
 </div>
 <div class="topic" id="e5-koner">
   <div class="topic-h"><span class="tno">5.10</span><h3>Verktøykoner</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
