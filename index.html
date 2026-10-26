@@ -6293,8 +6293,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <li><a href="#me12-nedboy"><span class="tn">12.10</span><span class="tt">Dragere – nedbøyning</span></a></li>
   </ol></nav>
 <div class="topic" id="me12-moment">
-  <div class="topic-h"><span class="tno">12.1</span><h3>Moment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">12.1</span><h3>Moment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<style>
 .me12a-drag{cursor:grab;touch-action:none}
 .me12a-drag:active{cursor:grabbing}
 .me12a-ic{width:56px;height:40px;display:block;stroke:var(--ink);fill:var(--accent-soft);stroke-width:1.4}
@@ -6317,8 +6317,32 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 .me12a-rng input[type=range]{flex:1;min-width:140px}
 .me12a-rng output{font-family:var(--mono);font-size:13px;min-width:72px;text-align:right}
 </style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Moment</h4><b>M = F · a</b><span>a = vinkelrett arm fra punktet til kraften</span></div>
+    <div><h4>Likevekt</h4><b>ΣF<sub>x</sub> = 0</b><b>ΣF<sub>y</sub> = 0</b><b>ΣM = 0</b><span>om et hvilket som helst punkt</span></div>
+    <div><h4>Vektstang</h4><b>F<sub>1</sub> · a = F<sub>2</sub> · b</b><b>F = G · a / b</b><span>løft med spett</span></div>
+    <div><h4>Bjelke på to opplegg</h4><b>R<sub>B</sub> = Σ(F · x) / L</b><span>moment om A</span><b>R<sub>A</sub> = ΣF − R<sub>B</sub></b></div>
+  </div>
+  <div class="hurtig-u">M moment (Nm) · F kraft (N) · a, b, x armer (m) · L spenn (m) · R opplagerkraft (N)</div>
+</div>
+<h3>Opplagerkrefter for bjelke på to opplegg</h3>
+<div class="calc">
+  <div class="fields">
+    <div class="field"><label for="me12a-bl">Spennvidde L (m)</label><input id="me12a-bl" inputmode="decimal" value="6"></div>
+    <div class="row2"><div class="field"><label for="me12a-bf1">Last F₁ (kN)</label><input id="me12a-bf1" inputmode="decimal" value="10"></div><div class="field"><label for="me12a-bx1">x₁ fra A (m)</label><input id="me12a-bx1" inputmode="decimal" value="2"></div></div>
+    <div class="row2"><div class="field"><label for="me12a-bf2">Last F₂ (kN)</label><input id="me12a-bf2" inputmode="decimal" value="6"></div><div class="field"><label for="me12a-bx2">x₂ fra A (m)</label><input id="me12a-bx2" inputmode="decimal" value="4,5"></div></div>
+    <div class="row2"><div class="field"><label for="me12a-bf3">Last F₃ (kN)</label><input id="me12a-bf3" inputmode="decimal" value=""></div><div class="field"><label for="me12a-bx3">x₃ fra A (m)</label><input id="me12a-bx3" inputmode="decimal" value=""></div></div>
+    <p class="small muted" style="margin:0">La en last stå tom hvis den ikke brukes. Bjelkens egenvekt kan legges inn som en punktlast G = m · g midt på bjelken.</p>
+  </div>
+  <div class="out" id="me12a-b-out" aria-live="polite"></div>
+</div>
+<h3>Formelsamling — mekanikk</h3>
+<div class="tbl" id="phys-f"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Et moment er dreievirkningen av en kraft om et punkt: <b>M = F · a</b>, der a er den vinkelrette avstanden (armen) fra punktet til kraftens virkelinje. Enheten er Nm. Momentnøkkelen og formelsamlingen nederst i delemnet viser grunnformelen. Her brukes den til å finne krefter når noe står i ro.</p>
-
 <h3>Momentlikevekt</h3>
 <p>En del som står i ro, verken flytter seg eller dreier. Da må summen av alle krefter og summen av alle momenter være null:</p>
 <div class="desig">
@@ -6327,7 +6351,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>ΣM = 0</b><span>ingen dreining, om et hvilket som helst punkt</span></div>
 </div>
 <p>Velg en fortegnsregel og hold deg til den, for eksempel at moment med urviseren er positivt. Fordi ΣM = 0 gjelder om <b>alle</b> punkter, kan du legge momentpunktet der en ukjent kraft angriper. Den kraften får da arm 0 og faller ut av likningen, slik at du står igjen med én ukjent.</p>
-
 <h3>Vektstang og vippe</h3>
 <p>En vektstang er en stiv stang som kan dreie om et opplager. Den står i likevekt når momentene på hver side av opplageret er like store:</p>
 <p class="me12a-eq"><b>F<sub>1</sub> · a = F<sub>2</sub> · b</b></p>
@@ -6341,25 +6364,13 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><button class="chip" id="me12a-lv-bal" type="button">Finn likevektspunktet</button><button class="chip" id="me12a-lv-reset" type="button">Tilbake til bokas eksempel</button></div>
   <figcaption>Dra opplageret (trekanten) eller kraftpilene sideveis. Stanga er 8 m og regnes som vektløs. Når momentene er like, står stanga i ro. Likevektspunktet ligger der F<sub>1</sub> · x<sub>1</sub> + F<sub>2</sub> · x<sub>2</sub> = (F<sub>1</sub> + F<sub>2</sub>) · x, altså i tyngdepunktet til lastene.</figcaption>
 </figure>
-
 <h3>Opplagerkrefter for bjelke på to opplegg</h3>
 <p>En bjelke som ligger på to opplegg A og B med punktlaster: Ta moment om A. Da får R<sub>A</sub> arm 0 og faller ut, og R<sub>B</sub> er eneste ukjente. Deretter gir kraftlikevekten R<sub>A</sub>.</p>
 <p class="me12a-eq">ΣM<sub>A</sub> = 0: &nbsp;R<sub>B</sub> = Σ(F · x) / L<br>ΣF<sub>y</sub> = 0: &nbsp;R<sub>A</sub> = ΣF − R<sub>B</sub></p>
-<div class="calc">
-  <div class="fields">
-    <div class="field"><label for="me12a-bl">Spennvidde L (m)</label><input id="me12a-bl" inputmode="decimal" value="6"></div>
-    <div class="row2"><div class="field"><label for="me12a-bf1">Last F₁ (kN)</label><input id="me12a-bf1" inputmode="decimal" value="10"></div><div class="field"><label for="me12a-bx1">x₁ fra A (m)</label><input id="me12a-bx1" inputmode="decimal" value="2"></div></div>
-    <div class="row2"><div class="field"><label for="me12a-bf2">Last F₂ (kN)</label><input id="me12a-bf2" inputmode="decimal" value="6"></div><div class="field"><label for="me12a-bx2">x₂ fra A (m)</label><input id="me12a-bx2" inputmode="decimal" value="4,5"></div></div>
-    <div class="row2"><div class="field"><label for="me12a-bf3">Last F₃ (kN)</label><input id="me12a-bf3" inputmode="decimal" value=""></div><div class="field"><label for="me12a-bx3">x₃ fra A (m)</label><input id="me12a-bx3" inputmode="decimal" value=""></div></div>
-    <p class="small muted" style="margin:0">La en last stå tom hvis den ikke brukes. Bjelkens egenvekt kan legges inn som en punktlast G = m · g midt på bjelken.</p>
-  </div>
-  <div class="out" id="me12a-b-out" aria-live="polite"></div>
-</div>
 <figure class="fig">
   <svg id="me12a-bm" viewBox="0 0 600 300" role="img" aria-label="Bjelke på to opplegg med punktlaster, opplagerkrefter og momentdiagram"></svg>
   <figcaption>A er fast lager, B er glidelager (ruller). Momentdiagrammet under bjelken viser bøyemomentet. Det er størst under en av lastene, og det er der bjelken må dimensjoneres (se 12.5 og 12.10).</figcaption>
 </figure>
-
 <h3>Kraftpar</h3>
 <div class="two">
   <div>
@@ -6373,7 +6384,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <figcaption>Tappvendejern sett ovenfra. Kreftene opphever hverandre, men momentene legges sammen.</figcaption>
   </figure>
 </div>
-
 <h3>Løft med spett</h3>
 <p>Et spett (brekkjern) er en vektstang. Støtteklossen er opplageret, lasten virker på den korte armen a, og du trykker på den lange armen b:</p>
 <p class="me12a-eq"><b>F = G · a / b</b></p>
@@ -6384,22 +6394,40 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="me12a-rng"><label class="small muted" for="me12a-bar-g">Last G (N)</label><input type="range" id="me12a-bar-g" min="500" max="6000" step="100" value="3000"><output id="me12a-bar-go"></output></div>
   <figcaption>Spettet er 1,5 m, så b = 1,5 m − a. G er kraften lasten trykker ned på spissen med. Løfter du den ene kanten av en maskin med tyngdepunktet midt på, er G omtrent halve tyngden.</figcaption>
 </figure>
-  <h3>Moment er kraft ganger arm</h3>
-  <p>Moment er det som får en bolt til å dreie: <b>M = F · r</b>. Dobbelt så lang arm gir dobbelt så stort moment med samme kraft, og dobbelt så stor kraft gir dobbelt så stort moment med samme arm. Kraften må virke vinkelrett på armen for å gi fullt moment.</p>
-  <figure class="fig">
+<h3>Moment er kraft ganger arm</h3>
+<p>Moment er det som får en bolt til å dreie: <b>M = F · r</b>. Dobbelt så lang arm gir dobbelt så stort moment med samme kraft, og dobbelt så stor kraft gir dobbelt så stort moment med samme arm. Kraften må virke vinkelrett på armen for å gi fullt moment.</p>
+<figure class="fig">
     <svg id="fig-wr" viewBox="0 0 600 300" role="img" aria-label="Fastnøkkel der moment vokser med lengre arm eller større kraft"></svg>
     <div class="ctrl"><button class="chip play" id="wr-demo-r" type="button">▶ Demo: lengre arm</button><button class="chip play" id="wr-demo-f" type="button">▶ Demo: større kraft</button><span id="wr-read" class="mono"></span></div>
     <div class="ctrl"><label class="small muted" for="wr-f" style="min-width:64px">Kraft F</label><input type="range" id="wr-f" min="20" max="500" step="10" value="200" style="flex:1;min-width:140px"><span id="wr-fo" class="mono" style="min-width:64px;text-align:right"></span></div>
     <div class="ctrl"><label class="small muted" for="wr-r" style="min-width:64px">Arm r</label><input type="range" id="wr-r" min="50" max="500" step="10" value="250" style="flex:1;min-width:140px"><span id="wr-ro" class="mono" style="min-width:64px;text-align:right"></span></div>
     <figcaption>Søylen til høyre viser momentet. Den stiplede streken er momentet da demoen startet, så du ser hvor mange ganger større det blir.</figcaption>
   </figure>
-  <h3>Formelsamling — mekanikk</h3>
-  <div class="tbl" id="phys-f"></div>
+</details>
 </div>
 <div class="topic" id="me12-tyngde">
-  <div class="topic-h"><span class="tno">12.2</span><h3>Tyngdepunkt</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">Tyngdepunktet er punktet der hele tyngden kan tenkes samlet. I homogent materiale faller det sammen med massesenteret og med det geometriske midtpunktet (flatesenteret). Har figuren en symmetriakse, ligger tyngdepunktet på den.</p>
-
+<div class="topic-h"><span class="tno">12.2</span><h3>Tyngdepunkt</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Sammensatte flater</h4><b>x<sub>s</sub> = Σ(A · x) / ΣA</b><b>y<sub>s</sub> = Σ(A · y) / ΣA</b></div>
+    <div><h4>Linjer og legemer</h4><b>x<sub>s</sub> = Σ(L · x) / ΣL</b><span>bøyd tråd</span><b>x<sub>s</sub> = Σ(m · x) / Σm</b><span>legemer</span></div>
+    <div><h4>Tipping</h4><b>tan θ<sub>k</sub> = e / h<sub>s</sub></b><span>tipper når tyngdepunktet passerer vippekanten</span><span>Kloss: tan θ<sub>k</sub> = b / h</span></div>
+  </div>
+  <div class="hurtig-u">x<sub>s</sub>, y<sub>s</sub> tyngdepunkt · A areal · L lengde · m masse · e avstand til vippekant · h<sub>s</sub> høyde til tyngdepunkt</div>
+</div>
+<h3>Standardfigurer</h3>
+<div class="tbl" id="me12a-cgt"></div>
+<p class="small muted">Gjelder homogent materiale. Tynne skall: kjeglemantel h/3 og halvkuleskall r/2 fra grunnflaten. Kontroll: halvsirkel med r = 50 mm gir 4 · 50 / (3π) = 21,2 mm fra diameteren.</p>
+<h3>Kalkulator: sammensatt flate</h3>
+<p class="small muted">Opptil fire rektangler. x og y er nedre venstre hjørne, b er bredde og h er høyde, alt i mm. Delene skal ikke overlappe hverandre, og et hull må ligge inne i materialet. Standardverdiene er en vinkel L 100 × 100 × 20.</p>
+<div class="calc">
+  <div class="fields" id="me12a-cin"></div>
+  <div class="out" id="me12a-c-out" aria-live="polite"></div>
+</div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Tyngdepunktet er punktet der hele tyngden kan tenkes samlet. I homogent materiale faller det sammen med massesenteret og med det geometriske midtpunktet (flatesenteret). Har figuren en symmetriakse, ligger tyngdepunktet på den.</p>
 <h3>Sammensatte linjer, flater og legemer</h3>
 <p>Del figuren opp i enkle deler der du kjenner tyngdepunktet. Hver del veies med sin lengde, sitt areal, volum eller sin masse. Det er momentlikevekt: Summen av delenes moment om aksen er lik totalen ganger avstanden til tyngdepunktet.</p>
 <div class="desig">
@@ -6408,22 +6436,11 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>x<sub>s</sub> = Σ(m·x) / Σm</b><span>legemer og sammensatte konstruksjoner</span></div>
 </div>
 <p>y<sub>s</sub> regnes på samme måte med y-avstandene. Et hull regnes som en del med <b>negativt</b> areal (eller negativ masse).</p>
-
-<h3>Standardfigurer</h3>
-<div class="tbl" id="me12a-cgt"></div>
-<p class="small muted">Gjelder homogent materiale. Tynne skall: kjeglemantel h/3 og halvkuleskall r/2 fra grunnflaten. Kontroll: halvsirkel med r = 50 mm gir 4 · 50 / (3π) = 21,2 mm fra diameteren.</p>
-
 <h3>Kalkulator: sammensatt flate</h3>
-<p class="small muted">Opptil fire rektangler. x og y er nedre venstre hjørne, b er bredde og h er høyde, alt i mm. Delene skal ikke overlappe hverandre, og et hull må ligge inne i materialet. Standardverdiene er en vinkel L 100 × 100 × 20.</p>
-<div class="calc">
-  <div class="fields" id="me12a-cin"></div>
-  <div class="out" id="me12a-c-out" aria-live="polite"></div>
-</div>
 <figure class="fig">
   <svg id="me12a-cg" viewBox="0 0 600 330" role="img" aria-label="Sammensatt flate tegnet i et koordinatsystem med tyngdepunktet markert"></svg>
   <figcaption>Små kryss er tyngdepunktet til hver del. Det store symbolet er tyngdepunktet for hele flaten. Stiplede deler er hull.</figcaption>
 </figure>
-
 <h3>Stabilitet og tipping</h3>
 <p>En gjenstand står stødig så lenge loddlinja gjennom tyngdepunktet faller innenfor støtteflaten. Tipper du den, dreier den om kanten, og tyngdepunktet løftes. Når tyngdepunktet står rett over kanten, er den i labil likevekt. Passerer det kanten, velter den av seg selv.</p>
 <p class="me12a-eq">tan θ<sub>k</sub> = e / h<sub>s</sub> &nbsp; (kloss: tan θ<sub>k</sub> = b / h)</p>
@@ -6435,7 +6452,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><button class="chip play" id="me12a-tip-go" type="button">▶ Slipp klossen</button><span id="me12a-tip-st"></span></div>
   <figcaption>Still inn vinkelen og slipp. Den stiplede buen er veien tyngdepunktet går. Den er høyest akkurat over kanten, og det er derfor klossen faller tilbake så lenge du ikke har passert θ<sub>k</sub>. Bevegelsen er regnet med virkelige mål og tyngdens akselerasjon.</figcaption>
 </figure>
-
 <h3>Løfting og anhuking</h3>
 <p>En last som henger fritt, stiller seg alltid slik at <b>tyngdepunktet havner rett under kroken</b>. Ligger tyngdepunktet ikke midt mellom festepunktene, blir lasten skjev, og stroppen nærmest tyngdepunktet får størst kraft. Løsningen er å få kroken rett over tyngdepunktet, med ulik stroppelengde (for eksempel kjettingforkorter) eller ved å flytte festepunktene. Prøveløft noen centimeter og se om lasten henger rett før du løfter videre.</p>
 <figure class="fig">
@@ -6445,28 +6461,23 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv" id="me12a-hang-kv"></dl>
   <figcaption>Lasten er 1000 kg: en ramme på 600 kg og en tung del på 400 kg som du kan flytte. Festepunktene står 3,2 m fra hverandre. Kreftene er regnet for lasten i ro.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="me12-utveksling">
-  <div class="topic-h"><span class="tno">12.3</span><h3>Utvekslinger</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">En utveksling endrer turtall og moment mellom to aksler. Det som tapes i turtall, vinnes i moment, minus litt tap i friksjon. Effekten kan aldri bli større enn den du putter inn.</p>
-
-<h3>Utveksling</h3>
-<p class="me12a-eq"><b>i = n<sub>inn</sub> / n<sub>ut</sub></b></p>
-<p>i &gt; 1 er nedgiring: lavere turtall og større moment ut. i &lt; 1 er oppgiring. Indeks 1 er det drivende hjulet og 2 det drevne:</p>
-<div class="desig">
-  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>tannhjul (z = antall tenner)</span></div>
-  <div><b>i = d<sub>2</sub> / d<sub>1</sub></b><span>reimskiver (d = regnediameter)</span></div>
-  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>kjedehjul</span></div>
-  <div><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b><span>flere trinn etter hverandre</span></div>
+<div class="topic-h"><span class="tno">12.3</span><h3>Utvekslinger</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Utveksling</h4><b>i = n<sub>inn</sub> / n<sub>ut</sub></b><b>i = z<sub>2</sub> / z<sub>1</sub> = d<sub>2</sub> / d<sub>1</sub></b><span>tannhjul, kjede, reim</span><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b></div>
+    <div><h4>Moment og effekt</h4><b>M<sub>ut</sub> = M<sub>inn</sub> · i · η</b><b>P<sub>ut</sub> = P<sub>inn</sub> · η</b><b>P = M · 2π · n / 60</b></div>
+    <div><h4>Snekke og planetgir</h4><b>i = z<sub>hjul</sub> / z<sub>snekke</sub></b><span>z<sub>snekke</sub> = antall innganger</span><b>i = 1 + z<sub>R</sub> / z<sub>S</sub></b><span>planetgir, fast ring</span></div>
+    <div><h4>Talje</h4><b>F = G / n</b><span>n bærende parter, uten friksjon</span><span>Tau trukket = n · løftehøyde</span></div>
+  </div>
+  <div class="hurtig-u">n turtall (o/min) · z antall tenner · d diameter · η virkningsgrad · M moment (Nm) · P effekt (W)</div>
 </div>
-<p>Det lille hjulet må gå rundt flere ganger for å flytte like mange tenner (eller like mye reim) som det store. Derfor er turtallet omvendt proporsjonalt med z eller d. En kileremdrift sklir litt, så det virkelige turtallet blir noe lavere enn regnet. Tannhjul, kjede og tannreim sklir ikke.</p>
-
 <h3>Moment, effekt og dreieretning</h3>
-<p class="me12a-eq">M<sub>ut</sub> = M<sub>inn</sub> · i · η &nbsp;&nbsp; P<sub>ut</sub> = P<sub>inn</sub> · η &nbsp;&nbsp; P = M · ω = M · 2π · n / 60</p>
-<p>η er virkningsgraden (0–1). Med flere trinn ganges virkningsgradene: η<sub>tot</sub> = η<sub>1</sub> · η<sub>2</sub> · η<sub>3</sub>. Et ytre tannhjulspar snur dreieretningen. Et mellomhjul (tomgangshjul) snur den tilbake uten å endre utvekslingen. Åpen reim og kjede beholder dreieretningen.</p>
 <div class="tbl" id="me12a-eta"></div>
 <p class="small muted">Veiledende verdier per trinn ved full last og god smøring. Bruk produsentens data når de finnes.</p>
-
 <h3>Kalkulator: utveksling med 1–3 trinn</h3>
 <div class="calc">
   <div class="fields">
@@ -6479,7 +6490,22 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   </div>
   <div class="out" id="me12a-u-out" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En utveksling endrer turtall og moment mellom to aksler. Det som tapes i turtall, vinnes i moment, minus litt tap i friksjon. Effekten kan aldri bli større enn den du putter inn.</p>
+<h3>Utveksling</h3>
+<p class="me12a-eq"><b>i = n<sub>inn</sub> / n<sub>ut</sub></b></p>
+<p>i &gt; 1 er nedgiring: lavere turtall og større moment ut. i &lt; 1 er oppgiring. Indeks 1 er det drivende hjulet og 2 det drevne:</p>
+<div class="desig">
+  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>tannhjul (z = antall tenner)</span></div>
+  <div><b>i = d<sub>2</sub> / d<sub>1</sub></b><span>reimskiver (d = regnediameter)</span></div>
+  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>kjedehjul</span></div>
+  <div><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b><span>flere trinn etter hverandre</span></div>
+</div>
+<p>Det lille hjulet må gå rundt flere ganger for å flytte like mange tenner (eller like mye reim) som det store. Derfor er turtallet omvendt proporsjonalt med z eller d. En kileremdrift sklir litt, så det virkelige turtallet blir noe lavere enn regnet. Tannhjul, kjede og tannreim sklir ikke.</p>
+<h3>Moment, effekt og dreieretning</h3>
+<p class="me12a-eq">M<sub>ut</sub> = M<sub>inn</sub> · i · η &nbsp;&nbsp; P<sub>ut</sub> = P<sub>inn</sub> · η &nbsp;&nbsp; P = M · ω = M · 2π · n / 60</p>
+<p>η er virkningsgraden (0–1). Med flere trinn ganges virkningsgradene: η<sub>tot</sub> = η<sub>1</sub> · η<sub>2</sub> · η<sub>3</sub>. Et ytre tannhjulspar snur dreieretningen. Et mellomhjul (tomgangshjul) snur den tilbake uten å endre utvekslingen. Åpen reim og kjede beholder dreieretningen.</p>
 <h3>Totrinns tannhjulsdrev</h3>
 <figure class="fig">
   <svg id="me12a-gear" viewBox="0 0 600 320" role="img" aria-label="Totrinns tannhjulsdrev med fire tannhjul som roterer med riktig forhold og retning"></svg>
@@ -6494,12 +6520,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <dl class="kv" id="me12a-gear-kv"></dl>
   <figcaption>Hjul 1 (blått) driver hjul 2. Hjul 3 (oransje) sitter på samme aksel som hjul 2, foran det, og driver hjul 4. Animasjonen er sterkt nedsatt i fart, men forholdet mellom turtallene er riktig. To ytre tannhjulspar etter hverandre gir samme dreieretning ut som inn. Tannantall 8–60.</figcaption>
 </figure>
-
 <h3>Snekkedrev</h3>
 <p>Snekken er en skrue som driver et snekkehjul, med akslene i 90°. For hver omdreining av snekken flytter hjulet seg like mange tenner som snekken har innganger (gjenger):</p>
 <p class="me12a-eq"><b>i = z<sub>hjul</sub> / z<sub>snekke</sub></b> &nbsp; (z<sub>snekke</sub> = antall innganger)</p>
 <p>En 1-gjenget snekke mot et hjul med 40 tenner gir i = 40 i ett trinn. Stor utveksling og stille gang er fordelene. Ulempen er stor glidefriksjon og dermed lav virkningsgrad, særlig ved én inngang. Et drev med lav virkningsgrad kan være selvlåsende, men selvlåsing er ingen sikker brems, for vibrasjoner kan få det til å gli. Løfteutstyr skal ha egen brems.</p>
-
 <h3>Planetgir</h3>
 <div class="two">
   <div>
@@ -6513,7 +6537,6 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <figcaption>Fast ring. Solhjulet er inngang. Den oransje planetbæreren er utgang.</figcaption>
   </figure>
 </div>
-
 <h3>Vinsj og talje</h3>
 <p>En <b>talje</b> deler lasten på flere tauparter. Med n bærende parter mellom øvre og nedre blokk blir trekkraften n ganger mindre, men du må trekke n ganger så mye tau:</p>
 <p class="me12a-eq"><b>F = G / n</b> (uten friksjon) &nbsp;&nbsp; tau trukket = n · løftehøyde</p>
@@ -6527,39 +6550,23 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <p>En <b>vinsj</b> bruker sveiv eller motor, gir og trommel. Kraften i tauet er momentet på trommelen delt på trommelradien: F<sub>tau</sub> = M<sub>trommel</sub> / r. Med håndsveiv blir F<sub>tau</sub> = F<sub>hånd</sub> · (R / r) · i · η, der R er sveivradien. Eksempel: R = 0,3 m, r = 0,05 m og i = 4 gir 24 ganger håndkraften uten tap. Merk at tauet ligger i flere lag på trommelen. Ytterste lag har større r og gir mindre trekkraft.</p>
 <p class="small muted">Løfteredskap skal være merket med arbeidsgrense (WLL) og kontrolleres jevnlig. Kalkylene her erstatter ikke det.</p>
+</details>
 </div>
 <div class="topic" id="me12-treghet">
-  <div class="topic-h"><span class="tno">12.4</span><h3>Massetreghetsmoment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">Massetreghetsmomentet J sier hvor tungt det er å få noe til å rotere, eller å stoppe det. Det er rotasjonens svar på masse. Det avhenger ikke bare av massen, men av hvor langt fra aksen den sitter, i andre potens.</p>
-<p class="me12a-eq"><b>J = Σ m · r²</b> &nbsp; (kg·m²)</p>
-<p>Masse dobbelt så langt ute gir fire ganger så stor J. Et svinghjul har derfor mesteparten av massen i en tykk krans ytterst. Ikke forveksle J med <b>arealtreghetsmomentet</b> I (mm⁴) i 12.6, som gjelder tverrsnitt og bøying.</p>
-
+<div class="topic-h"><span class="tno">12.4</span><h3>Massetreghetsmoment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Massetreghetsmoment</h4><b>J = Σ m · r²</b><b>J = ½ · m · r²</b><span>massiv skive eller sylinder</span></div>
+    <div><h4>Steiners sats</h4><b>J = J<sub>s</sub> + m · d²</b><span>d = avstand fra tyngdepunktet til aksen</span></div>
+    <div><h4>Rotasjon</h4><b>E = ½ · J · ω²</b><span>rotasjonsenergi</span><b>M = J · α</b><span>moment for å akselerere</span><b>ω = 2π · n / 60</b></div>
+  </div>
+  <div class="hurtig-u">J treghetsmoment (kg·m²) · m masse (kg) · r radius (m) · ω vinkelhastighet (rad/s) · α vinkelakselerasjon (rad/s²)</div>
+</div>
 <h3>Standardlegemer</h3>
 <div class="tbl" id="me12a-jt"></div>
 <p class="small muted">m er massen, r radius og L lengde. Homogent materiale. Den stiplede linjen i figuren er dreieaksen.</p>
-
-<h3>Steiners sats</h3>
-<div class="two">
-  <div>
-    <p>Dreier legemet om en akse som er parallell med aksen gjennom tyngdepunktet, men flyttet en avstand d, øker treghetsmomentet:</p>
-    <p class="me12a-eq"><b>J = J<sub>s</sub> + m · d²</b></p>
-    <p>J<sub>s</sub> er treghetsmomentet om tyngdepunktsaksen, som alltid gir den minste verdien. Kontroll med stav: J<sub>s</sub> = 1/12 · m · L² og d = L/2 gir 1/12 + 1/4 = 1/3 · m · L², som er tabellverdien om enden.</p>
-    <p>Eksempel: Skive m = 10 kg, r = 0,1 m. Om sentrum: J<sub>s</sub> = ½ · 10 · 0,1² = 0,05 kg·m². Om en akse i kanten (d = 0,1 m): J = 0,05 + 10 · 0,1² = 0,15 kg·m², tre ganger så mye.</p>
-  </div>
-  <figure class="fig">
-    <svg id="me12a-st" viewBox="0 0 320 220" role="img" aria-label="Skive med akse gjennom sentrum og parallell akse i avstand d"></svg>
-    <figcaption>Samme skive, to parallelle akser. Avstanden d mellom aksene gir tillegget m · d².</figcaption>
-  </figure>
-</div>
-
 <h3>Rotasjonsenergi og akselerasjonsmoment</h3>
-<div class="desig">
-  <div><b>E = ½ · J · ω²</b><span>rotasjonsenergi (J)</span></div>
-  <div><b>M = J · α</b><span>moment for å akselerere (Nm)</span></div>
-  <div><b>α = ω / t</b><span>vinkelakselerasjon (rad/s²), jevn start fra 0</span></div>
-  <div><b>ω = 2π · n / 60</b><span>vinkelhastighet (rad/s), n i o/min</span></div>
-</div>
-<p>M = J · α tilsvarer F = m · a. Motoren må levere akselerasjonsmomentet i tillegg til moment for friksjon og bearbeiding. Effekten er størst like før fullt turtall, P = M · ω.</p>
 <div class="calc">
   <div class="fields">
     <div class="field"><label for="me12a-jsh">Form</label><select id="me12a-jsh"><option value="s">Massiv skive / sylinder</option><option value="h">Hul sylinder (rør, krans)</option><option value="r">Tynn ring</option></select></div>
@@ -6579,7 +6586,34 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="out" id="me12a-j-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Standardverdiene er et grovt anslag for en dreiebenkchuck Ø250. En ekte chuck har hull i midten og kjefter ytterst, så den virkelige J er gjerne noe større enn for en massiv skive med samme masse.</p>
-
+<h3>Hvorfor en stor chuck bruker tid på å stoppe</h3>
+<div class="tbl" id="me12a-chk"></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Massetreghetsmomentet J sier hvor tungt det er å få noe til å rotere, eller å stoppe det. Det er rotasjonens svar på masse. Det avhenger ikke bare av massen, men av hvor langt fra aksen den sitter, i andre potens.</p>
+<p class="me12a-eq"><b>J = Σ m · r²</b> &nbsp; (kg·m²)</p>
+<p>Masse dobbelt så langt ute gir fire ganger så stor J. Et svinghjul har derfor mesteparten av massen i en tykk krans ytterst. Ikke forveksle J med <b>arealtreghetsmomentet</b> I (mm⁴) i 12.6, som gjelder tverrsnitt og bøying.</p>
+<h3>Steiners sats</h3>
+<div class="two">
+  <div>
+    <p>Dreier legemet om en akse som er parallell med aksen gjennom tyngdepunktet, men flyttet en avstand d, øker treghetsmomentet:</p>
+    <p class="me12a-eq"><b>J = J<sub>s</sub> + m · d²</b></p>
+    <p>J<sub>s</sub> er treghetsmomentet om tyngdepunktsaksen, som alltid gir den minste verdien. Kontroll med stav: J<sub>s</sub> = 1/12 · m · L² og d = L/2 gir 1/12 + 1/4 = 1/3 · m · L², som er tabellverdien om enden.</p>
+    <p>Eksempel: Skive m = 10 kg, r = 0,1 m. Om sentrum: J<sub>s</sub> = ½ · 10 · 0,1² = 0,05 kg·m². Om en akse i kanten (d = 0,1 m): J = 0,05 + 10 · 0,1² = 0,15 kg·m², tre ganger så mye.</p>
+  </div>
+  <figure class="fig">
+    <svg id="me12a-st" viewBox="0 0 320 220" role="img" aria-label="Skive med akse gjennom sentrum og parallell akse i avstand d"></svg>
+    <figcaption>Samme skive, to parallelle akser. Avstanden d mellom aksene gir tillegget m · d².</figcaption>
+  </figure>
+</div>
+<h3>Rotasjonsenergi og akselerasjonsmoment</h3>
+<div class="desig">
+  <div><b>E = ½ · J · ω²</b><span>rotasjonsenergi (J)</span></div>
+  <div><b>M = J · α</b><span>moment for å akselerere (Nm)</span></div>
+  <div><b>α = ω / t</b><span>vinkelakselerasjon (rad/s²), jevn start fra 0</span></div>
+  <div><b>ω = 2π · n / 60</b><span>vinkelhastighet (rad/s), n i o/min</span></div>
+</div>
+<p>M = J · α tilsvarer F = m · a. Motoren må levere akselerasjonsmomentet i tillegg til moment for friksjon og bearbeiding. Effekten er størst like før fullt turtall, P = M · ω.</p>
 <h3>Sylinder, kule og ring på skråplan</h3>
 <p>Ruller noe ned et skråplan, går stillingsenergien m · g · h både til fart og til rotasjon. Jo mer av massen som sitter ytterst, jo større del av energien går til å rotere, og jo tregere blir den. Massen og radien spiller ingen rolle, bare formen:</p>
 <p class="me12a-eq">a = g · sin θ / (1 + J / (m · r²))</p>
@@ -6588,19 +6622,18 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><button class="chip play" id="me12a-roll-go" type="button">▶ Slipp</button><span class="mono" id="me12a-roll-t"></span></div>
   <figcaption>Skråplanet er 2 m langt med 8° helning, og tidene er regnet ut og vist i virkelig tid. Prosenten er andelen av energien som går til rotasjon. Ringen har all masse ytterst, så halve energien går til å rotere.</figcaption>
 </figure>
-
 <h3>Hvorfor en stor chuck bruker tid på å stoppe</h3>
 <p>Energien E = ½ · J · ω² må fjernes for å stoppe spindelen, og den blir til varme i bremsen eller sendes tilbake via frekvensomformeren. Med samme bremsemoment er stopptiden t = J · ω / M<sub>b</sub>.</p>
 <ul>
   <li><b>Dobbelt turtall</b> gir fire ganger så mye energi og dobbel stopptid.</li>
   <li><b>Større diameter</b> slår hardt ut: Med samme tykkelse øker massen med D², og J = ½ · m · r² øker da med D⁴.</li>
 </ul>
-<div class="tbl" id="me12a-chk"></div>
 <p>Derfor går en stor chuck lenge etter at du har trykket stopp. Bremse aldri chucken med hånden eller verktøy, og vent til spindelen står helt stille før du griper inn.</p>
+</details>
 </div>
 <div class="topic" id="me12-fasthet">
-  <div class="topic-h"><span class="tno">12.5</span><h3>Fasthetslære</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <style>
+<div class="topic-h"><span class="tno">12.5</span><h3>Fasthetslære</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<style>
 .me12b-fx{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:8px 0 16px}
 .me12b-fx div{background:var(--sheet);padding:10px 12px;display:grid;gap:3px;align-content:start}
 .me12b-fx b{font-family:var(--mono);font-size:17px;font-weight:500;color:var(--accent);overflow-wrap:anywhere}
@@ -6613,24 +6646,17 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 .me12b-rng input[type=range]{flex:1;min-width:140px}
 .me12b-rng output{font-family:var(--mono);font-size:13px;min-width:72px;text-align:right}
 </style>
-<p class="lead">Fasthetslære handler om hvor mye en del tåler. Kraften fordeles over tverrsnittet og gir en <b>spenning</b> (N/mm² = MPa). Holder spenningen seg godt under flytegrensen R<sub>e</sub>, fjærer delen tilbake når lasten tas bort. Går den over, blir deformasjonen varig.</p>
-
-<h3>Seks belastningstyper</h3>
-<figure class="fig">
-  <svg id="me12b-types" viewBox="0 0 600 440" role="img" aria-label="Strekk, trykk, skjær, bøying, vridning og knekk med belastningspiler og deformasjon"></svg>
-  <div class="ctrl"><button class="chip play" id="me12b-types-play" type="button"></button><span class="small muted">Deformasjonen er sterkt forstørret. Stiplet omriss er staven før last.</span></div>
-  <figcaption>Strekk og trykk gir normalspenning σ jevnt over tverrsnittet. Skjær og vridning gir skjærspenning τ. Bøying gir trykk på den ene siden og strekk på den andre. Knekk er en stabilitetssvikt: staven holder til en bestemt last og bøyer så plutselig ut til siden.</figcaption>
-</figure>
-
-<h3>Normalspenning og Hookes lov</h3>
-<p>Ved strekk og trykk fordeles kraften jevnt over tverrsnittsarealet. Så lenge spenningen er under flytegrensen, er forlengelsen proporsjonal med spenningen (Hookes lov). Stivheten til materialet er elastisitetsmodulen E. Stål er tre ganger stivere enn aluminium, så en aluminiumsstav med samme mål og last strekker seg tre ganger så mye. Hele forløpet fram til brudd vises i strekkprøven i <a href="#materialer">kapittel 8</a>.</p>
-<div class="me12b-fx">
-  <div><b>σ = F / A</b><span>normalspenning, N/mm² (MPa). F i N, A i mm²</span></div>
-  <div><b>ε = ΔL / L</b><span>tøyning, uten benevning (ofte i ‰ eller %)</span></div>
-  <div><b>σ = E · ε</b><span>Hookes lov. E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
-  <div><b>ΔL = F · L / (E · A)</b><span>forlengelse (strekk) eller forkortelse (trykk), mm</span></div>
-  <div><b>n = R<sub>e</sub> / σ</b><span>sikkerhetsfaktor mot flyt</span></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Strekk og trykk</h4><b>σ = F / A</b><b>ε = ΔL / L</b><b>σ = E · ε</b><span>E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
+    <div><h4>Forlengelse</h4><b>ΔL = F · L / (E · A)</b></div>
+    <div><h4>Skjær i bolt og pinne</h4><b>τ = F / (m · A)</b><span>m = antall skjærflater</span><b>p = F / (d · t)</b><span>flatetrykk mot hullveggen</span></div>
+    <div><h4>Sikkerhet</h4><b>n = R<sub>e</sub> / σ</b><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b></div>
+  </div>
+  <div class="hurtig-u">σ normalspenning, τ skjærspenning (MPa = N/mm²) · F kraft (N) · A areal (mm²) · R<sub>e</sub> flytegrense (MPa)</div>
 </div>
+<h3>Normalspenning og Hookes lov</h3>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -6645,19 +6671,7 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   </div>
   <div class="out" id="me12b-h-out" aria-live="polite"></div>
 </div>
-
 <h3>Skjærspenning i bolt og pinne</h3>
-<p>Skjær oppstår når to deler prøver å gli forbi hverandre i et snitt, som en saks. En bolt som holder to plater (overlappskjøt) har <b>én skjærflate</b>. En pinne gjennom en gaffel og et øye har <b>to skjærflater</b>, og tåler derfor dobbelt så stor kraft med samme diameter. Det er grunnen til at ledd og sjakler lages som gaffel.</p>
-<figure class="fig">
-  <svg id="me12b-sfig" viewBox="0 0 600 280" role="img" aria-label="Enkeltskjær i overlappskjøt og dobbeltskjær i gaffelledd"></svg>
-  <div class="ctrl"><button class="chip play" id="me12b-sfig-play" type="button"></button><span class="small muted">Forskyvningen i skjærflatene er sterkt forstørret.</span></div>
-  <figcaption>Rød stiplet linje markerer skjærflatene. Flatetrykket virker mellom boltens side og hullveggen, på den projiserte flaten d · t.</figcaption>
-</figure>
-<div class="me12b-fx">
-  <div><b>τ = F / (m · A)</b><span>skjærspenning. m = antall skjærflater (1 eller 2), A = π · d² / 4</span></div>
-  <div><b>p = F / (d · t)</b><span>flatetrykk (hulltrykk) mot hullveggen. t = tykkelsen som tar kraften</span></div>
-  <div><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b><span>stål tåler omtrent 0,58 (= 1/√3) ganger så mye i skjær som i strekk</span></div>
-</div>
 <div class="calc">
   <div class="fields">
     <div class="row2">
@@ -6674,19 +6688,53 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 </div>
 <p class="small muted">t: ved enkeltskjær den tynneste platen. Ved dobbeltskjær den minste av midtplaten og summen av de to ytre platene. Står gjengene i skjærflaten, er arealet mindre (spenningsarealet A<sub>s</sub>), og beregningen må gjøres med det. Skjærspenningen er ikke helt jevn over tverrsnittet. Formelen gir middelverdien, og sikkerhetsfaktoren dekker resten. Bolter i 8.8: R<sub>p0,2</sub> = 640 MPa (d ≤ 16) etter ISO 898-1.</p>
 <div class="note"><p><b>Sikkerhetsfaktor:</b> n = R<sub>e</sub> / σ sier hvor mange ganger lasten kan økes før materialet begynner å flyte. Hvor stor n må være, avhenger av hvor godt lasten er kjent og om den varierer eller kommer som støt. Se delemnet <i>Tillatte belastninger</i>.</p></div>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Fasthetslære handler om hvor mye en del tåler. Kraften fordeles over tverrsnittet og gir en <b>spenning</b> (N/mm² = MPa). Holder spenningen seg godt under flytegrensen R<sub>e</sub>, fjærer delen tilbake når lasten tas bort. Går den over, blir deformasjonen varig.</p>
+<h3>Seks belastningstyper</h3>
+<figure class="fig">
+  <svg id="me12b-types" viewBox="0 0 600 440" role="img" aria-label="Strekk, trykk, skjær, bøying, vridning og knekk med belastningspiler og deformasjon"></svg>
+  <div class="ctrl"><button class="chip play" id="me12b-types-play" type="button"></button><span class="small muted">Deformasjonen er sterkt forstørret. Stiplet omriss er staven før last.</span></div>
+  <figcaption>Strekk og trykk gir normalspenning σ jevnt over tverrsnittet. Skjær og vridning gir skjærspenning τ. Bøying gir trykk på den ene siden og strekk på den andre. Knekk er en stabilitetssvikt: staven holder til en bestemt last og bøyer så plutselig ut til siden.</figcaption>
+</figure>
+<h3>Normalspenning og Hookes lov</h3>
+<p>Ved strekk og trykk fordeles kraften jevnt over tverrsnittsarealet. Så lenge spenningen er under flytegrensen, er forlengelsen proporsjonal med spenningen (Hookes lov). Stivheten til materialet er elastisitetsmodulen E. Stål er tre ganger stivere enn aluminium, så en aluminiumsstav med samme mål og last strekker seg tre ganger så mye. Hele forløpet fram til brudd vises i strekkprøven i <a href="#materialer">kapittel 8</a>.</p>
+<div class="me12b-fx">
+  <div><b>σ = F / A</b><span>normalspenning, N/mm² (MPa). F i N, A i mm²</span></div>
+  <div><b>ε = ΔL / L</b><span>tøyning, uten benevning (ofte i ‰ eller %)</span></div>
+  <div><b>σ = E · ε</b><span>Hookes lov. E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
+  <div><b>ΔL = F · L / (E · A)</b><span>forlengelse (strekk) eller forkortelse (trykk), mm</span></div>
+  <div><b>n = R<sub>e</sub> / σ</b><span>sikkerhetsfaktor mot flyt</span></div>
+</div>
+<h3>Skjærspenning i bolt og pinne</h3>
+<p>Skjær oppstår når to deler prøver å gli forbi hverandre i et snitt, som en saks. En bolt som holder to plater (overlappskjøt) har <b>én skjærflate</b>. En pinne gjennom en gaffel og et øye har <b>to skjærflater</b>, og tåler derfor dobbelt så stor kraft med samme diameter. Det er grunnen til at ledd og sjakler lages som gaffel.</p>
+<figure class="fig">
+  <svg id="me12b-sfig" viewBox="0 0 600 280" role="img" aria-label="Enkeltskjær i overlappskjøt og dobbeltskjær i gaffelledd"></svg>
+  <div class="ctrl"><button class="chip play" id="me12b-sfig-play" type="button"></button><span class="small muted">Forskyvningen i skjærflatene er sterkt forstørret.</span></div>
+  <figcaption>Rød stiplet linje markerer skjærflatene. Flatetrykket virker mellom boltens side og hullveggen, på den projiserte flaten d · t.</figcaption>
+</figure>
+<div class="me12b-fx">
+  <div><b>τ = F / (m · A)</b><span>skjærspenning. m = antall skjærflater (1 eller 2), A = π · d² / 4</span></div>
+  <div><b>p = F / (d · t)</b><span>flatetrykk (hulltrykk) mot hullveggen. t = tykkelsen som tar kraften</span></div>
+  <div><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b><span>stål tåler omtrent 0,58 (= 1/√3) ganger så mye i skjær som i strekk</span></div>
+</div>
+</details>
 </div>
 <div class="topic" id="me12-wi">
-  <div class="topic-h"><span class="tno">12.6</span><h3>Treghets- og motstandsmomenter</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">Ved bøying er det ikke bare arealet som teller, men <b>hvor materialet ligger</b>. Materiale langt fra nøytralaksen tar mest av lasten. Treghetsmomentet I sier hvor <b>stivt</b> tverrsnittet er (nedbøyning). Motstandsmomentet W sier hvor <b>sterkt</b> det er (spenning).</p>
-<div class="me12b-fx">
-  <div><b>σ = M / W</b><span>bøyespenning i ytterste fiber, MPa. M i Nmm, W i mm³</span></div>
-  <div><b>W = I / e</b><span>e = avstand fra nøytralaksen til ytterste fiber, mm</span></div>
-  <div><b>f ∝ 1 / (E · I)</b><span>nedbøyningen er omvendt proporsjonal med E · I. I i mm⁴</span></div>
+<div class="topic-h"><span class="tno">12.6</span><h3>Treghets- og motstandsmomenter</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Bøyespenning</h4><b>σ = M / W</b><span>M i Nmm, W i mm³</span><b>W = I / e</b><span>e = avstand til ytterste fiber</span></div>
+    <div><h4>Rektangel b × h</h4><b>I = b · h³ / 12</b><b>W = b · h² / 6</b><span>h er høyden i lastretningen</span></div>
+    <div><h4>Massiv rund</h4><b>I = π · d⁴ / 64</b><b>W = π · d³ / 32</b></div>
+    <div><h4>Steiners sats</h4><b>I = I₀ + A · a²</b></div>
+  </div>
+  <div class="hurtig-u">I treghetsmoment (mm⁴) · W motstandsmoment (mm³) · M bøyemoment (Nmm)</div>
 </div>
 <h3>Formler for vanlige tverrsnitt</h3>
 <div class="tbl" id="me12b-wi-tbl"></div>
 <p class="small muted">Alle formler gjelder bøying om den horisontale aksen gjennom tyngdepunktet (stiplet). 1 cm⁴ = 10 000 mm⁴, 1 cm³ = 1000 mm³. For valsede profiler (IPE, HEA, HEB) brukes tabellverdier, se bjelketabellene i <a href="#materialer">materialkapitlet</a> og profiltabellen under <i>Dragere – nedbøyning</i>.</p>
-
 <h3>Kalkulator: velg tverrsnitt</h3>
 <div class="calc">
   <div class="fields">
@@ -6696,7 +6744,14 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   </div>
   <div class="out" id="me12b-w-out" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Ved bøying er det ikke bare arealet som teller, men <b>hvor materialet ligger</b>. Materiale langt fra nøytralaksen tar mest av lasten. Treghetsmomentet I sier hvor <b>stivt</b> tverrsnittet er (nedbøyning). Motstandsmomentet W sier hvor <b>sterkt</b> det er (spenning).</p>
+<div class="me12b-fx">
+  <div><b>σ = M / W</b><span>bøyespenning i ytterste fiber, MPa. M i Nmm, W i mm³</span></div>
+  <div><b>W = I / e</b><span>e = avstand fra nøytralaksen til ytterste fiber, mm</span></div>
+  <div><b>f ∝ 1 / (E · I)</b><span>nedbøyningen er omvendt proporsjonal med E · I. I i mm⁴</span></div>
+</div>
 <h3>Planke liggende eller stående</h3>
 <p>Samme planke, 48 × 198 mm, legges over to bukker med en last på midten. Stående har den samme areal, men høyden er 198/48 = 4,1 ganger større. Motstandsmomentet øker med høyden i <b>andre</b> potens (W = b·h²/6), og treghetsmomentet med høyden i <b>tredje</b> potens (I = b·h³/12). Stående er planken derfor 4,1 ganger sterkere og 17 ganger stivere.</p>
 <figure class="fig">
@@ -6707,7 +6762,6 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <dl class="kv" id="me12b-plank-kv"></dl>
   <figcaption>Konstruksjonsvirke C24, E = 11 000 MPa (EN 338). Nedbøyningen er forstørret 4 ganger. Hvorfor kubikk? Høyden teller tre ganger: Dobbelt høyde gir dobbelt så langt til ytterste fiber (×2), materialet der får dobbelt så stor tøyning og dermed dobbelt spenning (×2), og det virker med dobbelt så lang momentarm (×2). Til sammen 2 · 2 · 2 = 8 ganger stivere.</figcaption>
 </figure>
-
 <h3>Steiners sats</h3>
 <p>Treghetsmomentet til en flate om en akse som ikke går gjennom dens eget tyngdepunkt, er egentreghetsmomentet pluss arealet ganger avstanden i annen. Det er derfor I-profiler og sammensveiste bjelker er så effektive: flensene har lite egentreghetsmoment, men stort areal langt ute.</p>
 <div class="me12b-fx">
@@ -6721,24 +6775,20 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <dl class="kv" id="me12b-st-kv"></dl>
   <figcaption>To flattstål 80 × 10 mm. Lagt rett oppå hverandre (a = 5 mm) er I = 53 333 mm⁴. Holdt 100 mm fra hverandre (a = 50 mm) av et steg blir I omtrent 75 ganger større, med samme mengde stål i flensene.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="me12-vrid">
-  <div class="topic-h"><span class="tno">12.7</span><h3>Vridningsspenning, motstands-/treghetsmoment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">En aksel som overfører effekt, blir vridd. Skjærspenningen er null i senter og øker lineært ut til overflaten. Materialet nær senter gjør derfor lite nytte, og et rør er nesten like sterkt som en massiv aksel med samme ytterdiameter, men mye lettere.</p>
-<div class="me12b-fx">
-  <div><b>τ = M<sub>v</sub> / W<sub>p</sub></b><span>vridningsspenning, MPa. M<sub>v</sub> i Nmm</span></div>
-  <div><b>W<sub>p</sub> = π · d³ / 16</b><span>polart motstandsmoment, massiv aksel (≈ 0,196 · d³)</span></div>
-  <div><b>W<sub>p</sub> = π · (D⁴ − d⁴) / (16 · D)</b><span>rør, D = ytre og d = indre diameter</span></div>
-  <div><b>I<sub>p</sub> = π · d⁴ / 32</b><span>polart treghetsmoment, massiv. Rør: π · (D⁴ − d⁴) / 32</span></div>
-  <div><b>φ = M<sub>v</sub> · L / (G · I<sub>p</sub>)</b><span>vridningsvinkel i radianer. Grader = φ · 180 / π</span></div>
-  <div><b>M = 9550 · P / n</b><span>moment i Nm fra effekt P (kW) og turtall n (o/min)</span></div>
+<div class="topic-h"><span class="tno">12.7</span><h3>Vridningsspenning, motstands-/treghetsmoment</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Vridning</h4><b>τ = M<sub>v</sub> / W<sub>p</sub></b><b>M = 9550 · P / n</b><span>M i Nm, P i kW, n i o/min</span></div>
+    <div><h4>Massiv aksel</h4><b>W<sub>p</sub> = π · d³ / 16</b><span>≈ 0,196 · d³</span><b>I<sub>p</sub> = π · d⁴ / 32</b></div>
+    <div><h4>Rør</h4><b>W<sub>p</sub> = π · (D⁴ − d⁴) / (16 · D)</b></div>
+    <div><h4>Vridningsvinkel</h4><b>φ = M<sub>v</sub> · L / (G · I<sub>p</sub>)</b><span>i radianer</span></div>
+  </div>
+  <div class="hurtig-u">τ skjærspenning (MPa) · M<sub>v</sub> vridningsmoment (Nmm) · W<sub>p</sub> polart motstandsmoment (mm³) · G skjærmodul (MPa)</div>
 </div>
-<p>G er skjærmodulen: stål G ≈ 81 000 MPa, aluminium G ≈ 26 000 MPa. Merk at W<sub>p</sub> er dobbelt så stor som motstandsmomentet for bøying (π·d³/32) for samme sirkel.</p>
-<figure class="fig">
-  <svg id="me12b-vfig" viewBox="0 0 600 270" role="img" aria-label="Aksel som vris, og tverrsnitt med skjærspenning som øker lineært fra senter"></svg>
-  <div class="ctrl"><button class="chip play" id="me12b-vfig-play" type="button"></button><button class="chip" id="me12b-vfig-solid" type="button" aria-pressed="true">Massiv</button><button class="chip" id="me12b-vfig-tube" type="button" aria-pressed="false">Rør</button></div>
-  <figcaption>Til venstre: en rett linje på overflaten blir en skruelinje når akselen vris. Vinkelen φ vokser jevnt med lengden. Til høyre: skjærspenningen τ i tverrsnittet. Den er størst i overflaten og null i senter. Røret mister bare den delen som bar minst.</figcaption>
-</figure>
 <h3>Akseldimensjonering fra effekt og turtall</h3>
 <div class="calc">
   <div class="fields">
@@ -6758,13 +6808,35 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <div class="out" id="me12b-v-out" aria-live="polite"></div>
 </div>
 <p class="small muted">Tillatt τ for et overslag der bare momentet er kjent, velges lavt fordi bøying, kilespor og utmatting kommer i tillegg. Veiledende 20–40 MPa for vanlige akselstål (S355, C45). Ren statisk vridning kan regnes mot τ<sub>till</sub> = 0,58 · R<sub>e</sub> / n. Grense for vridningsvinkel er veiledende 0,25° per meter for transmisjonsaksler.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En aksel som overfører effekt, blir vridd. Skjærspenningen er null i senter og øker lineært ut til overflaten. Materialet nær senter gjør derfor lite nytte, og et rør er nesten like sterkt som en massiv aksel med samme ytterdiameter, men mye lettere.</p>
+<div class="me12b-fx">
+  <div><b>τ = M<sub>v</sub> / W<sub>p</sub></b><span>vridningsspenning, MPa. M<sub>v</sub> i Nmm</span></div>
+  <div><b>W<sub>p</sub> = π · d³ / 16</b><span>polart motstandsmoment, massiv aksel (≈ 0,196 · d³)</span></div>
+  <div><b>W<sub>p</sub> = π · (D⁴ − d⁴) / (16 · D)</b><span>rør, D = ytre og d = indre diameter</span></div>
+  <div><b>I<sub>p</sub> = π · d⁴ / 32</b><span>polart treghetsmoment, massiv. Rør: π · (D⁴ − d⁴) / 32</span></div>
+  <div><b>φ = M<sub>v</sub> · L / (G · I<sub>p</sub>)</b><span>vridningsvinkel i radianer. Grader = φ · 180 / π</span></div>
+  <div><b>M = 9550 · P / n</b><span>moment i Nm fra effekt P (kW) og turtall n (o/min)</span></div>
+</div>
+<p>G er skjærmodulen: stål G ≈ 81 000 MPa, aluminium G ≈ 26 000 MPa. Merk at W<sub>p</sub> er dobbelt så stor som motstandsmomentet for bøying (π·d³/32) for samme sirkel.</p>
+<figure class="fig">
+  <svg id="me12b-vfig" viewBox="0 0 600 270" role="img" aria-label="Aksel som vris, og tverrsnitt med skjærspenning som øker lineært fra senter"></svg>
+  <div class="ctrl"><button class="chip play" id="me12b-vfig-play" type="button"></button><button class="chip" id="me12b-vfig-solid" type="button" aria-pressed="true">Massiv</button><button class="chip" id="me12b-vfig-tube" type="button" aria-pressed="false">Rør</button></div>
+  <figcaption>Til venstre: en rett linje på overflaten blir en skruelinje når akselen vris. Vinkelen φ vokser jevnt med lengden. Til høyre: skjærspenningen τ i tverrsnittet. Den er størst i overflaten og null i senter. Røret mister bare den delen som bar minst.</figcaption>
+</figure>
+</details>
 </div>
 <div class="topic" id="me12-tillatt">
-  <div class="topic-h"><span class="tno">12.8</span><h3>Tillatte belastninger</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">Den spenningen en del får lov til å ha, er flytegrensen delt på en sikkerhetsfaktor. Faktoren skal dekke usikkerhet i last, materiale, beregning og utførelse. Last som varierer eller kommer som støt, krever større margin, og da er det ofte utmattingen og ikke flytegrensen som bestemmer.</p>
-<div class="me12b-fx">
-  <div><b>σ<sub>till</sub> = R<sub>e</sub> / n</b><span>tillatt normalspenning (strekk, trykk, bøying)</span></div>
-  <div><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>tillatt skjær- og vridningsspenning for stål og aluminium (von Mises, 1/√3)</span></div>
+<div class="topic-h"><span class="tno">12.8</span><h3>Tillatte belastninger</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Tillatt spenning</h4><b>σ<sub>till</sub> = R<sub>e</sub> / n</b><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>stål og aluminium</span></div>
+    <div><h4>Løfteutstyr</h4><span>WLL = største last i rett, loddrett løft</span><b>F = G / (antall parter · cos β)</b><span>β fra loddlinjen. Toppvinkel aldri over 120°</span></div>
+    <div><h4>Utmatting</h4><span>Varierende last tåler mye mindre enn statisk. Unngå kjerv: bruk radius i overganger</span></div>
+  </div>
+  <div class="hurtig-u">R<sub>e</sub> flytegrense (MPa) · n sikkerhetsfaktor · G last (N)</div>
 </div>
 <h3>Veiledende sikkerhetsfaktorer</h3>
 <div class="tbl" id="me12b-t-n"></div>
@@ -6772,7 +6844,20 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="chips" id="me12b-t-chips" role="group" aria-label="Sikkerhetsfaktor"></div>
 <div class="tbl" id="me12b-t-tbl"></div>
 <p class="small muted">R<sub>e</sub> (R<sub>p0,2</sub> for aluminium og seigherdet stål) er minsteverdier: S235 og S355 for t ≤ 16 mm etter EN 10025-2, C45 +N for d ≤ 16 mm etter EN 10083-2, 42CrMo4 +QT for 16 &lt; d ≤ 40 mm etter EN 10083-3, EN AW-6082 T6 stenger 20 &lt; d ≤ 150 mm etter EN 755-2. Flytegrensen synker med økende tykkelse, så sjekk sertifikatet. Bøying regnes her som strekk (elastisk dimensjonering). Veiledende verdier, ikke dimensjonering etter Eurokode.</p>
-
+<h3>Kjerv og spenningskonsentrasjon</h3>
+<div class="note"><p><b>Unngå kjerv i belastede deler:</b> Bruk radius i overganger (større radius gir lavere K<sub>t</sub>), legg hull og spor der spenningen er lav, slip bort sveisesprut og kanter, og unngå stempling og skarpe merker i høyt belastede områder. Ved statisk last i seigt stål jevner flyt ut toppspenningen, men ved utmatting gjelder den fullt ut.</p></div>
+<h3>Løfteutstyr og lastsikring</h3>
+<div class="tbl" id="me12b-t-lift"></div>
+<p class="small muted">Arbeidskoeffisienter etter maskindirektivet 2006/42/EF vedlegg I pkt. 4.1.2.5 (maskinforskriften): stålwire med endeforbindelse 5, kjetting 4, tekstil 7 som hovedregel. Rundsling: EN 1492-2, båndstropp EN 1492-1, kjettingstropp EN 818-4, stålwirestropp EN 13414-1.</p>
+<div class="tbl" id="me12b-t-ang"></div>
+<p class="small muted">Lastfaktorer for flerpartsstropp etter EN 818-4 og EN 13414-1 (forenklet metode). Fire-parts stropp regnes som om bare tre parter bærer, fordi lasten sjelden fordeler seg likt på fire. Les alltid merkelappen: den angir WLL for hver vinkelsone.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Den spenningen en del får lov til å ha, er flytegrensen delt på en sikkerhetsfaktor. Faktoren skal dekke usikkerhet i last, materiale, beregning og utførelse. Last som varierer eller kommer som støt, krever større margin, og da er det ofte utmattingen og ikke flytegrensen som bestemmer.</p>
+<div class="me12b-fx">
+  <div><b>σ<sub>till</sub> = R<sub>e</sub> / n</b><span>tillatt normalspenning (strekk, trykk, bøying)</span></div>
+  <div><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>tillatt skjær- og vridningsspenning for stål og aluminium (von Mises, 1/√3)</span></div>
+</div>
 <h3>Utmatting – Wöhlerkurven</h3>
 <p>En del som belastes og avlastes mange ganger, kan sprekke ved en spenning langt under flytegrensen. Wöhlerkurven viser hvor mange lastvekslinger N en prøve tåler ved en gitt spenningsamplitude. Stål har en <b>utmattingsgrense</b>: under den tåler det i praksis uendelig mange vekslinger. For polert stål ligger den rundt 0,4–0,5 · R<sub>m</sub> (veiledende). Aluminium har ingen slik grense, og kurven fortsetter nedover.</p>
 <figure class="fig">
@@ -6780,7 +6865,6 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <div class="me12b-rng"><label class="small muted" for="me12b-wf-s">Spenningsamplitude σ<sub>a</sub></label><input type="range" id="me12b-wf-s" min="20" max="90" step="1" value="55"><output id="me12b-wf-so"></output></div>
   <figcaption>Kvalitativ kurve. Spenningen er vist som andel av strekkfastheten R<sub>m</sub>, og N på logaritmisk skala. Kjerv, ru overflate, sveis og korrosjon senker hele kurven betydelig.</figcaption>
 </figure>
-
 <h3>Kjerv og spenningskonsentrasjon</h3>
 <p>Kraften i en del kan tenkes som linjer som går gjennom materialet. Ved et hull, et spor eller en skarp overgang må linjene presses sammen rundt hindringen, og spenningen blir høyest i kanten. Forholdet mellom toppspenningen og den nominelle spenningen kalles <b>formfaktoren K<sub>t</sub></b>. For et lite rundt hull i en bred plate er K<sub>t</sub> = 3. Jo skarpere kjerv, desto høyere K<sub>t</sub>.</p>
 <figure class="fig">
@@ -6788,15 +6872,9 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <div class="ctrl"><button class="chip play" id="me12b-kf-play" type="button"></button></div>
   <figcaption>Punktene går fortere der kraftlinjene ligger tett, altså der spenningen er høy. Til høyre: spenningen i snittet gjennom hullet (teoretisk for bred plate). Den er 3 ganger nominell spenning i hullkanten og faller raskt utover.</figcaption>
 </figure>
-<div class="note"><p><b>Unngå kjerv i belastede deler:</b> Bruk radius i overganger (større radius gir lavere K<sub>t</sub>), legg hull og spor der spenningen er lav, slip bort sveisesprut og kanter, og unngå stempling og skarpe merker i høyt belastede områder. Ved statisk last i seigt stål jevner flyt ut toppspenningen, men ved utmatting gjelder den fullt ut.</p></div>
-
 <h3>Løfteutstyr og lastsikring</h3>
 <p><b>WLL</b> (Working Load Limit, arbeidsgrense) er den største lasten utstyret er sertifisert for i et rett, loddrett løft. Bruddlasten er WLL ganger arbeidskoeffisienten. Koeffisienten er høyere for tekstil enn for stål, fordi tekstil tåler slitasje, kutt og varme dårligere.</p>
-<div class="tbl" id="me12b-t-lift"></div>
-<p class="small muted">Arbeidskoeffisienter etter maskindirektivet 2006/42/EF vedlegg I pkt. 4.1.2.5 (maskinforskriften): stålwire med endeforbindelse 5, kjetting 4, tekstil 7 som hovedregel. Rundsling: EN 1492-2, båndstropp EN 1492-1, kjettingstropp EN 818-4, stålwirestropp EN 13414-1.</p>
 <p>Med flere parter må hver part ta mer enn sin andel av lasten fordi den drar på skrå. Med vinkelen β mellom parten og loddlinjen blir kraften i hver part G / (antall parter · cos β). Ved 60° er kraften dobbelt så stor som ved loddrett løft. Over 60° fra loddlinjen (toppvinkel over 120°) skal ikke stropper brukes.</p>
-<div class="tbl" id="me12b-t-ang"></div>
-<p class="small muted">Lastfaktorer for flerpartsstropp etter EN 818-4 og EN 13414-1 (forenklet metode). Fire-parts stropp regnes som om bare tre parter bærer, fordi lasten sjelden fordeler seg likt på fire. Les alltid merkelappen: den angir WLL for hver vinkelsone.</p>
 <figure class="fig">
   <svg id="me12b-lf" viewBox="0 0 600 290" role="img" aria-label="To-parts stropp der kraften i partene øker med vinkelen"></svg>
   <div class="ctrl"><button class="chip play" id="me12b-lf-play" type="button"></button><label class="small muted" for="me12b-lf-g">Last (kg)</label><input id="me12b-lf-g" inputmode="decimal" value="1000" style="width:90px"></div>
@@ -6804,27 +6882,20 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <dl class="kv" id="me12b-lf-kv"></dl>
   <figcaption>Pilene langs partene er tegnet i forhold til kraften. Den vannrette komponenten klemmer lasten sammen og må tas opp av løftepunktene.</figcaption>
 </figure>
+</details>
 </div>
 <div class="topic" id="me12-knekk">
-  <div class="topic-h"><span class="tno">12.9</span><h3>Knekkberegning</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">En lang, slank stav i trykk svikter ikke ved at materialet flyter, men ved at den plutselig bøyer ut til siden: den <b>knekker</b>. Knekklasten avhenger av stivheten E · I og av lengden i annen. Halv lengde gir fire ganger så stor knekklast.</p>
-<div class="me12b-fx">
-  <div><b>F<sub>k</sub> = π² · E · I / L<sub>k</sub>²</b><span>Eulers knekklast, N. I = minste treghetsmoment, mm⁴</span></div>
-  <div><b>λ = L<sub>k</sub> / i</b><span>slankhet. i = √(I / A) er treghetsradien, mm</span></div>
-  <div><b>F<sub>till</sub> = F<sub>k</sub> / n</b><span>tillatt trykkraft med sikkerhetsfaktor n</span></div>
+<div class="topic-h"><span class="tno">12.9</span><h3>Knekkberegning</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Euler</h4><b>F<sub>k</sub> = π² · E · I / L<sub>k</sub>²</b><span>I = minste treghetsmoment</span></div>
+    <div><h4>Slankhet</h4><b>λ = L<sub>k</sub> / i</b><b>i = √(I / A)</b><span>treghetsradius. Rund stang: i = d / 4</span></div>
+    <div><h4>Tillatt last</h4><b>F<sub>till</sub> = F<sub>k</sub> / n</b><span>n ≈ 3–5 i Euler-området</span></div>
+  </div>
+  <div class="hurtig-u">F<sub>k</sub> knekklast (N) · L<sub>k</sub> knekklengde (mm) · E (MPa) · I (mm⁴)</div>
 </div>
-<p>Staven knekker alltid om den svakeste aksen, så bruk det <b>minste</b> treghetsmomentet. For en IPE-bjelke er det I<sub>z</sub>, som er mye mindre enn I<sub>y</sub>. Knekklengden L<sub>k</sub> avhenger av hvordan endene er holdt:</p>
-<figure class="fig">
-  <svg id="me12b-kfig" viewBox="0 0 600 360" role="img" aria-label="De fire Euler-tilfellene med knekkform, der lasten økes til hver stav knekker"></svg>
-  <div class="ctrl"><button class="chip play" id="me12b-kfig-play" type="button"></button><span class="mono" id="me12b-kfig-read"></span></div>
-  <figcaption>Samme stav med fire ulike innfestinger. Lasten økes likt på alle. Tilfelle 1 knekker først, ved en firedel av lasten i tilfelle 2. Tilfelle 4 tåler fire ganger så mye som tilfelle 2. Utbøyningen er forstørret.</figcaption>
-</figure>
 <div class="tbl" id="me12b-k-cases"></div>
-
-<h3>Gyldighet: Euler, Tetmajer og Johnson</h3>
-<p>Euler forutsetter at materialet er elastisk helt til staven knekker. Det gjelder bare for slanke staver, der knekkspenningen er under proporsjonalitetsgrensen (omtrent 0,8 · R<sub>e</sub>). Grensen er λ<sub>0</sub> = π · √(E / σ<sub>p</sub>), som gir <b>λ<sub>0</sub> ≈ 105 for S235</b> og ≈ 85 for S355. Kortere staver regnes med <b>Tetmajer</b> (rett linje, S235: σ<sub>k</sub> = 310 − 1,14 · λ; S355: σ<sub>k</sub> = 335 − 0,62 · λ) eller med <b>Johnson-parabelen</b> σ<sub>k</sub> = R<sub>e</sub> − (R<sub>e</sub> · λ / 2π)² / E. Euler brukt på en kort stav gir altfor høy knekklast. Svært korte staver kontrolleres bare mot trykkspenningen σ = F/A ≤ R<sub>e</sub>/n.</p>
-<p class="small muted">Veiledende sikkerhetsfaktor mot knekk: 3–5 i Euler-området, høyere ved usikker innspenning, eksentrisk last eller støt. Bærende stålkonstruksjoner dimensjoneres etter NS-EN 1993-1-1 med knekkurver, som tar med skjevheter og egenspenninger og gir lavere kapasitet enn Euler og Tetmajer.</p>
-
 <h3>Knekkalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -6845,7 +6916,23 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   </div>
   <div class="out" id="me12b-k-out" aria-live="polite"></div>
 </div>
-
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En lang, slank stav i trykk svikter ikke ved at materialet flyter, men ved at den plutselig bøyer ut til siden: den <b>knekker</b>. Knekklasten avhenger av stivheten E · I og av lengden i annen. Halv lengde gir fire ganger så stor knekklast.</p>
+<div class="me12b-fx">
+  <div><b>F<sub>k</sub> = π² · E · I / L<sub>k</sub>²</b><span>Eulers knekklast, N. I = minste treghetsmoment, mm⁴</span></div>
+  <div><b>λ = L<sub>k</sub> / i</b><span>slankhet. i = √(I / A) er treghetsradien, mm</span></div>
+  <div><b>F<sub>till</sub> = F<sub>k</sub> / n</b><span>tillatt trykkraft med sikkerhetsfaktor n</span></div>
+</div>
+<p>Staven knekker alltid om den svakeste aksen, så bruk det <b>minste</b> treghetsmomentet. For en IPE-bjelke er det I<sub>z</sub>, som er mye mindre enn I<sub>y</sub>. Knekklengden L<sub>k</sub> avhenger av hvordan endene er holdt:</p>
+<figure class="fig">
+  <svg id="me12b-kfig" viewBox="0 0 600 360" role="img" aria-label="De fire Euler-tilfellene med knekkform, der lasten økes til hver stav knekker"></svg>
+  <div class="ctrl"><button class="chip play" id="me12b-kfig-play" type="button"></button><span class="mono" id="me12b-kfig-read"></span></div>
+  <figcaption>Samme stav med fire ulike innfestinger. Lasten økes likt på alle. Tilfelle 1 knekker først, ved en firedel av lasten i tilfelle 2. Tilfelle 4 tåler fire ganger så mye som tilfelle 2. Utbøyningen er forstørret.</figcaption>
+</figure>
+<h3>Gyldighet: Euler, Tetmajer og Johnson</h3>
+<p>Euler forutsetter at materialet er elastisk helt til staven knekker. Det gjelder bare for slanke staver, der knekkspenningen er under proporsjonalitetsgrensen (omtrent 0,8 · R<sub>e</sub>). Grensen er λ<sub>0</sub> = π · √(E / σ<sub>p</sub>), som gir <b>λ<sub>0</sub> ≈ 105 for S235</b> og ≈ 85 for S355. Kortere staver regnes med <b>Tetmajer</b> (rett linje, S235: σ<sub>k</sub> = 310 − 1,14 · λ; S355: σ<sub>k</sub> = 335 − 0,62 · λ) eller med <b>Johnson-parabelen</b> σ<sub>k</sub> = R<sub>e</sub> − (R<sub>e</sub> · λ / 2π)² / E. Euler brukt på en kort stav gir altfor høy knekklast. Svært korte staver kontrolleres bare mot trykkspenningen σ = F/A ≤ R<sub>e</sub>/n.</p>
+<p class="small muted">Veiledende sikkerhetsfaktor mot knekk: 3–5 i Euler-området, høyere ved usikker innspenning, eksentrisk last eller støt. Bærende stålkonstruksjoner dimensjoneres etter NS-EN 1993-1-1 med knekkurver, som tar med skjevheter og egenspenninger og gir lavere kapasitet enn Euler og Tetmajer.</p>
 <h3>Eksempel: stempelstangen i en hydraulikksylinder</h3>
 <p>En sylinder Ø80/36 mm på 180 bar gir skyvekraften F = p · A = 18 N/mm² · 5027 mm² ≈ 90,5 kN (se <a href="#hydraulikk">Hydraulikk</a>). Sylinderen er festet med ledd i begge ender (tilfelle 2), og ved fullt utslag er knekklengden omtrent 1000 mm. Regnes hele lengden som stempelstang (på den sikre siden):</p>
 <div class="me12b-fx">
@@ -6854,18 +6941,24 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <div><b>Ikke godt nok</b><span>Produsenter regner ofte med n = 3,5. Kortere slag, tykkere stang eller fast innfesting i bunnen trengs.</span></div>
 </div>
 <p class="small muted">Sylinderprodusenter (for eksempel Bosch Rexroth) oppgir tillatt slaglengde for hver stangdiameter og innfesting med sikkerhetsfaktor 3,5 mot knekk. Bruk produsentens diagram når det finnes.</p>
+</details>
 </div>
 <div class="topic" id="me12-nedboy">
-  <div class="topic-h"><span class="tno">12.10</span><h3>Dragere – nedbøyning</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
-  <p class="lead">En drager (bjelke) må være sterk nok, så bøyespenningen holder seg under tillatt verdi, og stiv nok, så den ikke synker mer enn tillatt. Ofte er det stivheten som bestemmer, særlig for lange spenn, fordi nedbøyningen øker med lengden i tredje eller fjerde potens.</p>
-<div class="me12b-fx">
-  <div><b>σ<sub>maks</sub> = M<sub>maks</sub> / W</b><span>største bøyespenning, MPa</span></div>
-  <div><b>f<sub>maks</sub> ≤ L / 300</b><span>vanlig krav til nedbøyning for bjelker (veiledende)</span></div>
+<div class="topic-h"><span class="tno">12.10</span><h3>Dragere – nedbøyning</h3><a class="up" href="#mekanikk" aria-label="Til innholdet i emne 12">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Styrke</h4><b>σ<sub>maks</sub> = M<sub>maks</sub> / W</b></div>
+    <div><h4>Stivhet</h4><b>f<sub>maks</sub> ≤ L / 300</b><span>vanlig krav for bjelker, veiledende</span></div>
+    <div><h4>Fritt opplagt, punktlast midt på</h4><b>M = F · L / 4</b><b>f = F · L³ / (48 · E · I)</b></div>
+    <div><h4>Fritt opplagt, jevn last</h4><b>M = q · L² / 8</b><b>f = 5 · q · L⁴ / (384 · E · I)</b></div>
+    <div><h4>Utkrager, punktlast i enden</h4><b>M = F · L</b><b>f = F · L³ / (3 · E · I)</b></div>
+  </div>
+  <div class="hurtig-u">F punktlast (N) · q jevn last (N/mm) · L spenn (mm) · E (MPa) · I (mm⁴) · W (mm³)</div>
 </div>
 <h3>Standard lasttilfeller</h3>
 <div class="tbl" id="me12b-n-tbl"></div>
 <p class="small muted">F = punktlast (N), q = jevnt fordelt last (N/mm = kN/m), L = spenn (mm), E = elastisitetsmodul (MPa), I = treghetsmoment (mm⁴). Egenvekten til bjelken kommer i tillegg som jevnt fordelt last.</p>
-
 <h3>Bjelkekalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -6882,14 +6975,23 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   </div>
   <div class="out" id="me12b-n-out" aria-live="polite"></div>
 </div>
+<h3>Profiltabell</h3>
+<div class="tbl" id="me12b-n-ptbl"></div>
+<p class="small muted">Tverrsnittsdata etter EN 10365 (IPE, HEA, HEB med parallelle flenser). y-y er sterk akse (bøying med steget stående), z-z er svak akse. Kontroller mot leverandørens tabell ved konstruksjon.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En drager (bjelke) må være sterk nok, så bøyespenningen holder seg under tillatt verdi, og stiv nok, så den ikke synker mer enn tillatt. Ofte er det stivheten som bestemmer, særlig for lange spenn, fordi nedbøyningen øker med lengden i tredje eller fjerde potens.</p>
+<div class="me12b-fx">
+  <div><b>σ<sub>maks</sub> = M<sub>maks</sub> / W</b><span>største bøyespenning, MPa</span></div>
+  <div><b>f<sub>maks</sub> ≤ L / 300</b><span>vanlig krav til nedbøyning for bjelker (veiledende)</span></div>
+</div>
+<h3>Bjelkekalkulator</h3>
 <figure class="fig">
   <svg id="me12b-n-fig" viewBox="0 0 600 370" role="img" aria-label="Animert bjelke med nedbøyning, skjærkraftdiagram og momentdiagram"></svg>
   <div class="ctrl"><button class="chip play" id="me12b-n-play" type="button"></button><span class="small muted">Følger kalkulatoren over.</span></div>
   <figcaption>Nedbøyningen er forstørret, men i riktig forhold til L/300 (stiplet). Skjærkraften V viser hvor kraften går ned til opplagrene. Momentet M er størst der V skifter fortegn eller ved innspenningen. Positivt moment (strekk i underkant) er tegnet under linjen.</figcaption>
 </figure>
-<h3>Profiltabell</h3>
-<div class="tbl" id="me12b-n-ptbl"></div>
-<p class="small muted">Tverrsnittsdata etter EN 10365 (IPE, HEA, HEB med parallelle flenser). y-y er sterk akse (bøying med steget stående), z-z er svak akse. Kontroller mot leverandørens tabell ved konstruksjon.</p>
+</details>
 </div>
 </section>
     </main>
