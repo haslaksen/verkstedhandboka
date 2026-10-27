@@ -8674,13 +8674,27 @@ $("#trig-f").innerHTML=tblHTML(["Sammenheng","Formel"],[["Sinus","sin A = motst�
 /* =========================================================
    FORKLARENDE FIGURER OG ANIMASJONER (kap. 1–14)
    ========================================================= */
+/* Spar strøm: en animert figur tegnes først når emnet åpnes, og animasjonen går bare når figuren er på skjermen (høyst ca. 30 bilder/s). */
 const LOOPS=[];let loopLast=0;
-function addLoop(chap,fn,btn){
-  const o={chap,fn,on:!RM};LOOPS.push(o);
-  if(btn){const b=$(btn),upd=()=>{b.textContent=o.on?"❚❚ Pause":"▶ Spill av";b.setAttribute("aria-pressed",String(o.on))};upd();b.onclick=()=>{o.on=!o.on;upd()}}
-  fn(0);return o;
+const loopSec=o=>{const el=document.getElementById(o.chap);return el&&(el.matches("[data-chap]")?el:el.closest("[data-chap]"))};
+const loopSeen=new Map(),loopIO="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>loopSeen.set(e.target,e.isIntersecting)),{rootMargin:"150px"}):null;
+/* Første tegning: noter hvilke figurer funksjonen endrer, så vi vet hva som må være synlig */
+function loopDraw(o,dt){
+  const mo=loopIO&&new MutationObserver(()=>{});if(mo)mo.observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});
+  o.fn(dt);o.drawn=true;if(!mo)return;
+  const els=new Set();mo.takeRecords().forEach(r=>{let t=r.target;if(t.nodeType!==1)t=t.parentElement;if(t)els.add(t.closest("svg")||t)});mo.disconnect();
+  o.els=[...els];o.els.forEach(e=>{if(!loopSeen.has(e)){loopSeen.set(e,true);loopIO.observe(e)}});
 }
-function loopTick(ts){const dt=loopLast?Math.min(.05,(ts-loopLast)/1000):0;loopLast=ts;for(const o of LOOPS){if(o.on){const el=document.getElementById(o.chap),sec=el&&(el.matches("[data-chap]")?el:el.closest("[data-chap]"));if(sec&&!sec.hidden)o.fn(dt)}}requestAnimationFrame(loopTick)}
+function loopVisible(o){if(!o.els||!o.els.length)return true;for(const e of o.els){if(!e.isConnected){o.drawn=false;return true}if(loopSeen.get(e))return true}return false}
+function addLoop(chap,fn,btn){
+  const o={chap,fn,on:!RM,drawn:false};LOOPS.push(o);
+  if(btn){const b=$(btn),upd=()=>{b.textContent=o.on?"❚❚ Pause":"▶ Spill av";b.setAttribute("aria-pressed",String(o.on))};upd();b.onclick=()=>{o.on=!o.on;upd()}}
+  if(!o.on){o.fn(0);o.drawn=true}else{const sec=loopSec(o);if(sec&&!sec.hidden)loopDraw(o,0)}return o;
+}
+function loopTick(ts){const run=!loopLast||ts-loopLast>=30,dt=loopLast&&run?Math.min(.05,(ts-loopLast)/1000):0;if(run)loopLast=ts;
+  for(const o of LOOPS){if(o.drawn&&!(run&&o.on))continue;const sec=loopSec(o);if(!sec||sec.hidden)continue;
+    if(!o.drawn)loopDraw(o,o.on?dt:0);else if(loopVisible(o)){if(o.drawn)o.fn(dt);else loopDraw(o,dt)}}
+  requestAnimationFrame(loopTick)}
 requestAnimationFrame(loopTick);
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const lerp=(a,b,t)=>a+(b-a)*t;
