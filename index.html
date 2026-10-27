@@ -244,9 +244,12 @@ input[type="range"]{padding:0;border:0;background:transparent;accent-color:var(-
   .brand h1{font-size:26px}
   .brand p,.stamp{display:none}
   .wrap{padding-top:14px;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
-  nav.toc{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:40;gap:0;overflow-y:auto;overscroll-behavior:contain;max-height:78vh;
-    padding:14px 10px calc(72px + env(safe-area-inset-bottom,0px));background:var(--sheet);border-top:1px solid var(--line);
-    border-radius:16px 16px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.25);transform:translateY(105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s}
+  /* Arket står over bunnlinjen (--ab-h måles i JS), så nederste emne aldri havner bak den */
+  nav.toc{position:fixed;left:0;right:0;bottom:var(--ab-h,calc(60px + env(safe-area-inset-bottom,0px)));top:auto;z-index:40;gap:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+    max-height:calc(100vh - var(--ab-h,calc(60px + env(safe-area-inset-bottom,0px))) - env(safe-area-inset-top,0px) - 72px);
+    max-height:calc(100dvh - var(--ab-h,calc(60px + env(safe-area-inset-bottom,0px))) - env(safe-area-inset-top,0px) - 72px);
+    padding:14px 10px 10px;background:var(--sheet);border-top:1px solid var(--line);
+    border-radius:16px 16px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.25);transform:translateY(calc(100% + var(--ab-h,100px) + 20px));visibility:hidden;transition:transform .22s ease,visibility 0s .22s}
   body.toc-open nav.toc{transform:none;visibility:visible;transition:transform .22s ease}
   nav.toc .lbl{margin:0 0 6px 12px}
   nav.toc a{grid-template-columns:32px 1fr;padding:12px 12px;font-size:16px;border-radius:8px}
@@ -17844,6 +17847,8 @@ bar.innerHTML='<button class="ab-arrow" data-go="-1" aria-label="Forrige emne">'
   '<button class="ab-mid" aria-expanded="false" aria-label="Vis emner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="ab-txt"><small></small><b></b></span></button>'+
   '<button class="ab-arrow" data-go="1" aria-label="Neste emne">'+chev("M9 5l7 7-7 7")+'</button>';
 document.body.append(scrim,bar);
+const abH=()=>document.documentElement.style.setProperty("--ab-h",bar.offsetHeight+"px");abH();
+if(window.ResizeObserver)new ResizeObserver(abH).observe(bar);else addEventListener("resize",abH);
 const mid=bar.querySelector(".ab-mid");
 function sheet(open){document.body.classList.toggle("toc-open",open);mid.setAttribute("aria-expanded",open);
   if(open){const cur=toc.querySelector('a[aria-current="page"]');if(cur)cur.scrollIntoView({block:"center"})}}
