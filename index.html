@@ -1836,7 +1836,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
       <div class="field"><label for="s4x-v-r">Rotvulst (mm)</label><input id="s4x-v-r" inputmode="decimal" value="1"></div>
     </div>
     <div class="row2">
-      <div class="field"><label for="s4x-v-mat">Materiale</label><select id="s4x-v-mat"><option value="7.85">Stål 7,85</option><option value="7.9">Rustfritt 7,9</option><option value="2.7">Aluminium 2,7</option></select></div>
+      <div class="field"><label for="s4x-v-mat">Materiale</label><select id="s4x-v-mat"><option value="7.85">Stål 7850 kg/m³</option><option value="7.9">Rustfritt 7900 kg/m³</option><option value="2.7">Aluminium 2700 kg/m³</option></select></div>
       <div class="field"><label for="s4x-v-L">Lengde (m)</label><input id="s4x-v-L" inputmode="decimal" value="1"></div>
     </div>
     <div class="row2">
@@ -17236,7 +17236,7 @@ $("#fy11b-htt").innerHTML=tblHTML(["Form","Formel","Hva styrer den","Verksted-ek
   addLoop("fy11-varme",dt=>{ph+=dt;draw()},"#fy11b-ht-play");draw();
 }
 {
-  const PM=[["Stål (ρ 7,85, c 490)",7.85,490],["Aluminium (ρ 2,70, c 920)",2.70,920]];
+  const PM=[["Stål (ρ 7850, c 490)",7.85,490],["Aluminium (ρ 2700, c 920)",2.70,920]];
   const sel=$("#fy11b-pmat");PM.forEach((a,i)=>sel.add(new Option(a[0],i)));
   const ids=["pt","pl","pb","pmin","pt0","pt1","peta"],g=k=>num($("#fy11b-"+k).value),out=$("#fy11b-pout"),svg=$("#fy11b-pfig");
   function fig(t,b){
@@ -17270,6 +17270,7 @@ $("#fy11b-htt").innerHTML=tblHTML(["Form","Formel","Hva styrer den","Verksted-ek
 
 /* ---------- 11.7 Tabeller ---------- */
 const fy11bSort=(boxId,qId,head,rows,txt)=>{
+  const ri=head.indexOf("ρ");if(ri>=0)rows=rows.map(x=>x.map((c,i)=>i===ri?rho(c):c));
   const box=$("#"+boxId),q=$("#"+qId);let col=-1,dir=1;
   const key=v=>{const m=String(v).replace(/−/g,"-").replace(/\s/g,"").match(/-?\d+(,\d+)?/);return m?parseFloat(m[0].replace(",",".")):null};
   function render(){
