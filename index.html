@@ -3497,6 +3497,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="field" style="max-width:340px"><label for="m7x-vmat">Materiale (skalerer alle tabellene)</label><select id="m7x-vmat"></select></div>
 <h3>Rundstål, firkantstål og sekskantstål</h3>
+<figure class="fig">
+  <svg id="m7x-shp" viewBox="0 0 600 220" role="img" aria-label="Tverrsnitt av rund, firkant, sekskant og flat med arealformler"></svg>
+  <figcaption>m′ = A · ρ / 10⁶ &nbsp;(m′ i kg/m, A i mm², ρ i kg/m³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
+</figure>
 <div class="filter"><label for="m7x-vq" class="small muted">Mål (mm)</label><input id="m7x-vq" inputmode="decimal" placeholder="f.eks. 40"></div>
 <div class="tbl m7x-tbox" id="m7x-rsq"></div>
 <p class="small muted">Rund etter EN 10060, firkant etter EN 10059, sekskant etter EN 10061. Ikke alle mål er lagervare i alle materialer.</p>
@@ -3523,12 +3527,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <div class="out" id="w-out" aria-live="polite"></div>
   </div>
 <details class="lesmer">
-<summary>Les mer: forklaring og figurer</summary>
+<summary>Les mer: forklaring</summary>
 <p class="lead">Vekt per meter er tverrsnittsareal ganger densitet. Med areal i mm² og densitet i kg/m³ får man kg/m direkte ved å dele på 10⁶ (1 000 000).</p>
-<figure class="fig">
-  <svg id="m7x-shp" viewBox="0 0 600 220" role="img" aria-label="Tverrsnitt av rund, firkant, sekskant og flat med arealformler"></svg>
-  <figcaption>m′ = A · ρ / 10⁶ &nbsp;(m′ i kg/m, A i mm², ρ i kg/m³). Sekskant måles over flatene (nøkkelvidde s).</figcaption>
-</figure>
 <p class="small" id="m7x-vinfo" style="margin-top:10px"></p>
 <p class="small muted">Tabellene er regnet med skarpe kanter. Faktisk vekt kan avvike litt på grunn av valsetoleranser (EN 10058–10061) og kantradier. Til innkjøp og løft er det mer enn nøyaktig nok.</p>
 </details>
@@ -3559,6 +3559,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="m7x-dn"></div>
 <p class="small muted">DN og ytterdiameter etter EN 10220 serie 1. NPS, ytterdiameter og Sch 40 etter ASME B36.10M. kg/m er regnet med Sch 40-veggen og ASME-diameteren. Rørgjengen R/G har samme tommebetegnelse som NPS for DN 6–150.</p>
 <h3>Emnerør og presisjonsrør: utvalg</h3>
+<figure class="fig">
+  <svg id="m7x-rfig" viewBox="0 0 600 260" role="img" aria-label="Tverrsnitt av rør med ytterdiameter, innerdiameter og veggtykkelse"></svg>
+  <figcaption>Tverrsnittet tegnes i riktig forhold. Arealet er ringen mellom de to sirklene: A = π · (D² − d²) / 4 = π · (D − T) · T.</figcaption>
+</figure>
 <div class="filter">
   <span class="chips" id="m7x-rstd" style="margin:0"><button class="chip" type="button" data-k="" aria-pressed="true">Alle</button><button class="chip" type="button" data-k="P" aria-pressed="false">EN 10305-1</button><button class="chip" type="button" data-k="S" aria-pressed="false">EN 10297-1</button><button class="chip" type="button" data-k="R" aria-pressed="false">EN 10220 rør</button></span>
   <label for="m7x-rq" class="small muted">Ytter-Ø eller innv. Ø</label><input id="m7x-rq" inputmode="decimal" placeholder="f.eks. 60">
@@ -3582,15 +3586,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="out" id="m7x-rout" aria-live="polite"></div>
 </div>
 <details class="lesmer">
-<summary>Les mer: forklaring og figurer</summary>
+<summary>Les mer: forklaring</summary>
 <p class="lead">Rør bestilles på ytterdiameter og veggtykkelse. Rør til rørsystemer har en nominell størrelse (DN eller tommer) som bare omtrent tilsvarer innvendig diameter. Ytterdiameteren er fast, så rør med ulik veggtykkelse passer i samme koblinger.</p>
 <h3>Emnerør og presisjonsrør: utvalg</h3>
 <p>Masse etter EN 10220: <span class="mono">m′ = (D − T) · T · 0,0246615</span> kg/m, med D og T i mm. Konstanten er π · 7850 / 10⁶, altså stål med densitet 7850 kg/m³. Formelen er eksakt for et rør uten toleranser.</p>
-<h3>Kalkulator: rør</h3>
-<figure class="fig">
-  <svg id="m7x-rfig" viewBox="0 0 600 260" role="img" aria-label="Tverrsnitt av rør med ytterdiameter, innerdiameter og veggtykkelse"></svg>
-  <figcaption>Tverrsnittet tegnes i riktig forhold. Arealet er ringen mellom de to sirklene: A = π · (D² − d²) / 4 = π · (D − T) · T.</figcaption>
-</figure>
 </details>
 </div>
 <div class="topic" id="m7-bjelke">
@@ -3616,6 +3615,11 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl m7x-tbox" id="m7x-btbl"></div>
 <p class="small muted" id="m7x-bsrc">IPE, HEA, HEB etter EN 10365 (tidl. Euronorm 19-57 og 53-62). UNP etter EN 10365 / DIN 1026-1. Verdiene stemmer med ArcelorMittals profiltabeller og er kontrollregnet fra geometrien. Masse G regnet med 7850 kg/m³. W er elastisk motstandsmoment (W<sub>el</sub>).</p>
+<figure class="fig">
+  <svg id="m7x-bfig" viewBox="0 0 600 380" role="img" aria-label="Valgt bjelkeprofil tegnet i skala med mål"></svg>
+  <div class="ctrl"><span class="chips" id="m7x-bsc" style="margin:0"><button class="chip" type="button" data-k="fit" aria-pressed="true">Fyll figuren</button><button class="chip" type="button" data-k="fix" aria-pressed="false">Felles skala</button></span><span class="mono" id="m7x-bname"></span></div>
+  <figcaption>Profilen tegnes i riktig forhold med rotradius r. Med «Felles skala» har alle profilene samme målestokk, så du ser størrelsesforskjellen. UNP har 8 % skrå flensinnside. Flenstykkelsen t<sub>f</sub> måles midt på flensen.</figcaption>
+</figure>
 <h3>Rask kontroll av bjelke</h3>
 <div class="calc">
   <div class="fields">
@@ -3632,13 +3636,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <p class="small muted">M = F·L/4 og δ = F·L³/(48·E·I) for punktlast. M = Q·L/8 og δ = 5·Q·L³/(384·E·I) for jevnt fordelt total last Q. E = 210 000 MPa. Vanlig krav til nedbøyning er L/300 for bjelker (veiledende, avhenger av bruk).</p>
 <details class="lesmer">
-<summary>Les mer: forklaring og figurer</summary>
+<summary>Les mer: forklaring</summary>
 <p class="lead">Bjelkeprofiler er valset slik at mest mulig materiale ligger langt fra den nøytrale aksen. Da blir treghetsmomentet stort i forhold til vekten. IPE er smale og høye bjelker. HEA og HEB er brede og omtrent kvadratiske søyle- og bjelkeprofiler. UNP er U-profiler med skrå flensinnside.</p>
-<figure class="fig">
-  <svg id="m7x-bfig" viewBox="0 0 600 380" role="img" aria-label="Valgt bjelkeprofil tegnet i skala med mål"></svg>
-  <div class="ctrl"><span class="chips" id="m7x-bsc" style="margin:0"><button class="chip" type="button" data-k="fit" aria-pressed="true">Fyll figuren</button><button class="chip" type="button" data-k="fix" aria-pressed="false">Felles skala</button></span><span class="mono" id="m7x-bname"></span></div>
-  <figcaption>Profilen tegnes i riktig forhold med rotradius r. Med «Felles skala» har alle profilene samme målestokk, så du ser størrelsesforskjellen. UNP har 8 % skrå flensinnside. Flenstykkelsen t<sub>f</sub> måles midt på flensen.</figcaption>
-</figure>
 <h3>Rask kontroll av bjelke</h3>
 <p>Fritt opplagt bjelke med valgt profil, bøying om sterk akse. Egenvekten er tatt med. Dette er en overslagsberegning for å velge profil, ikke en kontroll etter Eurokode 3 (vipping, knekking av flens og lokale laster er ikke med).</p>
 </details>
@@ -3659,6 +3658,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <div class="tbl m7x-tbox" id="m7x-htab"></div>
 <p class="small muted" id="m7x-hnote">Verdiene er regnet med hjørneradiene som standardene foreskriver til beregning: EN 10219-2: r<sub>o</sub> = 2t / 2,5t / 3t og r<sub>i</sub> = t / 1,5t / 2t for t ≤ 6 / ≤ 10 / &gt; 10 mm. EN 10210-2: r<sub>o</sub> = 1,5t, r<sub>i</sub> = t. Kontrollert mot publiserte tabeller (avvik under 0,5 %). Masse med 7850 kg/m³. Utvalg av vanlige mål. Trykk på en rad for å tegne den.</p>
+<figure class="fig">
+  <svg id="m7x-hfig" viewBox="0 0 600 300" role="img" aria-label="Valgt hulprofil i skala med akser og mål"></svg>
+  <figcaption id="m7x-hcap">Profilen i riktig forhold. y–y er sterk akse (bøying i høyderetningen H).</figcaption>
+</figure>
 <h3>RHS-kalkulator</h3>
 <div class="calc">
   <div class="fields">
@@ -3675,7 +3678,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <p class="small muted"><b>Uten hjørneradius:</b> kalkulatoren regner med skarpe hjørner (ytre rektangel minus indre rektangel). Det gir for høyt areal, vekt og treghetsmoment, typisk 2–5 % på arealet og mer på treghetsmomentet. Avviket øker med veggtykkelsen. Bruk tabellen over når dimensjonen finnes der.</p>
 <details class="lesmer">
-<summary>Les mer: forklaring og figurer</summary>
+<summary>Les mer: forklaring</summary>
 <p class="lead">Hulprofiler er rør med kvadratisk (SHS), rektangulært (RHS) eller sirkulært (CHS) tverrsnitt. De er stive mot vridning og knekking i begge retninger, og derfor gode som søyler, rammer og stativer.</p>
 <div class="two">
   <div>
@@ -3687,10 +3690,6 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <p class="small">Varmformet eller normalisert etter forming. Mindre hjørneradius (r<sub>o</sub> = 1,5·t), jevnere egenskaper og ingen kaldherdede hjørner. Brukes i tunge konstruksjoner og der det sveises i hjørnene.</p>
   </div>
 </div>
-<figure class="fig">
-  <svg id="m7x-hfig" viewBox="0 0 600 300" role="img" aria-label="Valgt hulprofil i skala med akser og mål"></svg>
-  <figcaption id="m7x-hcap">Profilen i riktig forhold. y–y er sterk akse (bøying i høyderetningen H).</figcaption>
-</figure>
 </details>
 </div>
 <div class="topic" id="m7-termo">
@@ -16242,7 +16241,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${rho(m[
     s+=`<line x1="${cxr+Ro*Math.cos(a1)}" y1="${cyr+Ro*Math.sin(a1)}" x2="${cxr+(Ro+30)*Math.cos(a1)}" y2="${cyr+(Ro+30)*Math.sin(a1)}" stroke="var(--ink)"/>`;
     s+=TX(cxr+(Ro+32)*Math.cos(a1),cyr+(Ro+30)*Math.sin(a1)-4,"D",{size:14,mono:1,weight:600});
     s+=TX(cxr-8,cyr+Ri*0.45+14,"d",{size:14,mono:1,fill:"var(--accent)",weight:600});
-    s+=TX(cxr,cyr-Ro-16,"T",{size:13,mono:1,anchor:"middle"})+`<line x1="${cxr+8}" x2="${cxr+8}" y1="${cyr-Ro}" y2="${cyr-Ri}" stroke="var(--zone)" stroke-width="3"/>`;
+    s+=TX(cxr+16,cyr-Ro+2,"T",{size:14,mono:1,weight:600,fill:"var(--zone)"})+`<line x1="${cxr+8}" x2="${cxr+8}" y1="${cyr-Ro}" y2="${cyr-Ri}" stroke="var(--zone)" stroke-width="3"/>`;
     const X0=330;let y=46;const row=(k,v)=>{s+=TX(X0,y,k,{size:13,fill:"var(--ink-2)"})+TX(590,y,v,{size:14,mono:1,anchor:"end"});y+=28};
     row("D (ytter)",fmt(D,1)+" mm");row("T (vegg)",fmt(T,2)+" mm");row("d (inner)",fmt(d,1)+" mm");row("D / T",fmt(D/T,1));row("A",fmt(A,0)+" mm²");row("Masse",fmt(kgm,2)+" kg/m");
     s+=TX(X0,y+8,D/T>20?"Tynnvegget: bulker lett ved spenning.":D/T<6?"Tykkvegget: emnerør for dreiing.":"",{size:12,fill:"var(--ink-2)"});
@@ -16293,6 +16292,10 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${rho(m[
     /* mål */
     s+=`<line x1="${L-30}" x2="${L-30}" y1="${T}" y2="${Bt}" stroke="var(--ink)" marker-start="url(#m7x-ba)" marker-end="url(#m7x-ba)"/><line x1="${L-36}" x2="${L-2}" y1="${T}" y2="${T}" stroke="var(--line)"/><line x1="${L-36}" x2="${L-2}" y1="${Bt}" y2="${Bt}" stroke="var(--line)"/>`+TX(L-36,oy+4,"h",{size:13,mono:1,anchor:"end"});
     s+=`<line x1="${L}" x2="${Rr}" y1="${T-26}" y2="${T-26}" stroke="var(--ink)" marker-start="url(#m7x-ba)" marker-end="url(#m7x-ba)"/>`+TX((L+Rr)/2,T-31,"b",{size:13,mono:1,anchor:"middle"});
+    /* tw og tf */
+    const wx=fam==="UNP"?L+tw*S/2:ox,wy=oy+h*S*(fam==="UNP"?.08:.28),fy=T+tf*S/2;
+    s+=`<line x1="${wx}" y1="${wy}" x2="${wx+34}" y2="${wy+18}" stroke="var(--ink)"/><circle cx="${wx}" cy="${wy}" r="2.5" fill="var(--ink)"/>`+TX(wx+37,wy+23,"tw",{size:13,mono:1,weight:600});
+    s+=`<line x1="${Rr-6}" y1="${fy}" x2="${Rr+14}" y2="${fy-14}" stroke="var(--ink)"/><circle cx="${Rr-6}" cy="${fy}" r="2.5" fill="var(--ink)"/>`+TX(Rr+16,fy-16,"tf",{size:13,mono:1,weight:600});
     /* tekstpanel */
     const X0=420;let y=40;const row=(k,v)=>{s+=TX(X0,y,k,{size:13,fill:"var(--ink-2)"})+TX(596,y,v,{size:13.5,mono:1,anchor:"end"});y+=25};
     s+=TX(X0,y-8,`${fam} ${n}`,{size:16,weight:600});y+=14;
@@ -16344,6 +16347,7 @@ const fillDens=sel=>DENS.forEach((m,i)=>sel.add(new Option(`${m[0]} – ${rho(m[
     s+=`<line x1="${ox-W/2-16}" x2="${ox+W/2+16}" y1="${oy}" y2="${oy}" stroke="var(--ink-2)" stroke-dasharray="10 3 2 3"/><line x1="${ox}" x2="${ox}" y1="${oy-Hh/2-14}" y2="${oy+Hh/2+14}" stroke="var(--ink-2)" stroke-dasharray="10 3 2 3"/>`+TX(ox+W/2+20,oy+4,"y",{size:13,mono:1})+TX(ox+5,oy-Hh/2-16,"z",{size:13,mono:1});
     s+=`<line x1="${ox-W/2}" x2="${ox+W/2}" y1="${oy+Hh/2+26}" y2="${oy+Hh/2+26}" stroke="var(--ink)" marker-start="url(#m7x-ha)" marker-end="url(#m7x-ha)"/>`+TX(ox,oy+Hh/2+42,p.D?"D":"B",{size:13,mono:1,anchor:"middle"});
     if(!p.D)s+=`<line x1="${ox-W/2-28}" x2="${ox-W/2-28}" y1="${oy-Hh/2}" y2="${oy+Hh/2}" stroke="var(--ink)" marker-start="url(#m7x-ha)" marker-end="url(#m7x-ha)"/>`+TX(ox-W/2-34,oy+4,"H",{size:13,mono:1,anchor:"end"});
+    {const wx=ox+W/2-p.t*S/2,wy=oy-Hh*.3;s+=`<line x1="${wx}" y1="${wy}" x2="${wx+26}" y2="${wy-16}" stroke="var(--ink)"/><circle cx="${wx}" cy="${wy}" r="2.5" fill="var(--ink)"/>`+TX(wx+29,wy-19,"t",{size:13,mono:1,weight:600})}
     const X0=360;let y=44;const rw=(k,v)=>{s+=TX(X0,y,k,{size:13,fill:"var(--ink-2)"})+TX(596,y,v,{size:13.5,mono:1,anchor:"end"});y+=25};
     s+=TX(X0,y-6,`${typ} ${p.n}`,{size:16,weight:600});y+=16;
     if(!p.D){rw("Hjørneradius ro / ri",`${f1(+p.ro.toFixed(1))} / ${f1(+p.ri.toFixed(1))} mm`)}
