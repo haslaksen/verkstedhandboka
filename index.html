@@ -3274,6 +3274,20 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   </div>
   <div class="hurtig-u">TPI gjenger per tomme · D storediameter · 60° flankevinkel</div>
 </div>
+<h3 id="ugk">Kalkulator: UN-gjenge</h3>
+<div class="calc" id="ugk-calc">
+    <div class="fields">
+      <div class="field"><label for="ugk-s">Størrelse</label><select id="ugk-s"></select></div>
+      <div class="field"><span class="small muted">Gjenger per tomme (TPI)</span><span class="chips" id="ugk-n" style="margin:4px 0 0"></span></div>
+      <div class="field"><span class="small muted">Toleranseklasse</span><span class="chips" id="ugk-k" style="margin:4px 0 0"><button class="chip" type="button" data-k="1" aria-pressed="false">1A / 1B</button><button class="chip" type="button" data-k="2" aria-pressed="true">2A / 2B</button><button class="chip" type="button" data-k="3" aria-pressed="false">3A / 3B</button></span></div>
+      <p class="small muted" style="margin:0">A = bolt (utvendig), B = mutter (innvendig). 1 = grov, 2 = vanlig, 3 = presis. 8 UN = 8 gjenger per tomme for alle størrelser fra 1″ (1-8 UNC er samme gjenge), brukt bl.a. på flensstag.</p>
+      <figure class="fig" style="margin:0">
+        <svg id="ugk-fig" viewBox="0 0 300 170" role="img" aria-label="Gjengeprofil med storediameter, midtdiameter og lillediameter"></svg>
+      </figure>
+    </div>
+    <div class="out" id="ugk-out" aria-live="polite"></div>
+  </div>
+<p class="small muted">Etter ASME B1.1. Midtdiameter-toleransen for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). 1A har 1,5 · T og 3A har 0,75 · T. Mutteren har 1,3 · T (2B), 1,95 · T (1B) og 0,975 · T (3B). 1A og 2A har et avmål på 0,3 · T, så bolten er litt under basismål. 3A og alle B-klasser starter på basismål. Gjengebor gir ca. 75 % gjenge: D − 0,974 · P.</p>
 <h3 id="tomme">Tommegjenger: UNC, UNF og UN</h3>
 <h4 style="margin-top:16px">UNC — grov</h4>
 <div class="tbl" id="unc"></div>
@@ -9466,6 +9480,61 @@ function dial(x,y,r,val,tipY){ // val -1..1
   }
   $("#un-unit").onclick=e=>{const b=e.target.closest("[data-u]");if(!b)return;unit=b.dataset.u;document.querySelectorAll("#un-unit [data-u]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));tables();render()};
   sel.onchange=render;tables();render();
+})();
+
+/* ---- 6.4: UN-gjengekalkulator (ASME B1.1) ---- */
+(function(){
+  const S=[["#0",.060,[[80,"UNF"]]],["#1",.073,[[64,"UNC"],[72,"UNF"]]],["#2",.086,[[56,"UNC"],[64,"UNF"]]],["#3",.099,[[48,"UNC"],[56,"UNF"]]],["#4",.112,[[40,"UNC"],[48,"UNF"]]],["#5",.125,[[40,"UNC"],[44,"UNF"]]],["#6",.138,[[32,"UNC"],[40,"UNF"]]],["#8",.164,[[32,"UNC"],[36,"UNF"]]],["#10",.190,[[24,"UNC"],[32,"UNF"]]],["#12",.216,[[24,"UNC"],[28,"UNF"],[32,"UNEF"]]],
+    ["1/4",.25,[[20,"UNC"],[28,"UNF"],[32,"UNEF"]]],["5/16",.3125,[[18,"UNC"],[24,"UNF"],[32,"UNEF"]]],["3/8",.375,[[16,"UNC"],[24,"UNF"],[32,"UNEF"]]],["7/16",.4375,[[14,"UNC"],[20,"UNF"],[28,"UNEF"]]],["1/2",.5,[[13,"UNC"],[20,"UNF"],[28,"UNEF"]]],["9/16",.5625,[[12,"UNC"],[18,"UNF"],[24,"UNEF"]]],["5/8",.625,[[11,"UNC"],[18,"UNF"],[24,"UNEF"]]],["3/4",.75,[[10,"UNC"],[16,"UNF"],[20,"UNEF"]]],["7/8",.875,[[9,"UNC"],[14,"UNF"],[20,"UNEF"]]],["1",1,[[8,"UNC"],[12,"UNF"],[20,"UNEF"]]],
+    ["1 1/8",1.125,[[7,"UNC"],[8,"UN"],[12,"UNF"],[18,"UNEF"]]],["1 1/4",1.25,[[7,"UNC"],[8,"UN"],[12,"UNF"],[18,"UNEF"]]],["1 3/8",1.375,[[6,"UNC"],[8,"UN"],[12,"UNF"],[18,"UNEF"]]],["1 1/2",1.5,[[6,"UNC"],[8,"UN"],[12,"UNF"],[18,"UNEF"]]],["1 3/4",1.75,[[5,"UNC"],[8,"UN"]]],["2",2,[[4.5,"UNC"],[8,"UN"]]],["2 1/4",2.25,[[4.5,"UNC"],[8,"UN"]]],["2 1/2",2.5,[[4,"UNC"],[8,"UN"]]],["2 5/8",2.625,[[8,"UN"]]],["2 3/4",2.75,[[4,"UNC"],[8,"UN"]]],["3",3,[[4,"UNC"],[8,"UN"]]],["3 1/4",3.25,[[4,"UNC"],[8,"UN"]]],["3 1/2",3.5,[[4,"UNC"],[8,"UN"]]],["3 3/4",3.75,[[4,"UNC"],[8,"UN"]]],["3 7/8",3.875,[[8,"UN"]]],["4",4,[[4,"UNC"],[8,"UN"]]]];
+  const NUM=[.228,.221,.213,.209,.2055,.204,.201,.199,.196,.1935,.191,.189,.185,.182,.18,.177,.173,.1695,.166,.161,.159,.157,.154,.152,.1495,.147,.144,.1405,.136,.1285,.12,.116,.113,.111,.11,.1065,.104,.1015,.0995,.098,.096,.0935,.089,.086,.082,.081,.0785,.076,.073,.07,.067,.0635,.0595,.055,.052,.0465,.043,.042,.041,.04];
+  const LET=[.234,.238,.242,.246,.25,.257,.261,.266,.272,.277,.281,.29,.295,.302,.316,.323,.332,.339,.348,.358,.368,.377,.386,.397,.404,.413];
+  const gcd=(a,b)=>b?gcd(b,a%b):a,frac=k=>{const w=Math.floor(k/64),r=k%64,g=gcd(r,64);return (w?w+(r?" ":""):"")+(r?`${r/g}/${64/g}`:"")+"″"};
+  const DR=[];NUM.forEach((d,i)=>DR.push(["#"+(i+1),d]));LET.forEach((d,i)=>DR.push([String.fromCharCode(65+i),d]));for(let k=1;k<=256;k++)DR.push([frac(k),k/64]);
+  const r4=x=>Math.round(x*1e4)/1e4,pct=(D,P,d)=>(D-d)/(1.299038*P)*100,bc=x=>String(x).replace(".",",");
+  const sel=$("#ugk-s");S.forEach((s,i)=>sel.add(new Option(s[0]+(s[0][0]==="#"?` (${fmt(s[1],3)}″)`:"″"),i)));sel.value=14;
+  let ni=0,k=2;
+  function lim(D,n,k){
+    const P=1/n,E=D-0.649519*P,T=0.0015*Math.cbrt(D)+0.0015*Math.sqrt(D)+0.015*Math.cbrt(P*P),es=k===3?0:r4(0.3*T);
+    const Td2=r4(T*[1.5,1,.75][k-1]),Td=r4((k===1?.09:.06)*Math.cbrt(P*P)),TD2=r4(T*[1.95,1.3,.975][k-1]);
+    const small=.05*Math.cbrt(P*P)+.03*P/D-.002,t2=D<.138?small:(n<=4?.15*P:.25*P-.4*P*P);
+    const TD1=r4(k===3?Math.max(Math.min(small,t2),D<.138?0:(n>=13?.23*P-1.5*P*P:.12*P)):t2);
+    const D1=r4(D-1.082532*P),e=r4(E);
+    return{P,es,a:{dMax:r4(D-es),dMin:r4(D-es-Td),d2Max:r4(e-es),d2Min:r4(e-es-Td2),d3Max:r4(D-1.190741*P-es)},b:{Dmin:D,D2Min:e,D2Max:r4(e+TD2),D1Min:D1,D1Max:r4(D1+TD1)}};
+  }
+  function draw(L){
+    const y=[40,82,124],x0=20,w=150;let s="";
+    // tre gjengetenner, 60° profil, bolt nederst
+    let p=`M${x0} ${y[2]}`;for(let i=0;i<3;i++){const a=x0+i*50;p+=` L${a+6} ${y[2]} L${a+20} ${y[0]} L${a+30} ${y[0]} L${a+44} ${y[2]} L${a+50} ${y[2]}`}
+    s+=`<path d="${p} L${x0+w} 160 L${x0} 160 Z" fill="var(--zone)" opacity=".18"/><path d="${p}" fill="none" stroke="var(--ink)" stroke-width="1.6"/>`;
+    const lab=[["d","storediameter",L.a.dMax],["d₂","midtdiameter",L.a.d2Max],["d₃","lillediameter",L.a.d3Max]];
+    lab.forEach((q,i)=>{s+=`<line x1="${x0-8}" y1="${y[i]}" x2="${x0+w+8}" y2="${y[i]}" stroke="var(--accent)" stroke-dasharray="${i===1?"5 3":"0"}" stroke-width="1"/>`+TX(x0+w+14,y[i]-2,`${q[0]} ${q[1]}`,{size:11,weight:600,fill:"var(--accent)"})+TX(x0+w+14,y[i]+12,`maks ${fmt(q[2]*25.4,2)} mm`,{size:10,mono:1,fill:"var(--ink-2)"})});
+    s+=TX(x0+25,y[0]-10,"P = "+fmt(25.4*L.P,3)+" mm",{size:11,mono:1,anchor:"middle"})+`<line x1="${x0+25}" y1="${y[0]-6}" x2="${x0+75}" y2="${y[0]-6}" stroke="var(--ink-2)"/>`+TX(x0,166,"Bolt (utvendig gjenge)",{size:10,fill:"var(--ink-2)"});
+    $("#ugk-fig").innerHTML=s;
+  }
+  function chipsN(){const s=S[+sel.value];if(ni>=s[2].length)ni=0;
+    $("#ugk-n").innerHTML=s[2].map((t,i)=>`<button class="chip" type="button" data-i="${i}" aria-pressed="${i===ni}">${bc(t[0])} ${t[1]}</button>`).join("")}
+  function render(){
+    const s=S[+sel.value],[n,ser]=s[2][ni],D=s[1],L=lim(D,n,k),P=L.P,tap=D-0.974279*P;
+    const near=a=>a.reduce((b,c)=>Math.abs(c[1]-tap)<Math.abs(b[1]-tap)?c:b);
+    const di=near(DR),mmS=tap*25.4<13?.1:.5,mm=Math.round(tap*25.4/mmS)*mmS;
+    const nm=`${s[0]}-${bc(n)} ${ser}-${k}A/${k}B`;
+    const row=(t,a,b)=>`<tr><td>${t}</td><td>${b==null?"–":fmt(b,4)}</td><td>${fmt(a,4)}</td><td>${b==null?"–":fmt(b*25.4,3)}</td><td>${fmt(a*25.4,3)}</td></tr>`;
+    const head=`<thead><tr><th rowspan="2"></th><th colspan="2" style="text-align:center">tommer</th><th colspan="2" style="text-align:center">mm</th></tr><tr><th>min</th><th>maks</th><th>min</th><th>maks</th></tr></thead>`;
+    const rowMin=(t,a)=>`<tr><td>${t}</td><td>${fmt(a,4)}</td><td>–</td><td>${fmt(a*25.4,3)}</td><td>–</td></tr>`;
+    $("#ugk-out").innerHTML=`<div class="callout">${nm}<small>${s[0][0]==="#"?"Nummerstørrelse "+s[0]+" = ":""}D = ${fmt(D,4)}″ = ${fmt(D*25.4,3)} mm · ${bc(n)} gjenger per tomme</small></div>
+    <dl class="kv"><div><dt>Stigning P</dt><dd>${fmt(P,4)}″<br><span class="small muted">${fmt(P*25.4,3)} mm</span></dd></div>
+    <div><dt>Gjengebor</dt><dd><b>${fmt(mm,mmS<.5?1:1)} mm</b><br><span class="small muted">${di[0]} = ${fmt(di[1],4)}″ · ${Math.round(pct(D,P,di[1]))} %</span></dd></div>
+    <div><dt>Gjengedybde</dt><dd>${fmt(0.541266*P*25.4,3)} mm<br><span class="small muted">mutter, ${fmt(0.541266*P,4)}″</span></dd></div></dl>
+    <div style="min-width:0"><h4 style="margin:0 0 4px">Bolt ${k}A (utvendig)</h4><div class="tbl" style="margin:0"><table>${head}<tbody>${row("Storediameter d",L.a.dMax,L.a.dMin)}${row("Midtdiameter d₂",L.a.d2Max,L.a.d2Min)}${row("Lillediameter d₃ (UNR)",L.a.d3Max,null)}</tbody></table></div></div>
+    <div style="min-width:0"><h4 style="margin:0 0 4px">Mutter ${k}B (innvendig)</h4><div class="tbl" style="margin:0"><table>${head}<tbody>${rowMin("Storediameter D",L.b.Dmin)}${row("Midtdiameter D₂",L.b.D2Max,L.b.D2Min)}${row("Lillediameter D₁",L.b.D1Max,L.b.D1Min)}</tbody></table></div></div>
+    <p class="small muted" style="margin:0">${L.es?`Avmål ${fmt(L.es,4)}″ (${fmt(L.es*25.4,3)} mm): bolten er så mye under basismål.`:"Ingen avmål: bolten starter på basismål."} mm-boret er avrundet til nærmeste ${mmS<.5?"0,1":"0,5"} mm.</p>`;
+    draw(L);
+  }
+  sel.onchange=()=>{chipsN();render()};
+  $("#ugk-n").onclick=e=>{const b=e.target.closest("[data-i]");if(!b)return;ni=+b.dataset.i;chipsN();render()};
+  $("#ugk-k").onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;k=+b.dataset.k;document.querySelectorAll("#ugk-k [data-k]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));render()};
+  chipsN();render();
 })();
 
 /* ---- 4b: GD&T-symbolgalleri ---- */
