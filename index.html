@@ -113,6 +113,14 @@ p{margin:0 0 12px;max-width:68ch}
 .muted{color:var(--ink-2)}
 .small{font-size:13px}
 code,.mono{font-family:var(--mono);font-size:.92em}
+/* Brøk med vannrett brøkstrek. Skjulte tegn (.br-h) gir «a/b» ved kopiering og for skjermleser */
+span.br.br{display:inline-flex;flex-direction:column;align-items:stretch;vertical-align:middle;text-align:center;line-height:1.15;margin:1px .12em;font-size:.94em;color:inherit;flex-basis:auto}
+span.br.br>span{display:block;padding:0 .18em;white-space:nowrap;font-size:inherit;color:inherit;flex-basis:auto;font-weight:inherit}
+span.br.br>span:last-child{border-top:.09em solid currentColor;padding-top:.08em}
+span.br.br span.br.br{font-size:.9em}
+/* Formel med brøk i løpende tekst: hold formelen samlet */
+.mono:has(>.br),b:has(>.br){display:inline-block;max-width:100%}
+i.br-h{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;font-style:normal}
 
 /* Kalkulator */
 .calc{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;border:1px solid var(--line);background:var(--paper);padding:16px;margin:8px 0 20px}
@@ -398,7 +406,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="lead">SI (Système international d'unités) er det internasjonale enhetssystemet. Alle mål på tegninger, i standarder og i maskinstyringer bygger på sju grunnenheter. Alle andre enheter er satt sammen av dem.</p>
 <h3>Hvorfor SI</h3>
 <p><b>Ett felles språk.</b> En tegning fra Tyskland, et datablad fra Japan og en standard fra ISO bruker de samme enhetene. Det gir færre feil når deler skal passe sammen.</p>
-<p><b>Koherente enheter.</b> Mellom SI-enhetene er det ingen omregningsfaktorer: 1 N = 1 kg · 1 m/s², 1 J = 1 N · 1 m og 1 W = 1 J / 1 s. Setter du inn alle verdier i SI-enheter, gir formelen svaret i SI-enhet uten ekstra tall. Det er derfor formelsamlinger virker. Blander du enheter, må det inn en konstant. Et eksempel er <span class="mono">P = M · n / 9550</span>, der 9550 bare er der fordi P er i kW og n i o/min, ikke i W og rad/s.</p>
+<p><b>Koherente enheter.</b> Mellom SI-enhetene er det ingen omregningsfaktorer: 1 N = 1 kg · 1 m/s², 1 J = 1 N · 1 m og 1 W = 1 J / 1 s. Setter du inn alle verdier i SI-enheter, gir formelen svaret i SI-enhet uten ekstra tall. Det er derfor formelsamlinger virker. Blander du enheter, må det inn en konstant. Et eksempel er <span class="mono">P = <span class="br"><span><i class="br-h">(</i>M · n<i class="br-h">)</i></span><i class="br-h">/</i><span>9550</span></span></span>, der 9550 bare er der fordi P er i kW og n i o/min, ikke i W og rad/s.</p>
 <p><b>Faste naturkonstanter.</b> Siden 2019 er alle grunnenhetene definert ut fra naturkonstanter med fast, eksakt verdi. Kiloet er ikke lenger et metallodd i Paris. Alle laboratorier kan dermed realisere enhetene selv, og sporbarheten fra skyvelæret ditt via kalibrering til definisjonen blir sikker.</p>
 <h3>Fra grunnenheter til avledet enhet</h3>
 <p>En avledet enhet får du ved å sette grunnenhetene inn i den fysiske formelen. Kraft er masse ganger akselerasjon (<span class="mono">F = m · a</span>), og da blir newton kg · m/s². Trykk er kraft per areal, og da blir pascal N/m². Velg en enhet for å se hvordan den løses opp, steg for steg, til grunnenheter.</p>
@@ -912,8 +920,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Turtall</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b></div>
-    <div><h4>Mating og tid</h4><b>v<sub>f</sub> = f · n</b><span>dreiing og boring</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span><b>T = L / v<sub>f</sub></b></div>
+    <div><h4>Turtall</h4><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Mating og tid</h4><b>v<sub>f</sub> = f · n</b><span>dreiing og boring</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span><b>T = <span class="br"><span>L</span><i class="br-h">/</i><span>v<sub>f</sub></span></span></b></div>
     <div><h4>ISO-materialgrupper</h4><span>P blå stål · M gul rustfritt · K rød støpejern</span><span>N grønn aluminium og ikke-jern · S brun titan og superlegeringer · H grå herdet stål</span></div>
     <div><h4>Rekkefølge</h4><span>Materialgruppe → skjær og kvalitet → v<sub>c</sub>, f og a<sub>p</sub> fra katalogen → n og v<sub>f</sub></span></div>
   </div>
@@ -986,9 +994,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Turtall og tid</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><b>T = L / (f · n)</b></div>
+    <div><h4>Turtall og tid</h4><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b><b>v<sub>f</sub> = f · n</b><b>T = <span class="br"><span>L</span><i class="br-h">/</i><span><i class="br-h">(</i>f · n<i class="br-h">)</i></span></span></b></div>
     <div><h4>Spon</h4><b>Q = v<sub>c</sub> · a<sub>p</sub> · f</b><span>cm³/min</span><b>h = f · sin κ<sub>r</sub></b><span>spontykkelse</span></div>
-    <div><h4>Kraft og effekt</h4><b>F<sub>c</sub> = k<sub>c</sub> · a<sub>p</sub> · f</b><b>P<sub>c</sub> = v<sub>c</sub> · a<sub>p</sub> · f · k<sub>c</sub> / 60 000</b><span>kW</span><b>P<sub>mot</sub> = P<sub>c</sub> / η</b></div>
+    <div><h4>Kraft og effekt</h4><b>F<sub>c</sub> = k<sub>c</sub> · a<sub>p</sub> · f</b><b>P<sub>c</sub> = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · a<sub>p</sub> · f · k<sub>c</sub><i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>60 000<i class="br-h">)</i></span></span></b><span>kW</span><b>P<sub>mot</sub> = <span class="br"><span>P<sub>c</sub></span><i class="br-h">/</i><span>η</span></span></b></div>
     <div><h4>Ruhet</h4><b>R<sub>t</sub> ≈ f² / (8 · r<sub>ε</sub>)</b><span>dobbel mating gir fire ganger høyere rygger</span></div>
   </div>
   <div class="hurtig-u">a<sub>p</sub> skjæredybde (mm) · f mating (mm/omdr) · k<sub>c</sub> spesifikk skjærkraft (N/mm²) · r<sub>ε</sub> nesradius (mm)</div>
@@ -1047,9 +1055,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Konus</h4><b>tan(α/2) = (D − d) / (2 · L)</b><span>α/2 = innstillingsvinkel</span><b>C = (D − d) / L</b><span>konisitet, f.eks. 1:20</span></div>
-    <div><h4>Pinoldokken</h4><b>S = (D − d) · L<sub>tot</sub> / (2 · L)</b><span>forskyvning, L<sub>tot</sub> = hele emnelengden</span></div>
-    <div><h4>Sponverrsnitt</h4><b>h = f · sin κ<sub>r</sub></b><b>b = a<sub>p</sub> / sin κ<sub>r</sub></b></div>
+    <div><h4>Konus</h4><b>tan(α/2) = <span class="br"><span><i class="br-h">(</i>D − d<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>2 · L<i class="br-h">)</i></span></span></b><span>α/2 = innstillingsvinkel</span><b>C = <span class="br"><span><i class="br-h">(</i>D − d<i class="br-h">)</i></span><i class="br-h">/</i><span>L</span></span></b><span>konisitet, f.eks. 1:20</span></div>
+    <div><h4>Pinoldokken</h4><b>S = <span class="br"><span><i class="br-h">(</i>(D − d) · L<sub>tot</sub><i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>2 · L<i class="br-h">)</i></span></span></b><span>forskyvning, L<sub>tot</sub> = hele emnelengden</span></div>
+    <div><h4>Sponverrsnitt</h4><b>h = f · sin κ<sub>r</sub></b><b>b = <span class="br"><span>a<sub>p</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>sin κ<sub>r</sub><i class="br-h">)</i></span></span></b></div>
   </div>
   <div class="hurtig-u">D stor diameter · d liten diameter · L konuslengde (mm) · κ<sub>r</sub> innstillingsvinkel</div>
 </div>
@@ -1073,7 +1081,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="m3a-ktab"></div>
 <p class="small muted">Konisiteter etter ISO 1119. α/2 er innstillingsvinkelen for toppsleide og konuslinjal. Morsekonus står i et eget kapittel.</p>
 <h3>Sponverrsnitt</h3>
-<div class="note"><p><b>h = f · sin κ<sub>r</sub></b> (spontykkelse) &nbsp;·&nbsp; <b>b = a<sub>p</sub> / sin κ<sub>r</sub></b> (sponbredde, lengden av eggen i inngrep) &nbsp;·&nbsp; A = a<sub>p</sub> · f = h · b</p></div>
+<div class="note"><p><b>h = f · sin κ<sub>r</sub></b> (spontykkelse) &nbsp;·&nbsp; <b>b = <span class="br"><span>a<sub>p</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>sin κ<sub>r</sub><i class="br-h">)</i></span></span></b> (sponbredde, lengden av eggen i inngrep) &nbsp;·&nbsp; A = a<sub>p</sub> · f = h · b</p></div>
 <h3>Konisitet</h3>
 <div class="calc">
     <div class="fields">
@@ -1107,7 +1115,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </figure>
 <p>Lav κ<sub>r</sub> fordeler kraften over en lengre egg og gir tynnere spon. Da tåler skjæret høyere mating, og eggen går mykere inn i materialet. Ulempen er større radiell kraft, som presser slanke emner unna og gir vibrasjoner. Ved slanke aksler og ansatser brukes derfor κ<sub>r</sub> = 90–95°. Fordi k<sub>c</sub> øker når h blir mindre, krever tynne spon litt mer effekt for samme sponvolum.</p>
 <h3>Konisitet</h3>
-<p>Ser du på kjeglen fra siden, danner halve diameterforskjellen og lengden en rettvinklet trekant. Derfor er <span class="mono">tan(α/2) = (D − d) / (2 · L)</span>. Det er α/2 du stiller oversleden på.</p>
+<p>Ser du på kjeglen fra siden, danner halve diameterforskjellen og lengden en rettvinklet trekant. Derfor er <span class="mono">tan(α/2) = <span class="br"><span><i class="br-h">(</i>D − d<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>2 · L<i class="br-h">)</i></span></span></span>. Det er α/2 du stiller oversleden på.</p>
 <div class="two">
     <figure class="fig">
       <svg id="k-svg" viewBox="0 0 320 220" role="img" aria-label="Kjegle sett fra siden med målene D, d, L og vinkelen alfa halve"></svg>
@@ -1126,9 +1134,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Turtall og mating</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b></div>
-    <div><h4>Sponvolum</h4><b>Q = a<sub>e</sub> · a<sub>p</sub> · v<sub>f</sub> / 1000</b><span>cm³/min</span></div>
-    <div><h4>Smal fresebredde</h4><b>f<sub>z,korr</sub> = f<sub>z</sub> / √(1 − (1 − 2 · a<sub>e</sub>/D)²)</b><span>øk tannmatingen når a<sub>e</sub> er under D/2</span></div>
+    <div><h4>Turtall og mating</h4><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b></div>
+    <div><h4>Sponvolum</h4><b>Q = <span class="br"><span><i class="br-h">(</i>a<sub>e</sub> · a<sub>p</sub> · v<sub>f</sub><i class="br-h">)</i></span><i class="br-h">/</i><span>1000</span></span></b><span>cm³/min</span></div>
+    <div><h4>Smal fresebredde</h4><b>f<sub>z,korr</sub> = <span class="br"><span>f<sub>z</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>√(1 − (1 − 2 · <span class="br"><span>a<sub>e</sub></span><i class="br-h">/</i><span>D</span></span>)²)<i class="br-h">)</i></span></span></b><span>øk tannmatingen når a<sub>e</sub> er under D/2</span></div>
     <div><h4>Med- og motfresing</h4><span>Motfresing på manuelle maskiner med slakk i spindelen, ellers kan medfresing trekke bordet med seg</span></div>
   </div>
   <div class="hurtig-u">f<sub>z</sub> tannmating (mm) · z antall tenner · a<sub>e</sub> fresebredde · a<sub>p</sub> skjæredybde (mm)</div>
@@ -1186,9 +1194,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Boring</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><b>l<sub>s</sub> ≈ 0,3 · D</b><span>spisslengde ved 118°</span></div>
-    <div><h4>Effekt og moment</h4><b>P<sub>c</sub> = v<sub>c</sub> · D · f · k<sub>c</sub> / 240 000</b><span>kW</span><b>M<sub>c</sub> = P<sub>c</sub> · 30 000 / (π · n)</b><span>Nm</span></div>
-    <div><h4>Sliping</h4><b>v<sub>s</sub> = π · d · n / 60 000</b><span>m/s, d i mm</span><b>n<sub>maks</sub> = v<sub>maks</sub> · 60 000 / (π · d)</b></div>
+    <div><h4>Boring</h4><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b><b>v<sub>f</sub> = f · n</b><b>l<sub>s</sub> ≈ 0,3 · D</b><span>spisslengde ved 118°</span></div>
+    <div><h4>Effekt og moment</h4><b>P<sub>c</sub> = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · D · f · k<sub>c</sub><i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>240 000<i class="br-h">)</i></span></span></b><span>kW</span><b>M<sub>c</sub> = <span class="br"><span><i class="br-h">(</i>P<sub>c</sub> · 30 000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · n<i class="br-h">)</i></span></span></b><span>Nm</span></div>
+    <div><h4>Sliping</h4><b>v<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>π · d · n<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>60 000<i class="br-h">)</i></span></span></b><span>m/s, d i mm</span><b>n<sub>maks</sub> = <span class="br"><span><i class="br-h">(</i>v<sub>maks</sub> · 60 000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · d<i class="br-h">)</i></span></span></b></div>
     <div><h4>Fargestriper på skiva</h4><span>Blå 50 · gul 63 · rød 80 · grønn 100 · blå + gul 125 m/s</span></div>
   </div>
   <div class="hurtig-u">v<sub>c</sub> (m/min) · D bordiameter (mm) · f mating (mm/omdr) · v<sub>s</sub> periferihastighet (m/s)</div>
@@ -1438,7 +1446,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-g">
     <div><h4>Kjernehull</h4><b>d ≈ D − P</b><span>skjærende gjengebor, ca. 75–80 % gjenge</span><b>d ≈ D − 0,45 · P</b><span>formende gjengebor</span></div>
     <div><h4>Eksempler</h4><span>M6 → 5,0 · M8 → 6,8 · M10 → 8,5 · M12 → 10,2 mm</span></div>
-    <div><h4>Tommegjenger</h4><b>P = 25,4 / TPI</b></div>
+    <div><h4>Tommegjenger</h4><b>P = <span class="br"><span>25,4</span><i class="br-h">/</i><span>TPI</span></span></b></div>
   </div>
   <div class="hurtig-u">D nominell diameter (mm) · P stigning (mm) · TPI gjenger per tomme</div>
 </div>
@@ -1483,7 +1491,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Fra tabell til maskin</h4><b>n = v<sub>c</sub> · 1000 / (π · D)</b><b>v<sub>f</sub> = f · n</b><span>boring og dreiing</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span></div>
+    <div><h4>Fra tabell til maskin</h4><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b><b>v<sub>f</sub> = f · n</b><span>boring og dreiing</span><b>v<sub>f</sub> = f<sub>z</sub> · z · n</b><span>fresing</span></div>
     <div><h4>Husk</h4><span>Verdiene er veiledende. Start i nedre del, og følg verktøyleverandøren</span></div>
   </div>
 </div>
@@ -1531,8 +1539,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Enkel deling 40 : 1</h4><b>n<sub>k</sub> = 40 / N</b><span>sveivomdreininger per deling</span></div>
-    <div><h4>Vinkeldeling</h4><b>n<sub>k</sub> = α / 9°</b><span>1 omdreining = 9°</span></div>
+    <div><h4>Enkel deling 40 : 1</h4><b>n<sub>k</sub> = <span class="br"><span>40</span><i class="br-h">/</i><span>N</span></span></b><span>sveivomdreininger per deling</span></div>
+    <div><h4>Vinkeldeling</h4><b>n<sub>k</sub> = <span class="br"><span>α</span><i class="br-h">/</i><span>9°</span></span></b><span>1 omdreining = 9°</span></div>
     <div><h4>Eksempel</h4><span>N = 6: 40 / 6 = 6 ⅔ = 6 omdreininger + 12 hull på 18-hullsirkelen</span></div>
   </div>
   <div class="hurtig-u">N antall delinger · α vinkel (°)</div>
@@ -1602,7 +1610,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Periferihastighet</h4><b>v<sub>s</sub> = π · d · n / 60 000</b><span>m/s, d i mm</span></div>
+    <div><h4>Periferihastighet</h4><b>v<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>π · d · n<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>60 000<i class="br-h">)</i></span></span></b><span>m/s, d i mm</span></div>
     <div><h4>Før montering</h4><span>Ringtest: klar klang = hel skive, dump lyd = kast skiva</span><span>Maks hastighet og turtall på skiva ≥ maskinens</span></div>
     <div><h4>Sikkerhet</h4><span>Vernebriller, verneskjerm på plass, stå til siden ved oppstart</span></div>
   </div>
@@ -1701,7 +1709,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Gjengedybde, metrisk</h4><b>h<sub>3</sub> = 0,6134 · P</b><span>utvendig</span><b>H<sub>1</sub> = 0,5413 · P</b><span>innvendig</span></div>
-    <div><h4>Avtakende innmating</h4><b>a<sub>k</sub> = a<sub>p</sub> / √(n − 1) · √φ</b><span>φ = 0,3 i pass 1, deretter 1, 2, 3 …</span></div>
+    <div><h4>Avtakende innmating</h4><b>a<sub>k</sub> = <span class="br"><span>a<sub>p</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>√(n − 1)<i class="br-h">)</i></span></span> · √φ</b><span>φ = 0,3 i pass 1, deretter 1, 2, 3 …</span></div>
     <div><h4>X-diameter</h4><b>X<sub>k</sub> = D − 2 · a<sub>k</sub></b><span>utvendig</span><b>X<sub>k</sub> = D − 2 · a<sub>p</sub> + 2 · a<sub>k</sub></b><span>innvendig</span></div>
   </div>
   <div class="hurtig-u">P stigning (mm) · a<sub>p</sub> total gjengedybde · n antall pass · D nominell diameter (mm)</div>
@@ -1791,7 +1799,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-g">
     <div><h4>Fugeformer</h4><span>I: tynne plater uten fasing · V og Y: fra én side · X og K: fra begge sider, ca. halvt tilsett og mindre vridning</span></div>
     <div><h4>Begreper</h4><span>α fugevinkel · b rotåpning (spalte) · c rotflate (steg)</span></div>
-    <div><h4>Fugeareal, V-fuge</h4><b>A = (t − c)² · tan(α/2) + b · t</b><b>m = A · ρ / 10⁶</b><span>kg/m, A i mm², ρ i kg/m³</span></div>
+    <div><h4>Fugeareal, V-fuge</h4><b>A = (t − c)² · tan(α/2) + b · t</b><b>m = <span class="br"><span><i class="br-h">(</i>A · ρ<i class="br-h">)</i></span><i class="br-h">/</i><span>10⁶</span></span></b><span>kg/m, A i mm², ρ i kg/m³</span></div>
     <div><h4>Overhøyde</h4><span>Slak overgang ved tåen gir bedre utmatting. Stor overhøyde er en feil</span></div>
   </div>
   <div class="hurtig-u">t godstykkelse (mm)</div>
@@ -1986,7 +1994,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Merkingen på elektrodepakken forteller fasthet, seighet, dekktype, strømart, sveisestilling og hydrogeninnhold. Sveiserøyken fra elektroden er kreftfremkallende, så avsug ved kilden er et krav, ikke et valg.</p>
 <h3>Punktavsug: avstanden avgjør</h3>
-<p>Lufthastigheten foran en avsugsåpning faller omtrent med kvadratet av avstanden: <b>v = Q / (10 · x² + A)</b> (Dalla Valle, åpning uten flens; med flens trengs ca. 25 % mindre luft). Dobbel avstand gir omtrent en firedel av hastigheten. Ved sveising bør fangsthastigheten ved kilden være ca. 0,5–1,0 m/s.</p>
+<p>Lufthastigheten foran en avsugsåpning faller omtrent med kvadratet av avstanden: <b>v = <span class="br"><span>Q</span><i class="br-h">/</i><span><i class="br-h">(</i>10 · x² + A<i class="br-h">)</i></span></span></b> (Dalla Valle, åpning uten flens; med flens trengs ca. 25 % mindre luft). Dobbel avstand gir omtrent en firedel av hastigheten. Ved sveising bør fangsthastigheten ved kilden være ca. 0,5–1,0 m/s.</p>
 <figure class="fig">
   <svg id="s4x-ex-fig" viewBox="0 0 600 300" role="img" aria-label="Punktavsug over sveisested med røykpartikler som fanges eller stiger forbi"></svg>
   <div class="ctrl">
@@ -2214,7 +2222,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-g">
     <div><h4>Strøm, dekket elektrode</h4><b>I ≈ 40 × d</b><span>A, d = kjernetråd i mm. 10–20 % lavere vertikalt</span></div>
     <div><h4>Buespenning (EN IEC 60974-1)</h4><b>U = 20 + 0,04 · I</b><span>elektrode</span><b>U = 10 + 0,04 · I</b><span>TIG</span><b>U = 14 + 0,05 · I</b><span>MIG/MAG</span></div>
-    <div><h4>Varmetilførsel</h4><b>Q = k · U · I · 60 / (v · 1000)</b><span>kJ/mm, v i mm/min</span><span>k: 121 = 1,0 · 111, 13x = 0,8 · 141 = 0,6</span></div>
+    <div><h4>Varmetilførsel</h4><b>Q = <span class="br"><span><i class="br-h">(</i>k · U · I · 60<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>v · 1000<i class="br-h">)</i></span></span></b><span>kJ/mm, v i mm/min</span><span>k: 121 = 1,0 · 111, 13x = 0,8 · 141 = 0,6</span></div>
     <div><h4>Strømkilde</h4><span>Fallende (CC): elektrode og TIG · flat (CV): MIG/MAG</span></div>
   </div>
   <div class="hurtig-u">U buespenning (V) · I strøm (A) · v sveisehastighet</div>
@@ -2278,7 +2286,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <h3>Strøm for dekket elektrode (111)</h3>
 <p>Håndregel: <b>I ≈ 40 × d</b> (A, d = kjernetrådens diameter i mm). Senk strømmen ca. 10–20 % vertikalt og over hode, der badet ellers renner.</p>
 <h3>Varmetilførsel</h3>
-<p><b>Q = k · U · I · 60 / (v · 1000)</b> &nbsp;(kJ/mm), der U er buespenning (V), I er strøm (A) og v er sveisehastighet (mm/min). Uten k er det buenergien. For mye varme gir grove korn og lav seighet; for lite gir harde soner og sprekker. WPS-en angir ofte grenser.</p>
+<p><b>Q = <span class="br"><span><i class="br-h">(</i>k · U · I · 60<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>v · 1000<i class="br-h">)</i></span></span></b> &nbsp;(kJ/mm), der U er buespenning (V), I er strøm (A) og v er sveisehastighet (mm/min). Uten k er det buenergien. For mye varme gir grove korn og lav seighet; for lite gir harde soner og sprekker. WPS-en angir ofte grenser.</p>
 </details>
 </div>
 <div class="topic" id="s4-lodd">
@@ -2315,7 +2323,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <h3>Flussmiddel</h3>
 <p>Flussmiddelet løser oksidene og hindrer nye i å dannes, slik at loddet kan fukte. Det viser også temperaturen: flussen blir klar og flytende når loddetemperaturen er nådd. Flussrester er korrosive og vaskes bort med varmt vann.</p>
 <h3>Spaltevidde og kapillærkraft</h3>
-<p>Loddet trekkes inn i spalten av kapillærkraften. Kapillærtrykket er omvendt proporsjonalt med spaltevidden: <b>Δp = 2 · γ · cos θ / s</b>, der γ er overflatespenningen, θ fuktevinkelen og s spaltevidden. Halv spalte gir dobbelt så stort trykk. Er spalten for trang, kommer ikke flussen ut og loddet ikke inn; er den for vid, fyller den ikke og skjøten blir svak.</p>
+<p>Loddet trekkes inn i spalten av kapillærkraften. Kapillærtrykket er omvendt proporsjonalt med spaltevidden: <b>Δp = <span class="br"><span><i class="br-h">(</i>2 · γ · cos θ<i class="br-h">)</i></span><i class="br-h">/</i><span>s</span></span></b>, der γ er overflatespenningen, θ fuktevinkelen og s spaltevidden. Halv spalte gir dobbelt så stort trykk. Er spalten for trang, kommer ikke flussen ut og loddet ikke inn; er den for vid, fyller den ikke og skjøten blir svak.</p>
 <figure class="fig">
   <svg id="s4x-cap-fig" viewBox="0 0 600 300" role="img" aria-label="Lodd som trekkes opp i en spalte mellom to plater"></svg>
   <div class="ctrl">
@@ -2332,7 +2340,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Bøyetillegg</h4><b>BA = π · (r + K · t) · α / 180</b><span>K = 0,5 ved stor radius</span></div>
+    <div><h4>Bøyetillegg</h4><b>BA = <span class="br"><span><i class="br-h">(</i>π · (r + K · t) · α<i class="br-h">)</i></span><i class="br-h">/</i><span>180</span></span></b><span>K = 0,5 ved stor radius</span></div>
     <div><h4>Utfoldet lengde, 90°</h4><b>L = A + B − 2(r + t) + BA</b><span>A og B er ytre mål</span></div>
     <div><h4>Valsing</h4><b>L = π · (D<sub>i</sub> + t) = π · (D<sub>y</sub> − t)</b></div>
     <div><h4>Bøying</h4><span>Bøy helst på tvers av valseretningen. Rustfritt og høyfast stål fjærer mer</span></div>
@@ -2388,7 +2396,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Når en plate bøyes, strekkes ytre side og trykkes indre side sammen. Et sted i mellom finnes et lag som verken strekkes eller trykkes: nøytralaksen. Lengden av den gir utfoldet lengde.</p>
 <h3>Nøytralaksen og K-faktoren</h3>
-<p>Nøytralaksen ligger i avstanden <b>K · t</b> fra innsiden. Ved stor radius ligger den midt i godset (K = 0,5). Ved liten radius flyttes den innover, mot trykksiden. DIN 6935 gir for r/t &lt; 5: <b>K = (0,65 + 0,5 · lg(r/t)) / 2</b>, og K = 0,5 for r/t ≥ 5.</p>
+<p>Nøytralaksen ligger i avstanden <b>K · t</b> fra innsiden. Ved stor radius ligger den midt i godset (K = 0,5). Ved liten radius flyttes den innover, mot trykksiden. DIN 6935 gir for r/t &lt; 5: <b>K = <span class="br"><span><i class="br-h">(</i>0,65 + 0,5 · lg(r/t)<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></b>, og K = 0,5 for r/t ≥ 5.</p>
 <figure class="fig">
   <svg id="s4x-na-fig" viewBox="0 0 600 320" role="img" aria-label="Bøyd plate med strekk- og trykksone og nøytralakse"></svg>
   <div class="ctrl">
@@ -2399,7 +2407,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <figcaption>Sideriss av bøyd plate. α er hvor mye platen bøyes (90° gir rett vinkel mellom beina).</figcaption>
 </figure>
 <h3>Bøyetillegg og utfoldet lengde</h3>
-<p>Bøyetillegget er buelengden av nøytralaksen: <b>BA = π · (r + K · t) · α / 180</b>. Med ytre mål A og B (til skjæringen av yttersidene) er utfoldet lengde <b>L = A + B − 2 · (r + t) · tan(α/2) + BA</b>. For 90° blir det L = A + B − 2(r + t) + BA.</p>
+<p>Bøyetillegget er buelengden av nøytralaksen: <b>BA = <span class="br"><span><i class="br-h">(</i>π · (r + K · t) · α<i class="br-h">)</i></span><i class="br-h">/</i><span>180</span></span></b>. Med ytre mål A og B (til skjæringen av yttersidene) er utfoldet lengde <b>L = A + B − 2 · (r + t) · tan(α/2) + BA</b>. For 90° blir det L = A + B − 2(r + t) + BA.</p>
 <h3>Minste bøyeradius</h3>
 <p>Er radien for liten, sprekker yttersiden fordi strekket blir større enn materialet tåler. Strekket i ytterfiberen er omtrent ε = t / (2r + t). Bøy helst på tvers av valseretningen; langs valseretningen trengs større radius.</p>
 <h3>Fjæring</h3>
@@ -2521,7 +2529,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Tiltrekkingsmoment, 8.8, µ = 0,12</h4><span>M6: 10 · M8: 25 · M10: 49 · M12: 84 · M16: 206 · M20: 416 Nm</span></div>
-    <div><h4>VDI 2230</h4><b>M<sub>A</sub> = F<sub>M</sub> · (0,16 · P + 0,58 · d<sub>2</sub> · µ<sub>G</sub> + D<sub>Km</sub>/2 · µ<sub>K</sub>)</b><span>F i kN og mål i mm gir Nm</span></div>
+    <div><h4>VDI 2230</h4><b>M<sub>A</sub> = F<sub>M</sub> · (0,16 · P + 0,58 · d<sub>2</sub> · µ<sub>G</sub> + <span class="br"><span>D<sub>Km</sub></span><i class="br-h">/</i><span>2</span></span> · µ<sub>K</sub>)</b><span>F i kN og mål i mm gir Nm</span></div>
     <div><h4>Hvor blir momentet av?</h4><span>Ca. 90 % går til friksjon i gjenger og under hodet. Bare ca. 10 % gir forspenning</span></div>
     <div><h4>Smøring</h4><span>Oljet skrue trenger lavere moment. Bruk tabell for riktig µ, ikke «litt ekstra»</span></div>
   </div>
@@ -2651,8 +2659,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Kraft på kilen</h4><b>F<sub>t</sub> = 2 · T / d</b></div>
-    <div><h4>Flatetrykk mot navet</h4><b>p = F<sub>t</sub> / ((h − t<sub>1</sub>) · l<sub>t</sub> · i · φ)</b><span>φ = 1 for én kile, 0,75 for to</span></div>
+    <div><h4>Kraft på kilen</h4><b>F<sub>t</sub> = <span class="br"><span><i class="br-h">(</i>2 · T<i class="br-h">)</i></span><i class="br-h">/</i><span>d</span></span></b></div>
+    <div><h4>Flatetrykk mot navet</h4><b>p = <span class="br"><span>F<sub>t</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>(h − t<sub>1</sub>) · l<sub>t</sub> · i · φ<i class="br-h">)</i></span></span></b><span>φ = 1 for én kile, 0,75 for to</span></div>
     <div><h4>Bærende lengde</h4><span>Form A (runde ender): l<sub>t</sub> = l − b · Form B (rette ender): l<sub>t</sub> = l</span></div>
   </div>
   <div class="hurtig-u">T moment (Nmm) · d akseldiameter · h kilehøyde · t<sub>1</sub> spordybde i aksel · i antall kiler</div>
@@ -2720,10 +2728,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Utveksling</h4><b>i = d<sub>2</sub> / d<sub>1</sub> = n<sub>1</sub> / n<sub>2</sub></b><span>d = datumdiameter</span></div>
+    <div><h4>Utveksling</h4><b>i = <span class="br"><span>d<sub>2</sub></span><i class="br-h">/</i><span>d<sub>1</sub></span></span> = <span class="br"><span>n<sub>1</sub></span><i class="br-h">/</i><span>n<sub>2</sub></span></span></b><span>d = datumdiameter</span></div>
     <div><h4>Reimlengde</h4><b>L ≈ 2C + π(D + d)/2 + (D − d)² / (4C)</b></div>
-    <div><h4>Reimhastighet</h4><b>v = π · d · n / 60 000</b><span>m/s, d i mm</span></div>
-    <div><h4>Omslutning lille skive</h4><b>β = 180° − 2 · arcsin((D − d) / (2C))</b></div>
+    <div><h4>Reimhastighet</h4><b>v = <span class="br"><span><i class="br-h">(</i>π · d · n<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>60 000<i class="br-h">)</i></span></span></b><span>m/s, d i mm</span></div>
+    <div><h4>Omslutning lille skive</h4><b>β = 180° − 2 · arcsin(<span class="br"><span><i class="br-h">(</i>D − d<i class="br-h">)</i></span><i class="br-h">/</i><span>2C</span></span>)</b></div>
     <div><h4>Stramming</h4><span>Ca. 16 mm nedbøyning per 1000 mm spenn med produsentens testkraft</span></div>
   </div>
   <div class="hurtig-u">C akseavstand · D stor og d liten skive (mm) · n turtall (o/min)</div>
@@ -2878,8 +2886,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-g">
     <div><h4>Diametre</h4><b>d = m · z</b><span>delesirkel</span><b>d<sub>a</sub> = m · (z + 2)</b><span>toppsirkel</span><b>d<sub>f</sub> = m · (z − 2,5)</b><span>fotsirkel</span></div>
     <div><h4>Tann</h4><b>h = 2,25 · m</b><b>p = π · m</b><span>deling</span></div>
-    <div><h4>Par</h4><b>a = m · (z<sub>1</sub> + z<sub>2</sub>) / 2</b><span>akseavstand</span><b>i = z<sub>2</sub> / z<sub>1</sub> = n<sub>1</sub> / n<sub>2</sub></b></div>
-    <div><h4>Tommehjul</h4><b>m = 25,4 / DP</b></div>
+    <div><h4>Par</h4><b>a = <span class="br"><span><i class="br-h">(</i>m · (z<sub>1</sub> + z<sub>2</sub>)<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></b><span>akseavstand</span><b>i = <span class="br"><span>z<sub>2</sub></span><i class="br-h">/</i><span>z<sub>1</sub></span></span> = <span class="br"><span>n<sub>1</sub></span><i class="br-h">/</i><span>n<sub>2</sub></span></span></b></div>
+    <div><h4>Tommehjul</h4><b>m = <span class="br"><span>25,4</span><i class="br-h">/</i><span>DP</span></span></b></div>
   </div>
   <div class="hurtig-u">m modul (mm) · z antall tenner · n turtall · α = 20°</div>
 </div>
@@ -2916,11 +2924,11 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </figure>
 <p class="small muted">Under ca. 17 tenner (α = 20°, uten profilforskyvning) skjærer verktøyet bort foten av tannen (underskjæring). Praktisk nedre grense er ca. 14 tenner; færre krever profilforskyvning.</p>
 <h3>Diametral pitch og modul</h3>
-<p>Tommebaserte tannhjul angis med diametral pitch DP = antall tenner per tomme delesirkeldiameter. Omregning: <b>m = 25,4 / DP</b>. DP 10 tilsvarer m = 2,54 mm, som ikke går sammen med m 2,5. Circular pitch CP (deling i tommer) gir m = 25,4 · CP / π.</p>
+<p>Tommebaserte tannhjul angis med diametral pitch DP = antall tenner per tomme delesirkeldiameter. Omregning: <b>m = <span class="br"><span>25,4</span><i class="br-h">/</i><span>DP</span></span></b>. DP 10 tilsvarer m = 2,54 mm, som ikke går sammen med m 2,5. Circular pitch CP (deling i tommer) gir m = 25,4 · CP / π.</p>
 <h3>Skrå tannhjul</h3>
 <p>Tennene står i vinkelen β mot aksen. Flere tenner er i inngrep samtidig, så hjulene går roligere og tar mer last, men gir en aksialkraft som lagrene må ta. Verktøyet og tannprofilen er normert i normalsnittet, derfor regner man med <b>normalmodul m<sub>n</sub></b>: d = m<sub>n</sub> · z / cos β, og a = m<sub>n</sub>(z<sub>1</sub> + z<sub>2</sub>) / (2 cos β). To skrå hjul på parallelle aksler må ha samme β, men motsatt stigning (høyre/venstre).</p>
 <h3>Snekkedrift</h3>
-<p>Snekke og snekkehjul har kryssende aksler (normalt 90°) og gir stor utveksling i ett trinn: <b>i = z<sub>2</sub> / antall innganger</b> på snekka. Et hjul med 40 tenner og en eninngangs snekke gir i = 40. Eninngangs snekke med liten stigningsvinkel kan være selvsperrende (hjulet kan ikke drive snekka), men virkningsgraden er da lav og det blir mye varme. Selvsperring må ikke brukes som eneste brems.</p>
+<p>Snekke og snekkehjul har kryssende aksler (normalt 90°) og gir stor utveksling i ett trinn: <b>i = <span class="br"><span>z<sub>2</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>antall innganger<i class="br-h">)</i></span></span></b> på snekka. Et hjul med 40 tenner og en eninngangs snekke gir i = 40. Eninngangs snekke med liten stigningsvinkel kan være selvsperrende (hjulet kan ikke drive snekka), men virkningsgraden er da lav og det blir mye varme. Selvsperring må ikke brukes som eneste brems.</p>
 <h3>Koniske tannhjul</h3>
 <p>Koniske tannhjul overfører bevegelse mellom aksler som krysser hverandre, oftest 90°. Utvekslingen er i = z<sub>2</sub> / z<sub>1</sub>. Modulen angis på den ytre (største) delesirkelen. Spissene til kjeglene må møtes i samme punkt, så aksialinnstillingen med mellomlegg er viktig for riktig tannanlegg.</p>
 </details>
@@ -3062,7 +3070,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-g">
     <div><h4>Profil</h4><span>30° flankevinkel. Tr 40 × 7 = d 40 mm, stigning 7 mm</span></div>
     <div><h4>Diametre</h4><b>d<sub>2</sub> = D<sub>2</sub> = d − 0,5 · P</b><span>midtdiameter</span><b>D<sub>1</sub> = d − P</b><span>mutter, ≈ gjengebor</span></div>
-    <div><h4>Selvlåsing</h4><b>tan φ = P<sub>h</sub> / (π · d<sub>2</sub>)</b><b>tan ρ′ = µ / cos 15°</b><span>Selvlåsende når φ &lt; ρ′</span></div>
+    <div><h4>Selvlåsing</h4><b>tan φ = <span class="br"><span>P<sub>h</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>π · d<sub>2</sub><i class="br-h">)</i></span></span></b><b>tan ρ′ = <span class="br"><span>µ</span><i class="br-h">/</i><span><i class="br-h">(</i>cos 15°<i class="br-h">)</i></span></span></b><span>Selvlåsende når φ &lt; ρ′</span></div>
     <div><h4>Toleranse</h4><span>7H/7e middels (vanlig) · 8H/8e grov</span></div>
   </div>
   <div class="hurtig-u">d storediameter · P stigning · P<sub>h</sub> stigning per omdreining (flergjenget) · µ friksjonstall</div>
@@ -3268,7 +3276,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Betegnelse</h4><span>1/2-13 UNC = ½″ med 13 gjenger per tomme</span><span>UNC grov · UNF fin · 2A bolt · 2B mutter</span></div>
-    <div><h4>Stigning og bor</h4><b>P = 25,4 / TPI</b><span>mm</span><b>gjengebor ≈ D − P</b></div>
+    <div><h4>Stigning og bor</h4><b>P = <span class="br"><span>25,4</span><i class="br-h">/</i><span>TPI</span></span></b><span>mm</span><b>gjengebor ≈ D − P</b></div>
     <div><h4>Tomme</h4><b>1″ = 25,4 mm</b></div>
     <div><h4>Flensstag (API 6A)</h4><span>Xylan-belagt stag: bruk aldri momentet for ubehandlet stag</span></div>
   </div>
@@ -3481,7 +3489,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Vekt per meter</h4><b>m′ = A · ρ / 10⁶</b><span>kg/m, A i mm², ρ i kg/m³</span></div>
+    <div><h4>Vekt per meter</h4><b>m′ = <span class="br"><span><i class="br-h">(</i>A · ρ<i class="br-h">)</i></span><i class="br-h">/</i><span>10⁶</span></span></b><span>kg/m, A i mm², ρ i kg/m³</span></div>
     <div><h4>Rundstål</h4><b>m′ ≈ 0,00617 · d²</b><span>kg/m, d i mm</span></div>
     <div><h4>Plate</h4><span>7,85 kg/m² per mm tykkelse</span><span>2 m² × 10 mm = 157 kg</span></div>
   </div>
@@ -3591,8 +3599,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Profiler</h4><span>IPE smal og høy · HEA og HEB brede · UNP U-profil</span></div>
-    <div><h4>Punktlast midt på</h4><b>M = F · L / 4</b><b>δ = F · L³ / (48 · E · I)</b></div>
-    <div><h4>Jevn last Q</h4><b>M = Q · L / 8</b><b>δ = 5 · Q · L³ / (384 · E · I)</b></div>
+    <div><h4>Punktlast midt på</h4><b>M = <span class="br"><span><i class="br-h">(</i>F · L<i class="br-h">)</i></span><i class="br-h">/</i><span>4</span></span></b><b>δ = <span class="br"><span><i class="br-h">(</i>F · L³<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>48 · E · I<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Jevn last Q</h4><b>M = <span class="br"><span><i class="br-h">(</i>Q · L<i class="br-h">)</i></span><i class="br-h">/</i><span>8</span></span></b><b>δ = <span class="br"><span><i class="br-h">(</i>5 · Q · L³<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>384 · E · I<i class="br-h">)</i></span></span></b></div>
     <div><h4>Krav</h4><span>Nedbøyning høyst L/300 (veiledende). E = 210 000 MPa</span></div>
   </div>
   <div class="hurtig-u">F punktlast · Q total jevn last (N) · L spenn · I treghetsmoment (mm⁴)</div>
@@ -3817,11 +3825,11 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Stempelareal</h4><b>A = π · D² / 4</b><span>stempelside</span><b>A<sub>r</sub> = π · (D² − d²) / 4</b><span>stangside (ringareal)</span></div>
-    <div><h4>Kraft</h4><b>F = p · A · η</b><span>p i N/mm², A i mm². 1 bar = 0,1 N/mm²</span><b>F₁ / A₁ = F₂ / A₂</b><span>Pascals lov</span></div>
-    <div><h4>Hastighet og strøm</h4><b>v = Q / A</b><b>Q = V<sub>g</sub> · n · η<sub>v</sub></b><span>pumpe</span></div>
-    <div><h4>Effekt</h4><b>P = p · Q / (600 · η)</b><span>P i kW, p i bar, Q i l/min</span></div>
-    <div><h4>Rørdiameter</h4><b>d = √(4 · Q / (π · v))</b><span>Suge 0,5–1,5 · retur 2–4 · trykk 3–6 m/s</span></div>
+    <div><h4>Stempelareal</h4><b>A = <span class="br"><span><i class="br-h">(</i>π · D²<i class="br-h">)</i></span><i class="br-h">/</i><span>4</span></span></b><span>stempelside</span><b>A<sub>r</sub> = <span class="br"><span><i class="br-h">(</i>π · (D² − d²)<i class="br-h">)</i></span><i class="br-h">/</i><span>4</span></span></b><span>stangside (ringareal)</span></div>
+    <div><h4>Kraft</h4><b>F = p · A · η</b><span>p i N/mm², A i mm². 1 bar = 0,1 N/mm²</span><b><span class="br"><span>F₁</span><i class="br-h">/</i><span>A₁</span></span> = <span class="br"><span>F₂</span><i class="br-h">/</i><span>A₂</span></span></b><span>Pascals lov</span></div>
+    <div><h4>Hastighet og strøm</h4><b>v = <span class="br"><span>Q</span><i class="br-h">/</i><span>A</span></span></b><b>Q = V<sub>g</sub> · n · η<sub>v</sub></b><span>pumpe</span></div>
+    <div><h4>Effekt</h4><b>P = <span class="br"><span><i class="br-h">(</i>p · Q<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>600 · η<i class="br-h">)</i></span></span></b><span>P i kW, p i bar, Q i l/min</span></div>
+    <div><h4>Rørdiameter</h4><b>d = √(<span class="br"><span><i class="br-h">(</i>4 · Q<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · v<i class="br-h">)</i></span></span>)</b><span>Suge 0,5–1,5 · retur 2–4 · trykk 3–6 m/s</span></div>
     <div><h4>Trykkluft</h4><span>Normalt 6 bar overtrykk i verkstedet</span></div>
   </div>
   <div class="hurtig-u">p trykk · A areal · Q volumstrøm · v hastighet · η virkningsgrad · D stempel- og d stangdiameter</div>
@@ -3959,11 +3967,11 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Ohms lov</h4><b>U = R · I</b><b>I = U / R</b><b>R = U / I</b></div>
-    <div><h4>Effekt</h4><b>P = U · I</b><b>P = R · I²</b><b>P = U² / R</b></div>
+    <div><h4>Ohms lov</h4><b>U = R · I</b><b>I = <span class="br"><span>U</span><i class="br-h">/</i><span>R</span></span></b><b>R = <span class="br"><span>U</span><i class="br-h">/</i><span>I</span></span></b></div>
+    <div><h4>Effekt</h4><b>P = U · I</b><b>P = R · I²</b><b>P = <span class="br"><span>U²</span><i class="br-h">/</i><span>R</span></span></b></div>
     <div><h4>Seriekopling</h4><b>R = R₁ + R₂ + …</b><b>U = U₁ + U₂ + …</b><span>Samme strøm I overalt</span></div>
-    <div><h4>Parallellkopling</h4><b>1/R = 1/R₁ + 1/R₂ + …</b><b>R = R₁ · R₂ / (R₁ + R₂)</b><b>I = I₁ + I₂ + …</b><span>Samme spenning U over alle</span></div>
-    <div><h4>Spenningsdeler</h4><b>U₂ = U · R₂ / (R₁ + R₂)</b><h4>Strømdeling</h4><b>I₁ = I · R₂ / (R₁ + R₂)</b></div>
+    <div><h4>Parallellkopling</h4><b><span class="br"><span>1</span><i class="br-h">/</i><span>R</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>R₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>R₂</span></span> + …</b><b>R = <span class="br"><span><i class="br-h">(</i>R₁ · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b><b>I = I₁ + I₂ + …</b><span>Samme spenning U over alle</span></div>
+    <div><h4>Spenningsdeler</h4><b>U₂ = <span class="br"><span><i class="br-h">(</i>U · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b><h4>Strømdeling</h4><b>I₁ = <span class="br"><span><i class="br-h">(</i>I · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b></div>
     <div><h4>Kirchhoff</h4><b>ΣI<sub>inn</sub> = ΣI<sub>ut</sub></b><span>i hvert knutepunkt</span><b>ΣU = 0</b><span>rundt hver lukket sløyfe</span></div>
   </div>
   <div class="hurtig-u">U spenning (V) · I strøm (A) · R motstand (Ω) · P effekt (W)</div>
@@ -4039,9 +4047,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Parallellkopling</h3>
 <p>I en parallellkopling ligger alle motstandene over den samme spenningen. Strømmen deler seg, og hver gren tar strøm etter sin egen motstand. Totalmotstanden blir alltid mindre enn den minste motstanden, fordi hver ny gren gir strømmen en vei til. Slik er stikkontakter og lys i et anlegg koplet: hvert apparat får full spenning og kan slås av for seg.</p>
 <div class="el9a-eq">
-  <div><b>1/R = 1/R₁ + 1/R₂ + 1/R₃ + …</b><span>total motstand</span></div>
-  <div><b>R = R₁ · R₂ / (R₁ + R₂)</b><span>bare for to motstander</span></div>
-  <div><b>R = R₁ / n</b><span>n like motstander</span></div>
+  <div><b><span class="br"><span>1</span><i class="br-h">/</i><span>R</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>R₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>R₂</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>R₃</span></span> + …</b><span>total motstand</span></div>
+  <div><b>R = <span class="br"><span><i class="br-h">(</i>R₁ · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b><span>bare for to motstander</span></div>
+  <div><b>R = <span class="br"><span>R₁</span><i class="br-h">/</i><span>n</span></span></b><span>n like motstander</span></div>
   <div><b>U = U₁ = U₂ = U₃</b><span>samme spenning over alle</span></div>
   <div><b>I = I₁ + I₂ + I₃ + …</b><span>grenstrømmene summeres</span></div>
 </div>
@@ -4050,12 +4058,12 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="two">
   <div>
     <p><b>Spenningsdeler.</b> To motstander i serie deler spenningen i forhold til motstandene. Det brukes i potensiometre, i nivå- og temperaturgivere og for å tilpasse et signal til en inngang.</p>
-    <div class="el9a-eq"><div><b>U₂ = U · R₂ / (R₁ + R₂)</b><span>spenningen over R₂</span></div></div>
+    <div class="el9a-eq"><div><b>U₂ = <span class="br"><span><i class="br-h">(</i>U · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b><span>spenningen over R₂</span></div></div>
     <p class="small">Kopler du en last parallelt med R₂, blir den nedre delen mindre, og U₂ faller. Lasten må derfor ha mye større motstand enn R₂, gjerne 10 ganger eller mer.</p>
   </div>
   <div>
     <p><b>Strømdeling.</b> To motstander i parallell deler strømmen omvendt av motstandene: den minste motstanden får mest strøm. Strømmen tar ikke bare den letteste veien, den tar alle veier.</p>
-    <div class="el9a-eq"><div><b>I₁ = I · R₂ / (R₁ + R₂)</b><span>strømmen gjennom R₁</span></div></div>
+    <div class="el9a-eq"><div><b>I₁ = <span class="br"><span><i class="br-h">(</i>I · R₂<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>R₁ + R₂<i class="br-h">)</i></span></span></b><span>strømmen gjennom R₁</span></div></div>
     <p class="small">Dette er prinsippet for en shunt: en liten, nøyaktig motstand parallelt med et måleinstrument tar det meste av strømmen.</p>
   </div>
 </div>
@@ -4089,8 +4097,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Serie- og parallellkopling av celler</h4><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span><b>R<sub>i</sub> = n<sub>s</sub> · R<sub>i,celle</sub> / n<sub>p</sub></b><span>indre resistans i pakken</span></div>
-    <div><h4>Kapasitet, energi, polspenning og driftstid</h4><b>W = U · C</b><span>energi i Wh, med C i Ah</span><b>t = C / I</b><span>driftstid i h (teoretisk)</span><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span><b>I<sub>k</sub> = E / R<sub>i</sub></b><span>kortslutningsstrøm</span></div>
+    <div><h4>Serie- og parallellkopling av celler</h4><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span><b>R<sub>i</sub> = <span class="br"><span><i class="br-h">(</i>n<sub>s</sub> · R<sub>i,celle</sub><i class="br-h">)</i></span><i class="br-h">/</i><span>n<sub>p</sub></span></span></b><span>indre resistans i pakken</span></div>
+    <div><h4>Kapasitet, energi, polspenning og driftstid</h4><b>W = U · C</b><span>energi i Wh, med C i Ah</span><b>t = <span class="br"><span>C</span><i class="br-h">/</i><span>I</span></span></b><span>driftstid i h (teoretisk)</span><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span><b>I<sub>k</sub> = <span class="br"><span>E</span><i class="br-h">/</i><span>R<sub>i</sub></span></span></b><span>kortslutningsstrøm</span></div>
   </div>
 </div>
 <h3>Celletyper</h3>
@@ -4132,7 +4140,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="el9a-eq">
   <div><b>U = n<sub>s</sub> · U<sub>celle</sub></b><span>celler i serie: spenningen summeres</span></div>
   <div><b>C = n<sub>p</sub> · C<sub>celle</sub></b><span>celler i parallell: kapasiteten (Ah) summeres</span></div>
-  <div><b>R<sub>i</sub> = n<sub>s</sub> · R<sub>i,celle</sub> / n<sub>p</sub></b><span>indre resistans i pakken</span></div>
+  <div><b>R<sub>i</sub> = <span class="br"><span><i class="br-h">(</i>n<sub>s</sub> · R<sub>i,celle</sub><i class="br-h">)</i></span><i class="br-h">/</i><span>n<sub>p</sub></span></span></b><span>indre resistans i pakken</span></div>
 </div>
 <p>Et batteri betegnes ofte som for eksempel <b>5S2P</b>: fem celler i serie, to slike rekker i parallell. En 18 V verktøybatteripakke på 5,0 Ah er typisk 5S2P med Li-ion-celler på 3,6 V og 2,5 Ah. Det samme batteriet selges ofte som «20 V max», som er spenningen når cellene er fulladet (5 · 4,0 V).</p>
 <p>Bare like celler med samme alder og ladetilstand skal koples sammen. En svak celle i en serierekke blir tømt først og kan bli ladet i feil retning av de andre. Derfor har Li-ion-pakker et styresystem (BMS) som overvåker hver celle.</p>
@@ -4140,9 +4148,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>Kapasiteten i Ah sier hvor lenge batteriet kan levere en strøm. Energien i Wh tar også med spenningen, og er det riktige målet når du sammenligner batterier med ulik spenning. Under belastning faller polspenningen fordi strømmen gir spenningsfall over den indre resistansen R<sub>i</sub>. Det merkes ved kulde og på gamle batterier, der R<sub>i</sub> er høyere.</p>
 <div class="el9a-eq">
   <div><b>W = U · C</b><span>energi i Wh, med C i Ah</span></div>
-  <div><b>t = C / I</b><span>driftstid i h (teoretisk)</span></div>
+  <div><b>t = <span class="br"><span>C</span><i class="br-h">/</i><span>I</span></span></b><span>driftstid i h (teoretisk)</span></div>
   <div><b>U<sub>pol</sub> = E − I · R<sub>i</sub></b><span>polspenning under last. E er tomgangsspenningen</span></div>
-  <div><b>I<sub>k</sub> = E / R<sub>i</sub></b><span>kortslutningsstrøm</span></div>
+  <div><b>I<sub>k</sub> = <span class="br"><span>E</span><i class="br-h">/</i><span>R<sub>i</sub></span></span></b><span>kortslutningsstrøm</span></div>
 </div>
 <figure class="fig">
   <svg id="el9a-bt-fig" viewBox="0 0 600 270" role="img" aria-label="Battericeller koplet i serie og parallell med polspenning under last"></svg>
@@ -4155,7 +4163,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Motstand og temperatur</h4><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span><b>Δt = t − 20 °C</b><span>temperaturendring i K</span><b>Δt = (R<sub>t</sub> / R<sub>20</sub> − 1) / α</b><span>temperatur fra målt motstand</span></div>
+    <div><h4>Motstand og temperatur</h4><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span><b>Δt = t − 20 °C</b><span>temperaturendring i K</span><b>Δt = <span class="br"><span><i class="br-h">(</i><span class="br"><span>R<sub>t</sub></span><i class="br-h">/</i><span>R<sub>20</sub></span></span> − 1<i class="br-h">)</i></span><i class="br-h">/</i><span>α</span></span></b><span>temperatur fra målt motstand</span></div>
   </div>
 </div>
 <h3>Blandet kopling: forenkle trinn for trinn</h3>
@@ -4228,7 +4236,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="el9a-eq">
   <div><b>R<sub>t</sub> = R<sub>20</sub> · (1 + α · Δt)</b><span>motstand ved temperaturen t</span></div>
   <div><b>Δt = t − 20 °C</b><span>temperaturendring i K</span></div>
-  <div><b>Δt = (R<sub>t</sub> / R<sub>20</sub> − 1) / α</b><span>temperatur fra målt motstand</span></div>
+  <div><b>Δt = <span class="br"><span><i class="br-h">(</i><span class="br"><span>R<sub>t</sub></span><i class="br-h">/</i><span>R<sub>20</sub></span></span> − 1<i class="br-h">)</i></span><i class="br-h">/</i><span>α</span></span></b><span>temperatur fra målt motstand</span></div>
 </div>
 <p>Det brukes i praksis. En Pt100-føler har 100 Ω ved 0 °C og 138,5 Ω ved 100 °C. Viklingstemperaturen i en motor kan bestemmes ved å måle kald og varm viklingsmotstand. En glødetråd av wolfram har derimot så mye høyere motstand varm enn kald at strømstøtet ved innkopling blir mange ganger driftsstrømmen. Ved slike høye temperaturer er den lineære formelen for unøyaktig.</p>
 <h3>Hva kan en motstand være?</h3>
@@ -4257,9 +4265,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Kapasitans: C = Q / U</h4><b>C = Q / U</b><span>C i F, Q i coulomb (C = A · s), U i V</span><b>C = ε₀ · ε<sub>r</sub> · A / d</b><span>platekondensator. A i m², d i m</span><b>ε₀ = 8,854 · 10⁻¹² F/m</b><span>permittiviteten i vakuum</span><b>1 µF = 1000 nF = 10⁶ pF</b><span>vanlige enheter</span></div>
-    <div><h4>Serie- og parallellkopling</h4><b>C = C₁ + C₂ + C₃</b><span>parallell</span><b>1/C = 1/C₁ + 1/C₂ + 1/C₃</b><span>serie</span><b>W = ½ · C · U²</b><span>lagret energi i J (W · s)</span><b>U₁ = Q / C₁</b><span>spenning over hver i serie</span></div>
-    <div><h4>Opplading og utlading</h4><b>τ = R · C</b><span>tidskonstant i s, med R i Ω og C i F</span><b>u<sub>C</sub> = U · (1 − e<sup>−t/τ</sup>)</b><span>opplading</span><b>u<sub>C</sub> = U · e<sup>−t/τ</sup></b><span>utlading</span><b>i = (U / R) · e<sup>−t/τ</sup></b><span>strømmen i begge tilfeller</span></div>
+    <div><h4>Kapasitans: C = Q / U</h4><b>C = <span class="br"><span>Q</span><i class="br-h">/</i><span>U</span></span></b><span>C i F, Q i coulomb (C = A · s), U i V</span><b>C = <span class="br"><span><i class="br-h">(</i>ε₀ · ε<sub>r</sub> · A<i class="br-h">)</i></span><i class="br-h">/</i><span>d</span></span></b><span>platekondensator. A i m², d i m</span><b>ε₀ = 8,854 · 10⁻¹² F/m</b><span>permittiviteten i vakuum</span><b>1 µF = 1000 nF = 10⁶ pF</b><span>vanlige enheter</span></div>
+    <div><h4>Serie- og parallellkopling</h4><b>C = C₁ + C₂ + C₃</b><span>parallell</span><b><span class="br"><span>1</span><i class="br-h">/</i><span>C</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>C₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>C₂</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>C₃</span></span></b><span>serie</span><b>W = ½ · C · U²</b><span>lagret energi i J (W · s)</span><b>U₁ = <span class="br"><span>Q</span><i class="br-h">/</i><span>C₁</span></span></b><span>spenning over hver i serie</span></div>
+    <div><h4>Opplading og utlading</h4><b>τ = R · C</b><span>tidskonstant i s, med R i Ω og C i F</span><b>u<sub>C</sub> = U · (1 − e<sup>−t/τ</sup>)</b><span>opplading</span><b>u<sub>C</sub> = U · e<sup>−t/τ</sup></b><span>utlading</span><b>i = <span class="br"><span>U</span><i class="br-h">/</i><span>R</span></span> · e<sup>−t/τ</sup></b><span>strømmen i begge tilfeller</span></div>
   </div>
 </div>
 <h3>Kapasitans: C = Q / U</h3>
@@ -4309,8 +4317,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Kapasitans: C = Q / U</h3>
 <p>Kapasitansen C sier hvor mye ladning Q kondensatoren tar opp per volt. Enheten er farad (F). 1 F er svært mye, så i praksis brukes µF, nF og pF.</p>
 <div class="el9a-eq">
-  <div><b>C = Q / U</b><span>C i F, Q i coulomb (C = A · s), U i V</span></div>
-  <div><b>C = ε₀ · ε<sub>r</sub> · A / d</b><span>platekondensator. A i m², d i m</span></div>
+  <div><b>C = <span class="br"><span>Q</span><i class="br-h">/</i><span>U</span></span></b><span>C i F, Q i coulomb (C = A · s), U i V</span></div>
+  <div><b>C = <span class="br"><span><i class="br-h">(</i>ε₀ · ε<sub>r</sub> · A<i class="br-h">)</i></span><i class="br-h">/</i><span>d</span></span></b><span>platekondensator. A i m², d i m</span></div>
   <div><b>ε₀ = 8,854 · 10⁻¹² F/m</b><span>permittiviteten i vakuum</span></div>
   <div><b>1 µF = 1000 nF = 10⁶ pF</b><span>vanlige enheter</span></div>
 </div>
@@ -4336,9 +4344,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>Kondensatorer oppfører seg motsatt av motstander. I parallell legges platearealene sammen, så kapasitansen øker. I serie blir avstanden mellom de ytterste platene større, så kapasitansen minker. I serie får alle samme ladning, og den minste kondensatoren får den største spenningen.</p>
 <div class="el9a-eq">
   <div><b>C = C₁ + C₂ + C₃</b><span>parallell</span></div>
-  <div><b>1/C = 1/C₁ + 1/C₂ + 1/C₃</b><span>serie</span></div>
+  <div><b><span class="br"><span>1</span><i class="br-h">/</i><span>C</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>C₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>C₂</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>C₃</span></span></b><span>serie</span></div>
   <div><b>W = ½ · C · U²</b><span>lagret energi i J (W · s)</span></div>
-  <div><b>U₁ = Q / C₁</b><span>spenning over hver i serie</span></div>
+  <div><b>U₁ = <span class="br"><span>Q</span><i class="br-h">/</i><span>C₁</span></span></b><span>spenning over hver i serie</span></div>
 </div>
 <h3>Opplading og utlading: τ = R · C</h3>
 <p>En kondensator lades ikke opp momentant. Strømmen er størst i starten og avtar etter hvert som spenningen over kondensatoren nærmer seg kildespenningen. Tidskonstanten τ er tiden det tar å nå 63 % av full spenning. Etter 5τ regnes kondensatoren som full, eller tom ved utlading.</p>
@@ -4346,7 +4354,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div><b>τ = R · C</b><span>tidskonstant i s, med R i Ω og C i F</span></div>
   <div><b>u<sub>C</sub> = U · (1 − e<sup>−t/τ</sup>)</b><span>opplading</span></div>
   <div><b>u<sub>C</sub> = U · e<sup>−t/τ</sup></b><span>utlading</span></div>
-  <div><b>i = (U / R) · e<sup>−t/τ</sup></b><span>strømmen i begge tilfeller</span></div>
+  <div><b>i = <span class="br"><span>U</span><i class="br-h">/</i><span>R</span></span> · e<sup>−t/τ</sup></b><span>strømmen i begge tilfeller</span></div>
 </div>
 <figure class="fig">
   <svg id="el9a-rc-fig" viewBox="0 0 600 300" role="img" aria-label="RC-krets og animert lade- og utladekurve"></svg>
@@ -4389,9 +4397,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Sinusspenning</h4><b>u = Û · sin(ωt + φ)</b><span>øyeblikksverdi i V. Û er toppverdien</span><b>ω = 2π · f</b><span>vinkelfrekvens i rad/s</span><b>T = 1 / f</b><span>periode i s. 50 Hz gir 20 ms</span><b>U = Û / √2 ≈ 0,707 · Û</b><span>effektivverdi. Û = √2 · U</span></div>
-    <div><h4>Impedans</h4><b>Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</b><span>impedans i Ω</span><b>I = U / Z</b><span>Ohms lov for vekselstrøm</span><b>tan φ = (X<sub>L</sub> − X<sub>C</sub>) / R</b><span>positiv φ: induktiv krets</span><b>cos φ = R / Z</b><span>effektfaktoren</span></div>
-    <div><h4>Serieresonans</h4><b>f<sub>0</sub> = 1 / (2π · √(L · C))</b><span>resonansfrekvens i Hz, L i H og C i F</span></div>
+    <div><h4>Sinusspenning</h4><b>u = Û · sin(ωt + φ)</b><span>øyeblikksverdi i V. Û er toppverdien</span><b>ω = 2π · f</b><span>vinkelfrekvens i rad/s</span><b>T = <span class="br"><span>1</span><i class="br-h">/</i><span>f</span></span></b><span>periode i s. 50 Hz gir 20 ms</span><b>U = <span class="br"><span>Û</span><i class="br-h">/</i><span>√2</span></span> ≈ 0,707 · Û</b><span>effektivverdi. Û = √2 · U</span></div>
+    <div><h4>Impedans</h4><b>Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</b><span>impedans i Ω</span><b>I = <span class="br"><span>U</span><i class="br-h">/</i><span>Z</span></span></b><span>Ohms lov for vekselstrøm</span><b>tan φ = <span class="br"><span><i class="br-h">(</i>X<sub>L</sub> − X<sub>C</sub><i class="br-h">)</i></span><i class="br-h">/</i><span>R</span></span></b><span>positiv φ: induktiv krets</span><b>cos φ = <span class="br"><span>R</span><i class="br-h">/</i><span>Z</span></span></b><span>effektfaktoren</span></div>
+    <div><h4>Serieresonans</h4><b>f<sub>0</sub> = <span class="br"><span>1</span><i class="br-h">/</i><span><i class="br-h">(</i>2π · √(L · C)<i class="br-h">)</i></span></span></b><span>resonansfrekvens i Hz, L i H og C i F</span></div>
   </div>
 </div>
 <h3>R, L og C i vekselstrøm</h3>
@@ -4421,8 +4429,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="el9b-eq">
   <div><b>u = Û · sin(ωt + φ)</b><span>øyeblikksverdi i V. Û er toppverdien</span></div>
   <div><b>ω = 2π · f</b><span>vinkelfrekvens i rad/s</span></div>
-  <div><b>T = 1 / f</b><span>periode i s. 50 Hz gir 20 ms</span></div>
-  <div><b>U = Û / √2 ≈ 0,707 · Û</b><span>effektivverdi. Û = √2 · U</span></div>
+  <div><b>T = <span class="br"><span>1</span><i class="br-h">/</i><span>f</span></span></b><span>periode i s. 50 Hz gir 20 ms</span></div>
+  <div><b>U = <span class="br"><span>Û</span><i class="br-h">/</i><span>√2</span></span> ≈ 0,707 · Û</b><span>effektivverdi. Û = √2 · U</span></div>
 </div>
 <p>Effektivverdien U er den likespenningen som gir like mye varme i en motstand. Det er den som står på merkeskilt, og den et TRMS-multimeter viser. 230 V betyr Û = 325 V og 650 V fra topp til bunn, og isolasjon og komponenter må tåle toppverdien.</p>
 <figure class="fig">
@@ -4447,14 +4455,14 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>Når en krets har både R, L og C, kalles den totale motstanden <b>impedans Z</b>. X<sub>L</sub> og X<sub>C</sub> virker mot hverandre og trekkes fra hverandre. Reaktansen står 90° på R i viserdiagrammet, derfor brukes Pytagoras.</p>
 <div class="el9b-eq">
   <div><b>Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</b><span>impedans i Ω</span></div>
-  <div><b>I = U / Z</b><span>Ohms lov for vekselstrøm</span></div>
-  <div><b>tan φ = (X<sub>L</sub> − X<sub>C</sub>) / R</b><span>positiv φ: induktiv krets</span></div>
-  <div><b>cos φ = R / Z</b><span>effektfaktoren</span></div>
+  <div><b>I = <span class="br"><span>U</span><i class="br-h">/</i><span>Z</span></span></b><span>Ohms lov for vekselstrøm</span></div>
+  <div><b>tan φ = <span class="br"><span><i class="br-h">(</i>X<sub>L</sub> − X<sub>C</sub><i class="br-h">)</i></span><i class="br-h">/</i><span>R</span></span></b><span>positiv φ: induktiv krets</span></div>
+  <div><b>cos φ = <span class="br"><span>R</span><i class="br-h">/</i><span>Z</span></span></b><span>effektfaktoren</span></div>
 </div>
 <p>Er X<sub>L</sub> størst, er kretsen induktiv og strømmen ligger etter spenningen. Det er det vanlige i verkstedet, der motorer, transformatorer, kontaktorer og magnetventiler er spoler.</p>
 <h4>Serieresonans</h4>
 <p>Ved én bestemt frekvens f<sub>0</sub> er X<sub>L</sub> = X<sub>C</sub>. Da opphever de hverandre, Z = R og strømmen blir størst. Spenningen over L og C hver for seg kan da bli mange ganger større enn kildespenningen. Resonans brukes i filtre og svingekretser, men kan også gi uønskede overspenninger, for eksempel mellom kompenseringskondensatorer og overharmoniske fra frekvensomformere.</p>
-<div class="el9b-eq"><div><b>f<sub>0</sub> = 1 / (2π · √(L · C))</b><span>resonansfrekvens i Hz, L i H og C i F</span></div></div>
+<div class="el9b-eq"><div><b>f<sub>0</sub> = <span class="br"><span>1</span><i class="br-h">/</i><span><i class="br-h">(</i>2π · √(L · C)<i class="br-h">)</i></span></span></b><span>resonansfrekvens i Hz, L i H og C i F</span></div></div>
 </details>
 </div>
 <div class="topic" id="el9-effekt">
@@ -4462,7 +4470,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Fasekompensering</h4><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span><b>C = Q<sub>C</sub> / (ω · U²)</b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span><b>C = Q<sub>C</sub> / (3 · ω · U²)</b><span>trefase i trekant: per kondensator</span></div>
+    <div><h4>Fasekompensering</h4><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span><b>C = <span class="br"><span>Q<sub>C</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>ω · U²<i class="br-h">)</i></span></span></b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span><b>C = <span class="br"><span>Q<sub>C</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>3 · ω · U²<i class="br-h">)</i></span></span></b><span>trefase i trekant: per kondensator</span></div>
   </div>
 </div>
 <h3>Aktiv, reaktiv og tilsynelatende effekt</h3>
@@ -4509,8 +4517,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>En kondensator tar reaktiv effekt med motsatt fortegn av en spole. Plassert nær motoren leverer den det magnetfeltet trenger lokalt, så den reaktive strømmen slipper å gå gjennom hele nettet. Strømmen i kabelen foran kondensatoren går ned, mens motoren selv merker ingen forskjell.</p>
 <div class="el9b-eq">
   <div><b>Q<sub>C</sub> = P · (tan φ<sub>1</sub> − tan φ<sub>2</sub>)</b><span>φ<sub>1</sub> før, φ<sub>2</sub> etter kompensering</span></div>
-  <div><b>C = Q<sub>C</sub> / (ω · U²)</b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span></div>
-  <div><b>C = Q<sub>C</sub> / (3 · ω · U²)</b><span>trefase i trekant: per kondensator</span></div>
+  <div><b>C = <span class="br"><span>Q<sub>C</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>ω · U²<i class="br-h">)</i></span></span></b><span>enfase. Trefase i stjerne: per kondensator, U = linjespenning</span></div>
+  <div><b>C = <span class="br"><span>Q<sub>C</sub></span><i class="br-h">/</i><span><i class="br-h">(</i>3 · ω · U²<i class="br-h">)</i></span></span></b><span>trefase i trekant: per kondensator</span></div>
 </div>
 </details>
 </div>
@@ -4519,7 +4527,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Elektromagnet: B, Φ og H</h4><b>H = N · I / l</b><span>magnetisk feltstyrke i A/m. l er lengden av feltlinjene</span><b>B = µ₀ · µ<sub>r</sub> · H</b><span>flukstetthet i tesla (T = Vs/m²)</span><b>Φ = B · A</b><span>magnetisk fluks i weber (Wb = Vs)</span><b>µ₀ = 4π · 10⁻⁷ H/m</b><span>permeabiliteten i vakuum (1,257 · 10⁻⁶)</span></div>
+    <div><h4>Elektromagnet: B, Φ og H</h4><b>H = <span class="br"><span><i class="br-h">(</i>N · I<i class="br-h">)</i></span><i class="br-h">/</i><span>l</span></span></b><span>magnetisk feltstyrke i A/m. l er lengden av feltlinjene</span><b>B = µ₀ · µ<sub>r</sub> · H</b><span>flukstetthet i tesla (T = Vs/m²)</span><b>Φ = B · A</b><span>magnetisk fluks i weber (Wb = Vs)</span><b>µ₀ = 4π · 10⁻⁷ H/m</b><span>permeabiliteten i vakuum (1,257 · 10⁻⁶)</span></div>
     <div><h4>Kraft på en strømførende leder</h4><b>F = B · I · l</b><span>kraft i N. B i T, I i A, l er lederlengden i feltet i m</span></div>
   </div>
 </div>
@@ -4550,7 +4558,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Elektromagnet: B, Φ og H</h3>
 <p>En spole med strøm blir en magnet. En jernkjerne samler feltlinjene og gjør feltet hundrevis eller tusenvis av ganger sterkere, fordi jernet selv blir magnetisert. Feltet forsvinner nesten helt når strømmen brytes, og det er derfor elektromagneter kan styres.</p>
 <div class="el9a-eq">
-  <div><b>H = N · I / l</b><span>magnetisk feltstyrke i A/m. l er lengden av feltlinjene</span></div>
+  <div><b>H = <span class="br"><span><i class="br-h">(</i>N · I<i class="br-h">)</i></span><i class="br-h">/</i><span>l</span></span></b><span>magnetisk feltstyrke i A/m. l er lengden av feltlinjene</span></div>
   <div><b>B = µ₀ · µ<sub>r</sub> · H</b><span>flukstetthet i tesla (T = Vs/m²)</span></div>
   <div><b>Φ = B · A</b><span>magnetisk fluks i weber (Wb = Vs)</span></div>
   <div><b>µ₀ = 4π · 10⁻⁷ H/m</b><span>permeabiliteten i vakuum (1,257 · 10⁻⁶)</span></div>
@@ -4595,8 +4603,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Induktans</h4><b>L = µ₀ · µ<sub>r</sub> · N² · A / l</b><span>lang spole. A i m², l i m</span><b>e = −L · Δi / Δt</b><span>indusert spenning i V</span><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span><b>τ = L / R</b><span>tidskonstant i s</span></div>
-    <div><h4>Serie- og parallellkopling</h4><b>L = L₁ + L₂ + L₃</b><span>serie</span><b>1/L = 1/L₁ + 1/L₂ + 1/L₃</b><span>parallell</span></div>
+    <div><h4>Induktans</h4><b>L = <span class="br"><span><i class="br-h">(</i>µ₀ · µ<sub>r</sub> · N² · A<i class="br-h">)</i></span><i class="br-h">/</i><span>l</span></span></b><span>lang spole. A i m², l i m</span><b>e = −<span class="br"><span><i class="br-h">(</i>L · Δi<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>indusert spenning i V</span><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span><b>τ = <span class="br"><span>L</span><i class="br-h">/</i><span>R</span></span></b><span>tidskonstant i s</span></div>
+    <div><h4>Serie- og parallellkopling</h4><b>L = L₁ + L₂ + L₃</b><span>serie</span><b><span class="br"><span>1</span><i class="br-h">/</i><span>L</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>L₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>L₂</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>L₃</span></span></b><span>parallell</span></div>
   </div>
 </div>
 <h3>Innkopling: τ = L / R</h3>
@@ -4622,16 +4630,16 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Induktans</h3>
 <p>Induktansen L sier hvor stor spenning spolen induserer når strømmen endrer seg. Enheten er henry (H). Induktansen øker med kvadratet av antall vindinger, og en jernkjerne øker den mye.</p>
 <div class="el9a-eq">
-  <div><b>L = µ₀ · µ<sub>r</sub> · N² · A / l</b><span>lang spole. A i m², l i m</span></div>
-  <div><b>e = −L · Δi / Δt</b><span>indusert spenning i V</span></div>
+  <div><b>L = <span class="br"><span><i class="br-h">(</i>µ₀ · µ<sub>r</sub> · N² · A<i class="br-h">)</i></span><i class="br-h">/</i><span>l</span></span></b><span>lang spole. A i m², l i m</span></div>
+  <div><b>e = −<span class="br"><span><i class="br-h">(</i>L · Δi<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>indusert spenning i V</span></div>
   <div><b>W = ½ · L · I²</b><span>energi i magnetfeltet i J</span></div>
-  <div><b>τ = L / R</b><span>tidskonstant i s</span></div>
+  <div><b>τ = <span class="br"><span>L</span><i class="br-h">/</i><span>R</span></span></b><span>tidskonstant i s</span></div>
 </div>
 <h3>Serie- og parallellkopling</h3>
 <p>Spoler koples som motstander, så lenge feltene ikke påvirker hverandre: i serie legges induktansene sammen, i parallell blir totalen mindre enn den minste. Står spolene tett med felles kjerne, kommer gjensidig induktans i tillegg, og da gjelder ikke formlene. Det er det transformatoren utnytter.</p>
 <div class="el9a-eq">
   <div><b>L = L₁ + L₂ + L₃</b><span>serie</span></div>
-  <div><b>1/L = 1/L₁ + 1/L₂ + 1/L₃</b><span>parallell</span></div>
+  <div><b><span class="br"><span>1</span><i class="br-h">/</i><span>L</span></span> = <span class="br"><span>1</span><i class="br-h">/</i><span>L₁</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>L₂</span></span> + <span class="br"><span>1</span><i class="br-h">/</i><span>L₃</span></span></b><span>parallell</span></div>
 </div>
 <h3>Innkopling: τ = L / R</h3>
 <p>Når en spole koples til likespenning, stiger strømmen gradvis, fordi spolen induserer en motspenning. Etter én tidskonstant er strømmen 63 % av sluttverdien U / R, og etter 5τ er den regnet som full. Derfor trekker en kontaktor litt etter at spolen får spenning. Sluttstrømmen bestemmes bare av motstanden i tråden.</p>
@@ -4654,9 +4662,9 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Faradays induksjonslov</h4><b>e = −N · ΔΦ / Δt</b><span>indusert spenning i V. N er antall vindinger</span><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
-    <div><h4>Generatoren</h4><b>e = N · B · A · ω · sin(ωt)</b><span>A er spolens areal i m²</span><b>Ê = N · B · A · ω</b><span>toppverdi</span><b>ω = 2π · n / 60</b><span>n i o/min</span></div>
-    <div><h4>Selvinduksjon</h4><b>e = −L · Δi / Δt</b><span>selvindusert spenning i V</span></div>
+    <div><h4>Faradays induksjonslov</h4><b>e = −<span class="br"><span><i class="br-h">(</i>N · ΔΦ<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>indusert spenning i V. N er antall vindinger</span><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
+    <div><h4>Generatoren</h4><b>e = N · B · A · ω · sin(ωt)</b><span>A er spolens areal i m²</span><b>Ê = N · B · A · ω</b><span>toppverdi</span><b>ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b><span>n i o/min</span></div>
+    <div><h4>Selvinduksjon</h4><b>e = −<span class="br"><span><i class="br-h">(</i>L · Δi<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>selvindusert spenning i V</span></div>
   </div>
 </div>
 <h3>Leder i bevegelse: e = B · l · v</h3>
@@ -4679,7 +4687,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p class="lead">Når magnetfeltet gjennom en spole endrer seg, induseres det en spenning i spolen. Det er induksjon, og det er slik generatorer lager strøm og transformatorer virker. Det er endringen som teller: et stillestående felt gir ingen spenning.</p>
 <h3>Faradays induksjonslov</h3>
 <div class="el9a-eq">
-  <div><b>e = −N · ΔΦ / Δt</b><span>indusert spenning i V. N er antall vindinger</span></div>
+  <div><b>e = −<span class="br"><span><i class="br-h">(</i>N · ΔΦ<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>indusert spenning i V. N er antall vindinger</span></div>
   <div><b>e = B · l · v</b><span>leder som beveger seg på tvers av feltet. v i m/s</span></div>
 </div>
 <p>Spenningen blir større jo flere vindinger spolen har, jo sterkere magneten er og jo fortere feltet endrer seg. Minustegnet er Lenz’ lov (se under).</p>
@@ -4696,7 +4704,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="el9a-eq">
   <div><b>e = N · B · A · ω · sin(ωt)</b><span>A er spolens areal i m²</span></div>
   <div><b>Ê = N · B · A · ω</b><span>toppverdi</span></div>
-  <div><b>ω = 2π · n / 60</b><span>n i o/min</span></div>
+  <div><b>ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b><span>n i o/min</span></div>
 </div>
 <figure class="fig">
   <svg id="el9a-gen-fig" viewBox="0 0 600 260" role="img" aria-label="Spole som roterer mellom to magnetpoler og tegner en sinuskurve"></svg>
@@ -4720,7 +4728,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Selvinduksjon</h3>
 <p>En spole induserer også spenning i seg selv når strømmen gjennom den endrer seg. Denne spenningen motvirker endringen: ved innkopling bremser den strømøkningen, ved utkopling prøver den å holde strømmen i gang. Med L = 0,5 H og en strøm på 0,5 A som brytes på 1 ms blir e = 0,5 · 0,5 / 0,001 = 250 V. Se <a href="#el9-spoler">spoler</a> for innkoplingsforløpet og frigangsdioden.</p>
 <div class="el9a-eq">
-  <div><b>e = −L · Δi / Δt</b><span>selvindusert spenning i V</span></div>
+  <div><b>e = −<span class="br"><span><i class="br-h">(</i>L · Δi<i class="br-h">)</i></span><i class="br-h">/</i><span>Δt</span></span></b><span>selvindusert spenning i V</span></div>
 </div>
 </details>
 </div>
@@ -4729,7 +4737,7 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Transformatorprinsippet</h4><b>U<sub>1</sub> / U<sub>2</sub> = N<sub>1</sub> / N<sub>2</sub></b><span>omsetningsforholdet ü</span><b>I<sub>1</sub> / I<sub>2</sub> = N<sub>2</sub> / N<sub>1</sub></b><span>strømmen omvendt av spenningen</span><b>U<sub>1</sub> · I<sub>1</sub> = U<sub>2</sub> · I<sub>2</sub></b><span>ideell transformator: S<sub>1</sub> = S<sub>2</sub></span><b>η = P<sub>2</sub> / P<sub>1</sub></b><span>virkningsgrad</span></div>
+    <div><h4>Transformatorprinsippet</h4><b><span class="br"><span>U<sub>1</sub></span><i class="br-h">/</i><span>U<sub>2</sub></span></span> = <span class="br"><span>N<sub>1</sub></span><i class="br-h">/</i><span>N<sub>2</sub></span></span></b><span>omsetningsforholdet ü</span><b><span class="br"><span>I<sub>1</sub></span><i class="br-h">/</i><span>I<sub>2</sub></span></span> = <span class="br"><span>N<sub>2</sub></span><i class="br-h">/</i><span>N<sub>1</sub></span></span></b><span>strømmen omvendt av spenningen</span><b>U<sub>1</sub> · I<sub>1</sub> = U<sub>2</sub> · I<sub>2</sub></b><span>ideell transformator: S<sub>1</sub> = S<sub>2</sub></span><b>η = <span class="br"><span>P<sub>2</sub></span><i class="br-h">/</i><span>P<sub>1</sub></span></span></b><span>virkningsgrad</span></div>
   </div>
 </div>
 <h3>Transformatorprinsippet</h3>
@@ -4777,10 +4785,10 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <figcaption>Pilene i kjernen viser fluksen Φ, som skifter retning i takt med spenningen (100 ganger saktere enn virkeligheten). Kurvene under viser u<sub>1</sub>, Φ og u<sub>2</sub>. Fluksen ligger 90° etter primærspenningen. Antall vindinger på figuren er ikke i målestokk.</figcaption>
 </figure>
 <div class="el9b-eq">
-  <div><b>U<sub>1</sub> / U<sub>2</sub> = N<sub>1</sub> / N<sub>2</sub></b><span>omsetningsforholdet ü</span></div>
-  <div><b>I<sub>1</sub> / I<sub>2</sub> = N<sub>2</sub> / N<sub>1</sub></b><span>strømmen omvendt av spenningen</span></div>
+  <div><b><span class="br"><span>U<sub>1</sub></span><i class="br-h">/</i><span>U<sub>2</sub></span></span> = <span class="br"><span>N<sub>1</sub></span><i class="br-h">/</i><span>N<sub>2</sub></span></span></b><span>omsetningsforholdet ü</span></div>
+  <div><b><span class="br"><span>I<sub>1</sub></span><i class="br-h">/</i><span>I<sub>2</sub></span></span> = <span class="br"><span>N<sub>2</sub></span><i class="br-h">/</i><span>N<sub>1</sub></span></span></b><span>strømmen omvendt av spenningen</span></div>
   <div><b>U<sub>1</sub> · I<sub>1</sub> = U<sub>2</sub> · I<sub>2</sub></b><span>ideell transformator: S<sub>1</sub> = S<sub>2</sub></span></div>
-  <div><b>η = P<sub>2</sub> / P<sub>1</sub></b><span>virkningsgrad</span></div>
+  <div><b>η = <span class="br"><span>P<sub>2</sub></span><i class="br-h">/</i><span>P<sub>1</sub></span></span></b><span>virkningsgrad</span></div>
 </div>
 <p>Det som går ned i spenning, går opp i strøm. En 230/24 V-transformator som leverer 4 A, trekker litt over 0,4 A på primærsiden. Tapene er <b>jerntap</b> i kjernen, som er omtrent konstante også på tomgang, og <b>kobbertap</b> i viklingene, som øker med I². Store transformatorer har virkningsgrad godt over 95 %, små styrestrømstransformatorer lavere (veiledende).</p>
 <h3>Tomgang og kortslutningsspenning u<sub>k</sub></h3>
@@ -4836,8 +4844,8 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Synkront turtall</h4><b>n<sub>s</sub> = 60 · f / p</b><span>o/min. p = antall polpar, poltallet er 2p</span></div>
-    <div><h4>Sakking</h4><b>s = (n<sub>s</sub> − n) / n<sub>s</sub> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
+    <div><h4>Synkront turtall</h4><b>n<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>60 · f<i class="br-h">)</i></span><i class="br-h">/</i><span>p</span></span></b><span>o/min. p = antall polpar, poltallet er 2p</span></div>
+    <div><h4>Sakking</h4><b>s = <span class="br"><span><i class="br-h">(</i>n<sub>s</sub> − n<i class="br-h">)</i></span><i class="br-h">/</i><span>n<sub>s</sub></span></span> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
   </div>
 </div>
 <h3>Synkront turtall</h3>
@@ -4913,10 +4921,10 @@ dl.kv.el9a-nt dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <p>Rotoren må gå litt saktere enn feltet. Bare da skjærer feltet rotorstavene, slik at det induseres strøm og moment i rotoren. Gikk rotoren like fort som feltet, ble momentet null.</p>
 <h3>Synkront turtall</h3>
-<div class="el9b-eq"><div><b>n<sub>s</sub> = 60 · f / p</b><span>o/min. p = antall polpar, poltallet er 2p</span></div></div>
+<div class="el9b-eq"><div><b>n<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>60 · f<i class="br-h">)</i></span><i class="br-h">/</i><span>p</span></span></b><span>o/min. p = antall polpar, poltallet er 2p</span></div></div>
 <h3>Sakking</h3>
 <div class="el9b-eq">
-  <div><b>s = (n<sub>s</sub> − n) / n<sub>s</sub> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span></div>
+  <div><b>s = <span class="br"><span><i class="br-h">(</i>n<sub>s</sub> − n<i class="br-h">)</i></span><i class="br-h">/</i><span>n<sub>s</sub></span></span> · 100 %</b><span>typisk 2–6 % ved merkelast (veiledende), mer for små motorer</span></div>
   <div><b>f<sub>r</sub> = s · f</b><span>frekvensen på strømmen i rotoren</span></div>
 </div>
 <h3>Momentkurven</h3>
@@ -5217,11 +5225,11 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Regnerekkefølge</h4><span>Parenteser → potenser → gange og dele → pluss og minus</span></div>
-    <div><h4>Brøk</h4><b>a/b + c/d = (a·d + b·c) / (b·d)</b><b>a/b · c/d = (a·c) / (b·d)</b><b>a/b : c/d = a/b · d/c</b></div>
-    <div><h4>Potenser</h4><b>aᵐ · aⁿ = aᵐ⁺ⁿ</b><b>aᵐ / aⁿ = aᵐ⁻ⁿ</b><b>(aᵐ)ⁿ = aᵐ·ⁿ</b><b>a⁰ = 1 &nbsp; a⁻ⁿ = 1 / aⁿ</b></div>
+    <div><h4>Brøk</h4><b><span class="br"><span>a</span><i class="br-h">/</i><span>b</span></span> + <span class="br"><span>c</span><i class="br-h">/</i><span>d</span></span> = <span class="br"><span><i class="br-h">(</i>a·d + b·c<i class="br-h">)</i></span><i class="br-h">/</i><span>b·d</span></span></b><b><span class="br"><span>a</span><i class="br-h">/</i><span>b</span></span> · <span class="br"><span>c</span><i class="br-h">/</i><span>d</span></span> = <span class="br"><span>a·c</span><i class="br-h">/</i><span>b·d</span></span></b><b><span class="br"><span>a</span><i class="br-h">/</i><span>b</span></span> : <span class="br"><span>c</span><i class="br-h">/</i><span>d</span></span> = <span class="br"><span>a</span><i class="br-h">/</i><span>b</span></span> · <span class="br"><span>d</span><i class="br-h">/</i><span>c</span></span></b></div>
+    <div><h4>Potenser</h4><b>aᵐ · aⁿ = aᵐ⁺ⁿ</b><b><span class="br"><span>aᵐ</span><i class="br-h">/</i><span>aⁿ</span></span> = aᵐ⁻ⁿ</b><b>(aᵐ)ⁿ = aᵐ·ⁿ</b><b>a⁰ = 1 &nbsp; a⁻ⁿ = <span class="br"><span>1</span><i class="br-h">/</i><span>aⁿ</span></span></b></div>
     <div><h4>Kvadratsetningene</h4><b>(a + b)² = a² + 2ab + b²</b><b>(a − b)² = a² − 2ab + b²</b><b>(a + b)(a − b) = a² − b²</b></div>
-    <div><h4>Andregradslikning</h4><b>ax² + bx + c = 0</b><b>x = (−b ± √(b² − 4ac)) / (2a)</b></div>
-    <div><h4>Snu en formel</h4><span>Gjør det samme på begge sider til den ukjente står alene</span><b>n = v<sub>c</sub> · 1000 / (π · D)</b><span>fra v<sub>c</sub> = π · D · n / 1000</span></div>
+    <div><h4>Andregradslikning</h4><b>ax² + bx + c = 0</b><b>x = <span class="br"><span><i class="br-h">(</i>−b ± √(b² − 4ac)<i class="br-h">)</i></span><i class="br-h">/</i><span>2a</span></span></b></div>
+    <div><h4>Snu en formel</h4><span>Gjør det samme på begge sider til den ukjente står alene</span><b>n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></b><span>fra v<sub>c</sub> = π · D · n / 1000</span></div>
   </div>
 </div>
 <h3>Regnerekkefølge</h3>
@@ -5386,10 +5394,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>Å faktorisere er å skrive et uttrykk som et produkt. Det er det motsatte av å gange ut parenteser. Du bruker det til å forkorte brøker, til å løse likninger (et produkt er null når én faktor er null) og til å forenkle formler.</p>
 <h3>Likninger og å snu formler</h3>
 <p>En likning er en vekt i balanse. Gjør du det samme på begge sider, er den fortsatt i balanse. For å få en bokstav alene, opphever du det som er gjort med den, i <b>motsatt rekkefølge</b> av regnerekkefølgen: først pluss og minus, så gange og dele, til slutt potenser.</p>
-<p>Turtallsformelen <span class="mono">n = v<sub>c</sub> · 1000 / (π · D)</span> (n i o/min, v<sub>c</sub> i m/min, D i mm) kan snus slik at du finner diameteren eller skjærehastigheten. Tallet 1000 gjør om meter til millimeter. Velg hva du vil finne, og se stegene ett for ett.</p>
+<p>Turtallsformelen <span class="mono">n = <span class="br"><span><i class="br-h">(</i>v<sub>c</sub> · 1000<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>π · D<i class="br-h">)</i></span></span></span> (n i o/min, v<sub>c</sub> i m/min, D i mm) kan snus slik at du finner diameteren eller skjærehastigheten. Tallet 1000 gjør om meter til millimeter. Velg hva du vil finne, og se stegene ett for ett.</p>
 <h3>Andregradslikning og abc-formelen</h3>
 <p>En likning på formen <span class="mono">ax² + bx + c = 0</span> (a ≠ 0) løses med abc-formelen. Uttrykket under rottegnet, <b>diskriminanten</b> b² − 4ac, avgjør hvor mange løsninger det er: positiv gir to, null gir én, negativ gir ingen reelle løsninger.</p>
-<div class="ma10x-f">x = (−b ± √(b² − 4ac)) / (2a)</div>
+<div class="ma10x-f">x = <span class="br"><span><i class="br-h">(</i>−b ± √(b² − 4ac)<i class="br-h">)</i></span><i class="br-h">/</i><span>2a</span></span></div>
 <p><b>Eksempel:</b> En rektangulær plate skal ha areal 1200 mm² og omkrets 140 mm. Sidene er da x og 70 − x, så x(70 − x) = 1200, som gir x² − 70x + 1200 = 0. Løsningene er 30 og 40: platen er 30 × 40 mm.</p>
 <h3>Standardform og tierpotenser</h3>
 <p>Svært store og svært små tall skrives på standardform: <span class="mono">a · 10ⁿ</span>, der 1 ≤ a &lt; 10 og n er et helt tall. Eksponenten forteller hvor mange plasser kommaet er flyttet: positiv mot høyre, negativ mot venstre. På kalkulatoren tastes 10ⁿ som <span class="mono">EXP</span> eller <span class="mono">E</span>: 1,2 · 10⁻⁵ blir <span class="mono">1.2E-5</span>. I teknikken brukes ofte <b>ingeniørform</b>, der eksponenten er delelig med 3, slik at den passer med SI-prefiksene.</p>
@@ -5400,12 +5408,12 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Prosent</h4><b>del = helhet · p / 100</b><b>vekstfaktor = 1 ± p / 100</b></div>
-    <div><h4>Mva 25 %</h4><b>med mva = uten mva · 1,25</b><b>uten mva = med mva / 1,25</b></div>
-    <div><h4>Rabatt</h4><b>pris = listepris · (1 − r / 100)</b></div>
-    <div><h4>Renter</h4><b>K<sub>n</sub> = K<sub>0</sub> · (1 + r / 100)ⁿ</b><span>rentes rente over n år</span></div>
+    <div><h4>Prosent</h4><b>del = <span class="br"><span><i class="br-h">(</i>helhet · p<i class="br-h">)</i></span><i class="br-h">/</i><span>100</span></span></b><b>vekstfaktor = 1 ± <span class="br"><span>p</span><i class="br-h">/</i><span>100</span></span></b></div>
+    <div><h4>Mva 25 %</h4><b>med mva = uten mva · 1,25</b><b>uten mva = <span class="br"><span><i class="br-h">(</i>med mva<i class="br-h">)</i></span><i class="br-h">/</i><span>1,25</span></span></b></div>
+    <div><h4>Rabatt</h4><b>pris = listepris · (1 − <span class="br"><span>r</span><i class="br-h">/</i><span>100</span></span>)</b></div>
+    <div><h4>Renter</h4><b>K<sub>n</sub> = K<sub>0</sub> · (1 + <span class="br"><span>r</span><i class="br-h">/</i><span>100</span></span>)ⁿ</b><span>rentes rente over n år</span></div>
     <div><h4>Lån</h4><span>Annuitet: like store terminbeløp</span><span>Serielån: like store avdrag, synkende beløp</span></div>
-    <div><h4>Maskin</h4><b>timekostnad = faste kostnader per år / timer i drift</b><span>lønn kommer i tillegg</span></div>
+    <div><h4>Maskin</h4><b>timekostnad = <span class="br"><span><i class="br-h">(</i>faste kostnader per år<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>timer i drift<i class="br-h">)</i></span></span></b><span>lønn kommer i tillegg</span></div>
   </div>
   <div class="hurtig-u">p prosent · r rente eller rabatt (%) · K kapital · n antall år</div>
 </div>
@@ -5550,20 +5558,20 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Merverdiavgift (mva)</h3>
 <p>Alminnelig mva-sats i Norge er <b>25 %</b>, og den regnes av prisen <b>uten</b> mva. Derfor er mva-delen av en pris med mva bare 20 %: 25 / 125 = 0,20. Bedrifter fører priser eksklusive mva, mens privatkunder skal ha priser inklusive mva.</p>
 <h3>Rabatt</h3>
-<p>Rabatt trekkes fra listeprisen: <span class="mono">pris = listepris · (1 − r / 100)</span>. Flere rabatter etter hverandre ganges, de legges ikke sammen: 20 % og deretter 10 % gir 0,80 · 0,90 = 0,72, altså 28 % samlet rabatt, ikke 30 %. Mva legges på til slutt, av prisen etter rabatt.</p>
+<p>Rabatt trekkes fra listeprisen: <span class="mono">pris = listepris · (1 − <span class="br"><span>r</span><i class="br-h">/</i><span>100</span></span>)</span>. Flere rabatter etter hverandre ganges, de legges ikke sammen: 20 % og deretter 10 % gir 0,80 · 0,90 = 0,72, altså 28 % samlet rabatt, ikke 30 %. Mva legges på til slutt, av prisen etter rabatt.</p>
 <h3>Påslag, avanse og dekningsgrad</h3>
 <p>Kostprisen K er hva varen eller jobben koster deg. Salgsprisen S (ekskl. mva) er hva kunden betaler. <b>Påslag</b> regnes i prosent av kostprisen, mens <b>avanseprosent</b> regnes i prosent av salgsprisen. Er kostprisen den eneste variable kostnaden, er avanseprosenten det samme som <b>dekningsgraden</b> (DG). De to prosenttallene blir aldri like, fordi de regnes av hvert sitt grunnlag.</p>
-<div class="ma10x-f">Avanse (kr) = S − K<br>Påslag % = (S − K) / K · 100 &nbsp; → &nbsp; S = K · (1 + påslag / 100)<br>DG % = (S − K) / S · 100 &nbsp; → &nbsp; S = K / (1 − DG / 100)<br>DG = påslag / (100 + påslag) · 100 &nbsp;&nbsp; påslag = DG / (100 − DG) · 100</div>
+<div class="ma10x-f">Avanse (kr) = S − K<br>Påslag % = <span class="br"><span><i class="br-h">(</i>S − K<i class="br-h">)</i></span><i class="br-h">/</i><span>K</span></span> · 100 &nbsp; → &nbsp; S = K · (1 + <span class="br"><span>påslag</span><i class="br-h">/</i><span>100</span></span>)<br>DG % = <span class="br"><span><i class="br-h">(</i>S − K<i class="br-h">)</i></span><i class="br-h">/</i><span>S</span></span> · 100 &nbsp; → &nbsp; S = <span class="br"><span>K</span><i class="br-h">/</i><span><i class="br-h">(</i>1 − <span class="br"><span>DG</span><i class="br-h">/</i><span>100</span></span><i class="br-h">)</i></span></span><br>DG = <span class="br"><span>påslag</span><i class="br-h">/</i><span><i class="br-h">(</i>100 + påslag<i class="br-h">)</i></span></span> · 100 &nbsp;&nbsp; påslag = <span class="br"><span>DG</span><i class="br-h">/</i><span><i class="br-h">(</i>100 − DG<i class="br-h">)</i></span></span> · 100</div>
 <h3>Renter: enkel rente og rentes rente</h3>
 <p>Med <b>enkel rente</b> får du rente bare av startkapitalen, så renten blir like stor hvert år. Med <b>rentes rente</b> legges renten til kapitalen hvert år, og neste år får du rente også av renten. Det gir eksponentiell vekst.</p>
-<div class="ma10x-f">Enkel rente: &nbsp;K = K₀ · (1 + p · n / 100)<br>Rentes rente: K = K₀ · (1 + p / 100)ⁿ<br>Tommelfingerregel: kapitalen dobles etter omtrent 72 / p år</div>
+<div class="ma10x-f">Enkel rente: &nbsp;K = K₀ · (1 + <span class="br"><span><i class="br-h">(</i>p · n<i class="br-h">)</i></span><i class="br-h">/</i><span>100</span></span>)<br>Rentes rente: K = K₀ · (1 + <span class="br"><span>p</span><i class="br-h">/</i><span>100</span></span>)ⁿ<br>Tommelfingerregel: kapitalen dobles etter omtrent 72 / p år</div>
 <figure class="fig">
   <svg id="ma10x-ri-svg" viewBox="0 0 600 280" role="img" aria-label="Graf over kapitalen med enkel rente og rentes rente"></svg>
   <div class="ma10x-legend"><span><i style="background:var(--accent)"></i>Rentes rente</span><span><i style="background:var(--ink-2)"></i>Enkel rente</span><span><i style="background:var(--zone)"></i>Startkapital</span></div>
 </figure>
 <h3>Lån: annuitet og serielån</h3>
 <p>Et <b>annuitetslån</b> har like store terminbeløp hele tiden. I starten er det meste renter, mot slutten er det meste avdrag. Et <b>serielån</b> har like store avdrag, så terminbeløpet er størst i starten og synker etter hvert som renten regnes av en lavere restgjeld. Serielånet gir lavere renter totalt.</p>
-<div class="ma10x-f">Rente per termin: r = p / (100 · t) &nbsp;&nbsp; antall terminer: N = år · t<br>Annuitet: A = L · r / (1 − (1 + r)⁻ᴺ)<br>Serielån: avdrag = L / N, rente = restgjeld · r</div>
+<div class="ma10x-f">Rente per termin: r = <span class="br"><span>p</span><i class="br-h">/</i><span><i class="br-h">(</i>100 · t<i class="br-h">)</i></span></span> &nbsp;&nbsp; antall terminer: N = år · t<br>Annuitet: A = <span class="br"><span><i class="br-h">(</i>L · r<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>1 − (1 + r)⁻ᴺ<i class="br-h">)</i></span></span><br>Serielån: avdrag = <span class="br"><span>L</span><i class="br-h">/</i><span>N</span></span>, rente = restgjeld · r</div>
 <p class="small muted">L = lånebeløp, p = nominell årsrente, t = terminer per år. Effektiv rente uten gebyrer: (1 + r)ᵗ − 1.</p>
 <figure class="fig">
   <svg id="ma10x-ln-svg" viewBox="0 0 600 260" role="img" aria-label="Søylediagram med renter og avdrag per år"></svg>
@@ -5571,7 +5579,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Avskrivning av en maskin</h3>
 <p>En maskin taper verdi med årene. Avskrivningen fordeler innkjøpsprisen over levetiden som en kostnad. <b>Lineær</b> avskrivning trekker fra like mye hvert år. <b>Saldoavskrivning</b> trekker fra en fast prosent av restverdien, så beløpet blir mindre for hvert år og verdien når aldri helt null. Saldometoden brukes i skatteregnskapet. Maskiner ligger i saldogruppe d, med maksimal sats 20 %.</p>
-<div class="ma10x-f">Lineær: årlig avskrivning = (A − R) / n<br>Saldo: &nbsp;verdi etter n år = A · (1 − s / 100)ⁿ</div>
+<div class="ma10x-f">Lineær: årlig avskrivning = <span class="br"><span><i class="br-h">(</i>A − R<i class="br-h">)</i></span><i class="br-h">/</i><span>n</span></span><br>Saldo: &nbsp;verdi etter n år = A · (1 − <span class="br"><span>s</span><i class="br-h">/</i><span>100</span></span>)ⁿ</div>
 <p class="small muted">A = anskaffelseskost, R = restverdi (utrangeringsverdi), n = levetid i år, s = saldosats. Saldogruppe d: skatteloven § 14-43.</p>
 <figure class="fig">
   <svg id="ma10x-av-svg" viewBox="0 0 600 260" role="img" aria-label="Bokført verdi per år med lineær og saldoavskrivning"></svg>
@@ -5579,7 +5587,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Timekostnad for maskin</h3>
 <p>For å prise en jobb må du vite hva en time i maskinen koster, selv når ingen står ved den. Maskintimesatsen samler de faste kostnadene per år og deler dem på antall timer maskinen faktisk går. Derfor blir timen dyr hvis maskinen står mye stille. Lønn til operatøren kommer i tillegg.</p>
-<div class="ma10x-f">Avskrivning/år = (A − R) / n<br>Kalkulatorisk rente/år = (A + R) / 2 · p / 100 &nbsp;<span class="small muted" style="font-family:var(--body)">(gjennomsnittlig bundet kapital)</span><br>Faste kostnader/år = avskrivning + rente + vedlikehold + plass<br>Timesats = faste kostnader / timer per år + effekt · utnyttelse · strømpris</div>
+<div class="ma10x-f">Avskrivning/år = <span class="br"><span><i class="br-h">(</i>A − R<i class="br-h">)</i></span><i class="br-h">/</i><span>n</span></span><br>Kalkulatorisk rente/år = <span class="br"><span><i class="br-h">(</i>A + R<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span> · <span class="br"><span>p</span><i class="br-h">/</i><span>100</span></span> &nbsp;<span class="small muted" style="font-family:var(--body)">(gjennomsnittlig bundet kapital)</span><br>Faste kostnader/år = avskrivning + rente + vedlikehold + plass<br>Timesats = <span class="br"><span><i class="br-h">(</i>faste kostnader<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>timer per år<i class="br-h">)</i></span></span> + effekt · utnyttelse · strømpris</div>
 </details>
 </div>
 <div class="topic" id="ma10-deriv">
@@ -5589,7 +5597,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-g">
     <div><h4>Definisjon</h4><b>f′(x) = stigningstallet til tangenten</b></div>
     <div><h4>Regler</h4><b>(xⁿ)′ = n · xⁿ⁻¹</b><b>(k)′ = 0 &nbsp; (k · f)′ = k · f′</b><b>(f + g)′ = f′ + g′</b></div>
-    <div><h4>Andre funksjoner</h4><b>(sin x)′ = cos x</b><span>x i radianer</span><b>(cos x)′ = −sin x</b><b>(eˣ)′ = eˣ &nbsp; (ln x)′ = 1/x</b></div>
+    <div><h4>Andre funksjoner</h4><b>(sin x)′ = cos x</b><span>x i radianer</span><b>(cos x)′ = −sin x</b><b>(eˣ)′ = eˣ &nbsp; (ln x)′ = <span class="br"><span>1</span><i class="br-h">/</i><span>x</span></span></b></div>
     <div><h4>Fart og akselerasjon</h4><b>v = s′(t)</b><b>a = v′(t)</b></div>
     <div><h4>Topp og bunn</h4><span>Løs f′(x) = 0 og sjekk fortegnet rundt punktet</span></div>
   </div>
@@ -5642,7 +5650,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p class="lead">Den deriverte f′(x) er stigningstallet til tangenten i et punkt på grafen, altså hvor fort funksjonen endrer seg akkurat der. Den brukes til å finne fart og akselerasjon, og til å finne toppunkter og bunnpunkter.</p>
 <h3>Definisjon</h3>
 <p>Stigningstallet mellom to punkter på grafen er Δy / Δx. Lar du avstanden h mellom punktene bli mindre og mindre, går sekanten over i tangenten:</p>
-<div class="ma10x-f">f′(x) = lim<span class="ma10x-sub">h→0</span> (f(x + h) − f(x)) / h</div>
+<div class="ma10x-f">f′(x) = lim<span class="ma10x-sub">h→0</span> <span class="br"><span><i class="br-h">(</i>f(x + h) − f(x)<i class="br-h">)</i></span><i class="br-h">/</i><span>h</span></span></div>
 <h3>Interaktiv graf: tangent og stigningstall</h3>
 <figure class="fig">
   <div class="chips" id="ma10x-dv-chips" style="margin:0">
@@ -5666,7 +5674,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Toppunkt og bunnpunkt (optimalisering)</h3>
 <p>Der en glatt funksjon har et toppunkt eller bunnpunkt, er tangenten vannrett: <b>f′(x) = 0</b>. Fortegnet til f′ rundt punktet avgjør hva det er: går f′ fra + til −, er det et toppunkt; fra − til +, et bunnpunkt. Alternativt: f″(x) &lt; 0 gir toppunkt, f″(x) &gt; 0 gir bunnpunkt. Husk også å sjekke endepunktene i definisjonsområdet.</p>
 <p><b>Eksempel: største volum av en eske.</b> Fra en plate a × b klipper du ut like store kvadrater x i hvert hjørne og bretter opp kantene. Volumet er</p>
-<div class="ma10x-f">V(x) = x · (a − 2x) · (b − 2x) = 4x³ − 2(a + b)x² + abx<br>V′(x) = 12x² − 4(a + b)x + ab = 0<br>x = ((a + b) − √(a² − ab + b²)) / 6 &nbsp;<span class="small muted" style="font-family:var(--body)">(den andre løsningen er for stor, x må være under b/2)</span></div>
+<div class="ma10x-f">V(x) = x · (a − 2x) · (b − 2x) = 4x³ − 2(a + b)x² + abx<br>V′(x) = 12x² − 4(a + b)x + ab = 0<br>x = <span class="br"><span><i class="br-h">(</i>(a + b) − √(a² − ab + b²)<i class="br-h">)</i></span><i class="br-h">/</i><span>6</span></span> &nbsp;<span class="small muted" style="font-family:var(--body)">(den andre løsningen er for stor, x må være under b/2)</span></div>
 <figure class="fig">
   <svg id="ma10x-bx-svg" viewBox="0 0 600 260" role="img" aria-label="Utbrettet plate med hjørnekutt og graf over volumet"></svg>
   <figcaption>Venstre: platen med kuttene. Høyre: V(x). Det grønne punktet er maksimum, der V′(x) = 0.</figcaption>
@@ -5678,10 +5686,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Rektangel og trekant</h4><b>A = l · b</b><b>A = g · h / 2</b></div>
-    <div><h4>Parallellogram og trapes</h4><b>A = g · h</b><b>A = (a + c) · h / 2</b></div>
-    <div><h4>Sirkel</h4><b>A = π · r² = π · d² / 4</b><b>O = π · d</b></div>
-    <div><h4>Sirkelsektor</h4><b>A = π · r² · v / 360</b><b>b = π · r · v / 180</b><span>buelengde</span></div>
+    <div><h4>Rektangel og trekant</h4><b>A = l · b</b><b>A = <span class="br"><span><i class="br-h">(</i>g · h<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></b></div>
+    <div><h4>Parallellogram og trapes</h4><b>A = g · h</b><b>A = <span class="br"><span><i class="br-h">(</i>(a + c) · h<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></b></div>
+    <div><h4>Sirkel</h4><b>A = π · r² = <span class="br"><span><i class="br-h">(</i>π · d²<i class="br-h">)</i></span><i class="br-h">/</i><span>4</span></span></b><b>O = π · d</b></div>
+    <div><h4>Sirkelsektor</h4><b>A = <span class="br"><span><i class="br-h">(</i>π · r² · v<i class="br-h">)</i></span><i class="br-h">/</i><span>360</span></span></b><b>b = <span class="br"><span><i class="br-h">(</i>π · r · v<i class="br-h">)</i></span><i class="br-h">/</i><span>180</span></span></b><span>buelengde</span></div>
   </div>
   <div class="hurtig-u">A areal · O omkrets · g grunnlinje · h høyde · r radius · d diameter · v vinkel (°)</div>
 </div>
@@ -5740,8 +5748,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Rett linje</h4><b>y = a · x + b</b></div>
-    <div><h4>Stigningstall</h4><b>a = Δy / Δx = (y₂ − y₁) / (x₂ − x₁)</b><b>b = y₁ − a · x₁</b><span>konstantleddet, y når x = 0</span></div>
-    <div><h4>Stigning og fall</h4><b>prosent = Δh / L · 100</b><b>promille = Δh / L · 1000</b></div>
+    <div><h4>Stigningstall</h4><b>a = <span class="br"><span>Δy</span><i class="br-h">/</i><span>Δx</span></span> = <span class="br"><span><i class="br-h">(</i>y₂ − y₁<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>x₂ − x₁<i class="br-h">)</i></span></span></b><b>b = y₁ − a · x₁</b><span>konstantleddet, y når x = 0</span></div>
+    <div><h4>Stigning og fall</h4><b>prosent = <span class="br"><span>Δh</span><i class="br-h">/</i><span>L</span></span> · 100</b><b>promille = <span class="br"><span>Δh</span><i class="br-h">/</i><span>L</span></span> · 1000</b></div>
     <div><h4>Skjæringspunkt</h4><b>a₁ · x + b₁ = a₂ · x + b₂</b><span>løs for x (break-even)</span></div>
   </div>
 </div>
@@ -5812,10 +5820,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Stigning og fall: prosent og promille</h3>
 <p>Stigning er stigningstallet a skrevet som prosent eller promille: høydeforskjellen delt på den vannrette lengden. Et avløpsrør med fall 1 : 50 faller 2 cm per meter, altså 2 % eller 20 ‰. Vinkelen er v = tan⁻¹(Δh / L). For små stigninger er prosent og grader nesten proporsjonale, men 100 % er 45°, ikke 90°.</p>
-<div class="ma10x-f">stigning % = Δh / L · 100 &nbsp;&nbsp; stigning ‰ = Δh / L · 1000 &nbsp;&nbsp; 1 : (L / Δh)</div>
+<div class="ma10x-f">stigning % = <span class="br"><span>Δh</span><i class="br-h">/</i><span>L</span></span> · 100 &nbsp;&nbsp; stigning ‰ = <span class="br"><span>Δh</span><i class="br-h">/</i><span>L</span></span> · 1000 &nbsp;&nbsp; 1 : <span class="br"><span>L</span><i class="br-h">/</i><span>Δh</span></span></div>
 <h3>Skjæringspunkt mellom to linjer (break-even)</h3>
 <p>To linjer y = a₁x + b₁ og y = a₂x + b₂ skjærer hverandre der y-verdiene er like: a₁x + b₁ = a₂x + b₂. Det gir</p>
-<div class="ma10x-f">x = (b₂ − b₁) / (a₁ − a₂) &nbsp;&nbsp; y = a₁ · x + b₁</div>
+<div class="ma10x-f">x = <span class="br"><span><i class="br-h">(</i>b₂ − b₁<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>a₁ − a₂<i class="br-h">)</i></span></span> &nbsp;&nbsp; y = a₁ · x + b₁</div>
 <p>Er a₁ = a₂, er linjene parallelle og skjærer aldri. <b>Eksempel:</b> En del kan lages i en manuell maskin (kort oppsett, høy stykkpris) eller i CNC (langt oppsett med programmering, lav stykkpris). Skjæringspunktet er seriestørrelsen der de to koster like mye. Over den lønner CNC seg.</p>
 <figure class="fig">
   <svg id="ma10x-be-svg" viewBox="0 0 600 280" role="img" aria-label="To kostnadslinjer og skjæringspunktet"></svg>
@@ -5829,8 +5837,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Prisme og sylinder</h4><b>V = G · h</b><b>V = π · r² · h</b></div>
-    <div><h4>Kjegle og pyramide</h4><b>V = G · h / 3</b><b>V = π · r² · h / 3</b></div>
-    <div><h4>Kule</h4><b>V = 4/3 · π · r³</b><b>O = 4 · π · r²</b><span>overflate</span></div>
+    <div><h4>Kjegle og pyramide</h4><b>V = <span class="br"><span><i class="br-h">(</i>G · h<i class="br-h">)</i></span><i class="br-h">/</i><span>3</span></span></b><b>V = <span class="br"><span><i class="br-h">(</i>π · r² · h<i class="br-h">)</i></span><i class="br-h">/</i><span>3</span></span></b></div>
+    <div><h4>Kule</h4><b>V = <span class="br"><span>4</span><i class="br-h">/</i><span>3</span></span> · π · r³</b><b>O = 4 · π · r²</b><span>overflate</span></div>
     <div><h4>Masse</h4><b>m = V · ρ</b><span>stål ρ = 7850 kg/m³</span></div>
   </div>
   <div class="hurtig-u">V volum · G grunnflate · h høyde · r radius · ρ densitet</div>
@@ -5871,7 +5879,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Rettvinklet trekant</h4><b>sin v = motstående / hypotenus</b><b>cos v = hosliggende / hypotenus</b><b>tan v = motstående / hosliggende</b></div>
+    <div><h4>Rettvinklet trekant</h4><b>sin v = <span class="br"><span>motstående</span><i class="br-h">/</i><span>hypotenus</span></span></b><b>cos v = <span class="br"><span>hosliggende</span><i class="br-h">/</i><span>hypotenus</span></span></b><b>tan v = <span class="br"><span>motstående</span><i class="br-h">/</i><span>hosliggende</span></span></b></div>
     <div><h4>Pytagoras</h4><b>c² = a² + b²</b></div>
     <div><h4>Hullsirkel</h4><b>X = r · cos v</b><b>Y = r · sin v</b><span>v målt fra X-aksen</span></div>
     <div><h4>Vinkelsum</h4><span>Trekant: 180°. Den ukjente vinkelen i en rettvinklet trekant er 90° − v</span></div>
@@ -5933,11 +5941,11 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Radianer</h4><b>rad = grader · π / 180</b><b>grader = rad · 180 / π</b><span>1 rad ≈ 57,3°</span></div>
-    <div><h4>Sinussetningen</h4><b>a / sin A = b / sin B = c / sin C</b></div>
+    <div><h4>Radianer</h4><b>rad = <span class="br"><span><i class="br-h">(</i>grader · π<i class="br-h">)</i></span><i class="br-h">/</i><span>180</span></span></b><b>grader = <span class="br"><span><i class="br-h">(</i>rad · 180<i class="br-h">)</i></span><i class="br-h">/</i><span>π</span></span></b><span>1 rad ≈ 57,3°</span></div>
+    <div><h4>Sinussetningen</h4><b><span class="br"><span>a</span><i class="br-h">/</i><span><i class="br-h">(</i>sin A<i class="br-h">)</i></span></span> = <span class="br"><span>b</span><i class="br-h">/</i><span><i class="br-h">(</i>sin B<i class="br-h">)</i></span></span> = <span class="br"><span>c</span><i class="br-h">/</i><span><i class="br-h">(</i>sin C<i class="br-h">)</i></span></span></b></div>
     <div><h4>Cosinussetningen</h4><b>c² = a² + b² − 2ab · cos C</b></div>
     <div><h4>Areal av trekant</h4><b>A = ½ · a · b · sin C</b></div>
-    <div><h4>Enhetssirkelen</h4><b>sin² v + cos² v = 1</b><b>tan v = sin v / cos v</b></div>
+    <div><h4>Enhetssirkelen</h4><b>sin² v + cos² v = 1</b><b>tan v = <span class="br"><span><i class="br-h">(</i>sin v<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>cos v<i class="br-h">)</i></span></span></b></div>
   </div>
 </div>
 <h3>Grafene til sin, cos og tan</h3>
@@ -6025,10 +6033,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>sin og cos har <b>periode</b> 360° og svinger mellom −1 og 1. cos-grafen er sin-grafen forskjøvet 90°: cos v = sin(v + 90°). tan v = sin v / cos v har periode 180° og er ikke definert der cos v = 0, altså ved 90° og 270°. En vekselspenning følger samme form: u = û · sin(ωt), der û er toppverdien.</p>
 <h3>Radianer og grader</h3>
 <p>En radian er vinkelen der buen er like lang som radien. En hel omdreining er 2π radianer, fordi omkretsen er 2πr. Radianer gjør formlene enkle: buelengden er b = r · v og vinkelhastigheten ω = 2π · n / 60 (rad/s, n i o/min). Kalkulatoren må stå i riktig modus (DEG eller RAD).</p>
-<div class="ma10x-f">rad = grader · π / 180 &nbsp;&nbsp; grader = rad · 180 / π &nbsp;&nbsp; 1 rad = 57,2958°</div>
+<div class="ma10x-f">rad = <span class="br"><span><i class="br-h">(</i>grader · π<i class="br-h">)</i></span><i class="br-h">/</i><span>180</span></span> &nbsp;&nbsp; grader = <span class="br"><span><i class="br-h">(</i>rad · 180<i class="br-h">)</i></span><i class="br-h">/</i><span>π</span></span> &nbsp;&nbsp; 1 rad = 57,2958°</div>
 <h3>Vilkårlige trekanter</h3>
 <p>Sinus, cosinus og tangens som sideforhold gjelder bare i rettvinklede trekanter. For alle trekanter bruker du sinussetningen og cosinussetningen. Store bokstaver er vinkler, og siden a står rett overfor vinkelen A.</p>
-<div class="ma10x-f">Sinussetningen: &nbsp; a / sin A = b / sin B = c / sin C<br>Cosinussetningen: c² = a² + b² − 2ab · cos C<br>Arealsetningen: &nbsp; T = ½ · a · b · sin C<br>Vinkelsum: &nbsp; &nbsp; &nbsp; &nbsp; A + B + C = 180°</div>
+<div class="ma10x-f">Sinussetningen: &nbsp; <span class="br"><span>a</span><i class="br-h">/</i><span><i class="br-h">(</i>sin A<i class="br-h">)</i></span></span> = <span class="br"><span>b</span><i class="br-h">/</i><span><i class="br-h">(</i>sin B<i class="br-h">)</i></span></span> = <span class="br"><span>c</span><i class="br-h">/</i><span><i class="br-h">(</i>sin C<i class="br-h">)</i></span></span><br>Cosinussetningen: c² = a² + b² − 2ab · cos C<br>Arealsetningen: &nbsp; T = ½ · a · b · sin C<br>Vinkelsum: &nbsp; &nbsp; &nbsp; &nbsp; A + B + C = 180°</div>
 <figure class="fig">
   <svg id="ma10x-ct-svg" viewBox="0 0 600 300" role="img" aria-label="Trekant der hjørnet C kan dras, med cosinussetningen som utvidet Pytagoras"></svg>
   <div class="mono small" id="ma10x-ct-read" aria-live="polite"></div>
@@ -6054,7 +6062,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Eksakte verdier</h4><b>sin 30° = cos 60° = ½</b><b>sin 45° = cos 45° = √2 / 2</b><b>sin 60° = cos 30° = √3 / 2</b><b>tan 45° = 1</b></div>
+    <div><h4>Eksakte verdier</h4><b>sin 30° = cos 60° = ½</b><b>sin 45° = cos 45° = <span class="br"><span>√2</span><i class="br-h">/</i><span>2</span></span></b><b>sin 60° = cos 30° = <span class="br"><span>√3</span><i class="br-h">/</i><span>2</span></span></b><b>tan 45° = 1</b></div>
     <div><h4>Fra verdi til vinkel</h4><b>v = sin⁻¹, cos⁻¹, tan⁻¹</b><span>SHIFT + sin/cos/tan på kalkulatoren</span></div>
     <div><h4>Grader, minutter, sekunder</h4><b>1° = 60′ = 3600″</b><b>12,5° = 12° 30′</b></div>
   </div>
@@ -6122,7 +6130,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <p>Kjenner du forholdet mellom to sider, finner du vinkelen med den inverse funksjonen: sin⁻¹ (arcsin), cos⁻¹ (arccos) eller tan⁻¹ (arctan). Kalkulatoren gir vinkelen i første kvadrant (eller andre for cos). Den andre mulige vinkelen mellom 0° og 360° står også i svaret.</p>
 <h3>Desimalgrader og grader, minutter, sekunder</h3>
 <p>1° = 60′ (minutter) og 1′ = 60″ (sekunder). Eldre tegninger, delehoder og sinuslinjaltabeller bruker ofte grader og minutter. Desimaldelen av gradene ganges med 60 for å få minutter, og desimaldelen av minuttene ganges med 60 for å få sekunder.</p>
-<div class="ma10x-f">v = G + M / 60 + S / 3600 &nbsp;&nbsp; Eksempel: 36,8699° = 36° 52′ 11,6″</div>
+<div class="ma10x-f">v = G + <span class="br"><span>M</span><i class="br-h">/</i><span>60</span></span> + <span class="br"><span>S</span><i class="br-h">/</i><span>3600</span></span> &nbsp;&nbsp; Eksempel: 36,8699° = 36° 52′ 11,6″</div>
 </details>
 </div>
 </section>
@@ -6157,11 +6165,11 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Fart</h4><b>v = s / t</b><span>1 m/s = 3,6 km/h</span></div>
-    <div><h4>Akselerasjon</h4><b>a = Δv / Δt</b><b>v = v₀ + a · t</b><b>s = v₀ · t + ½ · a · t²</b></div>
-    <div><h4>Stopplengde</h4><b>s = v · t<sub>r</sub> + v² / (2 · a)</b><span>reaksjonslengde + bremselengde</span></div>
+    <div><h4>Fart</h4><b>v = <span class="br"><span>s</span><i class="br-h">/</i><span>t</span></span></b><span>1 m/s = 3,6 km/h</span></div>
+    <div><h4>Akselerasjon</h4><b>a = <span class="br"><span>Δv</span><i class="br-h">/</i><span>Δt</span></span></b><b>v = v₀ + a · t</b><b>s = v₀ · t + ½ · a · t²</b></div>
+    <div><h4>Stopplengde</h4><b>s = v · t<sub>r</sub> + <span class="br"><span>v²</span><i class="br-h">/</i><span><i class="br-h">(</i>2 · a<i class="br-h">)</i></span></span></b><span>reaksjonslengde + bremselengde</span></div>
     <div><h4>Fritt fall</h4><b>v = g · t</b><b>h = ½ · g · t²</b><b>v = √(2 · g · h)</b><span>g = 9,81 m/s², uten luftmotstand</span></div>
-    <div><h4>Rotasjon</h4><b>ω = 2π · n / 60</b><span>vinkelhastighet i rad/s</span><b>v = π · d · n / 60 000</b><span>periferihastighet i m/s, d i mm</span></div>
+    <div><h4>Rotasjon</h4><b>ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b><span>vinkelhastighet i rad/s</span><b>v = <span class="br"><span><i class="br-h">(</i>π · d · n<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>60 000<i class="br-h">)</i></span></span></b><span>periferihastighet i m/s, d i mm</span></div>
   </div>
   <div class="hurtig-u">s strekning (m) · t tid (s) · v fart (m/s) · a akselerasjon (m/s²) · n turtall (o/min)</div>
 </div>
@@ -6209,10 +6217,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Fart sier hvor fort noe beveger seg, og akselerasjon sier hvor fort farten endrer seg. Med disse to størrelsene kan du regne ut bremselengder, falltider og hvor fort kanten på en slipeskive går.</p>
 <h3>Fart og gjennomsnittsfart</h3>
-<p>Fart er strekning delt på tid: <span class="mono">v = s / t</span>. SI-enheten er m/s. Gjennomsnittsfarten er <b>hele strekningen delt på hele tiden</b>. Den er ikke gjennomsnittet av fartene, fordi du bruker lengre tid på den langsomme delen.</p>
+<p>Fart er strekning delt på tid: <span class="mono">v = <span class="br"><span>s</span><i class="br-h">/</i><span>t</span></span></span>. SI-enheten er m/s. Gjennomsnittsfarten er <b>hele strekningen delt på hele tiden</b>. Den er ikke gjennomsnittet av fartene, fordi du bruker lengre tid på den langsomme delen.</p>
 <div class="fy11a-ex"><p><b>Eksempel:</b> 10 km ut i 50 km/h og 10 km hjem i 100 km/h tar 0,2 h + 0,1 h = 0,3 h. Gjennomsnittsfarten er 20 km / 0,3 h = <b class="mono">66,7 km/h</b>, ikke 75 km/h.</p></div>
 <h3>Akselerasjon og bevegelseslikningene</h3>
-<p>Akselerasjon er endring i fart per tid: <span class="mono">a = Δv / Δt</span>, i m/s². En akselerasjon på 2 m/s² betyr at farten øker med 2 m/s hvert sekund. Negativ akselerasjon kalles retardasjon (oppbremsing). Likningene under gjelder bare når akselerasjonen er <b>konstant</b>.</p>
+<p>Akselerasjon er endring i fart per tid: <span class="mono">a = <span class="br"><span>Δv</span><i class="br-h">/</i><span>Δt</span></span></span>, i m/s². En akselerasjon på 2 m/s² betyr at farten øker med 2 m/s hvert sekund. Negativ akselerasjon kalles retardasjon (oppbremsing). Likningene under gjelder bare når akselerasjonen er <b>konstant</b>.</p>
 <figure class="fig">
   <svg id="fy11a-kin" viewBox="0 0 600 390" role="img" aria-label="Vogn med konstant akselerasjon og tilhørende s–t- og v–t-graf"></svg>
   <div class="ctrl"><button class="chip play" id="fy11a-kin-play" type="button">▶ Spill av</button><span class="mono" id="fy11a-kin-read"></span></div>
@@ -6221,11 +6229,11 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <figcaption>Strekene over banen viser hvor vogna er etter hvert hele sekund. Med positiv a blir avstanden større for hvert sekund, og s–t-grafen krummer oppover. v–t-grafen er en rett linje med stigning a. Det skraverte arealet under v–t-grafen er strekningen vogna har kjørt. Med negativ a bremser vogna til den står.</figcaption>
 </figure>
 <h3>Bremselengde og stopplengde</h3>
-<p>Stopplengden består av to deler. I <b>reaksjonstiden</b> kjører du videre med full fart: <span class="mono">s<sub>r</sub> = v · t<sub>r</sub></span>. Deretter bremser du med retardasjonen a: <span class="mono">s<sub>b</sub> = v² / (2 · a)</span>. Bremselengden øker med <b>kvadratet</b> av farten. Dobbel fart gir fire ganger så lang bremselengde.</p>
+<p>Stopplengden består av to deler. I <b>reaksjonstiden</b> kjører du videre med full fart: <span class="mono">s<sub>r</sub> = v · t<sub>r</sub></span>. Deretter bremser du med retardasjonen a: <span class="mono">s<sub>b</sub> = <span class="br"><span>v²</span><i class="br-h">/</i><span><i class="br-h">(</i>2 · a<i class="br-h">)</i></span></span></span>. Bremselengden øker med <b>kvadratet</b> av farten. Dobbel fart gir fire ganger så lang bremselengde.</p>
 <h3>Fritt fall</h3>
 <p>Uten luftmotstand faller alt med samme akselerasjon, tyngdeakselerasjonen <span class="mono">g = 9,81 m/s²</span>, uansett masse. Da er <span class="mono">v = g · t</span>, <span class="mono">h = ½ · g · t²</span> og <span class="mono">v = √(2 · g · h)</span>. Tabellen viser hvorfor verktøy som faller fra stillas eller travers er farlig: fra 10 m treffer en fastnøkkel med omtrent 50 km/h.</p>
 <h3>Rotasjon: vinkelhastighet og periferihastighet</h3>
-<p>Alle punkter på en roterende skive har samme turtall n og samme <b>vinkelhastighet</b> <span class="mono">ω = 2π · n / 60</span> (rad/s, n i o/min). Men punkter langt ut går en lengre vei per omdreining. <b>Periferihastigheten</b> er farten i ytterkanten: <span class="mono">v = π · d · n / 60</span> (m/s, d i m) eller <span class="mono">v = ω · r</span>. Med d i mm deler du på 60 000.</p>
+<p>Alle punkter på en roterende skive har samme turtall n og samme <b>vinkelhastighet</b> <span class="mono">ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></span> (rad/s, n i o/min). Men punkter langt ut går en lengre vei per omdreining. <b>Periferihastigheten</b> er farten i ytterkanten: <span class="mono">v = <span class="br"><span><i class="br-h">(</i>π · d · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></span> (m/s, d i m) eller <span class="mono">v = ω · r</span>. Med d i mm deler du på 60 000.</p>
 <figure class="fig">
   <svg id="fy11a-rot" viewBox="0 0 600 230" role="img" aria-label="Roterende skive der punktet ytterst har dobbelt så stor fart som punktet halvveis inne"></svg>
   <figcaption>Samme turtall, dobbel radius: dobbel periferihastighet. Derfor har en stor skive på samme maskin mye høyere kantfart.</figcaption>
@@ -6239,10 +6247,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-g">
     <div><h4>Kraft og tyngde</h4><b>ΣF = m · a</b><b>G = m · g</b><span>g = 9,81 m/s². 1 000 kg veier ca. 9,8 kN</span></div>
     <div><h4>Skråplan</h4><b>G<sub>∥</sub> = G · sin α</b><span>langs planet</span><b>G<sub>⊥</sub> = G · cos α</b><span>vinkelrett på planet</span></div>
-    <div><h4>Løftestropp, to parter</h4><b>F = G / (2 · cos(β/2))</b><span>β = toppvinkel. Aldri over 120°</span></div>
+    <div><h4>Løftestropp, to parter</h4><b>F = <span class="br"><span>G</span><i class="br-h">/</i><span><i class="br-h">(</i>2 · cos(β/2)<i class="br-h">)</i></span></span></b><span>β = toppvinkel. Aldri over 120°</span></div>
     <div><h4>Arbeid og energi</h4><b>W = F · s</b><b>E<sub>p</sub> = m · g · h</b><b>E<sub>k</sub> = ½ · m · v²</b></div>
-    <div><h4>Effekt</h4><b>P = W / t</b><b>P = F · v</b><b>P = M · ω</b></div>
-    <div><h4>Virkningsgrad</h4><b>η = P<sub>ut</sub> / P<sub>inn</sub></b><b>η<sub>tot</sub> = η₁ · η₂ · η₃</b><span>flere ledd etter hverandre</span></div>
+    <div><h4>Effekt</h4><b>P = <span class="br"><span>W</span><i class="br-h">/</i><span>t</span></span></b><b>P = F · v</b><b>P = M · ω</b></div>
+    <div><h4>Virkningsgrad</h4><b>η = <span class="br"><span>P<sub>ut</sub></span><i class="br-h">/</i><span>P<sub>inn</sub></span></span></b><b>η<sub>tot</sub> = η₁ · η₂ · η₃</b><span>flere ledd etter hverandre</span></div>
   </div>
   <div class="hurtig-u">F kraft (N) · m masse (kg) · W arbeid (J) · P effekt (W) · M moment (Nm) · ω vinkelhastighet (rad/s)</div>
 </div>
@@ -6301,7 +6309,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><label class="small muted" for="fy11a-inc-m">Masse m (kg)</label><input id="fy11a-inc-m" inputmode="decimal" value="100" style="width:96px"></div>
   <figcaption>De stiplede linjene viser at de to komponentene danner et rektangel med G som diagonal. Ved α = 30° er G<sub>∥</sub> nøyaktig halvparten av G, fordi sin 30° = 0,5.</figcaption>
 </figure>
-<p>Samme dekomponering gjelder for løftestropper. Med to parter og toppvinkel β blir kraften i hver part <span class="mono">F = G / (2 · cos(β/2))</span>. Jo større vinkel, desto større kraft i hver part. Ved 120° bærer hver part hele lasten.</p>
+<p>Samme dekomponering gjelder for løftestropper. Med to parter og toppvinkel β blir kraften i hver part <span class="mono">F = <span class="br"><span>G</span><i class="br-h">/</i><span><i class="br-h">(</i>2 · cos(β/2)<i class="br-h">)</i></span></span></span>. Jo større vinkel, desto større kraft i hver part. Ved 120° bærer hver part hele lasten.</p>
 <h3>Arbeid og energi</h3>
 <p>Arbeid utføres når en kraft flytter noe i kraftens retning: <span class="mono">W = F · s</span> (J = Nm). Virker kraften skrått på bevegelsen, teller bare komponenten langs bevegelsen: <span class="mono">W = F · s · cos α</span>. Arbeidet lagres som energi:</p>
 <p style="margin-top:12px">Energi kan ikke forsvinne, bare gå over til andre former. Uten friksjon går en pendel eller en fallende last fram og tilbake mellom stillingsenergi og bevegelsesenergi. Med friksjon blir en del til varme. Legg merke til at Eₖ øker med <b>kvadratet</b> av farten: dobbel fart gir fire ganger så mye energi som må tas opp ved en kollisjon eller oppbremsing.</p>
@@ -6312,7 +6320,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <figcaption>Lodd 1 kg i en snor på 2 m. I ytterstillingen er all energi potensiell, i bunnen er all energi kinetisk. Slå på friksjon for å se energien gå over til varme. Summen er hele tiden den samme.</figcaption>
 </figure>
 <h3>Effekt og virkningsgrad</h3>
-<p>Effekt er arbeid per tid: <span class="mono">P = W / t</span> (W = J/s). For en last som flyttes med konstant fart er <span class="mono">P = F · v</span>. Ingen maskin gir ut all energien den får inn. <b>Virkningsgraden</b> er forholdet mellom nyttig effekt og tilført effekt: <span class="mono">η = P<sub>ut</sub> / P<sub>inn</sub></span>, alltid under 1. Tapet blir varme. Står flere ledd etter hverandre, ganges virkningsgradene: <span class="mono">η<sub>tot</sub> = η₁ · η₂ · η₃</span>.</p>
+<p>Effekt er arbeid per tid: <span class="mono">P = <span class="br"><span>W</span><i class="br-h">/</i><span>t</span></span></span> (W = J/s). For en last som flyttes med konstant fart er <span class="mono">P = F · v</span>. Ingen maskin gir ut all energien den får inn. <b>Virkningsgraden</b> er forholdet mellom nyttig effekt og tilført effekt: <span class="mono">η = <span class="br"><span>P<sub>ut</sub></span><i class="br-h">/</i><span>P<sub>inn</sub></span></span></span>, alltid under 1. Tapet blir varme. Står flere ledd etter hverandre, ganges virkningsgradene: <span class="mono">η<sub>tot</sub> = η₁ · η₂ · η₃</span>.</p>
 <p>Ved rotasjon er effekten moment ganger vinkelhastighet: <span class="mono">P = M · ω</span>. Kalkulatoren over regner dette i verkstedenheter (kW, Nm og o/min).</p>
 </details>
 </div>
@@ -6324,9 +6332,9 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
     <div><h4>Friksjon</h4><b>F<sub>R</sub> = µ · F<sub>N</sub></b><span>statisk µ<sub>s</sub> er større enn kinetisk µ<sub>k</sub></span></div>
     <div><h4>Skråplan</h4><b>tan α = µ<sub>s</sub></b><span>vinkelen der klossen begynner å skli</span></div>
     <div><h4>Rullefriksjon</h4><b>F<sub>R</sub> = c<sub>r</sub> · F<sub>N</sub></b><span>rullelager c<sub>r</sub> ≈ 0,001–0,003</span></div>
-    <div><h4>Tau, rem og bånd</h4><b>F₁ = F₂ · e<sup>µ·β</sup></b><span>β i radianer</span><b>µ′ = µ / sin(γ/2)</b><span>kilerem med rillevinkel γ</span></div>
+    <div><h4>Tau, rem og bånd</h4><b>F₁ = F₂ · e<sup>µ·β</sup></b><span>β i radianer</span><b>µ′ = <span class="br"><span>µ</span><i class="br-h">/</i><span>sin(γ/2)</span></span></b><span>kilerem med rillevinkel γ</span></div>
     <div><h4>Brems</h4><b>F<sub>B</sub> = µ · F<sub>N</sub></b><b>M = 2 · µ · F<sub>N</sub> · r<sub>m</sub></b><span>skivebrems med to klosser</span><b>a<sub>maks</sub> = µ · g</b></div>
-    <div><h4>Gjenger</h4><b>tan ρ′ = µ / cos 30°</b><span>metrisk gjenge</span><span>Selvlåsende når stigningsvinkelen φ &lt; ρ′</span></div>
+    <div><h4>Gjenger</h4><b>tan ρ′ = <span class="br"><span>µ</span><i class="br-h">/</i><span><i class="br-h">(</i>cos 30°<i class="br-h">)</i></span></span></b><span>metrisk gjenge</span><span>Selvlåsende når stigningsvinkelen φ &lt; ρ′</span></div>
   </div>
   <div class="hurtig-u">µ friksjonstall · F<sub>N</sub> normalkraft (N) · β omslutningsvinkel (rad) · r<sub>m</sub> middelradius (m)</div>
 </div>
@@ -6382,10 +6390,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Rullefriksjon</h3>
 <p>Når et hjul eller en kule ruller, deformeres underlaget og hjulet litt, og det gir en liten motstand: <span class="mono">F<sub>R</sub> = c<sub>r</sub> · F<sub>N</sub></span>. Rullemotstandstallet c<sub>r</sub> er mye lavere enn glidefriksjonstall. Det er derfor rullelager, hjul og kulebøssinger brukes.</p>
 <h3>Friksjon i gjenger og skruer</h3>
-<p>En gjenge er et skråplan viklet rundt en sylinder. Den er <b>selvlåsende</b> når stigningsvinkelen φ er mindre enn friksjonsvinkelen ρ′, der <span class="mono">tan ρ′ = µ / cos 30°</span> for metrisk gjenge (flankevinkel 60°). For M10 er stigningen 1,5 mm og midtdiameteren 9,026 mm, så <span class="mono">tan φ = 1,5 / (π · 9,026)</span> og φ ≈ 3,0°. Med µ = 0,10 blir ρ′ ≈ 6,6°. Bolten løsner derfor ikke av seg selv under statisk last.</p>
+<p>En gjenge er et skråplan viklet rundt en sylinder. Den er <b>selvlåsende</b> når stigningsvinkelen φ er mindre enn friksjonsvinkelen ρ′, der <span class="mono">tan ρ′ = <span class="br"><span>µ</span><i class="br-h">/</i><span><i class="br-h">(</i>cos 30°<i class="br-h">)</i></span></span></span> for metrisk gjenge (flankevinkel 60°). For M10 er stigningen 1,5 mm og midtdiameteren 9,026 mm, så <span class="mono">tan φ = <span class="br"><span>1,5</span><i class="br-h">/</i><span><i class="br-h">(</i>π · 9,026<i class="br-h">)</i></span></span></span> og φ ≈ 3,0°. Med µ = 0,10 blir ρ′ ≈ 6,6°. Bolten løsner derfor ikke av seg selv under statisk last.</p>
 <p>Når en skrue trekkes til, går omtrent 90 % av tiltrekkingsmomentet til friksjon i gjengene og under hodet. Bare rundt 10 % gir forspenning. Små endringer i friksjonen (tørt, oljet, belagt) gir derfor stor endring i forspenningskraften. Se tiltrekkingsmoment under maskinelementer.</p>
 <h3>Tau, rem og båndbrems: Eytelweins formel</h3>
-<p>Når et tau, en rem eller et bremsebånd ligger rundt en trommel, vokser kraften eksponentielt med omslutningsvinkelen β: <span class="mono">F₁ = F₂ · e<sup>µ·β</sup></span>, med β i radianer. Derfor kan du holde en stor last med et par tørn rundt en pullert. For kilerem gir kilevirkningen et større effektivt friksjonstall <span class="mono">µ′ = µ / sin(γ/2)</span>, der γ er rillevinkelen.</p>
+<p>Når et tau, en rem eller et bremsebånd ligger rundt en trommel, vokser kraften eksponentielt med omslutningsvinkelen β: <span class="mono">F₁ = F₂ · e<sup>µ·β</sup></span>, med β i radianer. Derfor kan du holde en stor last med et par tørn rundt en pullert. For kilerem gir kilevirkningen et større effektivt friksjonstall <span class="mono">µ′ = <span class="br"><span>µ</span><i class="br-h">/</i><span>sin(γ/2)</span></span></span>, der γ er rillevinkelen.</p>
 <figure class="fig">
   <svg id="fy11a-ey" viewBox="0 0 600 230" role="img" aria-label="Tau rundt trommel med stor kraft på den ene siden og liten kraft på den andre"></svg>
   <figcaption>Forskjellen F₁ − F₂ er kraften som overføres til trommelen, som drivkraft i en remdrift eller bremsekraft i en båndbrems.</figcaption>
@@ -6399,12 +6407,12 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Trykk</h4><b>p = F / A</b><span>1 bar = 100 000 Pa = 0,1 N/mm² = 14,5 psi</span></div>
+    <div><h4>Trykk</h4><b>p = <span class="br"><span>F</span><i class="br-h">/</i><span>A</span></span></b><span>1 bar = 100 000 Pa = 0,1 N/mm² = 14,5 psi</span></div>
     <div><h4>Absolutt trykk</h4><b>p<sub>abs</sub> = p<sub>e</sub> + p<sub>atm</sub></b><span>p<sub>atm</sub> ≈ 1 bar. Manometeret viser p<sub>e</sub></span></div>
     <div><h4>Væsketrykk og oppdrift</h4><b>p = ρ · g · h</b><span>vann: ca. 0,1 bar per meter</span><b>F<sub>B</sub> = ρ<sub>væske</sub> · g · V</b></div>
-    <div><h4>Gass</h4><b>p₁ · V₁ = p₂ · V₂</b><span>samme temperatur</span><b>p₁V₁ / T₁ = p₂V₂ / T₂</b><span>absolutt trykk, T i kelvin</span></div>
+    <div><h4>Gass</h4><b>p₁ · V₁ = p₂ · V₂</b><span>samme temperatur</span><b><span class="br"><span>p₁V₁</span><i class="br-h">/</i><span>T₁</span></span> = <span class="br"><span>p₂V₂</span><i class="br-h">/</i><span>T₂</span></span></b><span>absolutt trykk, T i kelvin</span></div>
     <div><h4>Gassflaske</h4><span>liter gass ≈ flaskevolum × fylletrykk (bar)</span><span>50 l, 200 bar ≈ 10 000 l gass</span></div>
-    <div><h4>Strømning i rør</h4><b>Q = A₁ · v₁ = A₂ · v₂</b><b>Δp = λ · (L / d) · ρ · v² / 2</b><span>trykkfall</span></div>
+    <div><h4>Strømning i rør</h4><b>Q = A₁ · v₁ = A₂ · v₂</b><b>Δp = λ · <span class="br"><span>L</span><i class="br-h">/</i><span>d</span></span> · <span class="br"><span><i class="br-h">(</i>ρ · v²<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></b><span>trykkfall</span></div>
   </div>
   <div class="hurtig-u">p trykk (Pa, bar) · A areal (m²) · ρ densitet (kg/m³) · h dybde (m) · V volum (m³) · Q volumstrøm (m³/s)</div>
 </div>
@@ -6475,7 +6483,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Trykk er kraft fordelt på et areal. Det styrer alt fra trykkluft og gassflasker til hvor mye en last veier under vann. Pascals lov og hydrauliske krefter finner du i kapittel 11 Hydraulikk.</p>
 <h3>Trykk og enheter</h3>
-<p>Trykk er kraft per areal: <span class="mono">p = F / A</span>. SI-enheten er pascal, 1 Pa = 1 N/m², som er et svært lite trykk. I verkstedet brukes bar, og i amerikansk utstyr psi.</p>
+<p>Trykk er kraft per areal: <span class="mono">p = <span class="br"><span>F</span><i class="br-h">/</i><span>A</span></span></span>. SI-enheten er pascal, 1 Pa = 1 N/m², som er et svært lite trykk. I verkstedet brukes bar, og i amerikansk utstyr psi.</p>
 <h3>Overtrykk, absolutt trykk og atmosfæretrykk</h3>
 <p>Luften rundt oss trykker med omtrent 1 bar (normalt 1,013 bar ved havflaten). Et vanlig manometer viser <b>overtrykk</b> p<sub>e</sub>, altså trykket over atmosfæretrykket. <b>Absolutt trykk</b> regnes fra fullstendig vakuum: <span class="mono">p<sub>abs</sub> = p<sub>e</sub> + p<sub>atm</sub></span>. Gasslovene under krever absolutt trykk.</p>
 <figure class="fig">
@@ -6493,7 +6501,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Arkimedes’ lov: oppdrift</h3>
 <p>Et legeme i en væske får en oppdrift som er like stor som tyngden av væsken det fortrenger: <span class="mono">F<sub>B</sub> = ρ<sub>væske</sub> · g · V</span>. Er legemet tettere enn væsken, synker det, men det veier mindre under vann. Det har betydning ved løft i sjø: lasten blir tyngre i det øyeblikket den kommer opp av vannet.</p>
 <h3>Gasser: Boyle–Mariotte og den ideelle gassloven</h3>
-<p>Gass lar seg komprimere. Ved konstant temperatur er trykk ganger volum konstant (Boyle–Mariotte): <span class="mono">p₁ · V₁ = p₂ · V₂</span>. Halvert volum gir dobbelt trykk. Endres også temperaturen, gjelder den ideelle gassloven <span class="mono">p · V / T = konstant</span>, eller <span class="mono">p₁V₁ / T₁ = p₂V₂ / T₂</span>. Her må trykket være <b>absolutt</b> og temperaturen i <b>kelvin</b> (T = °C + 273,15).</p>
+<p>Gass lar seg komprimere. Ved konstant temperatur er trykk ganger volum konstant (Boyle–Mariotte): <span class="mono">p₁ · V₁ = p₂ · V₂</span>. Halvert volum gir dobbelt trykk. Endres også temperaturen, gjelder den ideelle gassloven <span class="mono"><span class="br"><span><i class="br-h">(</i>p · V<i class="br-h">)</i></span><i class="br-h">/</i><span>T</span></span> = konstant</span>, eller <span class="mono"><span class="br"><span>p₁V₁</span><i class="br-h">/</i><span>T₁</span></span> = <span class="br"><span>p₂V₂</span><i class="br-h">/</i><span>T₂</span></span></span>. Her må trykket være <b>absolutt</b> og temperaturen i <b>kelvin</b> (T = °C + 273,15).</p>
 <h3>Strømning i rør: kontinuitetslikningen Q = A · v</h3>
 <p>Det som strømmer inn i et rør, må strømme ut. Volumstrømmen Q er derfor den samme i hele røret: <span class="mono">Q = A₁ · v₁ = A₂ · v₂</span>. Der røret blir smalere, må væsken gå fortere. Halvert diameter gir fjerdedels areal og <b>fire ganger</b> så høy hastighet. Gjelder væsker, og gasser når trykkendringen er liten.</p>
 <figure class="fig">
@@ -6502,7 +6510,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <figcaption>Partiklene i den smale delen går fortere fordi samme mengde må passere et mindre tverrsnitt. Verdiene følger kalkulatoren over.</figcaption>
 </figure>
 <h3>Trykkfall</h3>
-<p>Friksjon mot rørveggen, bend, ventiler og innsnevringer gir trykkfall. Ved turbulent strømning er trykkfallet i et rett rør <span class="mono">Δp = λ · (L / d) · ρ · v² / 2</span>, der λ er rørfriksjonstallet. Trykkfallet øker altså omtrent med <b>kvadratet</b> av hastigheten: dobbel volumstrøm i samme rør gir omtrent fire ganger så stort trykkfall. Trykkfallet blir til varme og er tapt effekt. Derfor velges rørdiameter slik at hastigheten holdes innenfor anbefalte verdier; se kapittel 11 Hydraulikk. I trykkluftnett er tommelfingerregelen at trykkfallet fra kompressor til uttak ikke bør overstige ca. 0,1 bar (veiledende).</p>
+<p>Friksjon mot rørveggen, bend, ventiler og innsnevringer gir trykkfall. Ved turbulent strømning er trykkfallet i et rett rør <span class="mono">Δp = λ · <span class="br"><span>L</span><i class="br-h">/</i><span>d</span></span> · <span class="br"><span><i class="br-h">(</i>ρ · v²<i class="br-h">)</i></span><i class="br-h">/</i><span>2</span></span></span>, der λ er rørfriksjonstallet. Trykkfallet øker altså omtrent med <b>kvadratet</b> av hastigheten: dobbel volumstrøm i samme rør gir omtrent fire ganger så stort trykkfall. Trykkfallet blir til varme og er tapt effekt. Derfor velges rørdiameter slik at hastigheten holdes innenfor anbefalte verdier; se kapittel 11 Hydraulikk. I trykkluftnett er tommelfingerregelen at trykkfallet fra kompressor til uttak ikke bør overstige ca. 0,1 bar (veiledende).</p>
 </details>
 </div>
 <div class="topic" id="fy11-temp">
@@ -6565,7 +6573,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
     <div><h4>Celsius og kelvin</h4><b>T = t + 273,15</b><span>ΔT: 1 K = 1 °C</span></div>
-    <div><h4>Fahrenheit</h4><b>t<sub>F</sub> = 1,8 · t + 32</b><b>t = (t<sub>F</sub> − 32) / 1,8</b></div>
+    <div><h4>Fahrenheit</h4><b>t<sub>F</sub> = 1,8 · t + 32</b><b>t = <span class="br"><span><i class="br-h">(</i>t<sub>F</sub> − 32<i class="br-h">)</i></span><i class="br-h">/</i><span>1,8</span></span></b></div>
     <div><h4>Varmeutvidelse</h4><b>ΔL = α · L · ΔT</b><span>stål: α ≈ 12 · 10⁻⁶/K, 1 m blir ca. 0,012 mm lengre per °C</span></div>
     <div><h4>Anløpsfarger</h4><span>Strågul ca. 220 °C · brunrød ca. 250 °C · blå ca. 300 °C · grå 360 °C: hardheten er borte</span></div>
     <div><h4>Glødefarger</h4><span>Mørkerød ca. 680 °C · kirsebærrød ca. 780 °C · gul ca. 1100 °C</span></div>
@@ -6683,8 +6691,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-g">
     <div><h4>Varmemengde</h4><b>Q = m · c · ΔT</b><span>c: stål 460, aluminium 900, vann 4182 J/(kg·K)</span></div>
     <div><h4>Smelting og fordamping</h4><b>Q = m · L</b><span>temperaturen står stille under faseskiftet</span></div>
-    <div><h4>Varmetransport</h4><b>Φ = λ · A · ΔT / d</b><span>ledning</span><b>Φ = h · A · ΔT</b><span>konveksjon</span><b>Φ = ε · σ · A · (T₁⁴ − T₂⁴)</b><span>stråling, T i kelvin</span></div>
-    <div><h4>Forvarming før sveising</h4><b>CEV = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15</b><span>behovet øker tydelig over ca. 0,45</span><span>Mål temperaturen 4 · t fra fugekanten, høyst 50 mm</span></div>
+    <div><h4>Varmetransport</h4><b>Φ = <span class="br"><span><i class="br-h">(</i>λ · A · ΔT<i class="br-h">)</i></span><i class="br-h">/</i><span>d</span></span></b><span>ledning</span><b>Φ = h · A · ΔT</b><span>konveksjon</span><b>Φ = ε · σ · A · (T₁⁴ − T₂⁴)</b><span>stråling, T i kelvin</span></div>
+    <div><h4>Forvarming før sveising</h4><b>CEV = C + <span class="br"><span>Mn</span><i class="br-h">/</i><span>6</span></span> + <span class="br"><span><i class="br-h">(</i>Cr + Mo + V<i class="br-h">)</i></span><i class="br-h">/</i><span>5</span></span> + <span class="br"><span><i class="br-h">(</i>Ni + Cu<i class="br-h">)</i></span><i class="br-h">/</i><span>15</span></span></b><span>behovet øker tydelig over ca. 0,45</span><span>Mål temperaturen 4 · t fra fugekanten, høyst 50 mm</span></div>
   </div>
   <div class="hurtig-u">Q varme (J) · m masse (kg) · c spes. varmekapasitet (J/(kg·K)) · Φ varmestrøm (W) · σ = 5,67 · 10⁻⁸ W/(m²·K⁴)</div>
 </div>
@@ -6752,10 +6760,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="ctrl"><button class="chip play" id="fy11b-ht-play" type="button">▶ Spill av</button></div>
   <figcaption>Ledning: Partiklene i den varme enden svinger kraftig og dytter energien videre til naboene. Konveksjon: Varm luft eller væske stiger, kald synker, og strømmen tar med seg varmen. Stråling: Varme flater sender ut infrarød stråling som går gjennom luft (og vakuum) og varmer det den treffer.</figcaption>
 </figure>
-<p><b>Eksempel på stråling:</b> En stålplate med ε = 0,8 ved 200 °C i et verksted på 20 °C taper <span class="mono">Φ/A = ε · σ · (T₁⁴ − T₂⁴) = 0,8 · 5,67 · 10⁻⁸ · (473,15⁴ − 293,15⁴) ≈ 1,9 kW/m²</span> bare ved stråling. Temperaturene må stå i kelvin. Fordi strålingen øker med T⁴, blir den den dominerende varmetapsformen ved høye temperaturer. Derfor kjøler et glødende emne seg raskt ned til mørk glød, og deretter mye langsommere.</p>
+<p><b>Eksempel på stråling:</b> En stålplate med ε = 0,8 ved 200 °C i et verksted på 20 °C taper <span class="mono"><span class="br"><span>Φ</span><i class="br-h">/</i><span>A</span></span> = ε · σ · (T₁⁴ − T₂⁴) = 0,8 · 5,67 · 10⁻⁸ · (473,15⁴ − 293,15⁴) ≈ 1,9 kW/m²</span> bare ved stråling. Temperaturene må stå i kelvin. Fordi strålingen øker med T⁴, blir den den dominerende varmetapsformen ved høye temperaturer. Derfor kjøler et glødende emne seg raskt ned til mørk glød, og deretter mye langsommere.</p>
 <h3>Forvarming før sveising</h3>
 <p>Ved sveising av tykt gods eller stål med høyt karbon- eller legeringsinnhold kan den varmepåvirkede sonen (HAZ) bli hard og sprø. Kommer det i tillegg hydrogen og spenninger, kan det oppstå <b>kaldsprekker</b>, ofte timer etter sveising. Forvarming hjelper på tre måter: Avkjølingen går langsommere, så det dannes mindre hard martensitt. Hydrogenet får bedre tid til å diffundere ut. Og temperaturforskjellene, og dermed spenningene, blir mindre.</p>
-<p>Behovet styres av karbonekvivalenten <span class="mono">CEV = C + Mn/6 + (Cr + Mo + V)/5 + (Ni + Cu)/15</span> (IIW, i vekt-%), godstykkelsen, hydrogeninnholdet i tilsettmaterialet og varmetilførselen. Forvarmingstemperaturen tas fra <b>sveiseprosedyren (WPS)</b> eller beregnes etter NS-EN 1011-2. Som en grov huskeregel øker behovet tydelig når CEV er over ca. 0,45 (veiledende). Temperaturen måles med kontakttermometer eller temperaturkritt i avstanden <span class="mono">A = 4 · t</span> fra fugekanten, men høyst 50 mm, når t ≤ 50 mm. Når t > 50 mm, skal A være minst 75 mm (ISO 13916).</p>
+<p>Behovet styres av karbonekvivalenten <span class="mono">CEV = C + <span class="br"><span>Mn</span><i class="br-h">/</i><span>6</span></span> + <span class="br"><span><i class="br-h">(</i>Cr + Mo + V<i class="br-h">)</i></span><i class="br-h">/</i><span>5</span></span> + <span class="br"><span><i class="br-h">(</i>Ni + Cu<i class="br-h">)</i></span><i class="br-h">/</i><span>15</span></span></span> (IIW, i vekt-%), godstykkelsen, hydrogeninnholdet i tilsettmaterialet og varmetilførselen. Forvarmingstemperaturen tas fra <b>sveiseprosedyren (WPS)</b> eller beregnes etter NS-EN 1011-2. Som en grov huskeregel øker behovet tydelig når CEV er over ca. 0,45 (veiledende). Temperaturen måles med kontakttermometer eller temperaturkritt i avstanden <span class="mono">A = 4 · t</span> fra fugekanten, men høyst 50 mm, når t ≤ 50 mm. Når t > 50 mm, skal A være minst 75 mm (ISO 13916).</p>
 <figure class="fig">
   <svg id="fy11b-pfig" viewBox="0 0 600 230" role="img" aria-label="Snitt av to plater med fuge, varmet sone og målepunkt"></svg>
   <figcaption>Den skraverte sonen er stålet som skal varmes, b på hver side av fugen gjennom hele tykkelsen. Målepunktet A ligger innenfor den varme sonen. Tallene følger kalkulatoren.</figcaption>
@@ -7025,8 +7033,8 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-g">
     <div><h4>Moment</h4><b>M = F · a</b><span>a = vinkelrett arm fra punktet til kraften</span></div>
     <div><h4>Likevekt</h4><b>ΣF<sub>x</sub> = 0</b><b>ΣF<sub>y</sub> = 0</b><b>ΣM = 0</b><span>om et hvilket som helst punkt</span></div>
-    <div><h4>Vektstang</h4><b>F<sub>1</sub> · a = F<sub>2</sub> · b</b><b>F = G · a / b</b><span>løft med spett</span></div>
-    <div><h4>Bjelke på to opplegg</h4><b>R<sub>B</sub> = Σ(F · x) / L</b><span>moment om A</span><b>R<sub>A</sub> = ΣF − R<sub>B</sub></b></div>
+    <div><h4>Vektstang</h4><b>F<sub>1</sub> · a = F<sub>2</sub> · b</b><b>F = <span class="br"><span><i class="br-h">(</i>G · a<i class="br-h">)</i></span><i class="br-h">/</i><span>b</span></span></b><span>løft med spett</span></div>
+    <div><h4>Bjelke på to opplegg</h4><b>R<sub>B</sub> = <span class="br"><span><i class="br-h">(</i>Σ(F · x)<i class="br-h">)</i></span><i class="br-h">/</i><span>L</span></span></b><span>moment om A</span><b>R<sub>A</sub> = ΣF − R<sub>B</sub></b></div>
   </div>
   <div class="hurtig-u">M moment (Nm) · F kraft (N) · a, b, x armer (m) · L spenn (m) · R opplagerkraft (N)</div>
 </div>
@@ -7069,7 +7077,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Opplagerkrefter for bjelke på to opplegg</h3>
 <p>En bjelke som ligger på to opplegg A og B med punktlaster: Ta moment om A. Da får R<sub>A</sub> arm 0 og faller ut, og R<sub>B</sub> er eneste ukjente. Deretter gir kraftlikevekten R<sub>A</sub>.</p>
-<p class="me12a-eq">ΣM<sub>A</sub> = 0: &nbsp;R<sub>B</sub> = Σ(F · x) / L<br>ΣF<sub>y</sub> = 0: &nbsp;R<sub>A</sub> = ΣF − R<sub>B</sub></p>
+<p class="me12a-eq">ΣM<sub>A</sub> = 0: &nbsp;R<sub>B</sub> = <span class="br"><span><i class="br-h">(</i>Σ(F · x)<i class="br-h">)</i></span><i class="br-h">/</i><span>L</span></span><br>ΣF<sub>y</sub> = 0: &nbsp;R<sub>A</sub> = ΣF − R<sub>B</sub></p>
 <figure class="fig">
   <svg id="me12a-bm" viewBox="0 0 600 300" role="img" aria-label="Bjelke på to opplegg med punktlaster, opplagerkrefter og momentdiagram"></svg>
   <figcaption>A er fast lager, B er glidelager (ruller). Momentdiagrammet under bjelken viser bøyemomentet. Det er størst under en av lastene, og det er der bjelken må dimensjoneres (se 12.5 og 12.10).</figcaption>
@@ -7089,7 +7097,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </div>
 <h3>Løft med spett</h3>
 <p>Et spett (brekkjern) er en vektstang. Støtteklossen er opplageret, lasten virker på den korte armen a, og du trykker på den lange armen b:</p>
-<p class="me12a-eq"><b>F = G · a / b</b></p>
+<p class="me12a-eq"><b>F = <span class="br"><span><i class="br-h">(</i>G · a<i class="br-h">)</i></span><i class="br-h">/</i><span>b</span></span></b></p>
 <p>Prisen for den lille kraften er veien: Spissen flytter seg bare a/b så langt som håndtaket. Flytt støtteklossen nærmere lasten for å få mindre kraft, men da løfter hvert tak mindre. Legg klosser under lasten etter hvert, og ha aldri hender eller føtter under en last som bare står på spettet.</p>
 <figure class="fig">
   <svg id="me12a-bar" viewBox="0 0 600 270" role="img" aria-label="Spett med støttekloss som løfter kanten av en maskin"></svg>
@@ -7113,9 +7121,9 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Sammensatte flater</h4><b>x<sub>s</sub> = Σ(A · x) / ΣA</b><b>y<sub>s</sub> = Σ(A · y) / ΣA</b></div>
-    <div><h4>Linjer og legemer</h4><b>x<sub>s</sub> = Σ(L · x) / ΣL</b><span>bøyd tråd</span><b>x<sub>s</sub> = Σ(m · x) / Σm</b><span>legemer</span></div>
-    <div><h4>Tipping</h4><b>tan θ<sub>k</sub> = e / h<sub>s</sub></b><span>tipper når tyngdepunktet passerer vippekanten</span><span>Kloss: tan θ<sub>k</sub> = b / h</span></div>
+    <div><h4>Sammensatte flater</h4><b>x<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>Σ(A · x)<i class="br-h">)</i></span><i class="br-h">/</i><span>ΣA</span></span></b><b>y<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>Σ(A · y)<i class="br-h">)</i></span><i class="br-h">/</i><span>ΣA</span></span></b></div>
+    <div><h4>Linjer og legemer</h4><b>x<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>Σ(L · x)<i class="br-h">)</i></span><i class="br-h">/</i><span>ΣL</span></span></b><span>bøyd tråd</span><b>x<sub>s</sub> = <span class="br"><span><i class="br-h">(</i>Σ(m · x)<i class="br-h">)</i></span><i class="br-h">/</i><span>Σm</span></span></b><span>legemer</span></div>
+    <div><h4>Tipping</h4><b>tan θ<sub>k</sub> = <span class="br"><span>e</span><i class="br-h">/</i><span>h<sub>s</sub></span></span></b><span>tipper når tyngdepunktet passerer vippekanten</span><span>Kloss: tan θ<sub>k</sub> = b / h</span></div>
   </div>
   <div class="hurtig-u">x<sub>s</sub>, y<sub>s</sub> tyngdepunkt · A areal · L lengde · m masse · e avstand til vippekant · h<sub>s</sub> høyde til tyngdepunkt</div>
 </div>
@@ -7134,9 +7142,9 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <h3>Sammensatte linjer, flater og legemer</h3>
 <p>Del figuren opp i enkle deler der du kjenner tyngdepunktet. Hver del veies med sin lengde, sitt areal, volum eller sin masse. Det er momentlikevekt: Summen av delenes moment om aksen er lik totalen ganger avstanden til tyngdepunktet.</p>
 <div class="desig">
-  <div><b>x<sub>s</sub> = Σ(L·x) / ΣL</b><span>linjer, for eksempel bøyd tråd</span></div>
-  <div><b>x<sub>s</sub> = Σ(A·x) / ΣA</b><span>flater, for eksempel plater og profiler</span></div>
-  <div><b>x<sub>s</sub> = Σ(m·x) / Σm</b><span>legemer og sammensatte konstruksjoner</span></div>
+  <div><b>x<sub>s</sub> = <span class="br"><span>Σ(L·x)</span><i class="br-h">/</i><span>ΣL</span></span></b><span>linjer, for eksempel bøyd tråd</span></div>
+  <div><b>x<sub>s</sub> = <span class="br"><span>Σ(A·x)</span><i class="br-h">/</i><span>ΣA</span></span></b><span>flater, for eksempel plater og profiler</span></div>
+  <div><b>x<sub>s</sub> = <span class="br"><span>Σ(m·x)</span><i class="br-h">/</i><span>Σm</span></span></b><span>legemer og sammensatte konstruksjoner</span></div>
 </div>
 <p>y<sub>s</sub> regnes på samme måte med y-avstandene. Et hull regnes som en del med <b>negativt</b> areal (eller negativ masse).</p>
 <h3>Kalkulator: sammensatt flate</h3>
@@ -7146,7 +7154,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Stabilitet og tipping</h3>
 <p>En gjenstand står stødig så lenge loddlinja gjennom tyngdepunktet faller innenfor støtteflaten. Tipper du den, dreier den om kanten, og tyngdepunktet løftes. Når tyngdepunktet står rett over kanten, er den i labil likevekt. Passerer det kanten, velter den av seg selv.</p>
-<p class="me12a-eq">tan θ<sub>k</sub> = e / h<sub>s</sub> &nbsp; (kloss: tan θ<sub>k</sub> = b / h)</p>
+<p class="me12a-eq">tan θ<sub>k</sub> = <span class="br"><span>e</span><i class="br-h">/</i><span>h<sub>s</sub></span></span> &nbsp; (kloss: tan θ<sub>k</sub> = <span class="br"><span>b</span><i class="br-h">/</i><span>h</span></span>)</p>
 <p>e er den vannrette avstanden fra tyngdepunktet til vippekanten og h<sub>s</sub> høyden til tyngdepunktet. Stabilitetsmomentet som holder gjenstanden på plass er G · e. Lavt tyngdepunkt og bred base gir stor kritisk vinkel θ<sub>k</sub>. Derfor skal høye skap og maskiner festes, og en truck skal ikke kjøre med løftet last.</p>
 <figure class="fig">
   <svg id="me12a-tip" viewBox="0 0 600 290" role="img" aria-label="Kloss som tippes om kanten til tyngdepunktet passerer vippekanten"></svg>
@@ -7171,10 +7179,10 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Utveksling</h4><b>i = n<sub>inn</sub> / n<sub>ut</sub></b><b>i = z<sub>2</sub> / z<sub>1</sub> = d<sub>2</sub> / d<sub>1</sub></b><span>tannhjul, kjede, reim</span><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b></div>
-    <div><h4>Moment og effekt</h4><b>M<sub>ut</sub> = M<sub>inn</sub> · i · η</b><b>P<sub>ut</sub> = P<sub>inn</sub> · η</b><b>P = M · 2π · n / 60</b></div>
-    <div><h4>Snekke og planetgir</h4><b>i = z<sub>hjul</sub> / z<sub>snekke</sub></b><span>z<sub>snekke</sub> = antall innganger</span><b>i = 1 + z<sub>R</sub> / z<sub>S</sub></b><span>planetgir, fast ring</span></div>
-    <div><h4>Talje</h4><b>F = G / n</b><span>n bærende parter, uten friksjon</span><span>Tau trukket = n · løftehøyde</span></div>
+    <div><h4>Utveksling</h4><b>i = <span class="br"><span>n<sub>inn</sub></span><i class="br-h">/</i><span>n<sub>ut</sub></span></span></b><b>i = <span class="br"><span>z<sub>2</sub></span><i class="br-h">/</i><span>z<sub>1</sub></span></span> = <span class="br"><span>d<sub>2</sub></span><i class="br-h">/</i><span>d<sub>1</sub></span></span></b><span>tannhjul, kjede, reim</span><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b></div>
+    <div><h4>Moment og effekt</h4><b>M<sub>ut</sub> = M<sub>inn</sub> · i · η</b><b>P<sub>ut</sub> = P<sub>inn</sub> · η</b><b>P = <span class="br"><span><i class="br-h">(</i>M · 2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b></div>
+    <div><h4>Snekke og planetgir</h4><b>i = <span class="br"><span>z<sub>hjul</sub></span><i class="br-h">/</i><span>z<sub>snekke</sub></span></span></b><span>z<sub>snekke</sub> = antall innganger</span><b>i = 1 + <span class="br"><span>z<sub>R</sub></span><i class="br-h">/</i><span>z<sub>S</sub></span></span></b><span>planetgir, fast ring</span></div>
+    <div><h4>Talje</h4><b>F = <span class="br"><span>G</span><i class="br-h">/</i><span>n</span></span></b><span>n bærende parter, uten friksjon</span><span>Tau trukket = n · løftehøyde</span></div>
   </div>
   <div class="hurtig-u">n turtall (o/min) · z antall tenner · d diameter · η virkningsgrad · M moment (Nm) · P effekt (W)</div>
 </div>
@@ -7197,17 +7205,17 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">En utveksling endrer turtall og moment mellom to aksler. Det som tapes i turtall, vinnes i moment, minus litt tap i friksjon. Effekten kan aldri bli større enn den du putter inn.</p>
 <h3>Utveksling</h3>
-<p class="me12a-eq"><b>i = n<sub>inn</sub> / n<sub>ut</sub></b></p>
+<p class="me12a-eq"><b>i = <span class="br"><span>n<sub>inn</sub></span><i class="br-h">/</i><span>n<sub>ut</sub></span></span></b></p>
 <p>i &gt; 1 er nedgiring: lavere turtall og større moment ut. i &lt; 1 er oppgiring. Indeks 1 er det drivende hjulet og 2 det drevne:</p>
 <div class="desig">
-  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>tannhjul (z = antall tenner)</span></div>
-  <div><b>i = d<sub>2</sub> / d<sub>1</sub></b><span>reimskiver (d = regnediameter)</span></div>
-  <div><b>i = z<sub>2</sub> / z<sub>1</sub></b><span>kjedehjul</span></div>
+  <div><b>i = <span class="br"><span>z<sub>2</sub></span><i class="br-h">/</i><span>z<sub>1</sub></span></span></b><span>tannhjul (z = antall tenner)</span></div>
+  <div><b>i = <span class="br"><span>d<sub>2</sub></span><i class="br-h">/</i><span>d<sub>1</sub></span></span></b><span>reimskiver (d = regnediameter)</span></div>
+  <div><b>i = <span class="br"><span>z<sub>2</sub></span><i class="br-h">/</i><span>z<sub>1</sub></span></span></b><span>kjedehjul</span></div>
   <div><b>i<sub>tot</sub> = i<sub>1</sub> · i<sub>2</sub> · i<sub>3</sub></b><span>flere trinn etter hverandre</span></div>
 </div>
 <p>Det lille hjulet må gå rundt flere ganger for å flytte like mange tenner (eller like mye reim) som det store. Derfor er turtallet omvendt proporsjonalt med z eller d. En kileremdrift sklir litt, så det virkelige turtallet blir noe lavere enn regnet. Tannhjul, kjede og tannreim sklir ikke.</p>
 <h3>Moment, effekt og dreieretning</h3>
-<p class="me12a-eq">M<sub>ut</sub> = M<sub>inn</sub> · i · η &nbsp;&nbsp; P<sub>ut</sub> = P<sub>inn</sub> · η &nbsp;&nbsp; P = M · ω = M · 2π · n / 60</p>
+<p class="me12a-eq">M<sub>ut</sub> = M<sub>inn</sub> · i · η &nbsp;&nbsp; P<sub>ut</sub> = P<sub>inn</sub> · η &nbsp;&nbsp; P = M · ω = <span class="br"><span><i class="br-h">(</i>M · 2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></p>
 <p>η er virkningsgraden (0–1). Med flere trinn ganges virkningsgradene: η<sub>tot</sub> = η<sub>1</sub> · η<sub>2</sub> · η<sub>3</sub>. Et ytre tannhjulspar snur dreieretningen. Et mellomhjul (tomgangshjul) snur den tilbake uten å endre utvekslingen. Åpen reim og kjede beholder dreieretningen.</p>
 <h3>Totrinns tannhjulsdrev</h3>
 <figure class="fig">
@@ -7225,13 +7233,13 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </figure>
 <h3>Snekkedrev</h3>
 <p>Snekken er en skrue som driver et snekkehjul, med akslene i 90°. For hver omdreining av snekken flytter hjulet seg like mange tenner som snekken har innganger (gjenger):</p>
-<p class="me12a-eq"><b>i = z<sub>hjul</sub> / z<sub>snekke</sub></b> &nbsp; (z<sub>snekke</sub> = antall innganger)</p>
+<p class="me12a-eq"><b>i = <span class="br"><span>z<sub>hjul</sub></span><i class="br-h">/</i><span>z<sub>snekke</sub></span></span></b> &nbsp; (z<sub>snekke</sub> = antall innganger)</p>
 <p>En 1-gjenget snekke mot et hjul med 40 tenner gir i = 40 i ett trinn. Stor utveksling og stille gang er fordelene. Ulempen er stor glidefriksjon og dermed lav virkningsgrad, særlig ved én inngang. Et drev med lav virkningsgrad kan være selvlåsende, men selvlåsing er ingen sikker brems, for vibrasjoner kan få det til å gli. Løfteutstyr skal ha egen brems.</p>
 <h3>Planetgir</h3>
 <div class="two">
   <div>
     <p>Et planetgir har et solhjul i midten, planethjul som går rundt solhjulet, en planetbærer som holder planetene, og en ring med innvendige tenner. Holder du ett av leddene fast, får du en utveksling mellom de to andre. Vanligst er fast ring, solhjul inn og planetbærer ut:</p>
-    <p class="me12a-eq"><b>i = 1 + z<sub>R</sub> / z<sub>S</sub></b><br>z<sub>R</sub> = z<sub>S</sub> + 2 · z<sub>P</sub></p>
+    <p class="me12a-eq"><b>i = 1 + <span class="br"><span>z<sub>R</sub></span><i class="br-h">/</i><span>z<sub>S</sub></span></span></b><br>z<sub>R</sub> = z<sub>S</sub> + 2 · z<sub>P</sub></p>
     <p>Eksempelet har z<sub>S</sub> = 18, z<sub>P</sub> = 27 og z<sub>R</sub> = 72, som gir i = 1 + 72/18 = 5. Planetbæreren går samme vei som solhjulet, fem ganger saktere. Fordi lasten deles på flere planeter, blir planetgir kompakte og tåler stort moment. De brukes i girmotorer, vinsjer, drill og skrutrekkere.</p>
   </div>
   <figure class="fig">
@@ -7242,7 +7250,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 </div>
 <h3>Vinsj og talje</h3>
 <p>En <b>talje</b> deler lasten på flere tauparter. Med n bærende parter mellom øvre og nedre blokk blir trekkraften n ganger mindre, men du må trekke n ganger så mye tau:</p>
-<p class="me12a-eq"><b>F = G / n</b> (uten friksjon) &nbsp;&nbsp; tau trukket = n · løftehøyde</p>
+<p class="me12a-eq"><b>F = <span class="br"><span>G</span><i class="br-h">/</i><span>n</span></span></b> (uten friksjon) &nbsp;&nbsp; tau trukket = n · løftehøyde</p>
 <p>Arbeidet blir det samme: F · n · h = G · h. Friksjon i skivene gjør at det trengs noe mer kraft i praksis, F = G / (n · η). Én fast skive alene (n = 1) sparer ingen kraft, den endrer bare retningen.</p>
 <figure class="fig">
   <svg id="me12a-tk" viewBox="0 0 600 340" role="img" aria-label="Talje med valgbart antall bærende parter, der lasten løftes og tauet trekkes"></svg>
@@ -7262,7 +7270,7 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
   <div class="hurtig-g">
     <div><h4>Massetreghetsmoment</h4><b>J = Σ m · r²</b><b>J = ½ · m · r²</b><span>massiv skive eller sylinder</span></div>
     <div><h4>Steiners sats</h4><b>J = J<sub>s</sub> + m · d²</b><span>d = avstand fra tyngdepunktet til aksen</span></div>
-    <div><h4>Rotasjon</h4><b>E = ½ · J · ω²</b><span>rotasjonsenergi</span><b>M = J · α</b><span>moment for å akselerere</span><b>ω = 2π · n / 60</b></div>
+    <div><h4>Rotasjon</h4><b>E = ½ · J · ω²</b><span>rotasjonsenergi</span><b>M = J · α</b><span>moment for å akselerere</span><b>ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b></div>
   </div>
   <div class="hurtig-u">J treghetsmoment (kg·m²) · m masse (kg) · r radius (m) · ω vinkelhastighet (rad/s) · α vinkelakselerasjon (rad/s²)</div>
 </div>
@@ -7313,13 +7321,13 @@ dl.kv.ma10x-kv dt{text-transform:none;letter-spacing:.02em;font-size:12px}
 <div class="desig">
   <div><b>E = ½ · J · ω²</b><span>rotasjonsenergi (J)</span></div>
   <div><b>M = J · α</b><span>moment for å akselerere (Nm)</span></div>
-  <div><b>α = ω / t</b><span>vinkelakselerasjon (rad/s²), jevn start fra 0</span></div>
-  <div><b>ω = 2π · n / 60</b><span>vinkelhastighet (rad/s), n i o/min</span></div>
+  <div><b>α = <span class="br"><span>ω</span><i class="br-h">/</i><span>t</span></span></b><span>vinkelakselerasjon (rad/s²), jevn start fra 0</span></div>
+  <div><b>ω = <span class="br"><span><i class="br-h">(</i>2π · n<i class="br-h">)</i></span><i class="br-h">/</i><span>60</span></span></b><span>vinkelhastighet (rad/s), n i o/min</span></div>
 </div>
 <p>M = J · α tilsvarer F = m · a. Motoren må levere akselerasjonsmomentet i tillegg til moment for friksjon og bearbeiding. Effekten er størst like før fullt turtall, P = M · ω.</p>
 <h3>Sylinder, kule og ring på skråplan</h3>
 <p>Ruller noe ned et skråplan, går stillingsenergien m · g · h både til fart og til rotasjon. Jo mer av massen som sitter ytterst, jo større del av energien går til å rotere, og jo tregere blir den. Massen og radien spiller ingen rolle, bare formen:</p>
-<p class="me12a-eq">a = g · sin θ / (1 + J / (m · r²))</p>
+<p class="me12a-eq">a = <span class="br"><span><i class="br-h">(</i>g · sin θ<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>1 + <span class="br"><span>J</span><i class="br-h">/</i><span><i class="br-h">(</i>m · r²<i class="br-h">)</i></span></span><i class="br-h">)</i></span></span></p>
 <figure class="fig">
   <svg id="me12a-roll" viewBox="0 0 600 330" role="img" aria-label="Kule, massiv sylinder og ring ruller ned hvert sitt skråplan, ringen kommer sist"></svg>
   <div class="ctrl"><button class="chip play" id="me12a-roll-go" type="button">▶ Slipp</button><span class="mono" id="me12a-roll-t"></span></div>
@@ -7352,10 +7360,10 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Strekk og trykk</h4><b>σ = F / A</b><b>ε = ΔL / L</b><b>σ = E · ε</b><span>E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
-    <div><h4>Forlengelse</h4><b>ΔL = F · L / (E · A)</b></div>
-    <div><h4>Skjær i bolt og pinne</h4><b>τ = F / (m · A)</b><span>m = antall skjærflater</span><b>p = F / (d · t)</b><span>flatetrykk mot hullveggen</span></div>
-    <div><h4>Sikkerhet</h4><b>n = R<sub>e</sub> / σ</b><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b></div>
+    <div><h4>Strekk og trykk</h4><b>σ = <span class="br"><span>F</span><i class="br-h">/</i><span>A</span></span></b><b>ε = <span class="br"><span>ΔL</span><i class="br-h">/</i><span>L</span></span></b><b>σ = E · ε</b><span>E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
+    <div><h4>Forlengelse</h4><b>ΔL = <span class="br"><span><i class="br-h">(</i>F · L<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>E · A<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Skjær i bolt og pinne</h4><b>τ = <span class="br"><span>F</span><i class="br-h">/</i><span><i class="br-h">(</i>m · A<i class="br-h">)</i></span></span></b><span>m = antall skjærflater</span><b>p = <span class="br"><span>F</span><i class="br-h">/</i><span><i class="br-h">(</i>d · t<i class="br-h">)</i></span></span></b><span>flatetrykk mot hullveggen</span></div>
+    <div><h4>Sikkerhet</h4><b>n = <span class="br"><span>R<sub>e</sub></span><i class="br-h">/</i><span>σ</span></span></b><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b></div>
   </div>
   <div class="hurtig-u">σ normalspenning, τ skjærspenning (MPa = N/mm²) · F kraft (N) · A areal (mm²) · R<sub>e</sub> flytegrense (MPa)</div>
 </div>
@@ -7403,11 +7411,11 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <h3>Normalspenning og Hookes lov</h3>
 <p>Ved strekk og trykk fordeles kraften jevnt over tverrsnittsarealet. Så lenge spenningen er under flytegrensen, er forlengelsen proporsjonal med spenningen (Hookes lov). Stivheten til materialet er elastisitetsmodulen E. Stål er tre ganger stivere enn aluminium, så en aluminiumsstav med samme mål og last strekker seg tre ganger så mye. Hele forløpet fram til brudd vises i strekkprøven i <a href="#materialer">kapittel 8</a>.</p>
 <div class="me12b-fx">
-  <div><b>σ = F / A</b><span>normalspenning, N/mm² (MPa). F i N, A i mm²</span></div>
-  <div><b>ε = ΔL / L</b><span>tøyning, uten benevning (ofte i ‰ eller %)</span></div>
+  <div><b>σ = <span class="br"><span>F</span><i class="br-h">/</i><span>A</span></span></b><span>normalspenning, N/mm² (MPa). F i N, A i mm²</span></div>
+  <div><b>ε = <span class="br"><span>ΔL</span><i class="br-h">/</i><span>L</span></span></b><span>tøyning, uten benevning (ofte i ‰ eller %)</span></div>
   <div><b>σ = E · ε</b><span>Hookes lov. E stål ≈ 210 000 MPa, aluminium ≈ 70 000 MPa</span></div>
-  <div><b>ΔL = F · L / (E · A)</b><span>forlengelse (strekk) eller forkortelse (trykk), mm</span></div>
-  <div><b>n = R<sub>e</sub> / σ</b><span>sikkerhetsfaktor mot flyt</span></div>
+  <div><b>ΔL = <span class="br"><span><i class="br-h">(</i>F · L<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>E · A<i class="br-h">)</i></span></span></b><span>forlengelse (strekk) eller forkortelse (trykk), mm</span></div>
+  <div><b>n = <span class="br"><span>R<sub>e</sub></span><i class="br-h">/</i><span>σ</span></span></b><span>sikkerhetsfaktor mot flyt</span></div>
 </div>
 <h3>Skjærspenning i bolt og pinne</h3>
 <p>Skjær oppstår når to deler prøver å gli forbi hverandre i et snitt, som en saks. En bolt som holder to plater (overlappskjøt) har <b>én skjærflate</b>. En pinne gjennom en gaffel og et øye har <b>to skjærflater</b>, og tåler derfor dobbelt så stor kraft med samme diameter. Det er grunnen til at ledd og sjakler lages som gaffel.</p>
@@ -7417,8 +7425,8 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
   <figcaption>Rød stiplet linje markerer skjærflatene. Flatetrykket virker mellom boltens side og hullveggen, på den projiserte flaten d · t.</figcaption>
 </figure>
 <div class="me12b-fx">
-  <div><b>τ = F / (m · A)</b><span>skjærspenning. m = antall skjærflater (1 eller 2), A = π · d² / 4</span></div>
-  <div><b>p = F / (d · t)</b><span>flatetrykk (hulltrykk) mot hullveggen. t = tykkelsen som tar kraften</span></div>
+  <div><b>τ = <span class="br"><span>F</span><i class="br-h">/</i><span><i class="br-h">(</i>m · A<i class="br-h">)</i></span></span></b><span>skjærspenning. m = antall skjærflater (1 eller 2), A = π · d² / 4</span></div>
+  <div><b>p = <span class="br"><span>F</span><i class="br-h">/</i><span><i class="br-h">(</i>d · t<i class="br-h">)</i></span></span></b><span>flatetrykk (hulltrykk) mot hullveggen. t = tykkelsen som tar kraften</span></div>
   <div><b>τ<sub>till</sub> ≈ 0,58 · σ<sub>till</sub></b><span>stål tåler omtrent 0,58 (= 1/√3) ganger så mye i skjær som i strekk</span></div>
 </div>
 </details>
@@ -7428,9 +7436,9 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Bøyespenning</h4><b>σ = M / W</b><span>M i Nmm, W i mm³</span><b>W = I / e</b><span>e = avstand til ytterste fiber</span></div>
-    <div><h4>Rektangel b × h</h4><b>I = b · h³ / 12</b><b>W = b · h² / 6</b><span>h er høyden i lastretningen</span></div>
-    <div><h4>Massiv rund</h4><b>I = π · d⁴ / 64</b><b>W = π · d³ / 32</b></div>
+    <div><h4>Bøyespenning</h4><b>σ = <span class="br"><span>M</span><i class="br-h">/</i><span>W</span></span></b><span>M i Nmm, W i mm³</span><b>W = <span class="br"><span>I</span><i class="br-h">/</i><span>e</span></span></b><span>e = avstand til ytterste fiber</span></div>
+    <div><h4>Rektangel b × h</h4><b>I = <span class="br"><span><i class="br-h">(</i>b · h³<i class="br-h">)</i></span><i class="br-h">/</i><span>12</span></span></b><b>W = <span class="br"><span><i class="br-h">(</i>b · h²<i class="br-h">)</i></span><i class="br-h">/</i><span>6</span></span></b><span>h er høyden i lastretningen</span></div>
+    <div><h4>Massiv rund</h4><b>I = <span class="br"><span><i class="br-h">(</i>π · d⁴<i class="br-h">)</i></span><i class="br-h">/</i><span>64</span></span></b><b>W = <span class="br"><span><i class="br-h">(</i>π · d³<i class="br-h">)</i></span><i class="br-h">/</i><span>32</span></span></b></div>
     <div><h4>Steiners sats</h4><b>I = I₀ + A · a²</b></div>
   </div>
   <div class="hurtig-u">I treghetsmoment (mm⁴) · W motstandsmoment (mm³) · M bøyemoment (Nmm)</div>
@@ -7451,9 +7459,9 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Ved bøying er det ikke bare arealet som teller, men <b>hvor materialet ligger</b>. Materiale langt fra nøytralaksen tar mest av lasten. Treghetsmomentet I sier hvor <b>stivt</b> tverrsnittet er (nedbøyning). Motstandsmomentet W sier hvor <b>sterkt</b> det er (spenning).</p>
 <div class="me12b-fx">
-  <div><b>σ = M / W</b><span>bøyespenning i ytterste fiber, MPa. M i Nmm, W i mm³</span></div>
-  <div><b>W = I / e</b><span>e = avstand fra nøytralaksen til ytterste fiber, mm</span></div>
-  <div><b>f ∝ 1 / (E · I)</b><span>nedbøyningen er omvendt proporsjonal med E · I. I i mm⁴</span></div>
+  <div><b>σ = <span class="br"><span>M</span><i class="br-h">/</i><span>W</span></span></b><span>bøyespenning i ytterste fiber, MPa. M i Nmm, W i mm³</span></div>
+  <div><b>W = <span class="br"><span>I</span><i class="br-h">/</i><span>e</span></span></b><span>e = avstand fra nøytralaksen til ytterste fiber, mm</span></div>
+  <div><b>f ∝ <span class="br"><span>1</span><i class="br-h">/</i><span><i class="br-h">(</i>E · I<i class="br-h">)</i></span></span></b><span>nedbøyningen er omvendt proporsjonal med E · I. I i mm⁴</span></div>
 </div>
 <h3>Planke liggende eller stående</h3>
 <p>Samme planke, 48 × 198 mm, legges over to bukker med en last på midten. Stående har den samme areal, men høyden er 198/48 = 4,1 ganger større. Motstandsmomentet øker med høyden i <b>andre</b> potens (W = b·h²/6), og treghetsmomentet med høyden i <b>tredje</b> potens (I = b·h³/12). Stående er planken derfor 4,1 ganger sterkere og 17 ganger stivere.</p>
@@ -7485,10 +7493,10 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Vridning</h4><b>τ = M<sub>v</sub> / W<sub>p</sub></b><b>M = 9550 · P / n</b><span>M i Nm, P i kW, n i o/min</span></div>
-    <div><h4>Massiv aksel</h4><b>W<sub>p</sub> = π · d³ / 16</b><span>≈ 0,196 · d³</span><b>I<sub>p</sub> = π · d⁴ / 32</b></div>
-    <div><h4>Rør</h4><b>W<sub>p</sub> = π · (D⁴ − d⁴) / (16 · D)</b></div>
-    <div><h4>Vridningsvinkel</h4><b>φ = M<sub>v</sub> · L / (G · I<sub>p</sub>)</b><span>i radianer</span></div>
+    <div><h4>Vridning</h4><b>τ = <span class="br"><span>M<sub>v</sub></span><i class="br-h">/</i><span>W<sub>p</sub></span></span></b><b>M = <span class="br"><span><i class="br-h">(</i>9550 · P<i class="br-h">)</i></span><i class="br-h">/</i><span>n</span></span></b><span>M i Nm, P i kW, n i o/min</span></div>
+    <div><h4>Massiv aksel</h4><b>W<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · d³<i class="br-h">)</i></span><i class="br-h">/</i><span>16</span></span></b><span>≈ 0,196 · d³</span><b>I<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · d⁴<i class="br-h">)</i></span><i class="br-h">/</i><span>32</span></span></b></div>
+    <div><h4>Rør</h4><b>W<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · (D⁴ − d⁴)<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>16 · D<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Vridningsvinkel</h4><b>φ = <span class="br"><span><i class="br-h">(</i>M<sub>v</sub> · L<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>G · I<sub>p</sub><i class="br-h">)</i></span></span></b><span>i radianer</span></div>
   </div>
   <div class="hurtig-u">τ skjærspenning (MPa) · M<sub>v</sub> vridningsmoment (Nmm) · W<sub>p</sub> polart motstandsmoment (mm³) · G skjærmodul (MPa)</div>
 </div>
@@ -7515,12 +7523,12 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">En aksel som overfører effekt, blir vridd. Skjærspenningen er null i senter og øker lineært ut til overflaten. Materialet nær senter gjør derfor lite nytte, og et rør er nesten like sterkt som en massiv aksel med samme ytterdiameter, men mye lettere.</p>
 <div class="me12b-fx">
-  <div><b>τ = M<sub>v</sub> / W<sub>p</sub></b><span>vridningsspenning, MPa. M<sub>v</sub> i Nmm</span></div>
-  <div><b>W<sub>p</sub> = π · d³ / 16</b><span>polart motstandsmoment, massiv aksel (≈ 0,196 · d³)</span></div>
-  <div><b>W<sub>p</sub> = π · (D⁴ − d⁴) / (16 · D)</b><span>rør, D = ytre og d = indre diameter</span></div>
-  <div><b>I<sub>p</sub> = π · d⁴ / 32</b><span>polart treghetsmoment, massiv. Rør: π · (D⁴ − d⁴) / 32</span></div>
-  <div><b>φ = M<sub>v</sub> · L / (G · I<sub>p</sub>)</b><span>vridningsvinkel i radianer. Grader = φ · 180 / π</span></div>
-  <div><b>M = 9550 · P / n</b><span>moment i Nm fra effekt P (kW) og turtall n (o/min)</span></div>
+  <div><b>τ = <span class="br"><span>M<sub>v</sub></span><i class="br-h">/</i><span>W<sub>p</sub></span></span></b><span>vridningsspenning, MPa. M<sub>v</sub> i Nmm</span></div>
+  <div><b>W<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · d³<i class="br-h">)</i></span><i class="br-h">/</i><span>16</span></span></b><span>polart motstandsmoment, massiv aksel (≈ 0,196 · d³)</span></div>
+  <div><b>W<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · (D⁴ − d⁴)<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>16 · D<i class="br-h">)</i></span></span></b><span>rør, D = ytre og d = indre diameter</span></div>
+  <div><b>I<sub>p</sub> = <span class="br"><span><i class="br-h">(</i>π · d⁴<i class="br-h">)</i></span><i class="br-h">/</i><span>32</span></span></b><span>polart treghetsmoment, massiv. Rør: π · (D⁴ − d⁴) / 32</span></div>
+  <div><b>φ = <span class="br"><span><i class="br-h">(</i>M<sub>v</sub> · L<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>G · I<sub>p</sub><i class="br-h">)</i></span></span></b><span>vridningsvinkel i radianer. Grader = φ · 180 / π</span></div>
+  <div><b>M = <span class="br"><span><i class="br-h">(</i>9550 · P<i class="br-h">)</i></span><i class="br-h">/</i><span>n</span></span></b><span>moment i Nm fra effekt P (kW) og turtall n (o/min)</span></div>
 </div>
 <p>G er skjærmodulen: stål G ≈ 81 000 MPa, aluminium G ≈ 26 000 MPa. Merk at W<sub>p</sub> er dobbelt så stor som motstandsmomentet for bøying (π·d³/32) for samme sirkel.</p>
 <figure class="fig">
@@ -7535,8 +7543,8 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Tillatt spenning</h4><b>σ<sub>till</sub> = R<sub>e</sub> / n</b><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>stål og aluminium</span></div>
-    <div><h4>Løfteutstyr</h4><span>WLL = største last i rett, loddrett løft</span><b>F = G / (antall parter · cos β)</b><span>β fra loddlinjen. Toppvinkel aldri over 120°</span></div>
+    <div><h4>Tillatt spenning</h4><b>σ<sub>till</sub> = <span class="br"><span>R<sub>e</sub></span><i class="br-h">/</i><span>n</span></span></b><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>stål og aluminium</span></div>
+    <div><h4>Løfteutstyr</h4><span>WLL = største last i rett, loddrett løft</span><b>F = <span class="br"><span>G</span><i class="br-h">/</i><span><i class="br-h">(</i>antall parter · cos β<i class="br-h">)</i></span></span></b><span>β fra loddlinjen. Toppvinkel aldri over 120°</span></div>
     <div><h4>Utmatting</h4><span>Varierende last tåler mye mindre enn statisk. Unngå kjerv: bruk radius i overganger</span></div>
   </div>
   <div class="hurtig-u">R<sub>e</sub> flytegrense (MPa) · n sikkerhetsfaktor · G last (N)</div>
@@ -7558,7 +7566,7 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">Den spenningen en del får lov til å ha, er flytegrensen delt på en sikkerhetsfaktor. Faktoren skal dekke usikkerhet i last, materiale, beregning og utførelse. Last som varierer eller kommer som støt, krever større margin, og da er det ofte utmattingen og ikke flytegrensen som bestemmer.</p>
 <div class="me12b-fx">
-  <div><b>σ<sub>till</sub> = R<sub>e</sub> / n</b><span>tillatt normalspenning (strekk, trykk, bøying)</span></div>
+  <div><b>σ<sub>till</sub> = <span class="br"><span>R<sub>e</sub></span><i class="br-h">/</i><span>n</span></span></b><span>tillatt normalspenning (strekk, trykk, bøying)</span></div>
   <div><b>τ<sub>till</sub> = 0,58 · σ<sub>till</sub></b><span>tillatt skjær- og vridningsspenning for stål og aluminium (von Mises, 1/√3)</span></div>
 </div>
 <h3>Utmatting – Wöhlerkurven</h3>
@@ -7592,9 +7600,9 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Euler</h4><b>F<sub>k</sub> = π² · E · I / L<sub>k</sub>²</b><span>I = minste treghetsmoment</span></div>
-    <div><h4>Slankhet</h4><b>λ = L<sub>k</sub> / i</b><b>i = √(I / A)</b><span>treghetsradius. Rund stang: i = d / 4</span></div>
-    <div><h4>Tillatt last</h4><b>F<sub>till</sub> = F<sub>k</sub> / n</b><span>n ≈ 3–5 i Euler-området</span></div>
+    <div><h4>Euler</h4><b>F<sub>k</sub> = <span class="br"><span><i class="br-h">(</i>π² · E · I<i class="br-h">)</i></span><i class="br-h">/</i><span>L<sub>k</sub>²</span></span></b><span>I = minste treghetsmoment</span></div>
+    <div><h4>Slankhet</h4><b>λ = <span class="br"><span>L<sub>k</sub></span><i class="br-h">/</i><span>i</span></span></b><b>i = √(<span class="br"><span>I</span><i class="br-h">/</i><span>A</span></span>)</b><span>treghetsradius. Rund stang: i = d / 4</span></div>
+    <div><h4>Tillatt last</h4><b>F<sub>till</sub> = <span class="br"><span>F<sub>k</sub></span><i class="br-h">/</i><span>n</span></span></b><span>n ≈ 3–5 i Euler-området</span></div>
   </div>
   <div class="hurtig-u">F<sub>k</sub> knekklast (N) · L<sub>k</sub> knekklengde (mm) · E (MPa) · I (mm⁴)</div>
 </div>
@@ -7623,9 +7631,9 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">En lang, slank stav i trykk svikter ikke ved at materialet flyter, men ved at den plutselig bøyer ut til siden: den <b>knekker</b>. Knekklasten avhenger av stivheten E · I og av lengden i annen. Halv lengde gir fire ganger så stor knekklast.</p>
 <div class="me12b-fx">
-  <div><b>F<sub>k</sub> = π² · E · I / L<sub>k</sub>²</b><span>Eulers knekklast, N. I = minste treghetsmoment, mm⁴</span></div>
-  <div><b>λ = L<sub>k</sub> / i</b><span>slankhet. i = √(I / A) er treghetsradien, mm</span></div>
-  <div><b>F<sub>till</sub> = F<sub>k</sub> / n</b><span>tillatt trykkraft med sikkerhetsfaktor n</span></div>
+  <div><b>F<sub>k</sub> = <span class="br"><span><i class="br-h">(</i>π² · E · I<i class="br-h">)</i></span><i class="br-h">/</i><span>L<sub>k</sub>²</span></span></b><span>Eulers knekklast, N. I = minste treghetsmoment, mm⁴</span></div>
+  <div><b>λ = <span class="br"><span>L<sub>k</sub></span><i class="br-h">/</i><span>i</span></span></b><span>slankhet. i = √(I / A) er treghetsradien, mm</span></div>
+  <div><b>F<sub>till</sub> = <span class="br"><span>F<sub>k</sub></span><i class="br-h">/</i><span>n</span></span></b><span>tillatt trykkraft med sikkerhetsfaktor n</span></div>
 </div>
 <p>Staven knekker alltid om den svakeste aksen, så bruk det <b>minste</b> treghetsmomentet. For en IPE-bjelke er det I<sub>z</sub>, som er mye mindre enn I<sub>y</sub>. Knekklengden L<sub>k</sub> avhenger av hvordan endene er holdt:</p>
 <figure class="fig">
@@ -7639,8 +7647,8 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <h3>Eksempel: stempelstangen i en hydraulikksylinder</h3>
 <p>En sylinder Ø80/36 mm på 180 bar gir skyvekraften F = p · A = 18 N/mm² · 5027 mm² ≈ 90,5 kN (se <a href="#hydraulikk">Hydraulikk</a>). Sylinderen er festet med ledd i begge ender (tilfelle 2), og ved fullt utslag er knekklengden omtrent 1000 mm. Regnes hele lengden som stempelstang (på den sikre siden):</p>
 <div class="me12b-fx">
-  <div><b>I = π · 36⁴ / 64 ≈ 82 450 mm⁴</b><span>i = d / 4 = 9 mm, λ = 1000 / 9 ≈ 111 (Euler gjelder)</span></div>
-  <div><b>F<sub>k</sub> = π² · 210 000 · 82 450 / 1000² ≈ 171 kN</b><span>sikkerhet n = 171 / 90,5 ≈ 1,9</span></div>
+  <div><b>I = <span class="br"><span><i class="br-h">(</i>π · 36⁴<i class="br-h">)</i></span><i class="br-h">/</i><span>64</span></span> ≈ 82 450 mm⁴</b><span>i = d / 4 = 9 mm, λ = 1000 / 9 ≈ 111 (Euler gjelder)</span></div>
+  <div><b>F<sub>k</sub> = <span class="br"><span><i class="br-h">(</i>π² · 210 000 · 82 450<i class="br-h">)</i></span><i class="br-h">/</i><span>1000²</span></span> ≈ 171 kN</b><span>sikkerhet n = 171 / 90,5 ≈ 1,9</span></div>
   <div><b>Ikke godt nok</b><span>Produsenter regner ofte med n = 3,5. Kortere slag, tykkere stang eller fast innfesting i bunnen trengs.</span></div>
 </div>
 <p class="small muted">Sylinderprodusenter (for eksempel Bosch Rexroth) oppgir tillatt slaglengde for hver stangdiameter og innfesting med sikkerhetsfaktor 3,5 mot knekk. Bruk produsentens diagram når det finnes.</p>
@@ -7651,11 +7659,11 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Styrke</h4><b>σ<sub>maks</sub> = M<sub>maks</sub> / W</b></div>
+    <div><h4>Styrke</h4><b>σ<sub>maks</sub> = <span class="br"><span>M<sub>maks</sub></span><i class="br-h">/</i><span>W</span></span></b></div>
     <div><h4>Stivhet</h4><b>f<sub>maks</sub> ≤ L / 300</b><span>vanlig krav for bjelker, veiledende</span></div>
-    <div><h4>Fritt opplagt, punktlast midt på</h4><b>M = F · L / 4</b><b>f = F · L³ / (48 · E · I)</b></div>
-    <div><h4>Fritt opplagt, jevn last</h4><b>M = q · L² / 8</b><b>f = 5 · q · L⁴ / (384 · E · I)</b></div>
-    <div><h4>Utkrager, punktlast i enden</h4><b>M = F · L</b><b>f = F · L³ / (3 · E · I)</b></div>
+    <div><h4>Fritt opplagt, punktlast midt på</h4><b>M = <span class="br"><span><i class="br-h">(</i>F · L<i class="br-h">)</i></span><i class="br-h">/</i><span>4</span></span></b><b>f = <span class="br"><span><i class="br-h">(</i>F · L³<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>48 · E · I<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Fritt opplagt, jevn last</h4><b>M = <span class="br"><span><i class="br-h">(</i>q · L²<i class="br-h">)</i></span><i class="br-h">/</i><span>8</span></span></b><b>f = <span class="br"><span><i class="br-h">(</i>5 · q · L⁴<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>384 · E · I<i class="br-h">)</i></span></span></b></div>
+    <div><h4>Utkrager, punktlast i enden</h4><b>M = F · L</b><b>f = <span class="br"><span><i class="br-h">(</i>F · L³<i class="br-h">)</i></span><i class="br-h">/</i><span><i class="br-h">(</i>3 · E · I<i class="br-h">)</i></span></span></b></div>
   </div>
   <div class="hurtig-u">F punktlast (N) · q jevn last (N/mm) · L spenn (mm) · E (MPa) · I (mm⁴) · W (mm³)</div>
 </div>
@@ -7685,7 +7693,7 @@ td.me12b-f{font-family:var(--mono);text-align:left;white-space:normal;min-width:
 <summary>Les mer: forklaring og figurer</summary>
 <p class="lead">En drager (bjelke) må være sterk nok, så bøyespenningen holder seg under tillatt verdi, og stiv nok, så den ikke synker mer enn tillatt. Ofte er det stivheten som bestemmer, særlig for lange spenn, fordi nedbøyningen øker med lengden i tredje eller fjerde potens.</p>
 <div class="me12b-fx">
-  <div><b>σ<sub>maks</sub> = M<sub>maks</sub> / W</b><span>største bøyespenning, MPa</span></div>
+  <div><b>σ<sub>maks</sub> = <span class="br"><span>M<sub>maks</sub></span><i class="br-h">/</i><span>W</span></span></b><span>største bøyespenning, MPa</span></div>
   <div><b>f<sub>maks</sub> ≤ L / 300</b><span>vanlig krav til nedbøyning for bjelker (veiledende)</span></div>
 </div>
 <h3>Bjelkekalkulator</h3>
