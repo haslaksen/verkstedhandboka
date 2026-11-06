@@ -1524,7 +1524,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Tabellene for v<sub>c</sub> ved boring, fresing og dreiing, boremating og tannmating ved fresing står nedenfor.</p>
 <h3>Skjærehastighet v<sub>c</sub> (m/min, veiledende)</h3>
 <div class="tbl" id="vc-table"></div>
-<p class="small muted">Start midt i området og juster etter spon, lyd og slitasje. Belagte hardmetallskjær tåler de høyeste verdiene. Følg verktøyleverandørens data når de finnes.</p>
+<p class="small muted">Start midt i området og juster etter spon, lyd og slitasje. Belagte hardmetallskjær tåler de høyeste verdiene. Dreiing HSS gjelder dreiestål i hurtigstål (HSS), for eksempel slipt stål i manuell dreiebenk. Følg verktøyleverandørens data når de finnes.</p>
 <div class="two">
     <div><h3>Mating ved boring (HSS, mm/omdr)</h3><div class="tbl" id="drill-feed"></div></div>
     <div><h3>Tannmating f<sub>z</sub> ved fresing (hardmetall, mm)</h3><div class="tbl" id="mill-feed"></div></div>
@@ -8071,22 +8071,22 @@ const RAUSE={N1:"Måleflater, endemål",N2:"Lepping, superfinish",N3:"Honing, fi
 
 /* ---------- kapittel 7: skjæredata ---------- */
 const OPS=[["hssDrill","Boring — HSS-bor"],["hmDrill","Boring — hardmetallbor"],["hssMill","Fresing — HSS-fres"],["hmMill","Fresing — hardmetallfres"],["hmTurn","Dreiing — hardmetallskjær"]];
-const CUT=[ // navn, [hssDrill],[hmDrill],[hssMill],[hmMill],[hmTurn], fz HM fres
-["Ulegert stål (S235, S355)",[20,30],[80,120],[25,35],[150,250],[180,280],[.08,.15]],
-["Seigherdingsstål (C45, 42CrMo4)",[12,20],[60,100],[15,25],[120,200],[140,220],[.06,.12]],
-["Rustfritt (1.4301, 1.4404)",[8,15],[40,70],[10,18],[80,150],[120,200],[.05,.10]],
-["Slitestål 400 HBW",null,[30,50],null,[50,90],[60,110],[.04,.08]],
-["Støpejern (GJL)",[15,25],[70,120],[18,28],[120,220],[150,250],[.10,.20]],
-["Aluminium",[60,120],[150,300],[100,250],[300,1000],[300,1000],[.08,.20]],
-["Messing",[40,80],[120,250],[50,100],[200,400],[200,400],[.06,.15]],
-["Plast (POM, PA)",[30,60],[80,200],[50,150],[150,500],[150,500],[.10,.25]]];
+const CUT=[ // navn, [hssDrill],[hmDrill],[hssMill],[hmMill],[hmTurn], fz HM fres, [hssTurn]
+["Ulegert stål (S235, S355)",[20,30],[80,120],[25,35],[150,250],[180,280],[.08,.15],[25,40]],
+["Seigherdingsstål (C45, 42CrMo4)",[12,20],[60,100],[15,25],[120,200],[140,220],[.06,.12],[15,25]],
+["Rustfritt (1.4301, 1.4404)",[8,15],[40,70],[10,18],[80,150],[120,200],[.05,.10],[10,20]],
+["Slitestål 400 HBW",null,[30,50],null,[50,90],[60,110],[.04,.08],null],
+["Støpejern (GJL)",[15,25],[70,120],[18,28],[120,220],[150,250],[.10,.20],[15,25]],
+["Aluminium",[60,120],[150,300],[100,250],[300,1000],[300,1000],[.08,.20],[100,250]],
+["Messing",[40,80],[120,250],[50,100],[200,400],[200,400],[.06,.15],[50,100]],
+["Plast (POM, PA)",[30,60],[80,200],[50,150],[150,500],[150,500],[.10,.25],[50,150]]];
 const DRILL=[[3,.05,.08],[5,.08,.12],[8,.12,.16],[10,.15,.20],[14,.18,.25],[20,.25,.32],[30,.30,.40]];
 const cMat=$("#c-mat"),cOp=$("#c-op");
 CUT.forEach((c,i)=>cMat.add(new Option(c[0],i)));OPS.forEach((o,i)=>cOp.add(new Option(o[1],i)));cOp.value=3;
 const rng=r=>r?`${r[0]}–${r[1]}`:"–";
 (function(){
-  let h=`<table><thead><tr><th>Materiale</th>${["Bor HSS","Bor HM","Fres HSS","Fres HM","Dreiing HM"].map(o=>`<th>${o}</th>`).join("")}</tr></thead><tbody>`;
-  CUT.forEach(c=>h+=`<tr><td>${c[0]}</td>${[1,2,3,4,5].map(k=>`<td>${rng(c[k])}</td>`).join("")}</tr>`);
+  let h=`<table><thead><tr><th>Materiale</th>${["Bor HSS","Bor HM","Fres HSS","Fres HM","Dreiing HSS","Dreiing HM"].map(o=>`<th>${o}</th>`).join("")}</tr></thead><tbody>`;
+  CUT.forEach(c=>h+=`<tr><td>${c[0]}</td>${[1,2,3,4,7,5].map(k=>`<td>${rng(c[k])}</td>`).join("")}</tr>`);
   $("#vc-table").innerHTML=h+"</tbody></table>";
   let d=`<table><thead><tr><th>Bor-Ø (mm)</th><th>Stål</th><th>Rustfritt</th><th>Aluminium</th></tr></thead><tbody>`;
   DRILL.forEach(r=>d+=`<tr><td>${r[0]}</td><td>${f1(r[1])}–${f1(r[2])}</td><td>${fmt(r[1]*.7,2)}–${fmt(r[2]*.7,2)}</td><td>${fmt(r[1]*1.5,2)}–${fmt(r[2]*1.5,2)}</td></tr>`);
