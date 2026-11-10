@@ -2421,7 +2421,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <!-- EMNE 5 -->
 <section id="maskinelement" data-chap hidden>
   <div class="chap-head"><span class="no">5</span><h2><small>Emne 5</small>Maskinelement</h2></div>
-  <p class="lead">Skruer, muttere og sikring, kiler og pinner, reimer, tannhjul og verktøykoner.</p>
+  <p class="lead">Skruer, muttere og sikring, kiler og pinner, reimer, tannhjul, verktøykoner, lagre, koblinger, tetninger og kjeder.</p>
   <nav class="innhold" aria-label="Innhold i emne 5"><div class="lbl">Innhold</div><ol>
     <li><a href="#e5-skruer"><span class="tn">5.1</span><span class="tt">Skruer og muttere</span></a></li>
     <li><a href="#e5-moment"><span class="tn">5.2</span><span class="tt">Tiltrekkingsmoment</span></a></li>
@@ -2433,6 +2433,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     <li><a href="#e5-lim"><span class="tn">5.8</span><span class="tt">Lim</span></a></li>
     <li><a href="#e5-tannhjul"><span class="tn">5.9</span><span class="tt">Tannhjulsberegninger</span></a></li>
     <li><a href="#e5-koner"><span class="tn">5.10</span><span class="tt">Verktøykoner</span></a></li>
+    <li><a href="#e5-lager"><span class="tn">5.11</span><span class="tt">Rullelager</span></a></li>
+    <li><a href="#e5-koblinger"><span class="tn">5.12</span><span class="tt">Akselkoblinger og oppretting</span></a></li>
+    <li><a href="#e5-tetninger"><span class="tn">5.13</span><span class="tt">Tetninger</span></a></li>
+    <li><a href="#e5-kjede"><span class="tn">5.14</span><span class="tt">Rullekjeder</span></a></li>
   </ol></nav>
 <div class="topic" id="e5-skruer">
 <div class="topic-h"><span class="tno">5.1</span><h3>Skruer og muttere</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
@@ -2975,6 +2979,280 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><dt>Capto (ISO 26623)</dt><dd style="font-family:var(--body);font-size:14px">Konisk polygon (avrundet trekant) med plananlegg. Polygonen tar momentet uten klosser. Størrelser C3–C10 etter flensdiameter (C6 = 63 mm). Mye brukt i dreiesentre.</dd></div>
   <div><dt>KM (ISO 26622)</dt><dd style="font-family:var(--body);font-size:14px">Hul konus 1:10 med plananlegg, låst med kuler. Brukes mest for hurtigskift av dreieverktøy.</dd></div>
 </dl>
+</div>
+<div class="topic" id="e5-lager">
+<div class="topic-h"><span class="tno">5.11</span><h3>Rullelager</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<style>
+.e5c-list{margin:0 0 12px;padding-left:22px;max-width:78ch}
+.e5c-list li{margin:3px 0}
+.e5c-code{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.e5c-code div{border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--sheet);text-align:center;min-width:88px}
+.e5c-code div b{display:block;font-family:var(--mono);font-size:22px;color:var(--head)}
+.e5c-code div span{font-size:12px;color:var(--ink-2)}
+</style>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Boring fra lagerkoden</h4><b>04 og over: d = tallet × 5</b><span>00 = 10 mm · 01 = 12 · 02 = 15 · 03 = 17 · 05 = 25 mm</span></div>
+    <div><h4>6205-2RS</h4><span>6 sporkulelager · 2 lett serie · 05 → d = 25 mm · 2RS gummitetning begge sider (D = 52, B = 15)</span></div>
+    <div><h4>Tillegg</h4><span>Z / 2Z metallskjerm · RS / 2RS gummitetning · C3 større klaring · K konisk boring · N spor for låsering</span></div>
+    <div><h4>Montering</h4><span>Trykk på ringen med fast pasning, aldri gjennom kulene. Varm opp til høyst 120 °C, aldri åpen flamme</span></div>
+  </div>
+</div>
+<h3>Lagerkoden</h3>
+<div class="e5c-code" aria-label="Lagerkoden 6205-2RS C3 delt opp">
+  <div><b>6</b><span>type<br>sporkulelager</span></div>
+  <div><b>2</b><span>serie<br>lett</span></div>
+  <div><b>05</b><span>boring<br>05 × 5 = 25 mm</span></div>
+  <div><b>-2RS</b><span>tetning<br>begge sider</span></div>
+  <div><b>C3</b><span>klaring<br>større enn normal</span></div>
+</div>
+<h3>Lagertyper</h3>
+<div class="tbl"><table>
+<thead><tr><th>Første tegn</th><th style="text-align:left">Type</th><th style="text-align:left">Tar</th><th style="text-align:left">Brukes i</th></tr></thead>
+<tbody>
+<tr><td>6</td><td class="txt">Sporkulelager</td><td class="txt">Radialkraft og litt aksialkraft begge veier</td><td class="txt">Elektromotorer, vifter, pumper. Det vanligste lageret</td></tr>
+<tr><td>7</td><td class="txt">Vinkelkontaktkulelager</td><td class="txt">Radialkraft og stor aksialkraft én vei. Monteres parvis</td><td class="txt">Spindler, pumper</td></tr>
+<tr><td>1</td><td class="txt">Sjølvinnstillende kulelager (to kulerader)</td><td class="txt">Radialkraft, tåler at akselen bøyer seg litt</td><td class="txt">Lange aksler, landbruksmaskiner</td></tr>
+<tr><td>2 (22…)</td><td class="txt">Sfærisk rullelager</td><td class="txt">Stor radialkraft, sjølvinnstillende</td><td class="txt">Transportbånd, knusere, vifter med stor last</td></tr>
+<tr><td>3 (30…, 32…)</td><td class="txt">Konisk rullelager</td><td class="txt">Stor radialkraft og aksialkraft én vei. Monteres parvis, klaringen justeres</td><td class="txt">Hjulnav, girkasser, dreiebenkspindler</td></tr>
+<tr><td>N, NU, NJ</td><td class="txt">Sylindrisk rullelager</td><td class="txt">Stor radialkraft, nesten ingen aksialkraft (NU: ingen)</td><td class="txt">Girkasser, store elektromotorer</td></tr>
+<tr><td>NA, HK</td><td class="txt">Nålelager</td><td class="txt">Radialkraft der det er lite plass</td><td class="txt">Vippearmer, kardangkryss, girkasser</td></tr>
+<tr><td>5 (51…)</td><td class="txt">Aksialkulelager</td><td class="txt">Bare aksialkraft</td><td class="txt">Pinoldokker, kranhjul, dreieskiver</td></tr>
+</tbody></table></div>
+<h3>Mål for sporkulelager (mm)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Boring</th><th>d</th><th>60.. D × B</th><th>62.. D × B</th><th>63.. D × B</th></tr></thead>
+<tbody>
+<tr><td>00</td><td>10</td><td>26 × 8</td><td>30 × 9</td><td>35 × 11</td></tr>
+<tr><td>01</td><td>12</td><td>28 × 8</td><td>32 × 10</td><td>37 × 12</td></tr>
+<tr><td>02</td><td>15</td><td>32 × 9</td><td>35 × 11</td><td>42 × 13</td></tr>
+<tr><td>03</td><td>17</td><td>35 × 10</td><td>40 × 12</td><td>47 × 14</td></tr>
+<tr><td>04</td><td>20</td><td>42 × 12</td><td>47 × 14</td><td>52 × 15</td></tr>
+<tr><td>05</td><td>25</td><td>47 × 12</td><td>52 × 15</td><td>62 × 17</td></tr>
+<tr><td>06</td><td>30</td><td>55 × 13</td><td>62 × 16</td><td>72 × 19</td></tr>
+<tr><td>07</td><td>35</td><td>62 × 14</td><td>72 × 17</td><td>80 × 21</td></tr>
+<tr><td>08</td><td>40</td><td>68 × 15</td><td>80 × 18</td><td>90 × 23</td></tr>
+<tr><td>09</td><td>45</td><td>75 × 16</td><td>85 × 19</td><td>100 × 25</td></tr>
+<tr><td>10</td><td>50</td><td>80 × 16</td><td>90 × 20</td><td>110 × 27</td></tr>
+</tbody></table></div>
+<p class="small muted">d = boring (indre diameter), D = ytre diameter, B = bredde. Mål etter ISO 15 (dimensjonsserie 10, 02 og 03). Samme boring og serie gir samme mål hos alle produsenter, men tilleggsbokstavene kan være litt ulike: SKF skriver 2RS1, FAG 2RSR, NSK DDU.</p>
+<h3>Pasning</h3>
+<div class="tbl"><table>
+<thead><tr><th>Ringen som roterer i forhold til lasten</th><th style="text-align:left">Pasning</th><th style="text-align:left">Typisk</th></tr></thead>
+<tbody>
+<tr><td class="txt">Indre ring (aksel roterer, f.eks. elektromotor)</td><td class="txt">Fast på akselen, løs i huset</td><td class="txt">Aksel k5 eller k6 (lett last j6), hus H7</td></tr>
+<tr><td class="txt">Ytre ring (huset roterer, f.eks. hjulnav, trinse på fast aksel)</td><td class="txt">Fast i huset, løs på akselen</td><td class="txt">Hus N7 eller P7, aksel g6 eller h6</td></tr>
+</tbody></table></div>
+<p class="small muted">Veiledende for sporkulelager med normal last. Produsentens katalog gjelder. Toleransene står i 2.2–2.4.</p>
+<h3>Lagerskader</h3>
+<div class="tbl"><table>
+<thead><tr><th>Skade</th><th style="text-align:left">Slik ser den ut</th><th style="text-align:left">Vanlig årsak</th></tr></thead>
+<tbody>
+<tr><td>Utmatting (avskalling)</td><td class="txt">Flak har løsnet fra kulebanen, grop med ru bunn</td><td class="txt">Normal slitasje etter lang tid, eller for stor last</td></tr>
+<tr><td>Slitasje</td><td class="txt">Matt, grå bane, lageret har fått slark</td><td class="txt">Skitt eller vann har kommet inn, for lite smøring</td></tr>
+<tr><td>Rust</td><td class="txt">Brune flekker, ofte med samme avstand som kulene</td><td class="txt">Fukt, kondens, vask med høytrykk</td></tr>
+<tr><td>Passningsrust</td><td class="txt">Brun-svarte flekker på ytre eller indre ringflate</td><td class="txt">For løs pasning, ringen har gnidd mot akselen eller huset</td></tr>
+<tr><td>Inntrykk i banen</td><td class="txt">Små groper med samme avstand som kulene</td><td class="txt">Slag ved montering, eller kraft gjennom kulene</td></tr>
+<tr><td>Strømgjennomgang</td><td class="txt">Riflet bane som et vaskebrett, grå og matt</td><td class="txt">Strøm gjennom lageret: sveising med jord på feil side, frekvensomformer</td></tr>
+<tr><td>Varmgang</td><td class="txt">Blå eller brun misfarging, fettet er svart og hardt</td><td class="txt">Overfylt med fett, for liten klaring, for stram pasning</td></tr>
+</tbody></table></div>
+<p class="small muted">Inndeling etter ISO 15243. Tegn på at et lager er i ferd med å gå: ny lyd (dur, knirk eller klikk), varme (over ca. 80 °C på lagerhuset), vibrasjon og slark.</p>
+<h3>Montering og demontering</h3>
+<ul class="e5c-list">
+  <li><b>Rent:</b> la lageret ligge i pakken til det skal monteres. Ikke vask nye lagre, de er smurt eller konservert fra fabrikken.</li>
+  <li><b>Kraften på riktig ring:</b> ringen med fast pasning skal ha kraften. Bruk monteringshylse som ligger an mot hele ringflaten. Kraft gjennom kulene gir inntrykk i banen.</li>
+  <li><b>Oppvarming:</b> induksjonsvarmer eller varmeskap. Høyst 120 °C (lukkede lagre 80 °C). Aldri åpen flamme.</li>
+  <li><b>Demontering:</b> avtrekker med klørne mot ringen som sitter fast. Et lager som er trukket av gjennom kulene, skal kastes.</li>
+  <li><b>Etterpå:</b> drei rundt for hånd. Lageret skal gå lett og jevnt uten lyd.</li>
+</ul>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">Et rullelager har en indre ring, en ytre ring, rullelegemer (kuler eller ruller) og en bur som holder rullelegemene fra hverandre. Rullelegemene ruller i stedet for å gli, og friksjonen blir mye mindre enn i et glidelager.</p>
+<figure class="fig">
+  <svg viewBox="0 0 520 240" style="max-width:640px" role="img" aria-label="Sporkulelager sett forfra og i snitt">
+    <g transform="translate(120 120)">
+      <circle r="100" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <circle r="78" fill="var(--sheet)" stroke="var(--ink)" stroke-width="1.5"/>
+      <circle r="56" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <circle r="38" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2"/>
+      <circle r="67" fill="none" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="3 3"/>
+      <g fill="var(--zone-soft)" stroke="var(--ink)" stroke-width="1.5">
+        <circle cx="67" cy="0" r="10"/><circle cx="47.4" cy="47.4" r="10"/><circle cx="0" cy="67" r="10"/><circle cx="-47.4" cy="47.4" r="10"/>
+        <circle cx="-67" cy="0" r="10"/><circle cx="-47.4" cy="-47.4" r="10"/><circle cx="0" cy="-67" r="10"/><circle cx="47.4" cy="-47.4" r="10"/>
+      </g>
+    </g>
+    <g font-size="12" fill="var(--ink-2)">
+      <line x1="215" y1="40" x2="250" y2="40" stroke="var(--ink-2)"/><text x="254" y="44">ytre ring</text>
+      <line x1="178" y1="75" x2="250" y2="70" stroke="var(--ink-2)"/><text x="254" y="74">kule</text>
+      <line x1="160" y1="110" x2="250" y2="100" stroke="var(--ink-2)"/><text x="254" y="104">indre ring</text>
+      <line x1="150" y1="135" x2="250" y2="130" stroke="var(--ink-2)"/><text x="254" y="134">boring d</text>
+    </g>
+    <g transform="translate(410 120)">
+      <rect x="-30" y="-100" width="60" height="22" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="-30" y="-56" width="60" height="18" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <circle cy="-67" r="10" fill="var(--zone-soft)" stroke="var(--ink)" stroke-width="1.5"/>
+      <rect x="-30" y="78" width="60" height="22" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <rect x="-30" y="38" width="60" height="18" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+      <circle cy="67" r="10" fill="var(--zone-soft)" stroke="var(--ink)" stroke-width="1.5"/>
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="var(--ink-2)" stroke-dasharray="10 4 2 4"/>
+      <line x1="-30" y1="-112" x2="30" y2="-112" stroke="var(--ink-2)"/><text y="-116" font-size="12" text-anchor="middle" fill="var(--ink-2)">B</text>
+      <line x1="44" y1="-38" x2="44" y2="38" stroke="var(--ink-2)"/><text x="48" y="4" font-size="12" fill="var(--ink-2)">d</text>
+      <line x1="-44" y1="-100" x2="-44" y2="100" stroke="var(--ink-2)"/><text x="-58" y="4" font-size="12" fill="var(--ink-2)">D</text>
+    </g>
+  </svg>
+  <figcaption>Til venstre: sporkulelager sett forfra (buret er ikke tegnet). Til høyre: snitt med målene d, D og B.</figcaption>
+</figure>
+<p><b>Kulelager eller rullelager?</b> En kule ligger an mot banen i et punkt, en rulle langs en linje. Ruller tåler derfor mer last, men kulelagre tåler høyere turtall og går stillere.</p>
+<p><b>Klaring:</b> et nytt lager har litt luft mellom kulene og banene. Fast pasning og varme fra driften gjør klaringen mindre. C3 betyr større klaring enn normal, og brukes i elektromotorer og der lageret blir varmt.</p>
+<p><b>Skjerm eller tetning:</b> Z er en metallskjerm uten berøring, den holder grov skitt ute og fettet inne. RS er en gummitetning som ligger an mot den indre ringen. Den tetter bedre mot vann og støv, men gir litt mer friksjon. Lukkede lagre (2Z, 2RS) er fylt med fett for hele levetiden og skal ikke smøres.</p>
+<p><b>Glidelager:</b> en bøssing av bronse, plast eller sintret metall med olje i porene. Akselen glir på en oljefilm. Billig og stille, tåler slag, men har mer friksjon ved oppstart. Brukes i hengsler, ledd, enkle pumper og der det er lite plass.</p>
+</details>
+</div>
+
+<div class="topic" id="e5-koblinger">
+<div class="topic-h"><span class="tno">5.12</span><h3>Akselkoblinger og oppretting</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>To feil å rette</h4><span>Parallellforskyvning: akslene ligger ved siden av hverandre · Vinkelfeil: akslene peker ikke samme vei</span></div>
+    <div><h4>Rekkefølge</h4><span>Lås og merk · bløt fot · vertikalt (shims) · horisontalt · trekk til · mål igjen</span></div>
+    <div><h4>Bløt fot</h4><span>Løsne én fot om gangen. Måleuret skal ikke vise mer enn 0,05 mm</span></div>
+    <div><h4>Elastisk kobling</h4><span>Tar opp små feil og demper slag, men retter ikke dårlig oppretting</span></div>
+  </div>
+</div>
+<h3>Koblingstyper</h3>
+<div class="tbl"><table>
+<thead><tr><th>Kobling</th><th style="text-align:left">Slik virker den</th><th style="text-align:left">Tåler feil</th><th style="text-align:left">Brukes i</th></tr></thead>
+<tbody>
+<tr><td>Stiv flenskobling</td><td class="txt">To flenser skrus sammen</td><td class="txt">Nei. Akslene må ligge helt på linje</td><td class="txt">Lange aksler, valser</td></tr>
+<tr><td>Klokobling</td><td class="txt">To klør med en gummistjerne (element) mellom</td><td class="txt">Litt, demper slag</td><td class="txt">Motor til pumpe og girkasse. Mye brukt</td></tr>
+<tr><td>Dekkobling</td><td class="txt">Et gummidekk mellom to nav</td><td class="txt">Mye, demper slag godt</td><td class="txt">Knusere, transportbånd</td></tr>
+<tr><td>Tannkobling</td><td class="txt">Utvendige tenner i en hylse med innvendige tenner</td><td class="txt">Litt. Må smøres</td><td class="txt">Stort moment: valseverk, kompressorer</td></tr>
+<tr><td>Kardang (universalledd)</td><td class="txt">Kryss med nålelager mellom to gafler</td><td class="txt">Store vinkler</td><td class="txt">Drivaksler, kraftuttak på traktor</td></tr>
+<tr><td>Sikkerhetskobling</td><td class="txt">Glir eller løser ut ved for stort moment (friksjonsskiver, bryterpinne)</td><td class="txt">Beskytter mot overlast</td><td class="txt">Transportbånd, maskiner som kan sette seg fast</td></tr>
+</tbody></table></div>
+<h3>Veiledende toleranser for oppretting</h3>
+<div class="tbl"><table>
+<thead><tr><th>Turtall (o/min)</th><th>Parallellforskyvning (mm)</th><th>Vinkelfeil (mm per 100 mm)</th></tr></thead>
+<tbody>
+<tr><td>under 1000</td><td>0,13</td><td>0,10</td></tr>
+<tr><td>1000–2000</td><td>0,10</td><td>0,08</td></tr>
+<tr><td>2000–3000</td><td>0,07</td><td>0,07</td></tr>
+<tr><td>3000–4000</td><td>0,05</td><td>0,06</td></tr>
+</tbody></table></div>
+<p class="small muted">Akseptabel største feil for korte, elastiske koblinger. Halvparten av verdiene regnes som svært god oppretting. Koblingsprodusentens toleranse gjelder alltid. Jo høyere turtall, jo strengere krav.</p>
+<h3>Metoder</h3>
+<div class="tbl"><table>
+<thead><tr><th>Metode</th><th style="text-align:left">Slik</th><th style="text-align:left">Nøyaktighet</th></tr></thead>
+<tbody>
+<tr><td>Linjal og følelære</td><td class="txt">Linjal over begge navene (forskyvning), følelære mellom navene oppe, nede og på sidene (vinkel)</td><td class="txt">Ca. 0,05–0,1 mm. Bra for lavt turtall</td></tr>
+<tr><td>Måleur</td><td class="txt">Måleuret festes på den ene akselen og leser av den andre mens begge dreies</td><td class="txt">Ca. 0,01 mm</td></tr>
+<tr><td>Laser</td><td class="txt">To måleenheter på akslene, skjermen viser feil og hvor mye shims som trengs</td><td class="txt">Ca. 0,001 mm. Raskest</td></tr>
+</tbody></table></div>
+<details class="lesmer">
+<summary>Les mer: forklaring</summary>
+<p class="lead">Når motor og pumpe ikke står på linje, bøyes akslene litt for hver omdreining. Det gir vibrasjon, varme lagre, slitte koblingselementer og lekkasje i akseltetningene. Dårlig oppretting er en av de vanligste årsakene til lagerskader i pumper.</p>
+<p><b>Bløt fot:</b> en fot står ikke plant, så maskinhuset vris når boltene trekkes til. Sjekk med måleur på foten mens du løsner bolten. Rett med shims under den foten før du begynner å rette opp.</p>
+<p><b>Shims:</b> tynne plater av rustfritt stål med spor, som legges under føttene. Bruk få, tykke shims heller enn mange tynne. Det er nesten alltid motoren som flyttes, ikke pumpa, fordi rørene sitter på pumpa.</p>
+<p><b>Varm maskin:</b> noen maskiner vokser i høyden når de blir varme. Da rettes de opp med et bestemt avvik når de er kalde, etter produsentens tall.</p>
+</details>
+</div>
+
+<div class="topic" id="e5-tetninger">
+<div class="topic-h"><span class="tno">5.13</span><h3>Tetninger</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>O-ring</h4><span>Betegnes indre diameter × snortykkelse: 20 × 2,5 · NBR til mineralolje · FKM til varme · EPDM til vann, ikke olje</span></div>
+    <div><h4>Simmerring</h4><span>Betegnes d × D × b: 25 × 40 × 7 · Leppa og fjæra vender mot væsken som skal holdes inne</span></div>
+    <div><h4>Statisk eller dynamisk</h4><span>Statisk: delene står stille mot hverandre (pakning, O-ring i lokk) · Dynamisk: akselen roterer eller glir</span></div>
+    <div><h4>Montering</h4><span>Smør tetningen · dekk over gjenger og kilespor · ikke over skarpe kanter · ny tetning hver gang</span></div>
+  </div>
+</div>
+<h3>Tetningstyper</h3>
+<div class="tbl"><table>
+<thead><tr><th>Tetning</th><th style="text-align:left">Type</th><th style="text-align:left">Brukes i</th></tr></thead>
+<tbody>
+<tr><td>Flat pakning</td><td class="txt">Statisk. Papir, fiber, gummi, kobber eller stål</td><td class="txt">Lokk, flenser, tappeplugger (kobberskive)</td></tr>
+<tr><td>Flytende pakning</td><td class="txt">Statisk. Pakningsmasse (silikon eller anaerob) i et tynt lag</td><td class="txt">Girkasselokk, motordeksler</td></tr>
+<tr><td>O-ring</td><td class="txt">Statisk og dynamisk. Gummiring i et spor</td><td class="txt">Hydraulikk, pneumatikk, ventiler, rørkoblinger</td></tr>
+<tr><td>Radial akseltetning (simmerring)</td><td class="txt">Dynamisk, roterende aksel. Gummileppe holdes mot akselen av en fjær</td><td class="txt">Girkasser, pumper, elektromotorer</td></tr>
+<tr><td>V-ring</td><td class="txt">Dynamisk. Sitter på akselen og ligger an mot en flate</td><td class="txt">Utenfor simmerring mot skitt og vann</td></tr>
+<tr><td>Stempel- og stangpakning</td><td class="txt">Dynamisk, fram og tilbake. Avstryker ytterst</td><td class="txt">Hydraulikk- og pneumatikksylindre</td></tr>
+<tr><td>Mekanisk tetning (glideringstetning)</td><td class="txt">Dynamisk. To hardt polerte ringer glir mot hverandre</td><td class="txt">Pumper for vann og kjemikalier</td></tr>
+</tbody></table></div>
+<h3>Gummimaterialer</h3>
+<div class="tbl"><table>
+<thead><tr><th>Materiale</th><th>Temperatur (°C)</th><th style="text-align:left">Tåler</th><th style="text-align:left">Tåler ikke</th></tr></thead>
+<tbody>
+<tr><td>NBR (nitril)</td><td>−30 til +100</td><td class="txt">Mineralolje, hydraulikkolje, fett, diesel</td><td class="txt">Ozon og vær, bremsevæske, sterke løsemidler</td></tr>
+<tr><td>FKM (Viton)</td><td>−20 til +200</td><td class="txt">Olje ved høy temperatur, drivstoff, mange kjemikalier</td><td class="txt">Varmt vann og damp, bremsevæske</td></tr>
+<tr><td>EPDM</td><td>−40 til +150</td><td class="txt">Vann, damp, glykol, bremsevæske, vær</td><td class="txt">Mineralolje og fett</td></tr>
+<tr><td>VMQ (silikon)</td><td>−60 til +200</td><td class="txt">Varme og kulde, matvarer</td><td class="txt">Slitasje (bare statisk), mange oljer</td></tr>
+<tr><td>PTFE (teflon)</td><td>−200 til +260</td><td class="txt">Nesten alle kjemikalier</td><td class="txt">Er stiv, ikke elastisk som gummi</td></tr>
+</tbody></table></div>
+<p class="small muted">Veiledende verdier. Sjekk alltid produsentens tabell for væsken og temperaturen.</p>
+<details class="lesmer">
+<summary>Les mer: forklaring og figurer</summary>
+<p class="lead">En tetning skal holde væske eller gass inne og skitt ute. De fleste lekkasjer kommer av feil montering, skadet aksel eller gammel, hard gummi.</p>
+<figure class="fig">
+  <svg viewBox="0 0 520 200" style="max-width:620px" role="img" aria-label="Snitt av simmerring mot aksel">
+    <rect x="20" y="140" width="480" height="40" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="2"/>
+    <text x="40" y="166" font-size="13" fill="var(--ink-2)">aksel</text>
+    <rect x="200" y="20" width="110" height="20" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2"/>
+    <path d="M205 40 L205 110 L225 110 L225 40 Z" fill="var(--ink-2)" opacity=".5"/>
+    <path d="M205 40 L305 40 L305 70 L262 120 L250 140 L238 120 L225 110 L225 60 L205 60 Z" fill="var(--zone-soft)" stroke="var(--ink)" stroke-width="2"/>
+    <circle cx="262" cy="108" r="7" fill="none" stroke="var(--ink)" stroke-width="2"/>
+    <rect x="20" y="20" width="180" height="20" fill="var(--sheet)" stroke="var(--line)"/>
+    <path d="M330 60 q20 20 0 40 q20 20 0 40" fill="none" stroke="var(--accent)" stroke-width="3"/>
+    <g font-size="12" fill="var(--ink-2)">
+      <text x="340" y="80">olje (innsiden)</text>
+      <text x="60" y="66">luft og skitt</text>
+      <line x1="269" y1="108" x2="360" y2="120" stroke="var(--ink-2)"/><text x="364" y="124">fjær</text>
+      <line x1="250" y1="138" x2="210" y2="128" stroke="var(--ink-2)"/><text x="140" y="126">tetningsleppe</text>
+      <text x="240" y="34">hus</text>
+      <line x1="210" y1="80" x2="150" y2="100" stroke="var(--ink-2)"/><text x="60" y="104">metallkappe</text>
+    </g>
+  </svg>
+  <figcaption>Simmerring i snitt. Leppa vender mot olja. Fjæra holder leppa mot akselen. Ved montering presses ringen inn med en dor som ligger an mot hele kanten.</figcaption>
+</figure>
+<p><b>Aksel for simmerring:</b> flaten der leppa ligger, skal være hard og glatt (ca. Ra 0,2–0,8 µm), uten riller og uten spiralriper fra dreiing. Har den gamle leppa slitt et spor, flytt den nye litt inn, eller bruk en slitehylse.</p>
+<p><b>O-ring i spor:</b> ringen skal klemmes litt sammen i sporet. Den skal ikke vris eller strekkes mye ved montering. Skarpe kanter og gjenger kutter den: dekk dem med tape eller en monteringshylse, og smør med samme væske som systemet bruker.</p>
+<p><b>Når skal tetningen byttes?</b> Alltid når den har vært tatt ut. En brukt pakning eller O-ring har fått fasong etter sporet og tetter ikke igjen.</p>
+</details>
+</div>
+
+<div class="topic" id="e5-kjede">
+<div class="topic-h"><span class="tno">5.14</span><h3>Rullekjeder</h3><a class="up" href="#maskinelement" aria-label="Til innholdet i emne 5">↑ Innhold</a></div>
+<div class="hurtig" aria-label="Hurtigoppslag">
+  <div class="hurtig-h">Hurtigoppslag</div>
+  <div class="hurtig-g">
+    <div><h4>Betegnelse</h4><span>08B-1: 08 = deling i sekstendels tommer (8/16" = 12,7 mm) · B = europeisk serie · 1 = enkel kjede</span></div>
+    <div><h4>Nedheng</h4><span>Slakk part ca. 2 % av akseavstanden (500 mm → ca. 10 mm)</span></div>
+    <div><h4>Utslitt</h4><span>Kjeden er forlenget mer enn 3 %: bytt kjede, og som regel kjedehjulene også</span></div>
+    <div><h4>Utveksling</h4><span>Som for tannhjul: i = z<sub>2</sub> / z<sub>1</sub> (tenner på kjedehjulene)</span></div>
+  </div>
+</div>
+<h3>Vanlige størrelser (ISO 606, B-serien)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Kjede</th><th>Deling p (mm)</th><th>Tomme</th><th>Indre bredde (mm)</th><th>Rulle-Ø (mm)</th></tr></thead>
+<tbody>
+<tr><td>06B-1</td><td>9,525</td><td>3/8"</td><td>5,72</td><td>6,35</td></tr>
+<tr><td>08B-1</td><td>12,7</td><td>1/2"</td><td>7,75</td><td>8,51</td></tr>
+<tr><td>10B-1</td><td>15,875</td><td>5/8"</td><td>9,65</td><td>10,16</td></tr>
+<tr><td>12B-1</td><td>19,05</td><td>3/4"</td><td>11,68</td><td>12,07</td></tr>
+<tr><td>16B-1</td><td>25,4</td><td>1"</td><td>17,02</td><td>15,88</td></tr>
+</tbody></table></div>
+<p class="small muted">-2 og -3 etter betegnelsen er dobbel og trippel kjede. A-serien (amerikansk, ANSI) har samme deling, men andre bredder og rulle-Ø, og kan ikke blandes med B-serien.</p>
+<h3>Stell</h3>
+<ul class="e5c-list">
+  <li><b>Smør</b> kjeden der leddene bøyer seg, på innsiden av den slakke parten. Kjedeolje eller spray, etter smøreplanen.</li>
+  <li><b>Sjekk nedhenget</b> midt på den slakke parten. Stram med strammer eller ved å flytte motoren.</li>
+  <li><b>Kjedehjulene skal stå på linje.</b> Legg en linjal over begge hjulene. Slitasje på sidene av tennene er tegn på at de ikke gjør det.</li>
+  <li><b>Låseledd:</b> den åpne enden av låsefjæra skal vende motsatt av kjedens gangretning.</li>
+  <li><b>Slitte tenner</b> blir spisse og hekteformede. Da bytter du kjedehjulene sammen med kjeden.</li>
+</ul>
 </div>
 </section>
 
