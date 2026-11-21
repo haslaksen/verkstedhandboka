@@ -328,7 +328,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
       <h1>Verkstedhåndboka</h1>
       <p>Oppslagsbok for verksted og undervisning: 12 emner med tabeller, kalkulatorer og animerte forklaringer</p>
     </div>
-    <div class="stamp">Mål i <b>mm</b> · avmål i <b>µm</b><br>ISO 286 · ISO 2768 · ISO 1101 · ISO 261/228</div>
+    <div class="stamp">Mål i <b>mm</b> · avvik i <b>µm</b><br>ISO 286 · ISO 2768 · ISO 1101 · ISO 261/228</div>
   </header>
 
   <div class="layout">
@@ -623,24 +623,24 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Les toleransen</h4><span>Ø40 H7: grunnmål 40 · H = sonens plassering · 7 = toleransegrad IT7</span></div>
-    <div><h4>Hull og aksel</h4><span>Store bokstaver = hull · små = aksel</span><span>H: nedre avmål 0 · h: øvre avmål 0</span></div>
+    <div><h4>Les toleransen</h4><span>Ø40 H7: nominelt mål 40 · H = sonens plassering · 7 = toleransegrad IT7</span></div>
+    <div><h4>Hull og aksel</h4><span>Store bokstaver = hull · små = aksel</span><span>H: nedre avvik 0 · h: øvre avvik 0</span></div>
     <div><h4>Toleransegrad</h4><span>IT5–IT7 presisjon (sliping, brotsjing) · IT8–IT11 vanlig maskinering · IT12–IT16 grovt</span></div>
-    <div><h4>Mål</h4><b>største mål = grunnmål + øvre avmål</b><b>minste mål = grunnmål + nedre avmål</b></div>
+    <div><h4>Mål</h4><b>største mål = nominelt mål + øvre avvik</b><b>minste mål = nominelt mål + nedre avvik</b></div>
   </div>
 </div>
 <h3>Grunntoleranser IT1–IT16 (µm)</h3>
-<p class="small muted">Kolonnen for grunnmålet over er markert. Intervallene gjelder «over – til og med».</p>
+<p class="small muted">Kolonnen for det nominelle målet over er markert. Intervallene gjelder «over – til og med».</p>
 <div class="tbl" id="it-table"></div>
 <div class="note"><p><b>Tommelfinger for toleransegrader:</b> IT5–IT7 for presisjonspasninger (sliping, fin dreiing, brotsjing), IT8–IT11 for vanlig maskinering, IT12–IT16 for grove mål, støping, smiing og termisk skjæring.</p></div>
 <details class="lesmer">
 <summary>Les mer: forklaring og figurer</summary>
-<p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av grunnmålet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
-<p>Store bokstaver gjelder hull (innvendige mål), små bokstaver gjelder aksler (utvendige mål). <b>H</b> har nedre avmål 0, <b>h</b> har øvre avmål 0. Jo lavere IT-tall, jo strammere toleranse.</p>
+<p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av det nominelle målet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
+<p>Store bokstaver gjelder hull (innvendige mål), små bokstaver gjelder aksler (utvendige mål). <b>H</b> har nedre avvik 0, <b>h</b> har øvre avvik 0. Jo lavere IT-tall, jo strammere toleranse.</p>
 <h3>Bokstaven flytter sonen, tallet bestemmer bredden</h3>
-<p>Alle bokstavene for samme grunnmål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
+<p>Alle bokstavene for samme nominelle mål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
 <figure class="fig">
-    <svg id="fig-ladder" viewBox="0 0 600 270" role="img" aria-label="Toleransesoner for alle avmålsbokstaver"></svg>
+    <svg id="fig-ladder" viewBox="0 0 600 270" role="img" aria-label="Toleransesoner for alle avviksbokstaver"></svg>
     <div class="ctrl"><span id="ladder-read" class="small muted"></span></div>
     
   </figure>
@@ -651,13 +651,13 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <h3>Slå opp toleranseklasse</h3>
   <div class="calc">
     <div class="fields">
-      <div class="field"><label for="t-size">Grunnmål (mm)</label><input id="t-size" inputmode="decimal" value="40"></div>
+      <div class="field"><label for="t-size">Nominelt mål (mm)</label><input id="t-size" inputmode="decimal" value="40"></div>
       <div class="row2">
         <div class="field"><label for="t-type">Element</label>
           <select id="t-type"><option value="hole">Hull</option><option value="shaft">Aksel</option></select></div>
         <div class="field"><label for="t-grade">IT-grad</label><select id="t-grade"></select></div>
       </div>
-      <div class="field"><label for="t-letter">Avmålsbokstav</label><select id="t-letter"></select></div>
+      <div class="field"><label for="t-letter">Avviksbokstav</label><select id="t-letter"></select></div>
       <div class="field"><label for="t-meas">Målt mål (mm), kontroll</label><input id="t-meas" inputmode="decimal" value="40,012"></div>
     </div>
     <div class="out" id="t-out" aria-live="polite"></div>
@@ -684,7 +684,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <h3>Beregn passning</h3>
 <div class="calc">
     <div class="fields">
-      <div class="field"><label for="f-size">Grunnmål (mm)</label><input id="f-size" inputmode="decimal" value="25"></div>
+      <div class="field"><label for="f-size">Nominelt mål (mm)</label><input id="f-size" inputmode="decimal" value="25"></div>
       <div class="row2">
         <div class="field"><label for="f-hl">Hull</label><select id="f-hl"></select></div>
         <div class="field"><label for="f-hg">IT</label><select id="f-hg"></select></div>
@@ -696,12 +696,12 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="f-out" aria-live="polite"></div>
   </div>
-<h3>Avmål for vanlige akseltoleranser (µm)</h3>
-<p class="small muted">Øvre avmål over, nedre under. Etter ISO 286-2. Trykk på en kolonneoverskrift for å markere den.</p>
+<h3>Avvik for vanlige akseltoleranser (µm)</h3>
+<p class="small muted">Øvre avvik over, nedre under. Etter ISO 286-2. Trykk på en kolonneoverskrift for å markere den.</p>
 <div class="tbl" id="t2-shafttab"></div>
 <details class="lesmer">
 <summary>Les mer: forklaring og figurer</summary>
-<p class="lead">En passning beskriver hvordan et hull og en aksel med samme grunnmål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
+<p class="lead">En passning beskriver hvordan et hull og en aksel med samme nominelle mål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
 <p>I verksted er <b>hullbasis</b> vanligst: hullet lages som H (fordi brotsjer og tolkene er standard), og akselen tilpasses for ønsket funksjon.</p>
 <h3>Slik går delene sammen</h3>
 <p>Passningen avgjøres av de to ytterpunktene: største hull med minste aksel gir mest klaring, minste hull med største aksel gir minst klaring eller mest grep. Avvikene er sterkt forstørret i figuren.</p>
@@ -715,10 +715,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="topic" id="t2-boring">
   <div class="topic-h"><span class="tno">2.4</span><h3>ISO-pasninger – boring</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
   <h3>Anbefalte passninger (hullbasis)</h3>
-  <p class="small muted">Trykk på en rad for å regne den ut for grunnmålet over.</p>
+  <p class="small muted">Trykk på en rad for å regne den ut for det nominelle målet over.</p>
   <div class="tbl"><table id="fit-presets"></table></div>
-  <h3>Avmål for vanlige hulltoleranser (µm)</h3>
-  <p class="small muted">Øvre avmål over, nedre under. Etter ISO 286-2.</p>
+  <h3>Avvik for vanlige hulltoleranser (µm)</h3>
+  <p class="small muted">Øvre avvik over, nedre under. Etter ISO 286-2.</p>
   <div class="tbl" id="t2-holetab"></div>
 </div>
 <div class="topic" id="t2-gen">
@@ -810,8 +810,8 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
         <div class="field"><label for="b-pos">Pos.-tol. Ø</label><input id="b-pos" inputmode="decimal" value="0,1"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="b-up">Øvre avmål</label><input id="b-up" inputmode="decimal" value="0,2"></div>
-        <div class="field"><label for="b-lo">Nedre avmål</label><input id="b-lo" inputmode="decimal" value="0"></div>
+        <div class="field"><label for="b-up">Øvre avvik</label><input id="b-up" inputmode="decimal" value="0,2"></div>
+        <div class="field"><label for="b-lo">Nedre avvik</label><input id="b-lo" inputmode="decimal" value="0"></div>
       </div>
       <div class="field"><label for="b-act">Målt hulldiameter</label><input id="b-act" inputmode="decimal" value="10,12"></div>
     </div>
@@ -3301,7 +3301,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="th-ext"></div>
 <h4 style="margin-top:16px">Innvendig gjenge (mutter), toleranseklasse 6H</h4>
 <div class="tbl" id="th-int"></div>
-<p class="small muted">Etter ISO 965-1/-2. 6g: øvre avmål e<sub>s</sub> = −(15 + 11P) µm, så bolten er litt under basismål og gir plass til belegg og smøring. 6H: nedre avmål 0, så mutteren starter på basismål. Lillediameter for bolt og storediameter for mutter har bare én grense i standarden; den andre styres av gjengeprofilen og kontrolleres med tolk. M1–M1,4 har egne toleranseregler og er ikke med.</p>
+<p class="small muted">Etter ISO 965-1/-2. 6g: øvre avvik e<sub>s</sub> = −(15 + 11P) µm, så bolten er litt under basismål og gir plass til belegg og smøring. 6H: nedre avvik 0, så mutteren starter på basismål. Lillediameter for bolt og storediameter for mutter har bare én grense i standarden; den andre styres av gjengeprofilen og kontrolleres med tolk. M1–M1,4 har egne toleranseregler og er ikke med.</p>
 <h4 style="margin-top:16px">Gjennomgangshull og nøkkelvidde</h4>
 <div class="tbl" id="th-hole"></div>
 <p class="small muted">Gjelder storediameteren, uansett stigning. Gjennomgangshull etter ISO 273, nøkkelvidde etter ISO 4032 / 4014. Eldre DIN-mutre har andre nøkkelvidder på M10 (17), M12 (19), M14 (22) og M22 (32).</p>
@@ -3366,7 +3366,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
     </div>
     <div class="out" id="ugk-out" aria-live="polite"></div>
   </div>
-<p class="small muted">Etter ASME B1.1. Midtdiameter-toleransen for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). 1A har 1,5 · T og 3A har 0,75 · T. Mutteren har 1,3 · T (2B), 1,95 · T (1B) og 0,975 · T (3B). 1A og 2A har et avmål på 0,3 · T, så bolten er litt under basismål. 3A og alle B-klasser starter på basismål. Gjengebor gir ca. 75 % gjenge: D − 0,974 · P.</p>
+<p class="small muted">Etter ASME B1.1. Midtdiameter-toleransen for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). 1A har 1,5 · T og 3A har 0,75 · T. Mutteren har 1,3 · T (2B), 1,95 · T (1B) og 0,975 · T (3B). 1A og 2A har et avvik på 0,3 · T, så bolten er litt under basismål. 3A og alle B-klasser starter på basismål. Gjengebor gir ca. 75 % gjenge: D − 0,974 · P.</p>
 <h3 id="tomme">Tommegjenger: UNC, UNF og UN</h3>
 <h4 style="margin-top:16px">UNC — grov</h4>
 <div class="tbl" id="unc"></div>
@@ -3388,7 +3388,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="un-int"></div>
 <h4 style="margin-top:16px">Tiltrekkingsmoment, Xylan-belagt og ubehandlet</h4>
 <div class="tbl" id="tq6-tab"></div>
-<p class="small muted">Gjengemål: toleranse på midtdiameter for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). Staget får et avmål på 0,3 · T, og mutteren får 1,3 · T i toleranse fra basismål. Moment: Xylan er et fluorpolymerbelegg (PTFE-basert), og API 6A regner med friksjonskoeffisient f = 0,07 for belagte stag og f = 0,13 for ubehandlede. Begge gir samme forspenning, lik 50 % av minste flytegrense (105 ksi opp til 2 1/2″, 95 ksi over).</p>
+<p class="small muted">Gjengemål: toleranse på midtdiameter for 2A er T = 0,0015·∛D + 0,0015·√D + 0,015·∛P² (tommer). Staget får et avvik på 0,3 · T, og mutteren får 1,3 · T i toleranse fra basismål. Moment: Xylan er et fluorpolymerbelegg (PTFE-basert), og API 6A regner med friksjonskoeffisient f = 0,07 for belagte stag og f = 0,13 for ubehandlede. Begge gir samme forspenning, lik 50 % av minste flytegrense (105 ksi opp til 2 1/2″, 95 ksi over).</p>
 <div class="note"><p><b>Viktig:</b> Bruk aldri verdien for ubehandlede stag på Xylan-belagte stag. Med samme moment blir forspenningen omtrent 1,7 ganger høyere, og staget kan nærme seg flytegrensen. Følg alltid prosedyren og smøremiddelet som gjelder for jobben, og kontroller mot den utgaven av API 6A dere arbeider etter.</p></div>
 <h3>Tomme ↔ millimeter</h3>
 <div class="calc">
@@ -3610,7 +3610,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <div><span class="small muted">Venstregjenge</span><b class="mono">Tr 40×7 LH</b><span class="small">LH = left hand</span></div>
   <div><span class="small muted">Med toleranse</span><b class="mono">Tr 40×7-7H/7e</b><span class="small">mutter 7H, bolt 7e</span></div>
 </div>
-<p>Toleranser etter ISO 2903 / DIN 103-3 gis på midtdiameteren. <span class="mono">7H/7e</span> er middels klasse og det vanlige for ledeskruer og spindler. <span class="mono">8H/8e</span> er grov klasse for enklere bruk og når gjengen kan bli skitten. Bokstaven e gir et fast avmål på bolten, slik at det alltid er klaring på flankene. Flergjengede skruer flytter seg langt per omdreining og brukes for rask bevegelse, men de er ikke selvlåsende.</p>
+<p>Toleranser etter ISO 2903 / DIN 103-3 gis på midtdiameteren. <span class="mono">7H/7e</span> er middels klasse og det vanlige for ledeskruer og spindler. <span class="mono">8H/8e</span> er grov klasse for enklere bruk og når gjengen kan bli skitten. Bokstaven e gir et fast avvik på bolten, slik at det alltid er klaring på flankene. Flergjengede skruer flytter seg langt per omdreining og brukes for rask bevegelse, men de er ikke selvlåsende.</p>
 <h3>Selvlåsing</h3>
 <p>Brett ut én gjengegang, så får du et skråplan med lengde π · d<sub>2</sub> og høyde P<sub>h</sub>. Stigningsvinkelen er tan φ = P<sub>h</sub> / (π · d<sub>2</sub>). Friksjonsvinkelen for flankene er tan ρ′ = µ / cos 15°. Gjengen er <b>selvlåsende</b> når φ &lt; ρ′: lasten kan da ikke skru seg ned av seg selv. Virkningsgraden ved løfting er η = tan φ / tan(φ + ρ′), og en selvlåsende gjenge har alltid η under 50 %.</p>
 <figure class="fig">
@@ -8023,7 +8023,7 @@ const IT={
 14:[250,300,360,430,520,620,740,870,1000,1150,1300,1400,1550],
 15:[400,480,580,700,840,1000,1200,1400,1600,1850,2100,2300,2500],
 16:[600,750,900,1100,1300,1600,1900,2200,2500,2900,3200,3600,4000]};
-/* aksel: øvre avmål es (c–h) */
+/* aksel: øvre avvik es (c–h) */
 const ES={
 c:[-60,-70,-80,-95,-95,-110,-110,-120,-130,-140,-150,-170,-180,-200,-210,-230,-240,-260,-280,-300,-330,-360,-400,-440,-480],
 d:[-20,-30,-40,-50,-50,-65,-65,-80,-80,-100,-100,-120,-120,-145,-145,-145,-170,-170,-170,-190,-190,-210,-210,-230,-230],
@@ -8031,7 +8031,7 @@ e:[-14,-20,-25,-32,-32,-40,-40,-50,-50,-60,-60,-72,-72,-85,-85,-85,-100,-100,-10
 f:[-6,-10,-13,-16,-16,-20,-20,-25,-25,-30,-30,-36,-36,-43,-43,-43,-50,-50,-50,-56,-56,-62,-62,-68,-68],
 g:[-2,-4,-5,-6,-6,-7,-7,-9,-9,-10,-10,-12,-12,-14,-14,-14,-15,-15,-15,-17,-17,-18,-18,-20,-20],
 h:Array(25).fill(0)};
-/* aksel: nedre avmål ei (k–s) */
+/* aksel: nedre avvik ei (k–s) */
 const EI={
 k:[0,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,4,4,5,5],
 m:[2,4,6,7,7,8,8,9,9,11,11,13,13,15,15,15,17,17,17,20,20,21,21,23,23],
@@ -8106,11 +8106,11 @@ fillLetters();tLetter.value="h";
 function renderTol(){
   const d=num(tSize.value),g=+tGrade.value,l=tLetter.value,type=tType.value,out=$("#t-out");
   renderITTable(d);
-  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et grunnmål mellom 0 og 500 mm.</p>`;return}
+  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et nominelt mål mellom 0 og 500 mm.</p>`;return}
   const r=type==="hole"?hole(l,g,d):shaft(l,g,d);
   const name=`Ø${fmt(d,d%1?2:0)} ${cap(l,type)}${g}`;
-  out.innerHTML=`<div class="callout">${name} <span class="mono" style="font-size:.7em">${sgn(r.up/1000)} / ${sgn(r.lo/1000)}</span><small>${type==="hole"?"Hull":"Aksel"} · grunnmålintervall ${SUB_L[idx(SUB,d)]} mm</small></div>
-  <dl class="kv"><div><dt>Øvre avmål</dt><dd>${um(r.up)} µm</dd></div><div><dt>Nedre avmål</dt><dd>${um(r.lo)} µm</dd></div>
+  out.innerHTML=`<div class="callout">${name} <span class="mono" style="font-size:.7em">${sgn(r.up/1000)} / ${sgn(r.lo/1000)}</span><small>${type==="hole"?"Hull":"Aksel"} · intervall for nominelt mål ${SUB_L[idx(SUB,d)]} mm</small></div>
+  <dl class="kv"><div><dt>Øvre avvik</dt><dd>${um(r.up)} µm</dd></div><div><dt>Nedre avvik</dt><dd>${um(r.lo)} µm</dd></div>
   <div><dt>Største mål</dt><dd>${fmt(d+r.up/1000)}</dd></div><div><dt>Minste mål</dt><dd>${fmt(d+r.lo/1000)}</dd></div>
   <div><dt>Toleranse IT${g}</dt><dd>${String(r.T).replace(".",",")} µm</dd></div></dl>
   <div class="diagram">${bandSVG([{label:cap(l,type)+g,up:r.up,lo:r.lo,kind:type}],d)}</div>`;
@@ -8141,7 +8141,7 @@ const PRESETS=[
 ["H7/s6","h",7,"s",6,"Presspasning","Krymp eller presse. Overfører moment uten kile, f.eks. bøssinger i nav."]];
 function renderFit(){
   const d=num(fS.value),out=$("#f-out");
-  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et grunnmål mellom 0 og 500 mm.</p>`;return}
+  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et nominelt mål mellom 0 og 500 mm.</p>`;return}
   const H=hole(fHL.value,+fHG.value,d),S=shaft(fSL.value,+fSG.value,d);
   const hN=fHL.value.toUpperCase()+fHG.value,sN=fSL.value+fSG.value;
   const cmax=H.up-S.lo,cmin=H.lo-S.up;
@@ -8319,7 +8319,7 @@ function renderThread(){
   if(L){const f3=x=>fmt(x,3);out.innerHTML+=`<div class="two" style="gap:10px">
   <div><h4>Bolt 6g (min – maks)</h4><dl class="kv" style="grid-template-columns:1fr"><div><dt>Storediameter d</dt><dd>${f3(L.ext.dMin)} – ${f3(L.ext.dMax)}</dd></div><div><dt>Midtdiameter d₂</dt><dd>${f3(L.ext.d2Min)} – ${f3(L.ext.d2Max)}</dd></div><div><dt>Lillediameter d₃</dt><dd>maks ${f3(L.ext.d3Max)}</dd></div></dl></div>
   <div><h4>Mutter 6H (min – maks)</h4><dl class="kv" style="grid-template-columns:1fr"><div><dt>Storediameter D</dt><dd>min ${f3(L.int.Dmin)}</dd></div><div><dt>Midtdiameter D₂</dt><dd>${f3(L.int.D2Min)} – ${f3(L.int.D2Max)}</dd></div><div><dt>Lillediameter D₁</dt><dd>${f3(L.int.D1Min)} – ${f3(L.int.D1Max)}</dd></div></dl></div></div>
-  <p class="small muted" style="margin:0">Avmål e<sub>s</sub> = −${L.es} µm. Toleranser: T<sub>d</sub> ${L.Td}, T<sub>d2</sub> ${L.Td2}, T<sub>D2</sub> ${L.TD2}, T<sub>D1</sub> ${L.TD1} µm.${L.approx?" Midtdiametertoleransen er beregnet med ISO-formelen fordi kombinasjonen ikke står i tabellen; kontroller mot standarden.":""}</p>`}
+  <p class="small muted" style="margin:0">Avvik e<sub>s</sub> = −${L.es} µm. Toleranser: T<sub>d</sub> ${L.Td}, T<sub>d2</sub> ${L.Td2}, T<sub>D2</sub> ${L.TD2}, T<sub>D1</sub> ${L.TD1} µm.${L.approx?" Midtdiametertoleransen er beregnet med ISO-formelen fordi kombinasjonen ikke står i tabellen; kontroller mot standarden.":""}</p>`}
   else out.innerHTML+=`<p class="small muted" style="margin:0">Grensemål for 6g/6H vises for storediameter over 1,4 mm og standard stigninger.</p>`;
   if(typeof markThread==="function")markThread();
 }
@@ -9027,7 +9027,7 @@ function dial(x,y,r,val,tipY){ // val -1..1
       svg.innerHTML=`<rect x="40" y="40" width="520" height="26" fill="var(--bad-soft)"/><rect x="${X(mn)}" y="40" width="${X(mx)-X(mn)}" height="26" fill="var(--ok-soft)" stroke="var(--ok)" stroke-width="1.5"/>
       <line x1="40" y1="66" x2="560" y2="66" stroke="var(--ink-2)"/>
       ${TX(X(mn),86,"min "+fmt(mn),{mono:1,size:11,anchor:"middle"})}${TX(X(mx),86,"maks "+fmt(mx),{mono:1,size:11,anchor:"middle"})}
-      ${TX(X(c.d),106,"grunnmål "+fmt(c.d,c.d%1?2:0),{mono:1,size:10,anchor:"middle",fill:"var(--ink-2)"})}<line x1="${X(c.d)}" y1="66" x2="${X(c.d)}" y2="94" stroke="var(--ink-2)" stroke-dasharray="2 2"/>
+      ${TX(X(c.d),106,"nominelt mål "+fmt(c.d,c.d%1?2:0),{mono:1,size:10,anchor:"middle",fill:"var(--ink-2)"})}<line x1="${X(c.d)}" y1="66" x2="${X(c.d)}" y2="94" stroke="var(--ink-2)" stroke-dasharray="2 2"/>
       ${TX(48,58,c.type==="shaft"?"← for lite: kassert":"← for lite: kan rettes",{size:10,fill:"var(--ink-2)"})}${TX(552,58,c.type==="shaft"?"for stort: kan rettes →":"for stort: kassert →",{size:10,fill:"var(--ink-2)",anchor:"end"})}
       <path d="M${x} 36 l-7 -12 h14z" fill="var(--ink)"/><line x1="${x}" y1="36" x2="${x}" y2="70" stroke="var(--ink)" stroke-width="2.5"/>${TX(clamp(x,60,540),18,"målt "+fmt(m),{mono:1,size:12,anchor:"middle",weight:600})}`};
     stopG();stopG=tween(600,t=>draw(lerp(from,target,t)));
@@ -9690,7 +9690,7 @@ function dial(x,y,r,val,tipY){ // val -1..1
     return pts.filter(p=>true);
   }
   function draw(){
-    const e=6,yD=150,yBolt=yD+e; // bolt flyttes ned (avmål), mutter flyttes opp (S)
+    const e=6,yD=150,yBolt=yD+e; // bolt flyttes ned (avvik), mutter flyttes opp (S)
     const yd=yBolt,yd2=yBolt+3*H/8,yd3=yBolt+17*H/24,nD=yD-S,nD2=yD+3*H/8-S,nD1=yD+5*H/8-S;
     const bolt=prof(yd,P/16,0,17*H/24,0,false),nut=prof(nD,0,P/16,5*H/8,0,true);
     const bp="M"+x0+" 300L"+bolt.map(p=>p.map(v=>v.toFixed(1)).join(" ")).join("L")+"L"+x1+" 300Z";
@@ -9813,7 +9813,7 @@ function dial(x,y,r,val,tipY){ // val -1..1
     <div><dt>Gjengedybde</dt><dd>${fmt(0.541266*P*25.4,3)} mm<br><span class="small muted">mutter, ${fmt(0.541266*P,4)}″</span></dd></div></dl>
     <div style="min-width:0"><h4 style="margin:0 0 4px">Bolt ${k}A (utvendig)</h4><div class="tbl" style="margin:0"><table>${head}<tbody>${row("Storediameter d",L.a.dMax,L.a.dMin)}${row("Midtdiameter d₂",L.a.d2Max,L.a.d2Min)}${row("Lillediameter d₃ (UNR)",L.a.d3Max,null)}</tbody></table></div></div>
     <div style="min-width:0"><h4 style="margin:0 0 4px">Mutter ${k}B (innvendig)</h4><div class="tbl" style="margin:0"><table>${head}<tbody>${rowMin("Storediameter D",L.b.Dmin)}${row("Midtdiameter D₂",L.b.D2Max,L.b.D2Min)}${row("Lillediameter D₁",L.b.D1Max,L.b.D1Min)}</tbody></table></div></div>
-    <p class="small muted" style="margin:0">${L.es?`Avmål ${fmt(L.es,4)}″ (${fmt(L.es*25.4,3)} mm): bolten er så mye under basismål.`:"Ingen avmål: bolten starter på basismål."} mm-boret er avrundet til nærmeste ${mmS<.5?"0,1":"0,5"} mm.</p>`;
+    <p class="small muted" style="margin:0">${L.es?`Avvik ${fmt(L.es,4)}″ (${fmt(L.es*25.4,3)} mm): bolten er så mye under basismål.`:"Ingen avvik: bolten starter på basismål."} mm-boret er avrundet til nærmeste ${mmS<.5?"0,1":"0,5"} mm.</p>`;
     draw(L);
   }
   sel.onchange=()=>{chipsN();render()};
@@ -10360,12 +10360,12 @@ function dial(x,y,r,val,tipY){ // val -1..1
 })();
 
 /* ---------- navigasjon ---------- */
-/* ---------- toleranser: avmålstabeller ---------- */
+/* ---------- toleranser: avvikstabeller ---------- */
 {
   const cell=r=>`<span style="display:block">${um(r.up)}</span><span style="display:block">${um(r.lo)}</span>`;
   const mk=(id,cols,fn)=>{
     const el=$("#"+id);if(!el)return;
-    const head=["Grunnmål (mm)",...cols.map(c=>c[0])];
+    const head=["Nominelt mål (mm)",...cols.map(c=>c[0])];
     const rows=SUB_L.map((lab,i)=>[lab,...cols.map(c=>{try{return cell(fn(c[1],c[2],SUB[i]))}catch(e){return "–"}})]);
     el.innerHTML=tblHTML(head,rows,[0]);
   };
