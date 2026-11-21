@@ -623,22 +623,22 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="hurtig" aria-label="Hurtigoppslag">
   <div class="hurtig-h">Hurtigoppslag</div>
   <div class="hurtig-g">
-    <div><h4>Les toleransen</h4><span>Ø40 H7: grunnmål 40 · H = sonens plassering · 7 = toleransegrad IT7</span></div>
+    <div><h4>Les toleransen</h4><span>Ø40 H7: nominelt mål 40 · H = sonens plassering · 7 = toleransegrad IT7</span></div>
     <div><h4>Hull og aksel</h4><span>Store bokstaver = hull · små = aksel</span><span>H: nedre avvik 0 · h: øvre avvik 0</span></div>
     <div><h4>Toleransegrad</h4><span>IT5–IT7 presisjon (sliping, brotsjing) · IT8–IT11 vanlig maskinering · IT12–IT16 grovt</span></div>
-    <div><h4>Mål</h4><b>største mål = grunnmål + øvre avvik</b><b>minste mål = grunnmål + nedre avvik</b></div>
+    <div><h4>Mål</h4><b>største mål = nominelt mål + øvre avvik</b><b>minste mål = nominelt mål + nedre avvik</b></div>
   </div>
 </div>
 <h3>Grunntoleranser IT1–IT16 (µm)</h3>
-<p class="small muted">Kolonnen for grunnmålet over er markert. Intervallene gjelder «over – til og med».</p>
+<p class="small muted">Kolonnen for det nominelle målet over er markert. Intervallene gjelder «over – til og med».</p>
 <div class="tbl" id="it-table"></div>
 <div class="note"><p><b>Tommelfinger for toleransegrader:</b> IT5–IT7 for presisjonspasninger (sliping, fin dreiing, brotsjing), IT8–IT11 for vanlig maskinering, IT12–IT16 for grove mål, støping, smiing og termisk skjæring.</p></div>
 <details class="lesmer">
 <summary>Les mer: forklaring og figurer</summary>
-<p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av grunnmålet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
+<p class="lead">Et toleransekrav som <span class="mono">Ø40 H7</span> består av det nominelle målet (40 mm), en bokstav som sier hvor toleransesonen ligger i forhold til nullinjen, og en toleransegrad (IT7) som sier hvor bred sonen er.</p>
 <p>Store bokstaver gjelder hull (innvendige mål), små bokstaver gjelder aksler (utvendige mål). <b>H</b> har nedre avvik 0, <b>h</b> har øvre avvik 0. Jo lavere IT-tall, jo strammere toleranse.</p>
 <h3>Bokstaven flytter sonen, tallet bestemmer bredden</h3>
-<p>Alle bokstavene for samme grunnmål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
+<p>Alle bokstavene for samme nominelle mål og IT-grad har like bred sone. Bokstaven bestemmer bare hvor sonen ligger i forhold til nullinjen. Trykk på en søyle for å velge den i kalkulatoren.</p>
 <figure class="fig">
     <svg id="fig-ladder" viewBox="0 0 600 270" role="img" aria-label="Toleransesoner for alle avviksbokstaver"></svg>
     <div class="ctrl"><span id="ladder-read" class="small muted"></span></div>
@@ -651,7 +651,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
   <h3>Slå opp toleranseklasse</h3>
   <div class="calc">
     <div class="fields">
-      <div class="field"><label for="t-size">Grunnmål (mm)</label><input id="t-size" inputmode="decimal" value="40"></div>
+      <div class="field"><label for="t-size">Nominelt mål (mm)</label><input id="t-size" inputmode="decimal" value="40"></div>
       <div class="row2">
         <div class="field"><label for="t-type">Element</label>
           <select id="t-type"><option value="hole">Hull</option><option value="shaft">Aksel</option></select></div>
@@ -684,7 +684,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <h3>Beregn passning</h3>
 <div class="calc">
     <div class="fields">
-      <div class="field"><label for="f-size">Grunnmål (mm)</label><input id="f-size" inputmode="decimal" value="25"></div>
+      <div class="field"><label for="f-size">Nominelt mål (mm)</label><input id="f-size" inputmode="decimal" value="25"></div>
       <div class="row2">
         <div class="field"><label for="f-hl">Hull</label><select id="f-hl"></select></div>
         <div class="field"><label for="f-hg">IT</label><select id="f-hg"></select></div>
@@ -701,7 +701,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="tbl" id="t2-shafttab"></div>
 <details class="lesmer">
 <summary>Les mer: forklaring og figurer</summary>
-<p class="lead">En passning beskriver hvordan et hull og en aksel med samme grunnmål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
+<p class="lead">En passning beskriver hvordan et hull og en aksel med samme nominelle mål går sammen. Resultatet er enten klaring, grep (overmål) eller en overgang der det kan bli begge deler.</p>
 <p>I verksted er <b>hullbasis</b> vanligst: hullet lages som H (fordi brotsjer og tolkene er standard), og akselen tilpasses for ønsket funksjon.</p>
 <h3>Slik går delene sammen</h3>
 <p>Passningen avgjøres av de to ytterpunktene: største hull med minste aksel gir mest klaring, minste hull med største aksel gir minst klaring eller mest grep. Avvikene er sterkt forstørret i figuren.</p>
@@ -715,7 +715,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <div class="topic" id="t2-boring">
   <div class="topic-h"><span class="tno">2.4</span><h3>ISO-pasninger – boring</h3><a class="up" href="#toleranser" aria-label="Til innholdet i emne 2">↑ Innhold</a></div>
   <h3>Anbefalte passninger (hullbasis)</h3>
-  <p class="small muted">Trykk på en rad for å regne den ut for grunnmålet over.</p>
+  <p class="small muted">Trykk på en rad for å regne den ut for det nominelle målet over.</p>
   <div class="tbl"><table id="fit-presets"></table></div>
   <h3>Avvik for vanlige hulltoleranser (µm)</h3>
   <p class="small muted">Øvre avvik over, nedre under. Etter ISO 286-2.</p>
@@ -8106,10 +8106,10 @@ fillLetters();tLetter.value="h";
 function renderTol(){
   const d=num(tSize.value),g=+tGrade.value,l=tLetter.value,type=tType.value,out=$("#t-out");
   renderITTable(d);
-  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et grunnmål mellom 0 og 500 mm.</p>`;return}
+  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et nominelt mål mellom 0 og 500 mm.</p>`;return}
   const r=type==="hole"?hole(l,g,d):shaft(l,g,d);
   const name=`Ø${fmt(d,d%1?2:0)} ${cap(l,type)}${g}`;
-  out.innerHTML=`<div class="callout">${name} <span class="mono" style="font-size:.7em">${sgn(r.up/1000)} / ${sgn(r.lo/1000)}</span><small>${type==="hole"?"Hull":"Aksel"} · grunnmålintervall ${SUB_L[idx(SUB,d)]} mm</small></div>
+  out.innerHTML=`<div class="callout">${name} <span class="mono" style="font-size:.7em">${sgn(r.up/1000)} / ${sgn(r.lo/1000)}</span><small>${type==="hole"?"Hull":"Aksel"} · intervall for nominelt mål ${SUB_L[idx(SUB,d)]} mm</small></div>
   <dl class="kv"><div><dt>Øvre avvik</dt><dd>${um(r.up)} µm</dd></div><div><dt>Nedre avvik</dt><dd>${um(r.lo)} µm</dd></div>
   <div><dt>Største mål</dt><dd>${fmt(d+r.up/1000)}</dd></div><div><dt>Minste mål</dt><dd>${fmt(d+r.lo/1000)}</dd></div>
   <div><dt>Toleranse IT${g}</dt><dd>${String(r.T).replace(".",",")} µm</dd></div></dl>
@@ -8141,7 +8141,7 @@ const PRESETS=[
 ["H7/s6","h",7,"s",6,"Presspasning","Krymp eller presse. Overfører moment uten kile, f.eks. bøssinger i nav."]];
 function renderFit(){
   const d=num(fS.value),out=$("#f-out");
-  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et grunnmål mellom 0 og 500 mm.</p>`;return}
+  if(idx(SUB,d)<0){out.innerHTML=`<p class="err">Skriv et nominelt mål mellom 0 og 500 mm.</p>`;return}
   const H=hole(fHL.value,+fHG.value,d),S=shaft(fSL.value,+fSG.value,d);
   const hN=fHL.value.toUpperCase()+fHG.value,sN=fSL.value+fSG.value;
   const cmax=H.up-S.lo,cmin=H.lo-S.up;
@@ -9027,7 +9027,7 @@ function dial(x,y,r,val,tipY){ // val -1..1
       svg.innerHTML=`<rect x="40" y="40" width="520" height="26" fill="var(--bad-soft)"/><rect x="${X(mn)}" y="40" width="${X(mx)-X(mn)}" height="26" fill="var(--ok-soft)" stroke="var(--ok)" stroke-width="1.5"/>
       <line x1="40" y1="66" x2="560" y2="66" stroke="var(--ink-2)"/>
       ${TX(X(mn),86,"min "+fmt(mn),{mono:1,size:11,anchor:"middle"})}${TX(X(mx),86,"maks "+fmt(mx),{mono:1,size:11,anchor:"middle"})}
-      ${TX(X(c.d),106,"grunnmål "+fmt(c.d,c.d%1?2:0),{mono:1,size:10,anchor:"middle",fill:"var(--ink-2)"})}<line x1="${X(c.d)}" y1="66" x2="${X(c.d)}" y2="94" stroke="var(--ink-2)" stroke-dasharray="2 2"/>
+      ${TX(X(c.d),106,"nominelt mål "+fmt(c.d,c.d%1?2:0),{mono:1,size:10,anchor:"middle",fill:"var(--ink-2)"})}<line x1="${X(c.d)}" y1="66" x2="${X(c.d)}" y2="94" stroke="var(--ink-2)" stroke-dasharray="2 2"/>
       ${TX(48,58,c.type==="shaft"?"← for lite: kassert":"← for lite: kan rettes",{size:10,fill:"var(--ink-2)"})}${TX(552,58,c.type==="shaft"?"for stort: kan rettes →":"for stort: kassert →",{size:10,fill:"var(--ink-2)",anchor:"end"})}
       <path d="M${x} 36 l-7 -12 h14z" fill="var(--ink)"/><line x1="${x}" y1="36" x2="${x}" y2="70" stroke="var(--ink)" stroke-width="2.5"/>${TX(clamp(x,60,540),18,"målt "+fmt(m),{mono:1,size:12,anchor:"middle",weight:600})}`};
     stopG();stopG=tween(600,t=>draw(lerp(from,target,t)));
@@ -10365,7 +10365,7 @@ function dial(x,y,r,val,tipY){ // val -1..1
   const cell=r=>`<span style="display:block">${um(r.up)}</span><span style="display:block">${um(r.lo)}</span>`;
   const mk=(id,cols,fn)=>{
     const el=$("#"+id);if(!el)return;
-    const head=["Grunnmål (mm)",...cols.map(c=>c[0])];
+    const head=["Nominelt mål (mm)",...cols.map(c=>c[0])];
     const rows=SUB_L.map((lab,i)=>[lab,...cols.map(c=>{try{return cell(fn(c[1],c[2],SUB[i]))}catch(e){return "–"}})]);
     el.innerHTML=tblHTML(head,rows,[0]);
   };
