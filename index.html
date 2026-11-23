@@ -14615,7 +14615,7 @@ const bfilter=(tbl,q,tag,tagOk)=>{tbl.querySelectorAll("tbody tr").forEach(tr=>{
     if(pre)s+=`<line x1="${cx-pre}" y1="${oy+T}" x2="${cx-pre}" y2="${oy+B}" stroke="var(--ink-2)" stroke-dasharray="4 3"/><line x1="${cx+pre}" y1="${oy+T}" x2="${cx+pre}" y2="${oy+B}" stroke="var(--ink-2)" stroke-dasharray="4 3"/>`;
     return s};
   const tool=(cx,oy,prof)=>`<polygon points="${holeP(cx,prof.map(([r,y])=>[r,oy+y]))}" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>`;
-  const rot=(cx,y)=>`<path d="M${cx-20} ${y}A20 6 0 0 0 ${cx+20} ${y}" fill="none" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`;
+  const rot=(cx,y)=>`<path d="M${cx+20} ${y}A20 6 0 0 1 ${cx-20} ${y}" fill="none" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`;
   const feed=(x,oy)=>`<line x1="${x}" y1="${oy+22}" x2="${x}" y2="${oy+54}" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`;
   const zig=(r1,r2,y0,y1,st)=>{const a=[];let i=0;for(let y=y0;y<=y1+.01;y+=st,i++)a.push([i%2?r2:r1,y]);return a};
   let s=ARR("m3b-ha")+`<defs><pattern id="m3b-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="var(--zone-soft)"/><line x1="0" y1="0" x2="0" y2="7" stroke="var(--zone)" stroke-width="1"/></pattern></defs>`;
@@ -15917,7 +15917,7 @@ const mLab=r=>"M"+r[0];
     const sw=4*Math.sin(ph*3);
     g+=`<line x1="${bx}" y1="${130+sw}" x2="${bx}" y2="${162-sw}" stroke="var(--ok)" stroke-width="2" marker-start="url(#e5a-a2)" marker-end="url(#e5a-a2)"/>`;
     g+=TX(bx,74,"M"+"<tspan dy='3' font-size='9'>A</tspan>",{anchor:"middle",mono:1,size:13,weight:600});
-    g+=`<path d="M${bx-30} 62 A 34 12 0 0 0 ${bx+30} 62" fill="none" stroke="var(--ink)" stroke-width="1.6" marker-end="url(#e5a-a2)"/>`;
+    g+=`<path d="M${bx+30} 62 A 34 12 0 0 1 ${bx-30} 62" fill="none" stroke="var(--ink)" stroke-width="1.6" marker-end="url(#e5a-a2)"/>`;
     // sankey
     const x0=172,x1=222,x2=352,x3=372,H=170,y0=65,gap=20,p=st.parts,hs=p.map(v=>Math.max(2,v*H));
     const tot=hs.reduce((a,b)=>a+b,0)+2*gap,yo0=150-tot/2;
