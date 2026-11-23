@@ -1415,7 +1415,7 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p class="small muted">Borediameter og typer gjengebor står i 3.10. Gjengemål (storediameter, midtdiameter, lillediameter) står i gjengekapitlet.</p>
 <details class="lesmer">
 <summary>Les mer: forklaring og figurer</summary>
-<p class="lead">Et hull lages ofte i flere trinn. Boret gir posisjon og volum, men ikke nøyaktig mål og god overflate. Kreves det en passning, for eksempel H7, må hullet etterbearbeides med brotsj, opprømmer eller utboringsverktøy.</p>
+<p class="lead">Et hull lages ofte i flere trinn. Boret gir posisjon og volum, men ikke nøyaktig mål og god overflate. Kreves det en passning, for eksempel H7, må hullet etterbearbeides med brotsj eller utboringsverktøy.</p>
 <h3>Metodene</h3>
 <figure class="fig">
   <svg id="m3b-hfig" viewBox="0 0 600 380" role="img" aria-label="Prinsippskisser av åtte metoder for hullbearbeiding"></svg>
@@ -1431,9 +1431,9 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 <p>For å <b>starte et bor</b> er et NC-punktbor bedre enn et senterbor. Velg en spissvinkel som er lik eller litt større enn borets spissvinkel, slik at borspissen tar først og ikke hjørnene.</p>
 <h3>Brotsjing</h3>
 <p>Brotsjen fjerner bare et lite tillegg og gir mål og overflate. Hullets posisjon og retning bestemmes av boret, ikke av brotsjen, for brotsjen følger hullet. Tillegget må være riktig: med for lite tillegg gnir eggene i stedet for å skjære. Materialet kaldherder, brotsjen slites, og hullet kan bli for lite. For stort tillegg overbelaster brotsjen og gir dårlig overflate og for stort hull.</p>
-<h3>Opprømming, utboring og forsenking</h3>
+<h3>Oppboring, utboring og forsenking</h3>
 <ul class="m3b-list">
-  <li><b>Opprømming</b> (oppboring) gjøres med en opprømmer eller et senkebor med 3–4 skjær. Verktøyet styres bedre enn et spiralbor fordi det har flere skjær og ingen tverregg. Hullet blir rundere og rettere, og flater ut før brotsjing eller i støpte og forhåndsstansede hull.</li>
+  <li><b>Oppboring</b> gjøres med et senkebor med 3–4 skjær. Verktøyet styres bedre enn et spiralbor fordi det har flere skjær og ingen tverregg. Hullet blir rundere og rettere, og flater ut før brotsjing eller i støpte og forhåndsstansede hull.</li>
   <li><b>Utboring</b> gjøres med en bor- eller utboringsstang med ett skjær. Stangen styres av maskinen og ikke av hullet. Derfor er utboring den eneste av metodene som <b>retter opp posisjon og retning</b>. Finutboringshoder kan stilles i µm. Utstikket bør være kort. Bruk stangen med størst mulig diameter.</li>
   <li><b>Forsenking</b>: konisk forsenk (90° for metriske senkeskruer) eller plan forsenk med styretapp for sylinderskruer. Forsenk gjøres med lav v<sub>c</sub> for å unngå ratter. Avgrading av hull er også en form for forsenking.</li>
 </ul>
@@ -3437,10 +3437,10 @@ nav.innhold em{order:3;font-style:normal;font-family:var(--mono);font-size:11px;
 </div>
 <h3>R, Rp og Rc (ISO 7-1)</h3>
 <div class="tbl" id="g6r-rtab"></div>
-<p class="small muted">Etter ISO 7-1:1994 og EN 10226-1/-2. Gaugelengde er nominell lengde fra lille ende til målplan på hanndelen; toleransen tilsvarer ±1 omdreining. Rc-boret er <b>veiledende</b> (uten konisk opprømmer; med opprømmer kan man bore ca. 0,2–0,5 mm mindre for å spare tappen). Rp-boret er det samme som for G. Følg alltid gjengetapp-leverandørens anbefaling.</p>
+<p class="small muted">Etter ISO 7-1:1994 og EN 10226-1/-2. Gaugelengde er nominell lengde fra lille ende til målplan på hanndelen; toleransen tilsvarer ±1 omdreining. Rc-boret er <b>veiledende</b> (uten konisk brotsj; med konisk brotsj kan man bore ca. 0,2–0,5 mm mindre for å spare tappen). Rp-boret er det samme som for G. Følg alltid gjengetapp-leverandørens anbefaling.</p>
 <h3>NPT og NPTF (ANSI/ASME B1.20.1 og B1.20.3)</h3>
 <div class="tbl" id="g6r-npt"></div>
-<p class="small muted">Etter ASME B1.20.1. L1 = håndtrekklengde (lengde i inngrep når delene skrus sammen for hånd). Ytterdiameter er rørets ytterdiameter (ASME B36.10). Gjengebor er <b>veiledende</b> for skjærende tapp uten opprømmer, i tomme med mm i parentes; 1/8″ oppgis ulikt i tabeller (Q, R eller 11/32″).</p>
+<p class="small muted">Etter ASME B1.20.1. L1 = håndtrekklengde (lengde i inngrep når delene skrus sammen for hånd). Ytterdiameter er rørets ytterdiameter (ASME B36.10). Gjengebor er <b>veiledende</b> for skjærende tapp uten konisk brotsj, i tomme med mm i parentes; 1/8″ oppgis ulikt i tabeller (Q, R eller 11/32″).</p>
 <h3>BSPT kontra NPT: like, men ikke byttbare</h3>
 <div class="tbl" id="g6r-bvn"></div>
 <h3>Hvorfor er «1/2 tomme» ikke 12,7 mm?</h3>
@@ -14615,11 +14615,13 @@ const bfilter=(tbl,q,tag,tagOk)=>{tbl.querySelectorAll("tbody tr").forEach(tr=>{
     if(pre)s+=`<line x1="${cx-pre}" y1="${oy+T}" x2="${cx-pre}" y2="${oy+B}" stroke="var(--ink-2)" stroke-dasharray="4 3"/><line x1="${cx+pre}" y1="${oy+T}" x2="${cx+pre}" y2="${oy+B}" stroke="var(--ink-2)" stroke-dasharray="4 3"/>`;
     return s};
   const tool=(cx,oy,prof)=>`<polygon points="${holeP(cx,prof.map(([r,y])=>[r,oy+y]))}" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>`;
-  const rot=(cx,y)=>`<path d="M${cx-20} ${y}A20 6 0 0 0 ${cx+20} ${y}" fill="none" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`;
+  // Rotasjonspil med klokka sett ovenfra: buen går fra bak til høyre, rundt foran og ender med spissen langs buen til venstre.
+  const rotBue=(cx,cy,rx,ry,id,w)=>{const P=t=>[(cx+rx*Math.cos(t*Math.PI/180)).toFixed(1),(cy+ry*Math.sin(t*Math.PI/180)).toFixed(1)],a=P(-30),b=P(160);return `<path d="M${a[0]} ${a[1]}A${rx} ${ry} 0 1 1 ${b[0]} ${b[1]}" fill="none" stroke="var(--ink)" stroke-width="${w}" marker-end="url(#${id})"/>`};
+  const rot=(cx,y)=>rotBue(cx,y,20,6,"m3b-ha",1.3);
   const feed=(x,oy)=>`<line x1="${x}" y1="${oy+22}" x2="${x}" y2="${oy+54}" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`;
   const zig=(r1,r2,y0,y1,st)=>{const a=[];let i=0;for(let y=y0;y<=y1+.01;y+=st,i++)a.push([i%2?r2:r1,y]);return a};
   let s=ARR("m3b-ha")+`<defs><pattern id="m3b-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="var(--zone-soft)"/><line x1="0" y1="0" x2="0" y2="7" stroke="var(--zone)" stroke-width="1"/></pattern></defs>`;
-  const names=["Senterboring","Boring","Opprømming","Brotsjing","Utboring","Forsenking","Gjengeboring","Gjengefresing"];
+  const names=["Senterboring","Boring","Oppboring","Brotsjing","Utboring","Forsenking","Gjengeboring","Gjengefresing"];
   names.forEach((nm,i)=>{
     const ox=(i%4)*150,oy=Math.floor(i/4)*190,cx=ox+75;
     if(i===0){const pr=[[14,T],[4,T+17.3],[4,T+30],[0,T+32.4]];s+=wp(ox,oy,pr)+tool(cx,oy,[[13,18],[13,T+1.7],[4,T+17.3],[4,T+30],[0,T+32.4]])+TX(cx+18,oy+T+14,"60°",{size:12})}
@@ -14631,7 +14633,7 @@ const bfilter=(tbl,q,tag,tagOk)=>{tbl.querySelectorAll("tbody tr").forEach(tr=>{
     if(i===6){const th=zig(16,19,T,T+56,4);const pr=th.concat([[16,T+60],[16,B]]);s+=wp(ox,oy,pr,16);
       const tp=[[13,18],[13,T-4]].concat(zig(15.5,18.5,T,T+56,4).map(([r,y])=>[Math.min(r,18.5-Math.max(0,y-oy*0-(T+40))*0.25),y])).concat([[12,T+60]]);s+=tool(cx,oy,tp)}
     if(i===7){const pr=zig(16,19,T,B,4);s+=wp(ox,oy,pr);const ct=cx-9;s+=tool(ct,oy,[[6,18],[6,T+28]].concat(zig(6.5,10,T+30,T+62,4)).concat([[6,T+64]]));
-      s+=`<ellipse cx="${cx}" cy="${oy+T+18}" rx="12" ry="4" fill="none" stroke="var(--ink)" stroke-dasharray="3 2"/><path d="M${cx+12} ${oy+T+18}A12 4 0 0 1 ${cx-4} ${oy+T+22}" fill="none" stroke="var(--ink)" stroke-width="1.3" marker-end="url(#m3b-ha)"/>`}
+      s+=`<ellipse cx="${cx}" cy="${oy+T+18}" rx="15" ry="5" fill="none" stroke="var(--ink)" stroke-width=".8" stroke-dasharray="3 2"/>`+rotBue(cx,oy+T+18,15,5,"m3b-ha",1.3)}
     s+=rot(i===7?cx-9:cx,oy+30);if(i!==7)s+=feed(cx+44,oy);
     s+=TX(cx,oy+178,nm,{size:13,anchor:"middle",weight:600});
   });
@@ -14640,14 +14642,14 @@ const bfilter=(tbl,q,tag,tagOk)=>{tbl.querySelectorAll("tbody tr").forEach(tr=>{
   $("#m3b-hmet").innerHTML=tblHTML(["Metode","Verktøy","Formål og merknad"],[
     ["Senterboring","Senterbor (DIN 333), NC-punktbor","Senterhull for dreiing mellom spisser, eller start for boret."],
     ["Boring","Spiralbor (HSS, HM), vendeskjærbor","Lager hullet i fullt materiale. Gir posisjon, men ikke nøyaktig mål. Hullet blir ofte litt for stort."],
-    ["Opprømming","Opprømmer, senkebor (3–4 skjær)","Forstørrer et forboret eller støpt hull. Rundere og rettere hull, forarbeid til brotsjing."],
+    ["Oppboring","Senkebor (3–4 skjær)","Forstørrer et forboret eller støpt hull. Rundere og rettere hull, forarbeid til brotsjing."],
     ["Brotsjing","Hånd- eller maskinbrotsj","Gir mål (for eksempel H7) og fin overflate. Følger hullet, retter ikke opp posisjonen."],
     ["Utboring","Borestang, utboringshode","Gir mål og retter opp posisjon og retning. Fleksibelt: ett verktøy for mange diametre."],
     ["Forsenking","Konisk forsenker, planforsenker","Senk for skruehoder, avgrading og planflate for skruehoder og muttere."],
     ["Gjengeboring","Skjærende eller formende gjengebor","Innvendige gjenger, raskt i serie. Toleranse normalt 6H."],
     ["Gjengefresing","Gjengefres (HM), CNC med sirkelinterpolasjon","Innvendige og utvendige gjenger. Samme fres for mange diametre med samme stigning."]],[1,2]);
 
-  const IT=[["Boring, HSS-spiralbor",11,13,"3,2–12,5","Klaringshull, kjernehull for gjenger"],["Boring, vendeskjærbor",11,13,"3,2–6,3","Store hull i fullt materiale"],["Boring, massivt HM-bor",8,10,"1,6–3,2","Nøyaktige hull i ett trinn"],["Opprømming",10,11,"3,2–6,3","Forarbeid til brotsjing, støpte hull"],["Utboring, grov",9,11,"1,6–6,3","Store hull, retting av posisjon"],["Utboring, fin",6,8,"0,4–1,6","Lagerhus, passninger"],["Brotsjing",6,8,"0,4–1,6","Passninger H7, styrestifter"],["Honing (til sammenligning)",5,6,"0,1–0,4","Sylinderløp, hydraulikk"]];
+  const IT=[["Boring, HSS-spiralbor",11,13,"3,2–12,5","Klaringshull, kjernehull for gjenger"],["Boring, vendeskjærbor",11,13,"3,2–6,3","Store hull i fullt materiale"],["Boring, massivt HM-bor",8,10,"1,6–3,2","Nøyaktige hull i ett trinn"],["Oppboring",10,11,"3,2–6,3","Forarbeid til brotsjing, støpte hull"],["Utboring, grov",9,11,"1,6–6,3","Store hull, retting av posisjon"],["Utboring, fin",6,8,"0,4–1,6","Lagerhus, passninger"],["Brotsjing",6,8,"0,4–1,6","Passninger H7, styrestifter"],["Honing (til sammenligning)",5,6,"0,1–0,4","Sylinderløp, hydraulikk"]];
   $("#m3b-ittab").innerHTML=tblHTML(["Metode","IT","R<sub>a</sub> (µm)","Typisk bruk"],IT.map(r=>[r[0],`IT${r[1]}–IT${r[2]}`,r[3],r[4]]),[3]);
   {const x0=232,w=27,xi=k=>x0+(k-5)*w;let t="";
     for(let k=5;k<=13;k++){t+=`<line x1="${xi(k)+w/2}" y1="34" x2="${xi(k)+w/2}" y2="${40+IT.length*30}" stroke="var(--line)"/>`+TX(xi(k)+w/2,26,String(k),{size:12,anchor:"middle",mono:1,fill:"var(--ink-2)"})}
@@ -14671,7 +14673,7 @@ const bfilter=(tbl,q,tag,tagOk)=>{tbl.querySelectorAll("tbody tr").forEach(tr=>{
     if(!r){o.innerHTML=`<p class="err">Tabellen gjelder Ø3–70 mm. Bruk produsentens tabell.</p>`;return}
     const lo=D-r[3],hi=D-r[2],mid=(lo+hi)/2;let best=null;
     for(let k=Math.ceil(lo*10-1e-6);k<=Math.floor(hi*10+1e-6);k++){const d=k/10;if(best===null||Math.abs(d-mid)<Math.abs(best-mid)-1e-9||(Math.abs(Math.abs(d-mid)-Math.abs(best-mid))<1e-9&&d>best))best=d}
-    o.innerHTML=`<div class="callout">Forbor Ø${best!==null?fmt(best,1):fmt(mid,2)} mm<small>forslag i 0,1 mm-trinn</small></div>`+bkv([["Tillegg",`${fmt(r[2],2)}–${fmt(r[3],2)} mm`],["Forbor-område",`${fmt(lo,2)}–${fmt(hi,2)} mm`]])+`<p class="small muted">Boret lager ofte et litt for stort hull. Mål hullet etter boring hvis toleransen er stram, eller bor med mindre bor og opprøm.</p>`});
+    o.innerHTML=`<div class="callout">Forbor Ø${best!==null?fmt(best,1):fmt(mid,2)} mm<small>forslag i 0,1 mm-trinn</small></div>`+bkv([["Tillegg",`${fmt(r[2],2)}–${fmt(r[3],2)} mm`],["Forbor-område",`${fmt(lo,2)}–${fmt(hi,2)} mm`]])+`<p class="small muted">Boret lager ofte et litt for stort hull. Mål hullet etter boring hvis toleransen er stram, eller bor med mindre bor og brotsj.</p>`});
 
   $("#m3b-gtab").innerHTML=tblHTML(["","Gjengeboring","Gjengefresing (CNC)"],[
     ["Hastighet","Rask, én bevegelse inn og ut","Langsommere, særlig i små hull"],
@@ -15917,7 +15919,8 @@ const mLab=r=>"M"+r[0];
     const sw=4*Math.sin(ph*3);
     g+=`<line x1="${bx}" y1="${130+sw}" x2="${bx}" y2="${162-sw}" stroke="var(--ok)" stroke-width="2" marker-start="url(#e5a-a2)" marker-end="url(#e5a-a2)"/>`;
     g+=TX(bx,74,"M"+"<tspan dy='3' font-size='9'>A</tspan>",{anchor:"middle",mono:1,size:13,weight:600});
-    g+=`<path d="M${bx-30} 62 A 34 12 0 0 0 ${bx+30} 62" fill="none" stroke="var(--ink)" stroke-width="1.6" marker-end="url(#e5a-a2)"/>`;
+    {const P=t=>[(bx+32*Math.cos(t*Math.PI/180)).toFixed(1),(62+10*Math.sin(t*Math.PI/180)).toFixed(1)],a=P(-30),b=P(160);
+    g+=`<path d="M${a[0]} ${a[1]}A32 10 0 1 1 ${b[0]} ${b[1]}" fill="none" stroke="var(--ink)" stroke-width="1.6" marker-end="url(#e5a-a2)"/>`;}
     // sankey
     const x0=172,x1=222,x2=352,x3=372,H=170,y0=65,gap=20,p=st.parts,hs=p.map(v=>Math.max(2,v*H));
     const tot=hs.reduce((a,b)=>a+b,0)+2*gap,yo0=150-tot/2;
